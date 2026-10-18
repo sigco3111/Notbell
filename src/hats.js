@@ -193,7 +193,7 @@ export function wireHatKey(playerGroup) {
     const next = cycle[(idx + 1) % cycle.length];
     S.wearHat(next);
     applyHat(playerGroup, next);
-    ui.toast(next ? `You put on the <b>${ITEMS[next].name}</b>.` : 'Hat off. The breeze approves.',
+    ui.toast(next ? `<b>${ITEMS[next].name}</b>을(를) 썼어요.` : '모자를 벗었어요. 바람이 좋아해요.',
       next ? ITEMS[next].emoji : '💨');
   });
 }
