@@ -12,11 +12,11 @@ export function seasonOf(d = new Date()) {
 
 export function holidayOf(d = new Date()) {
   const m = d.getMonth() + 1, day = d.getDate();
-  if (m === 1 && day === 1) return { id: 'newyear', name: 'New Year’s Day' };
-  if (m === 5 && day === 1) return { id: 'mayday', name: 'May Day' };
-  if (m === 6 && day === 21) return { id: 'bellday', name: 'Bell Day' };
-  if (m === 10 && day === 31) return { id: 'spooky', name: 'Spooky Eve' };
-  if (m === 12 && day >= 21 && day <= 26) return { id: 'frost', name: 'the Frost Festival' };
+  if (m === 1 && day === 1) return { id: 'newyear', name: '새해 첫날' };
+  if (m === 5 && day === 1) return { id: 'mayday', name: '메이데이' };
+  if (m === 6 && day === 21) return { id: 'bellday', name: '종의 날' };
+  if (m === 10 && day === 31) return { id: 'spooky', name: '으스스 이브' };
+  if (m === 12 && day >= 21 && day <= 26) return { id: 'frost', name: '서리 축제' };
   return null;
 }
 
@@ -36,7 +36,7 @@ export function hourNow() {
 export function clockLabel(h = hourNow()) {
   const hr = Math.floor(h) % 24;
   const mn = Math.floor((h - Math.floor(h)) * 60);
-  const ampm = hr < 12 ? 'AM' : 'PM';
+  const ampm = hr < 12 ? '오전' : '오후';
   const h12 = hr % 12 || 12;
   return `${h12}:${String(mn).padStart(2, '0')} ${ampm}`;
 }
@@ -52,9 +52,9 @@ export function isNight(h = hourNow()) {
 
 // Lines the villagers share on a holiday, and Pip's one-off gift note.
 export const HOLIDAY_LINES = {
-  newyear: 'Happy New Year! The island counts years in winters survived and naps taken. We are doing wonderfully on both.',
-  mayday: 'Happy May Day! Clover has organized a flower count. The flowers, reportedly, are also counting us.',
-  bellday: 'It’s Bell Day. The day the bell went under. We don’t mourn it, exactly — we just listen a little harder today.',
-  spooky: 'Spooky Eve! The pumpkins are out. One of them is judging you. We don’t know which. That’s the spooky part.',
-  frost: 'Happy Frost Festival! Lights on every branch, so the dark stays cozy instead of just dark.',
+  newyear: '새해 복 많이 받으세요! 섬은 견뎌낸 겨울과 낮잠 수로 해를 세어요. 둘 다 아주 잘하고 있어요.',
+  mayday: '메이데이 축하해요! 클로버가 꽃 세기를 조직했어요. 소문에 따르면 꽃들도 우리를 세고 있대요.',
+  bellday: '종의 날이에요. 종이 가라앉은 날. 딱히 슬퍼하는 건 아니에요 — 그저 오늘은 조금 더 귀를 기울일 뿐이에요.',
+  spooky: '으스스 이브예요! 호박들이 나왔어요. 그중 하나가 당신을 평가하고 있어요. 어느 녀석인지는 몰라요. 그게 으스스한 부분이에요.',
+  frost: '서리 축제를 축하해요! 모든 가지에 불을 밝혀서, 어둠이 그냥 어둡지 않고 포근해요.',
 };
