@@ -45,46 +45,46 @@ export function initSettings() {
 
   function render() {
     panel.innerHTML = `
-      <button class="closex" aria-label="close">✕</button>
-      <h3>⚙️ Settings</h3>
-      <div class="sub">Everything here is optional. The island doesn’t mind either way.</div>
+      <button class="closex" aria-label="닫기">✕</button>
+      <h3>⚙️ 설정</h3>
+      <div class="sub">여기 있는 건 전부 선택 사항이에요. 섬은 어느 쪽이든 상관없어 해요.</div>
 
-      <h4>You</h4>
+      <h4>당신</h4>
       <div class="row">
-        <input id="set-name" maxlength="16" placeholder="display name" value="${ui.escapeHtml(state.name || '')}">
-        <button id="set-name-go">Rename</button>
+        <input id="set-name" maxlength="16" placeholder="표시 이름" value="${ui.escapeHtml(state.name || '')}">
+        <button id="set-name-go">바꾸기</button>
       </div>
 
-      <h4>Sound</h4>
+      <h4>소리</h4>
       <div class="row">
-        <button id="set-sound" class="soft">${isMuted() ? '🔇 Sound is off — turn on' : '🔔 Sound is on — turn off'}</button>
+        <button id="set-sound" class="soft">${isMuted() ? '🔇 소리가 꺼져 있어요 — 켜기' : '🔔 소리가 켜져 있어요 — 끄기'}</button>
       </div>
 
-      <h4>The clock</h4>
+      <h4>시계</h4>
       <div class="row">
         <select id="set-tz">
           ${[...Array(25)].map((_, i) => {
             const v = i - 12;
-            const label = v === 0 ? 'device clock (recommended)' : `nudge ${v > 0 ? '+' : ''}${v}h`;
+            const label = v === 0 ? '기기 시계 (권장)' : `${v > 0 ? '+' : ''}${v}시간 조정`;
             return `<option value="${v}" ${v === (state.tz || 0) ? 'selected' : ''}>${label}</option>`;
           }).join('')}
       </select>
       </div>
-      <div class="sub">Day, night, and the weather schedule follow this clock.</div>
+      <div class="sub">낮과 밤, 날씨 시간표가 이 시계를 따라가요.</div>
 
-      <h4>Controls</h4>
+      <h4>조작법</h4>
       <div class="keys">
-        <span><kbd>WASD</kbd></span><span>walk — double-tap (or hold Shift) to run</span>
-        <span><kbd>drag</kbd></span><span>turn the camera · scroll or pinch to zoom</span>
-        <span><kbd>E</kbd></span><span>talk · use · pick up (or tap the prompt)</span>
-        <span><kbd>P</kbd></span><span>the map</span>
-        <span><kbd>I</kbd></span><span>your pockets</span>
-        <span><kbd>C</kbd></span><span>Old Tansy’s almanac</span>
-        <span><kbd>H</kbd></span><span>cycle your hats</span>
-        <span><kbd>O</kbd></span><span>visit a friend (or invite one)</span>
-        <span><kbd>M</kbd></span><span>sound on / off</span>
+        <span><kbd>WASD</kbd></span><span>걷기 — 빠르게 두 번(또는 Shift 유지) 달리기</span>
+        <span><kbd>drag</kbd></span><span>카메라 돌리기 · 스크롤/핀치로 확대</span>
+        <span><kbd>E</kbd></span><span>말 걸기 · 사용 · 줍기 (또는 안내 누르기)</span>
+        <span><kbd>P</kbd></span><span>지도</span>
+        <span><kbd>I</kbd></span><span>주머니</span>
+        <span><kbd>C</kbd></span><span>늙은 탠지의 도감</span>
+        <span><kbd>H</kbd></span><span>모자 바꿔 쓰기</span>
+        <span><kbd>O</kbd></span><span>친구 섬 방문 (또는 초대)</span>
+        <span><kbd>M</kbd></span><span>소리 켜기 / 끄기</span>
       </div>
-      <div class="foot">Esc to close</div>
+      <div class="foot">Esc로 닫기</div>
     `;
 
     panel.querySelector('.closex').onclick = hide;
@@ -95,7 +95,7 @@ export function initSettings() {
       state.name = v;
       save();
       ui.updateHUD();
-      ui.toast(`The islanders will call you <b>${ui.escapeHtml(v)}</b> now.`, '✨');
+      ui.toast(`이제 섬 사람들이 당신을 <b>${ui.escapeHtml(v)}</b>(이)라고 불러요.`, '✨');
     };
     panel.querySelector('#set-sound').onclick = () => {
       // M is the mute key; settings speaks fluent keyboard, like everything
@@ -106,7 +106,7 @@ export function initSettings() {
       state.tz = parseInt(e.target.value, 10) || 0;
       window.__notbellTz = state.tz;
       save();
-      ui.toast(state.tz === 0 ? 'The island trusts your clock again.' : `Island clock nudged ${state.tz > 0 ? '+' : ''}${state.tz}h.`, '🕰️');
+      ui.toast(state.tz === 0 ? '섬이 다시 당신의 시계를 따라요.' : `섬 시계를 ${state.tz > 0 ? '+' : ''}${state.tz}시간 조정했어요.`, '🕰️');
     };
   }
 
