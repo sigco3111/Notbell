@@ -48,8 +48,8 @@ function keyTap(code) {
   dispatchEvent(new KeyboardEvent('keyup', { code, key: code, bubbles: true }));
 }
 for (const [icon, code, name, badge] of [
-  ['🗺️', 'KeyP', 'map', 'P'], ['🎒', 'KeyI', 'pockets', 'I'], ['📖', 'KeyC', 'almanac', 'C'],
-  ['🎩', 'KeyH', 'hats', 'H'], ['⚙️', null, 'settings', null],
+  ['🗺️', 'KeyP', '지도', 'P'], ['🎒', 'KeyI', '주머니', 'I'], ['📖', 'KeyC', '도감', 'C'],
+  ['🎩', 'KeyH', '모자', 'H'], ['⚙️', null, '설정', null],
 ]) {
   const b = el('button', null, toolbar);
   b.className = 'tool';
@@ -214,7 +214,7 @@ export function input(text, { speaker = '', voice = 520, placeholder = '', max =
       field.value = value;
       const ok = el('button', null, dialog);
       ok.className = 'ok';
-      ok.textContent = 'OK';
+      ok.textContent = '확인';
       const clear = el('div', null, dialog);
       clear.style.clear = 'both';
       const done = () => {
@@ -317,7 +317,7 @@ export function prompt(text) {
   if (!text || busy) {
     promptChip.style.display = 'none';
   } else {
-    promptChip.innerHTML = `<b>${isTouch ? 'tap' : 'E'}</b>${escapeHtml(text)}`;
+    promptChip.innerHTML = `<b>${isTouch ? '터치' : 'E'}</b> ${escapeHtml(text)}`;
     promptChip.style.display = 'block';
   }
 }
@@ -365,9 +365,9 @@ export function togglePockets() {
 }
 
 const POCKET_GROUPS = [
-  ['🐟 Fish', ['fish']], ['🦋 Bugs', ['bug']], ['🦴 Fossils', ['fossil']], ['🦀 Tide pool', ['tidepool', 'pool']],
-  ['🐚 Shells, stars & meteors', ['shell', 'star', 'meteor']], ['🍊 Fruit & produce', ['fruit', 'produce']], ['🖼️ Art', ['art']],
-  ['🎩 Hats', ['hat']], ['🧰 Gear', ['gear', 'tool', 'seed']],
+  ['🐟 물고기', ['fish']], ['🦋 곤충', ['bug']], ['🦴 화석', ['fossil']], ['🦀 조수 웅덩이', ['tidepool', 'pool']],
+  ['🐚 조개·별·운석', ['shell', 'star', 'meteor']], ['🍊 과일·농작물', ['fruit', 'produce']], ['🖼️ 미술품', ['art']],
+  ['🎩 모자', ['hat']], ['🧰 도구', ['gear', 'tool', 'seed']],
 ];
 function renderPockets() {
   const owned = Object.entries(state.inv)
@@ -386,18 +386,18 @@ function renderPockets() {
     body += `<h4>${title}<span class="count">${list.reduce((a, o) => a + o.n, 0)}</span></h4><div class="tiles">${list.map(tile).join('')}</div>`;
   }
   const rest = owned.filter((o) => !used.has(o.id));
-  if (rest.length) body += `<h4>✨ Keepsakes<span class="count">${rest.reduce((a, o) => a + o.n, 0)}</span></h4><div class="tiles">${rest.map(tile).join('')}</div>`;
+  if (rest.length) body += `<h4>✨ 기념품<span class="count">${rest.reduce((a, o) => a + o.n, 0)}</span></h4><div class="tiles">${rest.map(tile).join('')}</div>`;
   const worth = owned.reduce((a, o) => a + (o.it.price > 0 && o.it.kind !== 'gear' ? o.it.price * o.n : 0), 0);
   const donated = state.donations.length;
-  const owner = state.name ? `${escapeHtml(state.name)}’s ` : '';
+  const owner = state.name ? `${escapeHtml(state.name)}의 ` : '';
   pockets.innerHTML =
-    `<button class="closex" aria-label="close">✕</button>` +
-    `<h3>🎒 ${owner}Pockets</h3>` +
-    (body || `<div class="sub">Empty. The island is full of things…</div>`) +
-    `<div class="total"><span>🔘 ${state.buttons} buttons</span>` +
-    (worth ? `<span class="dim">pockets worth ~${worth}🔘</span>` : '') + `</div>` +
-    (donated ? `<div class="sub" style="margin-top:6px">🏛️ ${donated} donated to the museum</div>` : '') +
-    `<div class="foot">${isTouch ? 'tap 🎒 to close' : 'I or Esc to close'}</div>`;
+    `<button class="closex" aria-label="닫기">✕</button>` +
+    `<h3>🎒 ${owner}주머니</h3>` +
+    (body || `<div class="sub">텅 비었어요. 섬에는 온갖 것이 가득한데…</div>`) +
+    `<div class="total"><span>🔘 버튼 ${state.buttons}개</span>` +
+    (worth ? `<span class="dim">주머니 가치 ~${worth}🔘</span>` : '') + `</div>` +
+    (donated ? `<div class="sub" style="margin-top:6px">🏛️ 박물관에 ${donated}점 기증함</div>` : '') +
+    `<div class="foot">${isTouch ? '🎒를 눌러 닫기' : 'I 또는 Esc로 닫기'}</div>`;
   pockets.querySelector('.closex').addEventListener('click', () => {
     pockets.style.display = 'none';
   });
@@ -423,5 +423,5 @@ export function fadeSwap(fn) {
 }
 
 document.addEventListener('notbell-mute', (e) => {
-  toast(e.detail ? 'Sound off.' : 'Sound on.', e.detail ? '🔇' : '🔔');
+  toast(e.detail ? '소리 꺼짐.' : '소리 켜짐.', e.detail ? '🔇' : '🔔');
 });
