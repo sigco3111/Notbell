@@ -12,30 +12,30 @@ import { ITEMS } from './catalog.js';
 
 // characters who belong to one place (the MouseBoat, the springs, the cave,
 // the duck nest) — they never wander off to other islands or take trains
-const ANCHORED = new Set(['Crumb', 'Mochi', 'Pondo', 'Sol', 'Brook', 'Ember', 'Admiral Greenbean', 'Puddle', 'Barb', 'Ruth', 'Penny']);
+const ANCHORED = new Set(['크럼', '모찌', '폰도', '솔', '브룩', '엠버', '그린빈 제독', '퍼들', '바브', '루스', '페니']);
 
 // what anyone says when you catch them mid-hobby (ambient.js pastimes)
 const FISHING_LINES = [
-  'Shh. They’re thinking about it.',
-  'I’m not trying to catch anything. I’m trying to be the kind of person who fishes.',
-  'Caught a boot earlier. Put it back. It looked like it had somewhere to be.',
-  'The trick is to want it a little less than the fish does.',
+  '쉿. 생각 중이야, 얘네가.',
+  '뭘 잡으려는 게 아냐. 낚시하는 사람이 되려는 거야.',
+  '아까 부츠 잡았어. 놔줬어. 갈 데가 있는 얼굴이더라고.',
+  '비결은 물고기보다 조금 덜 원하는 거야.',
 ];
 const NETTING_LINES = [
-  'Hold still. Not you. The beetle.',
-  'I’m not catching them, exactly. We’re getting to know each other through a net.',
-  'Missed! On purpose. I’m being gracious.',
+  '가만있어 봐. 너 말고. 딱정벌레.',
+  '잡는 건 아니야, 정확히는. 그물을 사이에 두고 서로 알아가는 중이야.',
+  '놓쳤다! 일부러. 관대하게 굴고 있어.',
 ];
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
 
 // birthdays — one date each, no ages; the archipelago counts occasions,
 // not years. (Howell's is the day after Bell Day. He says he heard it.)
 export const BIRTHDAYS = {
-  Clover: [5, 1], Biscuit: [11, 12], Saffron: [9, 22], Howell: [6, 22],
-  Bramble: [7, 19], Puddle: [4, 14], 'Admiral Greenbean': [2, 8],
-  Marigold: [8, 30], Ember: [1, 17], Tusk: [12, 1], Butterpat: [6, 3],
-  Crumb: [9, 9], Mochi: [1, 2], Pondo: [1, 3], Sol: [7, 7], Brook: [3, 20],
-  Barb: [10, 14], Ruth: [3, 1], Null: [1, 1], Mabel: [4, 1], Penny: [2, 14],
+  클로버: [5, 1], 비스킷: [11, 12], 새프런: [9, 22], 하웰: [6, 22],
+  브램블: [7, 19], 퍼들: [4, 14], '그린빈 제독': [2, 8],
+  매리골드: [8, 30], 엠버: [1, 17], 터스크: [12, 1], 버터팻: [6, 3],
+  크럼: [9, 9], 모찌: [1, 2], 폰도: [1, 3], 솔: [7, 7], 브룩: [3, 20],
+  바브: [10, 14], 루스: [3, 1], 널: [1, 1], 메이블: [4, 1], 페니: [2, 14],
 };
 
 export function birthdayToday(name, d = new Date()) {
@@ -50,7 +50,7 @@ export async function birthdayTalk(name, voice) {
   if (!birthdayToday(name)) return false;
   const year = new Date().getFullYear();
   if (S.hasFlag(`bgift_${name}_${year}`)) {
-    ui.say('Best birthday in recent memory. Recent memory is generous. Still.', { speaker: name, voice });
+    ui.say('최근 기억으로는 최고의 생일이야. 최근 기억은 관대하지. 그래도.', { speaker: name, voice });
     return true;
   }
   const pocket = Object.entries(S.state.inv)
@@ -58,227 +58,227 @@ export async function birthdayTalk(name, voice) {
     .slice(0, 5)
     .map(([iid]) => ({ label: `${ITEMS[iid].emoji} ${ITEMS[iid].name}`, value: iid }));
   const choice = await ui.ask(
-    'It’s my birthday, you know. The whole day. I’m being extremely calm about it.',
-    [...pocket, { label: '🎉 Just warm wishes', value: null }],
+    '내 생일이야, 알아? 하루 종일. 엄청 침착하게 지내고 있어.',
+    [...pocket, { label: '🎉 그냥 따뜻한 축하만', value: null }],
     { speaker: name, voice });
   if (choice) {
     S.removeItem(choice);
     S.setFlag(`bgift_${name}_${year}`);
     jingle();
     await ui.say(
-      `“For ME?” They hold the ${ITEMS[choice].name} like it might hatch. “This is the best one so far. Don’t tell the other years.”`,
+      `“나한테?” ${ITEMS[choice].name}을(를) 부화할 것처럼 소중히 들어요. “지금까지 중 최고야. 다른 해들한테는 비밀.”`,
       { speaker: name, voice });
-    ui.toast(`${name} will remember this.`, '🎂');
+    ui.toast(`${name}이(가) 이걸 기억할 거예요.`, '🎂');
   } else {
-    ui.say('Warm wishes received and archived. The calm continues.', { speaker: name, voice });
+    ui.say('따뜻한 축하 접수 및 보관 완료. 침착은 계속돼요.', { speaker: name, voice });
   }
   return true;
 }
 
 const IDENTITIES = [
   {
-    name: 'Clover', voice: 640, hat: 'flower_crown', // cream rabbit
+    name: '클로버', voice: 640, hat: 'flower_crown', // cream rabbit
     lines: [
-      'I counted my lucky clovers today. All of them! That’s how I know it’s a good day.',
-      'If you stand very still in the flowers, the butterflies think you’re furniture. It’s the best.',
-      'Biscuit says you can’t nap twice in one morning. I am LIVING PROOF that you can.',
-      'Luna’s coffee smells like a warm windowsill. I don’t drink it. I just go in and breathe.',
+      '오늘 행운의 클로버를 셌어. 전부! 그래서 좋은 날인 줄 아는 거야.',
+      '꽃 사이에 아주 가만히 서 있으면, 나비들이 널 가구로 생각해. 최고야.',
+      '비스킷은 한 아침에 두 번은 못 잔대. 내가 살아있는 증거야, 된다는.',
+      '루나 커피는 따뜻한 창틀 냄새야. 마시진 않아. 그냥 들어가서 숨 쉬어.',
     ],
   },
   {
-    name: 'Biscuit', voice: 560, hat: 'knit_cap', // brown rabbit
+    name: '비스킷', voice: 560, hat: 'knit_cap', // brown rabbit
     lines: [
-      'I buried something great once. Can’t remember where. So now EVERY day is a treasure hunt.',
-      'The trick to digging is to look like you meant to do whatever you just did.',
-      'Pip tried to buy my lucky button. My LUCKY one! The nerve. The absolute magpie of it all.',
-      'If you find a very old pebble, take it to Fern. She knew it when it was young.',
+      '한 번은 대단한 걸 묻었어. 어딘지 기억 안 나. 그래서 매일이 보물찾기야.',
+      '파기의 비결은 방금 한 게 뭐든 원래 그럴 작정이었던 것처럼 보이는 거야.',
+      '핍이 내 행운의 버튼을 사려 했어. 행운의 거! 뻔뻔함. 완전 까치 그 자체.',
+      '아주 오래된 조약돌 찾으면, 펀에게 가져가. 얘가 어렸을 때 알던 사이야.',
     ],
   },
   {
-    name: 'Saffron', voice: 520, hat: 'straw_hat', // orange fox
+    name: '새프런', voice: 520, hat: 'straw_hat', // orange fox
     lines: [
-      'I’ve smelled every flower on this island twice. Professional curiosity. I’m not a professional anything.',
-      'The tide pools gossip, you know. Splash splash splash. Scandalous stuff.',
-      'Don’t tell Howell I said this, but his howl is getting better. It’s almost a whole note now.',
-      'Sea Bass again? Hm. I’d rate it… B minus. Generous, I know.',
+      '이 섬의 모든 꽃을 두 번씩 맡아봤어. 직업적 호기심. 난 아무 직업도 없지만.',
+      '조수 웅덩이가 수다 떨어, 알아? 첨벙 첨벙 첨벙. 스캔들 같은 얘기들.',
+      '하웰한텐 비밀인데, 하울링이 늘고 있어. 이제 거의 온전한 음 하나야.',
+      '농어 또? 흠. 점수는… B 마이너스. 후한 거 알지.',
     ],
   },
   {
-    name: 'Howell', voice: 430, hat: null, // wolves don't wear hats. it's a whole thing. // gray fox. a WOLF. obviously a wolf.
+    name: '하웰', voice: 430, hat: null, // wolves don't wear hats. it's a whole thing. // gray fox. a WOLF. obviously a wolf.
     lines: [
-      'It’s HOWELL. As in HOWL. As in, the sound a WOLF makes. Which I am one of. A wolf.',
-      'Foxes wish they had this kind of presence. I wouldn’t know. Being a wolf.',
-      'AwooOOOoo… ahem. Practice. Wolves practice. It’s normal.',
-      'On foggy nights, I hear a bell ring under the sea. I’m not being mysterious — I have EXCELLENT ears. Wolf ears.',
+      '하웰이야. 하울링의 하울. 늑대가 내는 소리의 그 하울. 내가 그 늑대야. 늑대.',
+      '여우들은 이런 존재감을 꿈꾸지. 나야 모르지. 늑대라서.',
+      '아우우우우… 크흠. 연습이야. 늑대는 연습해. 정상이야.',
+      '안개 낀 밤엔 바다 밑에서 종 울리는 게 들려. 신비로운 척하는 게 아냐 — 귀가 아주 좋아서. 늑대 귀.',
     ],
   },
   {
-    name: 'Bramble', voice: 320, hat: 'leaf_hat', // bear
+    name: '브램블', voice: 320, hat: 'leaf_hat', // bear
     lines: [
-      'I sat by the cave entrance yesterday. Something in there hums. It’s a friendly hum. I checked.',
-      'A good day is a berry, a sit, and one (1) excellent cloud. Today had all three by breakfast.',
-      'Fern remembers when my grandmother was a cub. I don’t ask Fern how old she is. Manners.',
-      'You smell like buttons and ambition. The island will do that to you.',
+      '어제 동굴 입구에 앉아 있었어. 안에서 뭔가 웅웅거려. 다정한 웅웅거림이야. 확인했어.',
+      '좋은 하루는 베리 하나, 앉기 한 번, 그리고 멋진 구름 하나 (1개). 오늘은 아침까지 세 개 다 했어.',
+      '펀은 우리 할머니가 새끼였을 때를 기억해. 펀에게 나이는 안 물어. 예의야.',
+      '버튼과 야망 냄새가 나네. 섬이 사람을 그렇게 만들지.',
     ],
   },
   {
-    name: 'Puddle', voice: 700, hat: 'paper_boat', // white duck
+    name: '퍼들', voice: 700, hat: 'paper_boat', // white duck
     lines: [
-      'I swam ALL the way around the island today! …okay, halfway. …okay, it was a big puddle.',
-      'The Admiral says I lack discipline. I say I lack snacks. We are both correct.',
-      'If your boot gets away from you while fishing, don’t worry! I know that boot. It’s a free spirit.',
-      'Quack. Sorry — force of habit.',
+      '오늘 섬을 한 바퀴 다 돌았어! …좋아, 반 바퀴. …좋아, 큰 웅덩이였어.',
+      '제독은 내가 규율이 없대. 난 간식이 없대. 둘 다 맞아.',
+      '낚시하다 부츠가 도망가도 걱정 마! 그 부츠 알아. 자유로운 영혼이야.',
+      '꽥. 미안 — 버릇이라.',
     ],
   },
   {
-    name: 'Admiral Greenbean', voice: 380, hat: 'captains_cap', // the mallard
+    name: '그린빈 제독', voice: 380, hat: 'captains_cap', // the mallard
     lines: [
-      'At ease. The morning patrol found nothing to report, which is exactly how I like my reports.',
-      'A tidy beach is a happy beach. I run a tight shoreline, sailor.',
-      'Old Tansy once let me ring the lighthouse bell. Finest moment of my career. Don’t let Puddle tell it — she exaggerates.',
-      'The fog rolls in, the fog rolls out. Only one of us salutes it, and I’m fine with that.',
+      '차렷. 아침 순찰은 보고할 게 없었고, 그게 내가 좋아하는 보고 방식이오.',
+      '정돈된 해변이 행복한 해변이오. 해안선을 빈틈없이 운영하오, 선원.',
+      '늙은 탠지가 한 번은 등대 종을 울리게 해줬소. 내 경력 최고의 순간. 퍼들이 말하게 두지 마시오 — 과장하니까.',
+      '안개는 밀려오고, 밀려나가오. 우리 중 하나만 경례하고, 난 그게 좋소.',
     ],
   },
   {
-    name: 'Marigold', voice: 350, hat: 'straw_hat', // the Far Isle's horse
+    name: '매리골드', voice: 350, hat: 'straw_hat', // the Far Isle's horse
     lines: [
-      'I trot the bridge every morning before the train wakes up. We have an understanding.',
-      'Brother Alder says my hooves on the planks sound like applause. I take this very seriously.',
-      'The garden here grows quieter flowers. You have to lean in to hear them showing off.',
-      'Have you tried just… running? Not to anywhere. Just running. Strongest possible recommend.',
+      '기차가 깨기 전 매일 아침 다리를 뛰어. 우리 사이엔 합의가 있어.',
+      '알더 수사는 판자 위 내 말발굽 소리가 박수 같대. 아주 진지하게 받아들이고 있어.',
+      '여기 정원은 더 조용한 꽃들이 자라. 자랑하는 걸 들으려면 기울여 들어야 해.',
+      '그냥… 달려본 적 있어? 어디로든 아니고. 그냥 달리기. 최고 수준의 추천.',
     ],
   },
   {
-    name: 'Ember', voice: 590, hat: null, // salamander, cave enthusiast
+    name: '엠버', voice: 590, hat: null, // salamander, cave enthusiast
     lines: [
-      'The cave hums in B-flat. I checked. Sometimes I hum back. We harmonize.',
-      'Warm rock, cool dark, little stars on the ceiling. I have everything, basically.',
-      'The Old Light doesn’t mind visitors. It told me so. Not in words. In warm.',
-      'Rain! I LOVE rain. Everyone else hides indoors and I get both whole islands to myself.',
+      '동굴은 B플랫으로 웅웅거려. 확인했어. 가끔 화답해. 우리는 화음을 맞춰.',
+      '따뜻한 바위, 시원한 어둠, 천장의 작은 별들. 기본적으로 다 가졌어.',
+      '옛 빛은 방문객을 꺼리지 않아. 내게 말해줬어. 말로가 아니라. 따뜻함으로.',
+      '비! 비 사랑해. 다들 실내에 숨으면 두 섬이 통째로 내 거야.',
     ],
   },
   {
-    name: 'Tusk', voice: 240, hat: null, // the wild boar. wild-ish. wild-adjacent.
+    name: '터스크', voice: 240, hat: null, // the wild boar. wild-ish. wild-adjacent.
     lines: [
-      '*snrrrf*',
-      'Hrmf. (He nudges a mushroom toward you, then thinks better of it and eats it.)',
-      '*contented rooting noises*',
-      '(He looks at you for a long moment. You appear to have passed some kind of inspection.)',
+      '*스르르르프*',
+      '흠프. (그가 버섯을 당신 쪽으로 밀었다가, 마음을 바꿔 먹어요.)',
+      '*만족스러운 땅 파는 소리*',
+      '(그가 당신을 한참 봐요. 무슨 검열을 통과한 것 같아요.)',
     ],
   },
   {
-    name: 'Butterpat', voice: 300, hat: 'straw_hat', // the north isle's cow
+    name: '버터팻', voice: 300, hat: 'straw_hat', // the north isle's cow
     lines: [
-      'The grass here is mossy and the moss here is grassy. I have studied this for years. Delicious field, my field of study.',
-      'I tried the button mushroom stew. I wept. The cart knows what it did.',
-      'Vesper reads to me on quiet evenings. I don’t always follow the plot. The company is the plot.',
-      'Moo, by the way. I like to get that out of the way professionally.',
+      '여기 풀은 이끼 같고, 이끼는 풀 같아. 수년간 연구했어. 맛있는 분야, 내 연구 분야.',
+      '버튼 버섯 스튜를 먹어봤어. 울었어. 카트는 자기가 한 짓을 알아.',
+      '조용한 저녁엔 베스퍼가 읽어줘. 줄거리를 다 따라가진 못해. 동반이 줄거리야.',
+      '음매, 그건 그렇고. 프로답게 그건 미리 해두는 편이야.',
     ],
   },
   {
-    name: 'Crumb', voice: 760, hat: 'paper_boat', // mouse, master of the MouseBoat
+    name: '크럼', voice: 760, hat: 'paper_boat', // mouse, master of the MouseBoat
     lines: [
-      'Welcome aboard! Well — welcome NEAR. Aboard is mostly cheese storage.',
-      'I’ve docked at every shore in the archipelago. Ranked them by crumbs. Yours is third. Don’t take it hard.',
-      'A houseboat means never choosing between the sea and a nap. I refuse to choose. I’m a sailor of naps.',
-      'The Persistent and the MouseBoat are technically rival vessels. Brine sends over soup anyway. Fierce rivalry. Delicious.',
+      '승선 환영! 뭐 — 근처 환영. 선내는 대부분 치즈 창고야.',
+      '군도의 모든 해안에 정박해봤어. 부스러기로 순위 매겼지. 네 건 3위. 상처받지 마.',
+      '하우스보트는 바다와 낮잠 사이에서 안 골라도 된다는 뜻이야. 선택 거부. 난 낮잠의 선원이야.',
+      '퍼시스턴트 호와 마우스보트 호는 엄밀히 라이벌 선박이야. 브라인은 그래도 수프를 보내줘. 치열한 라이벌. 맛있어.',
     ],
   },
   {
-    name: 'Mochi', voice: 250, hat: 'orange_hat', // capybara; the orange arose
+    name: '모찌', voice: 250, hat: 'orange_hat', // capybara; the orange arose
     lines: [
-      'Mm. Hello. (This takes a while to say, done properly.)',
-      'The orange? It arrived. It stayed. We don’t interrogate good things.',
-      'I have soaked in every spring on this island and ranked them. They are all first.',
-      'You seem hurried. Sit a moment. The hurry will keep. It always keeps.',
+      '음. 안녕. (제대로 하면 이걸 말하는 데 시간이 좀 걸려요.)',
+      '귤? 왔어. 머물렀어. 우린 좋은 걸 심문하지 않아.',
+      '이 섬의 모든 온천에 몸을 담가보고 순위를 매겼어. 전부 1등이야.',
+      '서두르는 것 같네. 잠깐 앉아. 서두름은 남아 있어. 항상 남아 있어.',
     ],
   },
   {
-    name: 'Pondo', voice: 230, hat: null, // the other capybara
+    name: '폰도', voice: 230, hat: null, // the other capybara
     lines: [
-      'Mochi does the talking. I do the agreeing. Mm.',
-      'Sol let me lean on him through an entire rainstorm once. A mountain of a friend.',
-      'The geysers go off and everyone jumps. Not us. We knew. The water tells you first.',
-      '…Sorry, I drifted off. Were we talking? Were we both here? Good. Good.',
+      '말은 모찌가 해. 동의는 내가 해. 음.',
+      '솔이 한 번은 소나기 내내 기대게 해줬어. 산 같은 친구야.',
+      '간헐천이 터지면 다들 깜짝 놀라. 우린 아니야. 알고 있었거든. 물이 먼저 알려줘.',
+      '…미안, 멍해졌어. 얘기 중이었나? 둘 다 여기 있었나? 좋아. 좋아.',
     ],
   },
   {
-    name: 'Sol', voice: 180, hat: null, // crocodile, professionally patient
+    name: '솔', voice: 180, hat: null, // crocodile, professionally patient
     lines: [
-      'Sssalutations. Don’t mind the teeth. They came with the face.',
-      'The bird? That’s Pick. She handles dental. I handle being warm and enormous.',
-      'People expect menace. I subcontract all my menace to the geysers.',
-      'The capybaras lean on me when it rains. It is the entire reason I have a back.',
+      '안녕하시오오오. 이빨은 신경 쓰지 마시오. 얼굴에 딸려 왔소.',
+      '새? 얘는 픽이오. 치과 담당. 난 따뜻하고 거대한 것 담당.',
+      '사람들은 위협을 기대하오. 난 위협을 전부 간헐천에 하청 주오.',
+      '비 오면 카피바라들이 나에게 기대오. 내게 등이 있는 전부의 이유요.',
     ],
   },
   {
-    name: 'Brook', voice: 200, hat: null, // the other crocodile
+    name: '브룩', voice: 200, hat: null, // the other crocodile
     lines: [
-      'Sol talks. I smile. Between us, a complete crocodile.',
-      'My bird is called Pip — no relation to the magpie. There was a lawsuit. There was not. There could be.',
-      'I once held perfectly still for a week. Personal best. The moss got ideas.',
-      'Swim with us sometime. We mostly float and think about lunch we already had.',
+      '솔이 말해. 난 미소 지어. 둘이 합쳐 완전한 악어야.',
+      '내 새는 핍이라고 해 — 까치랑 무관. 소송이 있었어. 없었어. 있을 수도 있어.',
+      '한 번은 일주일을 완벽하게 가만히 있었어. 개인 최고. 이끼가 야심을 품더라고.',
+      '언제가 우리랑 수영해. 대부분 둥둥 떠서 이미 먹은 점심 생각해.',
     ],
   },
   // ----- the Isle of Cran (index order matches animals.js ROSTER)
   {
-    name: 'Barb', voice: 170, hat: null, // snapping turtle. the moss on her shell is the hat.
+    name: '바브', voice: 170, hat: null, // snapping turtle. the moss on her shell is the hat.
     lines: [
-      'Hrm. You’re standing on my good rock. … No. Stay. It’s a good rock. Somebody should enjoy it.',
-      'I snap. It’s in the name. I don’t snap at friends. I snap at weather. I snap at the IDEA of Tuesdays.',
-      'Ruth and I have sat by this creek forty years. Said maybe a hundred words. Ninety of them were “look.”',
-      'Cranberries float. Little pockets of nothing inside. Everything that floats has a little nothing in it. Remember that, next time you’re sinking.',
-      'The creek goes to the sea. Everything goes to the sea. I’m in no hurry. The sea keeps.',
-      'Don’t tell anyone. I go to zumba. Back row. I don’t do the arms.',
-      'Got a tattoo once. On the shell. “RUTH,” in a heart. She says it’s silly. She stops by to look at it every day.',
-      'The cat’s always on her laptop. The goose is always on something she shouldn’t be. I’m on this rock. We all have our places.',
+      '흠. 내 좋은 바위에 서 있네. … 아냐. 있어 봐. 좋은 바위야. 누군가는 즐겨야지.',
+      '나는 물어. 이름에 있어. 친구는 안 물어. 날씨를 물어. 화요일이라는 개념을 물어.',
+      '루스랑 나는 이 개울 곁에 40년을 앉았어. 백 마디쯤 했나. 그중 아흔은 “봐.”',
+      '크랜베리는 떠. 안에 작은 무(無) 주머니가 있거든. 뜨는 건 다 작은 무를 품고 있어. 다음에 가라앉을 때 기억해.',
+      '개울은 바다로 가. 모든 게 바다로 가. 난 서두르지 않아. 바다는 남아 있어.',
+      '아무한테도 말하지 마. 나 줌바 다녀. 뒷줄. 팔 동작은 안 해.',
+      '타투 한 번 했어. 등딱지에. “RUTH,” 하트 안에. 본인은 유치하대. 매일 보러 와.',
+      '고양이는 항상 노트북 위. 거위는 항상 안 될 것 위. 난 이 바위 위. 다들 제자리가 있어.',
     ],
   },
   {
-    name: 'Ruth', voice: 300, hat: 'knit_cap', // box turtle. knits. for the creek, mostly.
+    name: '루스', voice: 300, hat: 'knit_cap', // box turtle. knits. for the creek, mostly.
     lines: [
-      'Oh, hello, dear. Sit, sit. Barb won’t mind. Barb minds everything, which means she doesn’t mind anything in particular.',
-      'I’m knitting a scarf for the creek. For winter. It’ll be very long. The creek is very long.',
-      'Watercolor on Thursdays. I paint the bog. Every week it comes out a pink smudge. In autumn, the bog IS a pink smudge. I’m very accurate.',
-      'Barb had my name tattooed on her shell. I pretend it’s silly. I visit it every day.',
-      'Moss grows about an inch a year. I’ve watched a whole yard of it grow. It was lovely the entire way.',
-      'I go to the chocolate group at the community center. To support them. I bring brownies. They’ve asked me to stop. I’m supporting that, too.',
+      '오, 안녕, 얘야. 앉아, 앉아. 바브는 괜찮아. 바브는 모든 걸 신경 쓰거든, 그 말은 특별히 뭘 신경 쓰진 않는다는 거야.',
+      '개울한테 목도리를 뜨고 있어. 겨울용. 아주 길 거야. 개울이 아주 기니까.',
+      '목요일엔 수채화. 늪을 그려. 매주 분홍 얼룩이 나와. 가을엔 늪이 분홍 얼룩 그 자체야. 난 아주 정확해.',
+      '바브가 등딱지에 내 이름을 새겼어. 유치한 척해. 매일 보러 가.',
+      '이끼는 1년에 1인치쯤 자라. 1야드가 자라는 걸 전부 지켜봤어. 내내 사랑스러웠어.',
+      '커뮤니티 센터 초콜릿 모임에 다녀. 지지하러. 브라우니를 가져가. 그만두래. 그것도 지지하고 있어.',
     ],
   },
   {
-    name: 'Null', voice: 560, hat: 'headphones', // black cat. hacker. "like the value, not like nothing."
+    name: '널', voice: 560, hat: 'headphones', // black cat. hacker. "like the value, not like nothing."
     lines: [
-      'I’m in. … Sorry. I say that when I walk into places. It’s a habit.',
-      'I hacked the Labs once. Their password was “bell.” I changed it to “notbell.” That was two years ago. Nobody’s noticed.',
-      'The whole island runs on one router. The router lives in a hollow log. The log is mossy. The signal is excellent.',
-      'Black cat, crossing your path. That’s seven years of good uptime. People get the superstition backwards.',
-      'I wrote a program to count the cranberries. It crashed. There are more cranberries than numbers. I’m looking into it.',
-      'The goose keeps stealing my USB sticks. I stopped fighting it. Everything’s backed up. In the goose.',
-      '“Hacker” is a strong word. I’m more of a person who knows where the settings are.',
-      'Null. Like the value. Not like nothing. There’s a difference, and I’m it.',
+      '들어왔다. … 미안. 어딘가에 들어갈 때마다 그 말을 해. 버릇이야.',
+      '연구소를 한 번 해킹했어. 비밀번호가 “bell”이었어. “notbell”로 바꿔놨지. 그게 2년 전. 아무도 몰라.',
+      '섬 전체가 라우터 하나로 돌아가. 라우터는 속 빈 통나무에 살아. 통나무는 이끼투성이. 신호는 최고.',
+      '검은 고양이, 네 길을 가로질러. 7년의 좋은 업타임이야. 사람들이 미신을 거꾸로 알아.',
+      '크랜베리 세는 프로그램을 짰어. 크래시 났어. 크랜베리가 숫자보다 많아. 알아보는 중.',
+      '거위가 자꾸 내 USB를 훔쳐. 싸우는 건 그만뒀어. 모든 건 백업돼 있어. 거위 안에.',
+      '“해커”는 센 단어야. 난 그냥 설정이 어디 있는지 아는 사람 정도야.',
+      '널. 값 null처럼. 무(無)는 아니야. 차이가 있어, 그리고 내가 그 차이야.',
     ],
   },
   {
-    name: 'Mabel', voice: 470, hat: 'party_cone', // goose. the hat was on a birthday. the birthday wasn't using it.
+    name: '메이블', voice: 470, hat: 'party_cone', // goose. the hat was on a birthday. the birthday wasn't using it.
     lines: [
-      'HONK. … That’s hello. It’s also a warning. Mostly hello.',
-      'I don’t steal. I RELOCATE. Things end up where they’re supposed to be, which is near me.',
-      'This hat? It was on a birthday. The birthday wasn’t using it. HONK.',
-      'Barb snapped at me once. I honked at her. Best enemies ever since. She saves me the good rock when it rains.',
-      'I found a key today. Don’t know what it opens. That’s the fun part. That’s ALWAYS the fun part.',
-      'The cat thinks I don’t know she backs things up into me. I know. I’m a very secure goose.',
-      'Zumba is just running around honking, with rules. I’m very good at it. I’m banned from the front row.',
+      '꽥. … 그건 인사야. 경고이기도 해. 대부분 인사.',
+      '난 훔치지 않아. 재배치해. 물건은 있어야 할 곳에 놓이게 돼 있어, 그게 내 근처야.',
+      '이 모자? 생일에 있던 거야. 생일이 안 쓰고 있었어. 꽥.',
+      '바브가 한 번 나를 물었어. 난 울었지. 그 이후 최고의 적. 비 오면 좋은 바위를 비워줘.',
+      '오늘 열쇠를 주웠어. 뭘 여는지 몰라. 그게 재밌는 부분이야. 그게 항상 재밌는 부분이야.',
+      '고양이는 내가 모른다고 생각해, 자기 백업을 나한테 한다는 걸. 나 알아. 난 아주 안전한 거위야.',
+      '줌바는 그냥 규칙이 있는 울며 돌아다니기야. 아주 잘해. 맨 앞줄 출입 금지야.',
     ],
   },
   {
-    name: 'Penny', voice: 600, hat: 'mail_cap', // pigeon. the mail carrier. walks every bridge twice a day.
+    name: '페니', voice: 600, hat: 'mail_cap', // pigeon. the mail carrier. walks every bridge twice a day.
     lines: [
-      'Mail! … Not for you. Not yet. Soon, maybe. I’ll know before you do.',
-      'Neither rain nor snow nor a very persuasive goose shall stay me from my rounds. The goose has tried.',
-      'I walk every bridge in the archipelago. Twice a day, some days. My feet have opinions. The opinions are also mail.',
-      'Moss sorts, I carry. He’s thorough, I’m quick. Between us: a whole postal service.',
-      'I don’t read the letters. I can tell what’s in them by how they sit in the bag, though. The happy ones sit up straight.',
-      'Pigeons have been carrying messages for longer than there have been messages. We just call it walking now. I prefer walking. The view’s lower.',
+      '우편! … 네 건 아냐. 아직은. 곧, 어쩌면. 나는 너보다 먼저 알아.',
+      '비도 눈도 아주 설득력 있는 거위도 내 배달을 막지 못해. 거위는 노력해봤어.',
+      '군도의 모든 다리를 걸어. 어떤 날은 하루 두 번. 내 발은 의견이 있어. 그 의견들도 우편이야.',
+      '모스가 분류하고, 내가 배달해. 걘 철저하고, 난 빨라. 우리 둘이 완전한 우체국이야.',
+      '편지는 안 읽어. 근데 가방 안에서 앉아 있는 자세로 내용을 알 수 있어. 기쁜 편지는 허리를 펴.',
+      '비둘기는 메시지가 생기기 전부터 메시지를 운반했어. 요즘은 그냥 걷기라고 불러. 걷기가 좋아. 풍경이 낮으니까.',
     ],
   },
 ];
