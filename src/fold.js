@@ -450,7 +450,7 @@ export function createFold() {
         { label: '🐟 Ask about the Cod', value: 'cod' },
         { label: '🔭 Ask about the neighbors', value: 'nb' },
         { label: '🌾 Ask about the Fold', value: 'fold' },
-        { label: 'Go gently', value: null },
+        { label: '조심히 가기', value: null },
       ]);
       if (!choice) {
         ui.say('조심히 가시오, 벗이여. 날씨를 챙겨 가시오.', { speaker: '아모스 장로', voice: VOICE.amos });
@@ -596,7 +596,7 @@ export function createFold() {
       jars(B.x + 1.0, 0.82, B.z + 0.6, 5, [0x9ac46a, 0xe8743a, 0xc4413a]);
       shelf(B.x - 0.6, 1.5, B.z - D / 2 + 0.3, 2.4); jars(B.x - 1.6, 1.53, B.z - D / 2 + 0.3, 9, [0x9ac46a, 0xe8743a, 0xc4413a, 0xd9b45a]);
       rug(B.x, B.z + 1.8, 2.2, 1.2, 0x8a6a8a);
-      th.push({ at: [1.6, 1.0], r: 1.6, label: 'look at the canning table', use: () => ui.say('구스베리, 당근, 그리고 “응”이라고만 적힌 초록색 무언가. 병마다 종이 모자를 쓰고 있고, 모자마다 똑같이 정성스런 리본이 묶여 있어요.') });
+      th.push({ at: [1.6, 1.0], r: 1.6, label: '저장 작업대 보기', use: () => ui.say('구스베리, 당근, 그리고 “응”이라고만 적힌 초록색 무언가. 병마다 종이 모자를 쓰고 있고, 모자마다 똑같이 정성스런 리본이 묶여 있어요.') });
     } },
     patience: { name: '🧵 Patience’s House', W: 7, D: 6, wall: 0xe6e0d0, dress: (B, W, D, bl, th) => {
       bed(B.x + 2.4, B.z - 1.6, 0x6a8a9a); bl.push({ x: B.x + 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
@@ -615,7 +615,7 @@ export function createFold() {
       bl.push({ x: B.x - 1.2, z: B.z + 0.8, w: 2.3, d: 1.7 });
       chair(B.x - 1.2, B.z + 1.9, Math.PI);
       rug(B.x + 1.2, B.z + 1.2, 1.6, 1.6, 0x9a7a4a);
-      th.push({ at: [-1.2, 1.7], r: 1.6, label: 'look at the quilt', use: () => ui.say('반쯤 완성된 퀼트, 조각들이 줄줄이 핀으로 고정돼 있어요. 한 조각이 조금 삐뚤어요. 일부러 삐뚤게 두었지요: “완벽한 건 주님의 일뿐, 주님은 이걸 하고 계시지 않으니까.”') });
+      th.push({ at: [-1.2, 1.7], r: 1.6, label: '퀼트 보기', use: () => ui.say('반쯤 완성된 퀼트, 조각들이 줄줄이 핀으로 고정돼 있어요. 한 조각이 조금 삐뚤어요. 일부러 삐뚤게 두었지요: “완벽한 건 주님의 일뿐, 주님은 이걸 하고 계시지 않으니까.”') });
     } },
     obed: { name: '🌾 Obed’s House', W: 7, D: 6, dress: (B, W, D, bl, th) => {
       bed(B.x - 2.4, B.z - 1.6, 0x7a8a5a); bl.push({ x: B.x - 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
@@ -630,7 +630,7 @@ export function createFold() {
       bl.push({ x: B.x + 2.6, z: B.z + 1.1, w: 0.8, d: 2.2 });
       const fork = box(0.06, 1.8, 0.06, 0x8a5a3a); fork.position.set(B.x - W / 2 + 0.3, 0.9, B.z + 1.8); fork.rotation.z = 0.15; group.add(fork);
       for (const sx of [-0.15, 0.15]) { const boot = box(0.18, 0.35, 0.35, 0x3a2e24); boot.position.set(B.x - 1.4 + sx, 0.17, B.z + D / 2 - 0.5); group.add(boot); }
-      th.push({ at: [2.6, 1.1], r: 1.4, label: 'read the seed sacks', use: () => ui.say('콩. 귀리. 콩 더. 마지막 자루만 다른 필체로 적혀 있어요: “이건 심지 마, 오베드. 저녁 반찬이야.”') });
+      th.push({ at: [2.6, 1.1], r: 1.4, label: '씨앗 자루 읽기', use: () => ui.say('콩. 귀리. 콩 더. 마지막 자루만 다른 필체로 적혀 있어요: “이건 심지 마, 오베드. 저녁 반찬이야.”') });
     } },
     amos: { name: '🐟 Elder Amos’s Hut', W: 5, D: 5, dress: (B, W, D, bl, th) => {
       bed(B.x - 1.3, B.z - 1.2, 0x8a8378); bl.push({ x: B.x - 1.3, z: B.z - 1.2, w: 1.3, d: 2.2 });
@@ -642,7 +642,7 @@ export function createFold() {
       }
       const cod = makeCod(0.35, 0xc9b99a); cod.position.set(B.x + 1.6, 1.0, B.z - 0.7); group.add(cod);
       rug(B.x, B.z + 0.9, 1.6, 1.2, 0x6a5a48);
-      th.push({ at: [1.2, 0.0], r: 1.4, label: 'read the sermon pages', use: () => ui.say('“형제들이여: 대구는 내일을 걱정하지 않고, 내일 역시 공평하게도 대구를 걱정한 적이 없노라.” 아래에 여러 번 지운 흔적: “대구에 대해 더.”') });
+      th.push({ at: [1.2, 0.0], r: 1.4, label: '설교 원고 읽기', use: () => ui.say('“형제들이여: 대구는 내일을 걱정하지 않고, 내일 역시 공평하게도 대구를 걱정한 적이 없노라.” 아래에 여러 번 지운 흔적: “대구에 대해 더.”') });
     } },
   };
 
@@ -974,8 +974,8 @@ export function createFold() {
         tool.position.set(B.x - W / 2 + 0.25, 1.4, B.z - 0.5 + i * 0.5); tool.rotation.x = 0.1;
         group.add(tool);
       }
-      th.push({ at: [3.4, 0.6], r: 2.2, label: 'say hello to the calf', use: () => ui.say('(송아지가 크고 느긋한 눈으로 당신을 바라보다가 다시 건초를 바라봐요. 평가가 끝났어요. 아마 합격이에요.)') });
-      th.push({ at: [1.5, -1.3], r: 1.4, label: 'look up at the loft', use: () => ui.say('건초가 서까래까지 쌓여 있어요. 저 위에서 작은 무언가가 공손하게 재채기를 해요. 아마 쥐예요. 아마 크럼은 아니에요. 아마요.') });
+      th.push({ at: [3.4, 0.6], r: 2.2, label: '송아지에게 인사하기', use: () => ui.say('(송아지가 크고 느긋한 눈으로 당신을 바라보다가 다시 건초를 바라봐요. 평가가 끝났어요. 아마 합격이에요.)') });
+      th.push({ at: [1.5, -1.3], r: 1.4, label: '다락 올려다보기', use: () => ui.say('건초가 서까래까지 쌓여 있어요. 저 위에서 작은 무언가가 공손하게 재채기를 해요. 아마 쥐예요. 아마 크럼은 아니에요. 아마요.') });
     });
     register({
       pos: new THREE.Vector3(barnDoor.x, 0, barnDoor.z), r: 2.0,
@@ -1403,4 +1403,4 @@ export function createFold() {
   }
 
   return { group, update };
-                         }
+}
