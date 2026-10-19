@@ -87,8 +87,8 @@ const RAIL_LINE = defineLine({
   points: [RAIL_A, RAIL_B],
   sides: [awaySide, awaySide],
   stops: [
-    { name: 'Notbell', toward: { x: 0, z: 0 } },
-    { name: 'the Far Isle', toward: { x: ISLAND2.x, z: ISLAND2.z } },
+    { name: '낫벨', toward: { x: 0, z: 0 } },
+    { name: '파 아일', toward: { x: ISLAND2.x, z: ISLAND2.z } },
   ],
 });
 
@@ -157,11 +157,11 @@ export function createBridge(player, animals = []) {
     colors: { loco: 0xb0453a, cab: 0x8a3a30, cars: [0xd9a440, 0x4f8f6a], roof: 0xc97b63 },
     dwell: 20, whistle: [620, 830],
     text: {
-      board: 'All aboard. The strait from a window seat — there’s nothing better.',
-      wait: 'The platform hums faintly. It won’t be long.',
-      queued: 'The rails tick warmly, the way rails do when they know something’s coming.',
-      kept: 'The train remembers you were waiting. All aboard.',
-      arrive: ['Home again. The train says nothing, fondly.', 'The Far Isle! The train seems quietly proud.'],
+      board: '모두 탑승하세요. 창가 자리에서 보는 해협 — 이보다 좋을 수 없어요.',
+      wait: '승강장이 희미하게 웅웅거려요. 금방 올 거예요.',
+      queued: '레일이 포근하게 달각거려요. 뭔가 오고 있는 걸 아는 레일들의 방식대로요.',
+      kept: '기차는 당신이 기다린 걸 기억해요. 모두 탑승하세요.',
+      arrive: ['다시 집. 기차는 아무 말 없이, 다정하게요.', '파 아일! 기차가 조용히 뿌듯해 보여요.'],
     },
   });
   group.add(rail.group);
