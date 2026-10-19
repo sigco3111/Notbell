@@ -107,7 +107,7 @@ export function createTidePools() {
       pos: new THREE.Vector3(px, 0, pz),
       r: 2.4,
       enabled: () => p.cooldown <= 0,
-      label: 'rummage in the tide pool',
+      label: '바닷가 웅덩이 뒤지기',
       use: async () => {
         p.cooldown = rand(90, 180);
         plop();
