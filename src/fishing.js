@@ -422,7 +422,7 @@ export function createFishing(player) {
         if (hooked) scareShadow(hooked);
         reset();
         sadTrombone();
-        ui.toast('It slipped away… you can almost hear tiny laughter.', '💧');
+        ui.toast('놓쳤어요… 아주 작은 웃음소리가 들리는 것 같아요.', '💧');
       }
     }
   }
