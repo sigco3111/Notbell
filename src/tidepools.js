@@ -114,8 +114,8 @@ export function createTidePools() {
         if (!S.hasFlag('firstTidePool')) {
           S.setFlag('firstTidePool');
           await ui.say([
-            'You roll up your sleeves. You do not have sleeves. You proceed anyway.',
-            'Under a pebble, between two very judgmental snails…',
+            '소매를 걷어요. 소매가 없어요. 그래도 진행해요.',
+            '조약돌 아래, 아주 판단력 강한 달팽이 두 마리 사이에서…',
           ]);
         }
         const id = rollTable(POOL_TABLE);
