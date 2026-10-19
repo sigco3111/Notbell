@@ -7,7 +7,7 @@
 // State lives in S.state.mail ({ out, inbox, pending }); letters are plain
 // text, and only ever reach the page through ui.say (textContent).
 //
-// The carrier: Penny, a pigeon, a real villager (animals.js / villagers.js).
+// The carrier: 페니, a pigeon, a real villager (animals.js / villagers.js).
 // She picks your letters up at the Post once Moss has sorted them, walks
 // each one to its neighbor's mailbox (over the bridges, on the trains — the
 // villagers' own route-finding), and the flag goes up. When they've written
@@ -120,7 +120,7 @@ function dropReplies(now) {
       m.inbox.push({ from: r.first.from, pages: r.first.pages, at: now, read: false });
       trimInbox();
       jingle();
-      ui.toast(`Penny left a letter from <b>${ui.escapeHtml(r.first.from)}</b> in your mailbox.`, '📬');
+      ui.toast(`페니 left a letter from <b>${ui.escapeHtml(r.first.from)}</b> in your mailbox.`, '📬');
     }
   }
 }
@@ -138,7 +138,7 @@ function firstLetter(name) {
 }
 
 // Penny's day: one job at a time, planned fresh whenever she's free
-let asleep = false; // after her rounds, Penny sleeps at the Post
+let asleep = false; // after her rounds, 페니 sleeps at the Post
 function planCarrier(now) {
   const a = carrier, m = box();
   if (!a) return;
@@ -213,7 +213,7 @@ export function poll(dt) {
     if (changed) S.save();
     return;
   }
-  // a neighbor writes first, now and then (into their own box, for Penny)
+  // a neighbor writes first, now and then (into their own box, for 페니)
   if (now > nextFirst) {
     nextFirst = now + FIRST_MIN_MS + Math.random() * (FIRST_MAX_MS - FIRST_MIN_MS);
     const names = VILLAGER_NAMES.filter((n) => n !== 'Penny' && !m.pending.some((p) => p.from === n));
