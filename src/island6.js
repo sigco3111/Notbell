@@ -181,8 +181,8 @@ export function createIsland6(player) {
     key: 'labs',
     name: '낫벨 연구소', x: -121, z: -58, r: 42, icon: '🚀',
     blurb: '서쪽 끝 연구 섬. 프런티어 화학, 방 하나만 한 컴퓨터 한 대, 로켓 부서, 그리고 로버 유치원(창문: 손을 흔들어 주세요). 지도는 섬보다 먼저 끝나요. 연구소는 이게 아주 웃기다고 생각해요.',
-    folk: 'Director Strix · Ada, software · Dr. Hazel · Pots · Miss Pinion · the rovers · the Boring Department',
-    mystery: '“Far west, past the moss isle, somebody is doing SCIENCE at the sky. On still nights you can hear it hum. I hear it FIRST.” —Howell, who is, once again, right',
+    folk: '스트릭스 소장 · 에이다(소프트웨어) · 헤이즐 박사 · 팟츠 · 피니언 선생님 · 로버들 · 보어링 부',
+    mystery: '“먼 서쪽, 이끼 섬을 지나면, 누군가 하늘을 상대로 과학을 하고 있어. 고요한 밤이면 그 웅웅거림이 들려. 나는 제일 먼저 듣지.” —하웰, 이번에도 맞음',
   });
 
   // ===================================================== the facility ----
@@ -704,7 +704,7 @@ export function createIsland6(player) {
     group.add(boardS);
     const face = letteredPlane(3.7, 1.1, [
       ['낫벨 연구소', 0.42, 0.42, 900],
-      ['research in progress · mind the rovers', 0.8, 0.16, 700],
+      ['연구 진행 중 · 로버 조심', 0.8, 0.16, 700],
     ], '#f0e8d8', '#3a4a5c');
     face.position.set(sx, sy + 1.7, sz + 0.075);
     group.add(face);
@@ -1083,9 +1083,9 @@ export function createIsland6(player) {
       tone(880, { dur: 0.07, vol: 0.04 });
       tone(1180, { time: 0.09, dur: 0.07, vol: 0.04 });
       ui.say(pick([
-        '(Scout draws a slow, careful circle around you, beeping contentedly, then returns to work. The circle was a hug.)',
-        '(Scout shows you a pebble it has been pushing around the pad all morning. It is, Scout indicates, a GREAT pebble.)',
-        '(Scout points its eye at the rocket, then at you, then at the rocket. Beep. You understand each other completely.)',
+        '(스카우트가 당신 주위를 느리고 조심스럽게 한 바퀴 돌고는, 만족스럽게 삐삐거리며 일하러 돌아가요. 그 한 바퀴는 포옹이었어요.)',
+        '(스카우트가 아침 내내 패드 주변에서 굴리고 있던 조약돌을 보여 줘요. 스카우트 말로는, 아주 대단한 조약돌이래요.)',
+        '(스카우트가 눈을 로켓에, 당신에게, 다시 로켓에 향해요. 삐. 서로 완벽하게 이해했어요.)',
       ]));
     },
   });
@@ -1161,7 +1161,7 @@ export function createIsland6(player) {
     register({
       pos: new THREE.Vector3(B.x, 0, B.z - 1), r: 3, zone: 'labs',
       label: '현수막 읽기',
-      use: () => ui.say('“DAYS SINCE LAST UNSCHEDULED DISCOVERY: 0 — and proud of it.”'),
+      use: () => ui.say('“마지막 계획에 없던 발견 이후 경과일: 0 — 자랑스럽게.”'),
     });
 
     const blockers = [
@@ -1193,7 +1193,7 @@ export function createIsland6(player) {
           S.setFlag('metStrix');
           await ui.say([
             '책상 뒤의 올빼미가 머리를 통째로 당신에게 돌려요. 시간이 아주 절약되지요.',
-            '“Director Strix. Welcome to Notbell Labs. We research everything the sea didn’t explain. The list is long. The coffee is free. The rovers are friendly. Mind the chalk.”',
+            '“스트릭스 소장이야. 낫벨 연구소에 온 걸 환영해. 우리는 바다가 설명하지 못한 모든 걸 연구해. 목록은 길어. 커피는 공짜야. 로버들은 다정해. 분필 조심하고.”',
           ], { speaker: '스트릭스 소장', voice: 330 });
           return;
         }
@@ -1540,10 +1540,10 @@ export function createIsland6(player) {
             tone(990 + i * 120, { dur: 0.06, vol: 0.04 });
             tone(1320 + i * 120, { time: 0.08, dur: 0.06, vol: 0.04 });
             ui.say(pick([
-              '(beep! It does a small spin. The spin is for you.)',
-              '(beep beep — it shows you a rock it found. There are no rocks in here. It found one anyway.)',
-              '(It bumps your ankle, very gently, and reverses. In rover, that’s a handshake.)',
-              '(It points its eye at the star mobile, then at you. beep. It wants you to know the moon is up there. You know. It knows you know. beep.)',
+              '(삐! 작게 한 바퀴 빙글 돌아요. 그 회전은 당신을 위한 거예요.)',
+              '(삐삐 — 찾아낸 돌을 보여 줘요. 여기엔 돌이 없어요. 그래도 찾아냈어요.)',
+              '(당신 발목을 아주 살짝 부딪히고는 후진해요. 로버 말로, 그건 악수예요.)',
+              '(눈을 별 모빌에, 그리고 당신에게 향해요. 삐. 달이 저기 있다는 걸 알려 주고 싶은 거예요. 알고 있어요. 걔도 당신이 아는 걸 알아요. 삐.)',
             ]));
           },
         });
@@ -1691,11 +1691,11 @@ export function createIsland6(player) {
       menuCtx.textAlign = 'center';
       menuCtx.textBaseline = 'middle';
       for (const [text, y, px] of [
-        ["POTS' CANTEEN ·", 45, 34],
-        ['Coffee — free, always ·', 96, 26],
-        ['Bolt Soup — 6 ·', 137, 25],
-        ['Gear Loaf — 8 ·', 178, 25],
-        ['(Tuesday: also Gear Loaf)', 218, 21],
+        ["팟츠의 식당 ·", 45, 34],
+        ['커피 — 언제나 공짜 ·', 96, 26],
+        ['볼트 수프 — 6 ·', 137, 25],
+        ['기어 로프 — 8 ·', 178, 25],
+        ['(화요일: 역시 기어 로프)', 218, 21],
       ]) {
         menuCtx.font = `800 ${px}px ui-rounded, "Segoe UI", system-ui, sans-serif`;
         menuCtx.fillStyle = y === 45 ? '#f2cf5b' : '#f5f2e9';
@@ -1854,7 +1854,7 @@ export function createIsland6(player) {
   // the camera trails the climb as the island shrinks below, the existing
   // narration plays mid-ascent, then a fade cuts to the starry moon.
   const LAUNCH_NARRATION = [
-    '“Notbell Control to rocket. Checklist page nine.” Doppler’s voice, extremely calm. Somewhere below, Pots bangs the pot.',
+    '“낫벨 관제에서 로켓으로. 체크리스트 아홉 번째 페이지.” 도플러의 목소리, 극도로 침착하게. 아래 어딘가에서 팟츠가 냄비를 두드려요.',
     '웅웅거림이 떨림이 되고, 떨림이 커다란 손이 되어 당신을 좌석에 부드럽게 눌러요. 창 너머로: 발사대, 마당, 깃발 — 작아지고, 작아지고, 우표 한 장만 한 나라.',
     '파랑이 옅어지고, 옅음이 새까매져요. 빛의 씨앗이 올라가는 내내 노래해요 — 등대가 지키던 그 네 음을 — 그리고 바다는, 태어나 처음으로, 당신이 없는 곳에 있어요.',
     '그리고 창 아래로, 전부가 한꺼번에: 화산이 만들어낸 모든 섬이, 코트의 단추처럼 물 위에 줄지어 있어요.',
@@ -2009,4 +2009,4 @@ export function createIsland6(player) {
   }
 
   return { group, update };
-              }
+        }
