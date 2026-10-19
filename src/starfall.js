@@ -96,7 +96,7 @@ export function createStarfall(player) {
         if (!star) return;
         if (star.phase === 'fall') {
           if (!S.state.tools.net) {
-            ui.say('It drifts just above your paws, polite and unreachable. A net would do it — Pip sells one. Or wait for it to land.');
+            ui.say('발 바로 위를 떠다녀요, 공손하게, 닿지 않게. 그물이면 되는데 — 핍이 팔아요. 아니면 떨어질 때까지 기다려요.');
             return;
           }
           playTool('net');
