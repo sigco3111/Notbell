@@ -90,8 +90,8 @@ export function createDigging() {
       use: () => {
         if (!S.state.tools.shovel) {
           ui.say([
-            'The earth here is cracked in a tiny star, like the island is winking at you.',
-            'You scrabble at it with your paws. The island appreciates the enthusiasm, but no. You’ll need a shovel — Pip sells one.',
+            '여기 흙이 작은 별 모양으로 갈라져 있어요. 섬이 윙크하는 것처럼요.',
+            '발로 긁어 봐요. 섬은 그 열정에 감사하지만, 안 돼요. 삽이 필요해요 — 핍이 팔아요.',
           ]);
           return;
         }
@@ -108,9 +108,9 @@ export function createDigging() {
         ui.updateHUD();
         if (!S.hasFlag('firstFossil')) {
           S.setFlag('firstFossil');
-          ui.say('Fern at the museum would LOVE this. Probably. She loves most things older than her, which is a short list.');
+          ui.say('박물관의 펀이라면 이걸 엄청 좋아할 거예요. 아마도요. 자기보다 오래된 건 대부분 좋아하는데, 그 목록은 짧아요.');
         } else if (S.dailyCount('digs') >= digBudget()) {
-          ui.toast('That’s every fossil the island felt like surfacing today. Tomorrow: more past.', '🪏');
+          ui.toast('오늘 섬이 내보내 준 화석은 이게 전부예요. 내일: 과거 더 보탬.', '🪏');
         }
       },
     });
