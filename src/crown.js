@@ -55,10 +55,10 @@ const HWY = [
 ].map(([x, z]) => ({ x, z }));
 
 const STOPS = [
-  { name: 'the Crown', i: 0 },
-  { name: 'Kelpwood', i: 3 },
-  { name: 'the Glow', i: 6 },
-  { name: 'the Lady Button', i: 9 },
+  { name: '왕관', i: 0 },
+  { name: '켈프숲', i: 3 },
+  { name: '빛나는 곳', i: 6 },
+  { name: '레이디 버튼 호', i: 9 },
 ];
 
 let glowTex = null;
@@ -151,12 +151,12 @@ export function createCrown(player) {
 
   addPlaceNamer('crown', (x, z) => {
     const near = (s) => Math.hypot(x - s.x, z - s.z) < s.r + 4;
-    if (near(COURT)) return '👑 The Dropped Crown';
-    if (near(KELP)) return '🌿 Kelpwood';
-    if (near(WRECK)) return '🛳️ The Lady Button';
-    if (near(GLOW)) return '✨ The Glow';
-    if (distToHighway(x, z) < 5) return '🫧 The Kelp Highway';
-    return '🫧 The Dropped Crown';
+    if (near(COURT)) return '👑 떨어진 왕관';
+    if (near(KELP)) return '🌿 켈프숲';
+    if (near(WRECK)) return '🛳️ 레이디 버튼 호';
+    if (near(GLOW)) return '✨ 빛나는 곳';
+    if (distToHighway(x, z) < 5) return '🫧 켈프 하이웨이';
+    return '🫧 떨어진 왕관';
   });
 
   // ============================================================ the seabed ----
@@ -520,10 +520,10 @@ export function createCrown(player) {
     });
     register({
       pos: new THREE.Vector3(CL.x, 0, CL.z + 1.8), r: 2.4, zone: 'crown',
-      label: () => (S.state.flags.clamPearlDay !== today() ? 'accept the clam’s pearl' : 'admire the giant clam'),
+      label: () => (S.state.flags.clamPearlDay !== today() ? '조개의 진주 받기' : '거대 조개 감상하기'),
       use: () => {
         if (S.state.flags.clamPearlDay === today()) {
-          ui.say('The clam breathes out a slow string of bubbles. That’s all for today. It makes one pearl a day and it has never once been late.');
+          ui.say('조개가 느린 방울 한 줄기를 내뱉어요. 오늘은 이게 다예요. 하루에 진주 하나를 만들고, 한 번도 늦은 적이 없어요.');
           return;
         }
         S.state.flags.clamPearlDay = today();
@@ -547,11 +547,11 @@ export function createCrown(player) {
     group.add(anchor);
     register({
       pos: new THREE.Vector3(ARRIVE.x + 1.5, 0, ARRIVE.z), r: 2.2, zone: 'crown',
-      label: 'swim back up to the surface',
+      label: '수면으로 헤엄쳐 올라가기',
       use: async () => {
         plop();
         await zones.go('island', { x: REEF.x, z: REEF.z, rotY: 0 });
-        ui.toast('You break the surface into daylight. The reef glows under you like it’s keeping a secret. It is.', '🫧');
+        ui.toast('햇빛 속으로 수면을 뚫었어요. 암초가 아래에서 빛나요, 비밀을 간직한 듯이. 실제로 간직했거든요.', '🫧');
       },
     });
   }
@@ -601,7 +601,7 @@ export function createCrown(player) {
   function talker(getPos, name, voice, lines, r = 2.6) {
     let k = 0;
     register({
-      getPos, r, zone: 'crown', label: `talk to ${name}`,
+      getPos, r, zone: 'crown', label: `${name}와(과) 대화하기`,
       use: () => ui.say(lines[k++ % lines.length], { speaker: name, voice }),
     });
   }
@@ -627,11 +627,11 @@ export function createCrown(player) {
       animateGait(oct, t, 0.3, 3); // the arms never quite stop
       if (pp) oct.rotation.y = turnToward(oct.rotation.y, Math.atan2(pp.x - oct.position.x, pp.z - oct.position.z), dt, 2);
     });
-    talker(() => oct.position, 'Octavia', 330, [
-      'You’ve heard the story, I expect. Sea-queen, crown, threw it away. I’ll have you know I was never a queen. I was a very tired octopus holding a very heavy hat.',
-      'Threw it off the edge of the world. It landed here and grew. Now everyone lives in it and nobody has to wear it. Best decision I ever made.',
-      'The tiara? Oh, this is costume. You can wear a crown when it’s a joke. That’s the whole secret.',
-      'Tell Brine’s family I said hello. Grandmothers always get the story right. It’s everyone after who adds the swords.',
+    talker(() => oct.position, '옥타비아', 330, [
+      '이야기는 들었겠지. 바다 여왕, 왕관, 던져 버렸다. 밝혀두지만 나는 여왕이 아니었어. 아주 무거운 모자를 들고 있던 아주 피곤한 문어였을 뿐이야.',
+      '세상 끝으로 던졌어. 여기 떨어져서 자랐지. 이제 모두가 그 안에 살고 아무도 쓸 필요가 없어. 내 인생 최고의 결정이야.',
+      '티아라? 아, 이건 코스튬이야. 농담일 때는 왕관을 써도 돼. 그게 비밀 전부야.',
+      '브라인 가족에게 안부 전해 줘. 할머니들은 항상 이야기를 정확히 알지. 그 다음 사람들이 칼을 덧붙이는 거야.',
     ]);
   }
 
@@ -639,10 +639,10 @@ export function createCrown(player) {
   {
     const del = buildAnimal('dolphin', { body: 0x8fb4cc, head: 0x8fb4cc, belly: 0xeef6fa });
     walker(del, ring(COURT, 9, 8, 0.2), 2.4, { rest: 0.6, rate: 13 });
-    talker(() => del.position, 'Delphine', 700, [
-      'Hi!! I’m Delphine! I’m a dolphin! Yes, legs! I tried fins. Legs are faster on land and I’m never on land. It’s about the principle!',
-      'Sneakers are for grip. The sand is very slippery. That’s what I tell people. Really I just like them.',
-      'Race you to the clam! No! Wait! Not you! You’re wearing a hat full of air! That’s cheating AND adorable!',
+    talker(() => del.position, '델핀', 700, [
+      '안녕!! 나 델핀! 돌고래야! 응, 다리! 지느러미 써 봤어. 다리가 육지에서 더 빠르고 나는 육지에 절대 안 가. 원칙의 문제야!',
+      '운동화는 접지력 때문이야. 모래가 엄청 미끄럽거든. 사람들한테는 그렇게 말해. 사실은 그냥 좋아해.',
+      '조개까지 달리기 시합! 아니! 잠깐! 너 말고! 너 공기 가득한 모자 썼잖아! 그건 반칙이면서 귀여워!',
     ]);
   }
 
@@ -658,10 +658,10 @@ export function createCrown(player) {
     hat.position.set(0, 1.45, 0.45);
     ber.add(hat);
     walker(ber, [HWY[1], HWY[2], { x: (HWY[2].x + HWY[3].x) / 2 + 2, z: (HWY[2].z + HWY[3].z) / 2 }, HWY[2]], 1.1, { rest: 4 });
-    talker(() => ber.position, 'Bernard', 150, [
-      'Pardon me. Coming through. Mind yourself — I’m a whale. The largest animal that has ever lived, they tell me.',
-      'People keep saying “you don’t LOOK it.” I simply don’t let it go to my head. Where would it go? My head is enormous.',
-      'I take the Highway every morning. Good for the flukes. Doctor’s orders. The doctor is a sea cucumber, but still.',
+    talker(() => ber.position, '버나드', 150, [
+      '실례. 지나갈게. 조심해 — 나 고래야. 역사상 가장 큰 동물이라더군.',
+      '자꾸 “안 그래 보이는데”라고들 해. 나는 그냥 머리에 안 두거든. 어디에 두겠어? 내 머리는 엄청나다고.',
+      '매일 아침 하이웨이를 이용해. 꼬리지느러미에 좋아. 의사 지시야. 의사가 해삼이긴 한데, 그래도.',
     ]);
   }
 
@@ -673,12 +673,12 @@ export function createCrown(player) {
     mar.scale.setScalar(0.8);
     walker(gil, ring(COURT, 12, 14), 3.2, { rest: 0.05, rate: 16 });
     walker(mar, ring(COURT, 12, 14, 0.35), 3.2, { rest: 0.05, rate: 16 });
-    talker(() => gil.position, 'Gil', 600, [
-      '(huff) Lap forty. (huff) Marina says fifty. (huff) Marina says a lot of things.',
-      'Legs are new for us! Evolution was taking too long. We just decided.' ]);
-    talker(() => mar.position, 'Marina', 660, [
-      'Keep up, Gil! (She keeps running.)',
-      'The trick to running underwater is you don’t. You sort of float in a hurry. It’s a whole sport.' ]);
+    talker(() => gil.position, '길', 600, [
+      '(헉) 마흔 바퀴. (헉) 마리나는 쉰 바퀴래. (헉) 마리나는 말이 많아.',
+      '다리는 우리한텐 신상이야! 진화가 너무 오래 걸려서. 그냥 우리가 결정했어.' ]);
+    talker(() => mar.position, '마리나', 660, [
+      '따라와, 길! (그녀는 계속 달려요.)',
+      '물속 달리기의 비결은 안 달리는 거야. 서둘러 떠가는 거지. 하나의 스포츠야.' ]);
   }
 
   // glitter crabs: sparkly, sideways, everywhere. Sequin runs the gossip.
@@ -718,10 +718,10 @@ export function createCrown(player) {
         for (const s2 of u.sequins) s2.material.emissiveIntensity = Math.random() < 0.04 ? 1.4 : Math.max(0.15, s2.material.emissiveIntensity * 0.9);
       }
     });
-    talker(() => crabs[0].position, 'Sequin', 820, [
-      'Everything glitters if you believe in it hard enough. I believe VERY hard.',
-      'Octavia says she was never a queen. Octavia wore a crown the size of a boat. I’m just saying. I’m just SAYING.',
-      'Have you been to the Lady Button? Gentrified. GENTRIFIED. Used to be a perfectly good wreck. Now there’s a doorman.',
+    talker(() => crabs[0].position, '스팽글', 820, [
+      '충분히 세게 믿으면 뭐든 반짝여. 나는 아주 세게 믿어.',
+      '옥타비아는 여왕이 아니었다는데, 배만 한 왕관을 쓰고 있었어. 그냥 말이야. 그냥 말이라고.',
+      '레이디 버튼 호 가 봤어? 젠트리피케이션. 젠트리피케이션이야. 멀쩡한 난파선이었는데. 이제 도어맨이 있어.',
     ], 2.2);
   }
 
@@ -842,10 +842,10 @@ export function createCrown(player) {
       animateGait(ranger, t, 0);
       if (pp) ranger.rotation.y = turnToward(ranger.rotation.y, Math.atan2(pp.x - ranger.position.x, pp.z - ranger.position.z), dt, 3);
     });
-    talker(() => ranger.position, 'Ranger Holdfast', 380, [
-      'Ranger Holdfast. I keep the Kelp Highway: signs, bubbles, lost property. Mostly lost property. Mostly one very persistent flip-flop.',
-      'Some folks up top say the first travelers came down the long coasts following kelp forests — food, shelter, calm water, all the way. A road made of forest. I like that story. I work on it.',
-      'Hold on to something when the swell comes through. That’s what the name means. It’s also good advice.',
+    talker(() => ranger.position, '홀드패스트 레인저', 380, [
+      '홀드패스트 레인저야. 켈프 하이웨이를 지켜: 표지판, 거품, 분실물. 대부분 분실물. 대부분 아주 끈질긴 슬리퍼 한 짝.',
+      '위쪽 사람들 말로는 최초의 여행자들이 켈프 숲을 따라 긴 해안을 내려왔대 — 먹을 것, 쉴 곳, 잔잔한 물, 계속. 숲으로 된 길. 그 이야기 좋아해. 그 일을 하고 있어.',
+      '너울이 지나갈 땐 뭔가 꽉 잡아. 그게 이름(꽉 잡아)의 뜻이야. 좋은 조언이기도 하고.',
     ]);
   }
 
@@ -1007,10 +1007,10 @@ export function createCrown(player) {
     cx.fillStyle = '#2e2a26'; cx.fillRect(0, 0, 512, 140);
     cx.fillStyle = '#e8c56a'; cx.textAlign = 'center';
     cx.font = 'italic 700 46px Georgia, serif';
-    cx.fillText('The Lady Button', 256, 60);
+    cx.fillText('레이디 버튼 호', 256, 60);
     cx.font = '600 16px ui-rounded, system-ui, sans-serif'; // (at 22 it ran off both edges)
     cx.fillStyle = '#f3ead6';
-    cx.fillText('LUXURY RESIDENCES · EXPOSED BEAMS · ORIGINAL BARNACLES', 256, 104);
+    cx.fillText('럭셔리 레지던스 · 노출 보 · 오리지널 따개비', 256, 104);
     const signTex = new THREE.CanvasTexture(cv);
     signTex.colorSpace = THREE.SRGBColorSpace;
     const signFace = new THREE.Mesh(new THREE.PlaneGeometry(3.5, 0.95), new THREE.MeshBasicMaterial({ map: signTex }));
@@ -1049,9 +1049,9 @@ export function createCrown(player) {
     updates.push((dt, t) => {
       eel.children.forEach((c, k) => { if (k < 7) c.position.x = Math.sin(k * 0.7 + t * 1.6) * 0.25; });
     });
-    talker(() => eel.position, 'Maurice (doorman)', 290, [
-      'Good evening. Residents and their guests only. …You look like a guest. You have a guest’s hat. Go on through.',
-      'The Lady Button went down looking for a bell, forty summers back. Billed by the hour the whole way. Now the hours bill us. That’s real estate.',
+    talker(() => eel.position, '모리스 (도어맨)', 290, [
+      '좋은 저녁이야. 입주민과 손님만. …손님처럼 보이네. 손님의 모자를 썼어. 들어가.',
+      '레이디 버튼 호는 마흔 여름 전, 종을 찾다 가라앉았지. 가는 내내 시간당 청구. 이제는 시간이 우리에게 청구해. 그게 부동산이야.',
     ]);
     // Mister Periwinkle, broker: a hermit crab in a VERY good shell
     const peri = buildAnimal('crab', { body: 0xe07a5a });
@@ -1078,24 +1078,24 @@ export function createCrown(player) {
     });
     register({
       getPos: () => peri.position, r: 2.6, zone: 'crown',
-      label: 'talk to Mister Periwinkle',
+      label: '페리윙클 씨와 대화하기',
       use: async () => {
-        const c = await ui.ask('“Periwinkle. Broker. You have the look of someone who appreciates a HULL.”', [
-          { label: 'Tour a unit', value: 'tour' },
-          { label: 'Ask about the bell', value: 'bell' },
-          { label: 'Ask about his shell', value: 'shell' },
-          { label: 'Leave', value: null },
+        const c = await ui.ask('“페리윙클. 중개인이야. 선체를 알아보는 눈을 하셨군.”', [
+          { label: '호실 둘러보기', value: 'tour' },
+          { label: '종에 대해 묻기', value: 'bell' },
+          { label: '그의 껍데기에 대해 묻기', value: 'shell' },
+          { label: '나가기', value: null },
         ], { speaker: '페리윙클 씨', voice: 520 });
         if (c === 'tour') {
           ui.say([
-            '“Unit 1A: the lobby-adjacent. Formerly the galley. The smell of salvage-crew stew has been ENTIRELY remediated. Mostly.”',
-            '“Unit 2B: the lounge. Velvet. Live jellyfish lighting. The record player only plays whale song, and only one whale, and he is a bit of a mumbler.”',
-            '“The Penthouse: open-plan, open-air, open-sea. Ceilings? Negotiable. By which I mean absent.”',
+            '“1A호: 로비 인접. 전 주방. 인양팀 스튜 냄새는 완전히 제거됨. 대체로.”',
+            '“2B호: 라운지. 벨벳. 살아있는 해파리 조명. 레코드는 고래 노래만, 그것도 고래 한 마리만 나오는데 좀 웅얼거려.”',
+            '“펜트하우스: 오픈 플랜, 오픈 에어, 오픈 씨. 천장? 협의 가능. 없다는 뜻이야.”',
           ], { speaker: '페리윙클 씨', voice: 520 });
         } else if (c === 'bell') {
           ui.say([
-            '“The bell? Ah. The original purpose of the property. Moledecai Salvage searched this whole shelf for forty summers. Found boots. Found a cannon. Found a SECOND cannon. No bell.”',
-            '“Unit 0 — the bilge — is not for sale. Something down there glints on the heavy tides. We tell the residents it’s a coin. We are, of course, lying beautifully.”',
+            '“종? 아. 이 물건의 원래 목적이지. 몰드카이 인양이 이 대륙붕 전체를 마흔 여름간 뒤졌어. 부츠 발견. 대포 발견. 두 번째 대포 발견. 종은 없어.”',
+            '“0호 — 빌지 — 는 매물 아님. 아래에서 대조기마다 뭔가 반짝여. 입주민들에겐 동전이라고 해. 물론, 아름답게 거짓말하는 거야.”',
           ], { speaker: '페리윙클 씨', voice: 520 });
         } else if (c === 'shell') {
           ui.say('“이거? 빈티지야. 전 주인은 아주 크고 취향 좋은 고둥. 나도 다들 그렇듯 임대 중이야. 우린 다 껍데기를 임대하는 거야, 자기.”', { speaker: '페리윙클 씨', voice: 520 });
@@ -1104,10 +1104,10 @@ export function createCrown(player) {
     });
     register({
       pos: face(0, 4), r: 3.4, zone: 'crown', priority: 0,
-      label: 'look into the Lady Button',
+      label: '레이디 버튼 호 들여다보기',
       use: () => ui.say([
-        'Three floors, cut open like a dollhouse: a lobby with a velvet rope, a lounge under a chandelier of real jellyfish, and a penthouse deck with a striped umbrella and no ceiling at all.',
-        'On the top deck, a sea cucumber in a bow tie is swirling a glass of seawater, nodding at it thoughtfully. He is the sommelier. The seawater is described as “brisk.”',
+        '인형 집처럼 절개된 3개 층: 벨벳 로프의 로비, 진짜 해파리 샹들리에 아래 라운지, 그리고 줄무늬 파라솔에 천장이 아예 없는 펜트하우스 데크.',
+        '꼭대기 데크에서 나비넥타이 맨 해삼이 바닷물 잔을 흔들며 사색하듯 고개를 끄덕여요. 그는 소믈리에예요. 바닷물은 “시원한 맛”으로 평가돼요.',
       ]),
     });
     // the salvage company's survey marker, still standing
@@ -1124,8 +1124,8 @@ export function createCrown(player) {
     blockers.push({ x: mp.x, z: mp.z, r: 0.3 });
     register({
       pos: mp, r: 1.8, zone: 'crown',
-      label: 'read the survey marker',
-      use: () => ui.say('A brass plate, green at the edges: “MOLEDECAI SALVAGE CO. — SURVEY MARKER 38 — BELL: NOT FOUND HERE EITHER. (billed: 6 hrs)”'),
+      label: '측량 표지 읽기',
+      use: () => ui.say('가장자리가 녹슨 놋쇠판: “몰드카이 인양 주식회사 — 측량 표지 38 — 종: 여기도 없음. (청구: 6시간)”'),
     });
     scatterAround(W, W.r - 4, W.r + 4, 10, [rock, brain, fan, tubes]);
   }
@@ -1232,20 +1232,20 @@ export function createCrown(player) {
       halo.material.opacity = 0.4 + Math.sin(t * 2.2) * 0.15;
       if (pp) ang.rotation.y = turnToward(ang.rotation.y, Math.atan2(pp.x - ang.position.x, pp.z - ang.position.z), dt, 1.5);
     });
-    talker(() => ang.position, 'Lanterne', 260, [
+    talker(() => ang.position, '랜턴', 260, [
       'Don’t mind the teeth. They came with the face. The lamp is the important part.',
-      'Up there you had a lighthouse. Down here, you have me. Same job. Somebody should keep a light on for whoever comes down in the dark.',
-      'Wave your paw through the plankton. Go on. They light up when something moves. It’s their way of saying “oh! hello!” to everything, all the time. I find it very encouraging.',
-      'Sometimes, on the heavy tides, I hear something ring. Far off. Once. I keep the lamp lit a little brighter those nights. Just in case it’s looking for us.',
+      '위엔 등대가 있었지. 아래엔 내가 있어. 같은 일이야. 어둠 속으로 내려오는 누군가를 위해 불을 켜둘 이가 있어야지.',
+      '플랑크톤 사이로 발을 휘저어 봐. 움직이면 빛나거든. 모든 것에, 언제나 “오! 안녕!”이라고 말하는 방식이야. 아주 힘이 돼.',
+      '가끔, 대조기엔, 무언가 울리는 소리가 들려. 멀리서. 한 번. 그런 밤엔 램프를 조금 더 밝혀 둬. 혹시 우리를 찾고 있을지 모르니까.',
     ], 3.2);
     register({
       pos: new THREE.Vector3(GLOW.x - 6, 0, GLOW.z + 6), r: 5, zone: 'crown', priority: 0,
-      label: 'wave your paw through the plankton',
+      label: '플랑크톤 사이로 발 휘젓기',
       use: () => {
         for (let i = 0; i < PLK; i++) plkFlare[i] = Math.hypot(plkPos[i * 3] - player.group.position.x, plkPos[i * 3 + 2] - player.group.position.z) < 7 ? 1 : plkFlare[i];
         tone(1480, { dur: 0.5, type: 'sine', vol: 0.02 });
         tone(1976, { time: 0.1, dur: 0.6, type: 'sine', vol: 0.015 });
-        ui.toast('The plankton light up all around you — thousands of tiny “oh! hello!”s.', '✨');
+        ui.toast('플랑크톤이 주변에서 환하게 빛나요 — 수천 개의 작은 “오! 안녕!”.', '✨');
       },
     });
     scatterAround(GLOW, 4, GLOW.r, 12, [rock, rock, urchin]);
@@ -1308,11 +1308,11 @@ export function createCrown(player) {
       const px = -(b.z - a.z) / len, pz = (b.x - a.x) / len;
       roadSign(a.x + px * side + (b.x - a.x) * 0.3, a.z + pz * side + (b.z - a.z) * 0.3, text, Math.atan2(b.x - a.x, b.z - a.z) + Math.PI);
     };
-    signAt(1, 'KELP HWY 1\nKelpwood →');
-    signAt(4, 'KELP HWY 1\nthe Glow →\n(bring a light)');
-    signAt(7, 'SLOW\nTURTLES');
-    signAt(8, 'KELP HWY 1\nthe Lady Button →');
-    signAt(10, 'KELP HWY 1\nthe Crown →');
+    signAt(1, '켈프 HWY 1\n켈프숲 →');
+    signAt(4, '켈프 HWY 1\n빛나는 곳 →\n(등불 지참)');
+    signAt(7, '서행\n거북 있음');
+    signAt(8, '켈프 HWY 1\n레이디 버튼 호 →');
+    signAt(10, '켈프 HWY 1\n왕관 →');
 
     // the bubble stops: a big shimmering bubble at each, ready to carry you
     const bubbleSkin = new THREE.MeshStandardMaterial({
@@ -1343,11 +1343,11 @@ export function createCrown(player) {
       register({
         getPos: () => st.mesh.position, r: 2.6, zone: 'crown', priority: 2,
         enabled: () => !riding,
-        label: 'step into the bubble',
+        label: '거품 안에 들어가기',
         use: async () => {
-          const dest = await ui.ask('The bubble wobbles, politely. Where to?', [
+          const dest = await ui.ask('거품이 공손하게 흔들려요. 어디로 갈까요?', [
             ...STOPS.filter((d) => d !== st).map((d) => ({ label: `🫧 ${d.name}`, value: d.name })),
-            { label: 'Stay here', value: null },
+            { label: '여기 있기', value: null },
           ]);
           const to = STOPS.find((d) => d.name === dest);
           if (!to) return;
@@ -1359,7 +1359,7 @@ export function createCrown(player) {
           riding = { bubble: st.mesh, path, seg: 0, k: 0, home: st };
           player.riding = true;
           plop();
-          ui.toast(`Next stop: ${to.name}. Keep your paws inside the bubble.`, '🫧');
+          ui.toast(`다음 정거장: ${to.name}. 거품 안에 발을 넣고 계세요.`, '🫧');
         },
       });
     }
@@ -1426,20 +1426,20 @@ export function createCrown(player) {
       const p = player.group.position;
       return Math.hypot(p.x - REEF.x, p.z - REEF.z) < REEF.r + 2 && p.y < WATER_Y && S.countItem('scuba_suit') > 0;
     },
-    label: 'dive down to the reef',
+    label: '암초로 잠수하기',
     use: async () => {
       plop();
       await zones.go('crown');
       if (!S.hasFlag('sawCrown')) {
         S.setFlag('sawCrown');
         ui.say([
-          'Down, down, through the bright water — and the reef opens up under you like a city seen from a hill.',
-          'A ring of candy-colored coral points, each tipped with a glowing pearl. A crown, lying where somebody dropped it. Grown over. Lived in.',
-          'Somewhere a dolphin in sneakers shouts “HI!!” and does not stop running.',
+          '아래로, 아래로, 밝은 물을 지나 — 암초가 언덕에서 본 도시처럼 발밑에 펼쳐져요.',
+          '사탕색 산호 뾰족탑들의 고리, 끝마다 빛나는 진주. 누군가 떨어뜨린 자리에 놓인 왕관. 덮여 자라고, 살림이 들었어요.',
+          '어디선가 운동화 신은 돌고래가 “안녕!!” 하고 외치며 달리기를 멈추지 않아요.',
         ]);
       }
     },
   });
 
   return { group, update };
-}
+                }
