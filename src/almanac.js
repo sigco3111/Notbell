@@ -111,10 +111,10 @@ function syncWeather(first = false) {
   weather = next;
   buildPrecip();
   if (!first) {
-    ui.toast(weather === 'rain' ? 'Rain rolls in off the sea.'
-      : weather === 'snow' ? 'Snow begins, politely.'
-      : weather === 'fog' ? 'Fog walks in off the sea, slow and certain.'
-      : 'The clouds wander off to bother some other island.',
+    ui.toast(weather === 'rain' ? '비가 바다에서 밀려와요.'
+      : weather === 'snow' ? '눈이, 공손하게, 내리기 시작해요.'
+      : weather === 'fog' ? '안개가 바다에서 걸어 들어와요, 느리고 확실하게.'
+      : '구름이 다른 섬을 괴롭히러 흩어져요.',
     weather === 'rain' ? '🌧️' : weather === 'snow' ? '❄️' : weather === 'fog' ? '🌫️' : '☀️');
   }
 }
