@@ -43,63 +43,63 @@ const VOICE = { amos: 240, mercy: 370, patience: 330, obed: 265, lamb: 540 };
 // ---------------------------------------------------------------- words ----
 
 const COD_LORE = [
-  'The Cod provides. Not everything, and not always — but enough, and mostly on Tuesdays. That is very nearly the whole of the catechism.',
-  'Folk ask me if the Cod is real. Friend, the sea is real, and supper is real, and between the two of them swims something kind.',
-  'We hung a wooden cod from the rafters so the sermon has somewhere to look when I lose my place. It has never once complained.',
-  'Services are whenever the weather says so. The weather has excellent judgment and has never gone long on a sermon.',
+  '대구님은 주셔요. 전부는 아니고, 언제나도 아니지만 — 충분히, 그리고 대체로 화요일에. 그게 교리문답의 거의 전부예요.',
+  '대구님이 진짜 계시냐고 묻는 이들이 있어요. 친구여, 바다는 진짜이고 저녁 밥상도 진짜예요. 그 둘 사이를 다정한 무언가가 헤엄치고 있지요.',
+  '설교 중에 길을 잃을 때 쳐다볼 곳이 있으라고 들보에 나무 대구를 걸어 두었어요. 한 번도 불평한 적이 없지요.',
+  '예배는 날씨가 정할 때 열려요. 날씨는 판단이 아주 좋아서, 설교가 길어진 적이 한 번도 없지요.',
 ];
 
 const NEIGHBOR_LORE = [
-  'The Labs? Good neighbors. They listen at the sky; we mend nets. Every net needs a far end, and I suspect we are theirs.',
-  'They offered us the electric light once, very politely. We declined, very politely. Now we wave. It is a fine arrangement and nobody has to read a manual.',
-  'Their rocket went up and we all leaned on our rakes to watch. A thing may be declined and still be admired. That is most things, in fact.',
+  '연구소요? 좋은 이웃이에요. 그쪽은 하늘을 듣고, 우리는 그물을 깁지요. 그물마다 먼 쪽 끝이 필요한데, 우리가 그들의 먼 끝이 아닌가 싶어요.',
+  '한번은 전깃불을 제안하셨어요, 아주 공손하게. 우리도 아주 공손하게 사양했지요. 이제는 서로 손을 흔들어요. 좋은 사이예요, 설명서를 읽을 일도 없고요.',
+  '그쪽 로켓이 날아오를 때 우리는 다들 갈퀴에 기대어 바라보았어요. 사양한 것도 감탄할 수 있지요. 사실 세상 대부분의 일이 그래요.',
 ];
 
 const FOLD_LORE = [
-  'We came out past the chart because the land was cheap and the quiet was free. The quiet has appreciated considerably.',
-  'Wheat in, carrots up, preserves down for winter. The year is a wheel and we are very fond of the wheel.',
-  'You will find no bell here and no missing one either. Other folks’ longing is their own to keep. We keep jam.',
+  '지도 바깥으로 나온 건 땅값이 쌌고 고요함은 공짜였기 때문이에요. 그 고요함의 가치는 많이 올랐지요.',
+  '밀 심고, 당근 올리고, 겨울 대비 잼 저장하고. 한 해는 수레바퀴 같아요. 우리는 그 바퀴가 무척 마음에 들어요.',
+  '여기에는 종도 없고, 잃어버린 종도 없어요. 다른 이들의 그리움은 그들의 몫이지요. 우리는 잼을 지켜요.',
 ];
 
 const MERCY_CHAT = [
-  'Preserves! Gooseberry, carrot, sea-plum. The Cod provides; I provide lids.',
-  'Everything in these jars grew within pointing distance. We are not a shouting people.',
-  'Take a jar for the road, friend. The road out here is long and entirely worth it.',
+  '잼이요! 구스베리, 당근, 바다자두. 대구님이 주시고, 나는 뚜껑을 드려요.',
+  '이 병 안의 모든 것은 손가락으로 가리킬 거리에서 자랐어요. 우리는 소리 지르는 사람들이 아니에요.',
+  '길에 가져갈 잼 한 병 들고 가세요, 친구. 여기서 나가는 길은 길지만 그만한 값어치가 있으니까요.',
 ];
 
 const PATIENCE_CHAT = [
-  'Named Patience, handed carrots. Carrots take a season. Somebody in the naming business knew exactly what they were doing.',
-  'Wheat in, wheat out. In between, weather. That is farming, friend — the rest is commentary.',
-  'The Labs made our rain gauge sing once. We thanked them and gave it back. Rain counts fine on its own.',
+  '이름은 패이션스, 맡은 일은 당근. 당근은 한 계절이 걸려요. 이름 짓는 쪽에도 정확히 아는 사람이 있었나 봐요.',
+  '밀이 들어가고 밀이 나와요. 그 사이에는 날씨. 그게 농사예요, 친구 — 나머지는 주석일 뿐.',
+  '연구소에서 우리 강우량계를 노래하게 한 적이 있어요. 감사히 받았다가 돌려주었지요. 비는 혼자서도 잘 셀 수 있거든요.',
 ];
 
 const OBED_CHAT = [
-  'Obed. I keep the barn and the fence keeps me. We are all kept by something.',
-  'A fellow from the Labs waves at me each morning and I wave back. Eleven years now. Neither of us has missed a day. That is a friendship, that is.',
-  'The barn leans a little east. So do I, by evening. We understand one another.',
+  '오베드예요. 나는 헛간을 돌보고, 울타리는 나를 돌봐요. 우리는 모두 무언가에 지켜지고 있지요.',
+  '연구소 사람 하나가 매일 아침 내게 손을 흔들고, 나도 손을 흔들어요. 벌써 11년째, 둘 다 하루도 빠진 적이 없어요. 그게 우정이지요, 그래요.',
+  '헛간은 동쪽으로 조금 기울어 있어요. 나도 저녁이면 그렇지요. 우리는 서로를 이해해요.',
 ];
 
 const LAMB_CHAT = [
-  'I’m Small Mercy! Ma’s the regular one. When I’m grown I get the rest of the name, and then — well. Mercy me.',
-  'The sky-boat went WHOOSH once. Elder Amos says we don’t hold with rockets. I hold with them a LITTLE. Don’t tell.',
-  'I’m learning preserves. So far I am very good at the part where you eat one to be sure.',
+  '나는 리틀 머시야! 엄마가 그냥 머시야. 다 크면 이름의 나머지도 받는대. 그러고 나면 — 글쎄. 인내심을 가지렴, 나.',
+  '하늘 배가 한번 쉭- 하고 지나갔어요. 아모스 장로님은 로켓은 안 된다고 하시지만, 나는 조-금 찬성이에요. 비밀이에요.',
+  '잼 만드는 법을 배우는 중이에요. 지금까지 제일 잘하는 부분은, 맛 확인하겠다고 하나 먹는 거예요.',
 ];
 
 const KNOCKS = {
-  mercy: 'A jar of gooseberry preserves sits on the step with a paper hat, waiting for somebody specific. Nobody in — the stall keeps her hours.',
-  patience: 'A bootscraper, well used. A bench, well sat. From somewhere behind the house, the exact sound of weeding.',
-  obed: 'The door is open an honest inch. A note, pinned flat: “IN THE BARN. OR THE FIELD. START WITH THE BARN.”',
-  amos: 'A hut the size of a good thought. The door has no lock and has never wanted one. He will be at the kirk.',
+  mercy: '구스베리 잼 한 병이 종이 모자를 쓰고 계단에 놓여 있어요. 정해진 누군가를 기다리면서. 아무도 없어요 — 노점은 그녀의 시간대로 열려요.',
+  patience: '잘 닳은 신발 긁개, 잘 익은 벤치. 집 뒤 어딘가에서 정확히 김매는 소리가 나요.',
+  obed: '문이 정직하게 한 뼘 열려 있어요. 평평하게 붙은 쪽지: “헛간에 있음. 아니면 밭. 헛간부터 볼 것.”',
+  amos: '좋은 생각 하나만 한 오두막. 문에는 자물쇠가 없고, 필요했던 적도 없어요. 그분은 교회에 계실 거예요.',
 };
 
 const EPITAPHS = [
-  'CONSTANCE — sixty winters. Preferred them.',
-  'OBADIAH — mended the fence. The fence stands.',
-  'VERITY — said little. Meant all of it.',
-  'THANKFUL — was.',
-  'PETER — fisher. The cod forgave him, mostly.',
-  'A LAMB — briefly. Entirely loved.',
-  'The seventh stone is older than its letters. You run a thumb along the top, the way everyone before you has, which is why it is smooth.',
+  '콘스탄스 — 예순 번의 겨울. 그 겨울들을 좋아하셨다.',
+  '오바디아 — 울타리를 고쳤다. 울타리는 서 있다.',
+  '베리티 — 말이 적었다. 그 전부를 진심으로 했다.',
+  '땡큐풀 — 그러셨다.',
+  '피터 — 어부. 대구가 그를 용서했다, 대체로.',
+  '어린 양 한 마리 — 잠시. 온전히 사랑받았다.',
+  '일곱 번째 돌은 새겨진 글자보다 오래됐어요. 당신 앞의 모든 사람이 그랬듯 엄지로 윗면을 쓸어 보세요. 그래서 이렇게 매끄러워요.',
 ];
 
 // ---------------------------------------------------------------- props ----
@@ -231,7 +231,7 @@ export function createFold() {
   // they asked. the chart, which ends at the Labs anyway, was gracious.
   addIslandInfo({
     name: 'The Fold', x: -194, z: -50, r: 24, icon: '🐑',
-    blurb: 'Off every chart, by request. Wheat, carrots, preserves, and the House of Cod.',
+    blurb: '청원에 따라 모든 지도 바깥. 밀, 당근, 잼, 그리고 대구 성당.',
     folk: 'Elder Amos · Mercy · Patience · Obed · Small Mercy',
   });
 
@@ -261,7 +261,7 @@ export function createFold() {
     door.position.set(4.46, 1.1, 0);
     ext.add(door);
     // the sign hangs out under the gable, saying the one thing it needs to
-    const sign = signBoard('HOUSE OF COD');
+    const sign = signBoard('대구 성당');
     sign.position.set(4.98, 2.62, 0);
     sign.rotation.y = Math.PI / 2;
     ext.add(sign);
@@ -295,7 +295,7 @@ export function createFold() {
 
     register({
       pos: new THREE.Vector3(KX + 5.4, 0, KZ), r: 2.2,
-      label: 'enter the House of Cod',
+      label: '대구 성당에 들어가기',
       use: () => zones.go('kirk'),
     });
   }
@@ -420,20 +420,20 @@ export function createFold() {
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 6.4), r: 1.8, zone: 'kirk',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: KX + 5.8, z: KZ, rotY: Math.PI / 2 }),
     });
     register({
       getPos: () => amos.position, r: 3.0, zone: 'kirk',
-      label: 'talk to Elder Amos',
+      label: '아모스 장로에게 말 걸기',
       use: () => amosMenu(),
     });
     register({
       pos: new THREE.Vector3(B.x - 2.4, 0, B.z + 0.4), r: 1.8, zone: 'kirk', priority: 0,
-      label: 'sit in a pew',
+      label: '긴 의자에 앉기',
       use: async () => {
         await ui.fadeSwap(() => {});
-        ui.say('You sit. Outside, a cart creaks past; somewhere a jar seals with a small, satisfied pop. If the Cod is saying anything, it is saying: supper, eventually, for everyone.');
+        ui.say('앉아 있어요. 밖으로 수레가 삐걱거리며 지나가고, 어디선가 잼 병이 작고 만족스럽게 뽁 하고 닫혀요. 대구님이 말씀하신다면 이런 말씀이겠지요: 결국 모두에게 저녁이 있다고.');
       },
     });
 
@@ -442,11 +442,11 @@ export function createFold() {
       if (!S.hasFlag('metAmos')) {
         S.setFlag('metAmos');
         await ui.say([
-          'Welcome, walker. I am Elder Amos, and this is the House of Cod. Wipe your feet if you like — the floor forgives either way.',
-          'We are plain folk. We farm, we jar, we listen to the weather. You are welcome to exactly all of it.',
+          '어서 오세요, 나그네. 나는 아모스 장로이고, 여기는 대구 성당이에요. 신발을 닦고 싶으면 닦으세요 — 바닥은 어느 쪽이든 용서해요.',
+          '우리는 소박한 사람들이에요. 농사짓고, 잼을 담고, 날씨 소리를 들어요. 그 전부에 당신도 환영이에요.',
         ], { speaker: '아모스 장로', voice: VOICE.amos });
       }
-      const choice = await ui.ask('Elder Amos folds his hooves and gives you his whole attention.', [
+      const choice = await ui.ask('아모스 장로가 발굽을 모으고 온 마음으로 귀를 기울여요.', [
         { label: '🐟 Ask about the Cod', value: 'cod' },
         { label: '🔭 Ask about the neighbors', value: 'nb' },
         { label: '🌾 Ask about the Fold', value: 'fold' },
@@ -511,7 +511,7 @@ export function createFold() {
     });
     addZonePlace(id, name);
     zones.setDoor(id, doorOut);
-    register({ pos: new THREE.Vector3(B.x, 0, B.z + D / 2), r: 1.6, zone: id, label: 'step outside', use: () => zones.leaveTo(doorOut) });
+    register({ pos: new THREE.Vector3(B.x, 0, B.z + D / 2), r: 1.6, zone: id, label: '밖으로 나가기', use: () => zones.leaveTo(doorOut) });
     for (const t of things) register({ ...t, zone: id, pos: new THREE.Vector3(B.x + t.at[0], 0, B.z + t.at[1]) });
   }
   // furniture, plain and sturdy
@@ -596,7 +596,7 @@ export function createFold() {
       jars(B.x + 1.0, 0.82, B.z + 0.6, 5, [0x9ac46a, 0xe8743a, 0xc4413a]);
       shelf(B.x - 0.6, 1.5, B.z - D / 2 + 0.3, 2.4); jars(B.x - 1.6, 1.53, B.z - D / 2 + 0.3, 9, [0x9ac46a, 0xe8743a, 0xc4413a, 0xd9b45a]);
       rug(B.x, B.z + 1.8, 2.2, 1.2, 0x8a6a8a);
-      th.push({ at: [1.6, 1.0], r: 1.6, label: 'look at the canning table', use: () => ui.say('Gooseberry, carrot, something green that’s labeled only “yes.” Every jar has a paper hat, and every hat is tied with the same careful bow.') });
+      th.push({ at: [1.6, 1.0], r: 1.6, label: 'look at the canning table', use: () => ui.say('구스베리, 당근, 그리고 “응”이라고만 적힌 초록색 무언가. 병마다 종이 모자를 쓰고 있고, 모자마다 똑같이 정성스런 리본이 묶여 있어요.') });
     } },
     patience: { name: '🧵 Patience’s House', W: 7, D: 6, wall: 0xe6e0d0, dress: (B, W, D, bl, th) => {
       bed(B.x + 2.4, B.z - 1.6, 0x6a8a9a); bl.push({ x: B.x + 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
@@ -615,7 +615,7 @@ export function createFold() {
       bl.push({ x: B.x - 1.2, z: B.z + 0.8, w: 2.3, d: 1.7 });
       chair(B.x - 1.2, B.z + 1.9, Math.PI);
       rug(B.x + 1.2, B.z + 1.2, 1.6, 1.6, 0x9a7a4a);
-      th.push({ at: [-1.2, 1.7], r: 1.6, label: 'look at the quilt', use: () => ui.say('Half a quilt, squares pinned in rows. One square is a little crooked. It’s been left crooked on purpose: “only the Lord’s work is perfect, and He’s not doing this one.”') });
+      th.push({ at: [-1.2, 1.7], r: 1.6, label: 'look at the quilt', use: () => ui.say('반쯤 완성된 퀼트, 조각들이 줄줄이 핀으로 고정돼 있어요. 한 조각이 조금 삐뚤어요. 일부러 삐뚤게 두었지요: “완벽한 건 주님의 일뿐, 주님은 이걸 하고 계시지 않으니까.”') });
     } },
     obed: { name: '🌾 Obed’s House', W: 7, D: 6, dress: (B, W, D, bl, th) => {
       bed(B.x - 2.4, B.z - 1.6, 0x7a8a5a); bl.push({ x: B.x - 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
@@ -630,7 +630,7 @@ export function createFold() {
       bl.push({ x: B.x + 2.6, z: B.z + 1.1, w: 0.8, d: 2.2 });
       const fork = box(0.06, 1.8, 0.06, 0x8a5a3a); fork.position.set(B.x - W / 2 + 0.3, 0.9, B.z + 1.8); fork.rotation.z = 0.15; group.add(fork);
       for (const sx of [-0.15, 0.15]) { const boot = box(0.18, 0.35, 0.35, 0x3a2e24); boot.position.set(B.x - 1.4 + sx, 0.17, B.z + D / 2 - 0.5); group.add(boot); }
-      th.push({ at: [2.6, 1.1], r: 1.4, label: 'read the seed sacks', use: () => ui.say('BEANS. OATS. MORE BEANS. The last sack is labeled in a different hand: “DON’T PLANT THESE, OBED, THEY’RE FOR SUPPER.”') });
+      th.push({ at: [2.6, 1.1], r: 1.4, label: 'read the seed sacks', use: () => ui.say('콩. 귀리. 콩 더. 마지막 자루만 다른 필체로 적혀 있어요: “이건 심지 마, 오베드. 저녁 반찬이야.”') });
     } },
     amos: { name: '🐟 Elder Amos’s Hut', W: 5, D: 5, dress: (B, W, D, bl, th) => {
       bed(B.x - 1.3, B.z - 1.2, 0x8a8378); bl.push({ x: B.x - 1.3, z: B.z - 1.2, w: 1.3, d: 2.2 });
@@ -642,7 +642,7 @@ export function createFold() {
       }
       const cod = makeCod(0.35, 0xc9b99a); cod.position.set(B.x + 1.6, 1.0, B.z - 0.7); group.add(cod);
       rug(B.x, B.z + 0.9, 1.6, 1.2, 0x6a5a48);
-      th.push({ at: [1.2, 0.0], r: 1.4, label: 'read the sermon pages', use: () => ui.say('“Brethren: the cod does not worry about tomorrow, and tomorrow, in fairness, has never once worried about the cod.” Below, crossed out several times: “More on the cod.”') });
+      th.push({ at: [1.2, 0.0], r: 1.4, label: 'read the sermon pages', use: () => ui.say('“형제들이여: 대구는 내일을 걱정하지 않고, 내일 역시 공평하게도 대구를 걱정한 적이 없노라.” 아래에 여러 번 지운 흔적: “대구에 대해 더.”') });
     } },
   };
 
@@ -703,7 +703,7 @@ export function createFold() {
     let knocked = false;
     register({
       pos: new THREE.Vector3(doorWorld.x, 0, doorWorld.z), r: 1.8,
-      label: `step into ${who === 'amos' ? 'Elder Amos' : who[0].toUpperCase() + who.slice(1)}’s house`,
+      label: `${who === 'amos' ? '아모스 장로' : { mercy: '머시', patience: '패이션스', obed: '오베드' }[who]}네 집에 들어가기`,
       use: async () => {
         // the first time, the note on the door; after that, straight in
         if (!knocked) { knocked = true; await ui.say(KNOCKS[who]); }
@@ -836,21 +836,21 @@ export function createFold() {
     group.add(mercy);
 
     const JARS = [
-      { id: 'preserves_goose', label: '🫙 Gooseberry preserves', name: 'Gooseberry Preserves', emoji: '🫙', price: 7 },
-      { id: 'preserves_carrot', label: '🥕 Carrot marmalade', name: 'Carrot Marmalade', emoji: '🥕', price: 7 },
-      { id: 'preserves_plum', label: '🫐 Sea-plum jam', name: 'Sea-Plum Jam', emoji: '🫐', price: 8 },
+      { id: 'preserves_goose', label: '🫙 구스베리 잼', name: '구스베리 잼', emoji: '🫙', price: 7 },
+      { id: 'preserves_carrot', label: '🥕 당근 마멀레이드', name: '당근 마멀레이드', emoji: '🥕', price: 7 },
+      { id: 'preserves_plum', label: '🫐 바다자두 잼', name: '바다자두 잼', emoji: '🫐', price: 8 },
     ];
     register({
       pos: new THREE.Vector3(
         STALL.x + Math.sin(rotY) * 1.5, 0, STALL.z + Math.cos(rotY) * 1.5), r: 2.0,
-      label: 'browse the preserves',
+      label: '잼 구경하기',
       use: async () => {
-        const picked = await ui.ask('Jars stand in a proud little rank. Each label is hand-lettered, and each lid, you sense, was defeated honestly.', [
+        const picked = await ui.ask('병들이 자랑스러운 소규모 대열로 서 있어요. 라벨은 하나하나 손글씨고, 뚜껑은 하나같이 정정당당하게 굴복당한 티가 나요.', [
           ...JARS.map((j) => ({
             label: j.label, value: j.id, hint: `${j.price}🔘`,
             disabled: S.state.buttons < j.price,
           })),
-          { label: 'Just admiring', value: null },
+          { label: '구경만 할래요', value: null },
         ]);
         const j = JARS.find((x) => x.id === picked);
         if (!j) return;
@@ -863,7 +863,7 @@ export function createFold() {
     });
     register({
       getPos: () => mercy.position, r: 3.4, // the radius crosses the counter. learned that one.
-      label: 'talk to Mercy',
+      label: '머시에게 말 걸기',
       use: () => ui.say(pick(MERCY_CHAT), { speaker: 'Mercy', voice: VOICE.mercy }),
     });
   }
@@ -891,8 +891,8 @@ export function createFold() {
     zones.addBlocker(WX, WZ, 1.1);
     register({
       pos: new THREE.Vector3(WX, 0, WZ + 1.4), r: 1.6,
-      label: 'look into the well',
-      use: () => ui.say('Water, dark and patient. Your reflection looks up, wearing the sky for a hat. No coins down there — around here a wish is something you plant.'),
+      label: '우물 들여다보기',
+      use: () => ui.say('어둡고 참을성 있는 물. 거울처럼 비친 당신이 하늘을 모자처럼 쓰고 올려다봐요. 동전은 없어요 — 이 근처에서 소원이란 심는 거니까요.'),
     });
   }
 
@@ -974,12 +974,12 @@ export function createFold() {
         tool.position.set(B.x - W / 2 + 0.25, 1.4, B.z - 0.5 + i * 0.5); tool.rotation.x = 0.1;
         group.add(tool);
       }
-      th.push({ at: [3.4, 0.6], r: 2.2, label: 'say hello to the calf', use: () => ui.say('(The calf regards you with enormous, unhurried eyes, then goes back to regarding the hay. You have been assessed. You passed, probably.)') });
-      th.push({ at: [1.5, -1.3], r: 1.4, label: 'look up at the loft', use: () => ui.say('Hay, stacked to the rafters. Something small up there sneezes, politely. Probably a mouse. Probably not Crumb. Probably.') });
+      th.push({ at: [3.4, 0.6], r: 2.2, label: 'say hello to the calf', use: () => ui.say('(송아지가 크고 느긋한 눈으로 당신을 바라보다가 다시 건초를 바라봐요. 평가가 끝났어요. 아마 합격이에요.)') });
+      th.push({ at: [1.5, -1.3], r: 1.4, label: 'look up at the loft', use: () => ui.say('건초가 서까래까지 쌓여 있어요. 저 위에서 작은 무언가가 공손하게 재채기를 해요. 아마 쥐예요. 아마 크럼은 아니에요. 아마요.') });
     });
     register({
       pos: new THREE.Vector3(barnDoor.x, 0, barnDoor.z), r: 2.0,
-      label: 'step into the barn',
+      label: '헛간에 들어가기',
       use: () => zones.go('fold_barn'),
     });
     // hay bales, stacked with the particular pride of stacked hay
@@ -1099,8 +1099,8 @@ export function createFold() {
     zones.addBlocker(SC.x, SC.z, 0.5);
     register({
       pos: new THREE.Vector3(SC.x, 0, SC.z), r: 1.8, priority: 0,
-      label: 'regard the scarecrow',
-      use: () => ui.say('It wears the plain hat, the plain smock, and an expression of permanent mild welcome. A crow sits on one arm, entirely unafraid, which everyone involved has decided not to mention.'),
+      label: '허수아비 바라보기',
+      use: () => ui.say('수수한 모자와 수수한 작업복을 입고, 영원히 온화한 환영의 표정을 짓고 있어요. 한쪽 팔에 까마귀가 앉아 전혀 겁내지 않는데, 관련된 모두가 언급하지 않기로 했어요.'),
     });
   }
 
@@ -1185,7 +1185,7 @@ export function createFold() {
     let stoneIdx = 0;
     register({
       pos: new THREE.Vector3(G.x, 0, G.z), r: 2.8,
-      label: 'read the stones',
+      label: '돌비석 읽기',
       use: () => {
         ui.say(EPITAPHS[stoneIdx % EPITAPHS.length]);
         stoneIdx++;
@@ -1240,8 +1240,8 @@ export function createFold() {
     zones.addBlocker(RX, RZ, 0.9);
     register({
       pos: new THREE.Vector3(RX, 0, RZ + 1.2), r: 1.7, priority: 0,
-      label: 'consider the cod',
-      use: () => ui.say('Three cod, drying in the sea wind, well on their way to lasting the winter. It is hard to say where the faith ends and the pantry begins, and nobody here would want you to.'),
+      label: '대구 생각하기',
+      use: () => ui.say('대구 세 마리가 바닷바람에 말라가며 겨울을 날 준비를 잘 하고 있어요. 믿음이 끝나고 식료품 창고가 시작되는 지점을 말하기 어렵고, 여기 사람들 누구도 그걸 구분하길 바라지 않아요.'),
     });
   }
 
@@ -1302,14 +1302,14 @@ export function createFold() {
     return w;
   }
 
-  addFolk('Patience', 'sheep', { head: 0x7a746a, wool: 0xf1ead9 }, [
+  addFolk('패이션스', 'sheep', { head: 0x7a746a, wool: 0xf1ead9 }, [
     { x: -183.5, z: -60.5 }, { x: -179, z: -58.5 }, { x: -175, z: -61 },
     { x: -176.5, z: -66.5 }, { x: -181, z: -63 },
   ], PATIENCE_CHAT, VOICE.patience, {
     bonnet: makeBonnet(0xb9c0b9), apron: makeApron(0x4f5a4f), speed: 1.0,
   });
 
-  addFolk('Obed', 'sheep', { head: 0x3a3630, wool: 0xece4d0 }, [
+  addFolk('오베드', 'sheep', { head: 0x3a3630, wool: 0xece4d0 }, [
     // (round the cottage's east end, not through it; and starting clear of Patience)
     { x: -179.6, z: -63.6 }, { x: -185.5, z: -62.4 }, { x: -184.3, z: -57.5 }, { x: -186.5, z: -53.6 },
     { x: -191, z: -54.4 }, { x: -185.5, z: -53.5 },
@@ -1317,7 +1317,7 @@ export function createFold() {
     hat: flatBrimHat(), speed: 1.2,
   });
 
-  addFolk('Small Mercy', 'sheep', { head: 0x8a7a68, wool: 0xf6f1e4 }, [
+  addFolk('리틀 머시', 'sheep', { head: 0x8a7a68, wool: 0xf6f1e4 }, [
     { x: -187.3, z: -50.8 }, { x: -189.6, z: -47.6 }, { x: -192.7, z: -49.8 },
     { x: -190.4, z: -53.4 }, // round and round the well, as lambs do
   ], LAMB_CHAT, VOICE.lamb, {
@@ -1398,9 +1398,9 @@ export function createFold() {
     if (playerPos && !S.hasFlag('seenFold') &&
         Math.hypot(playerPos.x - ST.x, playerPos.z - ST.z) < 16) {
       S.setFlag('seenFold');
-      ui.toast('The chart ended a while back. The farms did not.', '🐑');
+      ui.toast('지도는 한참 전에 끝났어요. 농장들은 아니고요.', '🐑');
     }
   }
 
   return { group, update };
-                                                            }
+                         }
