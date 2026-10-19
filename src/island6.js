@@ -179,8 +179,8 @@ export function createIsland6(player) {
 
   addIslandInfo({
     key: 'labs',
-    name: 'Notbell Labs', x: -121, z: -58, r: 42, icon: '🚀',
-    blurb: 'The far-west research isle. Frontier chemistry, one computer the size of a room, a rocket division, and a kindergarten of rovers (window: please wave). The chart ends before the island does. The Labs find this extremely funny.',
+    name: '낫벨 연구소', x: -121, z: -58, r: 42, icon: '🚀',
+    blurb: '서쪽 끝 연구 섬. 프런티어 화학, 방 하나만 한 컴퓨터 한 대, 로켓 부서, 그리고 로버 유치원(창문: 손을 흔들어 주세요). 지도는 섬보다 먼저 끝나요. 연구소는 이게 아주 웃기다고 생각해요.',
     folk: 'Director Strix · Ada, software · Dr. Hazel · Pots · Miss Pinion · the rovers · the Boring Department',
     mystery: '“Far west, past the moss isle, somebody is doing SCIENCE at the sky. On still nights you can hear it hum. I hear it FIRST.” —Howell, who is, once again, right',
   });
@@ -218,13 +218,13 @@ export function createIsland6(player) {
 
     register({
       pos: new THREE.Vector3(fx, 0, fz + 4.4), r: 2.2,
-      label: 'enter Notbell Labs',
+      label: '낫벨 연구소에 들어가기',
       use: async () => {
         doorChime();
         await zones.go('labs');
         if (!S.hasFlag('visitedLabs')) {
           S.setFlag('visitedLabs');
-          ui.toast('It smells like chalk, solder, and ambition.', '🔬');
+          ui.toast('분필, 납땜, 그리고 야망 냄새가 나요.', '🔬');
         }
       },
     });
@@ -317,25 +317,25 @@ export function createIsland6(player) {
     group.add(scope);
     register({
       pos: new THREE.Vector3(fx + 6.4, 0, fz), r: 1.8,
-      label: 'peer through the telescope',
+      label: '망원경 들여다보기',
       use: () => {
         if (isNight()) {
           // after dark the chalk chart on the railing names what you're seeing
           const CHARTED = {
-            'The Bell': 'THE BELL — note the missing clapper star. Fell in the Great Squall (sailors). Never existed (astronomers). Committee split 4–4.',
-            'The Hook': 'THE HOOK — hangs over the lighthouse most of the year. Coincidence, says the committee, unanimously, too quickly.',
-            'The Button': 'THE BUTTON — four holes, perfectly spaced. Pip claims naming rights. Pip does not have naming rights.',
-            'The Wolf (a fox)': 'THE WOLF — per Howell. The committee has reviewed the shape and would like to gently say: fox.',
-            'The Big Parmesan': 'THE BIG PARMESAN — the brightest wheel in the sky. BULKO has asked to sponsor it. Denied (for now).',
-            'The Lantern': 'THE LANTERN — rises over the café. Luna says it was there first. Luna may be right.',
+            '종': '종 — 추 별이 없는 게 포인트. 대폭풍에 떨어졌다(선원들). 존재한 적 없다(천문학자들). 위원회 4대 4.',
+            '갈고리': '갈고리 — 일 년 중 대부분 등대 위에 걸려 있어요. 우연이라고 위원회가 만장일치로, 너무 빨리 말했어요.',
+            '단추': '단추 — 구멍 네 개, 완벽한 간격. 핍이 명명권을 주장해요. 핍에게 명명권은 없어요.',
+            '늑대(여우)': '늑대 — 하웰 왈. 위원회가 그 모양을 검토한 결과 정중히 말씀드려요: 여우.',
+            '큰 파르메산': '큰 파르메산 — 하늘에서 제일 밝은 치즈 바퀴. 불코가 후원을 요청했어요. 거절(아직은).',
+            '랜턴': '랜턴 — 카페 위로 떠올라요. 루나는 자기가 먼저였다고 해요. 루나 말이 맞을지도 몰라요.',
           };
           const name = CONSTELLATION_NAMES[Math.floor(Math.random() * CONSTELLATION_NAMES.length)];
-          ui.say(['You swing the telescope up past the moon, into the stars.', `A chalk chart on the railing: “${CHARTED[name]}”`]);
+          ui.say(['망원경을 달 너머, 별들 사이로 돌려요.', `난간의 분필 차트: “${CHARTED[name]}”`]);
           return;
         }
         ui.say(S.hasFlag('rocketPowered')
-          ? ['The moon, enormous and patient. Someone has taped a note to the eyepiece: “SOON.”']
-          : ['The moon, enormous and patient. Chalked on the railing beside the telescope, an arrow pointing up: “IT’S RIGHT THERE.”']);
+          ? ['달, 거대하고 참을성 있게. 누군가 접안렌즈에 쪽지를 붙여 두었어요: “곧.”']
+          : ['달, 거대하고 참을성 있게. 망원경 옆 난간에 분필로 위를 가리키는 화살표: “바로 저기 있잖아.”']);
       },
     });
   }
@@ -447,16 +447,16 @@ export function createIsland6(player) {
     const plaquePost = box(0.1, 0.75, 0.1, 0x6b7280);
     plaquePost.position.set(flagBaseX - 0.9, py + 0.37, flagBaseZ - 0.08);
     group.add(plaquePost);
-    const plaqueFace = letteredPlane(0.82, 0.52, [['FLAG', 0.3, 0.3], ['PROTOCOL', 0.66, 0.28]], '#c9b178', '#4a3f32');
+    const plaqueFace = letteredPlane(0.82, 0.52, [['깃발', 0.3, 0.3], ['규정', 0.66, 0.28]], '#c9b178', '#4a3f32');
     plaqueFace.position.set(0, 0, 0.045);
     plaque.add(plaqueFace);
     register({
       pos: new THREE.Vector3(flagBaseX, 0, flagBaseZ), r: 2.4,
-      label: 'read the flag protocol',
+      label: '깃발 규정 읽기',
       use: () => ui.say([
-        'A brass plaque, polished to regulation shine:',
-        '“FLAG PROTOCOL. Up at dawn. IN when it rains — the flag is wool, and Pylon insists. Half-mast on Bell Day, for the bell, who would have understood.”',
-        '“Flown at night under floodlight, as permitted by regulation 4(c), which we wrote, about our flag. The committee thanks you for noticing the flag.”',
+        '규정대로 번쩍이게 닦인 황동 명판:',
+        '“깃발 규정. 새벽에 게양. 비가 오면 내릴 것 — 깃발은 양모이고, 파일런이 고집해요. 종의 날에는 조기로, 종을 위해서. 종이라면 이해했을 거예요.”',
+        '“밤에는 우리가 만든, 우리 깃발에 관한 규정 4(c)조에 따라 조명 아래 게양해요. 깃발을 알아봐 주셔서 위원회가 감사드려요.”',
       ]),
     });
 
@@ -520,11 +520,11 @@ export function createIsland6(player) {
     });
     register({
       pos: new THREE.Vector3(dx, 0, dz + 2.2), r: 2.2,
-      label: 'listen at the big ear',
+      label: '큰 귀에 귀 대보기',
       use: () => ui.say(pick([
-        ['A plate on the pedestal: “EST. TO HEAR THE BELL AGAIN. STILL LISTENING. THE RESEARCH GREW.”'],
-        ['You put your ear to the pedestal. The dish hums. Far below the hum, fainter than fair, something goes: …ding?', 'Probably the tide. Probably.'],
-        ['Logbook, latest entry: “03:12 — heard a whale. Rude one. Logged anyway. All data is data.”'],
+        ['받침대의 명판: “종소리를 다시 듣기 위해 설립. 여전히 듣는 중. 연구는 자라났다.”'],
+        ['받침대에 귀를 대요. 접시 안테나가 웅웅거려요. 그 웅웅거림 아주 아래에서, 있어도 너무 희미하게, 무언가가: …딩?', '아마 조수예요. 아마요.'],
+        ['최신 기록: “03:12 — 고래 소리 들림. 무례한 고래. 그래도 기록함. 모든 데이터는 데이터다.”'],
       ])),
     });
   }
@@ -628,17 +628,17 @@ export function createIsland6(player) {
     register({
       pos: new THREE.Vector3(P.x, 0, P.z + 2.6), r: 2.8,
       enabled: () => !launch, // no re-triggering once you've lit the candle
-      label: () => S.hasFlag('rocketPowered') ? 'check on the rocket' : 'inspect the rocket',
+      label: () => S.hasFlag('rocketPowered') ? '로켓 살펴보기' : '로켓 점검하기',
       use: async () => {
         if (S.hasFlag('rocketPowered')) {
           const go = await ui.ask(
-            'The heart chamber glows steady. The gantry lamp is lit. The clipboard checklist is all ticks except the last line, which reads, simply: “GO?”',
+            '심장실이 꾸준히 빛나요. 겐트리 램프가 켜져 있어요. 클립보드 체크리스트는 마지막 줄만 빼고 전부 체크. 마지막 줄에는 간단히: “GO?”',
             [
-              { label: '🚀 Go', value: 'go' },
-              { label: 'Not yet', value: null },
+              { label: '🚀 출발', value: 'go' },
+              { label: '아직은', value: null },
             ]);
           if (!go) {
-            ui.say('The rocket hums on, unbothered. Patience is the oldest part of lighthouse keeping.');
+            ui.say('로켓은 태연하게 계속 웅웅거려요. 인내는 등대 지키기에서 가장 오래된 부분이에요.');
             return;
           }
           if (!S.hasFlag('moonHelmet')) {
@@ -646,10 +646,10 @@ export function createIsland6(player) {
             S.addItem('bubble_helmet');
             jingle();
             await ui.say([
-              'Dr. Hazel sprints from the facility holding something round and gleaming, goggles askew.',
-              '“WAIT. WAIT. Helmet! HELMET. It’s a fishbowl with delusions and three patents. Air for a whole afternoon, and your hat fits under it. We checked. We checked WITH HATS.”',
-            ], { speaker: 'Dr. Hazel', voice: 700 });
-            ui.toast('Got the <b>Bubble Helmet</b>! It fogs up when you grin. It will fog up a lot.', '🫧');
+              '헤이즐 박사가 고글을 비뚤게 쓰고 둥글고 반짝이는 뭔가를 들고 시설에서 뛰쳐나와요.',
+              '“잠깐. 잠깐만. 헬멧! 헬멧이요. 망상과 특허 세 개가 붙은 어항이에요. 온종일 오후 내내 쓸 공기가 들어 있고, 모자도 안에 들어가요. 확인했어요. 모자 쓰고 확인했다고요.”',
+            ], { speaker: '헤이즐 박사', voice: 700 });
+            ui.toast('<b>버블 헬멧</b>을 얻었어요! 웃으면 김이 서려요. 자주 서릴 거예요.', '🫧');
           }
           liftoff(); // the rocket climbs (you're inside); narration + cut-to-moon play out in update()
           return;
@@ -658,10 +658,10 @@ export function createIsland6(player) {
         S.setFlag('sawRocket');
         if (S.countItem('lightseed')) {
           const place = await ui.ask(
-            'The heart chamber sits open at paw height, padded like a jewel box. In your pocket, the Lightseed hums louder — it can see the sky from here.',
+            '심장실이 발 높이에서 보석함처럼 폭신하게 열려 있어요. 주머니 속의 빛의 씨앗이 더 크게 웅웅거려요 — 여기서 하늘이 보이는 거예요.',
             [
-              { label: '🌟 Place the Lightseed', value: 'yes' },
-              { label: 'Not yet', value: null },
+              { label: '🌟 빛의 씨앗 넣기', value: 'yes' },
+              { label: '아직은', value: null },
             ]);
           if (place) {
             S.removeItem('lightseed');
@@ -669,21 +669,21 @@ export function createIsland6(player) {
             powerUp();
             jingle();
             await ui.say([
-              'You set the warm little glow into the chamber. It settles the way a cat settles: completely, and with authority.',
-              'Somewhere inside the rocket, something begins to hum the lighthouse song. The gantry lamp flicks on by itself. Across the yard, three hard hats turn at once.',
-              'The light kept the harbor for a hundred years. Now it sits at the bottom of a rocket, glowing up at the nose cone like: well? You said UP.',
+              '따뜻한 작은 빛을 심장실에 넣어요. 고양이가 자리 잡듯 자리를 잡아요: 완전하게, 그리고 위엄 있게.',
+              '로켓 안 어딘가에서 무언가가 등대 노래를 흥얼거리기 시작해요. 겐트리 램프가 저절로 켜져요. 마당 건너편에서 안전모 세 개가 동시에 돌아봐요.',
+              '그 빛은 백 년 동안 항구를 지켰어요. 이제 로켓 바닥에 앉아, 뾰족탑을 올려다보며 빛내요: 그래서? 위로 가자며.',
             ]);
-            ui.toast('The rocket has a heart. <i>Hold that thought — the moon can wait a little longer.</i>', '🚀');
+            ui.toast('로켓에 심장이 생겼어요. <i>그 마음 그대로 — 달은 조금 더 기다릴 수 있어요.</i>', '🚀');
           }
           return;
         }
         await ui.say([
-          'White and red and patient, pointing at the sky like a question mark with excellent posture.',
-          'A small hatch stands open at the heart of it. Empty. A brass plaque beneath:',
-          '“WANTED: one light that knows the way home. INQUIRE: everywhere. (We did. Still inquiring.)”',
+          '하얗고 빨갛고 참을성 있게, 자세 좋은 물음표처럼 하늘을 가리켜요.',
+          '한가운데 작은 해치가 열려 있어요. 텅 비어 있고, 아래에는 황동 명판:',
+          '“구함: 집으로 가는 길을 아는 빛 하나. 문의: 모든 곳. (했어요. 아직 문의 중.)”',
         ]);
         if (firstLook) {
-          ui.toast('A light that knows the way home… you may have met one, sleeping.', '✨');
+          ui.toast('집으로 가는 길을 아는 빛… 잠들어 있는 걸 만났을지도 몰라요.', '✨');
         }
       },
     });
@@ -703,7 +703,7 @@ export function createIsland6(player) {
     boardS.position.set(sx, sy + 1.7, sz);
     group.add(boardS);
     const face = letteredPlane(3.7, 1.1, [
-      ['NOTBELL LABS', 0.42, 0.42, 900],
+      ['낫벨 연구소', 0.42, 0.42, 900],
       ['research in progress · mind the rovers', 0.8, 0.16, 700],
     ], '#f0e8d8', '#3a4a5c');
     face.position.set(sx, sy + 1.7, sz + 0.075);
@@ -711,10 +711,10 @@ export function createIsland6(player) {
     zones.addBlocker(sx, sz, 0.6);
     register({
       pos: new THREE.Vector3(sx, 0, sz + 1), r: 2.2,
-      label: 'read the sign',
+      label: '표지판 읽기',
       use: () => ui.say([
-        '“NOTBELL LABS — research in progress. Mind the rovers. The rovers mind you back.”',
-        'Smaller, underneath: “Almost Bell Labs. Legal — a heron, freelance — said no. We keep his letter framed. It’s very politely worded.”',
+        '“낫벨 연구소 — 연구 진행 중. 로버 조심. 로버도 당신을 조심해요.”',
+        '그 아래 작게: “벨 연구소가 될 뻔했어요. 법률 담당 — 프리랜서 왜가리 — 이 안 된다고 했어요. 그의 편지는 액자에 걸어 두었어요. 아주 공손한 문구예요.”',
       ]),
     });
   }
@@ -917,11 +917,11 @@ export function createIsland6(player) {
     // one rings. Sometimes somebody's walking past it.
     const booths = [];
     const ANSWERS = [
-      [{ text: 'Brrring… brrring… brrring…' }, { text: 'Far down the causeway, very faintly, the other telephone is ringing its heart out. Nobody picks up.' }],
-      [{ text: 'Brrring… brr— *click*' }, { text: '“Hello? Labs switchboard. …This is the other booth. You know that, right? You can see me. I’m waving.”', speaker: 'a passing mole', voice: 300 }],
-      [{ text: 'Brrring… *click*' }, { text: '“…Is this the telephone? I heard it ringing and I panicked. Hello. It’s very nice to talk to you. Goodbye.”', speaker: 'a passing mole', voice: 300 }],
-      [{ text: '*click*' }, { text: '“Notbell Labs, Department of Calling the Other End of the Bridge. Your call is important to us. We are the only call.”', speaker: 'Strix', voice: 420 }],
-      [{ text: 'Brrring…' }, { text: 'Somebody answers, breathes for a moment, and whispers “the frog is fine” before hanging up.' }],
+      [{ text: '따르릉… 따르릉… 따르릉…' }, { text: '제방길 아주 저쪽에서, 아주 희미하게, 반대편 전화가 심장을 다해 울리고 있어요. 아무도 안 받아요.' }],
+      [{ text: '따르릉… 따르— *딸깍*' }, { text: '“여보세요? 연구소 교환대입니다. …저쪽 부스예요. 아시죠? 저 보이잖아요. 손 흔들고 있어요.”', speaker: '지나가는 두더지', voice: 300 }],
+      [{ text: '따르릉… *딸깍*' }, { text: '“…전화 맞나요? 벨이 울려서 당황했어요. 안녕하세요. 이야기하니 정말 좋네요. 안녕히 계세요.”', speaker: '지나가는 두더지', voice: 300 }],
+      [{ text: '*click*' }, { text: '“낫벨 연구소, 다리 저쪽 끝에 전화 걸기 부서입니다. 고객님의 전화는 저희에게 소중합니다. 유일한 전화거든요.”', speaker: '스트릭스', voice: 420 }],
+      [{ text: 'Brrring…' }, { text: '누군가 받더니 잠시 숨을 쉬고, “개구리는 괜찮아”라고 속삭이고는 끊어요.' }],
     ];
     function phoneBooth(cx, cz, face, where) {
       const b = new THREE.Group();
@@ -948,7 +948,7 @@ export function createIsland6(player) {
       b.add(handle);
       // the sign band: TELEPHONE, front and back
       for (const [z, ry] of [[0.585, 0], [-0.585, Math.PI]]) {
-        const sign = letteredPlane(1.0, 0.2, [['TELEPHONE', 0.55, 0.75]], '#f3e7c4', '#2f5f5f');
+        const sign = letteredPlane(1.0, 0.2, [['전화', 0.55, 0.75]], '#f3e7c4', '#2f5f5f');
         sign.position.set(0, 2.06, z + (z > 0 ? 0.005 : -0.005));
         sign.rotation.y = ry;
         b.add(sign);
@@ -977,7 +977,7 @@ export function createIsland6(player) {
       booths.push(booth);
       register({
         getPos: () => new THREE.Vector3(cx + Math.sin(face) * 1.2, y0, cz + Math.cos(face) * 1.2), r: 1.9,
-        label: 'use the telephone',
+        label: '전화 걸어보기',
         use: () => {
           const other = booths.find((o) => o !== booth);
           if (other) other.ring = 4;
@@ -986,7 +986,7 @@ export function createIsland6(player) {
           const first = !S.hasFlag('calledOtherEnd');
           S.setFlag('calledOtherEnd');
           ui.say(first
-            ? [{ text: `A booth at the ${where} end of the causeway. There is one number on the dial. It says OTHER END.` }, ...ANSWERS[0]]
+            ? [{ text: `제방길 ${{ north: '북쪽', Labs: '연구소' }[where]} 쪽 끝의 부스. 다이얼에는 번호가 하나뿐이에요. “저쪽 끝”이라고 적혀 있어요.` }, ...ANSWERS[0]]
             : pick(ANSWERS));
         },
       });
@@ -1048,26 +1048,26 @@ export function createIsland6(player) {
     });
     return w;
   }
-  addWalker('Gantry', [
+  addWalker('갠트리', [
     { x: fx - 6.5, z: fz, y: ROOF_Y }, { x: fx + 5.4, z: fz, y: ROOF_Y }, // (turns back before the telescope, not through it)
   ], [
-    'Gantry. Boring Department, rooftop division. The catwalk is the best part of the facility. Management agrees. Management is also up here.',
-    'From up here you can see the pad, the sea, and whether Pots is carrying the soup pot. Critical infrastructure, this view.',
-    'We dug the foundations, you know. Then they said “dig UP.” Career-defining day.',
+    '갠트리. 보어링 부, 옥상 지부. 캣워크가 이 시설의 최고 명당이에요. 경영진도 동의해요. 경영진도 여기 올라와 있거든요.',
+    '여기서는 발사대도, 바다도, 팟츠가 수프 냄비를 들고 가는지도 보여요. 중요 인프라예요, 이 전망.',
+    '우리가 기초 공사를 팠다니까요. 그러더니 “위로 파라”는 거예요. 커리어를 결정한 날이었지.',
   ], { fixedY: ROOF_Y, speed: 1.0 });
-  addWalker('Pylon', [
+  addWalker('파일런', [
     { x: Y.x + 3, z: Y.z + 4 }, { x: LABS_DOCK.x - 2, z: LABS_DOCK.z - 2 }, { x: Y.x + 7, z: Y.z - 4 },
   ], [
-    'Pylon. Logistics. Everything on this island arrived by boat, including the opinion that we need a bigger boat.',
-    'The flag is wool. WOOL. You do not fly wet wool. I wrote a memo. The memo is now policy. Best day of my life.',
-    'Crates in, science out. That’s the whole job. The science weighs less. Nobody can explain where the weight goes.',
+    '파일런. 물류. 이 섬의 모든 것은 배로 왔어요. 더 큰 배가 필요하다는 의견까지도.',
+    '깃발이 양모예요. 양.모. 젖은 양모는 게양하는 게 아니에요. 내가 메모를 썼고, 그 메모가 규정이 됐어요. 인생 최고의 날이었지.',
+    '상자 들어오고, 과학 나가고. 그게 일의 전부예요. 과학 쪽이 더 가벼워요. 무게가 어디로 가는지 아무도 설명을 못 해요.',
   ]);
-  addWalker('Doppler', [
+  addWalker('도플러', [
     { x: P.x + 6.5, z: P.z + 2 }, { x: P.x + 2, z: P.z + 6.5 }, { x: P.x - 4.5, z: P.z + 3.5 }, { x: P.x - 2, z: P.z - 6.5 }, { x: P.x + 6, z: P.z - 3 }, // (round the rocket, not through it)
   ], [
-    'Doppler. Pad safety. We test on Tuesdays. We also define Tuesday experimentally.',
-    'Stand anywhere you like. The rocket is OFF. Being off is its best-tested feature.',
-    'When she goes up, the checklist is nine pages. Page nine just says “wave.”',
+    '도플러. 발사대 안전. 실험은 화요일에 해요. 화요일이 뭔지도 실험적으로 정의해요.',
+    '어디든 편하게 서세요. 로켓은 꺼져 있어요. 꺼져 있는 게 제일 많이 검증된 기능이에요.',
+    '얘가 올라갈 때 체크리스트는 아홉 장이에요. 아홉 번째 장에는 그냥 “손 흔들기”라고 적혀 있어요.',
   ], { speed: 1.6 });
 
   // Scout, the rover who graduated early (it asked)
@@ -1078,7 +1078,7 @@ export function createIsland6(player) {
   register({
     getPos: () => scout.position,
     r: 2.2,
-    label: 'say hi to Scout',
+    label: '스카우트에게 인사하기',
     use: () => {
       tone(880, { dur: 0.07, vol: 0.04 });
       tone(1180, { time: 0.09, dur: 0.07, vol: 0.04 });
@@ -1143,7 +1143,7 @@ export function createIsland6(player) {
     banner.position.set(B.x, 2.6, B.z - 1.9);
     room.add(banner);
     const bannerFace = letteredPlane(5.9, 0.82, [
-      ['DAYS SINCE LAST UNSCHEDULED DISCOVERY:  0', 0.5, 0.42, 900],
+      ['마지막 무계획 발견 이후 경과일:  0', 0.5, 0.42, 900],
     ], '#f0e8d8', '#b0453a');
     bannerFace.position.set(B.x, 2.6, B.z - 1.865);
     room.add(bannerFace);
@@ -1160,7 +1160,7 @@ export function createIsland6(player) {
     }
     register({
       pos: new THREE.Vector3(B.x, 0, B.z - 1), r: 3, zone: 'labs',
-      label: 'read the banner',
+      label: '현수막 읽기',
       use: () => ui.say('“DAYS SINCE LAST UNSCHEDULED DISCOVERY: 0 — and proud of it.”'),
     });
 
@@ -1180,41 +1180,41 @@ export function createIsland6(player) {
     room.add(strix);
     let strixIdx = 0;
     const STRIX_LINES = [
-      'We were nearly Bell Labs, you know. Legal — a heron, freelance — advised against. His invoice was one (1) fish. We framed the invoice. We frame things, here.',
-      'The Labs were founded to hear the bell again. The listening machines kept getting bigger, and the questions kept getting wider, and one morning there was a rocket division. Research is like that.',
-      'The wolf was right, by the way. Low-frequency event, foggy nights only, source: under the sea. The seismograph said so. He visits the chart on Sundays. Brings the chart a biscuit.',
-      'Funding? Buttons. Endowed by the estate of a keeper who believed light should go wherever it’s needed. We are taking her extremely literally.',
+      '우리 벨 연구소가 될 뻔했지요. 법률 담당 — 프리랜서 왜가리 — 이 반대 의견을 냈어요. 청구서는 물고기 한(1) 마리였어요. 그 청구서를 액자에 걸었어요. 여기는 뭐든 액자에 걸어요.',
+      '연구소는 종소리를 다시 듣기 위해 세워졌어요. 듣는 기계들은 계속 커졌고, 질문은 계속 넓어졌고, 어느 날 아침에는 로켓 부서가 있었지요. 연구라는 게 그래요.',
+      '그건 그렇고, 그 늑대 말이 맞았어요. 저주파 현상, 안개 낀 밤에만, 발신원: 바다 밑. 지진계가 그랬어요. 걔는 일요일마다 차트를 보러 와요. 차트한테 비스킷을 갖다 줘요.',
+      '자금이요? 단추예요. 빛은 필요한 곳 어디든 가야 한다고 믿었던 등대지기의 유산 기부예요. 우리는 그녀의 말을 극단적으로 문자 그대로 실천하는 중이에요.',
     ];
     register({
       pos: new THREE.Vector3(B.x + 3.2, 0, B.z + 6.8), r: 2.6, zone: 'labs',
-      label: 'talk to Director Strix',
+      label: '스트릭스 소장에게 말 걸기',
       use: async () => {
         if (!S.hasFlag('metStrix')) {
           S.setFlag('metStrix');
           await ui.say([
-            'The owl behind the desk swivels her whole head to you, which saves a great deal of time.',
+            '책상 뒤의 올빼미가 머리를 통째로 당신에게 돌려요. 시간이 아주 절약되지요.',
             '“Director Strix. Welcome to Notbell Labs. We research everything the sea didn’t explain. The list is long. The coffee is free. The rovers are friendly. Mind the chalk.”',
-          ], { speaker: 'Director Strix', voice: 330 });
+          ], { speaker: '스트릭스 소장', voice: 330 });
           return;
         }
         if (S.hasFlag('rocketPowered')) {
-          ui.say('The rocket hums like a kept promise. Fueling, checklists, and then — well. The moon has been very patient with us. We intend to be worth it.',
-            { speaker: 'Director Strix', voice: 330 });
+          ui.say('로켓이 지켜진 약속처럼 웅웅거려요. 연료 주입, 체크리스트, 그리고 나면 — 글쎄요. 달은 우리를 아주 오래 기다려 줬어요. 그 기다림에 보답할 생각이에요.',
+            { speaker: '스트릭스 소장', voice: 330 });
           return;
         }
         if (S.countItem('lightseed')) {
-          ui.say('You’re CARRYING it? It’s humming — the whole building can feel it. Go. GO. The pad. Gently! Like an egg! A very important egg!',
-            { speaker: 'Director Strix', voice: 330 });
+          ui.say('그걸 갖고 다닌다고요? 웅웅거려요 — 건물 전체가 느끼고 있어요. 가요. 가요! 발사대로. 살살! 달걀처럼! 아주 중요한 달걀처럼!',
+            { speaker: '스트릭스 소장', voice: 330 });
           return;
         }
         if (S.hasFlag('sawRocket')) {
           ui.say([
-            'The heart chamber, yes. Engines we have. Fuel we have. What a rocket NEEDS is a light that knows the way home — navigation is mostly remembering, you see.',
-            'There is one sleeping under your island. The old harbor light, in the glow worm cave. ASK it. Worst case it says no, and you’ve made a friend.',
-          ], { speaker: 'Director Strix', voice: 330 });
+            '심장실 말이군요, 네. 엔진도 있고 연료도 있어요. 로켓에 필요한 건 집으로 가는 길을 아는 빛이에요 — 항해란 대부분 기억하는 거거든요.',
+            '당신네 섬 아래에 하나 잠들어 있어요. 옛 항구의 등불, 반딧불 지렁이 동굴에. 물어보세요. 최악의 경우 거절당하고 친구가 생기는 거예요.',
+          ], { speaker: '스트릭스 소장', voice: 330 });
           return;
         }
-        ui.say(STRIX_LINES[strixIdx++ % STRIX_LINES.length], { speaker: 'Director Strix', voice: 330 });
+        ui.say(STRIX_LINES[strixIdx++ % STRIX_LINES.length], { speaker: '스트릭스 소장', voice: 330 });
       },
     });
     labUpdates.push((dt, t, playerPos) => {
@@ -1247,7 +1247,7 @@ export function createIsland6(player) {
       ctx.fillStyle = '#8a3a2e';
       ctx.font = '700 17px ui-rounded, "Segoe UI", system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('THE WOLF WAS RIGHT', 128, 126);
+      ctx.fillText('그 늑대 말이 맞았다', 128, 126);
       const tex = new THREE.CanvasTexture(cv);
       tex.colorSpace = THREE.SRGBColorSpace;
       const chart = new THREE.Mesh(new THREE.PlaneGeometry(2.0, 1.1),
@@ -1257,10 +1257,10 @@ export function createIsland6(player) {
       room.add(chart);
       register({
         pos: new THREE.Vector3(B.x + 9, 0, B.z + 10.6), r: 2.2, zone: 'labs',
-        label: 'study the framed chart',
+        label: '액자 속 차트 살펴보기',
         use: () => ui.say([
-          'A seismograph trace, mostly calm, with one unmistakable spike. The label: “Unexplained low-frequency event. Foggy nights only. Source: below sea level. Bell-shaped, acoustically speaking.”',
-          'Beneath, in different ink: “THE WOLF WAS RIGHT.” Someone has visited this frame often enough to wear the floor pale.',
+          '대체로 잔잔한 지진계 기록지에 명백한 뾰족이 하나. 라벨: “설명되지 않는 저주파 현상. 안개 낀 밤에만. 발신원: 해수면 아래. 음향학적으로 종 모양.”',
+          '그 아래, 다른 잉크로: “그 늑대 말이 맞았다.” 누군가 이 액자를 너무 자주 보러 와서 바닥이 닳아 하얘졌어요.',
         ]),
       });
     }
@@ -1323,10 +1323,10 @@ export function createIsland6(player) {
     });
     register({
       pos: new THREE.Vector3(B.x - 13, 0, B.z + 3.5), r: 2.4, zone: 'labs',
-      label: 'read the chemistry poster',
+      label: '화학 포스터 읽기',
       use: () => ui.say([
-        '“PERIODIC TABLE OF ELEMENTS WE HAVE: eleven (11). Mostly salt. The sea keeps donating salt.”',
-        'Under it, a sticky note: “GLOW (proposed element) — rejected again. It’s not an element, Ada. It’s a FRIEND.”',
+        '“보유 원소 주기율표: 열한(11) 개. 대부분 소금. 바다가 계속 소금을 기부해요.”',
+        '그 아래 스티커 메모: “빛(제안된 원소) — 또 기각됨. 원소가 아니에요, 에이다. 친구라고요.”',
       ]),
     });
 
@@ -1390,10 +1390,10 @@ export function createIsland6(player) {
     }
     register({
       pos: new THREE.Vector3(B.x + 6.4, 0, B.z - 4.9), r: 2.0, zone: 'labs',
-      label: 'inspect the punch cards',
+      label: '천공 카드 살펴보기',
       use: () => ui.say([
-        'Stacks of stiff cards, each punched with neat little holes. A program. You can tell because of the holes.',
-        'The top card reads, in pencil: “MOON.1 — do not shuffle. DO NOT SHUFFLE. We learned about shuffling.”',
+        '빳빳한 카드 더미, 하나하나 단정한 작은 구멍이 뚫려 있어요. 프로그램이에요. 구멍을 보면 알 수 있어요.',
+        '맨 위 카드에 연필로 적혀 있어요: “MOON.1 — 섞지 말 것. 섞지 마시오. 섞으면 어떻게 되는지 배웠음.”',
       ]),
     });
     // Ada, software department, on top of cabinet two
@@ -1428,15 +1428,15 @@ export function createIsland6(player) {
     room.add(ada);
     let adaIdx = 0;
     const ADA_LINES = [
-      'Ada. Software department. Yes, all of it. I weave the programs by paw — core memory is just very opinionated lace.',
-      'The computer fills the room. The PROGRAM fits in a thimble. Nobody here finds this as funny as I do, which is their loss.',
-      'Bugs in the system? Friend. I am the only engineer alive who EATS the bugs in the system.',
-      'Eight legs, eight threads, one loom the size of a building. The moon program is my best doily yet.',
+      '에이다. 소프트웨어 부서. 네, 전부요. 프로그램은 발로 짜요 — 코어 메모리는 그냥 주장이 아주 강한 레이스예요.',
+      '컴퓨터는 방을 가득 채워요. 프로그램은 골무에 들어가요. 여기 아무도 나만큼 웃기다고 생각하지 않아요. 그들의 손해지요.',
+      '시스템의 버그요? 친구. 나는 시스템의 버그를 먹어 치우는 세상에 단 하나뿐인 엔지니어예요.',
+      '다리 여덟 개, 실 여덟 가닥, 건물만 한 베틀 하나. 달 프로그램은 지금까지 중 최고의 도일리예요.',
     ];
     register({
       pos: new THREE.Vector3(B.x + 9.4, 0, B.z - 4.9), r: 2.6, zone: 'labs',
-      label: 'talk to Ada (look up)',
-      use: () => ui.say(ADA_LINES[adaIdx++ % ADA_LINES.length], { speaker: 'Ada', voice: 660 }),
+      label: '에이다에게 말 걸기(위를 보세요)',
+      use: () => ui.say(ADA_LINES[adaIdx++ % ADA_LINES.length], { speaker: '에이다', voice: 660 }),
     });
     labUpdates.push((dt, t) => {
       ada.position.y = 2.95 + Math.sin(t * 0.9) * 0.18;
@@ -1479,8 +1479,8 @@ export function createIsland6(player) {
       }
       register({
         pos: new THREE.Vector3(blocksPos[0], 0, blocksPos[2] + 1), r: 1.6, zone: 'labs',
-        label: 'read the blocks',
-        use: () => ui.say('Alphabet blocks: “A IS FOR APOGEE.” “B IS FOR BURN.” “C IS FOR COOKIE.” The curriculum is sound.'),
+        label: '블록 읽기',
+        use: () => ui.say('알파벳 블록: “A는 아포지.” “B는 버닝.” “C는 쿠키.” 커리큘럼이 탄탄해요.'),
       });
       const ramp = box(2.2, 0.5, 1.2, 0xc9b178);
       ramp.position.set(KG.x1 - 4.5, 0.18, KG.z0 + 4);
@@ -1518,8 +1518,8 @@ export function createIsland6(player) {
       room.add(cord);
       register({
         pos: new THREE.Vector3(KG.x1 - 1.6, 0, KG.z1 - 2.6), r: 1.6, zone: 'labs',
-        label: 'peek at the sleeping rover',
-        use: () => ui.say('(Charging. Its wheels twitch, very slightly. Miss Pinion says they dream in maps.)'),
+        label: '자는 로버 엿보기',
+        use: () => ui.say('(충전 중. 바퀴가 아주 살짝 파르르 떨려요. 피니언 선생님 말로는 얘네는 지도로 꿈을 꾼대요.)'),
       });
 
       // the students
@@ -1535,7 +1535,7 @@ export function createIsland6(player) {
         register({
           getPos: () => rv.position,
           r: 1.8, zone: 'labs',
-          label: 'say hi to the little rover',
+          label: '꼬마 로버에게 인사하기',
           use: () => {
             tone(990 + i * 120, { dur: 0.06, vol: 0.04 });
             tone(1320 + i * 120, { time: 0.08, dur: 0.06, vol: 0.04 });
@@ -1605,18 +1605,18 @@ export function createIsland6(player) {
       blockers.push({ x: KG.x1 - 1.6, z: KG.z1 - 1.6, r: 0.5 }); // the napper
       let pinionIdx = 0;
       const PINION_LINES = [
-        'Miss Pinion. Early rover development. We do shapes, naps, and trajectories, in that order, because that is the correct order.',
-        'They can go to the moon when they grow up — IF they want. One wants to be a library cart. We are equally proud of all of them.',
-        'The glass is so the engineers can wave on their way past. The waving is load-bearing. Developmentally speaking.',
-        'Scout graduated early. It asked. You don’t say no to a rover that asks. You CAN’T. We checked the regulations.',
+        '피니언이에요. 유아 로버 발달 담당. 도형, 낮잠, 탄도학을 그 순서로 가르쳐요. 그게 올바른 순서니까요.',
+        '크면 달에 갈 수 있어요 — 원한다면요. 한 애는 도서관 카트가 되고 싶대요. 모두가 똑같이 자랑스러워요.',
+        '유리는 엔지니어들이 지나가며 손을 흔들 수 있게 한 거예요. 그 손 흔들기가 구조적 지지 역할을 해요. 발달학적으로요.',
+        '스카우트는 조기 졸업했어요. 본인이 요청했거든요. 요청하는 로버한테는 안 된다고 못 해요. 못 한다고요. 규정을 확인했어요.',
       ];
       register({
         getPos: () => pinion.position,
         r: 2.4, zone: 'labs',
-        label: 'talk to Miss Pinion',
+        label: '피니언 선생님에게 말 걸기',
         use: () => {
           S.setFlag('metPinion'); // the graduates up there will want to know
-          ui.say(PINION_LINES[pinionIdx++ % PINION_LINES.length], { speaker: 'Miss Pinion', voice: 540 });
+          ui.say(PINION_LINES[pinionIdx++ % PINION_LINES.length], { speaker: '피니언 선생님', voice: 540 });
         },
       });
       labUpdates.push((dt, t, playerPos) => {
@@ -1650,11 +1650,11 @@ export function createIsland6(player) {
       }
       register({
         pos: new THREE.Vector3(B.x - 13.4, 0, B.z - 8.3), r: 1.8, zone: 'labs',
-        label: 'pour some lab coffee',
+        label: '연구소 커피 따라 마시기',
         use: () => {
           sip();
           S.drinkCoffee(60);
-          ui.toast('Lab coffee: technically coffee. You feel <b>PUBLISHED</b>.', '☕');
+          ui.toast('연구소 커피: 기술적으로는 커피. <b>논문에 실린</b> 기분이 들어요.', '☕');
         },
       });
       // Pots, the cook (a bear in a toque)
@@ -1666,15 +1666,15 @@ export function createIsland6(player) {
       room.add(pots);
       let potsIdx = 0;
       const POTS_LINES = [
-        'Pots. Cafeteria. The stew is rocket fuel. Legally distinct rocket fuel. Sit. Eat. Discover.',
-        'Scientists forget to eat, so I bang the pot at noon. We don’t ring things here. Respect for the bell. The pot understands.',
-        'The moon? I’m planning the first picnic. You can’t rush a picnic. You can rush soup. Different physics entirely.',
+        '팟츠. 구내식당. 스튜는 로켓 연료예요. 법적으로는 다른 로켓 연료. 앉아요. 먹어요. 발견해요.',
+        '과학자들은 먹는 걸 까먹어서, 정오에 냄비를 두드려요. 여기는 뭘 울리지 않아요. 종에 대한 예의지요. 냄비는 이해해요.',
+        '달이요? 나는 첫 피크닉을 기획 중이에요. 피크닉은 서두르는 게 아니에요. 수프는 서둘러도 되고요. 물리가 완전히 달라요.',
       ];
       register({
         getPos: () => pots.position,
         r: 2.6, zone: 'labs',
-        label: 'talk to Pots',
-        use: () => ui.say(POTS_LINES[potsIdx++ % POTS_LINES.length], { speaker: 'Pots', voice: 300 }),
+        label: '팟츠에게 말 걸기',
+        use: () => ui.say(POTS_LINES[potsIdx++ % POTS_LINES.length], { speaker: '팟츠', voice: 300 }),
       });
       const menuFrame = box(5.0, 2.25, 0.16, 0x6b4a2e);
       menuFrame.position.set(B.x - 14.6, 2.35, B.z - 11.72);
@@ -1722,8 +1722,8 @@ export function createIsland6(player) {
       room.add(napper);
       register({
         pos: new THREE.Vector3(B.x - 8.5, 0, B.z - 5.8), r: 1.8, zone: 'labs',
-        label: 'check on the engineer',
-        use: () => ui.say('(Third shift. Recharging. There is a half-finished equation on the napkin and a whole nap on the engineer.)'),
+        label: '엔지니어 살펴보기',
+        use: () => ui.say('(3교대. 재충전 중. 냅킨에는 반쯤 푼 수식이 있고, 엔지니어에게는 완성된 낮잠이 있어요.)'),
       });
     }
 
@@ -1765,10 +1765,10 @@ export function createIsland6(player) {
       room.add(chalk);
       register({
         pos: new THREE.Vector3(B.x - 16.4, 0, B.z + 8.5), r: 2.2, zone: 'labs',
-        label: 'study the blackboard',
+        label: '칠판 살펴보기',
         use: () => ui.say([
-          'A chalk orbit, drawn and redrawn so many times the board has gone soft there. HOME, a long dotted curve, and a small circle labeled “UP?”',
-          'In the corner, tally marks. Hundreds. A note: “attempts to stop thinking about it.” The tallies stop mid-stroke.',
+          '너무 많이 그렸다 지워서 칠판이 푹신해진 분필 궤도. 집, 긴 점선 곡선, 그리고 “위로?”라고 적힌 작은 원.',
+          '구석에는 세는 표시. 수백 개. 메모: “생각을 멈추려는 시도.” 세는 표시가 획 중간에서 멈춰 있어요.',
         ]),
       });
       // blueprint table + model rocket
@@ -1799,21 +1799,21 @@ export function createIsland6(player) {
       room.add(hazel);
       let hazelIdx = 0;
       const HAZEL_LINES = [
-        'Hazel. Trajectories. A launch is just a very committed throw, and I have committed.',
-        'The moon passes overhead every night, very smug about it. We are preparing a response.',
-        'Everything wants to come back down. The trick is asking it, nicely, to do that LATER.',
+        '헤이즐. 궤도학. 발사란 그저 아주 결심한 던지기예요. 그리고 나는 결심했어요.',
+        '달은 매일 밤 머리 위를 지나가요. 아주 거만하게요. 우리는 답변을 준비하는 중이에요.',
+        '모든 것은 다시 내려오고 싶어 해요. 요령은 정중하게, 그건 나중에 해 달라고 부탁하는 거예요.',
       ];
       register({
         getPos: () => hazel.position,
         r: 2.4, zone: 'labs',
-        label: 'talk to Dr. Hazel',
+        label: '헤이즐 박사에게 말 걸기',
         use: () => {
           if (S.hasFlag('rocketPowered')) {
-            ui.say('The heart chamber is WARM. Did you— you DID. T-minus: a polite while. We launch when the moon is ready for company. I have started sleeping in the goggles.',
-              { speaker: 'Dr. Hazel', voice: 700 });
+            ui.say('심장실이 따뜻해요. 설마— 정말 하셨네요. 발사까지: 예의 바른 잠시. 달이 손님을 받을 준비가 되면 발사해요. 나는 고글 쓰고 자기 시작했어요.',
+              { speaker: '헤이즐 박사', voice: 700 });
             return;
           }
-          ui.say(HAZEL_LINES[hazelIdx++ % HAZEL_LINES.length], { speaker: 'Dr. Hazel', voice: 700 });
+          ui.say(HAZEL_LINES[hazelIdx++ % HAZEL_LINES.length], { speaker: '헤이즐 박사', voice: 700 });
         },
       });
       labUpdates.push((dt, t, playerPos) => {
@@ -1844,7 +1844,7 @@ export function createIsland6(player) {
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 11.4), r: 1.8, zone: 'labs',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: fx, z: fz + 5.2, rotY: 0 }),
     });
   }
@@ -1855,9 +1855,9 @@ export function createIsland6(player) {
   // narration plays mid-ascent, then a fade cuts to the starry moon.
   const LAUNCH_NARRATION = [
     '“Notbell Control to rocket. Checklist page nine.” Doppler’s voice, extremely calm. Somewhere below, Pots bangs the pot.',
-    'The hum becomes a shake. The shake becomes a HAND, pressing you gently into the seat. Through the porthole: the pad, the yard, the flag — smaller, smaller, a postage stamp of a country.',
-    'The blue goes thin. The thin goes black. The Lightseed sings the whole way up — the same four notes the lighthouse used to keep — and the sea, for the first time in your life, is somewhere you are not.',
-    'And below the window, all of it at once: every island the volcano ever made, laid out on the water like buttons on a coat.',
+    '웅웅거림이 떨림이 되고, 떨림이 커다란 손이 되어 당신을 좌석에 부드럽게 눌러요. 창 너머로: 발사대, 마당, 깃발 — 작아지고, 작아지고, 우표 한 장만 한 나라.',
+    '파랑이 옅어지고, 옅음이 새까매져요. 빛의 씨앗이 올라가는 내내 노래해요 — 등대가 지키던 그 네 음을 — 그리고 바다는, 태어나 처음으로, 당신이 없는 곳에 있어요.',
+    '그리고 창 아래로, 전부가 한꺼번에: 화산이 만들어낸 모든 섬이, 코트의 단추처럼 물 위에 줄지어 있어요.',
   ];
   function puffSmoke(n = 6) {
     for (let i = 0; i < n; i++) {
@@ -1933,7 +1933,7 @@ export function createIsland6(player) {
         setLaunchNight(0);
         launch = null;
       });
-      ui.toast('Contact light. The dust accepts you politely.', '🌑');
+      ui.toast('착지 신호. 먼지가 공손하게 당신을 받아들여요.', '🌑');
     }
   }
 
@@ -2009,4 +2009,4 @@ export function createIsland6(player) {
   }
 
   return { group, update };
-}
+              }
