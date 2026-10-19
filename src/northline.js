@@ -23,17 +23,17 @@ const LINE = defineLine({
 
 export function createNorthline(player, animals = null) {
   return createRailway(LINE, {
-    player, animals, name: 'the Grove Line',
+    player, animals, name: '그로브 선',
     colors: { loco: 0x2f7d4f, cab: 0x1d5a38, cars: [0xb0453a, 0xd9a440], roof: 0x2f7d4f },
     dwell: 13, whistle: [540, 720],
     text: {
-      board: 'All aboard the Grove Line. Oranges and old money, end of the line.',
-      wait: 'Somewhere down the track, a whistle agrees to the idea.',
-      queued: 'The rails hum their green-country hum.',
-      kept: 'The Grove Line kept your place. All aboard.',
+      board: '그로브 선 모두 탑승하세요. 오렌지와 오래된 돈, 종점입니다.',
+      wait: '선로 저편 어딘가에서, 기적이 그 생각에 동의해요.',
+      queued: '레일이 초록 시골의 콧노래를 웅웅거려요.',
+      kept: '그로브 선이 자리를 지켜 두었어요. 모두 탑승하세요.',
       arrive: [
-        'Notbell. The engine catches its breath behind you.',
-        'Grove Isle. It smells like oranges and a very old lawyer.',
+        '낫벨. 기관차가 당신 뒤에서 숨을 골라요.',
+        '그로브 섬. 오렌지와 아주 나이 든 변호사 냄새가 나요.',
       ],
     },
   });
