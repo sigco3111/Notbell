@@ -332,8 +332,8 @@ export function createPlayer() {
         if (!hasFlag('firstSwim')) {
           setFlag('firstSwim');
           ui.toast(state.avatar?.kind === 'duck'
-            ? 'You take to the water like the duck you are.'
-            : 'Goggles on your forehead, just in case. The sea lets you in.', '🌊');
+            ? '오리답게 물에 척척 적응했어요.'
+            : '만일을 대비해 이마에 고글을 올렸어요. 바다가 당신을 받아 줬어요.', '🌊');
         }
       }
     }
