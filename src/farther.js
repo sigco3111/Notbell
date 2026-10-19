@@ -48,23 +48,23 @@ const VOICE = { huck: 250, wren: 480, cypress: 300 };
 export const FARTHER_DOCK = { x: 0, z: 0, rotY: 0, buoyPos: null };
 
 const HUCK_CHAT = [
-  'Huck. Eleven summers camping here. The tent became an RV, the RV grew an awning. Any year now I expect a porch. That’s how houses happen, friend — nobody builds one on purpose.',
-  'The tide comes in, the tide goes out. I keep a chair facing each direction.',
-  'Cypress stocks three kinds of beans and won’t say what the third one is. I respect it enormously.',
-  'Folks ask when I’m heading home. Home’s where your kettle is. My kettle’s here.',
+  '헉이야. 열한 번째 여름을 여기서 캠핑 중이지. 텐트가 RV가 되고, RV에 어닝이 달렸어. 조만간 현관도 생기겠지. 집이란 그렇게 생기는 거야, 친구 — 일부러 짓는 사람은 없어.',
+  '조수는 밀려오고, 밀려나가. 나는 의자를 방향마다 하나씩 둬.',
+  '사이프러스는 콩을 세 종류 들여놓고 세 번째가 뭔지 절대 안 알려줘. 엄청나게 존중해.',
+  '언제 집에 가냐고들 물어. 집은 주전자가 있는 곳이야. 내 주전자는 여기 있어.',
 ];
 
 const WREN_CHAT = [
-  'Shh — there. On the flats. A heron. He’s been on one leg since Tuesday. Committed. I admire that.',
-  'Forty-one birds logged this month. Forty-two if you count reflections, which I do not. Rigor, friend.',
-  'Some folks watch birds hoping for rare ones. I watch because somebody should be keeping notes. The sky just DOES things all day, unsupervised.',
-  'The mangroves are the best hide on the island. You stand in the water and the birds assume you’re furniture. It’s very restful, being furniture.',
+  '쉿 — 저기. 갯벌에. 왜가리. 화요일부터 한 발로 서 있어. 헌신적이야. 존경해.',
+  '이번 달 기록된 새 마흔한 마리. 반영까지 세면 마흔둘인데, 난 안 세. 엄밀함이야, 친구.',
+  '희귀한 새를 바라고 보는 사람들도 있지. 난 누군가는 기록해야 해서 봐. 하늘은 하루 종일 그냥 뭔가를 해, 감독도 없이.',
+  '맹그로브가 섬 최고의 은신처야. 물에 서 있으면 새들이 널 가구로 여겨. 가구 노릇은 아주 편안해.',
 ];
 
 const CYPRESS_CHAT = [
-  'Welcome to the General. We have it. If we don’t have it, come back Thursday — the tide usually brings one in.',
-  'Receipts go in the pouch. Everything goes in the pouch. The pouch is the filing system, and the filing system is full.',
-  'Marshmallows are the top seller. Beans are second. The third bean is doing better than expected.',
+  '제너럴에 온 걸 환영해. 다 있어. 없으면 목요일에 다시 와 — 조수가 보통 하나씩 가져다줘.',
+  '영수증은 파우치로. 모든 게 파우치로. 파우치가 파일링 시스템이고, 파일링 시스템은 가득 찼어.',
+  '마시멜로가 최고 인기. 콩이 2위. 세 번째 콩은 예상보다 잘 팔려.',
 ];
 
 export function createFarther() {
@@ -77,10 +77,10 @@ export function createFarther() {
 
   addIslandInfo({
     key: 'farther',
-    name: 'Farther Isle', x: ISLAND7.x, z: ISLAND7.z + 4, r: 30, icon: '🏕️',
-    blurb: 'Way out past the Far Isle, which is the entire joke. A campground under its own little mountain (trail to the top — sign the register), kayaks, the Farther General, and mangroves that waded out to meet the tide halfway.',
-    folk: 'Huck · Wren · Cypress · Stilt (one leg, since Tuesday) · whoever’s camping this week',
-    mystery: '“Smoke past the Far Isle of an evening. Campfire smoke — the friendly kind. Smelled marshmallows clean across the water. I had to sit down.” —Captain Brine',
+    name: '파더 섬', x: ISLAND7.x, z: ISLAND7.z + 4, r: 30, icon: '🏕️',
+    blurb: '파 아일보다 한참 더 멀리, 그게 농담 전부야. 자기만의 작은 산 아래 캠핑장(정상 트레일 — 등록부에 서명), 카약, 파더 제너럴, 그리고 조수를 중간까지 마중 나간 맹그로브.',
+    folk: '헉 · 렌 · 사이프러스 · 스틸트(한 발, 화요일부터) · 이번 주 캠핑하는 누구든',
+    mystery: '“저녁이면 파 아일 너머에 연기. 모닥불 연기 — 정다운 종류. 물 건너에서 마시멜로 냄새가 생생히 났어. 주저앉을 수밖에 없었지.” —브라인 선장',
   });
 
   // ======================================================== the campsite ----
@@ -123,21 +123,21 @@ export function createFarther() {
     }
     register({
       pos: new THREE.Vector3(FIRE.x, 0, FIRE.z + 1.6), r: 1.9,
-      label: 'sit by the fire',
+      label: '모닥불 곁에 앉기',
       use: async () => {
         if (!(S.state.inv.marshmallows > 0)) {
-          ui.say('The fire crackles generously. It would toast a marshmallow to an heirloom bronze, if a marshmallow were present. The General sells them.');
+          ui.say('불이 넉넉하게 타닥거려요. 마시멜로가 있다면 가보급 브론즈로 구워줄 거예요. 제너럴에서 팔아요.');
           return;
         }
-        const c = await ui.ask('The fire makes its standing offer.', [
-          { label: '🍡 Toast a marshmallow', value: 'toast' },
-          { label: 'Just sit', value: null },
+        const c = await ui.ask('불이 늘 하던 제안을 해요.', [
+          { label: '🍡 마시멜로 굽기', value: 'toast' },
+          { label: '그냥 앉아 있기', value: null },
         ]);
         if (c === 'toast') {
           await ui.fadeSwap(() => {});
-          ui.say('You toast one slowly, turning it the way the tide turns — patient, both sides. It comes out the exact color of a good decision. Somewhere in the bag, another takes its place.');
+          ui.say('천천히 하나를 구워요, 조수가 도는 방식대로 — 참을성 있게, 양면을. 좋은 결정의 정확한 색깔이 나와요. 봉지 어딘가에서 다른 하나가 그 자리를 채워요.');
         } else {
-          ui.say('You sit. The fire does the talking. It is a good listener too, somehow, at the same time.');
+          ui.say('앉아 있어요. 말은 불이 해요. 어쩐지 동시에 좋은 청취자이기도 해요.');
         }
       },
     });
@@ -212,7 +212,7 @@ export function createFarther() {
     zones.setDoor(id, doorOut);
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + D / 2), r: 1.6, zone: id,
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo(doorOut),
     });
     for (const it of dress.things ?? []) register({ ...it, zone: id, pos: new THREE.Vector3(B.x + it.at[0], 0, B.z + it.at[1]) });
@@ -241,7 +241,7 @@ export function createFarther() {
 
   const TENT_ROOMS = {
     wren: {
-      name: '⛺ Wren’s Tent', label: 'duck into Wren’s tent',
+      name: '⛺ 렌의 텐트', label: '렌의 텐트에 고개 숙여 들어가기',
       build: (B, W, D, bl) => {
         sleepingBag(B.x - 1, B.z - 0.6, 0, 0x5b8b7a);
         lantern(B.x + 1.3, 0, B.z - 1.2);
@@ -254,11 +254,11 @@ export function createFarther() {
         }
         bl.push({ x: B.x - 1, z: B.z - 0.6, w: 1.9, d: 0.8 });
       },
-      things: [{ at: [1.2, 0.3], r: 1.4, label: 'read Wren’s field notes',
-        use: () => ui.say('“Tues: heron, one leg. Wed: heron, one leg. Thurs: heron, one leg, looked at me. A breakthrough.”') }],
+      things: [{ at: [1.2, 0.3], r: 1.4, label: '렌의 야외 노트 읽기',
+        use: () => ui.say('“화: 왜가리, 한 발. 수: 왜가리, 한 발. 목: 왜가리, 한 발, 나를 쳐다봄. 돌파구.”') }],
     },
     spare: {
-      name: '⛺ The Spare Tent', label: 'peek into the spare tent',
+      name: '⛺ 여분 텐트', label: '여분 텐트 들여다보기',
       build: (B, W, D, bl) => {
         const blanket = box(1.6, 0.12, 1.2, 0xc9705a);
         blanket.position.set(B.x, 0.06, B.z - 0.8);
@@ -266,11 +266,11 @@ export function createFarther() {
         lantern(B.x - 1.4, 0, B.z - 1.3);
         bl.push({ x: B.x, z: B.z - 0.8, w: 1.6, d: 1.2 });
       },
-      things: [{ at: [0, -0.2], r: 1.6, label: 'look around the spare tent',
-        use: () => ui.say('Swept, aired, a folded blanket squared to the corners. A note on it: “FOR WHOEVER NEEDS IT. —H.”') }],
+      things: [{ at: [0, -0.2], r: 1.6, label: '여분 텐트 둘러보기',
+        use: () => ui.say('청소됐고, 환기됐고, 개킨 담요가 모서리에 반듯해요. 그 위 쪽지: “필요한 누구에게나. —H.”') }],
     },
     campers: {
-      name: '⛺ This Week’s Tent', label: 'peek into the campers’ tent',
+      name: '⛺ 이번 주 텐트', label: '캠퍼들의 텐트 들여다보기',
       build: (B, W, D, bl) => {
         sleepingBag(B.x - 1.1, B.z - 0.5, 0.15, 0xe8a33a);
         sleepingBag(B.x + 1.0, B.z - 0.9, -0.2, 0x6a7ec9);
@@ -283,8 +283,8 @@ export function createFarther() {
         group.add(snacks);
         bl.push({ x: B.x - 1.1, z: B.z - 0.5, w: 1.9, d: 0.8 }, { x: B.x + 1.0, z: B.z - 0.9, w: 1.9, d: 0.8 });
       },
-      things: [{ at: [-0.2, 0.6], r: 1.4, label: 'look at the snack situation',
-        use: () => ui.say('Trail mix, sorted: all the chocolate bits are gone. Somebody here is a professional, and somebody else is going to find out tonight.') }],
+      things: [{ at: [-0.2, 0.6], r: 1.4, label: '간식 상황 살펴보기',
+        use: () => ui.say('트레일 믹스, 선별 완료: 초콜릿 조각이 전부 사라졌어요. 여기 누군가는 프로이고, 다른 누군가는 오늘 밤 알게 될 거예요.') }],
     },
   };
 
@@ -362,7 +362,7 @@ export function createFarther() {
   }
   const RV_ROOMS = {
     huck: {
-      name: '🚐 Huck’s RV', label: 'step into Huck’s RV', wall: 0xe8dcc4,
+      name: '🚐 헉의 RV', label: '헉의 RV에 들어가기', wall: 0xe8dcc4,
       build: (B, W, D, bl) => {
         rvFurniture(B, W, D, bl);
         // the wall of tide tables, annotated in pencil
@@ -375,19 +375,19 @@ export function createFarther() {
         }
       },
       things: [
-        { at: [-2.4, 0.4], r: 1.4, label: 'read the tide tables', use: () => ui.say('Columns of times and heights, eleven summers deep. Some entries just say “yes.” One says “the big one — worth it.” Another says “kettle.”') },
-        { at: [0.4, -0.8], r: 1.2, label: 'look at the kettle', use: () => ui.say('Still warm. Huck’s kettle is always still warm. Home is where it is.') },
+        { at: [-2.4, 0.4], r: 1.4, label: '조수표 읽기', use: () => ui.say('시각과 높이의 열이 열한 여름치 쌓여 있어요. 어떤 기록은 그냥 “응.” 하나는 “큰 거 — 가치 있었어.” 또 하나는 “주전자.”') },
+        { at: [0.4, -0.8], r: 1.2, label: '주전자 보기', use: () => ui.say('아직 따뜻해요. 헉의 주전자는 언제나 아직 따뜻해요. 집은 그게 있는 곳이에요.') },
       ],
     },
     spare: {
-      name: '🚐 The Holiday RV', label: 'step into the other RV', wall: 0xdfe6d8,
+      name: '🚐 휴가 RV', label: '다른 RV에 들어가기', wall: 0xdfe6d8,
       build: (B, W, D, bl) => rvFurniture(B, W, D, bl, { bench: 0x5b8b7a, curtains: 0xd84f4f }),
       things: [
-        { at: [1.2, -0.9], r: 1.3, label: 'read the note', use: () => ui.say('Taped to the curtains: “ON HOLIDAY FROM OUR HOLIDAY. BACK SOON. HELP YOURSELF TO THE COCOA, NOT THE GOOD COCOA.”') },
+        { at: [1.2, -0.9], r: 1.3, label: '쪽지 읽기', use: () => ui.say('커튼에 테이프로: “휴가에서 휴가 중. 곧 돌아옴. 코코아는 드셔도 됨, 좋은 코코아는 안 됨.”') },
       ],
     },
     gordy: {
-      name: '🛻 Gordy’s Trailer', label: 'step into Gordy’s trailer', wall: 0xc9c2a8,
+      name: '🛻 고디의 트레일러', label: '고디의 트레일러에 들어가기', wall: 0xc9c2a8,
       build: (B, W, D, bl) => {
         rvFurniture(B, W, D, bl, { bench: 0x6e7e4a, curtains: 0x8a6a48 });
         const trophy = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.08, 0.3, 6), mat(0xd9b44a, 0.3));
@@ -398,7 +398,7 @@ export function createFarther() {
         group.add(pizza);
       },
       things: [
-        { at: [-0.4, -0.8], r: 1.2, label: 'read the trophy', use: () => ui.say('“WORLD’S OKAYEST FISHERMAN.” Engraved. Somebody paid for the engraving. It was probably Gordy.') },
+        { at: [-0.4, -0.8], r: 1.2, label: '트로피 읽기', use: () => ui.say('“세계에서 제일 그럭저럭인 낚시꾼.” 새겨져 있어요. 누군가 각인비를 냈어요. 아마 고디.') },
       ],
     },
   };
@@ -543,17 +543,17 @@ export function createFarther() {
     zones.addBlocker(coolAt.x, coolAt.z, 0.45);
     register({
       pos: new THREE.Vector3(coolAt.x, 0, coolAt.z + 0.8), r: 1.4,
-      label: 'open the cooler',
+      label: '쿨러 열기',
       use: async () => {
-        const c = await ui.ask('Ice, and a lot of brown glass bottles: BIG MOOSE ROOT BEER. “Take one,” says Gordy, not looking away from the TV.', [
-          { label: '🍺 Take a root beer', value: 'drink' },
-          { label: 'Close the lid', value: null },
+        const c = await ui.ask('얼음, 그리고 갈색 유리병 잔뜩: 빅 무스 루트비어. “하나 가져가,” TV에서 눈을 떼지 않고 고디가 말해요.', [
+          { label: '🍺 루트비어 하나 가져가기', value: 'drink' },
+          { label: '뚜껑 닫기', value: null },
         ]);
         if (c !== 'drink') return;
         S.drinkCoffee(12);
         sip();
         ui.updateHUD();
-        ui.toast('Big Moose Root Beer. Aggressively sassafras. Somehow correct.', '🍺');
+        ui.toast('빅 무스 루트비어. 공격적으로 사사프라스. 이상하게 정답.', '🍺');
       },
     });
     // Gordy, in the chair, facing the set: sat forward on the seat (so the
@@ -609,24 +609,24 @@ export function createFarther() {
     });
     register({
       getPos: () => gordy.position, r: 2.4,
-      label: 'talk to Gordy',
+      label: '고디와 대화하기',
       use: () => {
         const LINES = [
-          'Came out here for the long weekend. Brought the trailer. The weekend’s still going, as far as I’m concerned.',
-          'TV gets one channel. It’s a fishing show. Same episode. I think the fish is gonna get away this time. I got a feeling.',
-          'Cooler’s there. Root beer. Big Moose. Don’t take the last one, that’s the emergency one.',
-          'Huck comes by some nights. We don’t talk. It’s great.',
-          'Folks see the stripe and give me a lotta room. Suits me. More room for the chair.',
+          '긴 주말 보내러 왔지. 트레일러 끌고. 내가 아는 한 그 주말은 아직 진행 중이야.',
+          'TV는 채널 하나. 낚시 프로그램. 같은 회차. 이번엔 물고기가 도망칠 것 같아. 느낌이 와.',
+          '쿨러 저기 있어. 루트비어. 빅 무스. 마지막 하나는 가져가지 마, 비상용이야.',
+          '헉이 어떤 밤에 들러. 우린 말 안 해. 최고야.',
+          '사람들이 줄무늬 보고 엄청 비켜줘. 나야 좋지. 의자 놓을 자리 넓고.',
         ];
         if (gordyTalk.first) {
           gordyTalk.first = false;
           ui.say([
-            { text: 'I thought it was the Farter Isle.' },
-            { text: 'Ha! No. I know. Everybody knows. …I’m still a little disappointed, honestly.' },
-          ], { speaker: 'Gordy', voice: 280 });
+            { text: '난 “방귀 섬”인 줄 알았어.' },
+            { text: '하! 아니야. 알아. 다들 알아. …솔직히 아직 좀 아쉬워.' },
+          ], { speaker: '고디', voice: 280 });
           return;
         }
-        ui.say(LINES[gordyTalk.i++ % LINES.length], { speaker: 'Gordy', voice: 280 });
+        ui.say(LINES[gordyTalk.i++ % LINES.length], { speaker: '고디', voice: 280 });
       },
     });
   }
@@ -671,8 +671,8 @@ export function createFarther() {
     huckWalk = makeWanderer(huck, { home: { x: huck.position.x, z: huck.position.z, face: FIRE }, stay: 25 });
     register({
       getPos: () => huck.position, r: 2.6,
-      label: 'talk to Huck',
-      use: () => ui.say(pick(HUCK_CHAT), { speaker: 'Huck', voice: VOICE.huck }),
+      label: '헉과 대화하기',
+      use: () => ui.say(pick(HUCK_CHAT), { speaker: '헉', voice: VOICE.huck }),
     });
   }
 
@@ -728,7 +728,7 @@ export function createFarther() {
     ext.add(crate);
     // the sign stands on the porch roof's front edge, saying where you are
     // (it used to hang under the roof, where the camera never saw it)
-    const sign = signBoard('FARTHER GENERAL', 3.0, 0.7);
+    const sign = signBoard('파더 제너럴', 3.0, 0.7);
     sign.position.set(0, 2.85, 4.62);
     ext.add(sign);
     for (const bx of [-1.2, 1.2]) {
@@ -756,7 +756,7 @@ export function createFarther() {
     };
     register({
       pos: new THREE.Vector3(doorWorld.x, 0, doorWorld.z), r: 2.2,
-      label: 'enter the Farther General',
+      label: '파더 제너럴 들어가기',
       use: () => zones.go('general'),
     });
 
@@ -885,7 +885,7 @@ export function createFarther() {
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 4.2), r: 1.8, zone: 'general',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({
         x: doorWorld.x + Math.sin(rotY) * 1.2,
         z: doorWorld.z + Math.cos(rotY) * 1.2,
@@ -894,7 +894,7 @@ export function createFarther() {
     });
     register({
       getPos: () => cypress.position, r: 3.4, zone: 'general',
-      label: 'shop with Cypress',
+      label: '사이프러스에게 쇼핑하기',
       use: () => shopMenu(),
     });
     // the full General: food, gear, and things to remember it by
@@ -909,43 +909,43 @@ export function createFarther() {
       { id: 'camp_mug', aisle: 'keep', price: 6 },
       { id: 'postcard_farther', aisle: 'keep', price: 3 },
     ];
-    const AISLES = [['food', '🍡 Camp food'], ['gear', '🔦 Camp gear'], ['keep', '🏝️ Keepsakes']];
+    const AISLES = [['food', '🍡 캠핑 음식'], ['gear', '🔦 캠핑 장비'], ['keep', '🏝️ 기념품']];
     const SAYS = {
-      marshmallows: 'Marshmallows. Top seller. Toast ’em at the fire; the bag never quite runs out, and we don’t ask why.',
-      trail_mix: 'Trail mix. The chocolate bits are on the honor system.',
-      third_bean: 'The third bean. No, I won’t say. Yes, it’s good.',
-      flashlight: 'A proper flashlight. After dark it’ll light the ground ahead of you. The dark out here is the real dark.',
-      camp_lantern: 'Camp lantern. Tin and glass. Hang it anywhere a little light would be company.',
-      bug_spray: 'Bug spray. Citronella. The mosquitoes out here are polite, but it’s nice to be sure.',
-      compass: 'Brass compass. Points north. Mostly. Sometimes at the fire.',
-      camp_mug: 'The enamel mug. The dent’s load-bearing.',
-      postcard_farther: 'Postcard. “Wish you were farther.” Mail it from the post, they’ll know what to do.',
+      marshmallows: '마시멜로. 최고 인기. 불에 구워; 봉지가 좀처럼 바닥나지 않고, 우리는 이유를 묻지 않아.',
+      trail_mix: '트레일 믹스. 초콜릿 조각은 명예 제도로 운영.',
+      third_bean: '세 번째 콩. 아니, 안 알려줘. 응, 맛있어.',
+      flashlight: '제대로 된 손전등. 어두워지면 앞바닥을 비춰줘. 여기 어둠은 진짜 어둠이야.',
+      camp_lantern: '캠핑 랜턴. 양철과 유리. 작은 빛이 동반이 될 곳 어디든 걸어.',
+      bug_spray: '벌레 퇴치제. 시트로넬라. 여기 모기는 예의 바르지만, 확실한 게 좋지.',
+      compass: '놋쇠 나침반. 북쪽을 가리켜. 대부분. 가끔 모닥불을.',
+      camp_mug: '법랑 머그. 찌그러진 게 하중을 지탱해.',
+      postcard_farther: '엽서. “네가 더 멀리 있으면 좋겠어.” 우체국에서 부쳐, 알아서 해줄 거야.',
     };
     async function buyAisle(aisle) {
       const list = GOODS.filter((g) => g.aisle === aisle && !(g.once && S.countItem(g.id) > 0));
-      const picked = await ui.ask('On these shelves:', [
+      const picked = await ui.ask('이 선반 위에:', [
         ...list.map((g) => ({
           label: `${ITEMS[g.id].emoji} ${ITEMS[g.id].name}`, value: g.id, hint: `${g.price}🔘`,
           disabled: S.state.buttons < g.price,
         })),
-        { label: 'Back', value: null },
-      ], { speaker: 'Cypress', voice: VOICE.cypress });
+        { label: '뒤로', value: null },
+      ], { speaker: '사이프러스', voice: VOICE.cypress });
       const g = GOODS.find((x) => x.id === picked);
       if (!g) return shopMenu();
       S.spend(g.price);
       S.addItem(g.id);
       kaching();
       ui.updateHUD();
-      ui.toast(`You bought <b>${ITEMS[g.id].name}</b>. Cypress files the buttons in the pouch.`, ITEMS[g.id].emoji);
+      ui.toast(`<b>${ITEMS[g.id].name}</b>을(를) 샀어요. 사이프러스가 버튼을 파우치에 파일해요.`, ITEMS[g.id].emoji);
       await ui.say(SAYS[g.id], { speaker: 'Cypress', voice: VOICE.cypress });
       return buyAisle(aisle);
     }
     async function shopMenu() {
-      const c = await ui.ask('“What’ll it be?”', [
+      const c = await ui.ask('“뭘로 할래?”', [
         ...AISLES.map(([k, label]) => ({ label, value: k })),
-        { label: '💬 Chat', value: 'chat' },
-        { label: 'Just browsing', value: null },
-      ], { speaker: 'Cypress', voice: VOICE.cypress });
+        { label: '💬 수다', value: 'chat' },
+        { label: '그냥 구경 중', value: null },
+      ], { speaker: '사이프러스', voice: VOICE.cypress });
       if (c === 'chat') {
         await ui.say(pick(CYPRESS_CHAT), { speaker: 'Cypress', voice: VOICE.cypress });
         return shopMenu();
@@ -954,13 +954,13 @@ export function createFarther() {
     }
     register({
       pos: new THREE.Vector3(B.x + 1.2, 0, B.z - 1.7), r: 2.0, zone: 'general',
-      label: 'browse the shelves',
+      label: '선반 구경하기',
       use: () => shopMenu(),
     });
     register({
       pos: new THREE.Vector3(B.x + 4.4, 0, B.z + 1.6), r: 1.7, zone: 'general', priority: 0,
-      label: 'warm your hands at the stove',
-      use: () => ui.say('The stove ticks. The kettle on top sits forever nearly boiling, out of respect for whoever comes in next.'),
+      label: '난로에 손 녹이기',
+      use: () => ui.say('난로가 똑딱거려요. 위의 주전자는 다음에 올 누군가에 대한 예의로 영원히 거의 끓고 있어요.'),
     });
   }
 
@@ -986,8 +986,8 @@ export function createFarther() {
     group.add(stilt);
     register({
       getPos: () => stilt.position, r: 2.6,
-      label: 'regard Stilt',
-      use: () => ui.say('(Stilt regards the water. The water regards Stilt. You get the sense this has been going on all morning, and that both parties consider it going well.)'),
+      label: '스틸트 바라보기',
+      use: () => ui.say('(스틸트가 물을 바라봐요. 물이 스틸트를 바라봐요. 이게 아침 내내 이어져 왔고, 양측 모두 잘되고 있다 여기는 것 같아요.)'),
     });
   }
 
@@ -1064,8 +1064,8 @@ export function createFarther() {
     group.add(wren);
     register({
       getPos: () => wren.position, r: 2.4,
-      label: 'talk to Wren',
-      use: () => ui.say(pick(WREN_CHAT), { speaker: 'Wren', voice: VOICE.wren }),
+      label: '렌과 대화하기',
+      use: () => ui.say(pick(WREN_CHAT), { speaker: '렌', voice: VOICE.wren }),
     });
   }
   const wrenWalk = {
@@ -1226,10 +1226,10 @@ export function createFarther() {
     group.add(rind);
     register({
       pos: new THREE.Vector3(BL.x, 0, BL.z), r: 2.0, priority: 0,
-      label: 'sit on the picnic blanket',
+      label: '피크닉 담요에 앉기',
       use: () => ui.say(pick([
-        'You sit. The watermelon is already cut. Nobody says who cut it. Somebody always does.',
-        'The blanket is warm from the sun. An ant makes a formal inspection of the basket, finds it adequate, and leaves a good review.',
+        '앉아요. 수박은 이미 잘려 있어요. 누가 잘랐는지 아무도 말 안 해요. 누군가는 항상 잘라요.',
+        '담요가 햇볕에 따뜻해요. 개미가 바구니를 공식 검열하고, 적합하다 판정하고, 좋은 리뷰를 남겨요.',
       ])),
     });
   }
@@ -1311,10 +1311,10 @@ export function createFarther() {
     zones.addBlockerBox(KB.x, KB.z, 6.0, 4.8, 0.3, 0);
     register({
       pos: new THREE.Vector3(KB.x, 0, KB.z + 3.2), r: 2.6,
-      label: 'look over the kayaks',
+      label: '카약 살펴보기',
       use: () => ui.say(pick([
-        'Three kayaks, pulled up above the tide line: teal, yellow, and one red one somebody has named SIR PADDINGTON in marker pen.',
-        'A sign on the rack: “BORROW ONE, BRING IT BACK, AND IF YOU MEET A WHALE, SAY HI FROM CAMP.”',
+        '카약 세 척, 조수선 위로 끌어 올려져 있어요: 청록, 노랑, 그리고 누군가 마커로 패딩턴 경이라 이름 붙인 빨간 것.',
+        '거치대의 표지: “하나 빌려 가고, 돌려놓을 것, 그리고 고래를 만나면 캠프에서 안부 전할 것.”',
       ])),
     });
   }
@@ -1349,11 +1349,11 @@ export function createFarther() {
     beam.position.set(AX, ay + 3.6, AZ);
     beam.rotation.y = ry;
     group.add(beam);
-    const arch = signBoard('CAMP FARTHER', 4.6, 0.95);
+    const arch = signBoard('파더 캠프', 4.6, 0.95);
     arch.position.set(AX, ay + 3.0, AZ);
     arch.rotation.y = ry;
     group.add(arch);
-    const back = signBoard('COME BACK SOON', 4.6, 0.95);
+    const back = signBoard('또 오세요', 4.6, 0.95);
     back.position.set(AX - sn * 0.1, ay + 3.0, AZ - cs * 0.1);
     back.rotation.y = ry + Math.PI;
     group.add(back);
@@ -1366,15 +1366,15 @@ export function createFarther() {
     const post = box(0.14, 1.05, 0.14, 0x6e5136); // (ends under the board, not through its face)
     post.position.set(T0.x - 1, ty + 0.525, T0.z - 1);
     group.add(post);
-    const board = signBoard('SUMMIT TRAIL ↑', 1.9, 0.5);
+    const board = signBoard('정상 트레일 ↑', 1.9, 0.5);
     board.position.set(T0.x - 1, ty + 1.3, T0.z - 1);
     board.rotation.y = Math.atan2(C.x - T0.x, C.z - T0.z);
     group.add(board);
     zones.addBlocker(T0.x - 1, T0.z - 1, 0.2);
     register({
       pos: new THREE.Vector3(T0.x - 1, 0, T0.z - 0.2), r: 1.8,
-      label: 'read the trail sign',
-      use: () => ui.say('“SUMMIT TRAIL — 0.4 mi — moderate — switchbacks — bring a snack. VIEW: yes.” Underneath, carved: “THE SNACK IS NOT OPTIONAL.”'),
+      label: '트레일 표지 읽기',
+      use: () => ui.say('“정상 트레일 — 0.6km — 보통 — 지그재그 — 간식 지참. 전망: 있음.” 아래에 새겨져 있어요: “간식은 선택이 아님.”'),
     });
     // little marker posts along the way, painted orange at the tip
     for (let i = 1; i < TRAIL7.length - 1; i++) {
@@ -1435,17 +1435,17 @@ export function createFarther() {
     group.add(tinPost);
     register({
       pos: new THREE.Vector3(SM.x - 0.6, 0, SM.z + 1.6), r: 2.0,
-      label: 'sign the summit register',
+      label: '정상 등록부에 서명하기',
       use: async () => {
         await ui.say([
-          'A tin box on a post. Inside, a notebook in a sandwich bag, and a pencil on a string.',
-          'Recent entries: “made it!! —Reedy (4 oz)” · “almost —Sprint” · “almost —Sprint” · “WOLF WAS HERE —H.” · “TEXAS IS HIGHER. —P.” (it isn’t) · “the stars from up here, though —V.”',
+          '기둥 위 양철 상자. 안에 샌드위치 봉지 속 노트와, 끈 달린 연필.',
+          '최근 기록: “해냈다!! —리디 (4온스)” · “아깝다 —스프린트” · “아깝다 —스프린트” · “늑대 다녀감 —H.” · “텍사스가 더 높음. —P.” (아님) · “여기서 보는 별은 말이야 —V.”',
         ]);
         if (!S.hasFlag('summitFarther')) {
           S.setFlag('summitFarther');
-          ui.toast('You signed the summit register. The pencil is exactly as blunt as the view is sharp.', '⛰️');
+          ui.toast('정상 등록부에 서명했어요. 연필은 전망이 뾰족한 만큼 정확히 무뎌요.', '⛰️');
         } else {
-          ui.say('You add a small tick next to your name. Summit number something. The mountain doesn’t keep score, but the notebook does.');
+          ui.say('이름 옆에 작은 표를 하나 더해요. 정상 몇 번째쯤. 산은 점수를 안 매기지만, 노트는 매겨요.');
         }
       },
     });
@@ -1577,42 +1577,42 @@ export function createFarther() {
     grill: { x: GRILL.x, z: GRILL.z + 1.1, face: GRILL },
   };
   const CAMPERS = [
-    { name: 'Thistle', kind: 'hedgehog', colors: { body: 0x8a6a48 }, spot: 'fire', prop: 'guitar', voice: 620, lines: [
-      'I know three chords and all three know me. This one’s about a marshmallow. They’re all about a marshmallow.',
-      'Requests? I take requests. I play the same song, but I take them.' ] },
-    { name: 'Pim', kind: 'penguin', colors: {}, spot: 'tent', prop: 'pack', voice: 520, lines: [
-      'I packed for every weather. It’s sunny. I’m ready for sunny too. I’m ready for everything, and everything is heavy.',
+    { name: '시슬', kind: 'hedgehog', colors: { body: 0x8a6a48 }, spot: 'fire', prop: 'guitar', voice: 620, lines: [
+      '코드 세 개를 알고 셋 다 나를 알아. 이 곡은 마시멜로에 대한 거야. 전부 마시멜로에 대한 거야.',
+      '신청곡? 받아. 같은 노래를 연주하지만, 받긴 해.' ] },
+    { name: '핌', kind: 'penguin', colors: {}, spot: 'tent', prop: 'pack', voice: 520, lines: [
+      '모든 날씨에 대비해서 쌌어. 맑네. 맑음에도 준비됐어. 모든 게 준비됐고, 모든 게 무거워.',
       'Is there a dress code for camping? I brought three. I’m wearing all of them.' ] },
-    { name: 'Reedy', kind: 'frog', colors: { body: 0x7ab04a, belly: 0xf1ecc4, feet: 0xe8c547 }, spot: 'summit', prop: 'pack', voice: 700, lines: [
-      'Base weight: four ounces. That’s me. I am the four ounces.',
-      'You made it up! Sign the register. Use the pencil. The pencil is part of the experience.' ] },
-    { name: 'Lumen', kind: 'moth', colors: { body: 0xd9c9a8 }, spot: 'table', prop: 'book', voice: 680, lines: [
-      'Chapter nine. The lantern and I are both very invested.',
-      'I came for the dark sky. I stay for the one lamp on this table. I’m aware of the contradiction.' ] },
-    { name: 'Gulliver', kind: 'pelican', colors: {}, spot: 'beach', prop: 'paddle', voice: 300, lines: [
-      'Kayak guide. Paddle on the left, paddle on the right, and if a fish asks, you haven’t seen me.',
-      'Rode the currents in from the archipelago this morning. Took four hours and two sandwiches. Worth it.' ] },
-    { name: 'Dune', kind: 'horse', colors: { body: 0xc9a06a }, spot: 'blanket', prop: null, voice: 340, lines: [
-      'Sold everything but the blanket. Best trade I ever made. The blanket agrees.',
-      'You want watermelon? There’s always watermelon. I don’t know who keeps cutting it. I’ve stopped asking.' ] },
-    { name: 'Burrow', kind: 'mole', colors: { body: 0x55483a }, spot: 'tent', prop: 'shovel', voice: 260, lines: [
-      'Rain’s coming. Not today. But it’s coming, and my trench will be ready.',
-      'Everybody else brought a tent. I brought a better idea about the ground.' ] },
-    { name: 'Sprint', kind: 'tortoise', colors: {}, spot: 'trail', prop: 'pack', voice: 240, lines: [
-      'Summit by autumn. Next autumn. I’m pacing myself. I’m very good at pacing myself.',
-      'Signed the register twice. “Almost.” Both times. It’s a practice.' ] },
-    { name: 'Mallow', kind: 'capybara', colors: { body: 0xb08a5a, head: 0xb08a5a }, spot: 'hammock', prop: null, voice: 230, lines: [
-      'The hammock and I have reached an understanding. The understanding is that I stay.',
-      'Mm. (That was the whole thought. It was a good one.)' ] },
-    { name: 'Vela', kind: 'owl', colors: { body: 0x9a8a78 }, spot: 'summit', prop: null, voice: 480, lines: [
-      'Out here the sky’s so dark the stars have to introduce themselves.',
-      'Catch a falling star yet? Bring a net. Everybody forgets the net.' ] },
-    { name: 'Cedar', kind: 'boar', colors: { body: 0x6e5a48, head: 0x6e5a48 }, spot: 'grill', prop: 'spatula', voice: 250, lines: [
-      'Beans. The third bean is back. I don’t know what it is either, but it’s really coming along.',
-      'You hungry? It’s beans. It’s always beans. That’s camping, friend.' ] },
-    { name: 'Juniper', kind: 'rabbit', colors: { body: 0xe8dcc8 }, spot: 'fire', prop: 'mug', voice: 640, lines: [
-      'First time camping! I brought a cushion for the log. Nobody told me about the log. The log is a lot.',
-      'Huck says the fire’s never gone out. Not once. I’ve decided to believe him, it’s more fun.' ] },
+    { name: '리디', kind: 'frog', colors: { body: 0x7ab04a, belly: 0xf1ecc4, feet: 0xe8c547 }, spot: 'summit', prop: 'pack', voice: 700, lines: [
+      '기본 무게: 4온스. 그게 나야. 내가 그 4온스야.',
+      '올라왔구나! 등록부에 서명해. 연필 써. 연필도 경험의 일부야.' ] },
+    { name: '루멘', kind: 'moth', colors: { body: 0xd9c9a8 }, spot: 'table', prop: 'book', voice: 680, lines: [
+      '9장. 랜턴이랑 나랑 둘 다 아주 몰입 중이야.',
+      '어두운 하늘 보러 왔어. 이 테이블의 램프 하나 때문에 남아. 모순인 건 알아.' ] },
+    { name: '걸리버', kind: 'pelican', colors: {}, spot: 'beach', prop: 'paddle', voice: 300, lines: [
+      '카약 가이드야. 왼쪽 젓고, 오른쪽 젓고, 물고기가 물으면, 너 나 못 봤어.',
+      '아침에 군도에서 해류 타고 왔어. 네 시간에 샌드위치 두 개. 가치 있었어.' ] },
+    { name: '듄', kind: 'horse', colors: { body: 0xc9a06a }, spot: 'blanket', prop: null, voice: 340, lines: [
+      '담요 빼고 다 팔았어. 내 인생 최고의 거래. 담요도 동의해.',
+      '수박 먹을래? 수박은 항상 있어. 누가 자꾸 자르는지 몰라. 묻는 건 그만뒀어.' ] },
+    { name: '버로우', kind: 'mole', colors: { body: 0x55483a }, spot: 'tent', prop: 'shovel', voice: 260, lines: [
+      '비가 와. 오늘은 아냐. 하지만 오고, 내 배수로는 준비될 거야.',
+      '다들 텐트를 가져왔지. 난 땅에 대한 더 나은 아이디어를 가져왔어.' ] },
+    { name: '스프린트', kind: 'tortoise', colors: {}, spot: 'trail', prop: 'pack', voice: 240, lines: [
+      '가을까지 정상. 다음 가을. 페이스 조절 중이야. 페이스 조절은 아주 잘해.',
+      '등록부에 두 번 썼어. “아깝다.” 두 번 다. 수련이야.' ] },
+    { name: '멜로', kind: 'capybara', colors: { body: 0xb08a5a, head: 0xb08a5a }, spot: 'hammock', prop: null, voice: 230, lines: [
+      '해먹이랑 나는 합의에 도달했어. 합의 내용은 내가 머무는 거야.',
+      '음. (그게 생각 전부였어. 좋은 생각이었어.)' ] },
+    { name: '벨라', kind: 'owl', colors: { body: 0x9a8a78 }, spot: 'summit', prop: null, voice: 480, lines: [
+      '여기는 하늘이 너무 어두워서 별들이 자기소개를 해야 해.',
+      '별똥별 잡아봤어? 그물 가져와. 다들 그물을 까먹어.' ] },
+    { name: '시더', kind: 'boar', colors: { body: 0x6e5a48, head: 0x6e5a48 }, spot: 'grill', prop: 'spatula', voice: 250, lines: [
+      '콩. 세 번째 콩이 돌아왔어. 나도 뭔지 몰라, 근데 정말 잘 자라고 있어.',
+      '배고파? 콩이야. 항상 콩이야. 그게 캠핑이야, 친구.' ] },
+    { name: '주니퍼', kind: 'rabbit', colors: { body: 0xe8dcc8 }, spot: 'fire', prop: 'mug', voice: 640, lines: [
+      '캠핑 처음이야! 통나무용 쿠션 가져왔어. 통나무 얘긴 아무도 안 해줬어. 통나무는 대단해.',
+      '헉 말로는 불이 꺼진 적 없대. 한 번도. 믿기로 했어, 그게 더 재밌으니까.' ] },
   ];
   function propFor(kind, animal) {
     const g = new THREE.Group();
@@ -1767,10 +1767,10 @@ export function createFarther() {
       });
       register({
         getPos: () => kayak.position, r: 6,
-        label: 'wave at the kayaker',
+        label: '카약 탄 사람에게 손 흔들기',
         use: () => ui.say(pick([
-          '(The kayaker waves the whole paddle. It is an enormous wave. You feel very seen.)',
-          '“Morning! Or whatever it is! Out here it’s mostly just “water”!”',
+          '(카약 탄 사람이 패들째로 흔들어요. 엄청난 손짓이에요. 완전히 봐준 느낌이에요.)',
+          '“좋은 아침! 아니면 뭐든! 여기는 대부분 그냥 “물”이야!”',
         ])),
       });
     }
@@ -1946,7 +1946,7 @@ export function createFarther() {
     if (playerPos && !S.hasFlag('seenFarther') &&
         Math.hypot(playerPos.x - ISLAND7.x, playerPos.z - ISLAND7.z) < 20) {
       S.setFlag('seenFarther');
-      ui.toast('Farther Isle. The name is a promise, faithfully kept.', '🏕️');
+      ui.toast('파더 섬. 이름은 약속이고, 충실히 지켜졌어요.', '🏕️');
     }
   }
 
@@ -1978,4 +1978,4 @@ function signBoard(text, w = 3.4, h = 0.8) {
     new THREE.MeshStandardMaterial({ map: tex, flatShading: true, roughness: 0.9 }));
   board.castShadow = board.receiveShadow = true;
   return board;
-}
+                                     }
