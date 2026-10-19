@@ -11,17 +11,17 @@ import { rand, pick, turnToward } from './utils.js';
 
 const FIRST_MEETING = [
   '…oh. Oh! You can SEE me?',
-  'Nobody’s looked right at me since the lighthouse was lit. I’m Murmur. I was here before the bell. I’ll be here after the moss, probably.',
-  'Don’t tell everyone. Or do. I’ve honestly forgotten which I prefer.',
+  '등대에 불이 켜진 뒤로 아무도 나를 똑바로 쳐다보지 않아. 나는 머머야. 종보다 먼저 여기 있었지. 아마 이끼 다음까지도 있을 거야.',
+  '모두에게 비밀로 해. 아니, 말해도 돼. 어느 쪽이 더 좋은지 솔직히 까먹었어.',
 ];
 
 const MURMUR_LINES = [
-  'Boo. (Sorry. Tradition. There’s paperwork.)',
-  'I was here before the bell, you know. The quiet ones remember me. Fern pretends not to. It’s a little game we play. She’s very good at it.',
-  'The lighthouse hook — I’m the one who polishes it. Someone should. Some things ought to stay ready.',
-  'Walls are a rumor. A very confident rumor.',
-  'The glow worms wave at me. Don’t let anyone tell you worms aren’t polite.',
-  'I tried haunting the Buttonwagon once. It was already perfect. Nothing for me to add.',
+  '부우. (미안. 전통이야. 서류도 있어.)',
+  '나는 종보다 먼저 여기 있었다고. 조용한 아이들은 나를 기억해. 펀은 기억 못 하는 척해. 우리가 하는 작은 놀이야. 걔는 그걸 아주 잘해.',
+  '등대 갈고리 — 닦는 게 나야. 누군가는 해야지. 어떤 것들은 항상 준비되어 있어야 하거든.',
+  '벽이란 소문이야. 아주 자신만만한 소문.',
+  '반딧불 지렁이들이 나한테 손을 흔들어. 벌레가 예의 없다는 말은 믿지 마.',
+  '버튼왜건을 한번 헌팅해 봤어. 이미 완벽하더라고. 내가 더할 게 없었어.',
 ];
 
 const FIRST_VISIT_DELAY = [180, 360];
@@ -76,14 +76,14 @@ export function createGhost(player) {
     r: 3,
     zone: () => zones.current(), // wherever you are, that's where they haunt
     enabled: () => state === 'here',
-    label: () => (S.hasFlag('metMurmur') ? 'talk to Murmur' : 'approach the… presence?'),
+    label: () => (S.hasFlag('metMurmur') ? '머머에게 말 걸기' : '…존재에게 다가가기?'),
     use: () => {
       if (!S.hasFlag('metMurmur')) {
         S.setFlag('metMurmur');
-        ui.say(FIRST_MEETING, { speaker: 'Murmur', voice: 880 });
+        ui.say(FIRST_MEETING, { speaker: '머머', voice: 880 });
         return;
       }
-      ui.say(MURMUR_LINES[lineIdx++ % MURMUR_LINES.length], { speaker: 'Murmur', voice: 880 });
+      ui.say(MURMUR_LINES[lineIdx++ % MURMUR_LINES.length], { speaker: '머머', voice: 880 });
     },
   });
 
