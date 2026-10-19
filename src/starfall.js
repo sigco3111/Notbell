@@ -85,13 +85,13 @@ export function createStarfall(player) {
     starMat.emissiveIntensity = 1.3;
     star = { g, body, streak, phase: 'streak', t: 0, from, to, handle: null };
     tone(1760, { dur: 0.6, type: 'sine', vol: 0.02, slide: -800 });
-    ui.toast('A star comes loose over the island… it’s drifting down nearby. ✨', '🌠');
+    ui.toast('섬 위로 별 하나가 흘러 떨어져요… 근처로 내려오고 있어요. ✨', '🌠');
     star.handle = register({
       getPos: () => star?.g.position ?? new THREE.Vector3(0, -99, 0), r: 2.4,
       enabled: () => !!star && star.phase !== 'streak',
       label: () => (star?.phase === 'fall'
-        ? (S.state.tools.net ? 'catch the falling star!' : 'reach for the falling star')
-        : 'gather the stardust'),
+        ? (S.state.tools.net ? '떨어지는 별 잡기!' : '떨어지는 별에 손 뻗기')
+        : '별가루 줍기'),
       use: () => {
         if (!star) return;
         if (star.phase === 'fall') {
