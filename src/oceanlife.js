@@ -64,23 +64,23 @@ export function createOceanLife() {
   // each fin has a name, a patch, and things to say to anyone who swims or
   // rows close enough to hear. (they get the teeth question a lot.)
   const orbits = [
-    { cx: 50, cz: -16, r: 13, name: 'Gummy', body: 0x8fb3cc, lines: [
-      'Oh! Hi! Don’t mind the teeth. I have a lot of them. I brush every single one. It takes all morning.',
-      'I patrol the strait! Nothing ever happens. I LOVE it here.',
-      'Somebody on the pier dropped half a sandwich once. I gave it back. They screamed, but I think it was a thank-you scream.',
-      'Did you know sharks never stop growing teeth? I try not to think about it. It’s a lot of teeth.',
+    { cx: 50, cz: -16, r: 13, name: '검이', body: 0x8fb3cc, lines: [
+      '오! 안녕! 이빨은 신경 쓰지 마. 많거든. 하나하나 다 닦아. 아침이 다 가.',
+      '나는 해협 순찰대야! 아무 일도 안 일어나. 여기 정말 좋아.',
+      '한번은 부두에서 누가 샌드위치 반 개를 떨어뜨렸어. 돌려줬지. 비명을 지르길래, 고맙다는 비명인 것 같았어.',
+      '상어 이빨은 평생 자라는 거 알아? 생각 안 하려고 해. 이빨이 너무 많아서.',
     ] },
-    { cx: -30, cz: 40, r: 16, name: 'Aunt Doris', body: 0x9aa8c4, lines: [
-      'Hello, dear. You’re swimming too far out without a snack. Here — well, I haven’t got hands. Imagine I gave you a biscuit.',
-      'Forty years I’ve circled this bit of sea. Round and round. You’d be amazed what you notice, going round.',
-      'Tell the ducks I said hello. They never stay to chat. Everyone’s in such a hurry.',
-      'I’d knit, if I could. Something warm for the lighthouse keeper. She’s always up so late.',
+    { cx: -30, cz: 40, r: 16, name: '도리스 아주머니', body: 0x9aa8c4, lines: [
+      '안녕, 얘야. 간식도 없이 너무 멀리 헤엄치고 있네. 자 — 아, 손이 없구나. 비스킷 하나 줬다고 상상해 봐.',
+      '40년째 이 바다를 빙빙 돌고 있어. 빙글빙글. 돌다 보면 뭐가 보이는지 놀랄 걸.',
+      '오리들한테 안부 전해 줘. 얘네는 수다를 안 떨고 가. 다들 왜 그리 바쁜지.',
+      '뜨개질을 할 수 있다면 하고 싶어. 등대지기에게 따뜻한 걸. 그분은 항상 늦게까지 깨 있더라고.',
     ] },
-    { cx: ISLAND2.x + 20, cz: ISLAND2.z + 24, r: 14, name: 'Finnegan', body: 0x86b8b8, lines: [
-      'Be honest. If I did a flip right now, would you think I was a dolphin? …Don’t answer. I’m still working on the flip.',
-      'The dolphins say I’m “very enthusiastic.” I think that’s good. I’m going to decide that’s good.',
-      '*squeaks, hopefully* …That was dolphin for hello. I think. I’m learning from a tape.',
-      'Whale went by yesterday. Huge. Didn’t even say hi. I said hi, though. You have to say hi.',
+    { cx: ISLAND2.x + 20, cz: ISLAND2.z + 24, r: 14, name: '피네건', body: 0x86b8b8, lines: [
+      '솔직히 말해 봐. 내가 지금 공중제비를 하면, 돌고래라고 생각할 것 같아? …대답하지 마. 공중제비는 아직 연습 중이야.',
+      '돌고래들이 나를 “아주 열정적”이라고 해. 좋은 뜻인 것 같아. 좋은 뜻이라고 정하기로 했어.',
+      '*희망을 담아 삑삑* …방금 건 돌고래 말로 안녕이야. 아마. 테이프로 배우는 중이거든.',
+      '어제 고래가 지나갔어. 엄청 커. 인사도 안 하더라. 나는 했지만. 인사는 해야지.',
     ] },
   ];
   const BELLY = mat(0xf2efe6);
