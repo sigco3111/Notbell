@@ -86,7 +86,7 @@ export function createDigging() {
       getPos: () => spot.mark.position,
       r: 1.9,
       enabled: () => spot.alive,
-      label: () => (S.state.tools.shovel ? 'dig' : 'something is buried here…'),
+      label: () => (S.state.tools.shovel ? '파기' : '뭔가 묻혀 있어요…'),
       use: () => {
         if (!S.state.tools.shovel) {
           ui.say([
