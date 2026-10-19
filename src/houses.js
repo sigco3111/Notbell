@@ -38,27 +38,27 @@ function collectInteriorRoot(parent, startIndex) {
 const IN_HOME = { x: 300, z: 240 }; // cottage interior, off in the elsewhere
 
 const BOOKS = [
-  '“Knots for Boats and Reasons.”',
-  '“1001 Button Facts, Vol. 2 (Facts 38–41).”',
-  '“The Lighthouse Keeper’s Almanac,” annotated in two different handwritings.',
-  '“Mushrooms: Friend, Food, or Lamp?”',
-  '“A Field Guide to Pretending You Are a Wolf.” It is signed.',
+  '《배를 위한 매듭과 이유》',
+  '《버튼 상식 1001가지, 2권 (38–41번 상식)》',
+  '《등대지기의 연감》, 두 가지 다른 필체의 주석 달림.',
+  '《버섯: 친구인가, 음식인가, 램프인가?》',
+  '《늑대인 척하기 야외 안내서》. 사인본이다.',
 ];
 
 // what you find when you knock and nobody's home
 const KNOCKS = {
-  Clover: 'A round green door with a clover knocker. Nobody home — she’s out in the flowers somewhere, being furniture for butterflies.',
-  Biscuit: 'The yard is FULL of small, suspicious mounds. A sign on the door: “OUT. DIGGING. OR NAPPING. INVESTIGATING SOMETHING, ANYWAY.”',
-  Saffron: 'It smells like every flower on the island at once, but alphabetized. Nobody in.',
-  Howell: 'Scratch marks on the door. Like a wolf’s. EXACTLY like a wolf’s. A note: “OUT. PRACTICING. AWOO.”',
-  Bramble: 'The whole house leans comfortably to one side, like it sat down years ago and saw no reason to get up. Bramble is elsewhere, probably also sitting.',
-  Marigold: 'A long house with a tall door. A horseshoe hangs above it, ends up, holding the luck in like a bowl. Nobody home — listen for hooves on the bridge.',
-  Ember: 'A low round hut, warm to the touch even from outside. A sign: “IF NOT HERE, AT THE CAVE. IF NOT AT THE CAVE, IT IS RAINING AND I AM EVERYWHERE.”',
-  Butterpat: 'A wide, calm house smelling of butter and cut grass. A note: “GRAZING. IT’S ALL GRAZING, REALLY, IF YOU THINK ABOUT IT.”',
-  Crumb: 'The MouseBoat rocks gently at its mooring. A tiny sign: “CAPTAIN OUT. CRUMBS ACCEPTED IN THE TIN.” There is, indeed, a tin.',
-  Barb: 'A low mossy house with a door you have to duck for, and a basket of yarn on the step (Ruth’s; she lives here too, forty years). A hand-lettered sign: “AT THE CREEK. IF NOT AT THE CREEK, ALSO AT THE CREEK.”',
-  Null: 'A black door with a keypad beside it. The keypad is decorative. The door is unlocked. A sticky note: “not home. or am i. (not home.)”',
-  Mabel: 'The doorstep is piled with things that are not Mabel’s: a trowel, a single glove, a garden gnome looking resigned. A note: “OUT RELOCATING. HONK.”',
+  Clover: '클로버 노커가 달린 둥근 초록 문. 아무도 없어요 — 어딘가 꽃밭에 나가 나비들의 가구가 되어 있어요.',
+  Biscuit: '마당이 작고 수상한 흙더미로 가득해요. 문의 표지: “외출. 땅 파는 중. 아니면 낮잠. 어쨌든 뭔가 수사 중.”',
+  Saffron: '섬의 모든 꽃 향기가 한꺼번에, 하지만 가나다순으로 나요. 아무도 없어요.',
+  Howell: '문에 긁힌 자국. 늑대 것처럼. 정확히 늑대 것처럼. 쪽지: “외출. 연습 중. 아우우.”',
+  Bramble: '집 전체가 편안하게 한쪽으로 기울어요, 몇 년 전에 앉았다가 일어날 이유를 못 찾은 것처럼. 브램블은 어딘가에, 아마 앉아 있어요.',
+  Marigold: '높은 문의 긴 집. 편자가 위에 걸려 있어요, 끝을 위로, 그릇처럼 행운을 담으며. 아무도 없어요 — 다리 위 말발굽 소리를 들어 보세요.',
+  Ember: '낮고 둥근 오두막, 밖에서도 만지면 따뜻해요. 표지: “없으면 동굴. 동굴에도 없으면 비가 오고 나는 사방에 있음.”',
+  Butterpat: '버터와 깎은 풀 냄새 나는 넓고 차분한 집. 쪽지: “방목 중. 생각해 보면 다 방목이야, 정말.”',
+  Crumb: '마우스보트가 계류장에서 부드럽게 흔들려요. 작은 표지: “선장 외출. 까불이(부스러기)는 깡통으로 접수.” 정말 깡통이 있어요.',
+  Barb: '고개를 숙여야 하는 문의 낮은 이끼 집, 디딤돌엔 털실 바구니 (루스 것; 40년째 같이 살아요). 손글씨 표지: “시냇가. 시냇가에 없으면, 그래도 시냇가.”',
+  Null: '옆에 키패드가 달린 검은 문. 키패드는 장식이에요. 문은 열려 있어요. 포스트잇: “집에 없음. 아니면 있나. (집에 없음.)”',
+  Mabel: '문지방에 메이블 것이 아닌 물건들이 쌓여 있어요: 손삽, 장갑 한 짝, 체념한 듯한 정원 난쟁이. 쪽지: “재배치하러 외출. 꽥.”',
 };
 
 // when each villager is home, [start, end) on the real clock — wet weather
@@ -93,86 +93,86 @@ function isHomeNow(name) {
 }
 
 const COME_INS = {
-  Clover: 'A muffled voice: “It’s open! Watch the cushions! …no, you can step on them, they like it.”',
-  Biscuit: 'From inside: “In here! Mind the mounds!”',
-  Saffron: 'A pleased voice: “Come iiin!”',
-  Howell: 'A grave voice: “You may ENTER the den.” A pause. “Hi.”',
-  Bramble: 'A slow, warm voice: “Door’s unlocked. It always is.”',
-  Marigold: 'A bright whinny: “It’s open! Duck under the beam!”',
-  Ember: 'A happy hiss: “Yesss, come in! Pick a rock! They’re all warm!”',
-  Butterpat: 'A slow, pleased voice: “Come in, dear. Mind the churn. The churn minds back.”',
-  Barb: 'From inside, a gravel voice: “Hrm. It’s open.”',
-  Null: 'The keypad beeps. A voice from inside: “You’re in.”',
-  Mabel: 'A voice: “HONK.” (Come in.)',
+  Clover: '웅웅거리는 목소리: “열려 있어! 쿠션 조심! …아니, 밟아도 돼, 얘네가 좋아해.”',
+  Biscuit: '안에서: “여기야! 흙더미 조심!”',
+  Saffron: '흡족한 목소리: “들어오세여!”',
+  Howell: '근엄한 목소리: “굴에 들어오는 것을 허락한다.” 잠시 뜸. “안녕.”',
+  Bramble: '느리고 따뜻한 목소리: “문 안 잠겼어. 항상 그래.”',
+  Marigold: '밝은 울음: “열려 있어! 들보 밑으로 고개 숙여!”',
+  Ember: '기쁜 쉿 소리: “그러암, 들어와! 돌 하나 골라! 다 따뜻해!”',
+  Butterpat: '느리고 흡족한 목소리: “들어오렴, 얘야. 교유기 조심. 교유기도 널 조심한단다.”',
+  Barb: '안에서 자갈 목소리: “흠. 열려 있어.”',
+  Null: '키패드가 삑 소리를 내요. 안의 목소리: “들어왔네.”',
+  Mabel: '목소리: “꽥.” (들어와요.)',
 };
 
 const HOME_LINES = {
   Clover: [
-    'You found my burrow! Sit anywhere. Sit EVERYWHERE. That’s what the cushions are for.',
-    'Home is where you can hear the rain and not be in it. Unless you’re Howell. He’s out there singing in it.',
+    '내 굴을 찾았구나! 아무 데나 앉아. 모든 데 앉아. 쿠션은 그러라고 있는 거야.',
+    '집이란 비 소리를 들으면서 비를 안 맞는 곳이야. 하웰 말고. 걘 밖에서 비 맞으며 노래해.',
   ],
   Biscuit: [
-    'Welcome! Mind the floor. And the walls. Some things are buried in the walls. Long story. Good story.',
-    'A buried snack is a gift from a very thoughtful past me to a very lucky future me.',
+    '어서 와! 바닥 조심. 벽도. 벽엔 묻어둔 것들이 있어. 긴 이야기야. 좋은 이야기.',
+    '묻어둔 간식은 아주 배려 깊은 과거의 내가 아주 운 좋은 미래의 나에게 주는 선물이야.',
   ],
   Saffron: [
-    'Come in, come in — mind the hanging bunches. That one’s labeled “northwest wind, first warm day.”',
-    'A tidy den and one open window. That’s the entire secret to everything.',
+    '들어와, 들어와 — 매단 다발 조심. 저건 “북서풍, 첫 따뜻한 날”이라고 라벨 붙었어.',
+    '정돈된 굴과 열린 창 하나. 그게 모든 것의 비밀 전부야.',
   ],
   Howell: [
-    'Welcome to the DEN. Wolves have dens. This is one. Draw your own conclusions. The correct ones.',
-    'I howl at the poster on cloudy nights. Keeps the skills sharp. The moon understands.',
+    '굴에 온 걸 환영해. 늑대는 굴을 가져. 이게 그거야. 결론은 알아서 내려. 옳은 걸로.',
+    '흐린 밤엔 포스터 보고 울어. 실력 유지야. 달은 이해해 줘.',
   ],
   Bramble: [
-    'Oh, hello. Pull up a chair. The big one. There’s only the big one.',
-    'A house is just a cave that learned manners.',
+    '오, 안녕. 의자 끌어와. 큰 거. 큰 것밖에 없어.',
+    '집이란 예의를 배운 동굴일 뿐이야.',
   ],
   Marigold: [
-    'Welcome! Mind your head — the ceiling was built for optimists.',
-    'I keep the window facing the bridge. Best view on either island: things arriving.',
+    '어서 와! 머리 조심 — 천장은 낙관주의자용으로 지어졌어.',
+    '창은 다리 쪽으로 냈어. 어느 섬에서든 최고의 경치: 도착하는 것들.',
   ],
   Ember: [
-    'Oh! Hello! Isn’t it WONDERFUL in here. Shh. Listen. …B-flat.',
-    'Sit on a warm rock. Any of them. They’re all warm. I checked each one personally.',
+    '오! 안녕! 여기 엄청 멋지지 않아. 쉿. 들어 봐. …B플랫.',
+    '따뜻한 돌에 앉아. 아무 거나. 다 따뜻해. 하나하나 직접 확인했어.',
   ],
   Butterpat: [
-    'Evenings are for butter and thinking about grass in the abstract.',
-    'Vesper lent me a book about meadows. I live in a meadow. I read it anyway. Wonderful twist at the end: more meadow.',
+    '저녁은 버터와, 추상적으로 풀 생각을 위한 시간이야.',
+    '베스퍼가 초원에 대한 책을 빌려줬어. 나는 초원에 사는데. 그래도 읽었어. 결말의 멋진 반전: 초원이 더 나옴.',
   ],
   Barb: [
-    'Hrm. Sit anywhere. Not the rocking chair. That’s Ruth’s. Forty years. Anywhere else.',
-    'I keep a jar of creek water on the sill. Changes color with the seasons. Better than a calendar. Doesn’t argue.',
+    '흠. 아무 데나 앉아. 흔들의자 말고. 그건 루스 거야. 40년째. 다른 데 아무 데나.',
+    '창틀에 시냇물 병을 둬. 계절 따라 색이 바뀌어. 달력보다 나아. 말대꾸도 안 하고.',
   ],
   Ruth: [
-    'Welcome, dear! Tea? It’s cranberry. Everything here is cranberry, eventually.',
-    'That scarf is for the creek. That one’s for Barb. That one’s for you. It’ll be done in the spring. Some spring.',
+    '어서 와, 얘야! 차 마실래? 크랜베리야. 여긴 결국 다 크랜베리가 돼.',
+    '저 목도리는 시냇가용. 저건 바브 거. 저건 네 거. 봄쯤 완성될 거야. 어떤 봄.',
   ],
   Null: [
-    'Don’t touch the blue cable. Or the green one. Actually just stand in the middle. Perfect. You’re in.',
-    'Six monitors. One of them is just a picture of the creek. For my eyes. The other five are also mostly the creek.',
+    '파란 케이블 건드리지 마. 초록 것도. 사실 그냥 가운데 서 있어. 완벽해. 들어왔네.',
+    '모니터 여섯 대. 하나는 그냥 시냇가 사진이야. 눈용. 나머지 다섯도 대부분 시냇가.',
   ],
   Mabel: [
-    'Welcome to my collection. Everything here belongs to me now. Some of it belonged to other people first. That’s their business.',
-    'That gnome? Todd’s. Oasis Todd. I went all the way to Oasis for it. HONK. Worth it.',
+    '내 컬렉션에 온 걸 환영해. 여기 있는 건 이제 다 내 거야. 일부는 먼저 다른 사람 것이었지. 그건 그쪽 사정이야.',
+    '저 난쟁이? 토드 거. 오아시스 토드. 오아시스까지 가서 가져왔어. 꽥. 그럴 가치 있었어.',
   ],
   Crumb: [
-    'Deck’s the best room of the house. Ceiling’s a bit far away, but you can’t have everything.',
-    'Hear that? Water on the hull. Best lullaby there is, and it knows every verse.',
+    '갑판이 집에서 제일 좋은 방이야. 천장이 좀 멀긴 한데, 다 가질 순 없지.',
+    '들려? 선체에 닿는 물소리. 최고의 자장가야, 모든 절을 다 알아.',
   ],
 };
 
 const HOME_PROPS = {
-  Clover: { label: 'squish a cushion', text: 'Impossibly soft. You understand everything about Clover now.' },
-  Biscuit: { label: 'inspect the treasure shelf', text: 'A bottle cap, a snail shell (vacant — he checked), and a button so lucky it has its own tiny cushion.' },
-  Saffron: { label: 'sniff the dried flowers', text: 'Last summer, preserved. Each bunch is labeled with where the wind was coming from.' },
-  Howell: { label: 'examine the moon poster', text: '“MOON,” reads the caption. It is signed. By Howell.' },
-  Bramble: { label: 'peek at the honey pots', text: 'Three pots: “BREAKFAST,” “EMERGENCY,” and “DO NOT (SPRING ONLY).”' },
-  Marigold: { label: 'look at the ribbon wall', text: 'Ribbons from races with one participant. All firsts. The discipline is what counts.' },
-  Ember: { label: 'touch the hearth stones', text: 'Flat stones in a ring, numbered 1 through 9 in scratched tally marks. Rock four has a small crown drawn on it.' },
-  Barb: { label: 'look at the jar of creek water', text: 'A jar of creek water on the windowsill, a little green, a little gold. A label in careful claws: “CREEK. THIS YEAR.” Behind it, older jars, all labeled. Forty of them. In the corner, Ruth’s yarn basket, and a scarf going out the window.' },
-  Null: { label: 'read the screens', text: 'Green text scrolling on black. One screen says “> cranberries.count() … still counting.” Another says “> labs.password = notbell ✓.” The last one is a live feed of the creek, and a turtle, on a rock, being content.' },
-  Mabel: { label: 'inspect the collection', text: 'A trowel, a garden gnome, eleven single gloves, a USB stick labeled “NULL — DO NOT,” and one polished brass doorknob with no door. Everything neatly shelved. The shelving was also relocated.' },
-  Butterpat: { label: 'admire the butter churn', text: 'Polished from years of patient work. A ribbon on the handle reads “BEST BUTTER — ONLY ENTRANT — STILL EARNED IT.”' },
+  Clover: { label: '쿠션 눌러 보기', text: '불가능할 만큼 폭신해요. 이제 클로버의 모든 걸 이해해요.' },
+  Biscuit: { label: '보물 선반 살펴보기', text: '병뚜껑, 달팽이집 (빈 것 — 확인함), 그리고 자기만의 작은 쿠션이 있는 행운의 버튼.' },
+  Saffron: { label: '말린 꽃 냄새 맡기', text: '보존된 지난여름. 다발마다 바람이 불어온 방향이 라벨로 붙어 있어요.' },
+  Howell: { label: '달 포스터 살펴보기', text: '“달,” 캡션에 적혀 있어요. 사인이 있어요. 하웰의.' },
+  Bramble: { label: '꿀단지 들여다보기', text: '단지 셋: “아침밥,” “비상,” 그리고 “금지 (봄 전용).”' },
+  Marigold: { label: '리본 벽 보기', text: '참가자 한 명인 경주들의 리본. 전부 1등. 중요한 건 절제예요.' },
+  Ember: { label: '화로 돌 만져 보기', text: '납작한 돌이 고리 모양, 긁어 그은 정자표로 1부터 9까지 번호. 네 번째 돌엔 작은 왕관이 그려져 있어요.' },
+  Barb: { label: '시냇물 병 보기', text: '창틀의 시냇물 병, 조금 초록, 조금 금빛. 조심스러운 발톱 글씨 라벨: “시내. 올해.” 뒤엔 오래된 병들, 전부 라벨. 마흔 개. 구석엔 루스의 털실 바구니, 그리고 창밖으로 나가는 목도리.' },
+  Null: { label: '화면 읽기', text: '검은 화면에 초록 글자가 흘러요. 한 화면: “> cranberries.count() … 아직 세는 중.” 다른 화면: “> labs.password = notbell ✓.” 마지막은 시냇가 라이브 영상, 그리고 돌 위에서 만족한 거북이.' },
+  Mabel: { label: '컬렉션 살펴보기', text: '손삽, 정원 난쟁이, 짝 없는 장갑 11개, “널 — 만지지 마” 라벨의 USB, 그리고 문 없는 반짝이는 놋쇠 문손잡이 하나. 전부 가지런히 선반에. 선반도 재배치된 거예요.' },
+  Butterpat: { label: '버터 교유기 감상하기', text: '세월의 인내로 닦여 반짝여요. 손잡이 리본: “최고의 버터 — 유일한 출품작 — 그래도 획득함.”' },
 };
 
 const HOUSE_STYLES = {
@@ -623,20 +623,20 @@ function buildVillagerInterior(group, B, name, style) {
 // The cottage radio's daily bulletin: never more than three items, because
 // mornings deserve mercy. Birthdays and holidays outrank the news desk.
 const SIGNAL_WEATHER = {
-  clear: 'Weather: clear. The sky has committed to it.',
-  rain: 'Weather: rain. The fish approve. The Labs flag does not fly; it is wool, and it knows.',
-  snow: 'Weather: snow, gently. Wear the knit one.',
-  fog: 'Weather: fog. If you hear a bell out there, that is between you and the fog.',
+  clear: '날씨: 맑음. 하늘이 결심했어요.',
+  rain: '날씨: 비. 물고기들이 찬성해요. 연구소 깃발은 휘날리지 않아요; 양모라서, 본인도 알아요.',
+  snow: '날씨: 눈, 포근하게. 뜬 걸 입으세요.',
+  fog: '날씨: 안개. 저 밖에서 종소리가 들리면, 그건 당신과 안개 사이의 일이에요.',
 };
 const SIGNAL_NEWS = [
-  'Notbell Labs reports the moon is still there. Verification continues nightly.',
-  'The tide brought in forty-one bottles yesterday. Moss has sorted nine, and described the pace as ambitious.',
-  'BULKO confirms the hot dog remains one and a half buttons. The economy observed a moment of appreciative silence.',
-  'The lighthouse hook was polished again overnight. Nobody saw anything. The hook, reportedly, gleams.',
-  'Pip has denied that the Buttonwagon is for sale. Pip has also denied knowing what the Buttonwagon is.',
-  'A whale was heard practicing offshore. Early reviews: sincere.',
-  'The Grove Line reports every train ran on time, for the local definition of time.',
-  'The volcano remains comfortable. Cinder thanks everyone for asking.',
+  '낫벨 연구소, 달이 아직 거기 있다고 보고. 매일 밤 검증 계속.',
+  '어제 조수가 병 41개를 밀려들게 함. 모스가 9개 분류, 속도를 “야심적”이라 평가.',
+  '불코, 핫도그 가격 여전히 1.5버튼 확인. 경제가 감사의 묵념을 올림.',
+  '등대 갈고리가 밤사이 또 닦임. 목격자 없음. 갈고리는, 전해지는 바로, 반짝임.',
+  '핍, 버튼왜건 매물설 부인. 핍은 또한 버튼왜건이 뭔지 아는지도 부인.',
+  '바깥 바다에서 고래가 연습하는 소리 포착. 초기 평가: 진심 어림.',
+  '그로브 선, 모든 열차 정시 운행 보고, “시간”의 지역 정의 기준.',
+  '화산, 여전히 편안함 유지. 신더, 물어봐 준 모두에게 감사.',
 ];
 
 export function playMorningSignal() {
@@ -652,10 +652,10 @@ export function playMorningSignal() {
     items.push(SIGNAL_NEWS[doy % SIGNAL_NEWS.length]);
   }
   ui.say([
-    '🎙 “Good morning. This is the Morning Signal, on the air since whenever you turned it on.”',
+    '🎙 “좋은 아침이에요. 모닝 시그널입니다, 켜신 때부터 방송 중.”',
     ...items.slice(0, 3).map((t) => `“${t}”`),
-    '“That’s the Signal. Go gently.”',
-  ], { speaker: 'The Morning Signal', voice: 330 });
+    '“시그널이었습니다. 조심히 가세요.”',
+  ], { speaker: '모닝 시그널', voice: 330 });
 }
 
 export function createHouses(animals, obstacles = []) {
@@ -675,7 +675,7 @@ export function createHouses(animals, obstacles = []) {
   const myBox = placeMailbox(group, home.x + 3.6, home.z + 2.2, 0, 0x5b8bc9);
   register({
     pos: new THREE.Vector3(home.x + 3.6, 0, home.z + 2.2), r: 1.6,
-    label: () => (mail.unread() ? 'check your mailbox (the flag is up!)' : 'check your mailbox'),
+    label: () => (mail.unread() ? '우체통 확인하기 (깃발이 올라갔어요!)' : '우체통 확인하기'),
     use: () => mail.checkMailbox(),
   });
   // the mail keeps its own clock; your flag is up when there's something new
@@ -730,15 +730,15 @@ export function createHouses(animals, obstacles = []) {
     group.add(bedFrame, mattress, pillow, blanket);
     register({
       pos: new THREE.Vector3(B.x - 3.4, 0, B.z - 3), r: 1.8, zone: 'home',
-      label: 'flop onto the bed',
+      label: '침대에 풀썩 눕기',
       use: async () => {
         await ui.fadeSwap(() => {});
         S.save();
-        ui.toast('You napped wonderfully. The island will remember everything.', '😴');
+        ui.toast('멋지게 낮잠 잤어요. 섬이 모든 걸 기억해 둘 거예요.', '😴');
         ui.say(pick([
-          'You dream of a bell, ringing somewhere warm and underwater. It sounds happy.',
-          'You dream you are a boat. A good one.',
-          'Nothing needed you for a whole nap. It was wonderful.',
+          '따뜻하고 물속인 어딘가에서 종이 울리는 꿈을 꿔요. 행복한 소리예요.',
+          '배가 되는 꿈을 꿔요. 좋은 배요.',
+          '낮잠 한 번 동안 아무것도 당신을 필요로 하지 않았어요. 멋졌어요.',
         ]));
       },
     });
@@ -754,8 +754,8 @@ export function createHouses(animals, obstacles = []) {
     }
     register({
       pos: new THREE.Vector3(B.x + 3.6, 0, B.z - 3.9), r: 1.7, zone: 'home',
-      label: 'browse the bookshelf',
-      use: () => ui.say(`You pull one out at random: ${pick(BOOKS)}`),
+      label: '책꽂이 구경하기',
+      use: () => ui.say(`아무 거나 하나 뽑았어요: ${pick(BOOKS)}`),
     });
 
     // rug, table, the window with a sea view
@@ -792,7 +792,7 @@ export function createHouses(animals, obstacles = []) {
 
     register({
       pos: new THREE.Vector3(B.x + 0.4, 0, B.z + 0.4), r: 1.8, zone: 'home',
-      label: 'listen to the Morning Signal',
+      label: '모닝 시그널 듣기',
       use: () => playMorningSignal(),
     });
     const winFrame = box(1.8, 1.3, 0.18, 0x8a5a3a);
@@ -803,8 +803,8 @@ export function createHouses(animals, obstacles = []) {
     group.add(winFrame, winSea);
     register({
       pos: new THREE.Vector3(B.x - 1.5, 0, B.z - 3.9), r: 1.6, zone: 'home',
-      label: 'look out the window',
-      use: () => ui.say('The window faces the sea. The sea, as far as you can tell, faces back.'),
+      label: '창밖 내다보기',
+      use: () => ui.say('창이 바다를 향해 있어요. 바다도, 아는 한, 마주 보고 있어요.'),
     });
 
     // the wardrobe: upright, patient, and deeper than it looks.
@@ -837,51 +837,51 @@ export function createHouses(animals, obstacles = []) {
       const stowMenu = async () => {
         const stock = Object.entries(S.state.inv).filter(([, n]) => n > 0);
         if (!stock.length) return wardrobeMenu();
-        const choice = await ui.ask('Pockets, meet wardrobe.', [
+        const choice = await ui.ask('주머니, 옷장을 만나다.', [
           ...stock.map(([id, n]) => ({
             label: `${ITEMS[id]?.emoji ?? '❔'} ${ITEMS[id]?.name ?? id} ×${n}`,
             value: id,
           })),
-          { label: 'Done', value: null },
+          { label: '다 했어요', value: null },
         ]);
         if (!choice) return wardrobeMenu();
         const n = S.countItem(choice);
         S.stow(choice, n);
-        ui.toast(`Put away ${n} × <b>${ITEMS[choice]?.name ?? choice}</b>. The wardrobe approves of tidy pockets.`, '🗄️');
+        ui.toast(`${n}개의 <b>${ITEMS[choice]?.name ?? choice}</b>을(를) 넣었어요. 옷장이 정돈된 주머니를 좋아해요.`, '🗄️');
         ui.updateHUD();
         return stowMenu();
       };
       const unstowMenu = async () => {
         const stored = Object.entries(S.state.storage).filter(([, n]) => n > 0);
         if (!stored.length) return wardrobeMenu();
-        const choice = await ui.ask('The wardrobe opens with a small ceremonial creak.', [
+        const choice = await ui.ask('옷장이 작고 의전적인 삐걱 소리로 열려요.', [
           ...stored.map(([id, n]) => ({
             label: `${ITEMS[id]?.emoji ?? '❔'} ${ITEMS[id]?.name ?? id} ×${n}`,
             value: id,
           })),
-          { label: 'Done', value: null },
+          { label: '다 했어요', value: null },
         ]);
         if (!choice) return wardrobeMenu();
         const n = S.state.storage[choice] || 0;
         S.unstow(choice, n);
-        ui.toast(`Took out ${n} × <b>${ITEMS[choice]?.name ?? choice}</b>. Everything kept beautifully.`, '🗄️');
+        ui.toast(`${n}개의 <b>${ITEMS[choice]?.name ?? choice}</b>을(를) 꺼냈어요. 전부 아름답게 보관돼 있었어요.`, '🗄️');
         ui.updateHUD();
         return unstowMenu();
       };
       const wardrobeMenu = async () => {
         const held = Object.values(S.state.inv).reduce((a, b) => a + b, 0);
         const kept = Object.values(S.state.storage).reduce((a, b) => a + b, 0);
-        const choice = await ui.ask('The wardrobe stands ready. It has survived winters, movings-in, and one decorative-gourd phase.', [
-          { label: '📥 Put something away', value: 'stow', hint: `${held} in pockets`, disabled: !held },
-          { label: '📤 Take something out', value: 'unstow', hint: `${kept} kept`, disabled: !kept },
-          { label: 'Close it gently', value: null },
+        const choice = await ui.ask('옷장이 준비된 채 서 있어요. 겨울들, 이사들, 그리고 한 번의 장식용 조롱박 시기를 견뎌냈어요.', [
+          { label: '📥 뭔가 넣기', value: 'stow', hint: `주머니에 ${held}개`, disabled: !held },
+          { label: '📤 뭔가 꺼내기', value: 'unstow', hint: `${kept}개 보관 중`, disabled: !kept },
+          { label: '살며시 닫기', value: null },
         ]);
         if (choice === 'stow') return stowMenu();
         if (choice === 'unstow') return unstowMenu();
       };
       register({
         pos: new THREE.Vector3(B.x + 4.5, 0, B.z + 1.4), r: 1.7, zone: 'home',
-        label: 'open the wardrobe',
+        label: '옷장 열기',
         use: wardrobeMenu,
       });
     }
@@ -905,12 +905,12 @@ export function createHouses(animals, obstacles = []) {
     });
     register({
       pos: new THREE.Vector3(home.x, 0, home.z + 1.2), r: 2.4,
-      label: 'go inside (it’s yours!)',
+      label: '안으로 들어가기 (네 집이야!)',
       use: () => zones.go('home'),
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 4.6), r: 1.6, zone: 'home',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: home.x, z: home.z + 2.6, rotY: 0 }),
     });
   }
@@ -935,9 +935,9 @@ export function createHouses(animals, obstacles = []) {
       pos: new THREE.Vector3(px, 0, pz), r: 1.6,
       label: () => {
         const stage = plotStage(S.state.garden[i]);
-        if (stage === 'empty') return 'plant something';
-        if (stage === 'ready') return 'harvest!';
-        return 'growing…';
+        if (stage === 'empty') return '뭔가 심기';
+        if (stage === 'ready') return '수확!';
+        return '자라는 중…';
       },
       use: async () => {
         const data = S.state.garden[i];
@@ -948,7 +948,7 @@ export function createHouses(animals, obstacles = []) {
           S.addItem(grown.produce, grown.n);
           S.save();
           jingle();
-          ui.toast(`You harvested ${grown.n} × <b>${ITEMS[grown.produce].name}</b>!`, ITEMS[grown.produce].emoji);
+          ui.toast(`${grown.n}개의 <b>${ITEMS[grown.produce].name}</b>을(를) 수확했어요!`, ITEMS[grown.produce].emoji);
           ui.updateHUD();
           return;
         }
@@ -956,27 +956,27 @@ export function createHouses(animals, obstacles = []) {
           const g = GROWTH[data.seed];
           const left = Math.max(0, Math.ceil((g.secs * 1000 - (Date.now() - data.plantedAt)) / 60000));
           ui.say(left <= 1
-            ? 'Almost there. It’s concentrating. You can tell.'
-            : `Growing nicely. Give it about ${left} more minutes of being a plant.`);
+            ? '거의 다 왔어요. 집중하고 있어요. 알 수 있어요.'
+            : `잘 자라고 있어요. 식물 노릇을 앞으로 약 ${left}분 더 하게 해 주세요.`);
           return;
         }
         const seedsOwned = Object.keys(GROWTH).filter((id) => S.countItem(id) > 0);
         if (!seedsOwned.length) {
-          ui.say('Bare, hopeful soil. Pip sells seeds — carrots, tomatoes, pumpkins. The dirt has been practicing.');
+          ui.say('비어 있고 희망찬 흙. 핍이 씨앗을 팔아요 — 당근, 토마토, 호박. 흙은 연습해 왔어요.');
           return;
         }
-        const choice = await ui.ask('Plant what?', [
+        const choice = await ui.ask('뭘 심을까요?', [
           ...seedsOwned.map((id) => ({
             label: `${ITEMS[id].emoji} ${ITEMS[id].name}`, value: id, hint: `×${S.countItem(id)}`,
           })),
-          { label: 'Nothing today', value: null },
+          { label: '오늘은 패스', value: null },
         ]);
         if (!choice) return;
         S.removeItem(choice, 1);
         S.state.garden[i] = { seed: choice, plantedAt: Date.now() };
         S.save();
         thud();
-        ui.toast(`Planted <b>${ITEMS[choice].name}</b>. Now: the noble art of waiting.`, '🌱');
+        ui.toast(`<b>${ITEMS[choice].name}</b>을(를) 심었어요. 이제: 기다림의 고귀한 예술.`, '🌱');
       },
     });
   }
@@ -1047,7 +1047,7 @@ export function createHouses(animals, obstacles = []) {
       register({
         getPos: () => a.g.position, r: 3.4,
         enabled: () => vh.home,
-        label: 'call up to Crumb',
+        label: '크럼에게 소리쳐 부르기',
         use: () => {
           const lines = HOME_LINES.Crumb;
           ui.say(lines[crumbIdx++ % lines.length], { speaker: 'Crumb', voice: a.identity.voice });
@@ -1056,7 +1056,7 @@ export function createHouses(animals, obstacles = []) {
       register({
         pos: new THREE.Vector3(MOUSEBOAT.knock.x, 0, MOUSEBOAT.knock.z), r: 2.2,
         enabled: () => !vh.home,
-        label: 'peer at the MouseBoat',
+        label: '마우스보트 들여다보기',
         use: () => ui.say(KNOCKS.Crumb),
       });
       continue;
@@ -1110,10 +1110,10 @@ export function createHouses(animals, obstacles = []) {
         theirBoxes.push([name, placeMailbox(group, mx, mz, ry, style.roof)]);
         register({
           pos: new THREE.Vector3(mx, 0, mz), r: 1.4,
-          label: `look at ${name}’s mailbox`,
+          label: `${name}의 우체통 들여다보기`,
           use: () => ui.say(mail.flagUp(name)
-            ? `${name}’s mailbox. The little flag is up: your letter is in there, waiting. It is theirs now. You leave it be.`
-            : `${name}’s mailbox. It is not your mail, and you are not that kind of neighbor. The little flag is down.`),
+            ? `${name}의 우체통. 작은 깃발이 올라갔어요: 당신의 편지가 안에서 기다려요. 이제 그들의 것이에요. 그냥 둬요.`
+            : `${name}의 우체통. 당신의 우편물이 아니고, 당신은 그런 이웃이 아니에요. 깃발은 내려가 있어요.`),
         });
       }
     }
@@ -1145,7 +1145,7 @@ export function createHouses(animals, obstacles = []) {
     // the door knows whether anyone's in
     register({
       pos: doorWorld, r: 2.0,
-      label: () => (vh.home ? `visit ${name}` : `knock on ${name}’s door`),
+      label: () => (vh.home ? `${name} 방문하기` : `${name}의 집 문 노크하기`),
       use: async () => {
         doorChime();
         if (!vh.home) {
@@ -1162,7 +1162,7 @@ export function createHouses(animals, obstacles = []) {
     register({
       getPos: () => a.g.position, r: 2.6, zone: zoneId,
       enabled: () => vh.home && !vh.inCave,
-      label: `talk to ${name}`,
+      label: `${name}와(과) 대화하기`,
       use: async () => {
         if (await birthdayTalk(name, a.identity.voice)) return; // it follows you home
         const lines = HOME_LINES[name];
@@ -1180,7 +1180,7 @@ export function createHouses(animals, obstacles = []) {
 
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 4.0), r: 1.6, zone: zoneId,
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo(doorOut),
     });
   }
@@ -1196,7 +1196,7 @@ export function createHouses(animals, obstacles = []) {
       register({
         getPos: () => ruthA.g.position, r: 2.6, zone: barb.zoneId,
         enabled: () => vh.home,
-        label: 'talk to Ruth',
+        label: '루스와 대화하기',
         use: async () => {
           if (await birthdayTalk('Ruth', ruthA.identity.voice)) return;
           ui.say(HOME_LINES.Ruth[ri++ % HOME_LINES.Ruth.length], { speaker: 'Ruth', voice: ruthA.identity.voice });
@@ -1213,7 +1213,7 @@ export function createHouses(animals, obstacles = []) {
     register({
       getPos: () => ember.a.g.position, r: 2.6, zone: 'cave',
       enabled: () => !!ember.inCave,
-      label: 'talk to Ember',
+      label: '엠버와 대화하기',
       use: () => {
         const lines = HOME_LINES.Ember;
         ui.say(lines[caveIdx++ % lines.length], { speaker: 'Ember', voice: ember.a.identity.voice });
@@ -1377,8 +1377,8 @@ export function createHouses(animals, obstacles = []) {
     group.add(nest);
     register({
       pos: nest.position, r: 2.0,
-      label: 'peek into the nest',
-      use: () => ui.say('A tidy ring of driftwood. Inside: one (1) regulation pillow and a snack stash labeled “PROVISIONS — ADMIRAL’S EYES ONLY (PUDDLE: NO).”'),
+      label: '둥지 들여다보기',
+      use: () => ui.say('떠내려온 나무의 정돈된 고리. 안에는 규정 베개 한 (1) 개와 “비축량 — 제독 전용 (퍼들: 안 됨)” 라벨의 간식 저장고.'),
     });
   }
 
@@ -1401,4 +1401,4 @@ export function createHouses(animals, obstacles = []) {
   if (mailboxes.Barb) mailboxes.Ruth = mailboxes.Barb;
   if (MOUSEBOAT) mailboxes.Crumb = { x: MOUSEBOAT.knock.x, z: MOUSEBOAT.knock.z };
   return { group, update, forceHome, mailboxes, myMailbox: { x: myBox.position.x, z: myBox.position.z } };
-}
+        }
