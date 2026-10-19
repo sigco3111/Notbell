@@ -1901,4 +1901,4 @@ async function fernMenu(refreshMuseum) {
     }
   }
   return fernMenu(refreshMuseum);
-         }
+}
