@@ -396,7 +396,7 @@ if (w && w.day !== S.todayKey()) {
   // a new day on the island — wake up at home, and the radio knows you're up
   zones.go('home')
     .then(() => {
-      ui.toast('Good morning. The cottage is warm; the island’s waiting.', '🌅');
+      ui.toast('좋은 아침이에요. 오두막은 따뜻하고, 섬이 기다려요.', '🌅');
       playMorningSignal();
     })
     .catch(() => {});
@@ -593,16 +593,16 @@ window.__notbell = { ui, cam, boats, interact, playTool, zones, player, S, SITES
   if (!S.hasFlag('woke')) {
     S.setFlag('woke');
     await ui.say([
-      'You wake up on Notbell Isle — heart of the Notbell Archipelago, home of a real economy and famously no bell.',
-      'The villagers are friendly. The magpie who runs the shop has something for you. And the islands, if you bring them enough small treasures, have a story to tell.',
+      '낫벨 섬에서 눈을 떴어요 — 낫벨 군도의 심장, 진짜 경제가 있고 종이 없기로 유명한 곳.',
+      '주민들은 다정해요. 가게를 지키는 까치가 당신에게 줄 게 있대요. 그리고 작은 보물을 충분히 가져다주면, 섬들이 이야기를 들려준대요.',
     ]);
   }
   if (!S.state.avatar) {
-    const kind = await ui.ask('And who, exactly, woke up this morning?', [
-      { label: '🐱 A sandy cat', value: 'cat' },
-      { label: '🐰 A cream rabbit', value: 'rabbit' },
-      { label: '🦊 A marmalade fox', value: 'fox' },
-      { label: '🦆 A snowy duck', value: 'duck' },
+    const kind = await ui.ask('그런데, 오늘 아침에 깬 건 정확히 누구인가요?', [
+      { label: '🐱 모래색 고양이', value: 'cat' },
+      { label: '🐰 크림색 토끼', value: 'rabbit' },
+      { label: '🦊 마멀레이드 여우', value: 'fox' },
+      { label: '🦆 눈처럼 흰 오리', value: 'duck' },
     ]);
     const colors = { cat: 0xf0c98f, rabbit: 0xf5e6c8, fox: 0xe88a3a, duck: 0xf5f2e9 };
     S.state.avatar = { kind: kind || 'cat', body: colors[kind] || 0xf0c98f };
@@ -610,10 +610,10 @@ window.__notbell = { ui, cam, boats, interact, playTool, zones, player, S, SITES
     player.swapBody(S.state.avatar.kind, S.state.avatar.body);
   }
   if (!S.state.name) {
-    const raw = await ui.input('And what do the islanders call you?', { placeholder: 'your name (you can change it later)', max: 16 });
-    S.state.name = (raw || 'Sandy').trim().slice(0, 16) || 'Sandy';
+    const raw = await ui.input('섬 사람들이 당신을 뭐라고 부르면 될까요?', { placeholder: '이름 (나중에 바꿀 수 있어요)', max: 16 });
+    S.state.name = (raw || '샌디').trim().slice(0, 16) || '샌디';
     S.save();
     ui.updateHUD();
-    ui.toast(`Welcome home, <b>${ui.escapeHtml(S.state.name)}</b>. The tide pools already knew, somehow.`, '✨');
+    ui.toast(`어서 와요, <b>${ui.escapeHtml(S.state.name)}</b>. 조수 웅덩이들이 어쩐지 벌써 알고 있었어요.`, '✨');
   }
 })();
