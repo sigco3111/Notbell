@@ -1233,7 +1233,7 @@ export function createCrown(player) {
       if (pp) ang.rotation.y = turnToward(ang.rotation.y, Math.atan2(pp.x - ang.position.x, pp.z - ang.position.z), dt, 1.5);
     });
     talker(() => ang.position, '랜턴', 260, [
-      'Don’t mind the teeth. They came with the face. The lamp is the important part.',
+      '이빨은 신경 쓰지 마. 얼굴에 딸려 온 거야. 중요한 건 램프 쪽이야.',
       '위엔 등대가 있었지. 아래엔 내가 있어. 같은 일이야. 어둠 속으로 내려오는 누군가를 위해 불을 켜둘 이가 있어야지.',
       '플랑크톤 사이로 발을 휘저어 봐. 움직이면 빛나거든. 모든 것에, 언제나 “오! 안녕!”이라고 말하는 방식이야. 아주 힘이 돼.',
       '가끔, 대조기엔, 무언가 울리는 소리가 들려. 멀리서. 한 번. 그런 밤엔 램프를 조금 더 밝혀 둬. 혹시 우리를 찾고 있을지 모르니까.',
@@ -1442,4 +1442,4 @@ export function createCrown(player) {
   });
 
   return { group, update };
-                }
+}
