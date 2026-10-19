@@ -47,7 +47,7 @@ function replyFor(to, kind) {
   const n = box().inbox.filter((l) => l.from === to).length;
   const body = lines.letters[n % lines.letters.length];
   const pages = [
-    `Dear ${S.state.name || 'neighbor'},`,
+    `친애하는 ${S.state.name || '이웃'} 님,`,
     ...(kind === 'postcard' ? [lines.postcard || MAIL_REPLIES._default.postcard] : []),
     body,
     `— ${lines.sign || to}`,
@@ -81,8 +81,8 @@ export function initCarrier(animals, houses, doorOf) {
   register({
     getPos: () => carrier.g.position, r: 2.6, priority: 2,
     enabled: () => !carrier.away && !!carrierNews(),
-    label: 'ask Penny about your mail',
-    use: () => ui.say(carrierNews() || 'Nothing for you in the bag just now. Soon, maybe.', { speaker: 'Penny', voice: 600 }),
+    label: '페니에게 우편물 묻기',
+    use: () => ui.say(carrierNews() || '지금 가방에 당신 건 없어요. 곧 생길지도요.', { speaker: 'Penny', voice: 600 }),
   });
 }
 
@@ -130,9 +130,9 @@ function firstLetter(name) {
   const said = who?.lines?.[Math.floor(Math.random() * who.lines.length)];
   const sign = (MAIL_REPLIES[name] || MAIL_REPLIES._default).sign || name;
   return [
-    `Dear ${S.state.name || 'neighbor'},`,
-    'No reason. I just thought of you, and a thought like that ought to go somewhere.',
-    ...(said ? [`Anyway. ${said}`] : []),
+    `친애하는 ${S.state.name || '이웃'} 님,`,
+    '이유는 없어요. 그냥 당신이 떠올랐는데, 그런 생각은 어딘가로 가야 하잖아요.',
+    ...(said ? [`그건 그렇고. ${said}`] : []),
     `— ${sign}`,
   ];
 }
@@ -241,9 +241,9 @@ export function poll(dt) {
 // for Penny's chat: what's in the bag for (or from) you right now
 export function carrierNews() {
   if (!carrier) return null;
-  if (replies.length) return `There’s ${replies.length === 1 ? 'a letter' : `${replies.length} letters`} in the bag for you. Right here. I’m on my way to your box with ${replies.length === 1 ? 'it' : 'them'} — don’t look, it spoils it.`;
+  if (replies.length) return `가방에 당신 편지가 ${replies.length}통 있어요. 바로 여기. 지금 우편함으로 가는 길이에요 — 들여다보면 김 새요.`;
   const out = [...bag].map((l) => l.to);
-  if (out.length) return `Your letter to ${out[0]} is in the bag, next to my heart and some seed. I’ll have it in their box in no time.`;
+  if (out.length) return `${out[0]}에게 보내는 당신 편지가 가방에 있어요, 제 심장과 씨앗 옆에. 금방 우편함에 넣어 드릴게요.`;
   return null;
 }
 
@@ -263,24 +263,24 @@ export async function checkMailbox() {
     for (const l of fresh) {
       l.read = true;
       S.save();
-      await ui.say([`A letter from ${l.from}.`, ...l.pages]);
+      await ui.say([`${l.from}의 편지.`, ...l.pages]);
     }
     return;
   }
   const waiting = m.out.filter((l) => !l.replied).length;
   if (!m.inbox.length) {
     ui.say(waiting
-      ? 'Empty — but a letter of yours is out there, being thorough. Replies come back to this box.'
-      : 'Empty, and very clean. A card inside: “The Post is open. Stamps at the counter. —Moss.”');
+      ? '비었어요 — 하지만 당신 편지 한 통이 밖에서 열심히 오가는 중이에요. 답장은 이 우편함으로 와요.'
+      : '비었고, 아주 깨끗해요. 안에 카드: “우체국 열려 있어요. 우표는 카운터에서. —모스.”');
     return;
   }
-  const pick = await ui.ask(waiting ? 'Nothing new yet. (Your letter’s still on its way.) Read an old one?' : 'Nothing new. Read an old one?', [
-    ...m.inbox.slice(-6).reverse().map((l, i) => ({ label: `✉️ From ${l.from}`, value: i })),
-    { label: 'Close the mailbox', value: null },
+  const pick = await ui.ask(waiting ? '새 편지는 아직 없어요. (당신 편지는 아직 오가는 중.) 지난 편지를 읽을까요?' : '새 편지가 없어요. 지난 편지를 읽을까요?', [
+    ...m.inbox.slice(-6).reverse().map((l, i) => ({ label: `✉️ ${l.from}의 편지`, value: i })),
+    { label: '우편함 닫기', value: null },
   ]);
   if (pick === null || pick === undefined) return;
   const l = m.inbox.slice(-6).reverse()[pick];
-  if (l) await ui.say([`A letter from ${l.from}.`, ...l.pages]);
+  if (l) await ui.say([`${l.from}의 편지.`, ...l.pages]);
 }
 
 // choosing who to write to: the whole island, a page at a time
@@ -292,8 +292,8 @@ async function chooseRecipient(prompt) {
     const more = (page + 1) * PER < names.length;
     const choice = await ui.ask(prompt, [
       ...slice.map((n) => ({ label: `✉️ ${n}`, value: n })),
-      ...(more || page > 0 ? [{ label: more ? 'More neighbors…' : 'Back to the first page', value: '__more' }] : []),
-      { label: 'Never mind', value: null },
+      ...(more || page > 0 ? [{ label: more ? '이웃 더 보기…' : '첫 페이지로', value: '__more' }] : []),
+      { label: '아니요, 됐어요', value: null },
     ], { speaker: 'Moss', voice: 200 });
     if (choice !== '__more') return choice;
     page = more ? page + 1 : 0;
@@ -303,27 +303,27 @@ async function chooseRecipient(prompt) {
 // Moss's counter
 export async function counter() {
   const hasCard = S.countItem('postcard_farther') > 0;
-  const what = await ui.ask('“The sorting is complete. It was thorough. What can the Post do for you?”', [
-    { label: `✉️ Send a letter`, value: 'letter', hint: `${STAMP}🔘`, disabled: S.state.buttons < STAMP },
-    ...(hasCard ? [{ label: `${ITEMS.postcard_farther.emoji} Mail the Farther postcard`, value: 'postcard' }] : []),
-    { label: 'Just visiting', value: null },
+  const what = await ui.ask('“분류 완료. 아주 철저했어요. 우체국이 뭘 해 드릴까요?”', [
+    { label: `✉️ 편지 보내기`, value: 'letter', hint: `${STAMP}🔘`, disabled: S.state.buttons < STAMP },
+    ...(hasCard ? [{ label: `${ITEMS.postcard_farther.emoji} 파더 엽서 부치기`, value: 'postcard' }] : []),
+    { label: '그냥 구경이에요', value: null },
   ], { speaker: 'Moss', voice: 200 });
   if (!what) return false;
-  const to = await chooseRecipient(what === 'postcard' ? '“A postcard. Lovely. Who is it for?”' : '“A letter. Who is it for?”');
+  const to = await chooseRecipient(what === 'postcard' ? '“엽서. 좋네요. 누구에게?”' : '“편지. 누구에게?”');
   if (!to) return true;
   if (what === 'postcard') {
     if (!S.removeItem('postcard_farther')) return true;
-    send(to, 'Wish you were farther.', 'postcard');
+    send(to, '네가 더 멀리 있었으면.', 'postcard');
     jingle();
-    ui.toast('Stamped, gently.', '📮');
-    await ui.say(`“Farther, to ${to}. It is already a well-travelled card. I will add to its travels.”`, { speaker: 'Moss', voice: 200 });
+    ui.toast('우표를 살짝 찍었어요.', '📮');
+    await ui.say(`“파더 행, ${to}에게. 이미 여행을 많이 한 카드예요. 제가 여정을 보태 드리죠.”`, { speaker: 'Moss', voice: 200 });
     return true;
   }
-  const text = await ui.input(`“Write whatever you like. ${to} will read every word. I will read none of them. That is the job.”`, {
-    speaker: 'Moss', voice: 200, long: true, placeholder: `Dear ${to}…`,
+  const text = await ui.input(`“쓰고 싶은 대로 쓰세요. ${to}이(가) 한 글자도 빠짐없이 읽을 거예요. 저는 하나도 안 읽어요. 그게 제 일이에요.”`, {
+    speaker: 'Moss', voice: 200, long: true, placeholder: `${to}에게…`,
   });
   if (!text) {
-    await ui.say('“A blank letter. Very mysterious. Perhaps another day.”', { speaker: 'Moss', voice: 200 });
+    await ui.say('“백지 편지. 아주 신비롭네요. 다른 날 다시 오시죠.”', { speaker: 'Moss', voice: 200 });
     return true;
   }
   if (!S.spend(STAMP)) return true;
@@ -331,8 +331,8 @@ export async function counter() {
   ui.updateHUD();
   send(to, text, 'letter');
   await ui.say([
-    `“To ${to}. Stamped — a good one, with a button on it.”`,
-    '“It will be in their box in a few minutes, and they will write back when they have thought about it. Replies come to your mailbox.”',
+    `“${to}에게. 우표 — 잘 찍었어요, 단추 그림이에요.”`,
+    '“몇 분이면 상대 우편함에 도착하고, 생각해 본 뒤 답장할 거예요. 답장은 당신 우편함으로 와요.”',
   ], { speaker: 'Moss', voice: 200 });
   return true;
 }
