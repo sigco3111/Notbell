@@ -76,20 +76,20 @@ export function createMultiplayer(player, scene) {
     const peer = { channel, avatar: null, sendTimer: 0 };
     channel.onopen = () => {
       jingle();
-      ui.toast('A visitor steps off the horizon. Show them everything.', '🛶');
+      ui.toast('방문자가 수평선 너머에서 왔어요. 구석구석 보여 주세요.', '🛶');
     };
     channel.onclose = () => {
       if (peer.avatar) scene.remove(peer.avatar.group);
       const i = peers.indexOf(peer);
       if (i >= 0) peers.splice(i, 1);
-      ui.toast('Your visitor has sailed home.', '👋');
+      ui.toast('방문자가 집으로 돌아갔어요.', '👋');
     };
     channel.onmessage = (ev) => {
       try {
         const m = JSON.parse(ev.data);
         if (!peer.avatar || peer.avatar.kind !== m.kind || peer.avatar.name !== (m.name || '')) {
           if (peer.avatar) scene.remove(peer.avatar.group);
-          peer.avatar = makeAvatar(m.kind, m.name || 'Visitor');
+          peer.avatar = makeAvatar(m.kind, m.name || '방문자');
         }
         const av = peer.avatar;
         av.target.set(m.x, m.y, m.z);
@@ -114,8 +114,8 @@ export function createMultiplayer(player, scene) {
     const code = encode(pc.localDescription);
     try { await navigator.clipboard.writeText(code); } catch { /* below */ }
     await ui.say([
-      'Invite copied to your clipboard! Send the whole blob to your visitor — it is long; it is supposed to be long. It is the boat.',
-      'When they send back THEIR code, press O again and choose “Finish inviting.”',
+      '초대 코드가 클립보드에 복사됐어요! 방문자에게 코드 전체를 보내세요 — 길어요. 원래 긴 거예요. 그게 배니까요.',
+      '상대가 자기 코드를 보내 오면 O를 다시 누르고 “초대 마무리”를 선택하세요.',
     ]);
     pendingHost = pc;
   }
@@ -123,18 +123,18 @@ export function createMultiplayer(player, scene) {
   let pendingHost = null;
 
   async function finishHost() {
-    const reply = await ui.input('Paste your visitor’s reply code here — the whole blob.', { long: true, placeholder: 'reply code' });
+    const reply = await ui.input('방문자의 응답 코드를 여기 붙여 넣으세요 — 전체를요.', { long: true, placeholder: '응답 코드' });
     if (!reply || !pendingHost) return;
     try {
       await pendingHost.setRemoteDescription(decode(reply));
-      ui.toast('The tide is bringing them in…', '🌊');
+      ui.toast('물결이 방문자를 데려오는 중…', '🌊');
     } catch {
-      ui.say('That code didn’t take. Make sure the whole blob arrived — every last barnacle of it.');
+      ui.say('코드가 인식되지 않았어요. 코드 전체가 왔는지 확인하세요 — 마지막 따개비까지 전부요.');
     }
   }
 
   async function join() {
-    const invite = await ui.input('Paste the invite code from your host — the whole blob.', { long: true, placeholder: 'invite code' });
+    const invite = await ui.input('호스트에게 받은 초대 코드를 여기 붙여 넣으세요 — 전체를요.', { long: true, placeholder: '초대 코드' });
     if (!invite) return;
     try {
       const pc = new RTCPeerConnection(STUN);
@@ -145,23 +145,23 @@ export function createMultiplayer(player, scene) {
       const code = encode(pc.localDescription);
       try { await navigator.clipboard.writeText(code); } catch { /* shrug */ }
       await ui.say([
-        'Your reply code is on your clipboard — send it back to your host.',
-        'Once they paste it in, you’ll wash up on their shore. Mind the tide pools.',
+        '응답 코드가 클립보드에 있어요 — 호스트에게 돌려보내세요.',
+        '상대가 붙여 넣으면, 당신이 그들의 해안에 밀려와요. 조수 웅덩이 조심하세요.',
       ]);
     } catch {
-      ui.say('That code didn’t take. Ask your host to send it again — all of it.');
+      ui.say('코드가 인식되지 않았어요. 호스트에게 다시 보내 달라고 하세요 — 전체를요.');
     }
   }
 
   addEventListener('keydown', async (e) => {
     if (e.code !== 'KeyO' || e.repeat || ui.isBusy()) return;
     const opts = [
-      { label: '🏝️ Host — invite a friend', value: 'host' },
-      { label: '🛶 Join a friend’s island', value: 'join' },
-      { label: 'Never mind', value: null },
+      { label: '🏝️ 호스트 — 친구 초대', value: 'host' },
+      { label: '🛶 친구의 섬에 놀러 가기', value: 'join' },
+      { label: '아니요, 됐어요', value: null },
     ];
-    if (pendingHost) opts.splice(1, 0, { label: '✉️ Finish inviting (paste their reply)', value: 'finish' });
-    const choice = await ui.ask('Visitors! (Two friends, one archipelago, codes passed by hand.)', opts);
+    if (pendingHost) opts.splice(1, 0, { label: '✉️ 초대 마무리 (응답 붙여 넣기)', value: 'finish' });
+    const choice = await ui.ask('방문자! (친구 둘, 군도 하나, 코드는 손으로 전달.)', opts);
     if (choice === 'host') host();
     else if (choice === 'finish') finishHost();
     else if (choice === 'join') join();
@@ -180,7 +180,7 @@ export function createMultiplayer(player, scene) {
         ry: +player.group.rotation.y.toFixed(2),
         zone: zones.current(),
         kind: (state.avatar || {}).kind || 'cat',
-        name: state.name || 'Visitor',
+        name: state.name || '방문자',
         hat: state.wearing,
       });
       for (const peer of peers) {
