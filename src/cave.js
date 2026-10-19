@@ -116,15 +116,15 @@ export function createCave() {
   const mouthWorld = new THREE.Vector3(
     site.x + Math.sin(site.facing) * 3.2, 0, site.z + Math.cos(site.facing) * 3.2);
   register({
-    pos: mouthWorld, r: 2.4, label: 'slip into the cave',
+    pos: mouthWorld, r: 2.4, label: '동굴로 들어가기',
     use: async () => {
       const first = !S.hasFlag('visitedCave');
       S.setFlag('visitedCave');
       await zones.go('cave');
       if (first) {
         ui.say([
-          'The dark is soft in here, and full of small green stars.',
-          'Something hums, very quietly. Like something dreaming.',
+          '이곳의 어둠은 부드럽고, 작은 초록 별들로 가득해요.',
+          '무언가가 아주 조용히 흥얼거려요. 무언가 꿈꾸는 것처럼.',
         ]);
       }
     },
@@ -232,10 +232,10 @@ export function createCave() {
   });
   register({
     pos: new THREE.Vector3(pondX, 0, pondZ), r: 4.6, zone: 'cave',
-    label: 'look into the still pond', priority: 0,
+    label: '고요한 연못 들여다보기', priority: 0,
     use: () => ui.say([
-      'The pond holds the ceiling’s little stars perfectly still.',
-      'For a moment it is very hard to tell which way is up. The pond seems fine with this.',
+      '연못이 천장의 작은 별들을 완벽하게 고요히 담고 있어요.',
+      '잠시, 어느 쪽이 위인지 알기 어려워요. 연못은 이게 괜찮은 모양이에요.',
     ]),
   });
 
@@ -287,10 +287,10 @@ export function createCave() {
     getPos: () => wing.position,
     r: 1.8, zone: 'cave',
     enabled: () => wing.visible,
-    label: () => (S.state.tools.net ? 'swing at the glimmerwing' : 'watch the glimmerwing'),
+    label: () => (S.state.tools.net ? '반짝날개에 채집망 휘두르기' : '반짝날개 구경하기'),
     use: () => {
       if (!S.state.tools.net) {
-        ui.say('It drifts between the mushrooms like a little ghost on an errand. A net could meet it halfway.');
+        ui.say('심부름 가는 작은 유령처럼 버섯 사이를 떠다녀요. 채집망이라면 중간에서 만날 수 있을 거예요.');
         return;
       }
       if (Math.random() < 0.6) {
@@ -301,7 +301,7 @@ export function createCave() {
         ui.foundItem('cave_glimmerwing');
         ui.updateHUD();
       } else {
-        ui.toast('It melted into the dark, politely.', '🦋');
+        ui.toast('정중하게 어둠 속으로 녹아들었어요.', '🦋');
         wing.userData.home = shroomSpots[Math.floor(rand(0, shroomSpots.length))] || wing.userData.home;
       }
     },
@@ -357,35 +357,35 @@ export function createCave() {
 
   register({
     pos: new THREE.Vector3(shrineX, 0, shrineZ + 1.2), r: 2.6, zone: 'cave',
-    label: 'read the carved stone',
+    label: '새겨진 돌 읽기',
     use: async () => {
       await ui.say([
-        'A flat stone, carved long ago and worn soft:',
-        '“HERE SLEEPS THE OLD LIGHT OF LIGHTKEEP ISLE. SPEAK SOFTLY. IT HAD LONG SHIFTS.”',
+        '납작한 돌, 오래전에 새겨지고 부드럽게 닳았어요:',
+        '“라이트킵 섬의 옛 빛이 여기 잠든다. 조용히 말할 것. 오래 근무했다.”',
       ]);
       if (!S.hasFlag('blessedByLight')) {
         S.setFlag('blessedByLight');
-        await ui.say('The orb pulses once, gently — like a lighthouse saying hello to a very small boat.');
+        await ui.say('빛구슬이 한 번 부드럽게 맥동해요 — 아주 작은 배에게 인사하는 등대처럼.');
       }
       // the Labs asked everywhere. "everywhere" includes here.
       if (S.hasFlag('sawRocket') && !S.hasFlag('lightseedGiven')) {
         const give = await ui.ask(
-          'The orb drifts lower. It has heard about the rocket — light gossip travels at light speed. It seems to be… offering.',
+          '빛구슬이 낮게 내려와요. 로켓 소문을 들었나 봐요 — 빛 소문은 빛의 속도로 퍼지니까요. 뭔가를… 건네려는 것 같아요.',
           [
-            { label: '🌟 Cup your paws', value: 'yes' },
-            { label: 'Let it sleep', value: null },
+            { label: '🌟 두 손 모으기', value: 'yes' },
+            { label: '그냥 자게 두기', value: null },
           ]);
         if (give) {
           S.setFlag('lightseedGiven');
           S.addItem('lightseed');
           await ui.say([
-            'The Old Light gathers itself the way a cat gathers for a jump it has been considering for nine years.',
-            'A bead of warm glow rolls off the orb and into your paws. The orb dims — not smaller. Prouder.',
-            'It guided a thousand boats home. It has never once guided one OUT. It would very much like to know what that’s like.',
+            '옛 빛이 몸을 움츠려요, 9년 동안 고민해 온 점프를 앞둔 고양이처럼.',
+            '따뜻한 빛 방울 하나가 구슬에서 굴러 당신 손에 닿아요. 구슬이 어두워져요 — 작아진 게 아니에요. 더 자랑스러워진 거예요.',
+            '천 척의 배를 집으로 이끌었지만, 밖으로 이끌어 본 적은 한 번도 없어요. 그게 어떤 기분일지 무척 알고 싶어 해요.',
           ]);
-          ui.toast('You received the <b>Lightseed</b>! It hums the lighthouse song, very quietly.', '🌟');
+          ui.toast('<b>빛의 씨앗</b>을 받았어요! 아주 조용히 등대 노래를 흥얼거려요.', '🌟');
         } else {
-          ui.say('The orb settles back to its height, unbothered. Lighthouses are extremely good at waiting.');
+          ui.say('빛구슬은 태연하게 제자리로 돌아가요. 등대는 기다림에 아주 능해요.');
         }
       }
     },
@@ -413,7 +413,7 @@ export function createCave() {
   });
   register({
     pos: new THREE.Vector3(IN.x, 0, IN.z + 13.2), r: 1.8, zone: 'cave',
-    label: 'climb back out',
+    label: '밖으로 기어 나가기',
     use: () => zones.leaveTo({
       x: site.x + Math.sin(site.facing) * 5.6,
       z: site.z + Math.cos(site.facing) * 5.6,
