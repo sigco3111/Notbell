@@ -121,10 +121,10 @@ zones.addLink({ a: 'chuckee', b: 'oasis', kind: 'walk', path: [P(WALK_U, 1), P(W
 const IN_STORE = { x: -300, z: 1840 };
 
 const CHUCKEE_LINES = [
-  'Welcome to Chuckee’s! Biggest travel stop on any water! It’s the ONLY travel stop on any water. Still counts!',
-  'Restrooms are through there. Cleanest on any water. People cry. Happy crying. I clean ’em myself, every hour, on the hour.',
-  'Brisket’s hot, fudge is fresh, Chuckee Nuggets are the nuggets. How much wood WOULD a woodchuck chuck? Nobody’s asked me in years. I miss it.',
-  'Folks drive in from the Labs, folks drive in from Oasis. Where do they drive FROM, you ask? The loops. Where do they drive TO? Here. That’s the whole highway. It’s a very good highway.',
+  '처키스에 어서 오세요! 모든 물 위에서 가장 큰 휴게소! 모든 물 위에서 유일한 휴게소이기도 해요. 그래도 1등이에요!',
+  '화장실은 저쪽이에요. 모든 물 위에서 가장 깨끗해요. 사람들이 울어요. 기쁨의 눈물이에요. 제가 직접 청소해요, 매시간 정각에.',
+  '브리스킷은 뜨겁고, 퍼지는 갓 만들었고, 처키 너겟은 바로 그 너겟이에요. 우드척이 나무를 얼마나 척척할까? 몇 년째 아무도 안 물어봐요. 그리워요.',
+  '연구소에서 차 타고 오고, 오아시스에서도 차 타고 와요. 어디서 오냐고요? 순환로요. 어디로 가냐고요? 여기요. 그게 고속도로 전부예요. 아주 좋은 고속도로예요.',
 ];
 
 export function createChuckee(player) {
@@ -295,7 +295,7 @@ export function createChuckee(player) {
       const pier = cyl(0.6, 0.7, DECK - 0.3 + 1.6, 8, 0xb8b4a8);
       pier.position.set(p.x, (DECK - 0.3 - 1.6) / 2, p.z);
       group.add(pier);
-      const end = sign(['END OF HIGHWAY', 'there are no roads on any island'], { w: 2.2, h: 0.6, bg: '#ffffff', fg: '#2a2a2e', border: '#d8342c' });
+      const end = sign(['고속도로 끝', '어떤 섬에도 도로는 없습니다'], { w: 2.2, h: 0.6, bg: '#ffffff', fg: '#2a2a2e', border: '#d8342c' });
       const q = P(HWY_U, v + (v < 0 ? -3.3 : 3.3));
       end.position.set(q.x, DECK + 1.1, q.z);
       end.rotation.y = RY + (v < 0 ? Math.PI : 0);
@@ -306,7 +306,7 @@ export function createChuckee(player) {
     zones.addSeaWall({ contains: rectContains(HWY_U - 2.6, HWY_U + 2.6, HWY.v0, HWY.v1) });
     blockRect(HWY_U - 2.6, HWY_U + 2.6, NORTH.isletEdge - 1, SOUTH.isletEdge + 1);
     // a green highway sign, for the joy of it
-    const gs = sign(['CHUCKEE’S — THIS EXIT', 'LABS ↑  ·  OASIS ↓'], { w: 3, h: 1.0, bg: '#2f7a4f', fg: '#ffffff', border: '#ffffff' });
+    const gs = sign(['처키스 — 이번 출구', '연구소 ↑  ·  오아시스 ↓'], { w: 3, h: 1.0, bg: '#2f7a4f', fg: '#ffffff', border: '#ffffff' });
     const gp = P(HWY_U + 3.2, NORTH.isletEdge - 6);
     gs.position.set(gp.x, DECK + 2.6, gp.z);
     gs.rotation.y = RY + Math.PI;
@@ -400,10 +400,10 @@ export function createChuckee(player) {
     });
     register({
       getPos: () => at(2.2, 4.4), r: 2.0, // (at the store's south corner, where you can see the window)
-      label: 'watch the drive-thru',
+      label: '드라이브스루 구경하기',
       use: () => ui.say([
-        'A car pulls up to the window. A paw comes out of the window. A bag goes into the paw. The car drives on, around the loop, and back. It will be back in a minute. It is always back in a minute.',
-        'Nobody has ever seen who is driving. The cars are warm. Do not worry about it.',
+        '차 한 대가 창구에 멈춰요. 창에서 발이 나와요. 발에 봉지가 들어가요. 차는 순환로를 돌아 다시 와요. 1분 뒤에 돌아와요. 언제나 1분 뒤에요.',
+        '운전자를 본 사람은 없어요. 차들은 따뜻해요. 걱정할 필요 없어요.',
       ]),
     });
   }
@@ -444,7 +444,7 @@ export function createChuckee(player) {
     dts.rotation.y = Math.PI / 2;
     dts.position.set(SW / 2 + 0.06, 3.0, 0.6);
     g.add(dts);
-    const front = sign(['CHUCKEE’S', 'travel stop · brisket · fudge · restrooms'], { w: 5.2, h: 0.8, bg: '#f2cf5b', fg: '#b3202c', border: '#b3202c' });
+    const front = sign(['처키스', '휴게소 · 브리스킷 · 퍼지 · 화장실'], { w: 5.2, h: 0.8, bg: '#f2cf5b', fg: '#b3202c', border: '#b3202c' });
     front.rotation.y = -Math.PI / 2;
     front.position.set(-SW / 2 - 0.08, 3.2, 0); // (under the roof's overhang, clear of the door)
     g.add(front);
@@ -491,14 +491,14 @@ export function createChuckee(player) {
     }
     register({
       getPos: () => at(WALK_U - 0.3, -2.3), r: 1.4,
-      label: 'look at the pumps',
-      use: () => ui.say('Three fuel pumps, gleaming, numbered PUMP 1 OF 3, PUMP 2 OF 3, PUMP 3 OF 3. They are on the footbridge side. No car can reach them. A sticker on each: “CLEANEST PUMPS ON ANY WATER.” They are. Nothing has ever touched them.'),
+      label: '주유기 구경하기',
+      use: () => ui.say('반짝이는 주유기 세 대, 3대 중 1번, 3대 중 2번, 3대 중 3번. 인도교 쪽에 있어요. 어떤 차도 닿을 수 없어요. 각각에 스티커: “모든 물 위에서 가장 깨끗한 주유기.” 맞아요. 닿은 적이 없거든요.'),
     });
     // the door
     const doorOut = P(SU - SW / 2 - 1.3, 0);
     const exitSpot = { x: doorOut.x, z: doorOut.z, rotY: RY - Math.PI / 2 };
     zones.setDoor('chuckee', { x: doorOut.x, z: doorOut.z });
-    register({ getPos: () => at(SU - SW / 2 - 0.7, 0), r: 1.6, label: 'go into Chuckee’s', use: () => zones.go('chuckee') });
+    register({ getPos: () => at(SU - SW / 2 - 0.7, 0), r: 1.6, label: '처키스에 들어가기', use: () => zones.go('chuckee') });
 
     // ---- inside: jerky wall, nugget aisle, brisket counter, fudge, the restrooms
     const B = IN_STORE;
@@ -581,7 +581,7 @@ export function createChuckee(player) {
     rr.position.set(X(-8.9), 1.1, Z(3));
     rr.rotation.y = Math.PI / 2;
     group.add(rr);
-    const rrs = sign(['RESTROOMS', 'the cleanest on any water'], { w: 1.8, h: 0.6, d: 0.04, bg: '#ffffff', fg: '#3a7dd8' });
+    const rrs = sign(['화장실', '모든 물 위에서 가장 깨끗함'], { w: 1.8, h: 0.6, d: 0.04, bg: '#ffffff', fg: '#3a7dd8' });
     rrs.position.set(X(-8.8), 2.6, Z(3));
     rrs.rotation.y = Math.PI / 2;
     group.add(rrs);
@@ -594,20 +594,20 @@ export function createChuckee(player) {
       spawn: { x: B.x, z: B.z + 5.3, rotY: Math.PI },
       lighting: { bg: 0x3a3228, fog: 0x3a3228, fogNear: 25, fogFar: 64, hemiSky: 0xfff8e8, hemiGround: 0x9a8a6a, hemiIntensity: 2.0, sunIntensity: 0 },
     });
-    addZonePlace('chuckee', '🦫 Chuckee’s');
-    register({ pos: new THREE.Vector3(B.x, 0, B.z + 5.7), r: 1.5, zone: 'chuckee', label: 'step outside', use: () => zones.leaveTo(exitSpot) });
+    addZonePlace('chuckee', '🦫 처키스');
+    register({ pos: new THREE.Vector3(B.x, 0, B.z + 5.7), r: 1.5, zone: 'chuckee', label: '밖으로 나가기', use: () => zones.leaveTo(exitSpot) });
     const goods = [
-      { id: 'chuckee_nuggets', price: 6, say: 'Chuckee Nuggets! Sweet, crunchy, corn-puff-shaped joy. Nobody knows how many are in a bag. I’ve counted. It changes.' },
-      { id: 'brisket_sandwich', price: 12, say: 'Brisket, chopped, on a bun, with the pickles. Smoked it since the tide went out yesterday. You’re welcome.' },
-      { id: 'chuckee_fudge', price: 8, say: 'Fudge! The rocky road’s got real rocks in it. KIDDING. Mostly kidding.' },
-      { id: 'chuckee_plush', price: 20, say: 'A little me! In a little cap! Squeeze it. … It doesn’t do anything. I just like when people squeeze it.' },
+      { id: 'chuckee_nuggets', price: 6, say: '처키 너겟! 달콤 바삭한 콘퍼프 모양 기쁨. 봉지에 몇 개인지 아무도 몰라요. 세어 봤는데, 매번 달라요.' },
+      { id: 'brisket_sandwich', price: 12, say: '차돌박이 다져서 번에, 피클과 함께. 어제 물 빠질 때부터 훈연했어요. 천만에요.' },
+      { id: 'chuckee_fudge', price: 8, say: '퍼지! 록키 로드에는 진짜 돌이 들어 있어요. 농담이에요. 거의 농담이에요.' },
+      { id: 'chuckee_plush', price: 20, say: '작은 나! 작은 모자 쓴! 꾹 눌러 보세요. … 아무 일도 없어요. 눌러 주면 그냥 좋아요.' },
     ];
     register({
-      getPos: () => chuckee.position, r: 2.6, zone: 'chuckee', label: 'talk to Chuckee',
+      getPos: () => chuckee.position, r: 2.6, zone: 'chuckee', label: '처키와 대화하기',
       use: async () => {
         const c = await ui.ask(CHUCKEE_LINES[Math.floor(Math.random() * CHUCKEE_LINES.length)], [
           ...goods.map((g, k) => ({ label: `${ITEMS[g.id].emoji} ${ITEMS[g.id].name}`, value: String(k), hint: `${g.price}🔘`, disabled: S.state.buttons < g.price })),
-          { label: 'Just passing through', value: null },
+          { label: '그냥 지나가는 길이에요', value: null },
         ], { speaker: 'Chuckee', voice: 330 });
         if (c === null || c === undefined) return;
         const g = goods[Number(c)];
@@ -615,20 +615,20 @@ export function createChuckee(player) {
         S.addItem(g.id);
         kaching();
         ui.updateHUD();
-        ui.toast(`You got <b>${ITEMS[g.id].name}</b>.`, ITEMS[g.id].emoji);
+        ui.toast(`<b>${ITEMS[g.id].name}</b>을(를) 받았어요.`, ITEMS[g.id].emoji);
         await ui.say(g.say, { speaker: 'Chuckee', voice: 330 });
       },
     });
     register({
-      pos: new THREE.Vector3(X(-8.2), 0, Z(3)), r: 1.5, zone: 'chuckee', label: 'visit the restrooms',
+      pos: new THREE.Vector3(X(-8.2), 0, Z(3)), r: 1.5, zone: 'chuckee', label: '화장실 다녀오기',
       use: async () => {
         await ui.fadeSwap(() => {});
-        await ui.say(['They are the cleanest restrooms you have ever seen. They are cleaner than the concept of clean. A small framed certificate: “CLEANEST ON ANY WATER — AWARDED BY CHUCKEE.”', 'You wash your paws. The soap smells like brisket, faintly. You decide not to ask.']);
+        await ui.say(['본 적 없이 깨끗한 화장실이에요. 깨끗함이라는 개념보다 깨끗해요. 작은 액자 상장: “모든 물 위에서 가장 깨끗함 — 처키 수여.”', '손을 씻었어요. 비누에서 브리스킷 냄새가 희미하게 나요. 묻지 않기로 했어요.']);
       },
     });
     register({
-      pos: new THREE.Vector3(X(-1.5), 0, Z(-4.6)), r: 2.0, zone: 'chuckee', label: 'admire the jerky wall',
-      use: () => ui.say('Beef, turkey, “sea,” cranberry-glazed (from Cran, by footbridge, by highway, by woodchuck), and one flavor labeled only “CHUCKEE’S SPECIAL.” Chuckee, from the counter: “Don’t ask. You’ll love it.”'),
+      pos: new THREE.Vector3(X(-1.5), 0, Z(-4.6)), r: 2.0, zone: 'chuckee', label: '육포 벽 감상하기',
+      use: () => ui.say('소고기, 칠면조, “바다,” 크랜베리 글레이즈(크랜에서, 인도교로, 고속도로로, 우드척이 직송), 그리고 “처키 스페셜”이라고만 적힌 한 가지 맛. 카운터의 처키: “묻지 마세요. 좋아할 거예요.”'),
     });
   }
 
@@ -643,4 +643,4 @@ export function createChuckee(player) {
   }
   mergeStatic(group);
   return { group, update };
-}
+      }
