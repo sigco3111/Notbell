@@ -586,20 +586,20 @@ async function barnabyMenu() {
     await ui.say([
       '오! 본섬에서 온 얼굴이네. 파 아일에 온 걸 환영해 — 인구: 더 차분함.',
       '바나비야. 채소, 잡화, 그리고 해협 양쪽에서 최고의 미역 스튜. 유일한 미역 스튜이기도 해. 두 기록 모두 자랑스럽게 보유 중이야.',
-    ], { speaker: 'Barnaby', voice: VOICE.barnaby });
+    ], { speaker: '바나비', voice: VOICE.barnaby });
   }
   const choice = await ui.ask('뭘 해 줄까?', [
     { label: '🌱 씨앗·스튜 사기', value: 'buy' },
     { label: '🥕 농작물 팔기 (섬 가격!)', value: 'sell' },
     { label: '잡담', value: 'chat' },
     { label: '나가기', value: 'leave' },
-  ], { speaker: 'Barnaby', voice: VOICE.barnaby });
+  ], { speaker: '바나비', voice: VOICE.barnaby });
 
   if (choice === 'buy') return barnabyBuy();
   if (choice === 'sell') return barnabySell();
   if (choice === 'chat') {
     await ui.say(BARNABY_CHAT[barnabyChatIdx++ % BARNABY_CHAT.length],
-      { speaker: 'Barnaby', voice: VOICE.barnaby });
+      { speaker: '바나비', voice: VOICE.barnaby });
     return barnabyMenu();
   }
 }
@@ -615,7 +615,7 @@ async function barnabyBuy() {
     { label: '뒤로', value: 'back' },
   ];
   const choice = await ui.ask('씨앗은 여행을 잘해. 스튜는 전혀 못 해 — 그게 매력이야.', wares,
-    { speaker: 'Barnaby', voice: VOICE.barnaby });
+    { speaker: '바나비', voice: VOICE.barnaby });
   if (choice === 'stew') {
     S.spend(STEW_PRICE);
     S.drinkCoffee(45);
@@ -623,7 +623,7 @@ async function barnabyBuy() {
     ui.updateHUD();
     ui.toast('귀 끝까지 따뜻해져요. <i>45초간 조금 빨라져요!</i>', '🍲');
     await ui.say('조심해, 그릇이 열을 오래 잡아둬. 가문의 비밀이야. (비밀은 따뜻한 그릇이야.)',
-      { speaker: 'Barnaby', voice: VOICE.barnaby });
+      { speaker: '바나비', voice: VOICE.barnaby });
     return barnabyMenu();
   }
   if (GROWTH[choice]) {
@@ -643,7 +643,7 @@ async function barnabySell() {
     .filter(({ item }) => item && (item.kind === 'produce' || item.kind === 'fruit'));
   if (!stock.length) {
     await ui.say('오늘은 텃밭 수확이 없나? 주황색이나 빨간 걸 좀 길러 봐. 따뜻한 색 안에서는 유연하거든.',
-      { speaker: 'Barnaby', voice: VOICE.barnaby });
+      { speaker: '바나비', voice: VOICE.barnaby });
     return barnabyMenu();
   }
   const choices = stock.map(({ id, n, item }) => ({
@@ -653,7 +653,7 @@ async function barnabySell() {
   }));
   choices.push({ label: '다 팔았어요', value: 'done' });
   const choice = await ui.ask('갓 수확한 거지? 섬 가격으로 쳐줄게 — 그 까치보다 1.5배.', choices,
-    { speaker: 'Barnaby', voice: VOICE.barnaby });
+    { speaker: '바나비', voice: VOICE.barnaby });
   if (choice === 'done') return barnabyMenu();
   const n = S.countItem(choice);
   const total = Math.round(ITEMS[choice].price * 1.5) * n;
@@ -673,17 +673,17 @@ async function alderMenu(refreshCandles) {
     await ui.say([
       '어서 오시오, 걷는 이여. 나는 알더 수사요. 여기는 듣는 집이오.',
       '예배는 진행 중이지 않소. 언제나 진행 중이지 않소. 우리는 그저 고요를 따뜻하게 데워 둘 뿐이오, 종이 집으로 돌아올 경우를 대비해서.',
-    ], { speaker: 'Brother Alder', voice: VOICE.alder });
+    ], { speaker: '알더 수사', voice: VOICE.alder });
   }
   const choice = await ui.ask('고요가 무엇을 도와드릴까요?', [
     { label: '듣는 이들에 대해 묻기', value: 'lore' },
     { label: `🕯️ 촛불 켜기`, value: 'candle', hint: '5🔘', disabled: S.state.buttons < 5 },
     { label: '나가기', value: 'leave' },
-  ], { speaker: 'Brother Alder', voice: VOICE.alder });
+  ], { speaker: '알더 수사', voice: VOICE.alder });
 
   if (choice === 'lore') {
     await ui.say(ALDER_LORE[alderLoreIdx++ % ALDER_LORE.length],
-      { speaker: 'Brother Alder', voice: VOICE.alder });
+      { speaker: '알더 수사', voice: VOICE.alder });
     return alderMenu(refreshCandles);
   }
   if (choice === 'candle') {
@@ -694,7 +694,7 @@ async function alderMenu(refreshCandles) {
     jingle();
     ui.updateHUD();
     await ui.say('필요한 누군가를 위해 작은 불꽃을 켰어요. 바다 아래 어딘가에서, 따뜻한 무언가가 알아챘어요.',
-      { speaker: 'Brother Alder', voice: VOICE.alder });
+      { speaker: '알더 수사', voice: VOICE.alder });
     return alderMenu(refreshCandles);
   }
 }
