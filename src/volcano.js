@@ -175,8 +175,8 @@ export function createVolcano() {
     }
     register({
       pos: new THREE.Vector3(fx, 0, fz + 1.8), r: 2,
-      label: 'warm your paws at the fire',
-      use: () => ui.say('The fire pops and settles. It smells of driftwood and, faintly, of the mountain. Somewhere behind you, Cinder opens one eye to make sure you are appreciating it correctly.'),
+      label: '모닥불에 발 녹이기',
+      use: () => ui.say('불이 탁 소리를 내며 가라앉아요. 유목 냄새와, 희미하게, 산 냄새가 나요. 등 뒤 어딘가에서 신더가 한쪽 눈을 떠서 당신이 제대로 감상하는지 확인해요.'),
     });
   }
 
@@ -292,22 +292,22 @@ export function createVolcano() {
 
   register({
     pos: new THREE.Vector3(VB.x + 0.5, 0, VB.z + 4.6), r: 2.4,
-    label: 'visit the honor bar',
+    label: '양심 바 구경하기',
     use: async () => {
       const choice = await ui.ask(
-        'A driftwood sign: “LAVA-VIEW BAR. NO STAFF. COCO FIZZ 15ᵇ. THE JAR TRUSTS YOU.”', [
-          { label: '🥥 Coco Fizz', value: 'fizz', hint: '15🔘', disabled: S.state.buttons < 15 },
-          { label: 'Just admire the jar', value: 'jar' },
-          { label: 'Leave', value: null },
+        '유목 간판: “라바뷰 바. 직원 없음. 코코 피즈 15단추. 항아리가 당신을 믿어요.”', [
+          { label: '🥥 코코 피즈', value: 'fizz', hint: '15🔘', disabled: S.state.buttons < 15 },
+          { label: '그냥 항아리 감상하기', value: 'jar' },
+          { label: '나가기', value: null },
         ]);
       if (choice === 'fizz') {
         S.spend(15);
         S.drinkCoffee(20);
         sip();
         ui.updateHUD();
-        ui.toast('Cold, fizzy, faintly of summer. The jar clinks its thanks.', '🥥');
+        ui.toast('차갑고 톡 쏘고, 여름 맛이 살짝 나요. 항아리가 딸랑 소리로 감사해요.', '🥥');
       } else if (choice === 'jar') {
-        ui.say('A pickle jar half full of buttons. Someone has left an IOU written on a leaf. Someone else has paid the IOU. The system works.');
+        ui.say('단추가 반쯤 담긴 피클 항아리. 누군가 잎사귀에 쓴 차용증을 넣어 뒀고, 다른 누군가가 그 차용증을 갚았어요. 시스템이 작동해요.');
       }
     },
   });
@@ -359,23 +359,23 @@ export function createVolcano() {
   });
 
   const CINDER_LINES = [
-    'Sssalutations. Cinder. Resident. Volcanologist. Mostly the “resident” part.',
-    'She made all three islands, you know. Pushed them up one by one, then retired. We respect a finished body of work here.',
-    'People ask, “Cinder, is it safe?” Friend. She raised three islands from the sea floor. You think she has TIME for you?',
-    'The smoke means she’s comfortable. Like a cat purring, if the cat were a mountain.',
-    'Warmest rocks in the archipelago. I have a rotation. I’m on rock four. It’s a good rock.',
+    '안녕하세여. 신더. 주민. 화산학자. 주로 “주민” 쪽이에요.',
+    '그분이 섬 세 개를 다 만드셨어요, 아시나요. 하나씩 밀어 올리시고 은퇴하셨어요. 완성된 작품 활동은 존중하는 게 예의예요.',
+    '사람들이 물어요. “신더야, 안전해?” 이봐요. 그분은 해저에서 섬 셋을 올리신 분이에요. 당신 상대할 시간이 있을 것 같아요?',
+    '연기는 그분이 편안하시다는 뜻이에요. 고양이 그르렁 같은 거죠, 고양이가 산이라면요.',
+    '군도에서 가장 따뜻한 바위들이에요. 순번이 있어요. 지금은 네 번째 바위. 좋은 바위예요.',
   ];
   let cinderIdx = 0;
   register({
     getPos: () => cinder.position,
     r: 3,
-    label: 'talk to Cinder',
+    label: '신더와 대화하기',
     use: () => {
       if (!S.hasFlag('metCinder')) {
         S.setFlag('metCinder');
         ui.say([
-          'An iguana the color of cooled lava opens one eye. She was flat against the rock in a way that suggests centuries of practice.',
-          '“Visitors! By BOAT and everything. Welcome to the mountain. Wipe your feet. That’s a joke. Everything here is ash.”',
+          '식은 용암 색깔의 이구아나가 한쪽 눈을 떠요. 바위에 착 붙은 자세에서 수백 년의 연습이 느껴져요.',
+          '“손님들! 배까지 타고 오셨네. 산에 온 걸 환영해. 발 닦고 들어와. 농담이야. 여긴 전부 재니까.”',
         ], { speaker: 'Cinder', voice: 460 });
         return;
       }
@@ -386,10 +386,10 @@ export function createVolcano() {
   // the rim plaque — the Listeners get everywhere
   register({
     pos: new THREE.Vector3(V.x - 5, 0, V.z + 3), r: 2.6,
-    label: 'read the rim marker',
+    label: '가장자리 표지 읽기',
     use: () => ui.say([
-      'A squat stone, fire-glazed, carved deep:',
-      '“SHE MADE THE ISLANDS. SHE MADE THE CLIFF THE LIGHTHOUSE STOOD ON. SHE MADE THE CAVE WHERE THE LIGHT NOW SLEEPS. BE POLITE.” —the Listeners',
+      '불에 구운 듯한 납작한 돌, 깊게 새겨져 있어요:',
+      '“그분이 섬들을 만드셨다. 등대가 서 있던 절벽도 그분이 만드셨다. 빛이 지금 잠든 동굴도 그분이 만드셨다. 예의를 갖춰라.” —듣는 이들',
     ]),
   });
 
