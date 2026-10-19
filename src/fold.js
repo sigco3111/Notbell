@@ -444,7 +444,7 @@ export function createFold() {
         await ui.say([
           'Welcome, walker. I am Elder Amos, and this is the House of Cod. Wipe your feet if you like — the floor forgives either way.',
           'We are plain folk. We farm, we jar, we listen to the weather. You are welcome to exactly all of it.',
-        ], { speaker: 'Elder Amos', voice: VOICE.amos });
+        ], { speaker: '아모스 장로', voice: VOICE.amos });
       }
       const choice = await ui.ask('Elder Amos folds his hooves and gives you his whole attention.', [
         { label: '🐟 Ask about the Cod', value: 'cod' },
@@ -453,11 +453,11 @@ export function createFold() {
         { label: 'Go gently', value: null },
       ]);
       if (!choice) {
-        ui.say('Go gently, friend. Take weather with you.', { speaker: 'Elder Amos', voice: VOICE.amos });
+        ui.say('조심히 가시오, 벗이여. 날씨를 챙겨 가시오.', { speaker: '아모스 장로', voice: VOICE.amos });
         return;
       }
       const table = { cod: COD_LORE, nb: NEIGHBOR_LORE, fold: FOLD_LORE }[choice];
-      ui.say(table[amosIdx[choice] % table.length], { speaker: 'Elder Amos', voice: VOICE.amos });
+      ui.say(table[amosIdx[choice] % table.length], { speaker: '아모스 장로', voice: VOICE.amos });
       amosIdx[choice]++;
     }
   }
@@ -1403,4 +1403,4 @@ export function createFold() {
   }
 
   return { group, update };
-}
+                                                            }
