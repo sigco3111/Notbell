@@ -238,24 +238,24 @@ function talk(key, name, lines) {
 }
 
 const REGGIE = [
-  'Mm-mm. Name? … Honey, you are not on the list. Nobody is on the list. I just like to watch you wait.',
-  'Security. Gatehouse. Me. Yes, I’m small. So is a stapler, sweetie, and you’ve never once argued with a stapler.',
-  'The boom is UP because I am generous. Do not make me reconsider.',
-  'Is that a lantern? Cute. Very “I rowed here.” Go on. Go.',
-  'I see everything. Every lawn. Every flamingo. The goose with the boat thinks I don’t see the goose. I see the goose.',
-  'Beverly signs my timesheet. I sign Beverly’s. It’s called checks and balances, baby.',
-  'No loitering. … That’s MY job. Move along.',
+  '음-음. 이름? … 허니, 명단에 없어요. 아무도 명단에 없어요. 난 그냥 기다리는 꼴 보는 게 좋을 뿐이야.',
+  '경비. 게이트하우스. 나. 응, 나 작아. 스테이플러도 작지, 스위티. 그런데 너 스테이플러랑 말다툼한 적 없잖아.',
+  '차단봉이 올라가 있는 건 내가 관대해서야. 재고하게 만들지 마.',
+  '그거 랜턴이야? 귀엽네. 아주 “노 저어 왔어요” 스타일. 가. 가라고.',
+  '나는 다 봐. 모든 잔디. 모든 플라밍고. 배 탄 거위는 내가 거위를 못 보는 줄 알아. 거위 보거든.',
+  '베벌리가 내 근무표에 사인해. 내가 베벌리 거에 사인하고. 이게 견제와 균형이야, 베이비.',
+  '서성임 금지. …그건 내 일이야. 지나가.',
 ];
 
 const NOTICES = [
   'NOTICE: Lawns are to be maintained at TWO AND ONE HALF (2½) INCHES. Not two. Not three. The President has a ruler and is not afraid of it.',
-  'NOTICE: The following are prohibited under Article 9 of the Covenant (NOISE): doorbells, bicycle bells, wind chimes, dinner bells, sleigh bells, cowbells, and the song of the ice cream truck. The ice cream truck may still visit. It must do so in silence. It has been doing so in silence for eleven years. Nobody knows why Article 9 says what it says; it was in the deed. Please knock.',
-  'NOTICE: The ferry proposal (submitted by Capt. Brine) is still under review. So is everything else. Thank you for your patience.',
-  'LOST: one lawn flamingo, pink, answers to nothing. Last seen in the Wests’ yard. Beverly has concerns. — Mildred',
-  'REMINDER: Band practice (NO OUTLET) is permitted Tuesdays, 2:00–4:00 p.m., in the Bronto garage, at a volume “consistent with the character of the community.” The character of the community is quiet.',
-  'YARD OF THE MONTH: The Humphries. (Forty-one months running. Nominations are open to all residents. The President nominated herself. Seconded: the President.)',
-  'NOTICE: Holiday decorations permitted December 1 – January 2. Approved colors: white. Approved lights: white, steady. No blinking. No inflatables. No inflatables. NO INFLATABLES. — B.H.',
-  'FOR SALE: a Standard (the Open House, on the Circle). 4 bed, 3 bath, exactly like the others, which is the selling point. Inquire with Tiffany, who will be there. She is always there.',
+  '공지: 규약 제9조(소음)에 따라 다음은 금지됩니다: 초인종, 자전거 벨, 윈드차임, 디너 벨, 썰매 벨, 소 종, 아이스크림 트럭의 노래. 아이스크림 트럭은 방문할 수 있습니다. 단, 침묵 속에서만. 11년째 침묵 속에서 오고 있습니다. 제9조가 왜 그런 내용인지 아는 사람은 없으며, 계약서에 있었습니다. 노크해 주세요.',
+  '공지: 페리 제안(브라인 선장 제출)은 여전히 검토 중입니다. 다른 모든 것도 그렇습니다. 인내심에 감사드립니다.',
+  '찾습니다: 잔디 플라밍고 한 마리, 분홍색, 불러도 안 옴. 마지막 목격지는 웨스트네 마당. 베벌리가 우려하고 있음. — 밀드레드',
+  '알림: 밴드 연습(노 아울렛)은 화요일 오후 2:00–4:00, 브론토네 차고에서, “커뮤니티 품격에 부합하는” 음량으로 허용됩니다. 이 커뮤니티의 품격은 조용함입니다.',
+  '이 달의 마당: 험프리스네. (41개월 연속. 후보는 모든 주민에게 열려 있습니다. 회장이 본인을 추천함. 동의: 회장.)',
+  '공지: 명절 장식은 12월 1일~1월 2일 허용. 승인 색상: 화이트. 승인 조명: 화이트, 점멸 없음. 깜빡임 금지. 에어발룬 금지. 에어발룬 금지. 에어. 발룬. 금지. — B.H.',
+  '매물: 스탠더드(서클 위의 오픈 하우스). 침실 4, 욕실 3, 다른 집들과 정확히 똑같음 — 그게 판매 포인트. 티파니에게 문의. 그 자리에 있을 거예요. 항상 있거든요.',
 ];
 
 // ------------------------------------------------------------ voices ----
@@ -263,168 +263,168 @@ const NOTICES = [
 // with — but never cruel: she wants nothing on this island ever blown
 // away again, and she has decided the way to do that is rules.
 const BEVERLY = [
-  'Oh. You’re new. I can always tell. It’s the lantern. Is that… approved? I don’t recall approving it. I’ll allow it. For now. I’m writing that down.',
-  'Two and a half inches. The grass. Not two. Not three. Two and a half. I have a ruler, and I am not afraid of it.',
-  'I don’t make the rules. I enforce them. I also made them. It’s a lot of work, but somebody has to be this way.',
-  'Forty-one Yards of the Month. In a row. It’s not a competition. If it were a competition, I would be winning it. I am winning it.',
-  'The Bronto boy’s band has a permit. Tuesdays, two to four. And yet I hear them every single day. Apparently it’s always Tuesday somewhere. I have it written down. All of it.',
-  'Todd mows beautifully. Todd mows beautifully because I watch Todd mow.',
-  'A ferry. Fourteen applications, from a goose. The horn is too loud. The boat is too loud. The sea is, frankly, very loud. It took fourteen applications. I approved ONE route: here to BULKO and back. Paper towels are a need. Everything else is a want, and wants are under review.',
-  'Article Nine. No bells. No, I don’t know why. It’s in the deed; the developer wrote it. Moledecai-something. You don’t question a deed, dear. You enforce a deed.',
-  'Mildred has a flamingo. A pink plastic flamingo. In her front yard. Three notices. It hasn’t moved. It watches me. I watch it back.',
-  'Before the lawns, the wind used to take everything off this island. Lawn chairs. Laundry. A whole gazebo, once. Now we have rules, and nothing has blown away in thirty years. You’re welcome.',
+  '어머. 새로 오셨네. 알아보겠어요. 그 랜턴 때문에. 그건… 승인된 거예요? 승인한 기억이 없는데. 일단은 봐줄게요. 지금은. 적어 두어야겠네.',
+  '6.35센티미터. 잔디 길이 말이에요. 5도 아니고 7.5도 아니고. 6.35. 나는 자가 있고, 그 자를 두려워하지 않아요.',
+  '규칙을 만드는 건 내가 아니에요. 집행할 뿐이죠. 만든 것도 나지만. 힘든 일이지만 누군가는 이래야 하니까요.',
+  '이 달의 마당 41회. 연속으로. 경쟁 아니에요. 경쟁이었다면 내가 이기고 있겠지만. 이기고 있어요.',
+  '브론토네 아이 밴드는 허가증이 있어요. 화요일, 두 시에서 네 시. 그런데 매일 들려요. 어디선가는 항상 화요일인 모양이에요. 전부 기록해 두었어요. 전부요.',
+  '토드는 깎는 솜씨가 아름다워요. 내가 지켜보고 있어서 아름다운 거죠.',
+  '페리라니. 신청서 열네 장, 거위가 낸 거예요. 뱃고동은 시끄럽고, 배도 시끄럽고, 바다는 솔직히 아주 시끄럽죠. 열네 장 걸렸어요. 내가 승인한 노선은 단 하나: 여기서 불코 왕복. 키친타월은 필요품이에요. 나머지는 사치고, 사치는 검토 중이에요.',
+  '제9조. 종 금지. 왜인지는 나도 몰라요. 계약서에 있어요, 개발업자가 썼죠. 몰드카이 뭐시기. 계약서는 의심하는 게 아니에요. 집행하는 거예요.',
+  '밀드레드는 플라밍고가 있어요. 분홍 플라스틱 플라밍고. 앞마당에. 경고장 세 통. 꼼짝도 안 해. 나를 쳐다봐. 나도 쳐다봐주지.',
+  '잔디가 들어서기 전에는 바람이 이 섬의 모든 걸 날려 버렸어요. 잔디 의자. 빨래. 한번은 정자채로. 이제는 규칙이 있고, 30년간 날아간 게 없어요. 천만에요.',
 ];
 const HAROLD = [
-  'Oh — hello. Beverly’s out. Beverly is always out. She’s the most out person I know.',
-  'I mow our lawn. She tells me where. Forty-one months, the system’s worked.',
-  'She’s softer than she seems. She keeps a list of everyone’s birthdays. She files it under “Violations,” so nobody finds it.',
-  'I was on the Board once. For an afternoon. Longest afternoon of my life. I resigned by letter. She approved it. Very promptly.',
-  'You’re welcome to read the covenant. Four binders, on the counter. There’s a very good part in Volume Three about mailboxes. Mailboxes and me, we’ve been through a lot.',
+  '어머 — 안녕. 베벌리는 외출 중이야. 베벌리는 항상 외출 중이지. 내가 아는 사람 중 제일 외출하는 사람이야.',
+  '잔디는 내가 깎아. 어디를 깎을지는 그분이 정해. 41개월째, 시스템이 잘 굴러가.',
+  '겉보기보다 마음이 여려. 동네 사람 생일을 전부 적어 두셨어. “위반” 폴더에 넣어 두셔서 아무도 못 찾지만.',
+  '이사회에 있던 적이 있어. 오후 한나절 동안. 인생에서 가장 긴 오후였지. 편지로 사임했어. 아주 신속히 승인해 주시더라고.',
+  '규약 읽어봐도 돼. 바인더 네 권, 카운터에 있어. 3권에 우편함에 관한 아주 좋은 부분이 있어. 우편함과 나는 같이 겪은 게 많거든.',
 ];
 const COVENANT = [
   'ARTICLE 2 (LAWNS): All lawns shall be maintained at two and one-half (2½) inches, green, and mown in stripes running north–south, “as God and the Board intended.”',
-  'ARTICLE 4 (HOMES): All homes shall be the Standard. Doors shall be Taupe, Oat, or Greige. A resident wishing to paint a door any other color may submit a request in writing, which will be read aloud at the Annual Meeting, slowly.',
-  'ARTICLE 9 (NOISE): No bells. No doorbells, bicycle bells, wind chimes, cowbells, dinner bells, or musical trucks. Residents shall knock. (Margin, in pencil, very old: “ask Moledecai why.” Beneath it, in pen, newer: “Do not.”)',
-  'ARTICLE 11 (MAILBOXES): Black. Post white. Flag red. The flag shall be raised only in the presence of outgoing mail and lowered with dignity.',
-  'ARTICLE 14 (FLAMINGOS): See Attachment F. (Attachment F is eleven pages long and unsigned.)',
-  'ARTICLE 17 (WEATHER): Residents shall secure all outdoor furniture, gazebos, and laundry, in memory of the Squall, which took everything, and which the Board has not forgiven.',
+  '제4조(주택): 모든 주택은 스탠더드로 한다. 문은 토프, 오트, 그레이지 색으로 한다. 다른 색으로 문을 칠하고자 하는 주민은 서면으로 신청할 수 있으며, 연례 회의에서 천천히 낭독된다.',
+  '제9조(소음): 종 금지. 초인종, 자전거 벨, 윈드차임, 소 종, 디너 벨, 음악 트럭 금지. 주민은 노크할 것. (여백에, 연필로, 아주 오래된 필적: “몰드카이에게 이유를 물어볼 것.” 그 아래, 펜으로, 더 최근: “물어보지 말 것.”)',
+  '제11조(우편함): 검정. 기둥은 흰색. 깃발은 빨강. 깃발은 보낼 우편물이 있는 경우에만 올리고, 품위 있게 내린다.',
+  '제14조(플라밍고): 부속서 F 참조. (부속서 F는 11페이지 분량이며 서명이 없다.)',
+  '제17조(날씨): 주민은 모든 야외 가구, 정자, 빨래를 고정할 것. 모든 것을 쓸어 간 그 폭풍을 기리며, 이사회는 아직 용서하지 않았다.',
 ];
 const SAL = [
-  'PARROTS OF THE WORLD. PARROTS OF THE WORLD. … Oh! Hello. I was just repeating the television.',
+  '세계의 앵무새. 세계의 앵무새. … 어머! 안녕. 텔레비전을 따라 하고 있었어.',
   '“The scarlet macaw is a social bird.” THE SCARLET MACAW IS A SOCIAL BIRD. They’re right, you know. I’m very social. I’m socializing right now.',
-  'In my day we didn’t have cable. We had a window and a lot of opinions. I still have the opinions.',
-  'My grandson’s in the band. The band! In the garage! “No Outlet.” I told him that’s a street sign. He said that’s the POINT, Grandpa. Kids.',
+  '나 때는 케이블이 없었어. 창문 하나와 수많은 의견이 있었지. 의견은 아직도 있고.',
+  '우리 손자가 밴드를 해. 밴드를! 차고에서! “노 아울렛”. 간판 이름이라고 했더니, 그게 포인트라네, 할아버지. 요즘 것들.',
 ];
 const SUNNY = [
-  'Hi, hon! Want something to drink? We have iced tea, and iced tea, and a very nice iced tea.',
-  'Kiwi’s in the Brontos’ garage with the band. I can hear them from here. I can hear them from everywhere. I’m so proud I could scream. Kiwi screams, actually. It’s the style.',
-  'Dad repeats the TV. Kiwi repeats Dad. I repeat everything to Beverly, because she asks. It’s a very repetitive house. We like it that way.',
+  '안녕, 허니! 뭐 마실래? 아이스티 있고, 아이스티 있고, 아주 맛있는 아이스티도 있어.',
+  '키위는 브론토네 차고에서 밴드 중이야. 여기서도 들려. 어디서든 들려. 소리 지르고 싶을 만큼 자랑스러워. 키위는 진짜로 소리 질러. 그게 스타일이래.',
+  '아빠는 TV를 따라 하고, 키위는 아빠를 따라 하고, 나는 모든 걸 베벌리에게 전해. 물어보시니까. 아주 반복적인 집이야. 우린 그게 좋아.',
 ];
 const LINDA = [
-  'Gary’s grilling. Gary is always grilling. I have never once seen a burger come off that grill. I’ve stopped asking. It makes him happy.',
-  'Go, team! … I don’t know which one is ours. I just like the green part.',
-  'Junior says he’s leaving town. I packed him a lunch. It’s a big lunch. It’s a long swim.',
-  'Mind your head on the way out, dear. Oh — you’re fine. It’s Gary who has to mind his head. Gary minds his head on everything.',
+  '게리가 그릴을 돌려. 게리는 항상 그릴을 돌려. 그 그릴에서 버거 나오는 걸 한 번도 못 봤어. 이제 묻지도 않아. 본인이 행복하다니까.',
+  '화이팅, 팀! … 어느 팀이 우리 편인지는 몰라. 그냥 초록 부분이 좋아서.',
+  '주니어가 동네를 떠난대. 도시락 싸 줬어. 아주 큰 도시락. 헤엄쳐야 하는 긴 길이거든.',
+  '나갈 때 머리 조심해, 얘야. 어머 — 넌 괜찮네. 게리가 조심해야 하는데. 게리는 모든 것에 머리를 조심해야 해.',
 ];
 const TWINS = [
-  'Shh! It’s the good part.',
-  'It’s ALL the good part.',
-  'Dad’s mowing again. Dad’s always mowing. When we grow up we’re gonna mow the OCEAN.',
-  'Captain Crunchbeak is gonna escape from the Evil Lawn this time. We can feel it. Two hundred and twelve episodes, and we can FEEL it.',
+  '쉿! 지금 재밌는 부분이야.',
+  '전부 다 재밌는 부분이야.',
+  '아빠가 또 잔디 깎아. 아빠는 항상 잔디 깎아. 우리 크면 바다를 깎을 거야.',
+  '크런치부리 선장이 이번에는 사악한 잔디에서 탈출할 거야. 느낌이 와. 212화째인데, 느낌이 온다고.',
 ];
 const DUNES2 = [
-  [{ speaker: 'Chad', voice: 290, text: 'We moved here for the schools!' }, { speaker: 'Madison', voice: 470, text: 'There aren’t any schools, Chad.' }, { speaker: 'Chad', voice: 290, text: 'For when there are schools.' }],
-  [{ speaker: 'Chad', voice: 290, text: 'Honey, where’s the — ' }, { speaker: 'Madison', voice: 470, text: 'Box twelve.' }, { speaker: 'Chad', voice: 290, text: 'Which one’s box twelve?' }, { speaker: 'Madison', voice: 470, text: 'They’re all box twelve.' }],
-  [{ speaker: 'Madison', voice: 470, text: 'Hot yoga at six, cold brew at seven, stroller walk at eight. I have a system. The system is Mirage.' }],
-  [{ speaker: 'Chad', voice: 290, text: 'I’m a dad now. I got the vest. The vest kind of came with the dad.' }],
-  [{ speaker: 'Madison', voice: 470, text: 'The baby’s name is Sahara. Like the store. It’s where we had our first date.' }, { speaker: 'Chad', voice: 290, text: 'She sprayed me with a tester.' }, { speaker: 'Madison', voice: 470, text: 'He smelled like a mood for a week.' }],
+  [{ speaker: '채드', voice: 290, text: '학군 보고 이사 왔지!' }, { speaker: '매디슨', voice: 470, text: '학교 없어, 채드.' }, { speaker: '채드', voice: 290, text: '학교 생기면 대비해서.' }],
+  [{ speaker: '채드', voice: 290, text: '여보, 그거 어디 있— ' }, { speaker: '매디슨', voice: 470, text: '12번 박스.' }, { speaker: '채드', voice: 290, text: '12번이 어떤 건데?' }, { speaker: '매디슨', voice: 470, text: '전부 12번이야.' }],
+  [{ speaker: '매디슨', voice: 470, text: '핫요가 여섯 시, 콜드브루 일곱 시, 유모차 산책 여덟 시. 나에겐 시스템이 있어. 그 시스템이 미라지야.' }],
+  [{ speaker: '채드', voice: 290, text: '나 이제 아빠야. 조끼도 샀어. 조끼는 아빠에 딸려 오더라고.' }],
+  [{ speaker: '매디슨', voice: 470, text: '아기 이름은 사하라야. 그 가게처럼. 우리 첫 데이트한 곳이거든.' }, { speaker: '채드', voice: 290, text: '시향지를 내게 뿌렸었지.' }, { speaker: '매디슨', voice: 470, text: '일주일 내내 무드 냄새가 났어.' }],
 ];
 const WALT = [
-  'Mildred’s at the mall. Mildred is always at the mall. She’s walked to the moon and back, she says. In laps.',
-  'It’s golf. I don’t play it. I just like how quiet everybody is about it. Whole crowd whispering about one little ball. That’s my speed.',
-  'The flamingo’s name is Dolores. Beverly wants her gone. Dolores stays. Some hills you die on. Some hills have a flamingo on them.',
-  'Take a butterscotch. They’re from ’94. They’re fine. Butterscotch is forever.',
+  '밀드레드는 몰에 있어. 밀드레드는 항상 몰에 있어. 달까지 걸었다가 돌아왔대. 바퀴 수로.',
+  '골프야. 나는 안 쳐. 다들 그걸로 조용한 게 좋을 뿐이지. 온 관중이 공 하나 두고 속삭여. 딱 내 취향이야.',
+  '플라밍고 이름은 돌로레스야. 베벌리는 치우라고 해. 돌로레스는 남아. 죽어도 지키는 언덕이 있는 법이지. 어떤 언덕에는 플라밍고가 있고.',
+  '버터스카치 하나 집어가. 94년산이야. 괜찮아. 버터스카치는 영원하거든.',
 ];
 const MILDRED = [
-  'Oh, hello, dear! Home from laps. Forty laps. Eleven’s a mile. We don’t talk about how long it takes.',
-  'Did Walt offer you a butterscotch? Take two. Take the dish. Walt, give them the dish.',
-  'Dolores is my flamingo. Beverly’s sent three notices. I keep them in a nice folder. I’ll send her one back someday. On pink paper.',
+  '어머, 안녕! 바퀴 돌고 오는 길이야. 마흔 바퀴. 열한 바퀴가 1마일이야. 얼마나 걸리는지는 말 안 하기로 했어.',
+  '월트가 버터스카치 권했어? 두 개 가져가. 접시째 가져가. 월트, 접시 드려.',
+  '돌로레스는 내 플라밍고야. 베벌리가 경고장을 세 통이나 보냈어. 고운 폴더에 보관 중이야. 언젠가 답장 보낼 거야. 분홍 종이로.',
 ];
 const GARY = [
-  'Burgers are almost ready! They’ve been almost ready since noon. That’s grilling, pal. It’s a state of mind.',
-  'Being tall has its perks. I can see over every fence on the Circle. Mostly what I see is Beverly coming. Heads up — she’s coming.',
-  'That’s my boy Junior in the garage. Bass guitar. Says they’re getting out of this town. I said, “Son, it’s an island.” He said, “EXACTLY, Dad.” I don’t know what it means, but I’m proud of him.',
-  'Linda says I have to stop cleaning the gutters for the whole street. But who else is gonna do it? Todd? Todd’s four feet tall.',
-  'You want a burger? … They’re not ready. But you’re welcome to want one.',
-  'The veggie patties come from the same people who make the nuggets. Nobody knows what’s in either. I respect a mystery.',
+  '버거 거의 다 됐어! 정오부터 거의 다 됐어. 그게 그릴이야, 친구. 마음가짐이라고.',
+  '키 크면 좋은 점이 있어. 서클의 모든 울타리 너머가 보이지. 주로 보이는 건 베벌리가 오는 모습이야. 조심해 — 오신다.',
+  '차고에 있는 건 우리 아들 주니어야. 베이스 기타. 이 동네를 떠난대. 그래서 “아들, 여긴 섬이야” 했지. 그러니까 “바로 그거야, 아빠.” 무슨 뜻인지 모르지만 자랑스러워.',
+  '린다는 온 동네 배수구 청소 그만하래. 하지만 누가 해? 토드? 토드는 키가 120밖에 안 돼.',
+  '버거 줄까? … 아직 안 됐어. 하지만 원하는 건 얼마든지.',
+  '비건 패티는 너겟 만드는 데랑 같은 회사야. 어느 쪽에 뭐가 들었는지 아무도 몰라. 나는 미스터리를 존중해.',
 ];
 const TODD = [
-  'Two and a half inches! Every Saturday. And Wednesday. And today. You can never be too sure.',
-  'The stripes are the whole thing. Anybody can cut grass. The stripes are how you know somebody cared.',
-  'I mow the common green, the Circle, the pool lawn, and my own. Then I mow Harold’s, because Harold mows Beverly’s, and somebody has to mow Harold. That’s community.',
-  'The kids? Inside. Screens. I was the same at their age. Except with lawns.',
-  'Hear that? That’s a mower that’s been serviced. Listen. … Beautiful.',
+  '6.35센티미터! 매주 토요일. 그리고 수요일. 그리고 오늘. 아무리 확인해도 지나치지 않아.',
+  '줄무늬가 전부야. 풀은 누구나 깎아. 줄무늬는 누군가 정성을 들였다는 증거지.',
+  '공동 잔디, 서클, 풀장 잔디, 우리 집 거를 깎아. 그다음 해롤드네도 깎아. 해롤드는 베벌리네를 깎으니까, 누군가는 해롤드네를 깎아야 하거든. 그게 커뮤니티야.',
+  '애들? 집 안. 스크린. 나도 그 나이 때 똑같았어. 잔디 빼고.',
+  '들려? 정비 잘된 모어 소리야. 들어봐. … 아름다워.',
 ];
 const TIFFANY = [
-  'Welcome, welcome! Open house! Today only! (Every day.) Four bed, three bath, exactly like the others — which is the selling point.',
-  'Look at this kitchen. Now imagine YOUR family in this kitchen. Now imagine them exactly like every other family in every other kitchen. Isn’t that peace?',
-  'It’s been on the market since the island was graded. The price is very fair. The price has always been very fair. Nobody has ever asked the price. I’m ready, though. I am SO ready.',
-  'Great schools! … Well. There aren’t schools. But imagine if there were. That’s what I sell, darling. Imagination. With granite countertops.',
+  '어서 오세요, 어서 오세요! 오픈 하우스! 오늘만! (매일.) 침실 넷, 욕실 셋, 다른 집들과 정확히 똑같아요 — 그게 판매 포인트예요.',
+  '이 주방 좀 보세요. 이제 이 주방에 있는 당신의 가족을 상상해 보세요. 이제 그 가족이 다른 모든 주방의 다른 모든 가족과 정확히 똑같은 걸 상상해 보세요. 평화롭지 않나요?',
+  '섬이 조성된 이래 계속 매물로 나와 있어요. 가격은 아주 공정해요. 가격은 언제나 아주 공정했어요. 가격을 물어본 사람은 아무도 없어요. 하지만 저는 준비됐어요. 완전히 준비됐다고요.',
+  '일류 학군! … 글쎄요. 학교는 없어요. 하지만 있다고 상상해 보세요. 제가 파는 건 바로 그거예요, 달링. 상상력. 화강암 조리대 포함.',
 ];
 const KIDS = [
-  'Push me! Higher! No, higher! No — okay, that’s high enough. That’s too high. PUSH ME.',
-  'We’re not allowed in the pool. Nobody’s allowed in the pool. We’re allowed on the swings from ten to five. It’s ten to five somewhere.',
-  'My big brother’s in a band. They’re getting out of this town. I’m gonna get out of this town too. After snack.',
+  '밀어 줘! 더 높이! 아니, 더 높이! 아니 — 응, 그만큼이면 됐어. 너무 높아. 밀어 줘.',
+  '우리는 풀장에 못 들어가. 아무도 못 들어가. 그네는 10시부터 5시까지 돼. 어딘가는 10시부터 5시겠지.',
+  '우리 형은 밴드야. 이 동네를 떠날 거래. 나도 이 동네 떠날 거야. 간식 먹고 나서.',
 ];
 const BAND = [
-  [['Kiwi', 'We’re No Outlet. We’re getting out of this town.'], ['Junior', 'Out of this town.'], ['Dakota', 'Out. Of. This. Town.']],
-  [['Kiwi', 'Where to? … OUT. There’s a whole ocean. Have you SEEN it? It’s so big, and it doesn’t have an HOA.']],
-  [['Dakota', 'Our first single is called “Cul-de-Sac.” It goes around and around and it doesn’t lead anywhere.'], ['Kiwi', 'That’s the point.'], ['Junior', 'That’s the whole point.']],
-  [['Junior', 'The ferry’s pending approval. So we’re gonna swim.'], ['Kiwi', 'We’re practicing first.'], ['Dakota', 'In the pool.'], ['Kiwi', 'Nobody’s allowed in the pool.'], ['Junior', '…So we’re practicing on the lawn.']],
-  [['Kiwi', 'We have a noise permit. Tuesdays, two to four. Every day is Tuesday if you believe in something.']],
-  [['Dakota', 'My mom says it’s a phase.'], ['Kiwi', 'Everything’s a phase. The MOON is a phase.'], ['Junior', 'Whoa.']],
-  [['Kiwi', 'Beverly came to our show. She stood at the end of the driveway with her arms crossed for the entire set.'], ['Dakota', 'She tapped her foot.'], ['Junior', 'She tapped her foot, man.']],
+  [['키위', '우리는 노 아울렛. 이 동네를 떠날 거야.'], ['주니어', '이 동네를 떠날 거라고.'], ['다코타', '이. 동네. 를. 떠난다고.']],
+  [['키위', '어디로? … 밖으로. 바다가 통째로 있잖아. 바다 봤어? 엄청 크고, HOA도 없어.']],
+  [['다코타', '첫 싱글 제목은 “컬디색(막다른 골목)”. 빙빙 돌기만 하고 어디에도 안 닿는 곡이야.'], ['키위', '그게 포인트야.'], ['주니어', '그게 전부 포인트라고.']],
+  [['주니어', '페리는 승인 대기 중. 그래서 헤엄쳐서 갈 거야.'], ['키위', '일단 연습 중이야.'], ['다코타', '풀장에서.'], ['키위', '풀장엔 아무도 못 들어가.'], ['주니어', '…그래서 잔디에서 연습 중이야.']],
+  [['키위', '소음 허가증 있어. 화요일, 두 시에서 네 시. 뭔가를 믿기만 하면 매일이 화요일이야.']],
+  [['다코타', '우리 엄마는 그냥 지나가는 시기래.'], ['키위', '모든 게 지나가는 시기야. 달도 시기라고.'], ['주니어', '우와.']],
+  [['키위', '베벌리가 우리 공연에 왔었어. 차도 끝에 서서 공연 내내 팔짱 끼고 있었지.'], ['다코타', '발로 박자는 탔어.'], ['주니어', '박자 탔다니까, 진짜.']],
 ];
 const PICO = [
-  'BRRRING! … Sorry. Habit. Somebody needed help at register two. It was me. I’m register two.',
-  'Paper or paper? We only have paper. The choice is ceremonial.',
-  'BRRRING BRRRING! That’s two, for “price check.” I did the price check. It’s fine. It’s always fine.',
-  'Want a sticker? Everybody gets a sticker. Grownups too. ESPECIALLY grownups. They need it the most.',
+  '띠이잉! … 미안. 습관이야. 2번 계산대에서 도움이 필요했대. 그게 나야. 내가 2번 계산대.',
+  '종이로 할까요, 종이로 할까요? 종이밖에 없어요. 선택은 의식일 뿐이에요.',
+  '띠이잉 띠이잉! 이건 두 번, “가격 확인” 용. 가격 확인했어. 괜찮아. 항상 괜찮아.',
+  '스티커 줄까? 모두에게 스티커를 줘. 어른도. 특히 어른. 제일 필요하거든.',
 ];
 const MANGO = [
-  'Ahoy! Welcome aboard Trader Polly’s! I’m the Captain. That’s a real title here. Everybody’s crew. You’re crew now. Welcome to the crew.',
-  'We don’t have a bell. The covenant. So when we need help at the till, Pico says it. You’ll hear it. You’ll never unhear it.',
-  'Everything But The Bell. Flies off the shelves. Folks ask what’s missing. I say, “The bell.” They say, “Why?” I say, “Aisle four.” There is nothing in aisle four. It works every time.',
-  'The Fearless Feather! Our newsletter! Every issue, there’s a letter asking why there’s no bell. I haven’t answered it yet. I’m building suspense. Eleven years of suspense.',
-  'Yes, I’m a parrot named Mango, and yes, I sell dried mango. We’ve all made our peace with it. Mostly me.',
+  '아호이! 트레이더 폴리에 온 걸 환영해! 나는 선장이야. 여기선 진짜 직함이라고. 모두가 선원이야. 이제 너도 선원. 선원이 된 걸 환영해.',
+  '우리는 종이 없어. 규약 때문에. 그래서 계산대에 도움이 필요하면 피코가 소리 내. 곧 듣게 될 거야. 한번 들으면 못 잊어.',
+  '종 빼고 다 있는 양념! 날아가듯 팔려. 뭐가 빠졌냐고들 물어. “종이요.” “왜요?” “4번 통로요.” 4번 통로엔 아무것도 없어. 매번 먹혀.',
+  '용감한 깃털! 우리 뉴스레터! 매호마다 왜 종이 없냐는 독자 편지가 실려. 아직 답을 안 실었어. 긴장감을 쌓는 중이야. 11년치 긴장감.',
+  '그래, 나는 망고라는 앵무새고, 그래, 건망고를 팔아. 우리 모두 이와 화해했어. 주로 내가.',
 ];
 const DEB = [
-  'Welcome to Dromedeals. Brand names, one hump or two. Look around. Don’t look FOR anything — you’ll never find it. Look for something else, and then you’ll find it.',
-  'Compare-at prices are a feeling, hon. That visor COULD have cost nine hundred. In another life. We saved you from that life.',
-  'Everything’s on a rack, and the racks are arranged by nothing. That’s the treasure hunt. That’s the Dromedeal.',
-  'Mildred, Phyllis and Bunny were in at opening. Bought three visors. Same visor. Identical. That’s friendship.',
+  '드로밀즈에 온 걸 환영해. 브랜드 네임, 혹 하나든 둘이든. 둘러봐. 뭘 “찾지”는 마 — 절대 못 찾을 테니까. 딴 걸 찾다 보면 그게 나와.',
+  '비교가는 기분이야, 허니. 그 바이저는 900은 나왔을 수도 있어. 다른 인생에서. 우리가 그 인생에서 널 구한 거지.',
+  '전부 진열대에 있고, 진열대는 아무 기준 없이 배치됐어. 그게 보물찾기야. 그게 드로밀.',
+  '밀드레드, 필리스, 버니가 오픈 때 다녀갔어. 바이저 세 개 샀지. 같은 바이저. 똑같이. 그게 우정이야.',
 ];
 const ECHO = [
-  'Hi! Welcome to Mirage! What can I get started for you? … Sorry. I say that to everybody. I’ll say it to you again in a second.',
-  'It’s called Mirage because the drinks are exactly what you imagined. Or you imagined them. Either way, you’ll love them.',
-  'Sizes are Small, Medium, and Dune.',
-  'I repeat every order back. Every word. Every “um.” It’s a parrot thing. It’s also a barista thing. It’s two things, and I’m the overlap.',
+  '안녕하세요! 미라지에 오신 걸 환영해요! 뭘 준비해 드릴까요? … 죄송해요. 모두에게 그렇게 말해요. 이따 또 그렇게 말할 거예요.',
+  '미라지인 이유는, 음료가 당신이 상상한 그대로라서예요. 아니면 당신이 상상한 거라서. 어느 쪽이든, 좋아하실 거예요.',
+  '사이즈는 스몰, 미디엄, 듄이에요.',
+  '저는 모든 주문을 다시 따라 해요. 모든 단어를. 모든 “음”까지. 앵무새라 그래요. 바리스타라서이기도 하고요. 두 가지예요, 제가 그 교집합이에요.',
 ];
 const TANNER = [
-  'Welcome to Cluck & Co.! How can I serve you today? … It would be my pleasure.',
-  'It’s not chicken. It’s never been chicken. It’s “chick’n.” Nobody knows what the apostrophe is doing. It’s doing its best.',
-  'We’re closed Sundays. We rest. You should rest too. You look like you rowed here.',
-  'My pleasure! … Sorry, you didn’t say anything yet. I get ahead of myself. It’s my pleasure to get ahead of myself.',
-  'The cow on the roof holds the sign. She can spell. She’s making a choice.',
+  '클럭 앤 코에 오신 걸 환영합니다! 오늘 어떻게 모실까요? … 기쁘게 모시겠습니다.',
+  '닭고기가 아니에요. 한 번도 닭고기인 적 없어요. “치킨”이에요. 아포스트로피가 뭘 하는지 아무도 몰라요. 최선을 다하는 중이에요.',
+  '일요일은 쉬어요. 저희도 쉬어요. 손님도 쉬세요. 노 저어 오신 것처럼 보여요.',
+  '기쁩니다! … 죄송해요, 아직 아무 말씀도 안 하셨죠. 제가 앞서 나갔네요. 앞서 나가는 것도 기쁩니다.',
+  '지붕 위의 소가 간판을 들고 있어요. 철자를 알아요. 스스로 선택하는 거예요.',
 ];
 const PALOMA = [
-  'Welcome to Sahara, babe. Are we shopping, or are we just being seen? Both are valid. Both are the store.',
-  'Everything in here is a mood. That one’s “Oasis at Dusk.” That one’s “Lawn, Freshly Mown.” That one’s just called “Beverly.” It’s very strong. Nobody buys it. Everybody tests it.',
-  'I contour with sand. Real sand. From the beach. It’s free, it’s local, and it’s everywhere, babe. Everywhere.',
+  '사하라에 온 걸 환영해, 베이브. 쇼핑하러 왔어, 아니면 보여주러 왔어? 둘 다 유효해. 둘 다 이 가게야.',
+  '여기 있는 건 전부 무드야. 저건 “해 질 녘 오아시스”. 저건 “갓 깎은 잔디”. 저건 그냥 “베벌리”라고 불러. 아주 강렬해. 사는 사람은 없어. 다들 뿌려만 봐.',
+  '나는 모래로 컨투어링해. 진짜 모래. 해변에서 온. 공짜고, 로컬이고, 어디에나 있어, 베이브. 어.디.에.나.',
 ];
 const RICO = [
-  'Excuse me! Excuse me — can I ask you a question? … Do you have hands? Amazing. Me too. Let me show you something for your hands.',
-  'This is Dead Sand lotion. From the Dead Sand. It’s a sand. That died. It’s VERY moisturizing. Nobody knows why. That’s the science.',
-  'Okay, okay, you don’t want lotion. Nobody wants lotion. But what if the lotion … wants YOU? Think about it. Take your time. I’ll be here. I’m always here.',
-  'The mall walkers go past me forty times a day. Forty “can I ask you a question”s. Forty “no, dear”s. It’s the most reliable relationship I have.',
+  '실례합니다! 실례합니다 — 질문 하나 해도 될까요? … 손 있으세요? 대박. 저도 있어요. 손에 좋은 걸 보여드릴게요.',
+  '죽은 모래 로션입니다. 죽은 모래에서 왔어요. 모래예요. 죽은 거죠. 아주 촉촉해요. 이유는 아무도 몰라요. 그게 과학이에요.',
+  '알겠어요, 알겠어요, 로션은 싫으시죠. 아무도 로션을 원하지 않아요. 그런데 만약 로션이… 당신을 원한다면요? 생각해 보세요. 천천히요. 전 여기 있을게요. 항상 여기 있으니까.',
+  '몰 워커들이 하루에 마흔 번씩 지나가요. 마흔 번의 “질문 하나 해도 될까요”. 마흔 번의 “됐어요, 얘야”. 내 인생에서 제일 안정적인 관계예요.',
 ];
 const AUNTIE = [
-  'Pretzel, sugar? Soft, warm, salt like sand. Twisted by hand. My hand. This one.',
-  'The walkers get the broken ones free. Some days more of them break than others. We don’t talk about that.',
-  'I’ve been twisting pretzels since the lawn went in. Before that I twisted other things. Rope, mostly. For the gazebos. We lost a lot of gazebos.',
+  '프레첼 드릴까, 얘야? 부드럽고, 따뜻하고, 모래 같은 소금. 손으로 꼰 거야. 내 손으로. 이 손.',
+  '걷는 분들에겐 부러진 걸 공짜로 줘. 어떤 날은 다른 날보다 더 많이 부러져. 그 얘긴 하지 않기로 했어.',
+  '잔디가 들어설 때부터 프레첼을 꼈어. 그 전엔 다른 걸 꼈지. 주로 밧줄. 정자들 때문에. 정자를 많이 잃었거든.',
 ];
 const DALE = [
-  'Mall security. I patrol. On the segway. Nobody’s ever done anything in this mall except walk, but I’m ready. I’m SO ready.',
-  'No running. That’s the one rule. The walkers skirt it. That’s power walking. There’s a difference. I’ve looked into it.',
-  'The segway was a gift from the HOA. Beverly said, “Dale, you’ll never be fast. But you can be steady.” Best thing anyone’s ever said to me.',
+  '몰 경비. 순찰 중. 세그웨이로. 이 몰에서 걷기 외에 한 사람은 없지만, 나는 준비됐어. 완전히 준비됐다고.',
+  '뛰지 마시오. 규칙은 그거 하나. 워커들이 교묘히 피해 가. 파워 워킹이라고. 차이가 있어. 조사해 봤거든.',
+  '세그웨이는 HOA가 준 선물이야. 베벌리가 말했지, “데일, 당신은 절대 빨라질 수 없어요. 하지만 꾸준해질 수는 있죠.” 누가 내게 해준 말 중 최고야.',
 ];
 const WALKERS = [
-  [['Phyllis', 'Pick up the pace, Bunny.'], ['Bunny', 'I AM picking it up. This is my picked-up pace.'], ['Mildred', 'Girls.']],
-  [['Phyllis', 'Did you hear about the ferry?'], ['Bunny', 'Pending approval.'], ['Mildred', 'Everything’s pending approval.'], ['Phyllis', 'My HIP is pending approval.']],
-  [['Bunny', 'I bought this visor at Dromedeals. Compare at nine hundred. I paid thirty. I have never felt so alive.'], ['Phyllis', 'We all bought that visor, Bunny.'], ['Bunny', 'And we’ve all felt alive.']],
-  [['Mildred', 'We’ve walked past Hot Tropic four thousand times. We’ve never gone in.'], ['Phyllis', 'We’re not ready.'], ['Bunny', 'We’ll never be ready.']],
-  [['Mildred', 'Eleven laps is a mile, dear. We do forty. Join us! Keep up! Or don’t — we’ll come round again.']],
-  [['Phyllis', 'Rico asked me if I have hands again.'], ['Bunny', 'What did you say?'], ['Phyllis', 'I said, “Not for you, Rico.”'], ['Mildred', 'Every day, girls. Every single day.']],
+  [['필리스', '속도 좀 올려, 버니.'], ['버니', '올리고 있거든. 이게 내 올린 속도야.'], ['밀드레드', '얘들아.']],
+  [['필리스', '페리 얘기 들었어?'], ['버니', '승인 대기 중.'], ['밀드레드', '뭐든 다 승인 대기 중이야.'], ['필리스', '내 고관절도 승인 대기 중이야.']],
+  [['버니', '이 바이저 드로밀즈에서 샀어. 비교가 900. 나는 30에 샀지. 이렇게 살아있는 기분은 처음이야.'], ['필리스', '우리 다 그 바이저 샀잖아, 버니.'], ['버니', '그리고 우리 다 살아있는 기분이었잖아.']],
+  [['밀드레드', '핫 트로픽 앞을 사천 번은 지나쳤어. 한 번도 안 들어가 봤지.'], ['필리스', '우린 아직 준비가 안 됐어.'], ['버니', '영원히 준비 안 될 거야.']],
+  [['밀드레드', '열한 바퀴가 1마일이야, 얘야. 우리는 마흔 바퀴를 해. 같이 걸을래! 따라와! 아님 말고 — 우리 또 돌아오니까.']],
+  [['필리스', '리코가 또 손 있냐고 물어보더라.'], ['버니', '뭐라고 했는데?'], ['필리스', '“너한텐 없어, 리코”라고 했지.'], ['밀드레드', '매일이야, 얘들아. 하루도 빠짐없이.']],
 ];
 const BAND_VOICE = { Kiwi: 620, Junior: 200, Dakota: 380 };
 
@@ -468,8 +468,8 @@ export function createOasis(player) {
 
   addIslandInfo({
     key: 'oasis',
-    name: 'Oasis Estates', x: ISLAND8.x, z: ISLAND8.z, r: 40, icon: '🏡',
-    blurb: 'A Planned Community. Seven identical houses around the Circle, lawns at two and a half inches, the Commons (Trader Polly’s, Dromedeals, Mirage Coffee, Cluck & Co.), and the CaMall. The ferry is pending HOA approval.',
+    name: '오아시스 에스테이츠', x: ISLAND8.x, z: ISLAND8.z, r: 40, icon: '🏡',
+    blurb: '계획 커뮤니티. 서클을 둘러싼 일곱 채의 똑같은 집, 6.35센티미터 잔디, 커먼스(트레이더 폴리, 드로밀즈, 미라지 커피, 클럭 앤 코), 그리고 캐몰. 페리는 HOA 승인 대기 중이에요.',
     folk: 'Beverly Humphries (HOA President) · the Humphries, the Featherstones, the Brontos, Todd, the Dunes, Mildred & Walt · Captain Mango · Deb · Echo · Tanner · No Outlet (a band)',
     mystery: '“Past the Labs, south and west, there’s an island where every house is the same house. I sailed by twice to be sure. Same house. Same lawn. A camel with a clipboard watched me the whole way.” —Captain Brine',
   });
@@ -721,13 +721,13 @@ export function createOasis(player) {
   // where is below; everything else about them is identical, by covenant.
   const TAUPE = 0xa8957c, OAT = 0xc9b79a, GREIGE = 0xb3ab9e; // the approved door colors
   const HOUSES = [
-    { id: 'humphries', name: 'The Humphries', deg: -135, door: TAUPE },
-    { id: 'featherstones', name: 'The Featherstones', deg: -45, door: OAT },
-    { id: 'brontos', name: 'The Brontos', deg: 0, door: GREIGE, garageOpen: true },
-    { id: 'todd', name: 'Todd’s', deg: 45, door: OAT },
-    { id: 'openhouse', name: 'The Open House', deg: 90, door: GREIGE },
-    { id: 'dunes', name: 'The Dunes', deg: 135, door: TAUPE },
-    { id: 'mildred', name: 'Mildred & Walt’s', deg: 180, door: OAT },
+    { id: 'humphries', name: '험프리스네', deg: -135, door: TAUPE },
+    { id: 'featherstones', name: '페더스톤네', deg: -45, door: OAT },
+    { id: 'brontos', name: '브론토네', deg: 0, door: GREIGE, garageOpen: true },
+    { id: 'todd', name: '토드네', deg: 45, door: OAT },
+    { id: 'openhouse', name: '오픈 하우스', deg: 90, door: GREIGE },
+    { id: 'dunes', name: '듄네', deg: 135, door: TAUPE },
+    { id: 'mildred', name: '밀드레드·월트네', deg: 180, door: OAT },
   ];
   const FENCE = 0xc9a77a;
   for (const h of HOUSES) {
@@ -925,7 +925,7 @@ export function createOasis(player) {
     addZonePlace(id, name);
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + d / 2 - 0.25), r: 1.5, zone: id,
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo(EXIT[id]),
     });
     for (const it of things) register({ ...it, zone: id });
@@ -991,7 +991,7 @@ export function createOasis(player) {
     pyr.rotation.y = Math.PI / 4;
     glowWindow(pyr, { max: 0.35 });
     put(pyr, u, v - 0.5, h + 0.95);
-    const logo = sign(['The CaMall', 'EST. WHEN THE LAWN WENT IN'], { w: 4.2, h: 1.3, bg: '#3fb8a8', fg: '#ffffff', border: '#f28fb0' });
+    const logo = sign(['캐몰', '잔디 들어설 때 개업'], { w: 4.2, h: 1.3, bg: '#3fb8a8', fg: '#ffffff', border: '#f28fb0' });
     put(logo, u, v + d / 2 + 1.25, h + 0.55);
     // round windows along the front, like every shop in the archipelago
     for (const wu of [-5.5, -3.2, 3.2, 5.5]) {
@@ -999,13 +999,13 @@ export function createOasis(player) {
       put(win, u + wu, v + d / 2 + 0.01, 2.0);
     }
     // the directory, out front (they put one outside too; it's a mall)
-    const dir = sign(['CaMall DIRECTORY', 'SAHARA · HOT TROPIC · AUNTIE DUNE’S', 'FOOD COURT · FOUNTAIN · YOU ARE HERE'], { w: 1.6, h: 1.1, bg: '#fffaf0', fg: '#3f6f6a', border: '#3fb8a8' });
+    const dir = sign(['캐몰 안내', '사하라 · 핫 트로픽 · 듄 이모네', '푸드코트 · 분수 · 현재 위치'], { w: 1.6, h: 1.1, bg: '#fffaf0', fg: '#3f6f6a', border: '#3fb8a8' });
     put(dir, u + 3.4, v + d / 2 + 2.1, 1.0, 0);
     put(box(0.12, 0.5, 0.12, 0x3a3a3e), u + 3.4, v + d / 2 + 2.1, 0.25);
     solidBox(u, v, w, d);
     solidBox(u, v + d / 2 + 0.6, 4.6, 1.6);
     solidDisc(u + 3.4, v + d / 2 + 2.1, 0.3);
-    doorway('mall', u, v + d / 2 + 1.2, 0, 'walk into the CaMall', 1.8);
+    doorway('mall', u, v + d / 2 + 1.2, 0, '캐몰에 들어가기', 1.8);
   }
 
   // --- Oasis Commons: Trader Polly's | Dromedeals ---
@@ -1019,7 +1019,7 @@ export function createOasis(player) {
     // Trader Polly's: west half. a red sign on cream, a surfboard, a lei of
     // paper flowers over the door
     const pu = u - w / 4;
-    put(sign('Trader Polly’s', { w: 5.4, h: 0.85, bg: '#fff4dc', fg: '#c0392b', border: '#c0392b' }), pu, front + 0.08, h - 0.33);
+    put(sign('트레이더 폴리', { w: 5.4, h: 0.85, bg: '#fff4dc', fg: '#c0392b', border: '#c0392b' }), pu, front + 0.08, h - 0.33);
     put(awning(5.2, 0xc0392b), pu, front + 0.45, 2.55);
     put(glassDoors(1.8, 2.0), pu, front + 0.02);
     const board = box(0.5, 2.6, 0.12, 0x3fb8a8);
@@ -1029,13 +1029,13 @@ export function createOasis(player) {
     for (const wu of [-1.8, 1.4]) put(makeWindow(0.42), pu + wu - (wu > 0 ? 0 : 0), front + 0.01, 1.5);
     // Dromedeals: east half. white sign, red letters, "compare at"
     const du = u + w / 4;
-    put(sign(['DROMEDEALS', 'BRAND NAMES · ONE HUMP OR TWO'], { w: 5.4, h: 0.9, bg: '#ffffff', fg: '#a8232d', border: '#a8232d' }), du, front + 0.08, h - 0.35);
+    put(sign(['드로밀즈', '브랜드 네임 · 혹 하나든 둘이든'], { w: 5.4, h: 0.9, bg: '#ffffff', fg: '#a8232d', border: '#a8232d' }), du, front + 0.08, h - 0.35);
     put(awning(5.2, 0x7a1f2b, 0xf0e6e0), du, front + 0.45, 2.55);
     put(glassDoors(1.8, 2.0), du, front + 0.02);
     for (const wu of [-1.8, 1.8]) put(makeWindow(0.42), du + wu, front + 0.01, 1.5);
     solidBox(u, v, w, d);
-    doorway('polly', pu, front, 0, 'go into Trader Polly’s');
-    doorway('drom', du, front, 0, 'go into Dromedeals');
+    doorway('polly', pu, front, 0, '트레이더 폴리에 들어가기');
+    doorway('drom', du, front, 0, '드로밀즈에 들어가기');
     // the cart corral, and a cart that did not make it to the corral
     const corral = new THREE.Group();
     for (const sx of [-1.4, 1.4]) {
@@ -1087,14 +1087,14 @@ export function createOasis(player) {
     const { u, v, w, d, h } = MIRAGE;
     put(box(w, h, d, 0x2f5f50), u, v, h / 2);
     put(box(w + 0.2, 0.35, d + 0.2, 0xe8e0cc), u, v, h + 0.17);
-    put(sign(['MIRAGE', 'coffee, probably'], { w: 3.6, h: 1.0, bg: '#2f5f50', fg: '#f4efe2', border: '#e8e0cc' }), u, v, h + 0.9);
+    put(sign(['미라지', '커피, 아마도'], { w: 3.6, h: 1.0, bg: '#2f5f50', fg: '#f4efe2', border: '#e8e0cc' }), u, v, h + 0.9);
     put(box(0.1, 0.55, 0.1, 0x2a2a2e), u - 1.2, v, h + 0.5);
     put(box(0.1, 0.55, 0.1, 0x2a2a2e), u + 1.2, v, h + 0.5);
     put(awning(w - 0.4, 0x2f5f50, 0xe8e0cc), u, v + d / 2 + 0.45, 2.3);
     put(glassDoors(1.4, 1.9), u - 1.1, v + d / 2 + 0.02);
     put(makeWindow(0.45), u + 1.3, v + d / 2 + 0.01, 1.4);
     solidBox(u, v, w, d);
-    doorway('mirage', u - 1.1, v + d / 2, 0, 'go into Mirage Coffee');
+    doorway('mirage', u - 1.1, v + d / 2, 0, '미라지 커피에 들어가기');
   }
   {
     const { u, v, w, d, h } = CLUCK;
@@ -1102,30 +1102,30 @@ export function createOasis(player) {
     // a red roof: a proper little gable, the only one on the Commons
     const roof = prismRoof(w + 0.4, d, 1.2, 0xc8342c);
     put(roof, u, v, h + 0.35);
-    put(sign(['Cluck & Co.', 'it’s our pleasure'], { w: 3.4, h: 0.95, bg: '#c8342c', fg: '#ffffff', border: '#ffffff' }), u, v + d / 2 + 0.06, h - 0.55);
+    put(sign(['클럭 앤 코', '기쁘게 모십니다'], { w: 3.4, h: 0.95, bg: '#c8342c', fg: '#ffffff', border: '#ffffff' }), u, v + d / 2 + 0.06, h - 0.55);
     put(glassDoors(1.4, 1.9), u - 1.2, v + d / 2 + 0.02);
     put(makeWindow(0.45), u + 1.4, v + d / 2 + 0.01, 1.2);
     // the drive-thru: a window on the east wall, a menu board, one car,
     // idling since before anyone can remember, by nobody
     put(box(0.1, 0.9, 1.1, 0xbfe6f2), u + w / 2 + 0.02, v - 0.3, 1.3);
-    const menu = sign(['ORDER HERE', 'NUGGETS · SANDWICH · WAFFLE FRIES', 'LEMONADE · IT’S OUR PLEASURE'], { w: 1.4, h: 1.2, bg: '#2a2a2e', fg: '#ffdd88' });
+    const menu = sign(['여기서 주문', '너겟 · 샌드위치 · 와플 프라이', '레모네이드 · 기쁘게 모십니다'], { w: 1.4, h: 1.2, bg: '#2a2a2e', fg: '#ffdd88' });
     put(menu, u + w / 2 + 1.6, v + 2.4, 1.2, -Math.PI / 2);
     put(box(0.12, 0.6, 0.12, 0x2a2a2e), u + w / 2 + 1.6, v + 2.4, 0.3);
     solidBox(u + w / 2 + 1.6, v + 2.4, 0.3, 1.5);
     // the cow, on the roof, with her sign. she is a painted cutout. she has
     // opinions about spelling that she keeps to herself.
-    const cow = sign('EAT MOR NUGGITS', { w: 2.2, h: 0.5, bg: '#fffaf0', fg: '#2a2a2e' });
+    const cow = sign('너갯 더 먹그', { w: 2.2, h: 0.5, bg: '#fffaf0', fg: '#2a2a2e' });
     put(cow, u + 1.2, v - 0.9, h + 1.3, -0.15);
     const cowBody = buildAnimal('cow', { body: 0xf2ead8, head: 0xf2ead8 });
     cowBody.scale.setScalar(0.7);
     put(cowBody, u + 1.2, v - 0.5, h + 0.55, -0.15);
     solidBox(u, v, w, d);
-    doorway('cluck', u - 1.2, v + d / 2, 0, 'go into Cluck & Co.');
+    doorway('cluck', u - 1.2, v + d / 2, 0, '클럭 앤 코에 들어가기');
     register({
       pos: new THREE.Vector3(O.x + u - 1.2, 0, O.z + v + d / 2 + 0.7), r: 1.6, priority: 2,
-      label: 'try the door',
+      label: '문 열어보기',
       enabled: () => closedToday(),
-      use: () => ui.say('A little sign on the glass: “CLOSED SUNDAYS. We’re resting. You should too. — Cluck & Co.” Inside, the chairs are up on the tables, very politely.'),
+      use: () => ui.say('유리에 붙은 작은 안내판: “일요일 휴무. 저희는 쉬는 중입니다. 당신도 쉬세요. — 클럭 앤 코” 안에는 의자들이 테이블 위에 아주 공손하게 올려져 있어요.'),
     });
   }
   // the patio out front of the two of them: tables, umbrellas
@@ -1199,8 +1199,8 @@ export function createOasis(player) {
     attend(reggie, 'island', { r: 7 });
     register({
       getPos: () => reggie.position, r: 2.4,
-      label: 'talk to Reggie',
-      use: () => ui.say(nextLine('reggie', REGGIE), { speaker: 'Reggie', voice: VOICE.reggie }),
+      label: '레지에게 말 걸기',
+      use: () => ui.say(nextLine('reggie', REGGIE), { speaker: '레지', voice: VOICE.reggie }),
     });
   }
   {
@@ -1209,7 +1209,7 @@ export function createOasis(player) {
     put(box(3.6, 1.1, 0.7, 0xd8c8a8), M.u, M.v, 0.55, M.ry);
     put(box(3.8, 0.15, 0.8, 0xc9b79a), M.u, M.v, 1.15, M.ry);
     const [pu, pv] = local(M.u, M.v, M.ry, 0, 0.37);
-    put(sign(['OASIS ESTATES', 'A Planned Community'], { w: 3.0, h: 0.8, d: 0.04, bg: '#2f5f50', fg: '#f4efe2' }), pu, pv, 0.6, M.ry);
+    put(sign(['오아시스 에스테이츠', '계획 커뮤니티'], { w: 3.0, h: 0.8, d: 0.04, bg: '#2f5f50', fg: '#f4efe2' }), pu, pv, 0.6, M.ry);
     for (let i = 0; i < 7; i++) {
       const [fu, fv] = local(M.u, M.v, M.ry, -1.5 + i * 0.5, 0.8);
       put(ball(0.14, [0xff8fa8, 0xffd23e, 0xffffff][i % 3]), fu, fv, 0.14);
@@ -1248,16 +1248,16 @@ export function createOasis(player) {
       group.add(b);
       zones.addBlocker(OASIS_DOCK.buoyPos.x, OASIS_DOCK.buoyPos.z, 0.4);
     }
-    const board = sign(['FERRY LANDING', 'APPROVED ROUTE: BULKO ONLY', 'BULK GOODS ARE IN CHARACTER'], { w: 2.2, h: 1.2, bg: '#fffaf0', fg: '#2f5f50', border: '#2f5f50' });
+    const board = sign(['페리 선착장', '승인 노선: 불코 한정', '대량 상품은 품격에 부합'], { w: 2.2, h: 1.2, bg: '#fffaf0', fg: '#2f5f50', border: '#2f5f50' });
     put(board, P1 - 0.6, PV - PW / 2 - 0.1, top + 1.4 - GY, 0);
     put(box(0.12, 1.4, 0.12, 0x6e5a44), P1 - 0.6, PV - PW / 2 - 0.1, top + 0.4 - GY);
     register({
       pos: new THREE.Vector3(O.x + P1 - 0.8, 0, O.z + PV), r: 1.8,
-      label: 'read the ferry sign',
+      label: '페리 표지판 읽기',
       use: () => ui.say([
-        'FERRY LANDING. APPROVED ROUTE: BULKO ONLY. BULK GOODS ARE CONSISTENT WITH THE CHARACTER OF THE COMMUNITY.',
-        'Under it, smaller, on a laminated card: “After fourteen applications, the Board has approved ONE (1) ferry route, to the warehouse club and back, for paper towels, parmesan, and the rotisserie item. All other destinations remain under review. — B. Humphries, President.”',
-        'Under THAT, in marker, on a luggage tag tied to the post: “BULKO and back. That’s the deal. Knock on the buoy. — Capt. B.”',
+        '페리 선착장. 승인 노선: 불코 한정. 대량 상품은 커뮤니티 품격에 부합합니다.',
+        '그 아래, 더 작게, 라미네이트 카드로: “열네 번의 신청 끝에 이사회는 단 하나(1)의 페리 노선을 승인했습니다. 창고형 마트 왕복, 키친타월, 파르메산, 로티세리 품목용. 다른 모든 행선지는 계속 검토 중입니다. — B. 험프리스, 회장.”',
+        '그 아래에, 유성펜으로, 기둥에 매달린 여행 태그: “불코 왕복. 그게 조건이야. 부표에 노크해. — B. 선장.”',
       ]),
     });
   }
@@ -1288,22 +1288,22 @@ export function createOasis(player) {
     // the street sign at the mouth of Circle Drive
     const su = SPUR.u - SPUR.hw - 0.6, sv = BLVD.v1 + 1.3;
     put(cyl(0.05, 0.05, 2.6, 6, 0x6e7478), su, sv, 1.3);
-    put(sign('OASIS PKWY', { w: 1.3, h: 0.28, bg: '#2f7a4f', fg: '#ffffff' }), su, sv, 2.45, 0);
+    put(sign('오아시스 파크웨이', { w: 1.3, h: 0.28, bg: '#2f7a4f', fg: '#ffffff' }), su, sv, 2.45, 0);
     put(sign('CIRCLE DR', { w: 1.3, h: 0.28, bg: '#2f7a4f', fg: '#ffffff' }), su, sv, 2.15, Math.PI / 2);
     put(sign(['NO OUTLET'], { w: 0.9, h: 0.5, bg: '#f2cf5b', fg: '#2a2a2e' }), su, sv + 0.06, 1.6, 0);
     solidDisc(su, sv, 0.15);
     // and the one the HOA added
     const nu = SPUR.u + SPUR.hw + 0.8, nv = BLVD.v1 + 1.1;
     put(cyl(0.05, 0.05, 1.8, 6, 0x6e7478), nu, nv, 0.9);
-    put(sign(['THIS IS NOT A ROAD.', 'IT IS A PARKWAY.', '— THE HOA'], { w: 1.3, h: 0.9, bg: '#ffffff', fg: '#2a2a2e', border: '#2a2a2e' }), nu, nv + 0.06, 1.7, 0);
+    put(sign(['이곳은 도로가 아닙니다.', '파크웨이입니다.', '— HOA'], { w: 1.3, h: 0.9, bg: '#ffffff', fg: '#2a2a2e', border: '#2a2a2e' }), nu, nv + 0.06, 1.7, 0);
     solidDisc(nu, nv, 0.15);
     register({
       pos: new THREE.Vector3(O.x + nu, 0, O.z + nv + 0.8), r: 1.4,
-      label: 'read the HOA sign',
+      label: 'HOA 표지판 읽기',
       use: () => ui.say([
-        'THIS IS NOT A ROAD. IT IS A PARKWAY. — THE HOA',
-        'There are no roads on any island. Everybody knows that; BULKO has a sign. What Oasis Estates has is four point six miles of parkway, drive, and circle, laid in asphalt, with a dashed yellow line down the middle, for walking on.',
-        'There was a meeting.',
+        '이곳은 도로가 아닙니다. 파크웨이입니다. — HOA',
+        '섬 어디에도 도로는 없어요. 모두가 아는 사실이고, 불코에 표지판도 있죠. 오아시스 에스테이츠에 있는 건 7.4킬로미터의 파크웨이, 드라이브, 서클이에요. 아스팔트로 깔고, 한가운데 노란 점선을 그어 둔, 걷기용.',
+        '회의가 있었습니다.',
       ]),
     });
   }
@@ -1334,9 +1334,9 @@ export function createOasis(player) {
     solidBox(bu, bv, 2.2, 0.3);
     register({
       pos: new THREE.Vector3(O.x + bu, 0, O.z + bv + 0.9), r: 1.6,
-      label: 'read the HOA notices',
+      label: 'HOA 공지 읽기',
       use: async () => {
-        await ui.say(nextLine('notices', NOTICES), { speaker: 'HOA Notice Board' });
+        await ui.say(nextLine('notices', NOTICES), { speaker: 'HOA 게시판' });
       },
     });
   }
@@ -1384,16 +1384,16 @@ export function createOasis(player) {
     chair.traverse((o) => { if (o.isMesh) o.castShadow = o.receiveShadow = true; });
     put(chair, u + w / 2 + 0.7, v - d / 2 - 0.4, deckTop, -0.4);
     solidDisc(u + w / 2 + 0.7, v - d / 2 - 0.4, 0.45);
-    const rules = sign(['POOL RULES', 'NO RUNNING · NO SPLASHING', 'NO CANNONBALLS · NO BELLS', 'NO FUN BEFORE 10 A.M.', '— THE HOA'], { w: 1.4, h: 1.5, bg: '#ffffff', fg: '#2f5f50', border: '#3fb8a8' });
+    const rules = sign(['풀장 규칙', '뛰기 금지 · 물장구 금지', '캐논볼 금지 · 종 금지', '오전 10시 전 재미 금지', '— HOA'], { w: 1.4, h: 1.5, bg: '#ffffff', fg: '#2f5f50', border: '#3fb8a8' });
     put(rules, u - w / 2 - 0.5, v - d / 2 - 1.1, 1.3, 0.4);
     put(box(0.1, 0.6, 0.1, 0x8c7f72), u - w / 2 - 0.5, v - d / 2 - 1.1, 0.3);
     solidBox(u - w / 2 - 0.5, v - d / 2 - 1.1, 1.5, 0.3, 0.4);
     register({
       pos: new THREE.Vector3(O.x + u, 0, O.z + v + d / 2 + 0.6), r: 2.4,
-      label: 'look at the pool',
+      label: '풀장 보기',
       use: () => ui.say([
-        'The water is the exact blue of the brochure. Nobody is in it. Nobody is ever in it; nobody wants to be the first to make a ripple.',
-        'The lifeguard chair is empty. A small sign on it: “LIFEGUARD ON DUTY.”',
+        '물은 브로셔와 정확히 같은 파랑이에요. 아무도 들어가 있지 않아요. 언제나 아무도 없어요. 처음으로 물결을 만드는 사람이 되고 싶은 이가 없거든요.',
+        '감시 의자는 비어 있어요. 작은 안내판: “안전요원 근무 중.”',
       ]),
     });
   }
@@ -1599,39 +1599,39 @@ export function createOasis(player) {
       sky('#9fdcf7', '#dff3fb');
       for (let i = 0; i < 8; i++) { c.fillStyle = i % 2 ? '#58c04a' : '#6cce5a'; c.fillRect(i * 32, 70, 32, 74); }
       c.fillStyle = '#e8dcc4'; c.fillRect(150, 40, 70, 34); c.fillStyle = '#8c7f72'; c.beginPath(); c.moveTo(144, 42); c.lineTo(185, 20); c.lineTo(226, 42); c.fill();
-      caption('HOME & LAWN · “Edging: A Love Story”');
+      caption('홈 & 잔디 · “가장자리 손질: 러브 스토리”');
     } else if (kind === 'birds') {
       sky('#7fc8a0', '#2f6f4a');
       for (let i = 0; i < 5; i++) { c.fillStyle = ['#d8342c', '#3a7dd8', '#f2cf5b', '#5cbf4a', '#e86a9a'][i]; c.beginPath(); c.arc(40 + i * 45, 60 + (i % 2) * 18, 13, 0, Math.PI * 2); c.fill(); }
-      caption('PARROTS OF THE WORLD (repeat)');
+      caption('세계의 앵무새 (재방송)');
     } else if (kind === 'game') {
       c.fillStyle = '#3f9a45'; c.fillRect(0, 0, 256, 144);
       c.strokeStyle = '#ffffff'; c.lineWidth = 3; c.strokeRect(20, 18, 216, 92); c.beginPath(); c.moveTo(128, 18); c.lineTo(128, 110); c.stroke();
       c.fillStyle = '#ffffff'; c.beginPath(); c.arc(150, 60, 6, 0, Math.PI * 2); c.fill();
-      caption('THE BIG GAME · 0 – 0 · 3rd qtr');
+      caption('빅 게임 · 0 – 0 · 3쿼터');
     } else if (kind === 'cartoon') {
       sky('#ffd23e', '#ff9b6a');
       c.fillStyle = '#6a4ad8'; c.beginPath(); c.arc(128, 70, 34, 0, Math.PI * 2); c.fill();
       c.fillStyle = '#fff'; c.beginPath(); c.arc(116, 62, 9, 0, Math.PI * 2); c.arc(140, 62, 9, 0, Math.PI * 2); c.fill();
       c.fillStyle = '#222'; c.beginPath(); c.arc(118, 63, 4, 0, Math.PI * 2); c.arc(142, 63, 4, 0, Math.PI * 2); c.fill();
-      caption('CAPTAIN CRUNCHBEAK · Ep. 212');
+      caption('크런치부리 선장 · 212화');
     } else if (kind === 'fire') {
       c.fillStyle = '#2a1a12'; c.fillRect(0, 0, 256, 144);
       for (let i = 0; i < 6; i++) { c.fillStyle = ['#ff9b3a', '#ffd23e', '#ff6a2a'][i % 3]; c.beginPath(); c.moveTo(70 + i * 20, 110); c.lineTo(80 + i * 20, 40 + (i % 3) * 12); c.lineTo(90 + i * 20, 110); c.fill(); }
-      caption('FIREPLACE CHANNEL · (staged)');
+      caption('벽난로 채널 · (연출)');
     } else if (kind === 'lullaby') {
       sky('#2e3e7c', '#8a7ac8');
       c.fillStyle = '#fff8d8'; c.beginPath(); c.arc(190, 40, 18, 0, Math.PI * 2); c.fill();
       for (let i = 0; i < 4; i++) { c.fillStyle = '#ffffff'; c.beginPath(); c.arc(50 + i * 40, 92, 12, 0, Math.PI * 2); c.arc(62 + i * 40, 88, 10, 0, Math.PI * 2); c.fill(); }
-      caption('SLEEPY SHEEP · counting (3 hrs)');
+      caption('졸린 양 · 세는 중 (3시간)');
     } else if (kind === 'golf') {
       sky('#bfe6f7', '#e6f7fb');
       c.fillStyle = '#6cce5a'; c.beginPath(); c.ellipse(128, 110, 150, 50, 0, 0, Math.PI * 2); c.fill();
       c.fillStyle = '#3a3a3e'; c.fillRect(170, 50, 3, 45); c.fillStyle = '#e8342c'; c.fillRect(173, 50, 18, 11);
-      caption('GOLF · everybody whispering');
+      caption('골프 · 모두 속삭이는 중');
     } else if (kind === 'mall') {
       sky('#f28fb0', '#3fb8a8');
-      c.fillStyle = '#fff'; c.font = 'bold 30px ui-rounded, system-ui, sans-serif'; c.textAlign = 'center'; c.fillText('SALE', 128, 70);
+      c.fillStyle = '#fff'; c.font = 'bold 30px ui-rounded, system-ui, sans-serif'; c.textAlign = 'center'; c.fillText('세일', 128, 70);
       caption('The CaMall · you are here');
     }
     const tex = new THREE.CanvasTexture(cv);
@@ -1672,7 +1672,7 @@ export function createOasis(player) {
         couch(X(-3.2), Z(0.2), Math.PI, 0xd8ccb8);
         table(X(-3.2), Z(-1.7), 1.2, 0.7, 0x8a6a4a, 0.42);
         bl.push({ x: X(-3.2), z: Z(-4.05), w: 2.4, d: 0.6 }, { x: X(-3.2), z: Z(0.2), w: 2.7, d: 1.0 }, { x: X(-3.2), z: Z(-1.7), w: 1.3, d: 0.8 });
-        wallSign('LIVE LAUGH LOUNGE', X(-5.82), 2.3, Z(-1.3), Math.PI / 2, 2.2, { fg: '#8c7f72' });
+        wallSign('살고 웃고 쉬고', X(-5.82), 2.3, Z(-1.3), Math.PI / 2, 2.2, { fg: '#8c7f72' });
         const win = makeWindow(0.42);
         win.rotation.y = Math.PI / 2;
         win.position.set(X(-5.84), 1.7, Z(2.0));
@@ -1688,8 +1688,8 @@ export function createOasis(player) {
         rail.rotation.z = 0.68;
         group.add(rail);
         bl.push({ x: X(0.8), z: Z(-3.95), w: 2.9, d: 1.3 });
-        things.push({ pos: new THREE.Vector3(X(0), 0, Z(-2.8)), r: 1.3, label: 'look up the stairs',
-          use: () => ui.say(d.stairs ?? 'The stairs go up to the bedrooms. The carpet up there is cream. You’d hear about it.') });
+        things.push({ pos: new THREE.Vector3(X(0), 0, Z(-2.8)), r: 1.3, label: '계단 위 올려다보기',
+          use: () => ui.say(d.stairs ?? '계단은 침실로 올라가요. 위층 카펫은 크림색이에요. 소문으로 듣게 될 거예요.') });
         // kitchen: back counter, fridge, an island with stools, pendant lamps
         const counter = box(2.4, 0.95, 0.7, 0xfaf6ec);
         counter.position.set(X(3.4), 0.475, Z(-4.05));
@@ -1798,8 +1798,8 @@ export function createOasis(player) {
   const mildredHome = () => { const h = hourNow(); return h < 7 || h >= 18; };
 
   HOUSE_DRESS.humphries = {
-    tv: 'lawn', enterLabel: 'knock at the Humphries’ (no bell)',
-    stairs: 'At the top of the stairs, a closed door with a laminated sign: “OFFICE OF THE PRESIDENT. BY APPOINTMENT.” There are no appointments. There have never been appointments.',
+    tv: 'lawn', enterLabel: '험프리스네에 노크하기(초인종 없음)',
+    stairs: '계단 꼭대기, 라미네이트 안내판이 붙은 닫힌 문: “회장실. 예약제.” 예약은 없습니다. 한 번도 있은 적이 없습니다.',
     build: (B, X, Z, bl, things) => {
       // forty-one Yards of the Month, in a grid, on the east wall; one gap
       for (let k = 0; k < 42; k++) {
@@ -1808,32 +1808,32 @@ export function createOasis(player) {
         plaque.position.set(X(5.82), 1.2 + Math.floor(k / 7) * 0.36, Z(-0.2 + (k % 7) * 0.32));
         group.add(plaque);
       }
-      things.push({ pos: new THREE.Vector3(X(5.2), 0, Z(0.8)), r: 1.4, label: 'count the plaques',
-        use: () => ui.say(['YARD OF THE MONTH. YARD OF THE MONTH. YARD OF THE MONTH… forty-one of them, brass on walnut, in a grid of seven by six.', 'The last space in the grid is empty, and the nail is already in.']) });
+      things.push({ pos: new THREE.Vector3(X(5.2), 0, Z(0.8)), r: 1.4, label: '명패 세어보기',
+        use: () => ui.say(['이 달의 마당. 이 달의 마당. 이 달의 마당… 마흔한 개, 호두 나무 위의 황동, 일곱 곱하기 여섯의 격자로.', '격자의 마지막 칸은 비어 있고, 못은 이미 박혀 있어요.']) });
       // the covenant, in four binders, on the counter
       for (let k = 0; k < 4; k++) {
         const binder = box(0.18, 0.5, 0.4, [0x2f5f50, 0x8c2f39, 0x2e3e5c, 0x6a5a3a][k]);
         binder.position.set(X(2.6 + k * 0.22), 1.26, Z(-4.1));
         group.add(binder);
       }
-      things.push({ pos: new THREE.Vector3(X(3.0), 0, Z(-3.0)), r: 1.2, label: 'read the covenant',
-        use: () => ui.say(nextLine('covenant', COVENANT), { speaker: 'The Covenant' }) });
+      things.push({ pos: new THREE.Vector3(X(3.0), 0, Z(-3.0)), r: 1.2, label: '규약 읽기',
+        use: () => ui.say(nextLine('covenant', COVENANT), { speaker: '규약서' }) });
       const harold = folk('camel', { body: CAMEL_DK, humps: 2 }, X(1.3), 0, Z(0.6), 0.3, { shirt: 0x8a9a7a, glasses: true });
       const paper = box(0.6, 0.02, 0.4, 0xf3efe2);
       paper.position.set(X(3.6), 0.8, Z(1.7));
       group.add(paper);
       INDOOR.harold = harold;
       wanderer(harold, 'oasis_humphries', roomArea(X, Z));
-      things.push(talkThing(() => harold.position, 'harold', 'Harold', HAROLD, undefined, 2.2, () => harold.visible));
+      things.push(talkThing(() => harold.position, 'harold', '해롤드', HAROLD, undefined, 2.2, () => harold.visible));
       // Beverly, after hours, at the island, with a clipboard
       const bevIn = folk('camel', { body: CAMEL_LT, humps: 1 }, X(3.6), 0, Z(-0.2), 0.2, { visor: 0xffffff, pearls: [1.28, 0.62, 0.35], clipboard: true, fidget: true });
       (inside[`oasis_humphries`] ??= []).push(() => { bevIn.visible = bevHome(); });
       wanderer(bevIn, 'oasis_humphries', roomArea(X, Z), { speed: 0.7 });
-      things.push({ getPos: () => bevIn.position, r: 2.2, label: 'talk to Beverly', enabled: () => bevHome(), use: () => beverlyTalk(true) });
+      things.push({ getPos: () => bevIn.position, r: 2.2, label: '베벌리에게 말 걸기', enabled: () => bevHome(), use: () => beverlyTalk(true) });
     },
   };
   HOUSE_DRESS.featherstones = {
-    tv: 'birds', enterLabel: 'knock at the Featherstones’',
+    tv: 'birds', enterLabel: '페더스톤네에 노크하기',
     build: (B, X, Z, bl, things) => {
       // Grandpa Sal in the armchair, repeating the television
       const arm = box(1.1, 0.5, 1.0, 0x6f8a6a);
@@ -1844,11 +1844,11 @@ export function createOasis(player) {
       bl.push({ x: X(-5.0), z: Z(-1.6), w: 1.2, d: 1.1 });
       const sal = folk('parrot', { body: 0x9aa0a8, head: 0x9aa0a8, wing: 0x7a8088, tail: 0xc8342c }, X(-4.9), 0.35, Z(-1.6), 2.6, { shirt: 0xb8a88a, glasses: true });
       attend(sal, 'oasis_featherstones');
-      things.push(talkThing(() => sal.position, 'sal', 'Grandpa Sal', SAL));
+      things.push(talkThing(() => sal.position, 'sal', '샬 할아버지', SAL));
       const sunny = folk('parrot', { body: 0x5cbf4a, head: 0x5cbf4a, wing: 0x2e8a5a, tail: 0x3a7dd8, face: 0xf2e08a }, X(3.6), 0, Z(-0.4), 0, { apron: 0xf28fb0, fidget: true });
       INDOOR.sunny = sunny;
       wanderer(sunny, 'oasis_featherstones', roomArea(X, Z), { speed: 1.1 });
-      things.push(talkThing(() => sunny.position, 'sunny', 'Sunny', SUNNY, undefined, 2.2, () => sunny.visible));
+      things.push(talkThing(() => sunny.position, 'sunny', '서니', SUNNY, undefined, 2.2, () => sunny.visible));
       // a perch by the window, because some habits are for keeps
       const perch = cyl(0.04, 0.04, 1.4, 5, 0x8a6a4a);
       perch.position.set(X(-5.2), 0.7, Z(2.6));
@@ -1860,14 +1860,14 @@ export function createOasis(player) {
     },
   };
   HOUSE_DRESS.brontos = {
-    tv: 'game', enterLabel: 'knock at the Brontos’',
-    stairs: 'The stairs go up. Gary has to go up them on his knees. He says it’s good for him. Linda says it’s good for the stairs.',
+    tv: 'game', enterLabel: '브론토네에 노크하기',
+    stairs: '계단이 올라가요. 게리는 무릎으로 올라가야 해요. 본인 말로는 몸에 좋대요. 린다 말로는 계단에 좋대요.',
     build: (B, X, Z, bl, things) => {
       const linda = folk('bronto', { body: 0x9ab8a0, head: 0x9ab8a0, belly: 0xe0e6c8, spots: 0x7a9a80 }, X(-3.2), 0.28, Z(0.1), Math.PI, { pearls: [1.1, 0.72, 0.5] });
       linda.scale.setScalar(0.85);
       INDOOR.linda = linda;
       attend(linda, 'oasis_brontos');
-      things.push(talkThing(() => linda.position, 'linda', 'Linda', LINDA, undefined, 2.2, () => linda.visible));
+      things.push(talkThing(() => linda.position, 'linda', '린다', LINDA, undefined, 2.2, () => linda.visible));
       // an extremely large salad bowl
       const bowl = new THREE.Mesh(new THREE.SphereGeometry(0.55, 8, 4, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), mat(0xfaf6ec));
       bowl.position.set(X(3.6), 1.55, Z(-1.5));
@@ -1875,16 +1875,16 @@ export function createOasis(player) {
       greens.scale.y = 0.35;
       greens.position.set(X(3.6), 1.52, Z(-1.5));
       group.add(bowl, greens);
-      things.push({ pos: new THREE.Vector3(X(3.6), 0, Z(-0.4)), r: 1.2, label: 'look at the salad',
-        use: () => ui.say('A salad the size of a small pond. A card taped to the bowl: “LUNCH (JUNIOR) — for the swim.”') });
+      things.push({ pos: new THREE.Vector3(X(3.6), 0, Z(-0.4)), r: 1.2, label: '샐러드 보기',
+        use: () => ui.say('작은 연못만 한 샐러드. 볼에 붙은 카드: “점심(주니어용) — 헤엄 대비.”') });
     },
   };
   HOUSE_DRESS.todd = {
-    tv: 'cartoon', enterLabel: 'knock at Todd’s',
+    tv: 'cartoon', enterLabel: '토드네에 노크하기',
     build: (B, X, Z, bl, things) => {
       const k1 = folk('camel', { body: CAMEL, humps: 1 }, X(-3.9), 0, Z(-2.5), Math.PI, { scale: 0.55, cap: 0x3a7dd8 });
       const k2 = folk('camel', { body: CAMEL, humps: 1 }, X(-2.5), 0, Z(-2.6), Math.PI, { scale: 0.55, cap: 0xd8342c });
-      things.push({ getPos: () => k1.position, r: 1.8, label: 'talk to the twins', use: () => ui.say(nextLine('twins', TWINS)) });
+      things.push({ getPos: () => k1.position, r: 1.8, label: '쌍둥이에게 말 걸기', use: () => ui.say(nextLine('twins', TWINS)) });
       wanderer(k2, 'oasis_todd', roomArea(X, Z), { speed: 1.4, pause: [1, 3] }); // one twin can't sit still
       attend(k1, 'oasis_todd', { r: 2.5 });
       for (let k = 0; k < 6; k++) {
@@ -1893,17 +1893,17 @@ export function createOasis(player) {
         blk.rotation.y = k * 0.4;
         group.add(blk);
       }
-      things.push({ pos: new THREE.Vector3(X(5.2), 0, Z(-2.9)), r: 1.2, label: 'read the fridge',
-        use: () => ui.say('Magnets, a calendar, and a drawing in crayon: a camel on a riding mower, going around and around a green circle. Underneath, in careful kid letters: “DAD (MOWING).”') });
+      things.push({ pos: new THREE.Vector3(X(5.2), 0, Z(-2.9)), r: 1.2, label: '냉장고 읽기',
+        use: () => ui.say('자석, 달력, 그리고 크레용 그림: 승마용 모어를 탄 낙타가 초록 원을 빙빙 도는 그림. 아래에 또박또박한 아이 글씨로: “아빠(잔디 깎는 중).”') });
     },
   };
   HOUSE_DRESS.openhouse = {
-    tv: 'fire', enterLabel: 'go into the Open House (it’s open)',
-    stairs: 'The stairs go up to three staged bedrooms. Each bed has eleven throw pillows. Nobody has ever sat on any of them. That’s how you know it’s staged.',
+    tv: 'fire', enterLabel: '오픈 하우스에 들어가기(열려 있어요)',
+    stairs: '계단은 연출된 침실 세 개로 올라가요. 침대마다 장식 베개가 열한 개. 앉아 본 사람은 아무도 없어요. 그래서 연출된 걸 알 수 있죠.',
     build: (B, X, Z, bl, things) => {
       const tiffany = folk('parrot', { body: 0xe86a9a, head: 0xe86a9a, wing: 0xb03a6a, tail: 0xf2cf5b, face: 0xfff0f4 }, X(0.6), 0, Z(1.2), 0, { shirt: 0xf6c0d4, fidget: true });
       wanderer(tiffany, 'oasis_openhouse', roomArea(X, Z), { speed: 1.0, pause: [1.5, 4] }); // showing the house. to you. constantly.
-      things.push({ getPos: () => tiffany.position, r: 2.2, label: 'talk to Tiffany', use: () => tiffanyTalk() });
+      things.push({ getPos: () => tiffany.position, r: 2.2, label: '티파니에게 말 걸기', use: () => tiffanyTalk() });
       // staging: a bowl of lemons (plastic), a tray of cookies (for the smell)
       for (let k = 0; k < 5; k++) {
         const lemon = ball(0.12, 0xf2e05b);
@@ -1919,13 +1919,13 @@ export function createOasis(player) {
         cookie.position.set(X(3.75 + (k % 3) * 0.25), 1.07, Z(-4.1 + Math.floor(k / 3) * 0.2));
         group.add(cookie);
       }
-      things.push({ pos: new THREE.Vector3(X(4.0), 0, Z(-3.0)), r: 1.2, label: 'take a cookie',
-        use: () => ui.say('You reach for one. Tiffany, from across the room, without turning: “Those are for the smell, darling.”', { speaker: '' }) });
+      things.push({ pos: new THREE.Vector3(X(4.0), 0, Z(-3.0)), r: 1.2, label: '쿠키 집기',
+        use: () => ui.say('하나를 향해 손을 뻗어요. 방 건너편에서, 돌아보지도 않고 티파니: “그건 냄새용이에요, 달링.”', { speaker: '' }) });
       wallSign('HOME', X(3.6), 2.4, Z(-4.3), 0, 1.4, { fg: '#b89a7a' });
     },
   };
   HOUSE_DRESS.dunes = {
-    tv: 'lullaby', enterLabel: 'knock at the Dunes’',
+    tv: 'lullaby', enterLabel: '듄네에 노크하기',
     build: (B, X, Z, bl, things) => {
       const chad = folk('camel', { body: CAMEL, humps: 1 }, X(1.9), 0, Z(0.9), -0.4, { shirt: 0x5a6a7a });
       const madison = folk('camel', { body: CAMEL_LT, humps: 1 }, X(-0.4), 0, Z(1.0), 0.4, { shirt: 0xd8b8c8, bow: 0xf28fb0 });
@@ -1933,11 +1933,11 @@ export function createOasis(player) {
       INDOOR.madison = madison;
       wanderer(chad, 'oasis_dunes', roomArea(X, Z));
       wanderer(madison, 'oasis_dunes', roomArea(X, Z), { speed: 1.1 });
-      things.push({ getPos: () => (chad.visible ? chad : madison).position, r: 2.2, label: 'talk to the Dunes',
+      things.push({ getPos: () => (chad.visible ? chad : madison).position, r: 2.2, label: '듄네에게 말 걸기',
         enabled: () => chad.visible && madison.visible, use: () => ui.say(nextLine('dunes', DUNES2)) });
-      things.push({ getPos: () => (chad.visible ? chad : madison).position, r: 2.2, label: 'talk to whichever Dune is home',
+      things.push({ getPos: () => (chad.visible ? chad : madison).position, r: 2.2, label: '집에 있는 듄네 식구에게 말 걸기',
         enabled: () => chad.visible !== madison.visible,
-        use: () => ui.say(chad.visible ? 'Madison’s out. Mirage, then Sahara, then Mirage. I’m on baby duty. I have a vest for it.' : 'Chad’s out getting coffee. For both of us. And for himself again.', { speaker: chad.visible ? 'Chad' : 'Madison', voice: chad.visible ? VOICE.chad : VOICE.madison }) });
+        use: () => ui.say(chad.visible ? '매디슨은 외출 중이야. 미라지, 사하라, 미라지 코스. 나는 아기 당번이야. 조끼도 있어.' : '채드는 커피 사러 나갔어. 우리 둘 몫으로. 그리고 자기 몫 하나 더.', { speaker: chad.visible ? '채드' : '매디슨', voice: chad.visible ? VOICE.chad : VOICE.madison }) });
       // moving boxes, still, all labeled the same
       for (let k = 0; k < 7; k++) {
         const bx = box(0.7, 0.55, 0.6, 0xc9a77a);
@@ -1948,8 +1948,8 @@ export function createOasis(player) {
         group.add(lbl);
       }
       bl.push({ x: X(-4.7), z: Z(2.6), w: 1.6, d: 1.5 });
-      things.push({ pos: new THREE.Vector3(X(-4.6), 0, Z(1.4)), r: 1.2, label: 'read the boxes',
-        use: () => ui.say('Every box says BOX 12.') });
+      things.push({ pos: new THREE.Vector3(X(-4.6), 0, Z(1.4)), r: 1.2, label: '상자 읽기',
+        use: () => ui.say('모든 상자에 12번 박스라고 적혀 있어요.') });
       // the bassinet, and baby Sahara
       const bas = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.35, 0.45, 8, 1, true), mat(0xfaf6ec));
       bas.material.side = THREE.DoubleSide;
@@ -1959,12 +1959,12 @@ export function createOasis(player) {
       group.add(bas, basLegs);
       const baby = folk('camel', { body: CAMEL_LT, humps: 1 }, X(0.9), 0.35, Z(-1.3), 0, { scale: 0.33 });
       bl.push({ x: X(0.9), z: Z(-1.3), r: 0.5 });
-      things.push({ getPos: () => baby.position, r: 1.3, label: 'peek at the baby',
-        use: () => ui.say('Baby Sahara blinks up at you, slowly, with enormous heavy-lidded eyes. Four weeks old and already, somehow, unimpressed.') });
+      things.push({ getPos: () => baby.position, r: 1.3, label: '아기 엿보기',
+        use: () => ui.say('아기 사하라가 커다랗고 무거운 눈꺼풀의 눈으로 천천히 당신을 올려다봐요. 태어난 지 4주, 벌써 어쩐지 감동하지 않은 얼굴이에요.') });
     },
   };
   HOUSE_DRESS.mildred = {
-    tv: 'golf', enterLabel: 'knock at Mildred & Walt’s',
+    tv: 'golf', enterLabel: '밀드레드·월트네에 노크하기',
     build: (B, X, Z, bl, things) => {
       // Walt's recliner, angled at the golf
       const rec = box(1.1, 0.55, 1.1, 0x7a5a3a);
@@ -1975,7 +1975,7 @@ export function createOasis(player) {
       bl.push({ x: X(-5.0), z: Z(-1.2), w: 1.2, d: 1.2 });
       const walt = folk('camel', { body: 0xc8b08a, humps: 2, tuft: 0xe8e0d0 }, X(-4.9), 0.35, Z(-1.2), 2.6, { shirt: 0x6a5a8a, glasses: true });
       attend(walt, 'oasis_mildred');
-      things.push(talkThing(() => walt.position, 'walt', 'Walt', WALT));
+      things.push(talkThing(() => walt.position, 'walt', '월트', WALT));
       const cat = buildAnimal('cat', { body: 0xe8a860 });
       cat.scale.setScalar(0.45);
       cat.position.set(X(-4.2), 0.3, Z(0.4));
@@ -1990,21 +1990,21 @@ export function createOasis(player) {
         candy.position.set(X(-3.3 + (k % 3) * 0.08), 0.6, Z(-1.72 + (k % 2) * 0.08));
         group.add(candy);
       }
-      things.push({ pos: new THREE.Vector3(X(-3.2), 0, Z(-0.9)), r: 1.1, label: 'take a butterscotch',
-        use: () => ui.say('You unwrap one. It has been in this dish since before the lawns went in. It is perfect. Butterscotch is forever.') });
+      things.push({ pos: new THREE.Vector3(X(-3.2), 0, Z(-0.9)), r: 1.1, label: '버터스카치 집기',
+        use: () => ui.say('하나를 까요. 잔디가 들어서기 전부터 이 접시에 있었어요. 완벽해요. 버터스카치는 영원하니까요.') });
       // Mildred, after the mall closes: her walking shoes by the door, and her
       const mil = folk('camel', { body: 0xd8c0a0, humps: 1 }, X(1.0), 0, Z(1.4), 0, { shirt: 0xb89ad8, visor: 0xffffff, fidget: true });
       (inside['oasis_mildred'] ??= []).push(() => { mil.visible = mildredHome(); });
       wanderer(mil, 'oasis_mildred', roomArea(X, Z), { speed: 1.2 }); // forty laps a day; the living room is lap forty-one
-      things.push({ getPos: () => mil.position, r: 2.2, label: 'talk to Mildred', enabled: () => mildredHome(), use: talk('mildred', 'Mildred', MILDRED) });
+      things.push({ getPos: () => mil.position, r: 2.2, label: '밀드레드에게 말 걸기', enabled: () => mildredHome(), use: talk('mildred', '밀드레드', MILDRED) });
       for (let k = 0; k < 7; k++) {
         const tr = box(0.22, 0.34, 0.12, 0xd9b24a);
         tr.position.set(X(5.82), 1.9, Z(-0.5 + k * 0.35));
         tr.rotation.y = Math.PI / 2;
         group.add(tr);
       }
-      things.push({ pos: new THREE.Vector3(X(5.2), 0, Z(0.5)), r: 1.3, label: 'read the ribbons',
-        use: () => ui.say('Seven pedometers, retired, mounted on the wall like trophies. The last one reads 9,999,999. It gave out. Mildred didn’t.') });
+      things.push({ pos: new THREE.Vector3(X(5.2), 0, Z(0.5)), r: 1.3, label: '리본 읽기',
+        use: () => ui.say('은퇴한 만보계 일곱 개가 트로피처럼 벽에 걸려 있어요. 마지막 하나는 9,999,999. 얘는 쓰러졌어요. 밀드레드는 안 쓰러졌어요.') });
     },
   };
   HOUSES.forEach((h, k) => standardInterior(h, k));
@@ -2063,14 +2063,14 @@ export function createOasis(player) {
       face(bev, pp.x, pp.z);
       S.addItem('hoa_notice');
       ui.say([
-        { speaker: 'Beverly', voice: VOICE.beverly, text: 'Off. The. Lawn.' },
-        { speaker: 'Beverly', voice: VOICE.beverly, text: 'That’s two and a half inches of Yard of the Month you’re standing on. Forty-one months. Off. Here — this is yours.' },
-      ]).then(() => ui.toast('Beverly hands you a <b>Notice of Violation</b>. It is already filled out.', '📋'));
+        { speaker: '베벌리', voice: VOICE.beverly, text: '잔디. 에서. 내려와.' },
+        { speaker: '베벌리', voice: VOICE.beverly, text: '지금 밟고 있는 건 이 달의 마당의 6.35센티미터예요. 41개월 연속. 내려와. 자 — 이건 당신 거.' },
+      ]).then(() => ui.toast('베벌리가 <b>위반 경고장</b>을 건네요. 벌써 다 작성되어 있어요.', '📋'));
     }
   });
   register({
     getPos: () => bev.position, r: 2.4,
-    label: 'talk to Beverly',
+    label: '베벌리에게 말 걸기',
     enabled: () => bev.visible,
     use: () => beverlyTalk(false),
   });
@@ -2079,26 +2079,26 @@ export function createOasis(player) {
     if (!S.hasFlag('metBeverly')) {
       S.setFlag('metBeverly');
       await ui.say([
-        'Beverly Humphries. President. Of the Homeowners’ Association. Of Oasis Estates. Of — well. Of this.',
-        'You’re not a homeowner. I checked. I check everyone. You may walk on the Parkway, the Drive, the walks, and the Circle. You may NOT walk on a lawn. We’ll get along fine.',
+        '베벌리 험프리스. 회장. 주민협의회의. 오아시스 에스테이츠의. — 글쎄요. 이 모든 것의.',
+        '당신은 주택 소유자가 아니에요. 확인했어요. 나는 모두를 확인해요. 파크웨이, 드라이브, 보도, 서클은 걸어도 돼요. 잔디는 밟으면 안 돼요. 잘 지낼 수 있을 거예요.',
       ], B_);
     }
     const c = await ui.ask(nextLine('beverly', BEVERLY), [
-      { label: '📏 “How’s the grass?”', value: 'grass' },
-      { label: '👏 “You’re doing a great job.”', value: 'praise' },
-      { label: '🙃 “Who elected you, anyway?”', value: 'mess' },
-      { label: 'Back away slowly', value: null },
+      { label: '📏 “잔디 상태 어때요?”', value: 'grass' },
+      { label: '👏 “정말 잘하고 계세요.”', value: 'praise' },
+      { label: '🙃 “누가 당신 뽑았는데요?”', value: 'mess' },
+      { label: '천천히 뒷걸음질', value: null },
     ], B_);
     if (c === 'grass') {
       await ui.say([
-        'She takes a folding ruler from her visor. She kneels. She measures.',
-        { ...B_, text: 'Two and a half. … Two and a half. … Two and — TODD. This blade is two and five-eighths.' },
-        { speaker: 'Todd', voice: VOICE.todd, text: '(from very far away) On it!' },
+        '그녀가 바이저에서 접이식 자를 꺼내요. 무릎을 꿇어요. 재요.',
+        { ...B_, text: '6.35. … 6.35. … 6.3 — 토드. 이 풀잎은 6.67센티미터예요.' },
+        { speaker: '토드', voice: VOICE.todd, text: '(아주 멀리서) 알겠어요!' },
       ]);
     } else if (c === 'praise') {
       if (!S.hasFlag('praisedBeverly')) {
         S.setFlag('praisedBeverly');
-        await ui.say(['…', 'Thank you. Nobody says that.', 'Don’t tell anyone I said thank you. I have a reputation. I built it by hand.'], B_);
+        await ui.say(['…', '고마워요. 아무도 그런 말은 안 하거든요.', '고맙다고 한 거 비밀이에요. 나한텐 평판이 있어요. 손수 쌓은 평판이요.'], B_);
       } else {
         await ui.say('I know.', B_);
       }
@@ -2106,9 +2106,9 @@ export function createOasis(player) {
       const had = S.countItem('hoa_notice');
       S.addItem('hoa_notice');
       await ui.say(had
-        ? ['That’s another one. I’ve started a file on you. It already has a tab with your name on it.', 'I made the tab this morning. I had a feeling.']
-        : ['I did. It was a very close vote. One to nothing.', 'What’s your name, dear? No — don’t tell me. I’ll find out.', 'Here.'], B_);
-      ui.toast('A <b>Notice of Violation</b>. Beverly writes very, very fast.', '📋');
+        ? ['또 하나네요. 당신 파일을 만들기 시작했어요. 벌써 이름표 탭도 붙어 있어요.', '오늘 아침에 탭을 만들었지요. 왠지 예감이 들어서요.']
+        : ['그랬어요. 아주 박빙의 표결이었죠. 1대 0.', '이름이 뭐예요, 얘야? 아니 — 말하지 마세요. 내가 알아낼 테니까.', '자.'], B_);
+      ui.toast('<b>위반 경고장</b>. 베벌리는 아주, 아주 빨리 써요.', '📋');
     }
   }
   function tiffanyTalk() {
@@ -2116,19 +2116,19 @@ export function createOasis(player) {
     return ui.ask(nextLine('tiffany', TIFFANY), [
       { label: '💰 Ask the price', value: 'price' },
       { label: '📝 Make an offer', value: 'offer' },
-      { label: 'Just looking', value: null },
+      { label: '그냥 구경 중', value: null },
     ], T).then((c) => {
       if (c === 'price') {
         return ui.say([
-          'The… price? Oh! Oh my goodness. Nobody has ever — one moment, darling.',
+          '가… 가격이요? 어머! 어머나. 아무도 한 번도 — 잠깐만요, 달링.',
           '(She takes out a card she has clearly been keeping in her blazer for a very long time.)',
-          'Three million, two hundred thousand buttons. … That’s before the HOA fees.',
+          '320만 버튼이요. … HOA 회비 별도예요.',
         ].map((text) => ({ ...T, text, speaker: text.startsWith('(') ? '' : 'Tiffany' })));
       }
       if (c === 'offer') {
         return ui.say([
-          'An OFFER! Oh, I’m — I’m going to need to sit down. On a staged chair. Which I’m not allowed to sit on.',
-          'Darling, the Board would have to approve you. The Board is Beverly. … I’ll put you down as “enthusiastic.”',
+          '오퍼요! 어머, 저 — 앉아야겠어요. 연출된 의자에. 제가 앉으면 안 되는 의자요.',
+          '달링, 이사회 승인이 필요해요. 이사회는 베벌리고요. … 일단 “열정적”으로 기록해 둘게요.',
         ], T);
       }
       return null;
@@ -2138,7 +2138,7 @@ export function createOasis(player) {
   {
     const H = HOUSE.openhouse;
     const [su, sv] = H.L(0.2, HOUSE_R - RING.rOut - 0.6);
-    const sg = sign(['OPEN HOUSE', 'TODAY! (every day)', 'TIFFANY · 555-OASIS'], { w: 1.3, h: 0.95, bg: '#ffffff', fg: '#c8346a', border: '#c8346a' });
+    const sg = sign(['오픈 하우스', '오늘만! (매일)', '티파니 · 555-OASIS'], { w: 1.3, h: 0.95, bg: '#ffffff', fg: '#c8346a', border: '#c8346a' });
     put(sg, su, sv, 0.95, H.ry);
     put(box(0.08, 0.6, 0.08, 0xfaf6ec), su, sv, 0.3, H.ry);
     solidDisc(su, sv, 0.2);
@@ -2180,10 +2180,10 @@ export function createOasis(player) {
     solidDisc(fu, fv, 0.25);
     register({
       pos: new THREE.Vector3(O.x + fu, 0, O.z + fv), r: 1.5,
-      label: 'regard Dolores',
+      label: '돌로레스 바라보기',
       use: () => ui.say([
-        'A pink plastic flamingo, one leg, head cocked, in the middle of Mildred and Walt’s lawn. Her name is Dolores.',
-        'She is angled, very precisely, toward wherever Beverly happens to be standing.',
+        '분홍 플라스틱 플라밍고, 한 다리, 고개를 갸웃하고, 밀드레드·월트네 잔디 한가운데. 이름은 돌로레스.',
+        '그녀는 베벌리가 어디에 서 있든, 아주 정확하게 그쪽을 향해 각도가 맞춰져 있어요.',
       ]),
     });
     outdoor.push(() => {
@@ -2270,7 +2270,7 @@ export function createOasis(player) {
     gary.userData.fidget = true;
     solidDisc(pu, pv, 0.9);
     { const tu = pu - Math.sin(gary.rotation.y) * 1.4, tv = pv - Math.cos(gary.rotation.y) * 1.4; solidDisc(tu, tv, 0.5); } // and his tail
-    register({ getPos: () => gary.position, r: 2.6, label: 'talk to Gary', use: talk('gary', 'Gary', GARY) });
+    register({ getPos: () => gary.position, r: 2.6, label: '게리에게 말 걸기', use: talk('gary', '게리', GARY) });
     // a picnic table, set for a burger nobody has yet received
     const [tu, tv2] = H.yard(-2.4, 0.2);
     const pt = new THREE.Group();
@@ -2399,7 +2399,7 @@ export function createOasis(player) {
       }
     }
     const [px, pz] = at(2.3, -HD / 2 + 0.22);
-    const poster = sign(['NO OUTLET', 'getting out of this town', 'tues 2–4 (all days)'], { w: 1.3, h: 0.9, d: 0.03, bg: '#2a2a30', fg: '#7ad85a' });
+    const poster = sign(['노 아울렛', '이 동네를 떠나는 중', '화 2–4시 (매일)'], { w: 1.3, h: 0.9, d: 0.03, bg: '#2a2a30', fg: '#7ad85a' });
     poster.position.set(px, GY + 1.5, pz);
     poster.rotation.y = H.ry;
     group.add(poster);
@@ -2419,26 +2419,26 @@ export function createOasis(player) {
     });
     register({
       pos: new THREE.Vector3(mx, 0, mz), r: 2.2,
-      label: 'talk to No Outlet',
+      label: '노 아울렛에게 말 걸기',
       use: async () => {
-        const c = await ui.ask('A garage. Three amps, one poster, one drum kit, and a band that is very much getting out of this town.', [
-          { label: '💬 “What’s the band about?”', value: 'chat' },
-          { label: '🎸 Request a song', value: 'song' },
-          { label: 'Nod along and leave', value: null },
+        const c = await ui.ask('차고. 앰프 세 개, 포스터 한 장, 드럼 세트 하나, 그리고 이 동네를 아주 많이 떠나고 싶은 밴드.', [
+          { label: '💬 “밴드는 뭘 하는데?”', value: 'chat' },
+          { label: '🎸 곡 신청하기', value: 'song' },
+          { label: '고개 끄덕이고 나가기', value: null },
         ]);
         if (c === 'chat') {
           const set = nextLine('band', BAND);
           await ui.say(set.map(([sp, text]) => ({ speaker: sp, voice: BAND_VOICE[sp], text })));
         } else if (c === 'song') {
           await ui.say([
-            { speaker: 'Kiwi', voice: BAND_VOICE.Kiwi, text: 'This one’s called “Cul-de-Sac.” It goes around and around.' },
-            { speaker: 'Dakota', voice: BAND_VOICE.Dakota, text: 'One, two — one, two, three, four —' },
+            { speaker: '키위', voice: BAND_VOICE.Kiwi, text: '이 곡은 “컬디색”이야. 빙빙 돌기만 하는 곡이지.' },
+            { speaker: '다코타', voice: BAND_VOICE.Dakota, text: '하나, 둘 — 하나, 둘, 셋, 넷 —' },
           ]);
           jam = playCulDeSac();
           setTimeout(() => {
             if (zones.current() === 'island') {
               ui.say([
-                { speaker: 'Kiwi', voice: BAND_VOICE.Kiwi, text: 'THANK YOU, OASIS ESTATES! WE’RE GETTING OUT OF THIS TOWN!' },
+                { speaker: '키위', voice: BAND_VOICE.Kiwi, text: '고마워요, 오아시스 에스테이츠! 우리는 이 동네를 떠납니다!' },
                 { speaker: 'Junior', voice: BAND_VOICE.Junior, text: '(after snack)' },
               ]);
             }
@@ -2531,9 +2531,9 @@ export function createOasis(player) {
         tone(82 + Math.random() * 6, { dur: 0.3, type: 'triangle', vol: 0.012 });
       }
     });
-    register({ getPos: () => mower.position, r: 2.4, label: 'talk to Todd', enabled: () => todd.visible, use: talk('todd', 'Todd', TODD) });
-    register({ getPos: () => mower.position, r: 2.4, label: 'look at the mower', enabled: () => !todd.visible,
-      use: () => ui.say('The riding mower, parked mid-stripe for the night, exactly where Todd stopped. The key is in it. The key is always in it. Nobody here would dream.') });
+    register({ getPos: () => mower.position, r: 2.4, label: '토드에게 말 걸기', enabled: () => todd.visible, use: talk('todd', '토드', TODD) });
+    register({ getPos: () => mower.position, r: 2.4, label: '모어 보기', enabled: () => !todd.visible,
+      use: () => ui.say('승마용 모어가 밤사이 줄무늬 중간에, 토드가 멈춘 바로 그 자리에 주차돼 있어요. 열쇠는 꽂혀 있어요. 항상 꽂혀 있어요. 여기선 아무도 상상조차 안 해요.') });
   }
 
   // --- the kids, at the playground --------------------------------------------
@@ -2568,9 +2568,9 @@ export function createOasis(player) {
     kidC.rotation.y = 0.1 - Math.PI / 2;
     register({
       pos: new THREE.Vector3(O.x + P.u, 0, O.z + P.v), r: 4.2, priority: 0,
-      label: 'talk to the kids',
+      label: '아이들에게 말 걸기',
       enabled: () => kidA.visible,
-      use: talk('kids', 'the kids', KIDS),
+      use: talk('kids', '아이들', KIDS),
     });
   }
 
@@ -2616,15 +2616,15 @@ export function createOasis(player) {
     }
     const STROLLERS = [
       { key: 'harold', home: 'humphries', kind: 'camel', colors: { body: CAMEL_DK, humps: 2 }, o: { shirt: 0x8a9a7a, glasses: true }, likes: ['polly', 'mall', 'mildred', 'drom'],
-        lines: ['Just walking to the mailbox. And past it. And back to it. It’s the only exercise Beverly hasn’t scheduled.', 'Trader Polly’s. She wants the good seasoning. Everything But The Bell. I don’t ask about the bell. Nobody asks about the bell.'] },
+        lines: ['우편함까지 걸어가는 중이야. 그리고 지나쳐서. 그리고 다시 돌아와서. 베벌리가 일정 잡지 않은 유일한 운동이지.', '트레이더 폴리에. 좋은 양념을 원하셔. 종 빼고 다 있는 양념. 나는 종에 대해 묻지 않아. 아무도 종에 대해 묻지 않아.'] },
       { key: 'sunny', home: 'featherstones', kind: 'parrot', colors: { body: 0x5cbf4a, head: 0x5cbf4a, wing: 0x2e8a5a, tail: 0x3a7dd8, face: 0xf2e08a }, o: { apron: 0xf28fb0 }, likes: ['polly', 'humphries', 'dunes', 'cluck'],
-        lines: ['Running to Trader Polly’s! We’re out of iced tea. We are NEVER out of iced tea. It’s a crisis.', 'Hi, hon! Can’t stop — Beverly wants a report on the Dunes’ recycling. It’s all box twelve.'] },
+        lines: ['트레이더 폴리에 뛰어가는 중! 아이스티가 떨어졌어. 아이스티가 떨어지는 일은 절대 없는데. 비상사태야.', '안녕, 허니! 멈출 수 없어 — 베벌리가 듄네 재활용 보고서를 원해. 전부 12번 박스거든.'] },
       { key: 'linda', home: 'brontos', kind: 'bronto', colors: { body: 0x9ab8a0, head: 0x9ab8a0, belly: 0xe0e6c8, spots: 0x7a9a80 }, o: { pearls: [1.1, 0.72, 0.5] }, scale: 0.85, likes: ['cluck', 'mall', 'mirage'],
-        lines: ['Evening stroll. Gary’s still at the grill. The burgers are still almost ready. I’m getting nuggets.', 'I like to walk the Parkway. It’s not a road, you know. I walk right down the yellow line. Very freeing.'] },
+        lines: ['저녁 산책. 게리는 아직도 그릴 앞이야. 버거는 아직도 거의 다 됐어. 나는 너겟 먹으러.', '파크웨이 걷는 게 좋아. 도로가 아니거든, 알지? 노란 선 한가운데로 걸어. 아주 해방감 있어.'] },
       { key: 'chad', home: 'dunes', kind: 'camel', colors: { body: CAMEL, humps: 1 }, o: { shirt: 0x5a6a7a }, likes: ['mirage', 'cluck', 'todd'],
-        lines: ['Getting a shaken espresso. For me. And one for Madison. And one for me again.', 'Madison says I walk like a dad now. I’ve been practicing. Heel, toe, jingle the keys.'] },
+        lines: ['셰이큰 에스프레소 사러. 내 거. 매디슨 거 하나. 그리고 내 거 하나 더.', '매디슨이 이제 아빠처럼 걷는대. 연습했거든. 뒤꿈치, 발끝, 열쇠 딸랑.'] },
       { key: 'madison', home: 'dunes', kind: 'camel', colors: { body: CAMEL_LT, humps: 1 }, o: { shirt: 0xd8b8c8, bow: 0xf28fb0 }, likes: ['mirage', 'mall', 'openhouse'],
-        lines: ['Mirage, then Sahara, then Mirage. That’s a loop. That’s my cardio.', 'Chad has the baby. This is my walk. I’m walking. Look at me walk.'] },
+        lines: ['미라지, 사하라, 미라지. 이게 한 바퀴야. 이게 내 유산소 운동.', '채드가 아기를 봐. 이건 내 산책이야. 걷는 중이야. 나 걷는 거 좀 봐.'] },
     ];
     for (const st of STROLLERS) {
       const a = folk(st.kind, st.colors, 0, GY, 0, 0, st.o);
@@ -2702,7 +2702,7 @@ export function createOasis(player) {
         label: `${g.emoji ?? ITEMS[g.id].emoji} ${g.label ?? ITEMS[g.id].name}`, value: String(k), hint: `${g.price}🔘`,
         disabled: S.state.buttons < g.price || (g.hat && S.state.hats.includes(g.hat)),
       })),
-      { label: 'Just looking', value: null },
+      { label: '그냥 구경 중', value: null },
     ], V);
     if (c === null || c === undefined) return;
     const g = goods[Number(c)];
@@ -2773,7 +2773,7 @@ export function createOasis(player) {
           shelfUnit(X(lx), Z(-1.6), 0, 3.2);
           shelfUnit(X(lx), Z(-1.9), Math.PI, 3.2);
           bl.push({ x: X(lx), z: Z(-1.75), w: 3.3, d: 1.3 });
-          const tag = sign(lx < 0 ? 'EVERYTHING BUT THE BELL — BACK IN STOCK' : lx > 0 ? 'COOKIE BUTTER · AISLE OF DREAMS' : 'MANGO (DRIED) · NO COMMENT', { w: 3.0, h: 0.35, d: 0.03, bg: '#fff4dc', fg: '#c0392b' });
+          const tag = sign(lx < 0 ? '종 빼고 다 있는 양념 — 재입고' : lx > 0 ? '쿠키 버터 · 꿈의 통로' : '망고(건조) · 노 코멘트', { w: 3.0, h: 0.35, d: 0.03, bg: '#fff4dc', fg: '#c0392b' });
           tag.position.set(X(lx), 2.2, Z(-1.75));
           group.add(tag);
         }
@@ -2814,14 +2814,14 @@ export function createOasis(player) {
         const hook = cyl(0.03, 0.03, 0.25, 5, 0xb08d3a);
         hook.position.set(X(-7.65), 2.05, Z(2.2));
         group.add(bracket, hook);
-        const card = sign(['PLEASE SAY', '“BRRRING”'], { w: 0.7, h: 0.45, d: 0.03, bg: '#fff4dc', fg: '#c0392b' });
+        const card = sign(['이렇게 말해 주세요', '“띠이잉”'], { w: 0.7, h: 0.45, d: 0.03, bg: '#fff4dc', fg: '#c0392b' });
         card.position.set(X(-7.83), 1.7, Z(2.2));
         card.rotation.y = Math.PI / 2;
         group.add(card);
-        things.push({ pos: new THREE.Vector3(X(-7.1), 0, Z(2.2)), r: 1.2, label: 'look at the bell mount',
+        things.push({ pos: new THREE.Vector3(X(-7.1), 0, Z(2.2)), r: 1.2, label: '종 걸이 보기',
           use: () => ui.say([
-            'A brass bracket, polished, with a hook for a ship’s bell. There is no bell on the hook. There has never been a bell on the hook.',
-            'A card underneath: PLEASE SAY “BRRRING.”',
+            '닦아서 번쩍이는 황동 거치대, 배의 종을 걸 수 있는 고리 달린. 고리에는 종이 없어요. 한 번도 종이 걸린 적이 없어요.',
+            '그 아래 카드: 이렇게 말해 주세요 “띠이잉”.',
           ]) });
         // the sample station
         counterTop(X(0), Z(2.2), 1.2, 0.7, 0xc0392b, 0xfaf6ec);
@@ -2831,36 +2831,36 @@ export function createOasis(player) {
           group.add(cup);
         }
         bl.push({ x: X(0), z: Z(2.2), w: 1.2, d: 0.7 });
-        things.push({ pos: new THREE.Vector3(X(0), 0, Z(3.0)), r: 1.2, label: 'try today’s sample',
+        things.push({ pos: new THREE.Vector3(X(0), 0, Z(3.0)), r: 1.2, label: '오늘의 시식 먹어보기',
           use: () => ui.say(nextLine('sample', [
-            'Today’s sample: cookie butter on a pretzel crisp, in a paper cup the size of a thimble. It is the best thing you have eaten this week. It is gone.',
-            'Today’s sample: a single cube of cheese with a flag in it. The flag says CHEESE. It is correct.',
-            'Today’s sample: mandarin chick’n, one piece, on a toothpick. From the same people as the nuggets. Nobody asks.',
-            'Today’s sample: coffee, in a thimble. It’s a Mirage blend. Echo would like you to know that Echo would like you to know that.',
+            '오늘의 시식: 프레첼 크리스프 위의 쿠키 버터, 골무만 한 종이컵에. 이번 주에 먹은 것 중 최고예요. 사라졌어요.',
+            '오늘의 시식: 깃발이 꽂힌 치즈 한 조각. 깃발에는 치즈라고 적혀 있어요. 맞는 말이에요.',
+            '오늘의 시식: 만다린 치킨 한 조각, 이쑤시개에 꽂혀. 너겟이랑 같은 회사 거예요. 아무도 묻지 않아요.',
+            '오늘의 시식: 골무에 담긴 커피. 미라지 블렌드예요. 에코가 에코가 그렇게 전해 달랬다고 전해 달래요.',
           ])) });
         // the Fearless Feather, in a rack by the door (free)
         const rack = box(0.6, 1.1, 0.3, 0x3fb8a8);
         rack.position.set(X(-1.8), 0.55, Z(4.6));
         group.add(rack);
-        things.push({ pos: new THREE.Vector3(X(-1.8), 0, Z(4.0)), r: 1.1, label: 'take a Fearless Feather',
+        things.push({ pos: new THREE.Vector3(X(-1.8), 0, Z(4.0)), r: 1.1, label: '용감한 깃털 집어가기',
           use: () => {
-            if (S.countItem('fearless_feather') > 0) return ui.say('You already have this issue. The next one comes out when the Captain finishes the letter about the bell. So: not soon.');
+            if (S.countItem('fearless_feather') > 0) return ui.say('이미 이 호를 갖고 있어요. 다음 호는 선장이 종에 대한 답장을 다 쓰면 나와요. 그러니까: 머지않지 않아요.');
             S.addItem('fearless_feather');
-            ui.toast('You took <b>The Fearless Feather</b>. It’s free. Everything free is a little bit fearless.', '📰');
+            ui.toast('<b>용감한 깃털</b>을 집었어요. 공짜예요. 공짜인 것들은 조금씩 겁이 없거든요.', '📰');
           } });
         bl.push({ x: X(-1.8), z: Z(4.6), w: 0.6, d: 0.3 });
         const goods = [
-          { id: 'ebtb_seasoning', price: 4, say: ['Everything But The Bell! BRRRING! — sorry. One Everything But The Bell.', 'It’s got everything. Sesame, poppy, garlic, onion, salt. Not the bell. The bell’s the only thing it hasn’t got.'] },
-          { id: 'cookie_butter', price: 5, say: 'Cookie butter! BRRRING! That’s the “good choice” brrring. I have different brrrings. That one was the good one.' },
-          { id: 'two_button_chuck', price: 2, say: 'Two-Button Chuck! Two buttons! It says so on it! BRRRING!' },
-          { id: 'dried_mango', price: 6, say: 'Dried mango. … BRRRING. (Don’t tell the Captain I said it quietly. He’s sensitive about the mango.)' },
+          { id: 'ebtb_seasoning', price: 4, say: ['종 빼고 다 있는 양념! 띠이잉! — 미안. 종 빼고 다 있는 양념 하나요.', '다 들었어요. 참깨, 양귀비씨, 마늘, 양파, 소금. 종만 빼고. 종만 유일하게 안 들었거든요.'] },
+          { id: 'cookie_butter', price: 5, say: '쿠키 버터! 띠이잉! 이건 “좋은 선택” 띠이잉이에요. 띠이잉에도 종류가 있거든요. 방금 건 좋은 거였어요.' },
+          { id: 'two_button_chuck', price: 2, say: '투 버튼 척! 버튼 두 개! 그렇게 적혀 있어요! 띠이잉!' },
+          { id: 'dried_mango', price: 6, say: '건망고. … 띠이잉. (조용히 했다고 선장한테는 비밀이에요. 망고에 예민하거든요.)' },
         ];
-        things.push({ getPos: () => pico.position, r: 2.0, label: 'check out with Pico',
+        things.push({ getPos: () => pico.position, r: 2.0, label: '피코에게 계산하기',
           use: async () => {
             await ui.say(nextLine('pico', PICO), { speaker: 'Pico', voice: VOICE.pico });
-            await till('Pico', 'pico', 'Paper or paper? (It’s paper.) What’ve you got?', goods);
+            await till('피코', 'pico', '종이로 할까요, 종이로 할까요? (종이예요.) 뭘 고르셨나요?', goods);
           } });
-        things.push(talkThing(() => mango.position, 'mango', 'Captain Mango', MANGO));
+        things.push(talkThing(() => mango.position, 'mango', '망고 선장', MANGO));
       },
     });
   }
@@ -2872,7 +2872,7 @@ export function createOasis(player) {
       w: W0, d: D0, floor: 0xd8d4cc, wall: 0xf6f2ec,
       build: (B, bl, things) => {
         const X = (lx) => B.x + lx, Z = (lz) => B.z + lz;
-        const banner = sign(['DROMEDEALS', 'brand names · one hump or two · compare at: everything'], { w: 10, h: 1.1, d: 0.05, bg: '#ffffff', fg: '#a8232d' });
+        const banner = sign(['드로밀즈', '브랜드 네임 · 혹 하나든 둘이든 · 비교가: 모든 것'], { w: 10, h: 1.1, d: 0.05, bg: '#ffffff', fg: '#a8232d' });
         banner.position.set(B.x, 2.9, Z(-5.32));
         group.add(banner);
         // clothing racks, arranged by nothing (this is the treasure hunt)
@@ -2912,7 +2912,7 @@ export function createOasis(player) {
           crown.position.set(pine.position.x, 1.26, pine.position.z);
           group.add(pine, crown);
         }
-        const clear = sign(['CLEARANCE', 'compare at: more'], { w: 2.2, h: 0.7, d: 0.05, bg: '#a8232d', fg: '#ffffff' });
+        const clear = sign(['재고 정리', '비교가: 더 비쌈'], { w: 2.2, h: 0.7, d: 0.05, bg: '#a8232d', fg: '#ffffff' });
         clear.position.set(X(5.9), 2.35, Z(-2.0));
         clear.rotation.y = -Math.PI / 2;
         group.add(clear);
@@ -2927,29 +2927,29 @@ export function createOasis(player) {
         attend(deb, 'drom');
         wanderer(s1, 'drom', { x0: X(-7.4), x1: X(7.2), z0: Z(-4.4), z1: Z(2.6) }, { speed: 0.7, pause: [3, 8] });
         wanderer(s2, 'drom', { x0: X(-7.4), x1: X(7.2), z0: Z(-4.4), z1: Z(2.6) }, { speed: 0.9, pause: [2, 6] });
-        things.push({ getPos: () => s1.position, r: 1.8, label: 'talk to the shopper',
-          use: () => ui.say('I came in for a lamp. I am leaving with a ceramic pineapple, a candle that smells like sand, and a sense that the lamp was never the point.', { speaker: 'a shopper', voice: 420 }) });
-        things.push({ getPos: () => s2.position, r: 1.8, label: 'talk to the other shopper',
-          use: () => ui.say('Shh. I’m in the zone. There is a designer visor on this rack somewhere. I can FEEL it.', { speaker: 'another shopper', voice: 640 }) });
-        things.push({ pos: new THREE.Vector3(X(-1.0), 0, Z(-1.8)), r: 1.4, priority: 0, label: 'rummage the racks',
+        things.push({ getPos: () => s1.position, r: 1.8, label: '쇼핑객에게 말 걸기',
+          use: () => ui.say('램프 사러 왔는데, 세라믹 파인애플이랑 모래 냄새 양초랑, 램프는 애초에 목적이 아니었다는 깨달음을 갖고 나가요.', { speaker: '쇼핑객', voice: 420 }) });
+        things.push({ getPos: () => s2.position, r: 1.8, label: '다른 쇼핑객에게 말 걸기',
+          use: () => ui.say('쉿. 몰입 중이에요. 이 진열대 어딘가에 디자이너 바이저가 있어. 느껴져요.', { speaker: '다른 쇼핑객', voice: 640 }) });
+        things.push({ pos: new THREE.Vector3(X(-1.0), 0, Z(-1.8)), r: 1.4, priority: 0, label: '진열대 뒤지기',
           use: () => ui.say(nextLine('rummage', [
             'You rummage. A sweater with one sleeve longer than the other. COMPARE AT: 300🔘. You put it back. You think about it for the rest of the day.',
-            'You rummage. A bathrobe that says HIS on it. There is no HERS. There is a HERS somewhere, in another Dromedeals, looking for this one.',
-            'You rummage. A pair of sunglasses shaped like pineapples. Next to them, a ceramic pineapple wearing sunglasses. This store is having a conversation with itself.',
-            'You rummage. A throw pillow that says “SAND HAPPENS.” A throw pillow that says “LIVE LAUGH LOUNGE.” A throw pillow that just says “PILLOW.” You respect that one the most.',
-            'You rummage. A single designer visor, perfect, crisp, white. You turn around to show someone and when you turn back, a mall walker has it. That’s the Dromedeal.',
+            '뒤적여요. 그이 거라고 적힌 목욕 가운. 그녀 건 없어요. 그녀 건 어딘가, 다른 드로밀즈에서, 이걸 찾고 있을 거예요.',
+            '뒤적여요. 파인애플 모양 선글라스. 그 옆에는 선글라스 낀 세라믹 파인애플. 이 가게는 자기 자신과 대화를 나누고 있어요.',
+            '뒤적여요. “모래는 일어나요”라고 적힌 쿠션. “살고 웃고 쉬고”라고 적힌 쿠션. 그냥 “쿠션”이라고만 적힌 쿠션. 마지막 게 제일 존경스러워요.',
+            '뒤적여요. 완벽하고 빳빳한 하얀 디자이너 바이저 하나. 누구한테 보여 주려고 돌아섰다가 다시 보니, 몰 워커가 가져갔어요. 그게 드로밀이에요.',
           ])) });
         const goods = [
           { hat: 'tennis_visor', label: `${ITEMS.tennis_visor.name} (cmp. 900)`, emoji: ITEMS.tennis_visor.emoji, price: 30,
-            say: ['A tennis visor. Compare at nine hundred. Yours for thirty. You just saved eight hundred and seventy buttons, hon. That’s basically earning.', '(Press H to wear it. You’re a Dromedealista now.)'] },
-          { id: 'live_laugh_lounge', label: `${ITEMS.live_laugh_lounge.name} (cmp. 240)`, price: 12, say: 'Oh, that’s a classic. Every house on the Circle has one. Same spot. Same nail. It’s nice to belong.' },
-          { id: 'ceramic_pineapple', label: `${ITEMS.ceramic_pineapple.name} (cmp. 180)`, price: 9, say: 'The pineapples. They come in every shipment. Every one. I never ordered a single pineapple. Take it, hon. Take two. Please.' },
-          { id: 'candle_sand', label: `${ITEMS.candle_sand.name} (cmp. 90)`, price: 5, say: 'Scent: Sand. It smells exactly like sand. It’s our bestseller. Nobody here has ever been to a desert. Everybody here misses it.' },
+            say: ['테니스 바이저. 비교가 900. 30에 드려요. 방금 870 버튼을 아낀 거예요, 허니. 그건 사실상 버는 거예요.', '(H를 눌러 쓰세요. 이제 당신도 드로밀리스타예요.)'] },
+          { id: 'live_laugh_lounge', label: `${ITEMS.live_laugh_lounge.name} (cmp. 240)`, price: 12, say: '아, 그건 클래식이죠. 서클의 모든 집에 하나씩 있어요. 같은 자리. 같은 못. 소속감이란 좋은 거예요.' },
+          { id: 'ceramic_pineapple', label: `${ITEMS.ceramic_pineapple.name} (cmp. 180)`, price: 9, say: '파인애플들. 매 배송마다 들어와요. 매번. 전 파인애플을 한 번도 주문한 적 없는데. 가져가요, 허니. 두 개 가져가요. 제발.' },
+          { id: 'candle_sand', label: `${ITEMS.candle_sand.name} (cmp. 90)`, price: 5, say: '향: 모래. 정확히 모래 냄새예요. 최고 인기 상품이에요. 여기 사람들 아무도 사막에 가 본 적 없어요. 다들 사막이 그리워해요.' },
         ];
-        things.push({ getPos: () => deb.position, r: 2.2, label: 'talk to Deb',
+        things.push({ getPos: () => deb.position, r: 2.2, label: '뎁에게 말 걸기',
           use: async () => {
             await ui.say(nextLine('deb', DEB), { speaker: 'Deb', voice: VOICE.deb });
-            await till('Deb', 'deb', 'Find anything, hon? Or did anything find you?', goods);
+            await till('뎁', 'deb', '뭐 찾으셨어요, 허니? 아니면 뭐가 당신을 찾았나요?', goods);
           } });
       },
     });
@@ -3011,11 +3011,11 @@ export function createOasis(player) {
         group.add(laptop, lid);
         const remote = folk('camel', { body: 0xe0c8a0, humps: 1 }, X(-3.8), 0.2, Z(2.2), Math.PI, { shirt: 0x6a7a8a, scale: 0.9 });
         bl.push({ x: X(-3.8), z: Z(1.7), w: 1.2, d: 1.6 });
-        things.push({ getPos: () => remote.position, r: 1.8, label: 'talk to the camel with the laptop',
+        things.push({ getPos: () => remote.position, r: 1.8, label: '노트북 든 낙타에게 말 걸기',
           use: () => ui.say(nextLine('remote', [
-            'Oh — sorry, I’m on a call. … No, you’re fine, I’m muted. I’m always muted. I’ve been muted since spring.',
-            'I work remotely. From here. Every day. For a company on an island I’ve never been to. I think it’s the Labs? It might be the Labs.',
-            'This is my fourth shaken espresso. I’m not shaking. The espresso is shaking. That’s the brand.',
+            '아 — 죄송, 통화 중이라. … 아니 괜찮아요, 음소거예요. 항상 음소거예요. 봄부터 음소거였어요.',
+            '재택근무해요. 여기서. 매일. 가 본 적 없는 어느 섬의 회사에서. 연구소 같은데? 연구소일 수도 있어요.',
+            '이게 네 번째 셰이큰 에스프레소예요. 저는 안 떨려요. 에스프레소가 떨리는 거예요. 그게 브랜드예요.',
           ]), { speaker: 'Skyler', voice: 360 }) });
         for (const [lx, lz] of [[3.4, 1.2], [3.4, 3.0]]) {
           table(X(lx), Z(lz), 0.9, 0.9, 0x3a3a3e);
@@ -3026,30 +3026,30 @@ export function createOasis(player) {
         plant(X(-5.3), Z(3.6));
         bl.push({ x: X(-5.3), z: Z(3.6), r: 0.35 });
         const drinks = [
-          { label: 'Iced Brown Sugar Oat Shaken Espresso', emoji: '🧋', price: 8, secs: 60,
-            say: () => ['One Iced Brown Sugar Oat Milk Shaken Espresso. Shaken. Shaken again. Shaken a third time, for luck. Can I get a name for the cup?', ...cupName()] },
+          { label: '아이스 흑설탕 오트 셰이큰 에스프레소', emoji: '🧋', price: 8, secs: 60,
+            say: () => ['아이스 흑설탕 오트 밀크 셰이큰 에스프레소 하나요. 흔들고. 또 흔들고. 행운을 빌어 세 번째 흔들고. 컵에 적을 이름이 뭐예요?', ...cupName()] },
           { label: 'Double Caramel Sandstorm Frappé', emoji: '🥤', price: 9, secs: 45,
-            say: () => ['A Double Caramel Sandstorm Frappé, blended, with whip, with caramel drizzle, with caramel drizzle ON the caramel drizzle, in a Dune. Name for the cup?', ...cupName()] },
+            say: () => ['더블 카라멜 샌드스톰 프라페 하나요, 블렌디드, 휘핑 올리고, 카라멜 드리즐 뿌리고, 그 카라멜 드리즐 위에 카라멜 드리즐 또 뿌리고, 듄 사이즈로. 컵에 적을 이름이요?', ...cupName()] },
           { label: seasonalName(), emoji: '☕', price: 7, secs: 50,
-            say: () => [`The ${seasonalName()}. It’s back. It never left. It’s the season and the season is it. Name?`, ...cupName()] },
-          { label: 'Just a coffee', emoji: '☕', price: 3, secs: 30,
-            say: () => ['Just… a coffee. Just a coffee. … Okay. Okay! I can do that. I think I can do that. Give me a second.', '(It takes eleven minutes. It is perfect. Echo looks shaken, which, here, is a compliment.)', ...cupName()] },
+            say: () => [`${seasonalName()} 하나요. 돌아왔어요. 떠난 적 없지만요. 시즌이 그것이고 그것이 시즌이거든요. 이름이요?`, ...cupName()] },
+          { label: '그냥 커피', emoji: '☕', price: 3, secs: 30,
+            say: () => ['그냥… 커피요. 그냥 커피. … 네. 네! 할 수 있어요. 할 수 있을 것 같아요. 잠깐만요.', '(11분 걸려요. 완벽해요. 에코가 떨려 보이는데, 여기선 칭찬이에요.)', ...cupName()] },
         ].map((d) => ({ ...d, then: () => { S.drinkCoffee(d.secs); sip(); } }));
-        things.push({ getPos: () => echo.position, r: 2.6, label: 'order from Echo',
+        things.push({ getPos: () => echo.position, r: 2.6, label: '에코에게 주문하기',
           use: async () => {
             await ui.say(nextLine('echo', ECHO), { speaker: 'Echo', voice: VOICE.echo });
-            await till('Echo', 'echo', 'What can I get started for you? What can I get started for you?', drinks);
+            await till('에코', 'echo', '뭘 준비해 드릴까요? 뭘 준비해 드릴까요?', drinks);
           } });
       },
     });
   }
   function seasonalName() {
     const now = new Date().getMonth();
-    return now >= 8 && now <= 10 ? 'Pumpkin Spice Latte' : now >= 2 && now <= 4 ? 'Blossom Spice Latte' : now >= 5 && now <= 7 ? 'Iced Sunscreen Spice Latte' : 'Frost Spice Latte';
+    return now >= 8 && now <= 10 ? '펌킨 스파이스 라떼' : now >= 2 && now <= 4 ? '블로썸 스파이스 라떼' : now >= 5 && now <= 7 ? '아이스 선크림 스파이스 라떼' : '프로스트 스파이스 라떼';
   }
   // Echo spells your name the way it sounded
   function cupName() {
-    const n = (S.state.name || 'Friend').trim() || 'Friend';
+    const n = (S.state.name || '친구').trim() || '친구';
     const tries = [
       (x) => x.replace(/y$/i, 'ee'),
       (x) => x.replace(/[aeiou]/i, (m) => m + m),
@@ -3060,7 +3060,7 @@ export function createOasis(player) {
     let odd = n;
     for (const f of tries) { odd = f(n); if (odd !== n) break; }
     S.addItem('mirage_cup');
-    return [`(The cup says “${odd}.” Close. Closer than most.)`];
+    return [`(컵에는 “${odd}”라고 적혀 있어요. 비슷해요. 대부분보다 비슷해요.)`];
   }
 
   // ------------------------------------------------------ Cluck & Co. ----
@@ -3070,7 +3070,7 @@ export function createOasis(player) {
       w: W0, d: D0, floor: 0xe8dcc8, wall: 0xfaf4ec,
       build: (B, bl, things) => {
         const X = (lx) => B.x + lx, Z = (lz) => B.z + lz;
-        const menu = sign(['Cluck & Co.', 'NUGGETS · THE SANDWICH · WAFFLE FRIES · LEMONADE', 'it’s not chicken · it’s our pleasure · closed sundays'], { w: 7, h: 1.5, d: 0.05, bg: '#c8342c', fg: '#ffffff' });
+        const menu = sign(['클럭 앤 코', '너겟 · 그 샌드위치 · 와플 프라이 · 레모네이드', '닭고기 아님 · 기쁘게 모심 · 일요일 휴무'], { w: 7, h: 1.5, d: 0.05, bg: '#c8342c', fg: '#ffffff' });
         menu.position.set(X(0), 2.7, Z(-4.32));
         group.add(menu);
         counterTop(X(0), Z(-2.3), 6.5, 0.9, 0xc8342c, 0xfaf6ec);
@@ -3106,25 +3106,25 @@ export function createOasis(player) {
           group.add(b);
         }
         bl.push({ x: X(4.3), z: Z(2.6), w: 2.0, d: 2.0 });
-        things.push({ pos: new THREE.Vector3(X(4.3), 0, Z(1.2)), r: 1.3, label: 'look at the ball pit',
-          use: () => ui.say('A sign: “PLAYPLACE — AGES 3 TO 7.” A smaller sign under it, newer, in Beverly’s handwriting: “AND NOT GARY.”') });
+        things.push({ pos: new THREE.Vector3(X(4.3), 0, Z(1.2)), r: 1.3, label: '볼 풀장 보기',
+          use: () => ui.say('안내판: “플레이플레이스 — 3세~7세.” 그 아래 더 작은, 더 새 것 같은, 베벌리 글씨의 안내판: “그리고 게리 금지.”') });
         const goods = [
-          { id: 'cluck_nuggets', price: 6, say: 'Eight-count nuggets! And three Cluck Sauces! My pleasure!', then: () => { S.addItem('cluck_sauce'); } },
-          { id: 'waffle_fries', price: 4, say: 'Waffle fries! My pleasure! They’re the best shape a potato can be. The potato told me. It was its pleasure.' },
-          { label: 'A lemonade (drink it here)', emoji: '🍋', price: 3, say: 'One lemonade! My pleasure! Fresh-squeezed! I squeezed it! It was my — yes. You know.', then: () => { S.drinkCoffee(20); sip(); } },
+          { id: 'cluck_nuggets', price: 6, say: '너겟 여덟 개요! 클럭 소스 세 개 포함! 기쁩니다!', then: () => { S.addItem('cluck_sauce'); } },
+          { id: 'waffle_fries', price: 4, say: '와플 프라이요! 기쁩니다! 감자가 될 수 있는 최고의 모양이거든요. 감자가 알려 줬어요. 본인도 기쁘대요.' },
+          { label: '레모네이드(여기서 마시기)', emoji: '🍋', price: 3, say: '레모네이드 하나요! 기쁩니다! 생짜! 제가 짰어요! 제 기쁨이 — 네. 아시죠.', then: () => { S.drinkCoffee(20); sip(); } },
         ];
-        things.push({ getPos: () => tanner.position, r: 2.6, label: 'order from Tanner',
+        things.push({ getPos: () => tanner.position, r: 2.6, label: '태너에게 주문하기',
           use: async () => {
-            await ui.say(nextLine('tanner', TANNER), { speaker: 'Tanner', voice: VOICE.tanner });
-            const c = await ui.ask('What can I get for you today?', [
-              { label: '🍗 Order', value: 'order' },
-              { label: '🙏 “Thank you!”', value: 'thanks' },
-              { label: 'Leave', value: null },
-            ], { speaker: 'Tanner', voice: VOICE.tanner });
-            if (c === 'order') await till('Tanner', 'tanner', 'It would be my pleasure. What’ll it be?', goods);
+            await ui.say(nextLine('tanner', TANNER), { speaker: '태너', voice: VOICE.tanner });
+            const c = await ui.ask('오늘 어떻게 모실까요?', [
+              { label: '🍗 주문하기', value: 'order' },
+              { label: '🙏 “감사합니다!”', value: 'thanks' },
+              { label: '나가기', value: null },
+            ], { speaker: '태너', voice: VOICE.tanner });
+            if (c === 'order') await till('태너', 'tanner', '기쁘게 모시겠습니다. 뭘로 하시겠어요?', goods);
             if (c === 'thanks') {
               const k = (said.cluckThanks = (said.cluckThanks ?? 0) + 1);
-              await ui.say(k === 1 ? 'My pleasure!' : k === 2 ? 'My pleasure.' : k === 3 ? '…It really is.' : 'It is. It really, really is.', { speaker: 'Tanner', voice: VOICE.tanner });
+              await ui.say(k === 1 ? '기쁩니다!' : k === 2 ? '기뻐요.' : k === 3 ? '…정말로요.' : '그래요. 정말, 정말로요.', { speaker: '태너', voice: VOICE.tanner });
             }
           } });
       },
@@ -3184,18 +3184,18 @@ export function createOasis(player) {
             dr.position.set(X(FT.x) + Math.cos(a) * ph * 1.3, 1.9 + ph * 1.2 - ph * ph * 2.1, Z(FT.z) + Math.sin(a) * ph * 1.3);
           });
         });
-        things.push({ pos: new THREE.Vector3(X(FT.x), 0, Z(FT.z + 2.7)), r: 1.6, label: 'toss a button in the fountain',
+        things.push({ pos: new THREE.Vector3(X(FT.x), 0, Z(FT.z + 2.7)), r: 1.6, label: '분수에 버튼 던지기',
           use: async () => {
-            if (S.state.buttons < 1) return ui.say('You pat your pockets. Not even one button. You make the wish anyway. It counts; it just doesn’t jingle.');
+            if (S.state.buttons < 1) return ui.say('주머니를 더듬어요. 버튼이 하나도 없어요. 그래도 소원을 빌어요. 유효해요, 다만 딸랑거리지 않을 뿐.');
             S.spend(1);
             ui.updateHUD();
             tone(880, { dur: 0.08, type: 'sine', vol: 0.03 });
             tone(660, { time: 0.12, dur: 0.12, type: 'sine', vol: 0.02 });
             await ui.say(nextLine('wish', [
-              'Plink. The button settles among the others. Somewhere, very quietly, a wish gets filed. In triplicate. This is still Oasis Estates.',
-              'Plink. You wish for something. The fountain keeps it. Fountains are good at secrets; they’re loud in exactly the right way.',
-              'Plink. Mildred, going by on lap thirty-one, without breaking stride: “Good one, dear.”',
-              'Plink. You wish the ferry would get approved. The fountain makes a small noise that sounds, for a moment, like somebody saying “under review.”',
+              '풍덩. 버튼이 다른 것들 사이에 자리 잡아요. 어딘가에서, 아주 조용히, 소원 하나가 접수돼요. 3부로. 여긴 여전히 오아시스 에스테이츠니까요.',
+              '풍덩. 소원을 빌어요. 분수가 간직해요. 분수는 비밀에 강해요. 딱 알맞은 방식으로 시끄럽거든요.',
+              '풍덩. 서른한 바퀴째 지나가던 밀드레드가, 걸음을 늦추지도 않고: “잘 빌었어, 얘야.”',
+              '풍덩. 페리가 승인되기를 빌어요. 분수가 작은 소리를 내는데, 잠시 누군가 “검토 중”이라고 말하는 것처럼 들려요.',
             ]));
           } });
         // benches round the court, and potted palms
@@ -3267,24 +3267,24 @@ export function createOasis(player) {
         const paloma = folk('parrot', { body: 0xf28fb0, head: 0xf28fb0, wing: 0xb89ad8, tail: 0x111111, face: 0xffffff }, X(-8.5), 0, Z(backZ + 1.6), 0, { apron: 0x111111, fidget: true });
         attend(paloma, 'mall');
         const sahGoods = [
-          { id: 'dune_gloss', price: 8, say: 'Dune Gloss, in Oasis at Dusk. It’s pink. It’s always pink. It’s a mood, babe. You’re a mood now.' },
-          { id: 'sand_scrub', price: 6, say: 'The Sand Scrub. Ingredients: sand. That’s it. That’s the luxury. Honesty is the new exfoliant.' },
+          { id: 'dune_gloss', price: 8, say: '듄 글로스, 해 질 녘 오아시스 색. 핑크예요. 언제나 핑크. 그게 무드야, 베이브. 이제 당신도 무드야.' },
+          { id: 'sand_scrub', price: 6, say: '샌드 스크럽. 성분: 모래. 그게 다예요. 그게 럭셔리예요. 정직이 새로운 각질 제거제야.' },
         ];
         let sprayed = false;
-        things.push({ getPos: () => paloma.position, r: 2.4, label: 'talk to Paloma',
+        things.push({ getPos: () => paloma.position, r: 2.4, label: '팔로마에게 말 걸기',
           use: async () => {
             const c = await ui.ask(nextLine('paloma', PALOMA), [
               { label: '💄 Shop', value: 'shop' },
               { label: '🌸 Try a sample', value: 'sample' },
-              { label: 'Leave', value: null },
+              { label: '나가기', value: null },
             ], { speaker: 'Paloma', voice: VOICE.paloma });
-            if (c === 'shop') await till('Paloma', 'paloma', 'What are we feeling today?', sahGoods);
+            if (c === 'shop') await till('팔로마', 'paloma', '오늘 어떤 기분이세요?', sahGoods);
             if (c === 'sample') {
               if (!sprayed) {
                 sprayed = true;
-                await ui.say(['Close your eyes. … Spritz.', 'That’s Eau de Oasis. Top notes: cut grass. Heart: chlorine. Base: a minivan in the sun.', 'You smell like a planned community, babe. Wear it well.'], { speaker: 'Paloma', voice: VOICE.paloma });
+                await ui.say(['눈 감아요. … 칙.', '오 드 오아시스예요. 톱 노트: 깎은 풀. 하트: 염소. 베이스: 햇볕 속 미니밴.', '계획 커뮤니티 냄새가 나요, 베이브. 잘 어울려요.'], { speaker: '팔로마', voice: VOICE.paloma });
               } else {
-                await ui.say('One spritz per customer, babe. Beverly’s rule. She has a lot of rules about scent.', { speaker: 'Paloma', voice: VOICE.paloma });
+                await ui.say('손님당 한 번 칙이에요, 베이브. 베벌리 규칙이에요. 향에 관한 규칙이 많거든요.', { speaker: '팔로마', voice: VOICE.paloma });
               }
             }
           } });
@@ -3298,14 +3298,14 @@ export function createOasis(player) {
         group.add(bag, lava);
         const cousin = folk('parrot', { body: 0x2a2a30, head: 0x2a2a30, wing: 0xff4fb0, tail: 0xff4fb0 }, X(0.8), 0.35, Z(backZ + 1.4), 0.4, { scale: 0.8 });
         cousin.rotation.x = -0.4;
-        things.push({ pos: new THREE.Vector3(X(0), 0, Z(backZ + 3.9)), r: 1.8, label: 'peer into Hot Tropic',
+        things.push({ pos: new THREE.Vector3(X(0), 0, Z(backZ + 3.9)), r: 1.8, label: '핫 트로픽 들여다보기',
           use: () => ui.say([
-            'The grille is down. It is always down. Behind it: band tees, a lava lamp, and a teenage parrot asleep on a purple beanbag.',
-            'A handwritten sign taped to the grille: “OPEN WHEN I’M READY. — MGMT (Kiwi’s cousin)”',
-            'The mall walkers go past. They have been going past Hot Tropic for eleven years. They have never gone in. They are not ready either.',
+            '셔터가 내려가 있어요. 항상 내려가 있죠. 그 너머로: 밴드 티셔츠, 라바 램프, 그리고 보라색 빈백에서 자고 있는 십대 앵무새.',
+            '셔터에 붙은 손글씨 안내판: “준비되면 오픈함. — 경영진(키위 사촌)”',
+            '몰 워커들이 지나가요. 11년째 핫 트로픽 앞을 지나가고 있어요. 한 번도 들어간 적 없어요. 그들도 준비가 안 됐거든요.',
           ]) });
         // SUNGLASS HUMP
-        storefront(4.4, 9.2, 3.2, sign('SUNGLASS HUMP', { w: 4.8, h: 0.8, d: 0.05, bg: '#f2cf5b', fg: '#2a2a2e' }), { open: true, floorC: 0xe8e0cc });
+        storefront(4.4, 9.2, 3.2, sign('선글라스 험프', { w: 4.8, h: 0.8, d: 0.05, bg: '#f2cf5b', fg: '#2a2a2e' }), { open: true, floorC: 0xe8e0cc });
         for (let k = 0; k < 3; k++) {
           const stand = box(0.5, 1.5, 0.5, 0xfaf6ec);
           stand.position.set(X(5.4 + k * 1.4), 0.75, Z(backZ + 1.2));
@@ -3317,15 +3317,15 @@ export function createOasis(player) {
           }
           bl.push({ x: X(5.4 + k * 1.4), z: Z(backZ + 1.2), r: 0.4 });
         }
-        things.push({ pos: new THREE.Vector3(X(6.8), 0, Z(backZ + 2.4)), r: 1.5, label: 'try on sunglasses',
+        things.push({ pos: new THREE.Vector3(X(6.8), 0, Z(backZ + 2.4)), r: 1.5, label: '선글라스 써보기',
           use: () => ui.say(nextLine('shades', [
-            'You try on a pair shaped like pineapples. In the little mirror you look like somebody who owns a boat. You don’t own a boat. You put them back.',
-            'You try on a pair of aviators. A camel walks past and nods at you, respectfully, one aviator-haver to another.',
-            'You try on the biggest pair. They cover most of your face. You feel, briefly, like a celebrity avoiding a mall. You are in a mall. It works both ways.',
+            '파인애플 모양 선글라스를 써 봐요. 작은 거울 속 당신은 배를 소유한 사람 같아요. 배는 없어요. 도로 놓아요.',
+            '에이비에이터 선글라스를 써 봐요. 낙타가 지나가며 고개를 끄덕여요, 경의를 담아, 에이비에이터 소유자에서 에이비에이터 소유자에게로.',
+            '제일 큰 선글라스를 써 봐요. 얼굴 대부분을 가려요. 잠시, 몰을 피해 다니는 셀럽이 된 기분이에요. 몰 안에 있으면서요. 양방향으로 통하네요.',
           ])) });
         // SPACE AVAILABLE
-        storefront(10.4, 14.6, 3.2, sign('SPACE AVAILABLE', { w: 4.2, h: 0.8, d: 0.05, bg: '#f3efe2', fg: '#8c7f72' }), { papered: true });
-        const soon = sign(['COMING SOON:', 'HOT WORMS', '(a Burrough franchise)', 'contains no worms'], { w: 2.4, h: 1.8, d: 0.03, bg: '#fff3d6', fg: '#8a4a2a', border: '#8a4a2a' });
+        storefront(10.4, 14.6, 3.2, sign('임대 가능', { w: 4.2, h: 0.8, d: 0.05, bg: '#f3efe2', fg: '#8c7f72' }), { papered: true });
+        const soon = sign(['오픈 예정:', '핫 웜즈', '(버로 프랜차이즈)', '벌레 무첨가'], { w: 2.4, h: 1.8, d: 0.03, bg: '#fff3d6', fg: '#8a4a2a', border: '#8a4a2a' });
         soon.position.set(X(12.5), 1.8, Z(backZ + 3.3));
         group.add(soon);
         // ---------------------------------------------------- the food court
@@ -3337,7 +3337,7 @@ export function createOasis(player) {
         }
         counterTop(X(-14.2), Z(3.2), 1.0, 3.2, 0xd9a45a, 0xfaf6ec);
         bl.push({ x: X(-14.2), z: Z(3.2), w: 1.0, d: 3.2 });
-        const auntieSign = sign(['AUNTIE DUNE’S', 'soft pretzels · since the lawn'], { w: 3.2, h: 0.8, d: 0.05, bg: '#d9a45a', fg: '#ffffff' });
+        const auntieSign = sign(['듄 이모네', '소프트 프레첼 · 잔디 이래로'], { w: 3.2, h: 0.8, d: 0.05, bg: '#d9a45a', fg: '#ffffff' });
         auntieSign.position.set(X(-14.8), 3.2, Z(3.2));
         auntieSign.rotation.y = Math.PI / 2;
         group.add(auntieSign);
@@ -3349,11 +3349,11 @@ export function createOasis(player) {
         }
         const auntie = folk('camel', { body: 0xc8b08a, humps: 2, tuft: 0xf0e8e0 }, X(-14.9), 0, Z(3.2), Math.PI / 2, { apron: 0xd9a45a, fidget: true });
         attend(auntie, 'mall');
-        things.push({ getPos: () => auntie.position, r: 2.4, label: 'talk to Auntie Dune',
+        things.push({ getPos: () => auntie.position, r: 2.4, label: '듄 이모에게 말 걸기',
           use: async () => {
-            await ui.say(nextLine('auntie', AUNTIE), { speaker: 'Auntie Dune', voice: 300 });
-            await till('Auntie Dune', 'auntie', 'One pretzel, sugar? Salt like sand.', [
-              { id: 'pretzel', price: 3, say: 'Here you go, sugar. Warm. Eat it walking. That’s how a mall pretzel wants to be eaten.' },
+            await ui.say(nextLine('auntie', AUNTIE), { speaker: '듄 이모', voice: 300 });
+            await till('듄 이모', 'auntie', '프레첼 하나 드릴까, 얘야? 모래 같은 소금.', [
+              { id: 'pretzel', price: 3, say: '여기 있어, 얘야. 따뜻해. 걸으면서 먹어. 몰 프레첼은 그렇게 먹어 주길 원하거든.' },
             ]);
           } });
         // ------------------------------------------------ the escalator (up)
@@ -3378,15 +3378,15 @@ export function createOasis(player) {
           esc.position.set(X(13.2), 0, Z(4.0));
           group.add(esc);
           bl.push({ x: X(13.2), z: Z(4.0), w: 1.8, d: 6.0 });
-          const up = sign(['UP ⬆', 'to the second floor'], { w: 1.4, h: 0.5, d: 0.04, bg: '#3fb8a8', fg: '#ffffff' });
+          const up = sign(['위로 ⬆', '2층으로'], { w: 1.4, h: 0.5, d: 0.04, bg: '#3fb8a8', fg: '#ffffff' });
           up.position.set(X(13.2), 1.4, Z(7.3));
           group.add(up);
-          things.push({ pos: new THREE.Vector3(X(13.2), 0, Z(7.6)), r: 1.3, label: 'ride the escalator',
+          things.push({ pos: new THREE.Vector3(X(13.2), 0, Z(7.6)), r: 1.3, label: '에스컬레이터 타기',
             use: async () => {
               await ui.fadeSwap(() => {});
               await ui.say([
-                'You ride it up. It hums. It goes up, and up, and at the top there is a wall, and on the wall is a lovely painting of a second floor.',
-                'You ride it back down. Officer Dale, on his segway: “Everybody does that once.”',
+                '타고 올라가요. 웅웅거려요. 올라가고, 올라가고, 꼭대기에는 벽이 있고, 벽에는 2층의 멋진 그림이 걸려 있어요.',
+                '다시 타고 내려와요. 세그웨이 탄 데일 경비원: “누구나 한 번은 그래요.”',
               ]);
             } });
         }
@@ -3411,8 +3411,8 @@ export function createOasis(player) {
           bl.push({ x: X(kx), z: Z(kz), w: 1.9, d: 1.1 });
           const rico = folk('parrot', { body: 0x3a9ad8, head: 0x3a9ad8, wing: 0xf2cf5b, tail: 0xd8342c }, X(kx - 1.4), 0, Z(kz + 0.3), -Math.PI / 2 - 0.5, { shirt: 0x2a2a2e, fidget: true });
           attend(rico, 'mall', { r: 9 }); // he always sees you. always.
-          things.push({ getPos: () => rico.position, r: 2.4, label: 'make eye contact with Rico',
-            use: () => ui.say(nextLine('rico', RICO), { speaker: 'Rico', voice: VOICE.rico }) });
+          things.push({ getPos: () => rico.position, r: 2.4, label: '리코와 눈 마주치기',
+            use: () => ui.say(nextLine('rico', RICO), { speaker: '리코', voice: VOICE.rico }) });
         }
         // ------------------------------------------------ Officer Dale
         {
@@ -3443,14 +3443,14 @@ export function createOasis(player) {
             seg.position.set(nx, 0, nz);
             seg.rotation.y = dale.rotation.y - Math.PI / 2;
           });
-          things.push({ getPos: () => dale.position, r: 2.4, label: 'talk to Officer Dale', use: talk('dale', 'Officer Dale', DALE) });
+          things.push({ getPos: () => dale.position, r: 2.4, label: '데일 경비원에게 말 걸기', use: talk('dale', '데일 경비원', DALE) });
         }
         // ------------------------------------------------ the mall walkers
         {
           const walkers = [
-            { name: 'Mildred', key: 'mildred', suit: 0xb89ad8 },
-            { name: 'Phyllis', key: 'phyllis', suit: 0x3fb8a8 },
-            { name: 'Bunny', key: 'bunny', suit: 0xf2b08a },
+            { name: '밀드레드', key: 'mildred', suit: 0xb89ad8 },
+            { name: '필리스', key: 'phyllis', suit: 0x3fb8a8 },
+            { name: '버니', key: 'bunny', suit: 0xf2b08a },
           ].map((w, k) => {
             const a = folk('camel', { body: [0xd8c0a0, 0xc8a878, 0xe8d0a8][k], humps: 1 + (k % 2) }, 0, 0, 0, 0, { shirt: w.suit, visor: 0xffffff });
             zones.addMover({ zone: 'mall', obj: a, r: 0.5 });
@@ -3474,7 +3474,7 @@ export function createOasis(player) {
               animateGait(w.a, t, moving ? 1 : 0, 9);
             }
           });
-          things.push({ getPos: () => walkers[1].a.position, r: 2.8, label: 'walk with the mall walkers',
+          things.push({ getPos: () => walkers[1].a.position, r: 2.8, label: '몰 워커들과 함께 걷기',
             use: () => ui.say(nextLine('walkers', WALKERS).map(([sp, text]) => ({ speaker: sp, voice: VOICE[sp.toLowerCase()] ?? 400, text }))) });
         }
         // shoppers, bags in paw, going nowhere in particular
@@ -3508,4 +3508,4 @@ export function createOasis(player) {
 
   mergeStatic(group); // (everything that doesn't move, baked into a few meshes)
   return { group, update };
-}
+  }
