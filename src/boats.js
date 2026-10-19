@@ -791,7 +791,7 @@ export function createBoats(player) {
       await ui.say([
         '탑은 여전히 망을 보고 서 있어요, 하얗고 녹빨갛게. 꼭대기, 옛 큰 등불이 있던 자리에는 작은 전기 램프.',
         '등대 방, 지붕에 짧은 사슬로 매달린 빈 갈고리 — 녹이 아니라 윤기가 나요. 흔들리고 있어요. 저 위에는 바람이 없어요. 누군가 계속 닦고 있어요.',
-        'A small plate reads: “HER LIGHT KEEPS THE CAFÉ WARM. HER BELL KEEPS THE SEA COMPANY. THE HOOK KEEPS ITS SHAPE, IN CASE.”',
+        '작은 명판에 적혀 있어요: “그분의 빛은 카페를 따뜻하게 지킨다. 그분의 종은 바다의 벗이 된다. 갈고리는 모양을 지킨다, 혹시 모르니까.”',
         '그 아래, 살짝 비뚤게 나사로 고정된 새 명판: “전기 램프 설치됨. 그분의 빛은 아님. 최선을 다하는 중.”',
       ]);
       if (!S.hasFlag('sawLighthouse')) {
