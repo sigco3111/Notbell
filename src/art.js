@@ -598,78 +598,78 @@ function drawSleeper(ctx, w, h) {
 export const GALLERY = [
   {
     id: 'art_scream', draw: drawScream, w: 224, h: 288, frame: 0x55483a,
-    title: 'The Scream',
-    label: '“The Scream.” After Munch. On loan from Pip, who swears it’s an original. It is not. The frame might be.',
+    title: '절규',
+    label: '《절규》. 뭉크 원작. 핍이 빌려준 건데, 진품이라고 맹세해요. 아니에요. 액자는 진품일지도.',
   },
   {
     id: 'art_dance', draw: drawDance, w: 288, h: 224, frame: 0xd9a440,
-    title: 'Dance',
-    label: '“Dance.” After Matisse. Luna says this is exactly how the moths look around the lamp at closing time, and she would know.',
+    title: '춤',
+    label: '《춤》. 마티스 원작. 루나 말로는 마감 시간 등불 주변의 나방들이 꼭 이렇대요. 루나니까 알겠죠.',
   },
   {
     id: 'art_autumn', draw: drawGoldenAutumn, w: 288, h: 224, frame: 0x8a5a3a,
-    title: 'Golden Autumn',
-    label: '“Golden Autumn.” After Levitan. Fern once stood here an entire afternoon. She says she was “just remembering.” Nobody asked remembering what.',
+    title: '황금빛 가을',
+    label: '《황금빛 가을》. 레비탄 원작. 펀이 여기서 오후 내내 서 있었대요. “그냥 기억 중”이래요. 뭘 기억하는지는 아무도 안 물었어요.',
   },
   {
     id: 'art_wave', draw: drawWave, w: 288, h: 224, frame: 0x2e3e5c,
-    title: 'The Great Wave',
-    label: '“The Great Wave.” After Hokusai. Captain Brine looked at it once and said, quietly, “accurate.”',
+    title: '큰 파도',
+    label: '《큰 파도》. 호쿠사이 원작. 브라인 선장이 한번 보고 조용히 말했어요. “정확해.”',
   },
   {
     id: 'art_swirl', draw: drawSwirl, w: 288, h: 224, frame: 0x1a2a5e,
-    title: 'The Starry Swirl',
-    label: '“The Starry Swirl.” After a restless Dutchman. Murmur has been seen standing in front of it at four in the morning.',
+    title: '별이 소용돌이치는 밤',
+    label: '《별이 소용돌이치는 밤》. 어떤 불안한 네덜란드인 원작. 머머가 새벽 네 시에 그 앞에 서 있는 게 목격됐어요.',
   },
   {
     id: 'art_pearl', draw: drawPearl, w: 224, h: 288, frame: 0x16140f,
-    title: 'Girl with a Button Earring',
-    label: '“Girl with a Button Earring.” After Vermeer. Pip maintains the earring is a button and has commissioned three essays on the subject.',
+    title: '단추 귀걸이를 한 소녀',
+    label: '《단추 귀걸이를 한 소녀》. 베르메르 원작. 핍은 귀걸이가 단추라고 주장하며 관련 에세이 세 편을 의뢰했어요.',
   },
   {
     id: 'art_sunflowers', draw: drawSunflowers, w: 224, h: 288, frame: 0xd9a440,
-    title: 'Sunflowers',
-    label: '“Sunflowers.” After van Gogh. Clover waters it when Luna isn’t looking. Luna is always looking.',
+    title: '해바라기',
+    label: '《해바라기》. 고흐 원작. 클로버가 루나 몰래 물을 줘요. 루나는 항상 보고 있어요.',
   },
   {
     id: 'art_square', draw: drawSquare, w: 224, h: 288, frame: 0xf2efe8,
-    title: 'The Square',
-    label: '“The Square.” After Malevich. Howell stood before it a long while and finally said, “same.” Nobody asked him to elaborate. He didn’t.',
+    title: '정사각형',
+    label: '《정사각형》. 말레비치 원작. 하웰이 오래 서 있다가 마침내 말했어요. “나도.” 부연해 달라는 사람은 없었고, 부연도 없었어요.',
   },
   {
     id: 'art_wanderer', draw: drawWanderer, w: 224, h: 288, frame: 0x55504c,
-    title: 'Wanderer above the Fog',
-    label: '“Wanderer above the Fog.” After Friedrich. The Listeners consider it a documentary about a very good day.',
+    title: '안개 위의 방랑자',
+    label: '《안개 위의 방랑자》. 프리드리히 원작. 듣는 이들은 아주 좋은 날에 대한 다큐멘터리라고 여겨요.',
   },
   {
     id: 'art_lilies', draw: drawLilies, w: 288, h: 224, frame: 0x8fa36a,
-    title: 'Water Lilies',
-    label: '“Water Lilies.” After Monet. Mochi insists it is the pond behind the springs and that she is the lily on the left. She is not in it. She is in spirit.',
+    title: '수련',
+    label: '《수련》. 모네 원작. 모찌는 샘 뒤 연못이고 자기가 왼쪽 수련이라고 우겨요. 그림에 없어요. 정신으로만 있어요.',
   },
   {
     id: 'art_jatte', draw: drawJatte, w: 288, h: 224, frame: 0xd9c08f,
-    title: 'A Sunday on the Island',
-    label: '“A Sunday on the Island.” After Seurat, dot by dot by dot. Luna says it took the painter two years. The copy took Luna two evenings and a very small brush.',
+    title: '섬의 어느 일요일',
+    label: '《섬의 어느 일요일》. 쇠라 원작, 점 하나하나씩. 화가는 2년 걸렸대요. 모사는 루나가 이틀 저녁과 아주 작은 붓으로 끝냈어요.',
   },
   {
     id: 'art_redfuji', draw: drawRedFuji, w: 288, h: 224, frame: 0x16140f,
-    title: 'Red Fuji',
-    label: '“Red Fuji — Fine Wind, Clear Morning.” After Hokusai. Ember says it is obviously a portrait of the volcano, just better lit.',
+    title: '붉은 후지',
+    label: '《붉은 후지 — 산뜻한 바람, 맑은 아침》. 호쿠사이 원작. 엠버 말로는 화산의 초상인데 조명이 더 좋은 거래요.',
   },
   {
     id: 'art_smile', draw: drawSmile, w: 224, h: 288, frame: 0xa97c50,
-    title: 'The Smile',
-    label: '“The Smile.” After Leonardo. Her eyes follow you around the café. Luna finds it reassuring. Pip finds it bad for business.',
+    title: '미소',
+    label: '《미소》. 레오나르도 원작. 그녀의 눈이 카페 안에서 당신을 따라와요. 루나는 안심된대요. 핍은 장사에 안 좋대요.',
   },
   {
     id: 'art_temeraire', draw: drawTemeraire, w: 288, h: 224, frame: 0xd9a440,
-    title: 'The Last Tow',
-    label: '“The Last Tow.” After Turner. Captain Brine stood in front of it for an hour and then went outside and patted the Persistent for no reason.',
+    title: '마지막 예인',
+    label: '《마지막 예인》. 터너 원작. 브라인 선장이 한 시간을 바라보다가 나가서 이유 없이 퍼시스턴트호를 토닥였어요.',
   },
   {
     id: 'art_sleeper', draw: drawSleeper, w: 288, h: 224, frame: 0x2e3e5c,
-    title: 'The Sleeping Traveler',
-    label: '“The Sleeping Traveler.” After Rousseau. The lion is just checking. Everyone at the café agrees the lion is just checking.',
+    title: '잠든 여행자',
+    label: '《잠든 여행자》. 루소 원작. 사자는 그냥 확인하는 중이에요. 카페의 모두가 사자는 그냥 확인하는 거라고 동의해요.',
   },
 ];
 
@@ -732,22 +732,22 @@ export function hangCafeArt(group, B) {
     group.add(framed);
     register({
       pos: new THREE.Vector3(s.x, 0, s.z), r: 2.0, zone: 'cafe',
-      label: `look at “${piece.title}”`,
+      label: `《${piece.title}》 감상하기`,
       use: async () => {
         const item = ITEMS[piece.id];
         const owned = S.countItem(piece.id) > 0 || S.state.donations.includes(piece.id);
         const choice = await ui.ask(piece.label, [
-          { label: '🖼️ Buy a print', value: 'buy',
-            hint: owned ? 'owned' : `${item.price}🔘`,
+          { label: '🖼️ 판화 구입', value: 'buy',
+            hint: owned ? '소장함' : `${item.price}🔘`,
             disabled: owned || S.state.buttons < item.price },
-          { label: 'Just look a while longer', value: null },
+          { label: '조금 더 감상하기', value: null },
         ]);
         if (choice === 'buy') {
           S.spend(item.price);
           S.addItem(piece.id);
           kaching();
           ui.updateHUD();
-          ui.toast(`You bought a print of <b>${piece.title}</b>. The museum would hang it beautifully…`, '🖼️');
+          ui.toast(`<b>${piece.title}</b> 판화를 샀어요. 박물관에 걸면 멋질 거예요…`, '🖼️');
         }
       },
     });
