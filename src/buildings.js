@@ -209,16 +209,16 @@ function makeCafeExterior() {
   ctx.fillStyle = '#f3efe2';
   ctx.textAlign = 'center';
   ctx.font = '700 17px ui-rounded, "Segoe UI", system-ui, sans-serif';
-  ctx.fillText('THE LANTERN', 80, 38);
-  ctx.fillText('ROOM', 80, 58);
+  ctx.fillText('랜턴', 80, 38);
+  ctx.fillText('룸', 80, 58);
   ctx.font = 'italic 600 15px ui-rounded, "Segoe UI", system-ui, sans-serif';
-  ctx.fillText('today:', 80, 90);
+  ctx.fillText('오늘:', 80, 90);
   ctx.fillStyle = '#ffd98f';
   ctx.font = '700 18px ui-rounded, "Segoe UI", system-ui, sans-serif';
-  ctx.fillText('Lantern Roast', 80, 114);
+  ctx.fillText('랜턴 로스트', 80, 114);
   ctx.fillStyle = '#f3efe2';
   ctx.font = 'italic 600 14px ui-rounded, "Segoe UI", system-ui, sans-serif';
-  ctx.fillText('the lamp is warm', 80, 148);
+  ctx.fillText('램프가 따뜻해요', 80, 148);
   ctx.strokeStyle = '#f3efe2'; // a chalk cup, steaming
   ctx.lineWidth = 2.5;
   ctx.strokeRect(66, 160, 24, 18);
@@ -530,10 +530,10 @@ export function createBuildings() {
   group.add(well);
   zones.addBlocker(wellX, wellZ, 1.1);
   register({
-    pos: well.position, r: 2.2, label: 'peer into the well',
+    pos: well.position, r: 2.2, label: '우물 들여다보기',
     use: () => ui.say([
-      'You peer into the well. A coin— no, a button glints at the bottom.',
-      'Someone down there is saving up.',
+      '우물을 들여다봐요. 동전— 아니, 버튼이 바닥에서 반짝여요.',
+      '저 아래 누군가가 저축 중이에요.',
     ]),
   });
 
@@ -635,11 +635,11 @@ export function createBuildings() {
   // Luna's chalkboard: what's on today (the answer is mostly the same)
   register({
     pos: new THREE.Vector3(spots.cafe.x - 2.5, 0, spots.cafe.z + 4.4), r: 1.6,
-    label: 'read the chalkboard',
+    label: '칠판 읽기',
     use: () => ui.say([
-      '“TODAY: Lantern Roast. Also: Lantern Roast. Ask about the Lantern Roast.” The chalk has been redrawn so often it has a groove.',
-      '“THE LAMP IS WARM.” Underneath, smaller: “It is always warm. This is not a special. We just like saying it.”',
-      '“Open whenever the lamp is. Chip plays the slow ones. Tipping in buttons, or in compliments to the lamp.”',
+      '“오늘: 랜턴 로스트. 그리고: 랜턴 로스트. 랜턴 로스트에 대해 물어보세요.” 너무 자주 다시 그려서 분필 홈이 파였어요.',
+      '“램프가 따뜻합니다.” 아래에 작게: “항상 따뜻합니다. 특선이 아닙니다. 말하는 게 좋을 뿐.”',
+      '“램프가 켜져 있을 때면 언제든 영업. 칩이 느린 곡들을 연주. 팁은 버튼으로, 혹은 램프에게 칭찬으로.”',
     ][Math.floor(Math.random() * 3)]),
   });
 
@@ -647,18 +647,18 @@ export function createBuildings() {
   // (offsets follow the westward facing: door at -x, pillar box toward the pier)
   register({
     pos: new THREE.Vector3(spots.post.x - 2.7, 0, spots.post.z - 1.9), r: 1.8,
-    label: 'read the notice',
+    label: '공지 읽기',
     use: () => ui.say([
-      'A card in the window, in careful pawwriting: “NOTBELL POST — NOW OPEN. The sorting is complete. It was thorough.”',
-      '“Letters to anyone on the islands, one stamp. Replies to your own mailbox. Bottle deliveries continue as usual. Thank the tide.”',
+      '창에 조심스러운 발바닥 글씨 카드: “낫벨 우체국 — 개국. 분류가 완료되었습니다. 철저했습니다.”',
+      '“섬 누구에게나 편지, 우표 한 장. 답장은 당신의 우체통으로. 병 배달은 평소처럼 계속. 조수에 감사를.”',
     ]),
   });
   register({
     pos: new THREE.Vector3(spots.post.x - 3.4, 0, spots.post.z + 1.9), r: 2.0,
-    label: 'inspect the pillar box',
+    label: '기둥 우체통 살펴보기',
     use: () => ui.say([
-      'A red pillar box with a slot exactly the width of a folded letter, or one very determined button. The paint is new. The idea is older than the paint.',
-      'A little plate: “LETTERS — INSIDE, AT THE COUNTER, WITH A STAMP. THE BOX IS FOR ADMIRING.”',
+      '접은 편지, 혹은 아주 의지 강한 버튼 하나 너비의 투입구가 있는 빨간 기둥 우체통. 페인트는 새것. 아이디어는 페인트보다 오래됐어요.',
+      '작은 명판: “편지 — 안쪽, 카운터에서, 우표와 함께. 이 통은 감상용.”',
     ]),
   });
 
@@ -692,7 +692,7 @@ export function createBuildings() {
     });
     register({
       pos: new THREE.Vector3(inBase.x, 0, inBase.z + 5.2), r: 1.6,
-      zone: name, label: 'step outside',
+      zone: name, label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: spot.x, z: spot.z + spot.d / 2 + 2.2, rotY: 0 }),
     });
   }
@@ -728,10 +728,10 @@ export function createBuildings() {
     group.add(theButton);
     updates.push((dt, t) => { theButton.rotation.y = t * 0.7; });
     register({
-      pos: pedestal.position, r: 2, zone: 'shop', label: 'admire the Shiniest Button',
+      pos: pedestal.position, r: 2, zone: 'shop', label: '가장 반짝이는 버튼 감상하기',
       use: () => ui.say(
-        ['It gleams. It dazzles. It is, structurally, just a button.',
-         'From across the room, Pip is watching you very, very closely.'],
+        ['반짝여요. 눈부셔요. 구조적으로는, 그냥 버튼이에요.',
+         '방 건너편에서 핍이 아주, 아주 주시하고 있어요.'],
       ),
     });
 
@@ -761,11 +761,11 @@ export function createBuildings() {
         sunIntensity: 0,
       },
     });
-    wireDoors('shop', spots.shop, 'Pip’s Odds & Ends');
+    wireDoors('shop', spots.shop, '핍의 잡동사니');
 
     register({
       pos: new THREE.Vector3(B.x, 0, B.z - 2.5), r: 3, zone: 'shop',
-      label: 'talk to Pip',
+      label: '핍과 대화하기',
       use: () => pipMenu(),
     });
   }
@@ -811,14 +811,14 @@ export function createBuildings() {
       lampLight.intensity = 60 + Math.sin(t * 1.7) * 8;
     });
     register({
-      pos: lampBase.position, r: 2.2, zone: 'cafe', label: 'look at the old lamp',
+      pos: lampBase.position, r: 2.2, zone: 'cafe', label: '오래된 램프 보기',
       use: () => {
         const seen = S.hasFlag('sawLamp');
         S.setFlag('sawLamp');
         ui.say(seen
-          ? 'The lamp glows softly, like an ember that found a good retirement.'
-          : ['A heavy brass lamp, lens fogged with years. It is warm without being lit.',
-             'A small card reads: “FROM THE LIGHTHOUSE. DO NOT POLISH. IT TICKLES.”']);
+          ? '램프가 부드럽게 빛나요, 좋은 은퇴처를 찾은 불씨처럼.'
+          : ['묵직한 놋쇠 램프, 세월에 렌즈가 흐려졌어요. 켜지 않아도 따뜻해요.',
+             '작은 카드: “등대에서 옴. 닦지 마시오. 간지러우니까.”']);
       },
     });
 
@@ -881,19 +881,19 @@ export function createBuildings() {
     });
     register({
       pos: chipStool.position, r: 2.4, zone: 'cafe',
-      label: 'request a song from Chip',
+      label: '칩에게 노래 신청하기',
       use: async () => {
-        const choice = await ui.ask('Mm? Oh — sure. Whatcha feeling?', [
+        const choice = await ui.ask('음? 아 — 그래. 어떤 기분이야?', [
           ...SONGS.map((s) => ({ label: `🎵 ${s.name}`, value: s.id })),
-          { label: 'Just listening', value: null },
-        ], { speaker: 'Chip', voice: 820 });
+          { label: '그냥 듣는 중', value: null },
+        ], { speaker: '칩', voice: 820 });
         if (!choice) {
-          ui.say('Best audience there is.', { speaker: 'Chip', voice: 820 });
+          ui.say('최고의 관객이야.', { speaker: '칩', voice: 820 });
           return;
         }
         const song = SONGS.find((s) => s.id === choice);
         requestSong(choice);
-        ui.toast(`♪ Chip plays “${song.name}”`, '🦗');
+        ui.toast(`♪ 칩이 “${song.name}”을(를) 연주해요`, '🦗');
       },
     });
 
@@ -924,11 +924,11 @@ export function createBuildings() {
         sunIntensity: 0,
       },
     });
-    wireDoors('cafe', spots.cafe, 'The Lantern Room');
+    wireDoors('cafe', spots.cafe, '랜턴 룸');
 
     register({
       pos: new THREE.Vector3(B.x - 2, 0, B.z - 2.8), r: 3, zone: 'cafe',
-      label: 'talk to Luna',
+      label: '루나와 대화하기',
       use: () => lunaMenu(),
     });
   }
@@ -1030,8 +1030,8 @@ export function createBuildings() {
     // the Mystery Skeleton: assembles itself one donation at a time
     register({
       pos: new THREE.Vector3(B.x - 14, 0, B.z - 3), r: 2.4, zone: 'museum',
-      label: 'read the skeleton plaque',
-      use: () => ui.say('“MYSTERY SKELETON. SPECIES: UNDECIDED. ERA: BEFORE LUNCH. CONTRIBUTIONS GRATEFULLY ASSEMBLED.” —F.'),
+      label: '해골 명판 읽기',
+      use: () => ui.say('“수수께끼 해골. 종: 미정. 시대: 점심 이전. 기증에 감사히 조립됨.” —F.'),
     });
 
     // ---------- east wing: the bug hall, six little worlds
@@ -1082,8 +1082,8 @@ export function createBuildings() {
     }
     register({
       pos: new THREE.Vector3(B.x + 12, 0, B.z - 1.5), r: 2.6, zone: 'museum',
-      label: 'read the bug hall card',
-      use: () => ui.say('“EVERY RESIDENT OF THIS HALL HAS APPROVED ITS OWN HABITAT. THE NEGOTIATIONS WERE LENGTHY.” —F.'),
+      label: '곤충관 카드 읽기',
+      use: () => ui.say('“이 관의 모든 입주자는 자기 서식지를 직접 승인했습니다. 협상은 길었습니다.” —F.'),
     });
 
     // ---------- north wing: the aquarium
@@ -1347,24 +1347,24 @@ export function createBuildings() {
 
     register({
       pos: new THREE.Vector3(spots.museum.x, 0, spots.museum.z + spots.museum.d / 2 + 0.4), r: 2.6,
-      label: 'enter the Notbell Museum',
+      label: '낫벨 박물관 들어가기',
       use: async () => {
         await zones.go('museum');
         if (!S.hasFlag('sawBigInside')) {
           S.setFlag('sawBigInside');
-          ui.say('It is, unmistakably, much bigger on the inside. A small plaque by the door explains: "THE BUILDING RESPECTS THE COLLECTION."');
+          ui.say('틀림없이, 안이 훨씬 넓어요. 문 옆 작은 명판이 설명해요: "건물이 컬렉션을 존경합니다."');
         }
       },
     });
     register({
       pos: new THREE.Vector3(IN.museum.x, 0, IN.museum.z + 9.9), r: 1.8,
-      zone: 'museum', label: 'step outside',
+      zone: 'museum', label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: spots.museum.x, z: spots.museum.z + spots.museum.d / 2 + 2.2, rotY: 0 }),
     });
 
     register({
       getPos: () => fern.position, r: 3, zone: 'museum',
-      label: 'talk to Fern',
+      label: '펀과 대화하기',
       use: () => fernMenu(refreshMuseum),
     });
   }
@@ -1479,34 +1479,34 @@ export function createBuildings() {
     });
 
     const MOSS_LINES = [
-      '“People say the mail is slow.” He turns a letter over, reads the back, and nods at it, satisfied. “The mail is thorough.”',
-      '“Everything here came out of the sea. Salt-cured. Bottle-aged. You don’t rush a vintage, and you don’t rush a postcard.”',
-      '“The stamps are good ones.” A pause, in which he clearly admires the stamps. “Buttons on some.”',
-      '“One envelope has no address. Just a drawing of a bell.” He files it, gently, under B. “Everything finds where it’s going eventually. I’m proof.”',
+      '“우편이 느리다고들 해.” 그가 편지를 뒤집어 뒷면을 읽고 만족스럽게 고개 끄덕여요. “우편은 철저해.”',
+      '“여기 모든 건 바다에서 나왔어. 소금에 절이고, 병에서 숙성시켰지. 빈티지를 서두르지 않듯 엽서도 서두르지 않아.”',
+      '“우표들이 좋아.” 우표를 분명히 감상하는 침묵. “어떤 건 버튼이야.”',
+      '“주소 없는 봉투가 하나 있어. 종 그림만.” 그가 조심스럽게 B 아래로 파일해요. “모든 건 결국 갈 곳을 찾아. 내가 증거야.”',
     ];
     let mossIdx = 0;
     register({
       pos: new THREE.Vector3(B.x - 0.5, 0, B.z - 2.3), r: 3.2, zone: 'post',
-      label: 'visit the counter',
+      label: '카운터 방문하기',
       use: async () => {
         if (!S.hasFlag('metMoss')) {
           S.setFlag('metMoss');
           await ui.say([
-            'The sloth turns toward you. It takes a while. It is worth the wait.',
-            '“Moss,” he says. “Postmaster. The sorting has ended. It stopped being thorough, so it stopped.”',
-            '“The counter is open. Letters to anyone on the islands. One stamp.”',
-          ], { speaker: 'Moss', voice: 200 });
+            '나무늘보가 당신 쪽으로 돌아봐요. 시간이 좀 걸려요. 기다릴 가치가 있어요.',
+            '“모스,” 그가 말해요. “우체국장. 분류가 끝났어. 철저하지 않게 되어서, 멈췄지.”',
+            '“카운터 열렸어. 섬 누구에게나 편지. 우표 한 장.”',
+          ], { speaker: '모스', voice: 200 });
           return;
         }
         // the counter first; a little chat if you're just visiting
         if (await mail.counter()) return;
-        await ui.say(MOSS_LINES[mossIdx++ % MOSS_LINES.length], { speaker: 'Moss', voice: 200 });
+        await ui.say(MOSS_LINES[mossIdx++ % MOSS_LINES.length], { speaker: '모스', voice: 200 });
       },
     });
     register({
       pos: new THREE.Vector3(B.x + 3.6, 0, B.z - 3.3), r: 2.0, zone: 'post',
-      label: 'peer into the crate',
-      use: () => ui.say('(A crate of arrivals, corks still damp. One bottle contains only kelp. The kelp is also addressed.)'),
+      label: '상자 들여다보기',
+      use: () => ui.say('(도착품 상자, 코르크가 아직 축축해요. 한 병엔 켈프만 들었어요. 켈프에도 주소가 있어요.)'),
     });
 
     const room = collectInteriorRoot(group, roomStart);
@@ -1528,18 +1528,18 @@ export function createBuildings() {
 
     register({
       pos: new THREE.Vector3(spots.post.x - 2.9, 0, spots.post.z), r: 2.4,
-      label: 'enter Notbell Post',
+      label: '낫벨 우체국 들어가기',
       use: async () => {
         await zones.go('post');
         if (!S.hasFlag('sawPost')) {
           S.setFlag('sawPost');
-          ui.say('It smells like salt, paper, and patience. Somewhere behind the counter, a letter is being read the way letters deserve.');
+          ui.say('소금, 종이, 인내 냄새가 나요. 카운터 뒤 어딘가에서 편지가 편지답게 읽히고 있어요.');
         }
       },
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 3.8), r: 1.6,
-      zone: 'post', label: 'step outside',
+      zone: 'post', label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: spots.post.x - 3.8, z: spots.post.z, rotY: -Math.PI / 2 }),
     });
   }
@@ -1572,10 +1572,10 @@ function wireNpcBob(npc, updates, speed = 1) {
 // ----------------------------------------------------------- Pip's menus ----
 
 const PIP_CHAT = [
-  'Buttons, friend! The only currency that’s ALSO a treasure. Try paying rent with feelings. Doesn’t work. Buttons do.',
-  'Everything in this shop was lost, found, washed up, or “fell off a boat.” Those are all legally distinct categories.',
-  'Old Tansy’s button jar started the whole economy, you know. Finest fiscal policy ever to fit on a windowsill.',
-  'You find anything shiny out there — ANYTHING — I pay top button. No questions. Some light judgment, but no questions.',
+  '버튼이라고, 친구! 보물이기도 한 유일한 화폐. 감정으로 월세 내봐. 안 돼. 버튼은 돼.',
+  '이 가게의 모든 건 잃어버렸다가, 주웠다가, 떠밀려 왔거나, “배에서 떨어진” 거야. 전부 법적으로 별개의 분류야.',
+  '늙은 탠지의 버튼 병이 이 경제 전체를 시작했어, 알아? 창틀에 올라간 최고의 재정 정책이지.',
+  '거기서 반짝이는 걸 찾으면 — 뭐든 — 최고가 버튼으로 살게. 질문 없어. 가벼운 평가는 있지만, 질문은 없어.',
 ];
 let pipChatIdx = 0;
 
@@ -1584,12 +1584,12 @@ async function pipMenu() {
     S.setFlag('metPip');
     S.giveTool('rod');
     await ui.say([
-      'Well, well! A new face, and not a single button on you— no wait, there’s a few. I can hear them.',
-      'Pip’s the name. Odds, ends, treasures, junk — the line between those is honestly just confidence.',
-      'Here. A fishing rod, on the house. First one’s free. That’s how I get ya!',
-    ], { speaker: 'Pip', voice: VOICE.pip });
+      '이런, 이런! 새 얼굴에 버튼이 하나도 없— 아니 잠깐, 몇 개 있네. 소리가 들려.',
+      '핍이라고 해. 잡동사니, 보물, 쓰레기 — 그 사이의 경계는 솔직히 자신감뿐이야.',
+      '자. 낚싯대, 서비스야. 첫 번째는 공짜. 그게 내 수법이지!',
+    ], { speaker: '핍', voice: VOICE.pip });
     jingle();
-    ui.toast('Pip gave you the <b>Driftwood Rod</b>! Find some water and press E.', '🎣');
+    ui.toast('핍이 <b>떠내려온 나무 낚싯대</b>를 줬어요! 물을 찾아 E를 누르세요.', '🎣');
     ui.updateHUD();
     return;
   }
@@ -1602,43 +1602,43 @@ async function pipMenu() {
     ui.updateHUD();
     await ui.say([
       `Happy ${HOLIDAY.name}! Here — a hundred buttons. A GIFT. From ME.`,
-      'Don’t make it weird. Don’t tell anyone. Spend it here if possible.',
-    ], { speaker: 'Pip', voice: VOICE.pip });
+      '이상하게 만들지 마. 아무에게도 말하지 마. 가능하면 여기서 써.',
+    ], { speaker: '핍', voice: VOICE.pip });
   }
 
-  const choice = await ui.ask('What’ll it be?', [
-    { label: 'Buy', value: 'buy' },
-    { label: 'Sell', value: 'sell' },
-    { label: 'Chat', value: 'chat' },
-    { label: 'Leave', value: 'leave' },
-  ], { speaker: 'Pip', voice: VOICE.pip });
+  const choice = await ui.ask('뭘로 할래?', [
+    { label: '사기', value: 'buy' },
+    { label: '팔기', value: 'sell' },
+    { label: '수다 떨기', value: 'chat' },
+    { label: '나가기', value: 'leave' },
+  ], { speaker: '핍', voice: VOICE.pip });
 
   if (choice === 'buy') return pipBuy();
   if (choice === 'sell') return pipSell();
   if (choice === 'chat') {
-    await ui.say(PIP_CHAT[pipChatIdx++ % PIP_CHAT.length], { speaker: 'Pip', voice: VOICE.pip });
+    await ui.say(PIP_CHAT[pipChatIdx++ % PIP_CHAT.length], { speaker: '핍', voice: VOICE.pip });
     return pipMenu();
   }
 }
 
 async function pipBuy() {
-  const choice = await ui.ask('Take a look! Everything’s for sale. Almost. Mostly.', [
-    { label: '🛠️ Tools', value: 'tools' },
-    { label: '🌱 Seeds', value: 'seeds' },
-    { label: '🎩 Hats', value: 'hats' },
-    { label: '🔘 The Shiniest Button', value: 'button', hint: '999🔘' },
-    { label: 'Never mind', value: 'leave' },
-  ], { speaker: 'Pip', voice: VOICE.pip });
+  const choice = await ui.ask('구경해 봐! 전부 판매 중. 거의. 대부분.', [
+    { label: '🛠️ 도구', value: 'tools' },
+    { label: '🌱 씨앗', value: 'seeds' },
+    { label: '🎩 모자', value: 'hats' },
+    { label: '🔘 가장 반짝이는 버튼', value: 'button', hint: '999🔘' },
+    { label: '됐어요', value: 'leave' },
+  ], { speaker: '핍', voice: VOICE.pip });
 
   if (choice === 'tools') return pipBuyTools();
   if (choice === 'seeds') return pipBuySeeds();
   if (choice === 'hats') return pipBuyHats();
   if (choice === 'button') {
     await ui.say([
-      'Ah, excellent eye! The Shiniest Button. 999 buttons, a true bargain, let me just—',
+      '아, 안목 좋은데! 가장 반짝이는 버튼. 버튼 999개, 진짜 특가야, 잠깐—',
       '…',
-      'No. NO. I can’t do it. That one’s MINE. I panicked when I priced it. Please buy literally anything else.',
-    ], { speaker: 'Pip', voice: VOICE.pip });
+      '안 돼. 안 돼. 못 팔아. 그건 내 거야. 가격 매길 때 패닉이었어. 제발 말 그대로 딴 거 사 줘.',
+    ], { speaker: '핍', voice: VOICE.pip });
     return pipMenu();
   }
   return pipMenu();
@@ -1646,18 +1646,18 @@ async function pipBuy() {
 
 async function pipBuyTools() {
   const wares = [
-    !S.state.tools.net && { label: `${ITEMS.net.emoji} Dandelion Net`, value: 'net', hint: `${ITEMS.net.price}🔘`, disabled: S.state.buttons < ITEMS.net.price },
-    !S.state.tools.shovel && { label: `${ITEMS.shovel.emoji} Stubby Shovel`, value: 'shovel', hint: `${ITEMS.shovel.price}🔘`, disabled: S.state.buttons < ITEMS.shovel.price },
-    !S.countItem('scuba_suit') && { label: `${ITEMS.scuba_suit.emoji} Salvage Diver’s Suit`, value: 'scuba', hint: `${ITEMS.scuba_suit.price}🔘`, disabled: S.state.buttons < ITEMS.scuba_suit.price },
-    !S.countItem('skateboard') && { label: `${ITEMS.skateboard.emoji} Skateboard`, value: 'skateboard', hint: `${ITEMS.skateboard.price}🔘`, disabled: S.state.buttons < ITEMS.skateboard.price },
-    { label: 'Back', value: 'back' },
+    !S.state.tools.net && { label: `${ITEMS.net.emoji} 민들레 그물`, value: 'net', hint: `${ITEMS.net.price}🔘`, disabled: S.state.buttons < ITEMS.net.price },
+    !S.state.tools.shovel && { label: `${ITEMS.shovel.emoji} 뭉툭한 삽`, value: 'shovel', hint: `${ITEMS.shovel.price}🔘`, disabled: S.state.buttons < ITEMS.shovel.price },
+    !S.countItem('scuba_suit') && { label: `${ITEMS.scuba_suit.emoji} 인양 잠수복`, value: 'scuba', hint: `${ITEMS.scuba_suit.price}🔘`, disabled: S.state.buttons < ITEMS.scuba_suit.price },
+    !S.countItem('skateboard') && { label: `${ITEMS.skateboard.emoji} 스케이트보드`, value: 'skateboard', hint: `${ITEMS.skateboard.price}🔘`, disabled: S.state.buttons < ITEMS.skateboard.price },
+    { label: '뒤로', value: 'back' },
   ].filter(Boolean);
   if (wares.length === 1) {
-    await ui.say('You’ve got the full kit already! Look at you. A professional.', { speaker: 'Pip', voice: VOICE.pip });
+    await ui.say('장비는 이미 다 갖췄네! 대단해. 프로야.', { speaker: '핍', voice: VOICE.pip });
     return pipBuy();
   }
-  const choice = await ui.ask('The tools of every trade I approve of:', wares,
-    { speaker: 'Pip', voice: VOICE.pip });
+  const choice = await ui.ask('내가 인정하는 모든 기술의 도구들:', wares,
+    { speaker: '핍', voice: VOICE.pip });
   if (choice === 'scuba') {
     S.spend(ITEMS.scuba_suit.price);
     S.addItem('scuba_suit');
@@ -1665,12 +1665,12 @@ async function pipBuyTools() {
     ui.toast(`You bought the <b>${ITEMS.scuba_suit.name}</b>! <i>Walk into the sea like you mean it.</i>`, ITEMS.scuba_suit.emoji);
     ui.updateHUD();
     await ui.say([
-      'Ahh, the diver’s suit. That one belonged to one of Tansy’s salvage divers — a whole summer underwater looking for the bell. Paid in buttons. STARTED the buttons, in fact.',
-      'The helmet’s shaped like a bell. They all were. Diver humor, or diver hope. Nobody ever asked which.',
+      '아아, 잠수복. 탠지의 인양 잠수부 중 한 명 것이었지 — 종을 찾아 물속에서 여름 내내. 버튼으로 받았어. 사실 버튼의 시작이었지.',
+      '헬멧이 종 모양이야. 전부 그랬어. 잠수부 유머인지, 잠수부 희망인지. 아무도 묻지 않았어.',
       S.state.avatar?.kind === 'duck'
-        ? '…You’re a duck. You FLOAT. You know what? Fashion is fashion. No refunds.'
-        : 'Just wade in anywhere and keep going. The sea’s very accommodating once you’re properly dressed for it.',
-    ], { speaker: 'Pip', voice: VOICE.pip });
+        ? '…너 오리잖아. 뜨는데. 뭐 어때? 패션은 패션이지. 환불 불가.'
+        : '아무 데나 들어가서 계속 가면 돼. 제대로 차려입으면 바다는 아주 협조적이야.',
+    ], { speaker: '핍', voice: VOICE.pip });
   }
   if (choice === 'skateboard') {
     S.spend(ITEMS.skateboard.price);
@@ -1679,9 +1679,9 @@ async function pipBuyTools() {
     ui.toast(`You bought the <b>${ITEMS.skateboard.name}</b>! <i>Hold run (or double-tap a direction) to skate.</i>`, ITEMS.skateboard.emoji);
     ui.updateHUD();
     await ui.say([
-      'The skateboard! It came off a boat. Officially. I have ridden it exactly once and I would describe the experience as “aerodynamic.”',
-      'Hold run and you’re on it. Let go and you step off. The plaza is very smooth. The hills are very steep. Choose wisely, or better, don’t.',
-    ], { speaker: 'Pip', voice: VOICE.pip });
+      '스케이트보드! 배에서 떨어진 거야. 공식적으로. 딱 한 번 타봤는데 경험을 표현하자면 “공기역학적”이었어.',
+      '달리기를 누르고 있으면 올라타. 놓으면 내려. 광장은 아주 매끄러워. 언덕은 아주 가팔라. 현명하게 선택해, 아니 더 좋은 건, 하지 마.',
+    ], { speaker: '핍', voice: VOICE.pip });
   }
   if (choice === 'net' || choice === 'shovel') {
     S.spend(ITEMS[choice].price);
@@ -1690,22 +1690,22 @@ async function pipBuyTools() {
     ui.toast(`You bought the <b>${ITEMS[choice].name}</b>! <i>${ITEMS[choice].blurb}</i>`, ITEMS[choice].emoji);
     ui.updateHUD();
     await ui.say(choice === 'net'
-      ? 'The net! Swing it near anything that flutters. Gently! They’re someone’s neighbor.'
-      : 'The shovel! If you see a little star of cracked earth, that’s the island winking at you. Dig there.',
-      { speaker: 'Pip', voice: VOICE.pip });
+      ? '그물! 펄럭이는 것 근처에서 휘둘러. 살살! 얘네도 누군가의 이웃이야.'
+      : '삽! 금 간 흙이 별 모양으로 보이면, 그건 섬이 윙크하는 거야. 거기 파.',
+      { speaker: '핍', voice: VOICE.pip });
   }
   return pipBuy();
 }
 
 async function pipBuySeeds() {
   const seeds = Object.keys(GROWTH);
-  const choice = await ui.ask('Seeds! Tiny promises. Plant them in your garden plots.', [
+  const choice = await ui.ask('씨앗! 작은 약속들. 정원 밭에 심어.', [
     ...seeds.map((id) => ({
       label: `${ITEMS[id].emoji} ${ITEMS[id].name}`, value: id,
       hint: `${ITEMS[id].price}🔘`, disabled: S.state.buttons < ITEMS[id].price,
     })),
-    { label: 'Back', value: 'back' },
-  ], { speaker: 'Pip', voice: VOICE.pip });
+    { label: '뒤로', value: 'back' },
+  ], { speaker: '핍', voice: VOICE.pip });
   if (choice !== 'back' && GROWTH[choice]) {
     S.spend(ITEMS[choice].price);
     S.addItem(choice);
@@ -1720,17 +1720,17 @@ async function pipBuySeeds() {
 async function pipBuyHats() {
   const stock = SHOP_HATS.filter((id) => !S.state.hats.includes(id));
   if (!stock.length) {
-    await ui.say('You own every hat I’ve got! The island’s best-dressed head. It’s yours. You have it.',
-      { speaker: 'Pip', voice: VOICE.pip });
+    await ui.say('내 모자를 전부 샀네! 섬 최고의 패셔니스타. 네 거야. 갖고 있어.',
+      { speaker: '핍', voice: VOICE.pip });
     return pipBuy();
   }
-  const choice = await ui.ask('Hats! For the discerning head. Non-refungible.', [
+  const choice = await ui.ask('모자! 안목 있는 머리를 위해. 환불 불가.', [
     ...stock.map((id) => ({
       label: `${ITEMS[id].emoji} ${ITEMS[id].name}`, value: id,
       hint: `${ITEMS[id].price}🔘`, disabled: S.state.buttons < ITEMS[id].price,
     })),
-    { label: 'Back', value: 'back' },
-  ], { speaker: 'Pip', voice: VOICE.pip });
+    { label: '뒤로', value: 'back' },
+  ], { speaker: '핍', voice: VOICE.pip });
   if (choice !== 'back' && ITEMS[choice]) {
     S.spend(ITEMS[choice].price);
     S.ownHat(choice);
@@ -1738,7 +1738,7 @@ async function pipBuyHats() {
     ui.toast(`You bought the <b>${ITEMS[choice].name}</b>! Press <b>H</b> to wear it.`, ITEMS[choice].emoji);
     ui.updateHUD();
     if (choice === 'keepers_cap') {
-      await ui.say('…Take care of that one. It kept all of us, once.', { speaker: 'Pip', voice: VOICE.pip });
+      await ui.say('…그건 잘 간직해. 그게 한 번은 우리 모두를 지켜줬어.', { speaker: '핍', voice: VOICE.pip });
     }
     return pipBuyHats();
   }
@@ -1748,8 +1748,8 @@ async function pipBuyHats() {
 async function pipSell() {
   const stock = S.sellables();
   if (!stock.length) {
-    await ui.say('Empty pockets! Well — empty of THINGS. I can still hear the buttons. Go catch me something.',
-      { speaker: 'Pip', voice: VOICE.pip });
+    await ui.say('빈 주머니! 뭐 — 물건이 없다는 거지. 버튼 소리는 여전히 들려. 가서 뭘 잡아와.',
+      { speaker: '핍', voice: VOICE.pip });
     return pipMenu();
   }
   const choices = stock.map(({ id, n, item }) => {
@@ -1760,10 +1760,10 @@ async function pipSell() {
       hint: `${Math.floor(item.price * f) * n}🔘`,
     };
   });
-  choices.push({ label: 'Done selling', value: 'done' });
+  choices.push({ label: '판매 완료', value: 'done' });
 
-  const choice = await ui.ask('Let’s see what the island gave you!', choices,
-    { speaker: 'Pip', voice: VOICE.pip });
+  const choice = await ui.ask('섬이 뭘 줬는지 보자!', choices,
+    { speaker: '핍', voice: VOICE.pip });
   if (choice === 'done') return pipMenu();
 
   const n = S.countItem(choice);
@@ -1774,16 +1774,16 @@ async function pipSell() {
   S.earn(total);
   S.recordSale(choice, n);
   kaching();
-  ui.toast(`Sold ${n} × <b>${ITEMS[choice].name}</b> for <b>${total}</b> buttons!`, '🔘');
+  ui.toast(`${n}개의 <b>${ITEMS[choice].name}</b>을(를) <b>${total}</b> 버튼에 팔았어요!`, '🔘');
   ui.updateHUD();
   if (choice === 'old_boot') {
-    await ui.say('A boot! Single. Pre-loved. Aggressively waterproof in most places. I’ll take it.',
-      { speaker: 'Pip', voice: VOICE.pip });
+    await ui.say('부츠! 한 짝. 중고. 대부분의 곳에서 공격적으로 방수. 살게.',
+      { speaker: '핍', voice: VOICE.pip });
   } else if (!wasGlutted && S.marketFactor(choice) < 1) {
     await ui.say([
       `Whoa whoa whoa. That is a LOT of ${ITEMS[choice].name}. The market is officially FLOODED.`,
-      'Half price on those ’til tomorrow. Supply! Demand! I don’t make the rules. (I make the rules.)',
-    ], { speaker: 'Pip', voice: VOICE.pip });
+      '그건 내일까지 반값. 수요! 공급! 규칙은 내가 안 만들어. (규칙은 내가 만들어.)',
+    ], { speaker: '핍', voice: VOICE.pip });
   }
   return pipSell();
 }
@@ -1791,11 +1791,11 @@ async function pipSell() {
 // ---------------------------------------------------------- Luna's menus ----
 
 const LUNA_CHAT = [
-  'Moths get a reputation. One little flutter at a porch light and suddenly you’re “obsessed.” This is a CAREER.',
-  'That lamp is from the old lighthouse. Fern carried it down the cliff herself. Took her two summers. She says it took one. Let her have it.',
-  'The trick to good coffee is patience. The trick to GREAT coffee is a moth with nowhere else she’d rather be.',
-  'Some nights the lamp warms up all on its own. I sit with it. We don’t talk about it.',
-  'The cave under the cliff? Lovely glow, very polite worms. Tell them Luna sent you and absolutely nothing will happen. They’re worms.',
+  '나방은 평판이 있지. 현관등에 한 번 펄럭이면 갑자기 “집착”이래. 이건 커리어야.',
+  '저 램프는 옛 등대 것이야. 펀이 직접 절벽에서 내렸어. 두 여름 걸렸어. 본인은 한 여름이라고 해. 그렇게 둬.',
+  '좋은 커피의 비결은 인내. 최고의 커피의 비결은 더 가고 싶은 데가 없는 나방이야.',
+  '어떤 밤엔 램프가 스스로 따뜻해져. 나는 곁에 앉아. 우린 그 얘긴 안 해.',
+  '절벽 아래 동굴? 사랑스러운 빛, 아주 예의 바른 벌레들. 루나가 보냈다 하면 아무 일도 안 일어나. 벌레거든.',
 ];
 let lunaChatIdx = 0;
 
@@ -1803,27 +1803,27 @@ async function lunaMenu() {
   if (!S.hasFlag('metLuna')) {
     S.setFlag('metLuna');
     await ui.say([
-      'Oh — a new face! Welcome to The Lantern Room. Sit anywhere. The lamp likes company.',
-      'I’m Luna. I make the coffee, I mind the light, and I am, yes, a moth. We find this arrangement very funny.',
-    ], { speaker: 'Luna', voice: VOICE.luna });
+      '오 — 새 얼굴! 랜턴 룸에 온 걸 환영해. 아무 데나 앉아. 램프가 동반을 좋아해.',
+      '나는 루나. 커피를 만들고, 빛을 돌보고, 그리고, 응, 나방이야. 우리는 이 구도가 아주 웃기다고 생각해.',
+    ], { speaker: '루나', voice: VOICE.luna });
   }
-  const choice = await ui.ask('What can I warm up for you?', [
-    { label: `☕ Lantern Roast`, value: 'coffee', hint: `${COFFEE_PRICE}🔘`, disabled: S.state.buttons < COFFEE_PRICE },
-    { label: 'Chat', value: 'chat' },
-    { label: 'Leave', value: 'leave' },
-  ], { speaker: 'Luna', voice: VOICE.luna });
+  const choice = await ui.ask('뭘 데워 드릴까요?', [
+    { label: `☕ 랜턴 로스트`, value: 'coffee', hint: `${COFFEE_PRICE}🔘`, disabled: S.state.buttons < COFFEE_PRICE },
+    { label: '수다 떨기', value: 'chat' },
+    { label: '나가기', value: 'leave' },
+  ], { speaker: '루나', voice: VOICE.luna });
 
   if (choice === 'coffee') {
     S.spend(COFFEE_PRICE);
     S.drinkCoffee(COFFEE_BOOST_SECS);
     sip();
     ui.updateHUD();
-    await ui.say('Careful, it’s warm. Like, lighthouse warm.', { speaker: 'Luna', voice: VOICE.luna });
-    ui.toast(`You feel glowy. <i>Faster for ${COFFEE_BOOST_SECS} seconds!</i>`, '☕');
+    await ui.say('조심해요, 따뜻해요. 그러니까, 등대급 따뜻함.', { speaker: '루나', voice: VOICE.luna });
+    ui.toast(`반짝이는 기분이에요. <i>${COFFEE_BOOST_SECS}초간 빨라져요!</i>`, '☕');
     return;
   }
   if (choice === 'chat') {
-    await ui.say(LUNA_CHAT[lunaChatIdx++ % LUNA_CHAT.length], { speaker: 'Luna', voice: VOICE.luna });
+    await ui.say(LUNA_CHAT[lunaChatIdx++ % LUNA_CHAT.length], { speaker: '루나', voice: VOICE.luna });
     return lunaMenu();
   }
 }
@@ -1831,42 +1831,42 @@ async function lunaMenu() {
 // ---------------------------------------------------------- Fern's menus ----
 
 const FERN_CHAT = [
-  'A museum is just a memory with better lighting, dear.',
-  'Everything in here is older than me. I assure you, that is an achievement.',
-  'Do slow down in the fossil wing. They have waited several million years; they find rushing impolite.',
+  '박물관이란 조명이 좋아진 기억일 뿐이란다, 얘야.',
+  '여기 모든 게 나보다 나이 많아. 장담하는데, 그건 업적이야.',
+  '화석 관에서는 천천히 가렴. 수백만 년을 기다렸단다; 서두르는 걸 무례하다 여기셔.',
 ];
 let fernChatIdx = 0;
 
 const FERN_THANKS = {
-  fossil: 'Ah… ah! I REMEMBER these. Not personally. Mostly not personally. Onto the plinth it goes.',
-  fish: 'Into the tank, little one. Mind the current — I had it installed for ambience and it has opinions.',
-  pool: 'From the tide pools! The sea sends its strangest small ambassadors. It shall have a place of honor.',
-  bug: 'Oh, lovely. The bug wall grows. The bugs on it remain, I’m told, extremely smug about this.',
+  fossil: '아… 아! 이거 기억나. 직접은 아니야. 대부분 직접은 아니야. 받침대로 가자꾸나.',
+  fish: '수조로 가렴, 작은 것아. 조류 조심하고 — 분위기용으로 설치했는데 의견이 많아.',
+  pool: '조수 웅덩이에서! 바다가 가장 이상한 작은 대사들을 보냈구나. 명예의 자리를 드리마.',
+  bug: '오, 사랑스러워. 곤충 벽이 자라는구나. 거기 곤충들은, 전해 들으니, 이에 대해 몹시 우쭐한단다.',
 };
 
 async function fernMenu(refreshMuseum) {
   if (!S.hasFlag('metFern')) {
     S.setFlag('metFern');
     await ui.say([
-      'Mmm. Welcome, welcome. Fern — curator, tortoise, keeper of everything the island would rather not forget.',
-      'The shelves are terribly bare, dear. Bring me what the island shows you: fish, bugs, fossils, tide pool oddities.',
-      'Each one carries a little of the story. Bring me enough, and I shall tell it to you properly.',
-    ], { speaker: 'Fern', voice: VOICE.fern });
+      '음. 어서 오렴, 어서 오렴. 펀이야 — 큐레이터, 거북, 섬이 잊고 싶지 않은 모든 것의 관리인.',
+      '선반이 끔찍하게 비었구나, 얘야. 섬이 보여 주는 걸 가져오렴: 물고기, 곤충, 화석, 조수 웅덩이 괴상한 것들.',
+      '하나하나가 이야기의 조금을 품고 있어. 충분히 가져오면, 제대로 들려주마.',
+    ], { speaker: '펀', voice: VOICE.fern });
     return;
   }
 
-  const choice = await ui.ask('Yes, dear?', [
-    { label: 'Donate a find', value: 'donate' },
-    { label: 'Chat', value: 'chat' },
-    { label: 'Leave', value: 'leave' },
-  ], { speaker: 'Fern', voice: VOICE.fern });
+  const choice = await ui.ask('그래, 얘야?', [
+    { label: '발견물 기증하기', value: 'donate' },
+    { label: '수다 떨기', value: 'chat' },
+    { label: '나가기', value: 'leave' },
+  ], { speaker: '펀', voice: VOICE.fern });
 
   if (choice === 'chat') {
     const n = S.state.donations.length;
     const line = n === 0
-      ? 'The shelves are still bare, dear. The island is generous — go let it show off a little.'
+      ? '선반은 아직 비었구나, 얘야. 섬은 관대하단다 — 가서 좀 자랑하게 두렴.'
       : FERN_CHAT[fernChatIdx++ % FERN_CHAT.length];
-    await ui.say(line, { speaker: 'Fern', voice: VOICE.fern });
+    await ui.say(line, { speaker: '펀', voice: VOICE.fern });
     return fernMenu(refreshMuseum);
   }
   if (choice !== 'donate') return;
@@ -1875,20 +1875,20 @@ async function fernMenu(refreshMuseum) {
     label: `${item.emoji} ${item.name}`, value: id,
   }));
   if (!options.length) {
-    await ui.say('Nothing new for the collection just now. The island will provide. It always does, eventually. I would know.',
-      { speaker: 'Fern', voice: VOICE.fern });
+    await ui.say('지금은 컬렉션에 새로 들일 게 없구나. 섬이 제공할 거야. 항상 그래 왔어, 결국엔. 나는 알지.',
+      { speaker: '펀', voice: VOICE.fern });
     return fernMenu(refreshMuseum);
   }
-  options.push({ label: 'Not today', value: 'cancel' });
-  const pickId = await ui.ask('What have you brought me?', options,
-    { speaker: 'Fern', voice: VOICE.fern });
+  options.push({ label: '오늘은 패스', value: 'cancel' });
+  const pickId = await ui.ask('뭘 가져왔니?', options,
+    { speaker: '펀', voice: VOICE.fern });
   if (pickId === 'cancel') return fernMenu(refreshMuseum);
 
   S.donate(pickId);
   refreshMuseum();
   jingle();
-  ui.toast(`Donated the <b>${ITEMS[pickId].name}</b> to the museum!`, '🏛️');
-  await ui.say(FERN_THANKS[ITEMS[pickId].kind] || 'It shall be cherished.', { speaker: 'Fern', voice: VOICE.fern });
+  ui.toast(`<b>${ITEMS[pickId].name}</b>을(를) 박물관에 기증했어요!`, '🏛️');
+  await ui.say(FERN_THANKS[ITEMS[pickId].kind] || '소중히 여기마.', { speaker: '펀', voice: VOICE.fern });
 
   // milestone lore — the island's story, a chapter at a time
   const n = S.state.donations.length;
@@ -1896,9 +1896,9 @@ async function fernMenu(refreshMuseum) {
     if (n >= lore.at && S.state.loreToldUpTo < lore.at) {
       S.state.loreToldUpTo = lore.at;
       S.save();
-      await ui.say(lore.text, { speaker: 'Fern', voice: VOICE.fern });
+      await ui.say(lore.text, { speaker: '펀', voice: VOICE.fern });
       break;
     }
   }
   return fernMenu(refreshMuseum);
-}
+         }
