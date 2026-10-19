@@ -257,8 +257,8 @@ function makeBeetle() {
 }
 
 const NO_NET_LINES = [
-  'It dances just out of reach, pitying you gently. A net would help — Pip sells one.',
-  'You cup your paws. You miss. It was never close.',
+  '손 닿지 않는 곳에서 춤추며 살짝 불쌍히 여겨요. 채집망이 있으면 좋을 텐데 — 핍의 가게에 있어요.',
+  '두 손을 모았어요. 빗나갔어요. 애초에 가까이 있지도 않았어요.',
 ];
 
 const TREE_STRUCTURE_CLEARANCE = 3;
@@ -350,13 +350,13 @@ export function scatterNature() {
           pos: { x: spot.x, z: spot.z },
           r: 2.3,
           enabled: () => ft.fruits[0].visible,
-          label: 'pick the sunfruit',
+          label: '햇살 열매 따기',
           use: () => {
             ft.fruits.forEach((f) => { f.visible = false; });
             ft.regrow = rand(360, 620);
             S.addItem('sunfruit', 3);
             jingle();
-            ui.toast('You picked 3 <b>Sunfruit</b>! <i>Warm even in the shade.</i>', '🍊');
+            ui.toast('<b>햇살 열매</b> 3개를 땄어요! <i>그늘에서도 따뜻해요.</i>', '🍊');
             ui.updateHUD();
           },
         });
@@ -437,7 +437,7 @@ export function scatterNature() {
       getPos: () => crab.position,
       r: 1.6,
       enabled: () => crab.visible,
-      label: 'scoop up the hermit crab',
+      label: '소라게 떠올리기',
       use: () => {
         crab.visible = false;
         data.respawn = rand(70, 140);
@@ -457,10 +457,10 @@ export function scatterNature() {
   register({
     pos: { x: signSpot.x, z: signSpot.z },
     r: 2,
-    label: 'read the sign',
+    label: '표지판 읽기',
     use: () => ui.say([
-      '“WELCOME TO NOTBELL ISLE.”',
-      'Below, in smaller letters: “The bell is a long story. Ask Fern. Bring her something old.”',
+      '“낫벨 섬에 오신 것을 환영합니다.”',
+      '아래에 더 작은 글씨로: “종에 대해선 긴 이야기가 있어요. 펀에게 물어보세요. 오래된 물건을 가져가면 더 좋아요.”',
     ]),
   });
 
@@ -493,7 +493,7 @@ export function scatterNature() {
       getPos: () => b.position,
       r: 1.8,
       enabled: () => b.visible,
-      label: () => (S.state.tools.net ? 'swing the net' : 'admire the butterfly'),
+      label: () => (S.state.tools.net ? '채집망 휘두르기' : '나비 감상하기'),
       use: () => {
         if (!S.state.tools.net) {
           ui.say(pick(NO_NET_LINES));
@@ -509,7 +509,7 @@ export function scatterNature() {
           ui.foundItem(id);
           ui.updateHUD();
         } else {
-          ui.toast('Swish! It pirouetted away, smugly.', '🦋');
+          ui.toast('휙! 우아하게 피루엣하며 도망쳤어요.', '🦋');
           b.userData.home = pick(flowerSpots); // flees to another patch
         }
       },
@@ -540,10 +540,10 @@ export function scatterNature() {
       getPos: () => beetle.position,
       r: 1.8,
       enabled: () => beetle.visible,
-      label: () => (S.state.tools.net ? 'sneak up with the net' : 'peer at the beetle'),
+      label: () => (S.state.tools.net ? '채집망 들고 살금살금' : '딱정벌레 들여다보기'),
       use: () => {
         if (!S.state.tools.net) {
-          ui.say('A Buttonshell Beetle! Four neat little holes in its shell. You need a net before it needs an alibi.');
+          ui.say('단추등 딱정벌레! 등껍질에 반듯한 구멍 네 개. 녀석이 알리바이를 갖기 전에 채집망이 필요해요.');
           return;
         }
         playTool('net');
@@ -557,7 +557,7 @@ export function scatterNature() {
         } else {
           beetle.visible = false;
           data.respawn = rand(20, 40);
-          ui.toast('It scuttled around the trunk and vanished. Professionally.', '🪲');
+          ui.toast('나무 뒤로 빠르게 사라졌어요. 아주 전문적으로.', '🪲');
         }
       },
     });
@@ -608,7 +608,7 @@ export function scatterNature() {
         } else {
           mesh.visible = false;
           data.respawn = rand(15, 35);
-          ui.toast('Missed! It has places to be, apparently.', '💨');
+          ui.toast('빗나갔어요! 갈 곳이 있나 봐요.', '💨');
         }
       },
     });
@@ -623,16 +623,16 @@ export function scatterNature() {
 
   addPercher({
     build: makeSnail, pool: rockSpots, itemId: 'garden_snail', chance: 1,
-    labelTool: 'pick up the snail', labelBare: 'pick up the snail',
+    labelTool: '달팽이 줍기', labelBare: '달팽이 줍기',
   });
   addPercher({
     build: makeSnail, pool: flowerSpots, itemId: 'garden_snail', chance: 1,
-    labelTool: 'pick up the snail', labelBare: 'pick up the snail',
+    labelTool: '달팽이 줍기', labelBare: '달팽이 줍기',
   });
   for (let i = 0; i < 2; i++) {
     addPercher({
       build: makeLadybird, pool: flowerSpots, itemId: 'ladybird', y: 0.55, chance: 0.95,
-      labelTool: 'offer the ladybird a paw', labelBare: 'offer the ladybird a paw',
+      labelTool: '무당벌레에게 손 내밀기', labelBare: '무당벌레에게 손 내밀기',
       wary: 3.5, // ladybirds startle; snails, pointedly, do not
     });
   }
@@ -641,8 +641,8 @@ export function scatterNature() {
     const c = addPercher({
       build: makeCricket, pool: grassSpots.length ? grassSpots : flowerSpots,
       itemId: 'meadow_cricket', needNet: true, chance: 0.75,
-      labelTool: 'pounce with the net', labelBare: 'listen to the cricket',
-      missLine: 'Chirp. Chirp. It is RIGHT THERE. You need a net — Pip sells one.',
+      labelTool: '채집망으로 덮치기', labelBare: '귀뚜라미 소리 듣기',
+      missLine: '귀뚤. 귀뚤. 바로 저기 있어요. 채집망이 필요해요 — 핍의 가게에 있어요.',
       wary: 4.5, // crickets feel your footsteps before you take them
     });
     if (c) {
@@ -667,10 +667,10 @@ export function scatterNature() {
       getPos: () => d.position,
       r: 1.9,
       enabled: () => d.visible,
-      label: () => (S.state.tools.net ? 'swing at the dragonfly' : 'admire the dragonfly'),
+      label: () => (S.state.tools.net ? '잠자리에 채집망 휘두르기' : '잠자리 감상하기'),
       use: () => {
         if (!S.state.tools.net) {
-          ui.say('It hovers, completely still, then isn’t where it was. A net might keep up. Might.');
+          ui.say('완전히 정지해 맴돌다가, 어느새 자리를 옮겼어요. 채집망이면 따라잡을지도. 어쩌면요.');
           return;
         }
         playTool('net');
@@ -682,7 +682,7 @@ export function scatterNature() {
           ui.foundItem('dewdrop_dragonfly');
           ui.updateHUD();
         } else {
-          ui.toast('It sidestepped the entire net. Show-off.', '🪰');
+          ui.toast('채집망 전체를 옆걸음으로 피했어요. 자랑쟁이.', '🪰');
           d.userData.home = pick(shoreSpots);
         }
       },
@@ -713,10 +713,10 @@ export function scatterNature() {
       getPos: () => f.position,
       r: 1.8,
       enabled: () => f.visible,
-      label: () => (S.state.tools.net ? 'cup the firefly gently' : 'watch the firefly'),
+      label: () => (S.state.tools.net ? '반딧불이 살짝 덮기' : '반딧불이 구경하기'),
       use: () => {
         if (!S.state.tools.net) {
-          ui.say('It blinks at you, unhurried. Bring a net, and more importantly, bring gentleness.');
+          ui.say('느긋하게 깜빡여요. 채집망도 가져오고, 더 중요하게, 다정함도 가져오세요.');
           return;
         }
         playTool('net');
@@ -728,7 +728,7 @@ export function scatterNature() {
           ui.foundItem('lantern_firefly');
           ui.updateHUD();
         } else {
-          ui.toast('It blinked off mid-swing. Rude, but fair.', '✨');
+          ui.toast('휘두르는 중간에 불이 꺼졌어요. 무례하지만 인정.', '✨');
           f.userData.home = pick(grassSpots.length ? grassSpots : flowerSpots);
         }
       },
