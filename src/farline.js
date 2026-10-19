@@ -18,24 +18,24 @@ const T = marchToWater({ x: CAMP.x - 4, z: CAMP.z + 4 }, FAR_ANCHOR, 3);
 const LINE = defineLine({
   points: [F, T],
   stops: [
-    { name: 'the Far Isle', toward: { x: ISLAND2.x, z: ISLAND2.z } },
-    { name: 'Farther Isle', toward: { x: CAMP.x, z: CAMP.z } },
+    { name: '파 아일', toward: { x: ISLAND2.x, z: ISLAND2.z } },
+    { name: '파더 섬', toward: { x: CAMP.x, z: CAMP.z } },
   ],
 });
 
 export function createFarline(player, animals = null) {
   return createRailway(LINE, {
-    player, animals, name: 'the Farther Line',
+    player, animals, name: '파더 선',
     colors: { loco: 0x3a7d8a, cab: 0x2a5d68, cars: [0xc9705a, 0xd9c08f], roof: 0x3a7d8a },
     dwell: 15, whistle: [480, 640],
     text: {
-      board: 'All aboard the Farther Line. Two engines, no turning back. Or around.',
-      wait: 'Across the water, one of its two engines clears its throat.',
-      queued: 'The rails hum a long, salted note.',
-      kept: 'The Farther Line kept your place. All aboard.',
+      board: '파더 선 모두 탑승하세요. 기관차 두 대, 되돌아가기 없음. 방향 전환도 없음.',
+      wait: '물 건너에서, 두 기관차 중 하나가 헛기침해요.',
+      queued: '레일이 길고 짭짤한 음을 웅웅거려요.',
+      kept: '파더 선이 자리를 지켜 두었어요. 모두 탑승하세요.',
       arrive: [
-        'The Far Isle. The engine ahead rests; the one behind takes half the credit.',
-        'Farther Isle. The engine ahead rests; the one behind takes half the credit.',
+        '파 아일. 앞 기관차는 쉬고, 뒤 기관차가 공의 절반을 가져가요.',
+        '파더 섬. 앞 기관차는 쉬고, 뒤 기관차가 공의 절반을 가져가요.',
       ],
     },
   });
