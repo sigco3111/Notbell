@@ -151,10 +151,10 @@ export function createChuckee(player) {
 
   addIslandInfo({
     key: 'chuckee',
-    name: 'Chuckee’s', x: M.x, z: M.z, r: 12, icon: '🦫',
-    blurb: 'The travel stop in the strait between the Labs and Oasis Estates. Brisket, fudge, Chuckee Nuggets, and the cleanest restrooms on any water. A footbridge on one side, a highway on the other.',
-    folk: 'Chuckee (a woodchuck, red cap)',
-    mystery: '“There’s a highway in the strait now. With cars. On it. Going somewhere. I asked where. A woodchuck said ‘here.’” —Captain Brine',
+    name: '처키스', x: M.x, z: M.z, r: 12, icon: '🦫',
+    blurb: '연구소와 오아시스 에스테이츠 사이 해협의 휴게소. 브리스킷, 퍼지, 처키 너겟, 그리고 물 위 어디보다 깨끗한 화장실. 한쪽엔 인도교, 다른 쪽엔 고속도로.',
+    folk: '처키(우드척, 빨간 모자)',
+    mystery: '“해협에 고속도로가 생겼어. 차가 있어. 달려. 어딘가로. 어디냐고 물었지. 우드척이 ‘여기’래.” —브라인 선장',
   });
 
   // ================================================== the footbridge ----
@@ -216,7 +216,7 @@ export function createChuckee(player) {
     ctx.fillText('OASIS', w / 2, 180);
     ctx.fillText('ESTATES', w / 2, 206);
     ctx.font = 'bold 13px ui-rounded, system-ui, sans-serif';
-    ctx.fillText('a planned community', w / 2, 228);
+    ctx.fillText('계획 커뮤니티', w / 2, 228);
   });
   const bannerMat = new THREE.MeshStandardMaterial({ map: bannerTex, flatShading: true, roughness: 0.9, side: THREE.DoubleSide });
   function lamp(u, v, y0) {
@@ -522,7 +522,7 @@ export function createChuckee(player) {
       j.position.set(X(-7.5 + (k % 12) * 1.1), 1.2 + Math.floor(k / 12) * 0.9, Z(-5.8));
       group.add(j);
     }
-    const jw = sign('THE JERKY WALL', { w: 6, h: 0.6, d: 0.05, bg: '#fff7e0', fg: '#8a4a2a' });
+    const jw = sign('육포의 벽', { w: 6, h: 0.6, d: 0.05, bg: '#fff7e0', fg: '#8a4a2a' });
     jw.position.set(X(-1.5), 3.0, Z(-5.75));
     group.add(jw);
     // an aisle of Chuckee Nuggets (bags, bags, bags)
@@ -608,7 +608,7 @@ export function createChuckee(player) {
         const c = await ui.ask(CHUCKEE_LINES[Math.floor(Math.random() * CHUCKEE_LINES.length)], [
           ...goods.map((g, k) => ({ label: `${ITEMS[g.id].emoji} ${ITEMS[g.id].name}`, value: String(k), hint: `${g.price}🔘`, disabled: S.state.buttons < g.price })),
           { label: '그냥 지나가는 길이에요', value: null },
-        ], { speaker: 'Chuckee', voice: 330 });
+        ], { speaker: '처키', voice: 330 });
         if (c === null || c === undefined) return;
         const g = goods[Number(c)];
         S.spend(g.price);
@@ -616,7 +616,7 @@ export function createChuckee(player) {
         kaching();
         ui.updateHUD();
         ui.toast(`<b>${ITEMS[g.id].name}</b>을(를) 받았어요.`, ITEMS[g.id].emoji);
-        await ui.say(g.say, { speaker: 'Chuckee', voice: 330 });
+        await ui.say(g.say, { speaker: '처키', voice: 330 });
       },
     });
     register({
@@ -643,4 +643,4 @@ export function createChuckee(player) {
   }
   mergeStatic(group);
   return { group, update };
-      }
+}
