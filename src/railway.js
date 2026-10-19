@@ -635,7 +635,7 @@ export function createRailway(line, opts) {
       if (r.player) {
         player.riding = false;
         player.group.position.set(door.x, S.top, door.z);
-        ui.toast(text.arrive?.[idx] || `${S.name}. ${cap(name)} catches its breath.`, '🚂');
+        ui.toast(text.arrive?.[idx] || `${S.name}. ${name}의 엔진이 숨을 고르고 있어요.`, '🚂');
         continue;
       }
       const a = r.a;
@@ -672,15 +672,15 @@ export function createRailway(line, opts) {
       enabled: () => !player.riding,
       label: () => {
         if (waiting[idx].some((w) => w.player)) return `waiting for ${name}…`;
-        if (docked() === idx && !waiting[idx].some((w) => present(idx, w)) && freeCar() !== null) return `take ${name} to ${STATIONS[1 - idx].name}`;
+        if (docked() === idx && !waiting[idx].some((w) => present(idx, w)) && freeCar() !== null) return `${name} 타고 ${STATIONS[1 - idx].name}까지 가기`;
         return `wait for ${name}`;
       },
       use: () => {
         const q = waiting[idx];
         if (q.some((w) => w.player)) {
           const ahead = q.findIndex((w) => w.player);
-          ui.say(ahead ? `You’re in the queue — ${ahead === 1 ? 'one' : 'two'} ahead of you. ${text.queued || 'The rails hum.'}`
-            : text.queued || 'You’re next. The rails hum.');
+          ui.say(ahead ? `줄 서 있어요 — 앞에 ${ahead === 1 ? '한' : '두'} 명. ${text.queued || '레일이 웅웅거려요.'}`
+            : text.queued || '다음 차례예요. 레일이 웅웅거려요.');
           return;
         }
         if (docked() === idx && !q.some((w) => present(idx, w)) && freeCar() !== null) {
@@ -690,7 +690,7 @@ export function createRailway(line, opts) {
           return;
         }
         if (villagersQueued(idx) >= 2) {
-          ui.say(text.full || 'Two villagers are already queued for this one. The platform is only so long — try again in a moment.');
+          ui.say(text.full || '이 열차에는 이미 주민 두 명이 줄 서 있어요. 승강장이 그리 길지 않아서 — 잠시 후 다시 해 보세요.');
           return;
         }
         const other = playerQueued();
@@ -698,8 +698,8 @@ export function createRailway(line, opts) {
         q.push({ player: true, here: true, destination: 1 - idx, origin: idx });
         const ahead = q.length - 1;
         ui.say(ahead
-          ? `You join the queue behind ${ahead === 1 ? 'one very patient villager' : 'two very patient villagers'}. ${text.wait || ''}`.trim()
-          : text.wait || 'You wait for the train. It won’t be long.');
+          ? `${ahead === 1 ? '참을성 많은 주민 한 명' : '참을성 많은 주민 두 명'} 뒤에 줄을 서요. ${text.wait || ''}`.trim()
+          : text.wait || '기차를 기다려요. 금방 올 거예요.');
         if (docked() === idx) boardQueue(idx);
       },
     });
