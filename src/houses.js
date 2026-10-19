@@ -47,36 +47,36 @@ const BOOKS = [
 
 // what you find when you knock and nobody's home
 const KNOCKS = {
-  Clover: '클로버 노커가 달린 둥근 초록 문. 아무도 없어요 — 어딘가 꽃밭에 나가 나비들의 가구가 되어 있어요.',
-  Biscuit: '마당이 작고 수상한 흙더미로 가득해요. 문의 표지: “외출. 땅 파는 중. 아니면 낮잠. 어쨌든 뭔가 수사 중.”',
-  Saffron: '섬의 모든 꽃 향기가 한꺼번에, 하지만 가나다순으로 나요. 아무도 없어요.',
-  Howell: '문에 긁힌 자국. 늑대 것처럼. 정확히 늑대 것처럼. 쪽지: “외출. 연습 중. 아우우.”',
-  Bramble: '집 전체가 편안하게 한쪽으로 기울어요, 몇 년 전에 앉았다가 일어날 이유를 못 찾은 것처럼. 브램블은 어딘가에, 아마 앉아 있어요.',
-  Marigold: '높은 문의 긴 집. 편자가 위에 걸려 있어요, 끝을 위로, 그릇처럼 행운을 담으며. 아무도 없어요 — 다리 위 말발굽 소리를 들어 보세요.',
-  Ember: '낮고 둥근 오두막, 밖에서도 만지면 따뜻해요. 표지: “없으면 동굴. 동굴에도 없으면 비가 오고 나는 사방에 있음.”',
-  Butterpat: '버터와 깎은 풀 냄새 나는 넓고 차분한 집. 쪽지: “방목 중. 생각해 보면 다 방목이야, 정말.”',
-  Crumb: '마우스보트가 계류장에서 부드럽게 흔들려요. 작은 표지: “선장 외출. 까불이(부스러기)는 깡통으로 접수.” 정말 깡통이 있어요.',
-  Barb: '고개를 숙여야 하는 문의 낮은 이끼 집, 디딤돌엔 털실 바구니 (루스 것; 40년째 같이 살아요). 손글씨 표지: “시냇가. 시냇가에 없으면, 그래도 시냇가.”',
-  Null: '옆에 키패드가 달린 검은 문. 키패드는 장식이에요. 문은 열려 있어요. 포스트잇: “집에 없음. 아니면 있나. (집에 없음.)”',
-  Mabel: '문지방에 메이블 것이 아닌 물건들이 쌓여 있어요: 손삽, 장갑 한 짝, 체념한 듯한 정원 난쟁이. 쪽지: “재배치하러 외출. 꽥.”',
+  클로버: '클로버 노커가 달린 둥근 초록 문. 아무도 없어요 — 어딘가 꽃밭에 나가 나비들의 가구가 되어 있어요.',
+  비스킷: '마당이 작고 수상한 흙더미로 가득해요. 문의 표지: “외출. 땅 파는 중. 아니면 낮잠. 어쨌든 뭔가 수사 중.”',
+  새프런: '섬의 모든 꽃 향기가 한꺼번에, 하지만 가나다순으로 나요. 아무도 없어요.',
+  하웰: '문에 긁힌 자국. 늑대 것처럼. 정확히 늑대 것처럼. 쪽지: “외출. 연습 중. 아우우.”',
+  브램블: '집 전체가 편안하게 한쪽으로 기울어요, 몇 년 전에 앉았다가 일어날 이유를 못 찾은 것처럼. 브램블은 어딘가에, 아마 앉아 있어요.',
+  매리골드: '높은 문의 긴 집. 편자가 위에 걸려 있어요, 끝을 위로, 그릇처럼 행운을 담으며. 아무도 없어요 — 다리 위 말발굽 소리를 들어 보세요.',
+  엠버: '낮고 둥근 오두막, 밖에서도 만지면 따뜻해요. 표지: “없으면 동굴. 동굴에도 없으면 비가 오고 나는 사방에 있음.”',
+  버터팻: '버터와 깎은 풀 냄새 나는 넓고 차분한 집. 쪽지: “방목 중. 생각해 보면 다 방목이야, 정말.”',
+  크럼: '마우스보트가 계류장에서 부드럽게 흔들려요. 작은 표지: “선장 외출. 까불이(부스러기)는 깡통으로 접수.” 정말 깡통이 있어요.',
+  바브: '고개를 숙여야 하는 문의 낮은 이끼 집, 디딤돌엔 털실 바구니 (루스 것; 40년째 같이 살아요). 손글씨 표지: “시냇가. 시냇가에 없으면, 그래도 시냇가.”',
+  널: '옆에 키패드가 달린 검은 문. 키패드는 장식이에요. 문은 열려 있어요. 포스트잇: “집에 없음. 아니면 있나. (집에 없음.)”',
+  메이블: '문지방에 메이블 것이 아닌 물건들이 쌓여 있어요: 손삽, 장갑 한 짝, 체념한 듯한 정원 난쟁이. 쪽지: “재배치하러 외출. 꽥.”',
 };
 
 // when each villager is home, [start, end) on the real clock — wet weather
-// sends everyone home early, except Howell, who insists wolves love drama
+// sends everyone home early, except 하웰, who insists wolves love drama
 const SCHEDULE = {
-  Clover: [19, 7],
-  Biscuit: [22, 7],
-  Saffron: [20, 6],
-  Bramble: [21, 6],
-  Howell: [10, 16], // nocturnal. obviously. being a wolf.
-  Marigold: [20, 5],
-  Butterpat: [19, 6],
-  Crumb: [22, 6],   // sleeps on deck, under whatever the sky is doing
-  Ember: [21, 7],   // nights in her hut on the Far Isle…
-  Barb: [20, 6],
-  Ruth: [19, 6],   // at Barb's (forty years; it's her house too)
-  Null: [6, 14],    // up all night; sleeps through the morning, like a server
-  Mabel: [22, 6],
+  클로버: [19, 7],
+  비스킷: [22, 7],
+  새프런: [20, 6],
+  브램블: [21, 6],
+  하웰: [10, 16], // nocturnal. obviously. being a wolf.
+  매리골드: [20, 5],
+  버터팻: [19, 6],
+  크럼: [22, 6],   // sleeps on deck, under whatever the sky is doing
+  엠버: [21, 7],   // nights in her hut on the Far Isle…
+  바브: [20, 6],
+  루스: [19, 6],   // at Barb's (forty years; it's her house too)
+  널: [6, 14],    // up all night; sleeps through the morning, like a server
+  메이블: [22, 6],
 };
 const EMBER_CAVE_HOURS = [11, 16]; // …middays in the cave, rain permitting (she prefers it not to permit)
 
@@ -93,100 +93,100 @@ function isHomeNow(name) {
 }
 
 const COME_INS = {
-  Clover: '웅웅거리는 목소리: “열려 있어! 쿠션 조심! …아니, 밟아도 돼, 얘네가 좋아해.”',
-  Biscuit: '안에서: “여기야! 흙더미 조심!”',
-  Saffron: '흡족한 목소리: “들어오세여!”',
-  Howell: '근엄한 목소리: “굴에 들어오는 것을 허락한다.” 잠시 뜸. “안녕.”',
-  Bramble: '느리고 따뜻한 목소리: “문 안 잠겼어. 항상 그래.”',
-  Marigold: '밝은 울음: “열려 있어! 들보 밑으로 고개 숙여!”',
-  Ember: '기쁜 쉿 소리: “그러암, 들어와! 돌 하나 골라! 다 따뜻해!”',
-  Butterpat: '느리고 흡족한 목소리: “들어오렴, 얘야. 교유기 조심. 교유기도 널 조심한단다.”',
-  Barb: '안에서 자갈 목소리: “흠. 열려 있어.”',
-  Null: '키패드가 삑 소리를 내요. 안의 목소리: “들어왔네.”',
-  Mabel: '목소리: “꽥.” (들어와요.)',
+  클로버: '웅웅거리는 목소리: “열려 있어! 쿠션 조심! …아니, 밟아도 돼, 얘네가 좋아해.”',
+  비스킷: '안에서: “여기야! 흙더미 조심!”',
+  새프런: '흡족한 목소리: “들어오세여!”',
+  하웰: '근엄한 목소리: “굴에 들어오는 것을 허락한다.” 잠시 뜸. “안녕.”',
+  브램블: '느리고 따뜻한 목소리: “문 안 잠겼어. 항상 그래.”',
+  매리골드: '밝은 울음: “열려 있어! 들보 밑으로 고개 숙여!”',
+  엠버: '기쁜 쉿 소리: “그러암, 들어와! 돌 하나 골라! 다 따뜻해!”',
+  버터팻: '느리고 흡족한 목소리: “들어오렴, 얘야. 교유기 조심. 교유기도 널 조심한단다.”',
+  바브: '안에서 자갈 목소리: “흠. 열려 있어.”',
+  널: '키패드가 삑 소리를 내요. 안의 목소리: “들어왔네.”',
+  메이블: '목소리: “꽥.” (들어와요.)',
 };
 
 const HOME_LINES = {
-  Clover: [
+  클로버: [
     '내 굴을 찾았구나! 아무 데나 앉아. 모든 데 앉아. 쿠션은 그러라고 있는 거야.',
     '집이란 비 소리를 들으면서 비를 안 맞는 곳이야. 하웰 말고. 걘 밖에서 비 맞으며 노래해.',
   ],
-  Biscuit: [
+  비스킷: [
     '어서 와! 바닥 조심. 벽도. 벽엔 묻어둔 것들이 있어. 긴 이야기야. 좋은 이야기.',
     '묻어둔 간식은 아주 배려 깊은 과거의 내가 아주 운 좋은 미래의 나에게 주는 선물이야.',
   ],
-  Saffron: [
+  새프런: [
     '들어와, 들어와 — 매단 다발 조심. 저건 “북서풍, 첫 따뜻한 날”이라고 라벨 붙었어.',
     '정돈된 굴과 열린 창 하나. 그게 모든 것의 비밀 전부야.',
   ],
-  Howell: [
+  하웰: [
     '굴에 온 걸 환영해. 늑대는 굴을 가져. 이게 그거야. 결론은 알아서 내려. 옳은 걸로.',
     '흐린 밤엔 포스터 보고 울어. 실력 유지야. 달은 이해해 줘.',
   ],
-  Bramble: [
+  브램블: [
     '오, 안녕. 의자 끌어와. 큰 거. 큰 것밖에 없어.',
     '집이란 예의를 배운 동굴일 뿐이야.',
   ],
-  Marigold: [
+  매리골드: [
     '어서 와! 머리 조심 — 천장은 낙관주의자용으로 지어졌어.',
     '창은 다리 쪽으로 냈어. 어느 섬에서든 최고의 경치: 도착하는 것들.',
   ],
-  Ember: [
+  엠버: [
     '오! 안녕! 여기 엄청 멋지지 않아. 쉿. 들어 봐. …B플랫.',
     '따뜻한 돌에 앉아. 아무 거나. 다 따뜻해. 하나하나 직접 확인했어.',
   ],
-  Butterpat: [
+  버터팻: [
     '저녁은 버터와, 추상적으로 풀 생각을 위한 시간이야.',
     '베스퍼가 초원에 대한 책을 빌려줬어. 나는 초원에 사는데. 그래도 읽었어. 결말의 멋진 반전: 초원이 더 나옴.',
   ],
-  Barb: [
+  바브: [
     '흠. 아무 데나 앉아. 흔들의자 말고. 그건 루스 거야. 40년째. 다른 데 아무 데나.',
     '창틀에 시냇물 병을 둬. 계절 따라 색이 바뀌어. 달력보다 나아. 말대꾸도 안 하고.',
   ],
-  Ruth: [
+  루스: [
     '어서 와, 얘야! 차 마실래? 크랜베리야. 여긴 결국 다 크랜베리가 돼.',
     '저 목도리는 시냇가용. 저건 바브 거. 저건 네 거. 봄쯤 완성될 거야. 어떤 봄.',
   ],
-  Null: [
+  널: [
     '파란 케이블 건드리지 마. 초록 것도. 사실 그냥 가운데 서 있어. 완벽해. 들어왔네.',
     '모니터 여섯 대. 하나는 그냥 시냇가 사진이야. 눈용. 나머지 다섯도 대부분 시냇가.',
   ],
-  Mabel: [
+  메이블: [
     '내 컬렉션에 온 걸 환영해. 여기 있는 건 이제 다 내 거야. 일부는 먼저 다른 사람 것이었지. 그건 그쪽 사정이야.',
     '저 난쟁이? 토드 거. 오아시스 토드. 오아시스까지 가서 가져왔어. 꽥. 그럴 가치 있었어.',
   ],
-  Crumb: [
+  크럼: [
     '갑판이 집에서 제일 좋은 방이야. 천장이 좀 멀긴 한데, 다 가질 순 없지.',
     '들려? 선체에 닿는 물소리. 최고의 자장가야, 모든 절을 다 알아.',
   ],
 };
 
 const HOME_PROPS = {
-  Clover: { label: '쿠션 눌러 보기', text: '불가능할 만큼 폭신해요. 이제 클로버의 모든 걸 이해해요.' },
-  Biscuit: { label: '보물 선반 살펴보기', text: '병뚜껑, 달팽이집 (빈 것 — 확인함), 그리고 자기만의 작은 쿠션이 있는 행운의 버튼.' },
-  Saffron: { label: '말린 꽃 냄새 맡기', text: '보존된 지난여름. 다발마다 바람이 불어온 방향이 라벨로 붙어 있어요.' },
-  Howell: { label: '달 포스터 살펴보기', text: '“달,” 캡션에 적혀 있어요. 사인이 있어요. 하웰의.' },
-  Bramble: { label: '꿀단지 들여다보기', text: '단지 셋: “아침밥,” “비상,” 그리고 “금지 (봄 전용).”' },
-  Marigold: { label: '리본 벽 보기', text: '참가자 한 명인 경주들의 리본. 전부 1등. 중요한 건 절제예요.' },
-  Ember: { label: '화로 돌 만져 보기', text: '납작한 돌이 고리 모양, 긁어 그은 정자표로 1부터 9까지 번호. 네 번째 돌엔 작은 왕관이 그려져 있어요.' },
-  Barb: { label: '시냇물 병 보기', text: '창틀의 시냇물 병, 조금 초록, 조금 금빛. 조심스러운 발톱 글씨 라벨: “시내. 올해.” 뒤엔 오래된 병들, 전부 라벨. 마흔 개. 구석엔 루스의 털실 바구니, 그리고 창밖으로 나가는 목도리.' },
-  Null: { label: '화면 읽기', text: '검은 화면에 초록 글자가 흘러요. 한 화면: “> cranberries.count() … 아직 세는 중.” 다른 화면: “> labs.password = notbell ✓.” 마지막은 시냇가 라이브 영상, 그리고 돌 위에서 만족한 거북이.' },
-  Mabel: { label: '컬렉션 살펴보기', text: '손삽, 정원 난쟁이, 짝 없는 장갑 11개, “널 — 만지지 마” 라벨의 USB, 그리고 문 없는 반짝이는 놋쇠 문손잡이 하나. 전부 가지런히 선반에. 선반도 재배치된 거예요.' },
-  Butterpat: { label: '버터 교유기 감상하기', text: '세월의 인내로 닦여 반짝여요. 손잡이 리본: “최고의 버터 — 유일한 출품작 — 그래도 획득함.”' },
+  클로버: { label: '쿠션 눌러 보기', text: '불가능할 만큼 폭신해요. 이제 클로버의 모든 걸 이해해요.' },
+  비스킷: { label: '보물 선반 살펴보기', text: '병뚜껑, 달팽이집 (빈 것 — 확인함), 그리고 자기만의 작은 쿠션이 있는 행운의 버튼.' },
+  새프런: { label: '말린 꽃 냄새 맡기', text: '보존된 지난여름. 다발마다 바람이 불어온 방향이 라벨로 붙어 있어요.' },
+  하웰: { label: '달 포스터 살펴보기', text: '“달,” 캡션에 적혀 있어요. 사인이 있어요. 하웰의.' },
+  브램블: { label: '꿀단지 들여다보기', text: '단지 셋: “아침밥,” “비상,” 그리고 “금지 (봄 전용).”' },
+  매리골드: { label: '리본 벽 보기', text: '참가자 한 명인 경주들의 리본. 전부 1등. 중요한 건 절제예요.' },
+  엠버: { label: '화로 돌 만져 보기', text: '납작한 돌이 고리 모양, 긁어 그은 정자표로 1부터 9까지 번호. 네 번째 돌엔 작은 왕관이 그려져 있어요.' },
+  바브: { label: '시냇물 병 보기', text: '창틀의 시냇물 병, 조금 초록, 조금 금빛. 조심스러운 발톱 글씨 라벨: “시내. 올해.” 뒤엔 오래된 병들, 전부 라벨. 마흔 개. 구석엔 루스의 털실 바구니, 그리고 창밖으로 나가는 목도리.' },
+  널: { label: '화면 읽기', text: '검은 화면에 초록 글자가 흘러요. 한 화면: “> cranberries.count() … 아직 세는 중.” 다른 화면: “> labs.password = notbell ✓.” 마지막은 시냇가 라이브 영상, 그리고 돌 위에서 만족한 거북이.' },
+  메이블: { label: '컬렉션 살펴보기', text: '손삽, 정원 난쟁이, 짝 없는 장갑 11개, “널 — 만지지 마” 라벨의 USB, 그리고 문 없는 반짝이는 놋쇠 문손잡이 하나. 전부 가지런히 선반에. 선반도 재배치된 거예요.' },
+  버터팻: { label: '버터 교유기 감상하기', text: '세월의 인내로 닦여 반짝여요. 손잡이 리본: “최고의 버터 — 유일한 출품작 — 그래도 획득함.”' },
 };
 
 const HOUSE_STYLES = {
-  Clover: { wall: 0xf3e6cf, roof: 0x6fae5c, door: 0x4e9a45 },
-  Biscuit: { wall: 0xe3c98f, roof: 0x8a5a3a, door: 0x6b4a2e },
-  Saffron: { wall: 0xf3d9bb, roof: 0xe8743a, door: 0xb05a2a },
-  Howell: { wall: 0xcdd3da, roof: 0x5a6a80, door: 0x3a4a5c },
-  Bramble: { wall: 0xc9a06a, roof: 0x55772f, door: 0x55483a },
-  Marigold: { wall: 0xf5ecd8, roof: 0xd9a440, door: 0xb05a4a },
-  Ember: { wall: 0xd9a08a, roof: 0x6e5048, door: 0xe8743a },
-  Butterpat: { wall: 0xfdf6e8, roof: 0x6e5a44, door: 0x8a5a3a },
-  Barb: { wall: 0x8a9a7a, roof: 0x3d5a34, door: 0x55483a },
-  Null: { wall: 0x3a3a44, roof: 0x1e1e24, door: 0x5aff8a },
-  Mabel: { wall: 0xf5f2e9, roof: 0xf28a2e, door: 0x3a7dd8 },
+  클로버: { wall: 0xf3e6cf, roof: 0x6fae5c, door: 0x4e9a45 },
+  비스킷: { wall: 0xe3c98f, roof: 0x8a5a3a, door: 0x6b4a2e },
+  새프런: { wall: 0xf3d9bb, roof: 0xe8743a, door: 0xb05a2a },
+  하웰: { wall: 0xcdd3da, roof: 0x5a6a80, door: 0x3a4a5c },
+  브램블: { wall: 0xc9a06a, roof: 0x55772f, door: 0x55483a },
+  매리골드: { wall: 0xf5ecd8, roof: 0xd9a440, door: 0xb05a4a },
+  엠버: { wall: 0xd9a08a, roof: 0x6e5048, door: 0xe8743a },
+  버터팻: { wall: 0xfdf6e8, roof: 0x6e5a44, door: 0x8a5a3a },
+  바브: { wall: 0x8a9a7a, roof: 0x3d5a34, door: 0x55483a },
+  널: { wall: 0x3a3a44, roof: 0x1e1e24, door: 0x5aff8a },
+  메이블: { wall: 0xf5f2e9, roof: 0xf28a2e, door: 0x3a7dd8 },
 };
 
 function makeCottage({ wall, roof, door }, scale = 1) {
@@ -499,7 +499,7 @@ function buildVillagerInterior(group, B, name, style) {
     const sill = box(3.2, 0.1, 0.4, 0x6b4a2e);
     sill.position.set(B.x - 0.54, 1.15, B.z - 4.3);
     group.add(sill);
-    // …and Ruth’s corner (she lives here too): yarn in baskets, and a scarf that goes on and on
+    // …and 루스’s corner (she lives here too): yarn in baskets, and a scarf that goes on and on
     for (let i = 0; i < 6; i++) {
       const ball = new THREE.Mesh(new THREE.IcosahedronGeometry(0.2, 1), mat([0x3d6b38, 0x8c3a3f, 0x6e5a44, 0xf28fb0][i % 4], 0.95));
       ball.position.set(B.x + 3.9 + (i % 3) * 0.4, 0.2 + Math.floor(i / 3) * 0.3, B.z - 3.9);
@@ -1049,7 +1049,7 @@ export function createHouses(animals, obstacles = []) {
         enabled: () => vh.home,
         label: '크럼에게 소리쳐 부르기',
         use: () => {
-          const lines = HOME_LINES.Crumb;
+          const lines = HOME_LINES.크럼;
           ui.say(lines[crumbIdx++ % lines.length], { speaker: 'Crumb', voice: a.identity.voice });
         },
       });
@@ -1057,7 +1057,7 @@ export function createHouses(animals, obstacles = []) {
         pos: new THREE.Vector3(MOUSEBOAT.knock.x, 0, MOUSEBOAT.knock.z), r: 2.2,
         enabled: () => !vh.home,
         label: '마우스보트 들여다보기',
-        use: () => ui.say(KNOCKS.Crumb),
+        use: () => ui.say(KNOCKS.크럼),
       });
       continue;
     }
@@ -1185,7 +1185,7 @@ export function createHouses(animals, obstacles = []) {
     });
   }
 
-  // Ruth lives at Barb's: same door, same room, her own spot by the yarn
+  // 루스 lives at Barb's: same door, same room, her own spot by the yarn
   {
     const barb = households.find((vh) => vh.name === 'Barb');
     const ruthA = animals.find((a) => a.identity?.name === 'Ruth');
@@ -1199,13 +1199,13 @@ export function createHouses(animals, obstacles = []) {
         label: '루스와 대화하기',
         use: async () => {
           if (await birthdayTalk('Ruth', ruthA.identity.voice)) return;
-          ui.say(HOME_LINES.Ruth[ri++ % HOME_LINES.Ruth.length], { speaker: 'Ruth', voice: ruthA.identity.voice });
+          ui.say(HOME_LINES.루스[ri++ % HOME_LINES.루스.length], { speaker: 'Ruth', voice: ruthA.identity.voice });
         },
       });
     }
   }
 
-  // Ember keeps a second address: the cave, at her appointed hours
+  // 엠버 keeps a second address: the cave, at her appointed hours
   const ember = households.find((vh) => vh.name === 'Ember');
   if (ember) {
     ember.caveSeat = { x: -295.5, z: -4 };
@@ -1215,7 +1215,7 @@ export function createHouses(animals, obstacles = []) {
       enabled: () => !!ember.inCave,
       label: '엠버와 대화하기',
       use: () => {
-        const lines = HOME_LINES.Ember;
+        const lines = HOME_LINES.엠버;
         ui.say(lines[caveIdx++ % lines.length], { speaker: 'Ember', voice: ember.a.identity.voice });
       },
     });
@@ -1398,7 +1398,7 @@ export function createHouses(animals, obstacles = []) {
   // where the carrier drops and collects (mail.js): each neighbor's box,
   // and yours. (Ruth's letters go to Barb's box; Crumb's to the MouseBoat.)
   const mailboxes = Object.fromEntries(theirBoxes.map(([n, mb]) => [n, { x: mb.position.x, z: mb.position.z }]));
-  if (mailboxes.Barb) mailboxes.Ruth = mailboxes.Barb;
-  if (MOUSEBOAT) mailboxes.Crumb = { x: MOUSEBOAT.knock.x, z: MOUSEBOAT.knock.z };
+  if (mailboxes.바브) mailboxes.루스 = mailboxes.바브;
+  if (MOUSEBOAT) mailboxes.크럼 = { x: MOUSEBOAT.knock.x, z: MOUSEBOAT.knock.z };
   return { group, update, forceHome, mailboxes, myMailbox: { x: myBox.position.x, z: myBox.position.z } };
-        }
+                }
