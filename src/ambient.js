@@ -186,7 +186,7 @@ export function createAmbient(animals, scene) {
       r: 2.4,
       zone: () => a.errand?.venue.zone ?? '__nowhere',
       enabled: () => !!a.errand,
-      label: () => `talk to ${a.identity.name}`,
+      label: () => `${a.identity.name}에게 말 걸기`,
       use: () => {
         ui.say(a.errand.venue.guestLine, { speaker: a.identity.name, voice: a.identity.voice });
       },
@@ -196,10 +196,10 @@ export function createAmbient(animals, scene) {
       getPos: () => a.g.position,
       r: 2.6,
       enabled: () => !!a.meeting && !a.meeting.pending,
-      label: () => `talk to ${a.identity.name}`,
+      label: () => `${a.identity.name}에게 말 걸기`,
       use: () => {
         const line = a.meeting?.pair.meetLines?.[a.identity.name] ||
-          '(They are mid-conversation, and politely include you in the pause.)';
+          '(대화 중이던 두 분이, 공손하게, 그 침묵에 당신을 끼워 줘요.)';
         ui.say(line, { speaker: a.identity.name, voice: a.identity.voice });
       },
     });
