@@ -251,7 +251,7 @@ export function createTexas() {
 
   register({
     getPos: () => pecos.position, r: 3,
-    label: 'say howdy to Pecos',
+    label: '페코스에게 하우디 인사하기',
     use: () => {
       if (!S.hasFlag('metPecos')) {
         S.setFlag('metPecos');
@@ -299,8 +299,8 @@ export function createTexas() {
   zones.addBlocker(T.x - 2, T.z + 4, 0.2);
   register({
     pos: new THREE.Vector3(T.x - 2, 0, T.z + 4), r: 2.2,
-    label: 'read the sign',
-    use: () => ui.say('“TEXAS.” No further explanation is offered, or — the sign strongly implies — required.'),
+    label: '표지판 읽기',
+    use: () => ui.say('“텍사스.” 더 이상의 설명은 제공되지 않고 — 표지판이 강하게 암시하듯 — 필요하지도 않아요.'),
   });
 
   function update(dt, t, playerPos) {
