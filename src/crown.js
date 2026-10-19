@@ -1085,20 +1085,20 @@ export function createCrown(player) {
           { label: 'Ask about the bell', value: 'bell' },
           { label: 'Ask about his shell', value: 'shell' },
           { label: 'Leave', value: null },
-        ], { speaker: 'Mister Periwinkle', voice: 520 });
+        ], { speaker: '페리윙클 씨', voice: 520 });
         if (c === 'tour') {
           ui.say([
             '“Unit 1A: the lobby-adjacent. Formerly the galley. The smell of salvage-crew stew has been ENTIRELY remediated. Mostly.”',
             '“Unit 2B: the lounge. Velvet. Live jellyfish lighting. The record player only plays whale song, and only one whale, and he is a bit of a mumbler.”',
             '“The Penthouse: open-plan, open-air, open-sea. Ceilings? Negotiable. By which I mean absent.”',
-          ], { speaker: 'Mister Periwinkle', voice: 520 });
+          ], { speaker: '페리윙클 씨', voice: 520 });
         } else if (c === 'bell') {
           ui.say([
             '“The bell? Ah. The original purpose of the property. Moledecai Salvage searched this whole shelf for forty summers. Found boots. Found a cannon. Found a SECOND cannon. No bell.”',
             '“Unit 0 — the bilge — is not for sale. Something down there glints on the heavy tides. We tell the residents it’s a coin. We are, of course, lying beautifully.”',
-          ], { speaker: 'Mister Periwinkle', voice: 520 });
+          ], { speaker: '페리윙클 씨', voice: 520 });
         } else if (c === 'shell') {
-          ui.say('“This? Vintage. Previous owner: a very large whelk with very good taste. I’m only renting it, like everyone. We’re all only renting our shells, darling.”', { speaker: 'Mister Periwinkle', voice: 520 });
+          ui.say('“이거? 빈티지야. 전 주인은 아주 크고 취향 좋은 고둥. 나도 다들 그렇듯 임대 중이야. 우린 다 껍데기를 임대하는 거야, 자기.”', { speaker: '페리윙클 씨', voice: 520 });
         }
       },
     });
