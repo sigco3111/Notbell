@@ -232,7 +232,7 @@ export function createFold() {
   addIslandInfo({
     name: 'The Fold', x: -194, z: -50, r: 24, icon: '🐑',
     blurb: '청원에 따라 모든 지도 바깥. 밀, 당근, 잼, 그리고 대구 성당.',
-    folk: 'Elder Amos · Mercy · Patience · Obed · Small Mercy',
+    folk: '아모스 장로 · 머시 · 패이션스 · 오베드 · 리틀 머시',
   });
 
   // ================================================== the HOUSE OF COD ----
@@ -447,9 +447,9 @@ export function createFold() {
         ], { speaker: '아모스 장로', voice: VOICE.amos });
       }
       const choice = await ui.ask('아모스 장로가 발굽을 모으고 온 마음으로 귀를 기울여요.', [
-        { label: '🐟 Ask about the Cod', value: 'cod' },
-        { label: '🔭 Ask about the neighbors', value: 'nb' },
-        { label: '🌾 Ask about the Fold', value: 'fold' },
+        { label: '🐟 대구님에 대해 묻기', value: 'cod' },
+        { label: '🔭 이웃에 대해 묻기', value: 'nb' },
+        { label: '🌾 폴드에 대해 묻기', value: 'fold' },
         { label: '조심히 가기', value: null },
       ]);
       if (!choice) {
@@ -587,7 +587,7 @@ export function createFold() {
     group.add(r);
   }
   const ROOMS = {
-    mercy: { name: '🫙 Mercy’s House', W: 7, D: 6, dress: (B, W, D, bl, th) => {
+    mercy: { name: '🫙 머시네 집', W: 7, D: 6, dress: (B, W, D, bl, th) => {
       bed(B.x - 2.4, B.z - 1.6, 0xc97b8a); bl.push({ x: B.x - 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
       hearth(B.x + 1.2, B.z - D / 2 + 0.55); bl.push({ x: B.x + 1.2, z: B.z - D / 2 + 0.55, w: 1.5, d: 0.8 });
       table(B.x + 1.6, B.z + 0.6, 1.6, 1.0); bl.push({ x: B.x + 1.6, z: B.z + 0.6, w: 1.7, d: 1.1 });
@@ -598,7 +598,7 @@ export function createFold() {
       rug(B.x, B.z + 1.8, 2.2, 1.2, 0x8a6a8a);
       th.push({ at: [1.6, 1.0], r: 1.6, label: '저장 작업대 보기', use: () => ui.say('구스베리, 당근, 그리고 “응”이라고만 적힌 초록색 무언가. 병마다 종이 모자를 쓰고 있고, 모자마다 똑같이 정성스런 리본이 묶여 있어요.') });
     } },
-    patience: { name: '🧵 Patience’s House', W: 7, D: 6, wall: 0xe6e0d0, dress: (B, W, D, bl, th) => {
+    patience: { name: '🧵 패이션스네 집', W: 7, D: 6, wall: 0xe6e0d0, dress: (B, W, D, bl, th) => {
       bed(B.x + 2.4, B.z - 1.6, 0x6a8a9a); bl.push({ x: B.x + 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
       hearth(B.x - 1.4, B.z - D / 2 + 0.55); bl.push({ x: B.x - 1.4, z: B.z - D / 2 + 0.55, w: 1.5, d: 0.8 });
       // the quilting frame, a quilt half done, squares of every color she owns
@@ -617,7 +617,7 @@ export function createFold() {
       rug(B.x + 1.2, B.z + 1.2, 1.6, 1.6, 0x9a7a4a);
       th.push({ at: [-1.2, 1.7], r: 1.6, label: '퀼트 보기', use: () => ui.say('반쯤 완성된 퀼트, 조각들이 줄줄이 핀으로 고정돼 있어요. 한 조각이 조금 삐뚤어요. 일부러 삐뚤게 두었지요: “완벽한 건 주님의 일뿐, 주님은 이걸 하고 계시지 않으니까.”') });
     } },
-    obed: { name: '🌾 Obed’s House', W: 7, D: 6, dress: (B, W, D, bl, th) => {
+    obed: { name: '🌾 오베드네 집', W: 7, D: 6, dress: (B, W, D, bl, th) => {
       bed(B.x - 2.4, B.z - 1.6, 0x7a8a5a); bl.push({ x: B.x - 2.4, z: B.z - 1.6, w: 1.3, d: 2.2 });
       hearth(B.x + 1.8, B.z - D / 2 + 0.55); bl.push({ x: B.x + 1.8, z: B.z - D / 2 + 0.55, w: 1.5, d: 0.8 });
       table(B.x + 0.6, B.z + 0.8); bl.push({ x: B.x + 0.6, z: B.z + 0.8, w: 1.5, d: 1.0 });
@@ -632,7 +632,7 @@ export function createFold() {
       for (const sx of [-0.15, 0.15]) { const boot = box(0.18, 0.35, 0.35, 0x3a2e24); boot.position.set(B.x - 1.4 + sx, 0.17, B.z + D / 2 - 0.5); group.add(boot); }
       th.push({ at: [2.6, 1.1], r: 1.4, label: '씨앗 자루 읽기', use: () => ui.say('콩. 귀리. 콩 더. 마지막 자루만 다른 필체로 적혀 있어요: “이건 심지 마, 오베드. 저녁 반찬이야.”') });
     } },
-    amos: { name: '🐟 Elder Amos’s Hut', W: 5, D: 5, dress: (B, W, D, bl, th) => {
+    amos: { name: '🐟 아모스 장로의 오두막', W: 5, D: 5, dress: (B, W, D, bl, th) => {
       bed(B.x - 1.3, B.z - 1.2, 0x8a8378); bl.push({ x: B.x - 1.3, z: B.z - 1.2, w: 1.3, d: 2.2 });
       // a writing desk, sermon pages in a drift, and a small carved cod
       table(B.x + 1.2, B.z - 0.6, 1.2, 0.8); bl.push({ x: B.x + 1.2, z: B.z - 0.6, w: 1.3, d: 0.9 });
@@ -864,7 +864,7 @@ export function createFold() {
     register({
       getPos: () => mercy.position, r: 3.4, // the radius crosses the counter. learned that one.
       label: '머시에게 말 걸기',
-      use: () => ui.say(pick(MERCY_CHAT), { speaker: 'Mercy', voice: VOICE.mercy }),
+      use: () => ui.say(pick(MERCY_CHAT), { speaker: '머시', voice: VOICE.mercy }),
     });
   }
 
@@ -1403,4 +1403,4 @@ export function createFold() {
   }
 
   return { group, update };
-}
+  }
