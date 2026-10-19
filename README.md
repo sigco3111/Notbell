@@ -1,279 +1,128 @@
-# 🍃 Notbell Isle
+# 🍃 낫벨 아일 (Notbell Isle) — 한국어판
 
-A tiny low-poly village-life island in the spirit of a certain game that this
-is legally very much not. Built with plain [three.js](https://threejs.org)
-ES modules — no build step, no dependencies (three.js r180 is vendored in
-`vendor/`), runs entirely in the browser. Live at
-<https://notbell.brezgis.com>.
+작고 로우폴리한 마을 생활 섬입니다. 어떤 게임의 정신을 이어받았지만 법적으로는
+전혀 그 게임이 아닙니다. 순수 [three.js](https://threejs.org) ES 모듈로
+만들었고, 빌드 과정도 의존성도 없습니다(three.js r180이 `vendor/`에 포함).
+브라우저에서 바로 실행됩니다.
 
-![The village plaza — three shops, one well, one lantern-lit rabbit](docs/screenshots/village-plaza.png)
+이 저장소는 원작 **[brezgis/Notbell](https://github.com/brezgis/Notbell)**(MIT 라이선스)을
+한국어로 번역한 포크입니다. 원작의 코드 구조, 게임 로직, 아트는 그대로 두고
+대사·UI·표지판·문서를 한국어로 옮겼습니다.
 
-![The tide pools — rummage politely](docs/screenshots/tide-pools.png)
+**▶ 지금 플레이: <https://sigco3111.github.io/Notbell/>**
 
-## Run it
+원작 영문 README는 [README.en.md](README.en.md)에 그대로 보존되어 있습니다.
+
+## 실행하기
 
 ```sh
-python3 serve.py        # serves on 8123 with no-cache headers
+python3 serve.py        # 8123 포트, no-cache 헤더로 서빙
 ```
 
-Then open <http://localhost:8123>. (ES modules don't load over `file://`.)
+그리고 <http://localhost:8123>을 여세요. (ES 모듈은 `file://`에서 로드되지 않습니다.)
 
-## Controls
+## 조작법
 
-| Key | Action |
+| 키 | 동작 |
 | --- | --- |
-| WASD / arrows | walk |
-| Shift | run |
-| **E** | talk · enter doors · fish · dig · catch · rummage · plant · harvest |
-| H | cycle hats |
-| I | pockets |
-| P | the archipelago map (click islands for gossip; unvisited shores stay grey rumors until you land) |
-| C | Old Tansy's Almanac (everything you've ever caught) |
-| drag / scroll | orbit & zoom the camera |
-| M | sound on/off |
+| WASD / 방향키 | 걷기 |
+| Shift | 달리기 |
+| **E** | 대화 · 문 들어가기 · 낚시 · 파기 · 잡기 · 뒤지기 · 심기 · 수확 |
+| H | 모자 바꾸기 |
+| I | 주머니 |
+| P | 군도 지도 (섬을 누르면 소문을 들려줘요. 아직 가 보지 않은 해안은 회색 소문 상태) |
+| C | 늙은 탠지의 도감 (지금까지 잡은 모든 것) |
+| 드래그 / 스크롤 | 카메라 회전 & 줌 |
+| M | 소리 켜기/끄기 |
 
-## The island
+## 섬 이야기
 
-**The village.** Three buildings around a little well plaza, each with a
-walk-in interior:
+**마을.** 작은 우물 광장을 둘러싼 세 채의 건물, 모두 들어가 볼 수 있어요.
 
-- 🏪 **Pip's Odds & Ends** — Pip the magpie buys anything you catch and sells
-  tools, in **buttons**, the island's currency. Your first fishing rod is
-  free. ("That's how I get ya!") Do not ask about the Shiniest Button.
-- ☕ **The Lantern Room** — Luna the moth's coffeeshop, named for the top
-  room of a lighthouse. The old lighthouse lamp lives on her counter and is
-  still warm. A cup of Lantern Roast makes you zippy for 90 seconds.
-- 🏛️ **Notbell Museum** — Fern the tortoise curates fossils, fish, bugs, and
-  tide pool oddities. Donations go on real plinths/tanks/frames, and every
-  few donations she remembers another chapter of the island's story.
+- 🏪 **핍의 잡동사니** — 까치 핍이 잡아 온 건 뭐든 사 주고 도구를 팔아요.
+  섬의 화폐는 **버튼**이에요. 첫 낚싯대는 공짜. ("그게 내 수법이지!") 가장
+  반짝이는 버튼에 대해선 묻지 마세요.
+- ☕ **랜턴 룸** — 나방 루나의 카페. 등대 꼭대기 방 이름을 따왔어요. 옛 등대의
+  큰 등불이 카운터에 놓여 있고, 아직 따뜻해요. 랜턴 로스트 한 잔이면 90초간
+  발이 빨라져요.
+- 🏛️ **낫벨 박물관** — 거북이 펀이 화석, 물고기, 곤충, 바닷가 웅덩이 진기한
+  것들을 큐레이션해요. 기증품은 진짜 받침대·수조·액자에 전시되고, 기증이 쌓일
+  때마다 펀이 섬 이야기의 다음 장을 기억해 내요.
 
-**The story** (Fern tells it properly; here's the spoiler-free shape): the
-island used to be Lightkeep Isle, there was a lighthouse, a keeper named Old
-Tansy, a bronze bell, a storm, and a jar of buttons. The bell is why the
-island is called Notbell. The buttons are why your money jingles funny.
-Letters from Tansy still wash up in bottles, if you fish enough.
+**이야기** (펀이 제대로 들려줘요. 스포일러 없는 줄거리만): 이 섬은 옛날에
+라이트킵 아일이었고, 등대가 있었고, 늙은 탠지라는 등대지기가 있었고, 청동
+종이 있었고, 폭풍이 있었고, 버튼이 든 병이 있었어요. 그 종 때문에 섬 이름이
+낫벨(Notbell)이에요. 그 버튼 때문에 당신의 돈이 종처럼 울려요. 탠지의 편지는
+지금도 병에 담겨 밀려 와요. 낚시를 충분히 하면요.
 
-**Your place.** A blue-roofed cottage near the village — walk in, flop on
-the bed, browse the bookshelf. Six garden plots out front: buy seeds at
-Pip's, plant, come back in a few real minutes, harvest. Every villager has
-a house of their own too (knock!), and the ducks keep a nest on the beach.
+**하늘은 진짜 시간을 따라가요.** 해는 당신의 실제 시계대로 움직여요 — 새벽,
+황금빛 저녁, 별이 뜨는 밤(어두워지면 반딧불이가 나오고, 잡을 수 있어요).
+섬은 진짜 계절을 입어요. 날씨도 저절로 밀려와요 — 비가 오면 물고기가 더 잘
+물고, 겨울엔 눈이 와요. 진짜 공휴일(새해, 메이데이, 6월 21일 종의 날,
+스푸키 이브, 서리 축제)에는 광장이 꾸며지고 주민들이 할 말이 생기고, 핍이
+딱 한 번 버튼 병을 열어요.
 
-**The sky keeps real time.** The sun runs on your actual clock — dawn,
-golden hour, starry nights (fireflies come out after dark, and they're
-catchable). The island wears the real season: spring blossoms, summer
-green, autumn golds, winter snow-dust. Weather rolls in on its own — fish
-bite faster in the rain, and it snows in winter. On real holidays (New
-Year's, May Day, Bell Day on June 21, Spooky Eve, the Frost Festival) the
-plaza gets decorated, the villagers have things to say, and Pip cracks
-open his button jar exactly once.
+**모자.** 핍이 다섯 개를 팔아요. H를 눌러 바꾸세요. 주민들도 각자 모자가
+있어요 — 제독의 선장 모자, 퍼들의 종이배, 브램블의 나뭇잎. 하웰은 모자를
+안 써요. 그것도 사연이에요.
 
-**Hats.** Pip sells five. Press H to cycle. The villagers have their own —
-the Admiral's captain's cap, Puddle's paper boat, Bramble's leaf. Howell
-doesn't wear hats. It's a whole thing.
+**바다.** 부두의 노 젓는 배를 타고 직접 저어 나갈 수 있어요 — 산호초(만타
+가오리가 미끄러지듯 지나가요)나, 이 군도를 만든 화산까지. 브라인 선장의
+예인선 퍼시스턴트는 이제 **진짜 페리 노선**을 운행해요: 부두에서 부르거나
+아무 항구의 종 부표를 울리면, 텍사스만 빼고 군도 전역을 오갑니다(이유를
+물어보세요 — 시간은 넉넉히). 순간이동 화면은 없어요. 갑판에 서 있는 동안
+정말로 항해하고, 건너는 동안 바다 이야기를 들려줘요. 이야기는 의무예요.
+한 구간에 버튼 열 개, 집으로 돌아가는 건 공짜. 직접 가고 싶다면 핍이 파는
+**인양 잠수복**(버튼 모양 헬멧, 그 종을 찾지 못한 여름에 마지막으로 쓰였던)
+을 입고 바다로 걸어 들어가 그냥 **헤엄쳐서** 섬을 건널 수도 있어요.
+그리고 **옛 등대**가 이 모든 것 위에 서 있어요. 칠이 벗겨진 갈고리 하나,
+종이 걸려 있던 자리에. 누군가 계속 닦고 있어요.
 
-**The Far Isle.** A second, quieter island across the strait — cross by
-the arched footbridge, or ride the little red train from either station.
-Over there: Barnaby's Greens & Goods (a lobster, a grocery, the only kelp
-stew on either side — he buys your produce at island prices), the public
-garden, the half-buried skeleton of the Old Singer, and **The Listening
-House** — a church with stained glass, candles, an empty belfry, and
-Brother Alder the heron, who will explain why the empty belfry is the
-point. Saffron, Bramble, Marigold the horse, and Ember the salamander all
-live over there (Ember commutes to the glow worm cave at midday; she has
-opinions about its acoustics).
+**바다 건너, 그 너머.** 아치 인도교나 빨간 기차로 건너가는 두 번째 섬 파 아일,
+북쪽의 이끼 낀 책과 진료소의 섬, 인구 1명(불개미 페코스)의 아주 작은 섬
+텍사스, 남쪽의 창고형 마트 불코(주차장은 가득인데 도로는 없어요 — 신경 쓰지
+마세요), 오렌지 과수원과 온천과 몰드카이 저택의 그로브 섬, 그리고 서쪽 끝 —
+지도가 포기하는 곳에 있는 **낫벨 연구소**: 화학 실험실, 방 하나만 한 컴퓨터
+(프로그래머는 거미 **에이다**), 로켓 부서, 그리고 유리 너머에서 손을
+흔들어 달라는 **로버 유치원**. 발사대에는 하얗고 빨간 로켓이 기다리고
+있어요. 심장 자리는 비어 있고요. 조건이 갖춰지면, 달에도 갈 수 있어요.
 
-**The water.** Rowboats at the dock — board one and actually row: out to
-the **coral reef** (manta rays glide over it), or all the way to the
-**volcano** that made the archipelago. She smokes sometimes; Cinder the
-iguana, who lives on the rim, will assure you this just means she's
-comfortable. Captain Brine's tugboat, the Persistent, now runs a **real
-ferry network**: hail her at the pier (or ring the bell-buoy at any port
-of call) and she serves every island in the archipelago except TEXAS (ask
-her why; have time). No black-screen teleports — you ride the deck while
-she genuinely sails, steering around the shallows, wake off the stern,
-smoke off the funnel, sea story told over open water. Mandatory, the
-story. Ten buttons a leg, home runs free. Prefer self-service? Pip sells
-the **Salvage Diver's Suit** — canvas, brass, bell-shaped helmet, last
-worn the summer they didn't find the bell — and then you can walk into
-the sea and simply **swim** between islands (ducks need no equipment and
-will tell you so). The **old lighthouse** stands over it all, dark and
-patient, with a polished empty hook where the bell used to hang. Friendly
-sharks patrol the strait. Whales breach out deep. The villagers,
-meanwhile, live their own lives — errands at the café and the shop,
-speech-bubble chats with the keepers, heading home at night — and now
-**friendships**: you'll find Howell and Saffron mid-gossip in the open
-(eavesdropping is allowed and rewarded with lore), and a villager will
-sometimes hand you a small parcel for their best friend. Deliver it; the
-recipient pays in buttons and delight.
+**할 것들**
 
-**The north isle & beyond.** A natural stone arch (moss senior, barnacles
-junior) leads north to an island where it is always damp and always green:
-the Quiet Stacks library (Vesper, bat, whispering preferred), a clinic where
-nobody is ever sick (Dr. Gill, axolotl, lollipops), the Buttonwagon (do not
-ask Pip), a stew cart the Buttonwagon sponsors, Butterpat the cow, Tusk the
-boar, a very poisonous frog you may only admire, and the MouseBoat, moored
-with Crumb aboard. Between here and there sits a very small island called
-TEXAS, where Pecos the fire ant maintains a slingshot, a tin can, and his
-ma's light string. The train is genuinely ridable now — villagers commute
-too — and Captain Brine ferries you to the volcano with a sea story told in
-the dark of the crossing. Murmur, the island's ghost, appears wherever and
-whenever they please. They polish the lighthouse hook. Someone should.
+- 🎣 **낚시** — 물고기 그림자 옆에 캐스팅하고, 입질은 거짓말을 해요. 진짜
+  찌가 빨려 들어갈 때만 챔질하세요.
+- 🦋 **곤충 채집** — 이제 곤충들이 발소리를 들어요. 뛰면 도망가요.
+- 🍊 **과수원에서 햇과일 따기** · 텃밭 가꾸기 (당근, 토마토, 호박)
+- 🎵 카페의 귀뚜라미 **칩**에게 기타 연주 신청하기
+- 🦴 **화석 파기** — 금 간 땅의 별 표시 (삽은 핍의 가게에서)
+- 🦀 **바닷가 웅덩이 뒤지기** — 소라게, 불가사리, 가끔 아주 거만한 문어
+- ✨ **반딧불 동굴** — 빛나는 버섯, 고요한 연못, 그리고 맨 안쪽에서 자고 있는
+  따뜻한 무언가. 조용히 말하세요.
+- 💬 **모두와 대화하기** — 일곱 명의 이름 있는 주민들, 돌아가는 대사
+  (하웰은 늑대예요 — 물어봐 주셔서 감사해요), 가끔 친구에게 보내는 소포를
+  부탁받기도 해요.
 
-**BULKO.** South of Notbell, at the end of Captain Brine's other ferry
-line: a warehouse club with a parking lot full of cars (there are no roads
-anywhere; do not worry about it), bulk parmesan wheels, a wall of TVs,
-display couches, Gus the greeter (use the lobsters' guest pass), a hot dog
-combo that costs 1.5 buttons and has since the sea had a bell — your change
-is half a button, a keepsake — and a fully furnished lobster tank that is
-NOT FOR SALE. Stop asking. —management. (the lobsters)
+진행 상황(버튼, 주머니, 도구, 기증, 이야기)은 localStorage에 저장돼요.
+모바일 터치도 지원해요 (엄지 스틱, 커다란 E 버튼, 달리기 고정).
 
-**Grove Isle.** Southeast, shaped a little like Idaho, served by the
-Grove Line — a second steam railway running straight from Notbell's
-southeast shore over wooden trestles. Orange orchards, the Moledecai mansion (the Baron's fortune
-comes from his grandfather billing Tansy hourly to not find the bell;
-Pemberton the penguin butlers, Tilly the maid swears the third Baron's
-portrait winks, three grandchildren orbit the fountain), hot springs you
-can genuinely soak in, geysers on a proud schedule, and the lounge:
-capybaras (one wearing an orange), crocodiles (their friends), and the
-little birds who work the crocodiles' teeth on commission.
+## 한글화 노트
 
-**Notbell Labs.** Far west — so far the chart gives up before the island
-does (press P; the Labs find this extremely funny). Reachable by ferry,
-by a long timber causeway from the North Isle (walked by the
-archipelago's only telephone line, which calls the other end of the
-bridge), or by swimming, if you're dressed for it. Founded to hear the
-bell again; the listening machines kept getting bigger and the questions
-kept getting wider, and now there's: a chemistry lab (eleven elements,
-mostly salt), a room-sized computer programmed by **Ada**, a spider who
-weaves core memory by paw, a rocket division with a chalk orbit drawn
-soft into the blackboard, a cafeteria (the stew is legally distinct
-rocket fuel), a rooftop catwalk with a telescope pointed somewhere
-specific, and — behind glass, so the engineers can wave — a
-**kindergarten of rovers**, who may go to the moon when they grow up, if
-they want. Director Strix presides. The flag flies the bell-and-button
-mark under written protocol (in when it rains — it's wool; half-mast on
-Bell Day, for the bell). On the pad: a rocket, white and red and patient,
-with an empty heart chamber and a brass plaque that says what it's
-waiting for. Somewhere under your home island, something that knows the
-way home is sleeping. Introduce them. Then hold that thought.
+- 모든 대사, UI 라벨, 표지판, 토스트, 도감, 지도, 메뉴판을 한국어로 옮겼습니다.
+- 고유명사는 의미와 어감을 살려 옮겼습니다 (예: Notbell→낫벨, Far Isle→파 아일,
+  BULKO→불코, The Fold→폴드, Mole Manor→몰드카이 저택).
+- 게임 특유의 농담도 함께 옮겼습니다 (예: 2.5인치 잔디 규정 → 6.35센티미터,
+  "Everything But The Bell" 조미료 → "종 빼고 다 있는 양념").
+- 주민 이름은 게임 전체(우편, 심부름, 집 배정, 생일 시스템)가 키로 참조하므로
+  관련된 모든 파일을 함께 수정해 정합성을 맞췄습니다.
+- 원작의 CSP 정책(폰트는 self만)을 지키기 위해 시스템 한국어 글꼴을 사용합니다.
+- 원작자의 커스텀 도메인용 CNAME 파일은 이 포크에서 삭제했습니다.
 
-**The museum, properly.** Bigger on the inside: an entrance art gallery
-(café prints rotate weekly, are buyable, and hang here when donated), a
-rotunda, a fossil hall whose Mystery Skeleton assembles as you donate, a
-bug hall of approved habitats, and a floor-to-ceiling aquarium with a dark
-grotto for the cave species.
+## 크레딧
 
-**The Moon.** Yes. When the rocket has its heart, it asks one question
-(“GO?”), Dr. Hazel supplies the bubble helmet (your hat fits under it;
-they checked, with hats), and you ride the lighthouse light out of the
-sea's jurisdiction entirely. Up there: a sixth of the gravity and all of
-the quiet, craters named after feelings, and the settlement where the
-rovers go when they grow up — **if** they want. Old Sojo, who came up
-first and drew circles until the telescope could read STILL HERE. Beacon,
-who speaks lamp-blink (learned from a certain lighthouse, secondhand).
-Pebble's Best Rock Museum, one rock, rotated daily, democratically.
-Tracks, drawing ten-thousand-year spirals in the dust. Comet, who does
-the perimeter (the perimeter does not need doing — that's why it's
-perfect). Magnet will lend you a rod for the **dust sea**, where the sky
-has been depositing meteorites for four billion years: chondrites,
-starglass, moonpearls, and — tell Pip immediately — the Meteoric Button.
-The archipelago hangs overhead, blue and small enough to cup, and
-southeast of the big island something glints in the deep water. The
-rovers have charted it for forty years. It rings on the heavy tides.
+- 원작: **[brezgis/Notbell](https://github.com/brezgis/Notbell)** — MIT 라이선스
+  (LICENSE 파일 참조). 원작 사이트: <https://notbell.brezgis.com>
+- three.js r180 (vendor/, MIT)
+- 한국어 번역: 이 포크 (sigco3111)
 
-**Things to do**
-
-- 🎣 **Fish, for real now** — watch the water for fish **shadows** (small,
-  medium, large: the shadow is the fish class), land your cast next to
-  one, and let it nibble — nibbles LIE; strike only the real dip. The
-  shallows hold eleven sea fish, one persistent boot, occasional mail —
-  and the cave's still pond keeps its own guest list (Blind Cavefish,
-  Moonbeam Eel, the Lantern Koi).
-- 🦋 **Catch bugs, carefully** — they hear you coming now. Walk; running
-  scatters everything wary within earshot (snails, pointedly, do not
-  care). Butterflies, dragonflies at the shore, ladybirds and snails
-  (bare-pawed), crickets in the grass, fireflies at night, a pale
-  Glimmerwing in the cave, plus the Buttonshell Beetle, which has four
-  neat holes in its shell that nobody will discuss.
-- ☄️ **Magnet-fish the dust sea** (lunar) — cast at the breathing dimples,
-  wait for the CLUNK in your boots, haul before the dust changes its mind.
-- 🍊 **Pick sunfruit** from the orchard trees; it regrows. **Garden** for
-  carrots, tomatoes, and pumpkins.
-- 🎵 **Request a song** from Chip, the cricket with the tiny guitar at the
-  café — "Button Bossa," "Foggy Lullaby," "Tidepool Stomp."
-- 🦴 **Dig fossils** — little stars of cracked earth mark the spots (shovel
-  sold at Pip's). Trilobuttons, Curlstones, the Megalodon't Tooth.
-- 🦀 **Tide pools** — a rocky shelf at the shore; rummage for hermit crabs,
-  sea stars, wiggleblossoms, and the occasional very smug octopus.
-- ✨ **The glow worm cave** — a dark mouth in a rocky knoll. Inside:
-  constellations of glow worms, glowing mushrooms, a perfectly still pond,
-  and something warm asleep at the very back. Speak softly.
-- 💬 **Talk to everyone** — seven named villagers with rotating dialogue
-  (Howell is a wolf, thank you for asking), three shopkeepers with menus.
-
-**The economy, with consequences.** Pip keeps a daily ledger now: flood
-him with six of the same thing in one day and the price halves until
-tomorrow ("Supply! Demand! I don't make the rules. (I make the rules.)").
-Fruit is pocket money, common fossils pay honestly rather than absurdly,
-dig spots and orchards take their time coming back, and the serious
-purchases — the Keeper's Cap, the diver's suit — now cost like they mean
-something. Meteorites are the new top of the market, and they're a whole
-moon away.
-
-**On your phone.** Notbell plays on touch screens: a thumbstick, a big E
-button, a run latch, and quick buttons for map/pockets/almanac/hat/sound.
-One finger orbits the camera, two fingers pinch to zoom, and the chart
-folds itself to fit. (Under the hood the touch controls speak synthesized
-keyboard, so anything added to the game later inherits mobile support
-automatically. The committee is very pleased with this design.)
-
-Progress (buttons, pockets, tools, donations, story) saves to localStorage.
-
-## Files
-
-The core cast, below. (The full module map, the contributor rules, and the
-visual/feature/lore canon live in `AGENTS.md` and `docs/` — read those before
-changing code.)
-
-```
-index.html         shell + UI styles + import map (three → vendor/)
-vendor/            three.js r180 (module + core)
-src/main.js        renderer, lights, camera, game loop, module wiring
-src/terrain.js     island heightmap + deterministic sites (village/cave/pools)
-src/zones.js       island ↔ interiors: teleports, lighting moods, walkability
-src/interact.js    the "walk up and press E" registry
-src/ui.js          dialogue (typewriter + choices), prompts, toasts, pockets, HUD
-src/audio.js       synthesized blips, jingles, splashes (WebAudio, no files)
-src/state.js       buttons, inventory, tools, donations, flags, localStorage
-src/catalog.js     every item + price + blurb, fish tables, lore text
-src/buildings.js   shop/café/museum exteriors, interiors, shopkeeper logic
-src/houses.js      your cottage + interior, the garden, villager houses
-src/cave.js        the knoll, the glow worms, the Old Light, the pond
-src/calendar.js    season / holiday / hour-of-day (no imports, safe anywhere)
-src/almanac.js     live sun, weather, rain & snow particles
-src/hats.js        hat models, H-to-cycle, who wears what
-src/fishing.js     cast/wait/strike, bottles with letters
-src/digging.js     fossil star-marks + respawns
-src/tidepools.js   pools, residents, rummaging
-src/nature.js      trees, flowers, rocks, catchable butterflies + beetles
-src/animals.js     villager bodies (incl. magpie/moth/tortoise), wander AI
-src/villagers.js   names, voices, and opinions of the wanderers
-src/player.js      input, movement, lantern glow, coffee speed
-src/ocean.js       animated water       src/sky.js  drifting clouds
-src/utils.js       noise, rand, angle helpers
-shots/             puppeteer screenshot harness (borrows puppeteer-core via a
-                   node_modules symlink — see shots/README.md)
-```
-
-## Expansion ideas
-
-- Animalese-style voice synthesis from the existing per-speaker blip pitches
-- A museum wing for Tansy's letters once you've fished up all four
-- The bell quest: Howell, the shore, one genuinely foggy night
-- A beached-seagull visitor with odd jobs; home decorating; more villagers
-- Weather-aware critters (snails love rain), shooting stars on clear nights
-- The "rolling log" world curvature (do it world-space, on tessellated geometry)
-
-Known simplifications: NPCs cheerfully scale cliffs, no collision between
-villagers, fish are equally hungry at all hours, and Pip's prices are
-whatever Pip says they are.
+파일 구조, 모듈 지도, 기여 규칙, 비주얼/기능/설정 캐논은 원작 그대로
+`AGENTS.md`와 `docs/`에 있습니다 — 코드를 바꾸기 전에 읽어 보세요.
