@@ -171,7 +171,7 @@ export function createBoats(player) {
       getPos: () => boat.position,
       r: 5.2, // callable from the end of the wadeable shallows
       enabled: () => !data.inUse,
-      label: 'row out to sea',
+      label: '바다로 노 저어 나가기',
       use: () => boardBoat(data),
     });
   }
@@ -197,12 +197,12 @@ export function createBoats(player) {
     data.boat.position.set(0, -0.42, 0.1);
     data.boat.rotation.set(0, 0, 0);
     player.group.add(data.boat); // the boat goes where you go now
-    ui.toast('You push off. The water holds you like it’s done this before.', '🚣');
+    ui.toast('배를 밀어 떠나요. 물이 해본 적 있다는 듯이 당신을 받쳐 줘요.', '🚣');
     if (!S.hasFlag('firstRow')) {
       S.setFlag('firstRow');
       ui.say([
-        'Oars in, oars out. The island shrinks behind you, politely.',
-        'Steer for the smoking mountain, the bright water, or wherever the fins are going. To land again, nose up to any shore and press E.',
+        '노를 넣고, 노를 빼고. 섬이 뒤로, 공손하게, 작아져요.',
+        '연기 나는 산, 반짝이는 물, 지느러미들이 가는 곳 어디로든 가 보세요. 다시 상륙하려면 아무 해안에 코를 대고 E를 눌러요.',
       ]);
     }
   }
@@ -224,7 +224,7 @@ export function createBoats(player) {
     r: 99, priority: 0,
     zone: 'sea',
     enabled: () => !!activeBoat && !!disembarkSpot(),
-    label: 'go ashore',
+    label: '상륙하기',
     use: async () => {
       const spot = disembarkSpot();
       if (!spot || !activeBoat) return;
@@ -243,7 +243,7 @@ export function createBoats(player) {
       S.save();
       plop();
       await zones.go('island', { x: spot.x, z: spot.z, rotY: player.group.rotation.y });
-      ui.toast('You hop ashore. The boat will wait — it’s good at that.', '⛵');
+      ui.toast('훌쩍 상륙해요. 배는 기다릴 거예요 — 잘하거든요.', '⛵');
     },
   });
 
@@ -325,67 +325,69 @@ export function createBoats(player) {
   brine.rotation.y = 0.4; // facing forward — her back to the stern passenger
   tug.add(brine);
   const BRINE_LINES = [
-    'Captain Brine. Tug’s called the Persistent. She doesn’t tug much these days. Neither do I.',
-    'Out past the volcano there’s a fog bank that hums, and rocks that sing back. Someday, a proper route. Today: the mountain run.',
-    'Watch the reef glow when you row over it — bright water means small neighbors. Mind your oars.',
-    'The old light there? I steered home by her a hundred times. Tip your hat when you pass. You don’t have a hat? The shop sells hats.',
+    '브라인 선장이야. 예인선 이름은 퍼시스턴트. 요즘은 별로 끌지 않아. 나도 마찬가지고.',
+    '화산 너머에는 웅웅거리는 안개 뭉치와, 화답하는 바위들이 있어. 언젠가는 정규 항로로. 오늘은: 산행 항로.',
+    '노 저어 지나갈 때 암초가 빛나는 걸 봐 — 밝은 물은 작은 이웃들이 있다는 뜻이야. 노 조심하고.',
+    '저기 저 옛 등대? 저 불빛 보고 백 번은 귀항했지. 지날 때 모자를 기울여. 모자가 없다고? 가게에서 팔아.',
   ];
   // ------------------------------------------------------ the sea stories ----
   // every route gets one. mandatory, the story.
   const STORIES = {
     volcano: [
-      ['The Persistent grumbles away from the pier. Brine talks without turning around.',
-       '“I was a deckhand the night the bell went down. Youngest aboard. The wave stood up like a wall with opinions.”',
-       '“Tansy didn’t cry, you know. She just listened all the way down. Said it rang once, under the water. Said it sounded… relieved.”',
+      ['퍼시스턴트가 투덜거리며 부두를 떠나요. 브라인은 돌아보지도 않고 이야기해요.',
+       '“종이 가라앉던 밤 나는 갑판원이었어. 막내였지. 파도가 의견 많은 벽처럼 일어섰어.”',
+       '“탠지는 울지 않았어, 알아? 가라앉는 내내 그저 들었어. 물속에서 한 번 울렸다고 했어. 소리가… 홀가분해 들렸대.”',
+       '“종이 가라앉던 밤 나는 갑판원이었어. 막내였지. 파도가 의견 많은 벽처럼 일어섰어.”',
+       '“탠지는 울지 않았어, 알아? 가라앉는 내내 그저 들었어. 물속에서 한 번 울렸다고 했어. 소리가… 홀가분해 들렸대.”',
        '엔진이 안정돼요. 검은 바위가 창밖으로 흘러가요.'],
-      ['“See the reef glowing off the port side? My grandmother called it the dropped crown. Said a sea-queen threw it away on purpose.”',
-       '“Why on purpose? Because it kept singing, and she wanted to sleep. Royalty.” Brine snorts at her own joke for a while.',
+      ['“좌현 너머로 빛나는 암초 보여? 우리 할머니는 떨어진 왕관이라고 불렀어. 바다 여왕이 일부러 버렸다고.”',
+       '“왜 일부러냐고? 계속 노래를 했거든, 여왕은 자고 싶었고. 왕족이란.” 브라인이 제 농담에 한참 혼자 킥킥대요.',
        '화산이 앞에 커져 가요, 따뜻하고 태연하게.'],
-      ['“The mountain? Oh, she and I get along. I whistle when I pass. She smokes when she’s pleased.”',
+      ['“저 산? 아, 나랑은 잘 지내. 지날 때 휘파람을 불어. 기분 좋으면 연기를 뿜지.”',
        '“한 번은 내가 불기 전에 먼저 뿜었어. 그 생각을 자주 해.”'],
     ],
     bulko: [
-      ['“Warehouse run. Hold on to something.” The Persistent picks up speed, which is to say: some speed.',
-       '“They asked me to decorate the lobster tank once. The lobsters had OPINIONS about the throw pillows. We don’t speak of it. The pillows stayed.”',
+      ['“창고행. 뭐든 붙잡아.” 퍼시스턴트가 속도를 내요. 그러니까, 약간의 속도를.',
+       '“한번은 랍스터 수조를 꾸며 달라더군. 랍스터들이 쿠션에 대해 의.견.이 있었어. 그 얘긴 안 해. 쿠션은 남았지만.”',
        '회색 건물이 물 위로 솟아요, 아주 정돈된 절벽처럼.'],
-      ['“A buck and a half for the dog and the fizz. Since before the bell went down. I checked the ledgers myself.”',
+      ['“핫도그에 탄산까지 1.5버튼. 종이 가라앉기 전부터 쭉. 장부를 직접 확인했어.”',
        '“어떤 것들은 변함없어, 선원.” 가는 내내 더는 아무 말 없고, 그게 어쩐지 이번 주 최고의 대화예요.'],
       ['“오는 길에 차 본 적 있어? 없다고? 이상한 일이지—” 말을 멈춰요. “아니야. 거스 말이 맞아. 신경 쓰지 마.”'],
     ],
     far: [
-      ['“Short hop, this. Time for a short story: the church over there has no bell. ON PURPOSE. First time I heard that, I laughed so hard I fouled the prop.”',
+      ['“금방이야, 이 구간. 짧은 이야기 시간: 저기 교회에는 종이 없어. 일.부.러. 처음 들었을 땐 프로펠러가 엉킬 정도로 웃었지.”',
        '“그러다 한 번 비 피하러 앉아 있었어. 내 인생 가장 조용한 20분. 티 내는 것보다 자주 생각나.”'],
-      ['“See the bones on the far shore? The Old Singer. Whale. Before your time, before MY time, and I’m older than the paint on this boat.”',
+      ['“저기 먼 해안의 뼈 보여? 옛 가수. 고래야. 네 시대 이전, 내 시대 이전이지. 나는 이 배 페인트보다 늙었어.”',
        '“어떤 밤엔 바람이 갈비뼈를 넘어와 섬 전체가 웅웅거려. 왜가리는 찬송가래. 난 날씨래. 둘 다 맞아.”'],
     ],
     north: [
-      ['“North run. Mind the damp. The moss up there has TENURE, sailor — it was on the rocks before the rocks finished.”',
+      ['“북쪽 항로. 습기 조심해. 저 위 이끼는 종신 재직권이 있어, 선원 — 바위가 완성되기 전부터 바위에 있었거든.”',
        '“박쥐가 도서관을 운영해. 매듭 책을 빌려준 적 있지. 매듭은 다 아는데. 그래도 읽었어. 예의잖아.”'],
-      ['“Doctor up there’s an axolotl. Nobody on that island has ever been sick. She keeps the clinic anyway. ‘Readiness,’ she says.”',
+      ['“저 위 의사는 아홀로틀이야. 그 섬에서 아픈 사람은 한 번도 없었어. 그래도 병원은 유지해. ‘대비’라면서.”',
        '“존경해. 퍼시스턴트도 몇 년째 끈 게 없어. 우리도 대비 중이지.”'],
     ],
     grove: [
-      ['“Grove Isle. Old money. The Baron’s grandfather billed Old Tansy by the HOUR to not find that bell. I’ve seen the invoice. It’s in a gold frame.”',
+      ['“그로브 섬. 오래된 돈. 남작의 할아버지는 그 종을 못 찾는 데 시간당으로 옛 탠지에게 청구했어. 청구서를 봤다고. 금 액자에 있어.”',
        '“그런데도 — 과수원이 나왔어, 온천, 철도. 나쁜 거래에서 뭐가 자라는지, 백 년 지나면 재밌다니까.”'],
-      ['“The capybaras run the springs. Don’t let the calm fool you. That calm took PRACTICE.”',
+      ['“카피바라들이 온천을 운영해. 저 평온에 속지 마. 저 평온은 연습의 결과야.”',
        '“한 마리는 오렌지를 올리고 있어. 물어보고 싶을 거야. 묻지 마. 어떤 것들은 하중을 받치고 있어.”'],
     ],
     labs: [
-      ['“The Labs! They tried to buy the Persistent off me once. ‘Acoustic research,’ they said. Asked what they’d play through her. They said PINGS. She’s a tugboat, not a triangle.”',
+      ['“연구소! 한번은 퍼시스턴트를 사겠다더군. ‘음향 연구’라면서. 뭘 틀 거냐고 물었지. 핑 소리래. 얘는 예인선이지 트라이앵글이 아니야.”',
        '“과일 바구니랑 기압계로 사과하더라. 솔직히 좋은 이웃이야. 기압계는 틀린 적이 없어. 짜증 나.”'],
-      ['“They strung a telephone wire over the north causeway. One telephone. It calls the OTHER END OF THE BRIDGE. They’re very proud.”',
+      ['“북쪽 제방길에 전화선을 쳤어. 전화기 한 대. 다리 저쪽 끝에 거는 전화야. 아주 자랑스러워해.”',
        '“한 번 걸어봤어. 두더지가 받더군. ‘없어도 들리는 거 아시죠’라더라. 장엄한 전선 낭비. 과학이야!”'],
-      ['“They’re building a rocket out there. To the MOON, they say. You know what I say? Good.”',
-       '“The sea’s been keeping our bell a hundred years. About time somebody from this archipelago went somewhere the sea can’t follow.”',
+      ['“저기서 로켓을 만들고 있어. 달에 간대. 내가 뭐라 했게? 좋다고 했어.”',
+       '“바다는 백 년 동안 우리 종을 지켜 왔어. 이 군도 누군가가 바다가 못 따라가는 곳에 갈 때가 됐지.”',
        '남은 길 내내 더는 말이 없어요. 슬픈 침묵은 아니에요.'],
     ],
     oasis: [
-      ['“Oasis Estates. Fourteen applications I sent that woman. FOURTEEN. ‘The horn is too loud.’ I took off the horn. ‘The boat is too loud.’ I can’t take off the BOAT.”',
-       '“And what did she approve in the end? One route. BULKO and back. For PAPER TOWELS. The Persistent is now, officially, a paper towel boat.”',
+      ['“오아시스 에스테이츠. 그 여자한테 신청서를 열네 장 냈어. 열.네. 장. ‘뱃고동이 시끄럽다.’ 뱃고동을 뗐어. ‘배가 시끄럽다.’ 배를 뗄 수는 없잖아.”',
+       '“결국 뭘 승인해 줬게? 노선 하나. 불코 왕복. 키친타월 때문에. 퍼시스턴트는 이제 공식적으로 키친타월 배야.”',
        '“끝에 클립보드 든 낙타가 있을 거야. 손 흔들어. 답례는 없을 거야. 네가 흔들었다고 적어둘 거야.”'],
-      ['“Every house on that island is the same house. I sailed past twice to be sure. Then a third time, in case I’d gone funny. Same house.”',
+      ['“그 섬의 모든 집은 똑같은 집이야. 확인하려고 두 번 지나갔지. 내가 이상해진 건가 싶어 세 번째도. 똑같은 집.”',
        '“문지기 집 앵무새는 세 번 다 손을 흔들었어. 명단을 관리해. 명단은 비어 있어. 근사한 녀석이야.”'],
-      ['“No bells on that island, you know. It’s in their rules. A Moledecai wrote it.”',
+      ['“그 섬에는 종이 없어, 알지? 규정에 있어. 몰드카이가 썼대.”',
        '“몰드카이가 종소리를 듣기 싫다니 웃기지. 가장 귀 기울여 들을 가문이라 생각했는데.”'],
     ],
     home: [
@@ -436,48 +438,48 @@ export function createBoats(player) {
 
   const STOPS = {
     home: {
-      label: '🍃 Notbell (home dock)',
+      label: '🍃 낫벨(홈 선착장)',
       land: { x: D.x + ox * 3, z: D.z + oz * 3, rotY: Math.atan2(-ox, -oz) },
       sea: { x: tx + ox * 2, z: tz + oz * 2 },
     },
     volcano: {
-      label: '🌋 The volcano',
+      label: '🌋 화산',
       land: { x: vb.x, z: vb.z + 2, rotY: Math.PI },
       sea: seaOff(vb.x, vb.z + 2, VOLCANO.x, VOLCANO.z),
     },
     far: {
-      label: '⛪ The Far Isle',
+      label: '⛪ 파 아일',
       land: farLand,
       sea: seaOff(farLand.x, farLand.z, ISLAND2.x, ISLAND2.z),
     },
     north: {
-      label: '📚 The North Isle',
+      label: '📚 북쪽 섬',
       land: northLand,
       sea: seaOff(northLand.x, northLand.z, ISLAND3.x, ISLAND3.z),
     },
     grove: {
-      label: '🍊 Grove Isle',
+      label: '🍊 그로브 섬',
       land: groveLand,
       sea: seaOff(groveLand.x, groveLand.z, ISLAND5.x, ISLAND5.z),
     },
     bulko: {
-      label: '🛒 BULKO',
+      label: '🛒 불코',
       land: { x: BULKO_DOCK.x, z: BULKO_DOCK.z, rotY: BULKO_DOCK.rotY },
       sea: seaOff(BULKO_DOCK.x, BULKO_DOCK.z, 8, 96),
     },
     labs: {
-      label: '🚀 Notbell Labs',
+      label: '🚀 낫벨 연구소',
       land: { x: LABS_DOCK.x, z: LABS_DOCK.z, rotY: LABS_DOCK.rotY },
       sea: seaOff(LABS_DOCK.x, LABS_DOCK.z, ISLAND6.x, ISLAND6.z),
     },
     farther: {
-      label: '🏕️ Farther Isle',
+      label: '🏕️ 파더 섬',
       land: { x: FARTHER_DOCK.x, z: FARTHER_DOCK.z, rotY: FARTHER_DOCK.rotY },
       sea: seaOff(FARTHER_DOCK.x, FARTHER_DOCK.z, ISLAND7.x, ISLAND7.z),
     },
     // (the ONE route the HOA approved: BULKO and back — see stopMenu)
     oasis: {
-      label: '🏡 Oasis Estates',
+      label: '🏡 오아시스 에스테이츠',
       land: { x: OASIS_DOCK.x, z: OASIS_DOCK.z, rotY: OASIS_DOCK.rotY },
       sea: OASIS_DOCK.sea,
     },
@@ -565,7 +567,7 @@ export function createBoats(player) {
       return zones.go('sea', { x: from.sea.x, z: from.sea.z, rotY: heading });
     });
     voyage = { dest, destId, story, speed: 0, elapsed: 0, storyFired: false, landing: false, via: routeVia(from.sea, dest.sea) };
-    ui.toast('The Persistent clears her throat and gets going.', '⛴️');
+    ui.toast('퍼시스턴트가 헛기침하고 출발해요.', '⛴️');
   }
 
   async function landVoyage() {
@@ -574,8 +576,8 @@ export function createBoats(player) {
     player.riding = false;
     await ui.fadeSwap(() => zones.go('island', v.dest.land));
     ui.toast(v.destId === 'home'
-      ? 'Home port. The Persistent sighs happily.'
-      : 'The Persistent putters off home. Ring a buoy when you want a lift.', '⛴️');
+      ? '모항. 퍼시스턴트가 행복하게 한숨 쉬어요.'
+      : '퍼시스턴트가 부릉부릉 집으로 가요. 태워 달라면 부표를 울리세요.', '⛴️');
     if (v.destId !== 'home') {
       // she sees herself home, trailing smoke over the horizon
       voyage = { dest: STOPS.home, destId: 'home', ghost: true, speed: 4, elapsed: 0, via: routeVia(v.dest.sea, STOPS.home.sea) };
@@ -589,9 +591,9 @@ export function createBoats(player) {
     if (!S.hasFlag('metBrine')) {
       S.setFlag('metBrine');
       ui.say([
-        'A broad gray goose looks up from a coil of rope she was clearly asleep on.',
-        '“Captain Brine. The Persistent. We go everywhere worth going and two places that aren’t — ten buttons a leg, sea story included. Mandatory, the story.”',
-      ], { speaker: 'Captain Brine', voice: 340 });
+        '넉넉한 회색 기러기가 밧줄 꾸러미에서 고개를 들어요. 분명 그 위에서 자고 있었어요.',
+        '“브라인 선장. 퍼시스턴트. 갈 만한 곳은 다 가고, 아닌 곳도 두 군데 가 — 구간당 10버튼, 바다 이야기 포함. 이야기는 필수야.”',
+      ], { speaker: '브라인 선장', voice: 340 });
       return;
     }
     // Oasis Estates approved exactly one ferry route: to BULKO and back
@@ -604,20 +606,20 @@ export function createBoats(player) {
         disabled: id !== 'home' && S.state.buttons < 10,
       }));
     choices.push({ label: '🤠 TEXAS', value: 'texas' });
-    if (hereId === 'home') choices.push({ label: 'Chat', value: 'chat' });
-    choices.push({ label: 'Leave', value: null });
-    const choice = await ui.ask('Where to, sailor?', choices, { speaker: 'Captain Brine', voice: 340 });
+    if (hereId === 'home') choices.push({ label: '수다', value: 'chat' });
+    choices.push({ label: '나가기', value: null });
+    const choice = await ui.ask('어디로 갈까, 선원?', choices, { speaker: '브라인 선장', voice: 340 });
     if (!choice) return;
     if (choice === 'texas') {
       ui.say([
-        'No.',
-        '“The Persistent draws four feet of water. TEXAS draws ten inches of Texas. We’d beach her, and Pecos would charge us mooring fees on land HE doesn’t pay for either.”',
-        '“Row. Swim. Walk at low tide, I don’t care. The Persistent does not do TEXAS.”',
-      ], { speaker: 'Captain Brine', voice: 340 });
+        '“안 돼.”',
+        '“퍼시스턴트는 1.2미터의 흘수가 필요해. 텍사스는 25센티의 텍사스를 먹어. 좌초할 거고, 페코스는 본인도 안 내는 정박료를 뭍에서 우리한테 받을 거야.”',
+        '“노를 저어. 헤엄쳐. 간조 때 걸어가든, 상관없어. 퍼시스턴트는 텍사스는 안 가.”',
+      ], { speaker: '브라인 선장', voice: 340 });
       return;
     }
     if (choice === 'chat') {
-      ui.say(BRINE_LINES[brineIdx++ % BRINE_LINES.length], { speaker: 'Captain Brine', voice: 340 });
+      ui.say(BRINE_LINES[brineIdx++ % BRINE_LINES.length], { speaker: '브라인 선장', voice: 340 });
       return;
     }
     if (choice !== 'home') {
@@ -630,7 +632,7 @@ export function createBoats(player) {
   register({
     pos: new THREE.Vector3(tx, 0, tz), r: 6,
     enabled: () => !voyage || voyage.ghost,
-    label: 'hail Captain Brine',
+    label: '브라인 선장 부르기',
     use: () => stopMenu('home'),
   });
 
@@ -663,7 +665,7 @@ export function createBoats(player) {
   for (const [id, pos] of PORT_BUOYS) {
     register({
       pos, r: 2.6,
-      label: 'ring the buoy for the Persistent',
+      label: '퍼시스턴트를 부르려고 부표 울리기',
       use: async () => {
         doorChime();
         await stopMenu(id);
@@ -784,18 +786,18 @@ export function createBoats(player) {
     pos: new THREE.Vector3(
       lhx + Math.sin(towardShore) * 2.8, 0, lhz + Math.cos(towardShore) * 2.8),
     r: 2.8,
-    label: 'stand at the old lighthouse',
+    label: '옛 등대에 서 보기',
     use: async () => {
       await ui.say([
-        'The tower still stands watch, white and rust-red, a small electric lamp at the top where the great one used to be.',
-        'Up in the lamp room, hanging from the roof on a short chain, is an empty hook — polished, not rusted. It is swaying. There is no wind up there. Someone keeps it polished.',
+        '탑은 여전히 망을 보고 서 있어요, 하얗고 녹빨갛게. 꼭대기, 옛 큰 등불이 있던 자리에는 작은 전기 램프.',
+        '등대 방, 지붕에 짧은 사슬로 매달린 빈 갈고리 — 녹이 아니라 윤기가 나요. 흔들리고 있어요. 저 위에는 바람이 없어요. 누군가 계속 닦고 있어요.',
         'A small plate reads: “HER LIGHT KEEPS THE CAFÉ WARM. HER BELL KEEPS THE SEA COMPANY. THE HOOK KEEPS ITS SHAPE, IN CASE.”',
-        'Under it, a newer plate, screwed on slightly crooked: “ELECTRIC LAMP FITTED. IT IS NOT HER LIGHT. IT DOES ITS BEST.”',
+        '그 아래, 살짝 비뚤게 나사로 고정된 새 명판: “전기 램프 설치됨. 그분의 빛은 아님. 최선을 다하는 중.”',
       ]);
       if (!S.hasFlag('sawLighthouse')) {
         S.setFlag('sawLighthouse');
         doorChime();
-        ui.toast('Far below the waves, something rings once. Probably the tide. Probably.', '🔔');
+        ui.toast('파도 아주 아래에서, 무언가가 한 번 울려요. 아마 조수예요. 아마요.', '🔔');
       }
     },
   });
@@ -864,7 +866,7 @@ export function createBoats(player) {
         // the story, told over open water
         if (!v.storyFired && v.elapsed > 2.2 && !ui.isBusy()) {
           v.storyFired = true;
-          ui.say(v.story, { speaker: 'Captain Brine', voice: 340 });
+          ui.say(v.story, { speaker: '브라인 선장', voice: 340 });
         }
         // arrival — politely waits for Brine to finish the story
         if (!v.landing && (dist < 5 || v.elapsed > 90) && v.storyFired && !ui.isBusy()) {
