@@ -10,7 +10,7 @@ import * as S from './state.js';
 import { rand, pick, turnToward } from './utils.js';
 
 const FIRST_MEETING = [
-  '…oh. Oh! You can SEE me?',
+  '…어. 어! 나를 볼 수 있어?',
   '등대에 불이 켜진 뒤로 아무도 나를 똑바로 쳐다보지 않아. 나는 머머야. 종보다 먼저 여기 있었지. 아마 이끼 다음까지도 있을 거야.',
   '모두에게 비밀로 해. 아니, 말해도 돼. 어느 쪽이 더 좋은지 솔직히 까먹었어.',
 ];
