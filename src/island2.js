@@ -39,17 +39,17 @@ const IN = {
 const VOICE = { barnaby: 290, alder: 410 };
 
 const BARNABY_CHAT = [
-  'Fresh off the morning train! The train carries nothing. I just enjoy saying it.',
-  'A lobster runs the grocery and NOBODY makes soup jokes. Wonderful island. Wonderful people.',
-  'Brother Alder trades me candle stubs for kelp. Don’t ask what I do with the stubs. (I light them. It’s nice.)',
-  'My cousin lives in your tide pools. We wave. We’re not close.',
+  '아침 기차에서 방금 내린 신선함! 기차는 아무것도 안 실어요. 그냥 이 말이 좋아서요.',
+  '랍스터가 식료품점을 하는데 아무도 수프 농담을 안 해요. 멋진 섬. 멋진 사람들.',
+  '알더 수사님이 촛농 조각을 미역과 교환해 줘요. 조각으로 뭘 하냐고는 묻지 마세요. (불을 켜요. 좋아요.)',
+  '제 사촌이 당신 섬 조수 웅덩이에 살아요. 손은 흔들어요. 안 친해요.',
 ];
 let barnabyChatIdx = 0;
 
 const ALDER_LORE = [
-  'We are Listeners, dear walker. We keep no god and ring no bell. We listen for the one the sea borrowed.',
-  'When the fog is thick, the whole congregation sits perfectly still. Some say they hear the bell. Some say they hear Howell. Both are sacred, in their way.',
-  'The belfry stays empty on purpose. An empty place where a bell should be is itself a kind of bell. Sit with that. Or just sit — sitting is also good.',
+  '우리는 듣는 이들이오, 걷는 이여. 신도 모시지 않고 종도 울리지 않소. 바다가 빌려 간 그 하나를 기다리며 들을 뿐.',
+  '안개가 짙으면, 신도 전원이 가만히 앉아 있소. 종소리를 들었다는 이도 있고, 하웰 소리를 들었다는 이도 있소. 둘 다 나름대로 신성하오.',
+  '종루는 일부러 비워 두오. 종이 있어야 할 자리의 빈 공간 자체가 하나의 종이오. 그걸 곱씹으며 앉아 있어도 좋고, 그냥 앉아 있어도 좋소 — 앉는 것도 좋은 것이오.',
 ];
 let alderLoreIdx = 0;
 
@@ -196,17 +196,17 @@ export function createIsland2() {
     });
     register({
       pos: new THREE.Vector3(gSpot.x, 0, gSpot.z + 3.4), r: 2.6,
-      label: 'enter Barnaby’s Greens & Goods',
+      label: '바나비의 채소·잡화점 들어가기',
       use: () => zones.go('grocery'),
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 4.9), r: 1.6, zone: 'grocery',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: gSpot.x, z: gSpot.z + 4.4, rotY: 0 }),
     });
     register({
       pos: new THREE.Vector3(B.x - 2.5, 0, B.z - 2.8), r: 3, zone: 'grocery',
-      label: 'talk to Barnaby',
+      label: '바나비와 대화하기',
       use: () => barnabyMenu(),
     });
   }
@@ -391,25 +391,25 @@ export function createIsland2() {
     zones.setDoor('church', { x: cSpot.x, z: cSpot.z + 4.8 });
     register({
       pos: new THREE.Vector3(cSpot.x, 0, cSpot.z + 4.2), r: 2.6,
-      label: 'enter The Listening House',
+      label: '듣는 집 들어가기',
       use: () => zones.go('church'),
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 7.2), r: 1.8, zone: 'church',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: cSpot.x, z: cSpot.z + 5.2, rotY: 0 }),
     });
     register({
       getPos: () => alder.position, r: 3.2, zone: 'church',
-      label: 'talk to Brother Alder',
+      label: '알더 수사와 대화하기',
       use: () => alderMenu(refreshCandles),
     });
     register({
       pos: new THREE.Vector3(B.x + 2.6, 0, B.z - 0.3), r: 2.0, zone: 'church',
-      label: 'sit in a pew', priority: 0,
+      label: '긴 의자에 앉기', priority: 0,
       use: async () => {
         await ui.fadeSwap(() => {});
-        ui.say('You sit. The quiet here has texture, like wool. Somewhere in it, very faint, something almost rings. You feel mended in one or two small places.');
+        ui.say('앉았어요. 이곳의 고요는 양모 같은 질감이에요. 그 어딘가에서, 아주 희미하게, 무언가 울릴 듯해요. 작은 곳 한두 군데가 기워진 기분이에요.');
       },
     });
   }
@@ -483,8 +483,8 @@ export function createIsland2() {
     zones.addBlockerBox(G.x, G.z + 3.7, 2.0, 0.9, 0, 0.02);
     register({
       pos: new THREE.Vector3(G.x, 0, G.z + 3.2), r: 2.0,
-      label: 'sit on the garden bench',
-      use: () => ui.say('You sit in the public garden. A bee conducts a full inspection of your person and approves. The fountain applauds quietly, forever.'),
+      label: '정원 벤치에 앉기',
+      use: () => ui.say('공동 정원에 앉았어요. 벌 한 마리가 당신을 전수 조사하고 승인해요. 분수가 조용히, 영원히 박수쳐요.'),
     });
   }
 
@@ -541,15 +541,15 @@ export function createIsland2() {
 
     register({
       pos: new THREE.Vector3(plaque.x, 0, plaque.z), r: 2.6,
-      label: 'read the weathered plaque',
+      label: '바람에 닳은 명패 읽기',
       use: async () => {
         await ui.say([
-          'A plaque of sea-smoothed bronze, set in stone:',
-          '“THE OLD SINGER. SHE CARRIED THE BELL’S SONG TO DEEP WATER WHEN THE RINGING STOPPED. THE SEA REMEMBERS THEM BOTH.” —the Listeners',
+          '바다에 둥글게 닳은 청동 명패, 돌에 박혀 있어요:',
+          '“옛 노래꾼. 울림이 멎었을 때 그녀가 종의 노래를 깊은 물로 옮겼다. 바다는 둘 다 기억한다.” —듣는 이들',
         ]);
         if (!S.hasFlag('metOldSinger')) {
           S.setFlag('metOldSinger');
-          ui.say('The wind moves through the ribs, and for one note — just one — it sounds like a bell.');
+          ui.say('바람이 뼈대 사이를 지나가고, 한 음 — 딱 한 음만큼은 — 종소리처럼 들려요.');
         }
       },
     });
@@ -584,15 +584,15 @@ async function barnabyMenu() {
   if (!S.hasFlag('metBarnaby')) {
     S.setFlag('metBarnaby');
     await ui.say([
-      'Well! A face from the home island. Welcome to the Far Isle — population: calmer.',
-      'Barnaby. Greens, goods, and the best kelp stew on either side of the strait. Also the only kelp stew. Both records, held proudly.',
+      '오! 본섬에서 온 얼굴이네. 파 아일에 온 걸 환영해 — 인구: 더 차분함.',
+      '바나비야. 채소, 잡화, 그리고 해협 양쪽에서 최고의 미역 스튜. 유일한 미역 스튜이기도 해. 두 기록 모두 자랑스럽게 보유 중이야.',
     ], { speaker: 'Barnaby', voice: VOICE.barnaby });
   }
-  const choice = await ui.ask('What can I get you?', [
-    { label: '🌱 Buy seeds & stew', value: 'buy' },
-    { label: '🥕 Sell produce (island prices!)', value: 'sell' },
-    { label: 'Chat', value: 'chat' },
-    { label: 'Leave', value: 'leave' },
+  const choice = await ui.ask('뭘 해 줄까?', [
+    { label: '🌱 씨앗·스튜 사기', value: 'buy' },
+    { label: '🥕 농작물 팔기 (섬 가격!)', value: 'sell' },
+    { label: '잡담', value: 'chat' },
+    { label: '나가기', value: 'leave' },
   ], { speaker: 'Barnaby', voice: VOICE.barnaby });
 
   if (choice === 'buy') return barnabyBuy();
@@ -611,18 +611,18 @@ async function barnabyBuy() {
       label: `${ITEMS[id].emoji} ${ITEMS[id].name}`, value: id,
       hint: `${ITEMS[id].price}🔘`, disabled: S.state.buttons < ITEMS[id].price,
     })),
-    { label: '🍲 Kelp Stew (eat in)', value: 'stew', hint: `${STEW_PRICE}🔘`, disabled: S.state.buttons < STEW_PRICE },
-    { label: 'Back', value: 'back' },
+    { label: '🍲 미역 스튜 (여기서 먹기)', value: 'stew', hint: `${STEW_PRICE}🔘`, disabled: S.state.buttons < STEW_PRICE },
+    { label: '뒤로', value: 'back' },
   ];
-  const choice = await ui.ask('Seeds travel well. Stew doesn’t travel at all — that’s the charm.', wares,
+  const choice = await ui.ask('씨앗은 여행을 잘해. 스튜는 전혀 못 해 — 그게 매력이야.', wares,
     { speaker: 'Barnaby', voice: VOICE.barnaby });
   if (choice === 'stew') {
     S.spend(STEW_PRICE);
     S.drinkCoffee(45);
     sip();
     ui.updateHUD();
-    ui.toast('Warm to the tips of your ears. <i>A little quicker for 45s!</i>', '🍲');
-    await ui.say('Careful, the bowl keeps the heat. Family secret. (The secret is a warm bowl.)',
+    ui.toast('귀 끝까지 따뜻해져요. <i>45초간 조금 빨라져요!</i>', '🍲');
+    await ui.say('조심해, 그릇이 열을 오래 잡아둬. 가문의 비밀이야. (비밀은 따뜻한 그릇이야.)',
       { speaker: 'Barnaby', voice: VOICE.barnaby });
     return barnabyMenu();
   }
@@ -642,7 +642,7 @@ async function barnabySell() {
     .map(([id, n]) => ({ id, n, item: ITEMS[id] }))
     .filter(({ item }) => item && (item.kind === 'produce' || item.kind === 'fruit'));
   if (!stock.length) {
-    await ui.say('Nothing from the garden today? Grow me something orange. Or red. I’m flexible within warm colors.',
+    await ui.say('오늘은 텃밭 수확이 없나? 주황색이나 빨간 걸 좀 길러 봐. 따뜻한 색 안에서는 유연하거든.',
       { speaker: 'Barnaby', voice: VOICE.barnaby });
     return barnabyMenu();
   }
@@ -651,8 +651,8 @@ async function barnabySell() {
     value: id,
     hint: `${Math.round(item.price * 1.5) * n}🔘`,
   }));
-  choices.push({ label: 'Done', value: 'done' });
-  const choice = await ui.ask('Fresh-grown? I pay island prices — half again over that magpie.', choices,
+  choices.push({ label: '다 팔았어요', value: 'done' });
+  const choice = await ui.ask('갓 수확한 거지? 섬 가격으로 쳐줄게 — 그 까치보다 1.5배.', choices,
     { speaker: 'Barnaby', voice: VOICE.barnaby });
   if (choice === 'done') return barnabyMenu();
   const n = S.countItem(choice);
@@ -660,7 +660,7 @@ async function barnabySell() {
   S.removeItem(choice, n);
   S.earn(total);
   kaching();
-  ui.toast(`Sold ${n} × <b>${ITEMS[choice].name}</b> for <b>${total}</b> buttons!`, '🔘');
+  ui.toast(`<b>${ITEMS[choice].name}</b> ${n}개를 <b>${total}</b>버튼에 팔았어요!`, '🔘');
   ui.updateHUD();
   return barnabySell();
 }
@@ -671,14 +671,14 @@ async function alderMenu(refreshCandles) {
   if (!S.hasFlag('metAlder')) {
     S.setFlag('metAlder');
     await ui.say([
-      'Welcome, walker. I am Brother Alder, and this is The Listening House.',
-      'No service is in progress. No service is ever in progress. We simply keep the quiet warm, in case the bell finds its way home.',
+      '어서 오시오, 걷는 이여. 나는 알더 수사요. 여기는 듣는 집이오.',
+      '예배는 진행 중이지 않소. 언제나 진행 중이지 않소. 우리는 그저 고요를 따뜻하게 데워 둘 뿐이오, 종이 집으로 돌아올 경우를 대비해서.',
     ], { speaker: 'Brother Alder', voice: VOICE.alder });
   }
-  const choice = await ui.ask('How may the quiet help you?', [
-    { label: 'Ask about the Listeners', value: 'lore' },
-    { label: `🕯️ Light a candle`, value: 'candle', hint: '5🔘', disabled: S.state.buttons < 5 },
-    { label: 'Leave', value: 'leave' },
+  const choice = await ui.ask('고요가 무엇을 도와드릴까요?', [
+    { label: '듣는 이들에 대해 묻기', value: 'lore' },
+    { label: `🕯️ 촛불 켜기`, value: 'candle', hint: '5🔘', disabled: S.state.buttons < 5 },
+    { label: '나가기', value: 'leave' },
   ], { speaker: 'Brother Alder', voice: VOICE.alder });
 
   if (choice === 'lore') {
@@ -693,7 +693,7 @@ async function alderMenu(refreshCandles) {
     refreshCandles();
     jingle();
     ui.updateHUD();
-    await ui.say('You light a small flame for whoever needs one. Somewhere under the sea, something warm notices.',
+    await ui.say('필요한 누군가를 위해 작은 불꽃을 켰어요. 바다 아래 어딘가에서, 따뜻한 무언가가 알아챘어요.',
       { speaker: 'Brother Alder', voice: VOICE.alder });
     return alderMenu(refreshCandles);
   }
