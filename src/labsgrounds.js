@@ -306,7 +306,7 @@ export function createLabsGrounds() {
     let li = 0;
     register({
       getPos: () => a.position, r: 2.4,
-      label: `talk to ${name}`,
+      label: `${name}와(과) 대화하기`,
       use: () => ui.say(lines[li++ % lines.length], { speaker: name, voice }),
     });
     // too close to another flier AND getting closer? (so two who start close
@@ -348,17 +348,17 @@ export function createLabsGrounds() {
   let workerN = 0;
   const meadowWorker = (kind, colors, name, lines, voice, speed, bob) =>
     flier(kind, colors, name, lines, voice, speed, bob, { pickTarget: meadowTarget, start: { x: M.x + (workerN++ ? 4 : -4), z: M.z + 2 } });
-  meadowWorker('moth', { body: 0x3a3440, head: 0x3a3440, wing: 0x7ec3e8 }, 'Azure', [
-    'Oh! Hello! Mind the asters. And the clover. And — well, mind everything, it’s all flowers, that’s the point.',
-    'I’m a butterfly. People keep saying moth. I have a PH.D. in not being a moth.',
-    'The Labs let me plant whatever I like, as long as I write it down. I write it down in flowers. They’re coming around to the format.',
-    'Buzz is very good at her job. She is TERRIFYING at her job. I admire her enormously from a slight distance.',
+  meadowWorker('moth', { body: 0x3a3440, head: 0x3a3440, wing: 0x7ec3e8 }, '아주르', [
+    '오! 안녕! 아스터 조심. 클로버도. 그리고 — 뭐 전부 조심해, 여긴 다 꽃이야, 그게 포인트야.',
+    '나는 나비야. 자꾸 나방이라고 하는데, 나는 나방 아님 박사야.',
+    '연구소에서는 기록만 하면 뭐든 심게 해 줘. 나는 꽃으로 기록해. 이제 형식에 적응하는 것 같아.',
+    '버즈는 일을 아주 잘해. 일하는 게 무서울 정도야. 살짝 떨어진 곳에서 크게 존경하고 있어.',
   ], 760, 0.9, (t) => 0.35 + Math.sin(t * 2.2) * 0.12);
-  meadowWorker('bee', { body: 0xf2c230, head: 0xf2c230 }, 'Buzz', [
-    'Pollination survey, row nine. You’re standing in row nine. It’s fine. Row nine is resilient.',
-    'Four hundred flowers a morning. I’m not bragging. I’m reporting.',
-    'Azure keeps planting things that aren’t on the list. The list is losing. I respect it.',
-    'The Labs asked me to write a paper. I made a hexagon. They said that wasn’t a paper. I said it was better.',
+  meadowWorker('bee', { body: 0xf2c230, head: 0xf2c230 }, '버즈', [
+    '수분 조사, 9열. 지금 9열에 서 있어. 괜찮아. 9열은 회복력이 좋아.',
+    '아침에 꽃 400송이. 자랑 아니야. 보고야.',
+    '아주르가 자꾸 목록에 없는 걸 심어. 목록이 지고 있어. 존경해.',
+    '연구소에서 논문을 쓰래서 육각형을 만들었어. 논문이 아니래. 더 낫다고 했어.',
   ], 820, 1.4, (t) => 0.25 + Math.abs(Math.sin(t * 5)) * 0.1);
 
   // =============================================================== the hive ----
@@ -454,38 +454,38 @@ export function createLabsGrounds() {
     group.add(queen);
     let qi = 0, met = false;
     const QUEEN = [
-      'Mm-hm. You may approach. Compliments first, then questions, then compliments again.',
-      'Do you know how many flowers make ONE jar of honey? Neither do I, darling. I have people for that.',
-      'The butterflies? Cute. Seasonal. We’re FOREVER, sweetie.',
-      'Buzz reports to me. Everybody reports to me. The flowers report to me. The sun is thinking about it.',
-      'Is that pollen on your shoulder? …Iconic. Keep it.',
-      'I don’t sting. I don’t have to. Look at me.',
+      '음흠. 다가와도 돼. 칭찬 먼저, 질문 다음, 그리고 다시 칭찬.',
+      '꿀 한 병에 꽃이 몇 송이나 필요한지 아니? 나도 몰라, 자기야. 그런 건 사람이 따로 있어.',
+      '나비들? 귀엽지. 한철이야. 우리는 영원하다고, 얘야.',
+      '버즈는 나에게 보고해. 모두가 나에게 보고해. 꽃들도 나에게 보고해. 태양도 고려 중이야.',
+      '어깨에 그거 꽃가루니? …아이코닉해. 그대로 둬.',
+      '나는 안 쏴. 쏠 필요가 없거든. 나를 봐.',
     ];
     register({
       getPos: () => queen.position, r: 2.6,
-      label: 'approach the Queen',
+      label: '여왕님께 다가가기',
       use: () => {
         if (!met) {
           met = true;
-          ui.say(['Hey, honey.', 'You found the hive. Of course you did. Everyone finds the hive eventually. It’s the glow.'],
-            { speaker: 'Queen Bee', voice: 900 });
+          ui.say(['안녕, 자기야.', '벌집을 찾았구나. 당연히 찾지. 다들 결국 찾게 돼 있어. 빛 때문에.'],
+            { speaker: '여왕벌', voice: 900 });
           return;
         }
-        ui.say(QUEEN[qi++ % QUEEN.length], { speaker: 'Queen Bee', voice: 900 });
+        ui.say(QUEEN[qi++ % QUEEN.length], { speaker: '여왕벌', voice: 900 });
       },
     });
     // two workers, back and forth between the hive and the meadow
     const hiveTarget = () => (Math.random() < 0.5
       ? { x: HV.x + Math.sin(face) * 3.3 + (Math.random() - 0.5) * 3, z: HV.z + Math.cos(face) * 3.3 + (Math.random() - 0.5) * 3 }
       : meadowTarget());
-    flier('bee', { body: 0xf2c230, head: 0xf2c230 }, 'Honeydew', [
-      'On shift! Can’t talk! …Okay I can talk a little. Hi! Bye!',
-      'The Queen likes her nectar from the pink ones. Only the pink ones. We have a system.',
-      'Waggle’s dance says there are GREAT flowers to the south. Waggle’s dance always says that.',
+    flier('bee', { body: 0xf2c230, head: 0xf2c230 }, '허니듀', [
+      '근무 중! 말 못 해! …조금은 할 수 있어. 안녕! 잘 가!',
+      '여왕님은 분홍 꽃의 꿀만 드셔. 분홍만. 체계가 있어.',
+      '와글의 춤이 남쪽에 최고의 꽃이 있대. 와글의 춤은 항상 그래.',
     ], 840, 1.5, (t) => 0.3 + Math.abs(Math.sin(t * 5.5)) * 0.12, { pickTarget: hiveTarget, scale: 0.7, start: { x: HV.x + 3, z: HV.z + 4 } }); // (clear of the Queen's throne — she used to start wedged into it)
-    flier('bee', { body: 0xe8a82a, head: 0xe8a82a }, 'Waggle', [
-      '*does a little dance* …That meant “the flowers are that way.” All flowers are that way. It’s a good dance.',
-      'Buzz is my supervisor. She gave me a hexagon for Employee of the Month. I keep it in the hive. In a hexagon.',
+    flier('bee', { body: 0xe8a82a, head: 0xe8a82a }, '와글', [
+      '*작게 춤을 춘다* …이건 “꽃이 저쪽”이라는 뜻이야. 꽃은 다 저쪽에 있어. 좋은 춤이야.',
+      '버즈가 내 상사야. 이달의 사원상으로 육각형을 줬어. 벌집에 보관해. 육각형 안에.',
     ], 800, 1.3, (t) => 0.28 + Math.abs(Math.sin(t * 4.5 + 1)) * 0.14, { pickTarget: hiveTarget, scale: 0.7, start: { x: HV.x - 3, z: HV.z + 2 } });
   }
 
@@ -626,20 +626,20 @@ export function createLabsGrounds() {
     // the nanny: an orange butterfly who has seen everything and is not
     // impressed by any of it, except the babies
     const inner = [[0, 0], [0.5, -0.3], [-0.5, -0.3]].map(([lx, lz]) => at(lx, lz));
-    flier('moth', { body: 0x3a3032, head: 0x3a3032, wing: 0xf2963a }, 'Nanny Monarch', [
-      'Shh. They’re pupating. It’s a very big deal and very, very quiet.',
-      'Three of them. One’s going to be a moth, I can tell. We’ll love it just the same. More, probably, to make up for the jokes.',
-      'Azure brings them nectar and reads them field notes. They don’t understand a word. They love it.',
-      'When they come out, they’ll be all wing and no sense for a week. Then they grow into it. Most of us do.',
+    flier('moth', { body: 0x3a3032, head: 0x3a3032, wing: 0xf2963a }, '모나크 유모', [
+      '쉿. 번데기가 되는 중이에요. 아주 큰일이고, 아주아주 조용한 일이에요.',
+      '셋이에요. 하나는 나방이 될 거예요, 알겠어요. 똑같이 사랑할 거예요. 농담을 만회하려고 더 많이, 아마도요.',
+      '아주르가 꿀을 가져다주고 야외 노트를 읽어 줘요. 한마디도 못 알아들어요. 아주 좋아해요.',
+      '나오면 일주일은 날개만 있고 분별이 없어요. 그러다 자라요. 대부분 그래요.',
     ], 700, 0.5, (t) => 0.3 + Math.sin(t * 1.8) * 0.08, { pickTarget: () => ({ ...inner[Math.floor(Math.random() * 3)] }), scale: 0.8, start: inner[0] });
     let bi = 0;
     register({
       pos: new THREE.Vector3(BH.x, 0, BH.z), r: 2.2, priority: 0,
-      label: 'peek at the babies',
+      label: '아기들 들여다보기',
       use: () => ui.say([
-        '(Three chrysalises, swaddled snug in their cradles, rocking very slightly on their own. One sighs in its sleep.)',
-        '(The pink one’s antennae twitch. Dreaming about flowers, probably. They all are.)',
-        '(The green one is definitely going to be a moth. It has the ears for it.)',
+        '(번데기 셋이 요람에 포근히 싸여 스스로 살짝씩 흔들려요. 하나가 잠꼬대로 한숨 쉬어요.)',
+        '(분홍이의 더듬이가 꿈틀해요. 아마 꽃 꿈을 꾸는 거예요. 다들 그래요.)',
+        '(초록이는 분명 나방이 될 거예요. 그럴 귀를 갖췄어요.)',
       ][bi++ % 3]),
     });
   }
@@ -674,13 +674,13 @@ export function createLabsGrounds() {
       register({
         pos: new THREE.Vector3(sp.x, 0, sp.z), r: 1.8,
         enabled: () => bush.berries[0].visible,
-        label: 'pick blueberries',
+        label: '블루베리 따기',
         use: () => {
           bush.berries.forEach((b) => { b.visible = false; });
           bush.regrow = 300 + i * 40;
           S.addItem('blueberries', 2);
           jingle();
-          ui.toast('You picked a handful of <b>Blueberries</b>. One for the pocket, one for you.', '🫐');
+          ui.toast('<b>블루베리</b> 한 줌을 땄어요. 하나는 주머니에, 하나는 당신에게.', '🫐');
           ui.updateHUD();
         },
       });
@@ -731,7 +731,7 @@ export function createLabsGrounds() {
       slat.rotation.x = 0.35;
       k.add(slat);
     }
-    const banner = sign('NOTBELL LABS · GIFTS', 2.4, 0.4, '#3f6ab0', '#f3efe2');
+    const banner = sign('낫벨 연구소 · 기념품', 2.4, 0.4, '#3f6ab0', '#f3efe2');
     banner.position.set(0, 2.3, 1.01);
     k.add(banner);
     // the merch, on the counter: mugs, a folded tee, a little plush rocket
@@ -780,27 +780,27 @@ export function createLabsGrounds() {
     const counterAt = { x: K.x + Math.sin(face) * 1.8, z: K.z + Math.cos(face) * 1.8 };
     register({
       pos: new THREE.Vector3(counterAt.x, 0, counterAt.z), r: 1.8,
-      label: 'browse the gift kiosk',
+      label: '기념품 가판대 구경하기',
       use: async () => {
-        const picked = await ui.ask('“Welcome to the gift kiosk. Everything here is science-adjacent.”', [
+        const picked = await ui.ask('“기념품 가판대에 오셨네요. 전부 과학 인접 상품이에요.”', [
           ...MERCH.map((m) => ({
             label: `${ITEMS[m.id].emoji} ${ITEMS[m.id].name}`, value: m.id, hint: `${m.price}🔘`,
             disabled: S.state.buttons < m.price,
           })),
-          { label: 'Just looking', value: null },
-        ], { speaker: 'Dot', voice: 280 });
+          { label: '그냥 구경이에요', value: null },
+        ], { speaker: '도트', voice: 280 });
         const m = MERCH.find((x) => x.id === picked);
         if (!m) return;
         S.spend(m.price);
         S.addItem(m.id);
         kaching();
         ui.updateHUD();
-        ui.toast(`You bought <b>${ITEMS[m.id].name}</b>.`, ITEMS[m.id].emoji);
+        ui.toast(`<b>${ITEMS[m.id].name}</b>을(를) 샀어요.`, ITEMS[m.id].emoji);
         ui.say(pick3([
-          'Thank you for supporting research. That was the research.',
-          'No refunds. Not a policy — we just don’t know how.',
-          'Wear it on the moon. Somebody will notice. Probably a rover.',
-        ]), { speaker: 'Dot', voice: 280 });
+          '연구를 후원해 주셔서 감사해요. 방금 그게 연구였어요.',
+          '환불 불가. 규정이 아니라 — 방법을 몰라요.',
+          '달에서 입어 보세요. 누군가 알아챌 거예요. 아마 로버가요.',
+        ]), { speaker: '도트', voice: 280 });
       },
     });
 
@@ -846,14 +846,14 @@ export function createLabsGrounds() {
     let ei = 0;
     register({
       getPos: () => emo.position, r: 2.0,
-      label: 'check on the rover behind the kiosk',
+      label: '가판대 뒤 로버 살펴보기',
       use: () => {
         tone(330, { dur: 0.2, type: 'sine', vol: 0.03, slide: -60 });
         ui.say([
-          '(The little rover exhales a long plume of water vapor and does not look at you.) …It’s just water. It’s a whole thing.',
-          'Don’t tell Director Strix I’m back here. Or do. Nothing matters. The moon is so mainstream.',
-          '(It swivels its eye toward you, bangs first, then away.) …You can stay. Whatever. It’s fine.',
-          'Everyone wants to go to the moon. I want to go to the moon ironically. There’s a difference.',
+          '(작은 로버가 길게 수증기를 내뿜고 당신을 보지 않아요.) …그냥 물이에요. 사연이 있는 거예요.',
+          '스트릭스 소장한테는 여기 있다고 하지 마세요. 아니 말해요. 다 무의미해요. 달은 너무 주류예요.',
+          '(앞머리 먼저, 눈을 당신 쪽으로 돌렸다가 거둬요.) …있어도 돼요. 뭐든. 상관없어요.',
+          '다들 달에 가고 싶어 해요. 나는 아이러니하게 가고 싶어요. 차이가 있어요.',
         ][ei++ % 4]);
       },
     });
@@ -1004,7 +1004,7 @@ export function createLabsGrounds() {
       head.rotation.y = k ? 0 : Math.sin(t * 0.35) * 0.5;
     });
     zones.addBlocker(MX, MZ, 0.6);
-    const onBreak = sign('ON BREAK', 0.8, 0.3, '#f2cf5b', '#2e2a26');
+    const onBreak = sign('휴식 중', 0.8, 0.3, '#f2cf5b', '#2e2a26');
     const bp = box(0.05, 0.6, 0.05, 0x7a5230);
     bp.position.set(MX + 0.7, my + 0.3, MZ - 0.6);
     onBreak.position.set(MX + 0.7, my + 0.65, MZ - 0.62);
@@ -1013,21 +1013,21 @@ export function createLabsGrounds() {
     let mi = 0;
     register({
       getPos: () => mole.position, r: 2.2,
-      label: 'talk to the mole on his break',
+      label: '휴식 중인 두더지와 대화하기',
       use: () => ui.say([
-        'Fifteen minutes. Union rules. The Boring Department fought hard for these fifteen minutes and I intend to feel every one of them.',
-        'You know what nobody tells you about digging? The sun. You never see it. So I come here and I just… look at it. Not directly. I’m not an idiot.',
-        'The little ones play ball all day. One day they’ll go to the moon. Today, ball.',
-        '(He sips from the thermos, very slowly, making eye contact with the horizon.)',
-      ][mi++ % 4], { speaker: 'Wendell', voice: 240 }),
+        '15분이에요. 노조 규정이에요. 굴착부가 이 15분을 힘들게 쟁취했고, 매분을 만끽할 작정이에요.',
+        '굴착에 대해 아무도 말해 주지 않는 게 뭔지 아세요? 태양이요. 볼 수가 없어요. 그래서 여기 와서 그냥… 바라봐요. 직접 보진 않아요. 바보 아니거든요.',
+        '꼬마들은 하루 종일 공놀이해요. 언젠가 달에 가겠죠. 오늘은 공이에요.',
+        '(그가 보온병을 아주 천천히 마시며, 수평선과 눈을 맞춰요.)',
+      ][mi++ % 4], { speaker: '웬델', voice: 240 }),
     });
     let ti = 0;
     register({
       pos: new THREE.Vector3(SB.x - 2.2, 0, SB.z - 1.2), r: 2.0,
-      label: 'say hi to the sunbathing rovers',
+      label: '일광욕하는 로버들에게 인사하기',
       use: () => ui.say([
-        '(Two baby rovers lie on their towels, solar panels tilted to the sun. One beeps without opening its eye. That was hello.)',
-        '(The pink one rolls over, very slightly, to even out its charge.)',
+        '(아기 로버 두 대가 수건 위에 누워 태양 전지판을 햇볕에 기울여요. 하나가 눈도 안 뜨고 삑 소리를 내요. 그게 인사예요.)',
+        '(분홍이가 아주 살짝 뒤집어요, 충전을 고르게 하려고요.)',
       ][ti++ % 2]),
     });
   }
@@ -1040,4 +1040,4 @@ export function createLabsGrounds() {
 
 function pick3(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
-}
+      }
