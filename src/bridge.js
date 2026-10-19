@@ -153,7 +153,7 @@ export function createBridge(player, animals = []) {
   // the little red train runs beside the footbridge, built from the railway
   // kit like every line in the archipelago (see railway.js)
   const rail = createRailway(RAIL_LINE, {
-    player, animals, name: 'the train',
+    player, animals, name: '기차',
     colors: { loco: 0xb0453a, cab: 0x8a3a30, cars: [0xd9a440, 0x4f8f6a], roof: 0xc97b63 },
     dwell: 20, whistle: [620, 830],
     text: {
