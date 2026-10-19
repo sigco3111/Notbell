@@ -72,9 +72,9 @@ const AREAS = [
 ];
 const TRACK_Z = -2.4;
 const STOPS = [
-  { name: 'the Works', x: -52 },
-  { name: 'Loam Street', x: 0 },
-  { name: 'Uptown', x: 52 },
+  { name: '웍스', x: -52 },
+  { name: '롬 스트리트', x: 0 },
+  { name: '업타운', x: 52 },
 ];
 const PLAT = { z0: -1.0, z1: 1.3, hw: 4.5, h: 0.3 }; // platforms, just south of the track
 const LADDER_W = { x: -64, z: -10.4 };            // up to the Labs
@@ -342,11 +342,11 @@ export function createBurrough(player, { molehill = null } = {}) {
   addPlaceNamer('burrough', (x, z) => {
     const lx = x - O.x, lz = z - O.z;
     const inE = (e, pad = 1) => sdEll(lx, lz, e) < pad;
-    if (inE(INSTITUTE) || sdSeg(lx, lz, [-47, -12, -46, -24], 3) < 0) return '🎓 The Institute for Deep Study';
-    if (inE(WORKS)) return '⛏️ The Works';
-    if (inE(MIDTOWN)) return '🚋 Loam Street';
-    if (inE(UPTOWN)) return '🎩 Uptown';
-    return '🚋 The Boring Line';
+    if (inE(INSTITUTE) || sdSeg(lx, lz, [-47, -12, -46, -24], 3) < 0) return '🎓 심층 연구소';
+    if (inE(WORKS)) return '⛏️ 웍스';
+    if (inE(MIDTOWN)) return '🚋 롬 스트리트';
+    if (inE(UPTOWN)) return '🎩 업타운';
+    return '🚋 보어링 선';
   });
 
   // talkers and walkers. A walker loops its points; it stops for anyone
@@ -598,8 +598,8 @@ export function createBurrough(player, { molehill = null } = {}) {
   ladder(LADDER_E.x, LADDER_E.z, true);
   {
     // west: a hard-hat-yellow sign on a post; east: a brass-and-velvet rope
-    signPost(LADDER_W.x - 1.6, LADDER_W.z + 1.2, '↑ UP TO THE LABS\n(mind your head)', 1.7, 0.7, '#f2cf5b', '#2e2a26');
-    signPost(LADDER_E.x - 1.8, LADDER_E.z + 1.2, '↑ THE MOLEDECAI CELLAR\nresidents & guests', 1.9, 0.7, '#2e3a2a', '#e8d49a');
+    signPost(LADDER_W.x - 1.6, LADDER_W.z + 1.2, '↑ 연구소로\n(머리 조심)', 1.7, 0.7, '#f2cf5b', '#2e2a26');
+    signPost(LADDER_E.x - 1.8, LADDER_E.z + 1.2, '↑ 몰드카이 지하실\n입주민과 손님', 1.9, 0.7, '#2e3a2a', '#e8d49a');
     for (const dx of [-1.1, 1.1]) {
       const post = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 0.9, 8), mat(0xc9a24a, 0.3));
       put(post, LADDER_E.x + dx, LADDER_E.z + 1.6, 0.45);
@@ -612,22 +612,22 @@ export function createBurrough(player, { molehill = null } = {}) {
     rope.scale.y = 0.28; // a gentle swag between the posts, well clear of the floor
     put(rope, LADDER_E.x, LADDER_E.z + 1.6, 0.9);
     // welcome, on a board of its own by the Labs ladder
-    signPost(-67.2, -5.4, 'WELCOME TO THE BURROUGH\npop. lots', 2.6, 0.8, '#e8dcc0', '#5a3a24', 0.35);
+    signPost(-67.2, -5.4, '버로에 온 걸 환영해\n인구 많음', 2.6, 0.8, '#e8dcc0', '#5a3a24', 0.35);
   }
   register({
     pos: new THREE.Vector3(O.x + LADDER_W.x, 0, O.z + LADDER_W.z + 1.2), r: 1.8, zone: 'burrough',
-    label: 'climb up to the Labs',
+    label: '연구소로 올라가기',
     use: async () => {
       await zones.go('island', { ...labsHill.out });
-      ui.toast('Up and out, blinking, into the flowers on the little hill. Somewhere below, the Boring Line goes ding ding.', '☀️');
+      ui.toast('위로, 밖으로, 눈부신 작은 언덕의 꽃들 속으로. 아래 어딘가에서 보어링 선이 딩딩 울려요.', '☀️');
     },
   });
   register({
     pos: new THREE.Vector3(O.x + LADDER_E.x, 0, O.z + LADDER_E.z + 1.2), r: 1.8, zone: 'burrough',
-    label: 'climb up to the wine cellar',
+    label: '와인 저장고로 올라가기',
     use: async () => {
       await zones.go('cellar', { x: CELLAR.x - 1.2, z: CELLAR.z - 2.4, rotY: Math.PI });
-      ui.toast('Through the little door, into somebody’s wine cellar. It is very quiet. The Moonbeam ’34 glows.', '🍷');
+      ui.toast('작은 문을 지나 누군가의 와인 저장고로. 아주 조용해요. 문빔 ’34가 빛나요.', '🍷');
     },
   });
 
@@ -661,7 +661,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     }
     const stake = box(0.06, 0.9, 0.06, 0x7a5230);
     stake.position.set(0.9, 0.45, 0.2);
-    const plate = sign('BORING DEPT.\nstaff entrance\n(visitors welcome)', 0.8, 0.45, '#f2cf5b', '#2e2a26');
+    const plate = sign('보어링 부\n직원 출입구\n(방문객 환영)', 0.8, 0.45, '#f2cf5b', '#2e2a26');
     plate.position.set(0.9, 0.95, 0.24);
     const hat = hardHat(); // set down on the grass beside the stake, clear of the sign
     hat.scale.setScalar(0.8);
@@ -675,7 +675,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     zones.addBlocker(spot.x, spot.z, 0.9);
     register({
       pos: new THREE.Vector3(spot.x, 0, spot.z + 1), r: 1.9,
-      label: 'climb down the molehill',
+      label: '두더지 언덕으로 내려가기',
       use: () => enter(ARRIVE_W),
     });
     group.userData.molehill = spot; // (the screenshot harness goes looking for it)
@@ -693,7 +693,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     dark.position.y = 0.35;
     const trim = new THREE.Mesh(new THREE.TorusGeometry(0.52, 0.05, 4, 12, Math.PI), mat(0xc9a24a, 0.3));
     trim.position.y = 0.35;
-    const plaque = sign('SERVICE ENTRANCE\n(the Burrough)', 0.55, 0.22, '#c9a24a', '#2e2a1c');
+    const plaque = sign('서비스 출입구\n(버로)', 0.55, 0.22, '#c9a24a', '#2e2a1c');
     plaque.position.set(0, 1.12, 0.01);
     g.add(dark, trim, plaque);
     g.position.set(C.x - 1.2, 0, C.z - 4.28);
@@ -701,7 +701,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     cellarDoor = g;
     register({
       pos: new THREE.Vector3(C.x - 1.2, 0, C.z - 3.3), r: 1.4, zone: 'cellar',
-      label: 'squeeze through the little door',
+      label: '작은 문으로 비집고 들어가기',
       use: () => enter(ARRIVE_E),
     });
   }
@@ -712,9 +712,9 @@ export function createBurrough(player, { molehill = null } = {}) {
     if (!S.hasFlag('sawBurrough')) {
       S.setFlag('sawBurrough');
       ui.say([
-        'Down the ladder, a long way, past roots and a sign that says MIND YOUR HEAD, and then another that says MIND IT AGAIN.',
-        'And then the dark opens out into a city. Lamps. Round windows. A streetcar bell, somewhere, going ding ding.',
-        'A sign on a post: WELCOME TO THE BURROUGH. POP. LOTS.',
+        '사다리를 따라 한참 아래로, 뿌리들과 머리 조심 표지를 지나, 그리고 또 조심하라는 표지를 지나.',
+        '그러고는 어둠이 활짝 열리며 도시가 나타나요. 램프. 둥근 창들. 어딘가에서 전차 종이 딩딩.',
+        '기둥의 표지: 버로에 온 걸 환영해. 인구. 많음.',
       ]);
     }
   }
@@ -755,7 +755,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       edge.position.y = 0.16;
       const pole = box(0.12, 2.6, 0.12, 0x3a3430);
       put(pole, st.x - 3.2, PLAT.z1 - 0.3, 1.3 + PLAT.h);
-      const board = sign(`BORING LINE\n${st.name.toUpperCase()}`, 1.9, 0.75, '#2f5a44', '#f3e6c8', { border: '#e8d49a' });
+      const board = sign(`보어링 선\n${st.name}`, 1.9, 0.75, '#2f5a44', '#f3e6c8', { border: '#e8d49a' });
       board.position.set(O.x + st.x - 3.2, PLAT.h + 2.35, O.z + PLAT.z1 - 0.22);
       group.add(board);
       block(st.x - 3.2, PLAT.z1 - 0.3, 0.2);
@@ -764,11 +764,11 @@ export function createBurrough(player, { molehill = null } = {}) {
       bell.material.side = THREE.DoubleSide;
       st.bell = bell;
     }
-    signPost(-70, 2.9, 'THE BORING LINE\n← WEST (all the way)');
-    signPost(70, 2.9, 'THE BORING LINE\nEAST (all the way) →');
-    signPost(-30, 3.2, '← THE WORKS · LOAM ST →');
-    signPost(30, 3.2, '← LOAM ST · UPTOWN →');
-    signPost(-25, 3.2, 'MIND THE GAP\n(there is always a gap)', 2.2, 0.6, '#f2cf5b', '#2e2a26');
+    signPost(-70, 2.9, '보어링 선\n← 서쪽 (끝까지)');
+    signPost(70, 2.9, '보어링 선\n동쪽 (끝까지) →');
+    signPost(-30, 3.2, '← 웍스 · 롬 스트리트 →');
+    signPost(30, 3.2, '← 롬 스트리트 · 업타운 →');
+    signPost(-25, 3.2, '틈새 주의\n(틈새는 언제나 있음)', 2.2, 0.6, '#f2cf5b', '#2e2a26');
   }
 
   // the car: open-sided, like a summer trolley, so you can see who's aboard
@@ -808,7 +808,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       bench.position.set(sx, 0.95, -0.55);
       car.add(bench);
     }
-    const nameplate = sign('THE BORING LINE', 2.4, 0.32, '#3f7a5a', '#efe2c0');
+    const nameplate = sign('보어링 선', 2.4, 0.32, '#3f7a5a', '#efe2c0');
     nameplate.position.set(0, 2.52, 1.21);
     car.add(nameplate);
     // the trolley pole, up to the wire, sparking now and then
@@ -844,7 +844,7 @@ export function createBurrough(player, { molehill = null } = {}) {
   reader.scale.setScalar(0.8);
   sit(reader);
   reader.position.set(-1.7, 0.9, -0.5); // seated on the bench (top at 1.01)
-  const paper = sign('THE DAILY\nDIRT', 0.55, 0.6, '#f3efe2', '#2e2a26');
+  const paper = sign('데일리\n더트', 0.55, 0.6, '#f3efe2', '#2e2a26');
   paper.position.set(0, 1.0, 1.3);   // held out in front of the snout, not through it
   reader.add(paper);
   car.add(reader);
@@ -878,20 +878,20 @@ export function createBurrough(player, { molehill = null } = {}) {
     register({
       pos: new THREE.Vector3(O.x + st.x, 0, O.z + 0.2), r: 3.4, zone: 'burrough', priority: 2,
       enabled: () => !line.rider,
-      label: () => (docked(i) ? 'board the Boring Line' : 'ring for the Boring Line'),
+      label: () => (docked(i) ? '보어링 선 타기' : '보어링 선 부르기'),
       use: async () => {
         if (!docked(i)) {
           line.express = i;
           line.dwell = 0;
           ding();
-          ui.toast('Ding ding. The Boring Line is on its way. (It was always on its way.)', '🚋');
+          ui.toast('딩딩. 보어링 선이 오고 있어요. (항상 오고 있었어요.)', '🚋');
           return;
         }
         line.held = true; // the motorman waits while you make up your mind
-        const dest = await ui.ask('“Where to?”', [
+        const dest = await ui.ask('“어디로?”', [
           ...STOPS.filter((d) => d !== st).map((d) => ({ label: `🚋 ${d.name}`, value: d.name })),
-          { label: 'Just looking', value: null },
-        ], { speaker: 'the motorman', voice: 250 });
+          { label: '그냥 구경 중', value: null },
+        ], { speaker: '운전수', voice: 250 });
         line.held = false;
         const to = STOPS.findIndex((d) => d.name === dest);
         if (to < 0 || !docked(i)) return;
@@ -900,7 +900,7 @@ export function createBurrough(player, { molehill = null } = {}) {
         line.dwell = 0;
         player.riding = true;
         ding();
-        ui.toast(`Next stop: ${STOPS[to].name}. Mind the gap. There is always a gap.`, '🚋');
+        ui.toast(`다음 정거장: ${STOPS[to].name}. 틈새 주의. 틈새는 언제나 있어요.`, '🚋');
       },
     });
   });
@@ -959,11 +959,11 @@ export function createBurrough(player, { molehill = null } = {}) {
   // back, stopping for anyone in the way
   {
     const COMMUTE_LINES = [
-      'Can’t stop, running late. I’m always running late. It’s a lifestyle.',
-      'I could take the Line. I walk. It’s not faster. I just like the walk.',
-      'First time down? Don’t hold your head up like that. You’ll bump it on something eventually.',
-      'Loam Street at rush hour. Six of us. Madness.',
-      'Commute’s forty minutes. Twenty there, twenty staring at the dark going “hm.”',
+      '못 서, 늦었어. 항상 늦었어. 그게 라이프스타일이야.',
+      '전차 탈 수도 있어. 걸어. 더 빠른 건 아냐. 그냥 걷는 게 좋아.',
+      '처음 내려왔어? 그렇게 고개 들고 다니지 마. 언젠가 어딘가에 부딪혀.',
+      '러시아워의 롬 스트리트. 여섯 명. 광란이야.',
+      '통근 40분. 가는 데 20, 어둠을 보며 “흠” 하는 데 20.',
     ];
     const FOLK = [
       // (out past the neighborhoods they keep to the middle of the tunnel,
@@ -981,16 +981,16 @@ export function createBurrough(player, { molehill = null } = {}) {
       onHead(c, f.hat(), f.kind === 'hamster' ? 0.34 : 0.32);
       if (f.kind !== 'hamster') c.scale.setScalar(0.9);
       walker(c, f.path, f.speed, { rest: 1.5 + h01() * 3 });
-      talker(() => c.position, 'a commuter', 280 + q * 60, [COMMUTE_LINES[q++ % COMMUTE_LINES.length]], 2.0);
+      talker(() => c.position, '통근자', 280 + q * 60, [COMMUTE_LINES[q++ % COMMUTE_LINES.length]], 2.0);
     });
   }
 
   // ============================================================ THE WORKS ----
-  const local1Door = frontage({ x: -54, z: -8.6, w: 8, h: 5.2, color: 0x7a5238, trim: 0xf2cf5b, name: 'BORING DEPT. · LOCAL 1', sub: 'we dig it · since forever', signBg: '#2e2a26', signFg: '#f2cf5b', cols: 3 });
-  doorway(local1Door, 'burrough_local1', 'go into Local 1');
+  const local1Door = frontage({ x: -54, z: -8.6, w: 8, h: 5.2, color: 0x7a5238, trim: 0xf2cf5b, name: '보어링 부 · 1지부', sub: '우리는 판다 · 태초부터', signBg: '#2e2a26', signFg: '#f2cf5b', cols: 3 });
+  doorway(local1Door, 'burrough_local1', '1지부 들어가기');
   {
     // the union banner above the left window; hard hats on hooks by the door
-    const banner = sign('15 MINUTES FOR EVERY MOLE', 2.2, 0.4, '#b8433a', '#fff3d6');
+    const banner = sign('모든 두더지에게 15분을', 2.2, 0.4, '#b8433a', '#fff3d6');
     banner.position.set(O.x - 56.67, at(-56.7, -8.6) + 3.65, O.z - 8.46);
     group.add(banner);
     for (let k = 0; k < 4; k++) {
@@ -1015,12 +1015,12 @@ export function createBurrough(player, { molehill = null } = {}) {
     block(-48.8, -7.4, 0.35);
     register({
       pos: new THREE.Vector3(O.x - 48.8, 0, O.z - 6.6), r: 1.4, zone: 'burrough', priority: 2,
-      label: 'punch the clock',
+      label: '출퇴근 시계 찍기',
       use: () => {
         thud();
         ui.say(S.hasFlag('punchedBurrough')
-          ? 'Ka-CHUNK. Another card: VISITOR — ON THE CLOCK. You are still not employed here. The clock still doesn’t mind.'
-          : 'Ka-CHUNK. The card comes out stamped VISITOR — ON THE CLOCK. Nobody is paying you. The clock doesn’t mind.');
+          ? '카-청크. 또 한 장: 방문객 — 근무 중. 당신은 여전히 여기 직원이 아니에요. 시계는 여전히 신경 안 써요.'
+          : '카-청크. 카드가 찍혀 나와요: 방문객 — 근무 중. 아무도 당신에게 월급을 주지 않아요. 시계는 신경 안 써요.');
         S.setFlag('punchedBurrough');
       },
     });
@@ -1030,12 +1030,12 @@ export function createBurrough(player, { molehill = null } = {}) {
     const b = buildAnimal('mole', { body: 0x4e4038 });
     onHead(b, hardHat(), 0.3);
     walker(b, [[-57, -6.7], [-50.6, -6.3]], 1.1, { rest: 3.5, rate: 9 });
-    talker(() => b.position, 'Bertha', 230, [
-      'Bertha. Shop steward, Boring Department, Local 1. If you’re management, I’m on my break. If you’re not, I’m also on my break.',
-      'We dug the Boring Line in one night. The paperwork took eleven years. We’re proud of both.',
-      'Half the Department commutes up to the Labs. They hired us for the listening wells. Nobody hears through rock like a mole.',
-      'Wendell? On his fifteen. Wendell’s been on his fifteen since spring. We don’t check. That’s solidarity.',
-      'Go on in, the office is open. Say hi to Doris. Don’t ask Doris for a form.',
+    talker(() => b.position, '버사', 230, [
+      '버사야. 보어링 부 1지부 직장대표. 관리자면, 난 쉬는 시간이야. 아니면, 그래도 쉬는 시간이야.',
+      '보어링 선은 하룻밤에 팠어. 서류작업은 11년 걸렸지. 둘 다 자랑스러워.',
+      '부서 절반이 연구소로 통근해. 듣는 우물 때문에 우릴 고용했지. 두더지만큼 암반을 통해 듣는 건 없어.',
+      '웬델? 15분 쉬는 중. 봄부터 15분 쉬는 중이야. 확인 안 해. 그게 연대야.',
+      '들어가 봐, 사무실 열었어. 도리스에게 안부 전해. 도리스에게 양식은 달라고 하지 마.',
     ]);
   }
   // the Visitors' Bureau: mole tourism is the Burrough's fastest-growing industry
@@ -1053,7 +1053,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       post.position.set(sx, 1.8, 0.4);
       g.add(post);
     }
-    const s = sign('VISITORS’ BUREAU\nmaps · dirt globes · directions (down)', 2.8, 0.6, '#3f7a5a', '#f3e6c8');
+    const s = sign('방문객 안내소\n지도 · 흙 지구본 · 길 안내 (아래로)', 2.8, 0.6, '#3f7a5a', '#f3e6c8');
     s.position.set(0, 2.2, 0.47);
     g.add(s);
     // a rack of dirt globes on the counter
@@ -1072,22 +1072,22 @@ export function createBurrough(player, { molehill = null } = {}) {
     lively(tup, { look: 0.45, speed: 0.5, bob: 0.03 });
     const SOUVENIRS = [{ id: 'dirt_globe', price: 120 }, { id: 'daily_dirt', price: 2 }];
     const talk = [
-      'Welcome to the Burrough! Population: lots! Things to do: plenty! Sky: no!',
-      'Top attractions: the Boring Line, Loam Street, the Institute (look, don’t knock), and Uptown, where the rich moles don’t live anymore.',
-      'First time down? Everybody holds their head up the first day. You’ll get over it.',
+      '버로에 온 걸 환영해! 인구: 많음! 할 것: 많음! 하늘: 없음!',
+      '주요 명소: 보어링 선, 롬 스트리트, 심층 연구소(보기만, 노크 금지), 그리고 업타운, 부자 두더지들이 더는 안 사는 곳.',
+      '처음 내려왔어? 다들 첫날은 고개를 들고 다녀. 곧 나아져.',
     ];
     let k = 0;
     register({
       pos: new THREE.Vector3(O.x - 61.2, 0, O.z - 6.8), r: 1.9, zone: 'burrough',
-      label: 'visit the Visitors’ Bureau',
+      label: '방문객 안내소 들르기',
       use: async () => {
         const picked = await ui.ask(talk[k++ % talk.length], [
           ...SOUVENIRS.map((m) => ({
             label: `${ITEMS[m.id].emoji} ${ITEMS[m.id].name}`, value: m.id, hint: `${m.price}🔘`,
             disabled: S.state.buttons < m.price,
           })),
-          { label: 'Just visiting', value: null },
-        ], { speaker: 'Tuppence', voice: 640 });
+          { label: '그냥 방문 중', value: null },
+        ], { speaker: '터펜스', voice: 640 });
         const m = SOUVENIRS.find((x) => x.id === picked);
         if (!m) return;
         S.spend(m.price);
@@ -1096,8 +1096,8 @@ export function createBurrough(player, { molehill = null } = {}) {
         ui.updateHUD();
         ui.toast(`You bought <b>${ITEMS[m.id].name}</b>.`, ITEMS[m.id].emoji);
         ui.say(m.id === 'dirt_globe'
-          ? 'Shake it! It settles! It always settles! That’s the Burrough for you!'
-          : 'Fresh this morning! Well. This morning’s. It’s the hot worm story again.', { speaker: 'Tuppence', voice: 640 });
+          ? '흔들어! 가라앉아! 항상 가라앉아! 그게 버로야!'
+          : '오늘 아침 따끈따끈! 뭐. 오늘 아침 치. 또 핫 웜 기사야.', { speaker: '터펜스', voice: 640 });
       },
     });
   }
@@ -1116,7 +1116,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       tread.position.set(0, 0.25, sz);
       drill.add(tread);
     }
-    const plate = sign('OLD FAITHFUL', 1.4, 0.3, '#2e2a26', '#f2cf5b');
+    const plate = sign('올드 페이스풀', 1.4, 0.3, '#2e2a26', '#f2cf5b');
     plate.position.set(0, 1.4, 0.81);
     drill.add(plate);
     put(drill, -77, 2.2);
@@ -1129,11 +1129,11 @@ export function createBurrough(player, { molehill = null } = {}) {
       rest: 4, rate: 9,
       onPause: (dt, t) => { auger.userData.parts.head.rotation.x = Math.max(0, Math.sin(t * 5)) * 0.35; }, // tap, tap: checking the rail
     });
-    talker(() => auger.position, 'Auger', 270, [
-      'Track inspection. I walk it west till my lamp gets tired, then I walk it back.',
-      'How far does it go? West. Past where anybody’s been. The Professor says you can’t prove it ends. We say you can’t prove it doesn’t. Everybody’s happy.',
-      'We dug it in one night. Nobody ever said which night. Could still be that night, out there.',
-      'Some nights, on the heavy tides, you can hear the bell through the rail. Nice sound. Keeps time.',
+    talker(() => auger.position, '오거', 270, [
+      '선로 점검이야. 램프가 지칠 때까지 서쪽으로 걷고, 그다음 돌아와.',
+      '어디까지 가냐고? 서쪽. 누구든 가본 데 너머. 교수는 끝난다고 증명할 수 없대. 우린 안 끝난다고도 증명할 수 없지. 다들 행복해.',
+      '하룻밤에 팠어. 어느 밤이었는지 아무도 말 안 했지. 저 밖에선 아직도 그 밤일지도 몰라.',
+      '어떤 밤엔, 큰 조수 때, 레일을 통해 종소리가 들려. 좋은 소리야. 박자를 맞춰줘.',
     ]);
   }
   lamp(-58, -5.2);
@@ -1153,13 +1153,13 @@ export function createBurrough(player, { molehill = null } = {}) {
     }
     const bar = box(5.9, 0.25, 0.3, 0xb8ad98);
     put(bar, -46.95, -13.4, 2.8);
-    const plaque = sign('THE INSTITUTE FOR DEEP STUDY\nno students · no classes · no hurry', 3.4, 0.62, '#2e2a26', '#e8d49a', { border: '#c9a24a' });
+    const plaque = sign('심층 연구소\n학생 없음 · 수업 없음 · 서두름 없음', 3.4, 0.62, '#2e2a26', '#e8d49a', { border: '#c9a24a' });
     plaque.position.set(O.x - 46.95, at(-46.95, -13.4) + 2.32, O.z - 13.2);
     group.add(plaque);
   }
   // Mould Hall: red brick, white trim, a cupola with a clock nobody winds
-  const mouldDoor = frontage({ x: -46, z: -33.3, w: 11, h: 5.6, color: 0x9a4a3a, trim: 0xf3efe2, name: 'MOULD HALL', signBg: '#f3efe2', signFg: '#6a2a20', rows: 2, cols: 5, doorColor: 0x2e3e2e });
-  doorway(mouldDoor, 'burrough_mould', 'go into Mould Hall');
+  const mouldDoor = frontage({ x: -46, z: -33.3, w: 11, h: 5.6, color: 0x9a4a3a, trim: 0xf3efe2, name: '몰드 홀', signBg: '#f3efe2', signFg: '#6a2a20', rows: 2, cols: 5, doorColor: 0x2e3e2e });
+  doorway(mouldDoor, 'burrough_mould', '몰드 홀 들어가기');
   {
     const cup = new THREE.Group();
     const drum = box(1.6, 1.3, 1.6, 0xf3efe2);
@@ -1189,7 +1189,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       leg.position.set(sx, 0.7, -0.05);
       g.add(leg);
     }
-    const chalk = sign('THEOREM:\nthis tunnel cannot be\nproved to have an end.\nPROOF:\n(keep digging)  ∎', 2.4, 1.4, '#2e3a32', '#e8efe8', { weight: 500 });
+    const chalk = sign('정리:\n이 터널은 끝이 있음이\n증명될 수 없다.\n증명:\n(계속 파라)  ∎', 2.4, 1.4, '#2e3a32', '#e8efe8', { weight: 500 });
     chalk.position.set(0, 1.5, 0.05);
     g.add(chalk);
     put(g, -39.5, -30.2);
@@ -1197,16 +1197,16 @@ export function createBurrough(player, { molehill = null } = {}) {
     let k = 0;
     register({
       pos: new THREE.Vector3(O.x - 39.5, 0, O.z - 29), r: 1.8, zone: 'burrough',
-      label: 'read the blackboard',
+      label: '칠판 읽기',
       use: () => ui.say([
         [
-          'THEOREM (Mödel): This tunnel cannot be proved to have an end.',
-          'PROOF: (keep digging)',
-          'And underneath, in a different hand: “See me. —R.”',
+          '정리 (뫼델): 이 터널은 끝이 있음이 증명될 수 없다.',
+          '증명: (계속 파라)',
+          '그리고 아래에, 다른 필적으로: “나 좀 봐. —R.”',
         ],
         [
-          'A new line since yesterday, very small, in the corner: “Every sufficiently deep burrow contains a room that is not on its own map.”',
-          'Someone from the Boring Department has written under it: “WE CHECKED.” Someone else has crossed that out and written: “check again.”',
+          '어제 이후 새로 쓰인 줄, 구석에 아주 작게: “충분히 깊은 모든 버로에는 자기 지도에 없는 방이 들어 있다.”',
+          '보어링 부 누군가가 아래에 썼어요: “확인함.” 다른 누군가가 그걸 지우고 썼어요: “다시 확인.”',
         ],
       ][k++ % 2]),
     });
@@ -1254,13 +1254,13 @@ export function createBurrough(player, { molehill = null } = {}) {
     scarf.position.set(0, 0.95, 0.3);
     m.add(scarf);
     walker(m, [[-42, -28.2], [-37.5, -28.2], [-42, -28.2], [-46.6, -23], [-47, -16], [-46.6, -23]], 0.8, { rest: 2.5, rate: 8, stopFor: 3 });
-    talker(() => m.position, 'Professor Mödel', 210, [
-      'Mödel. Professor, the Institute for Deep Study. Forgive me for not shaking hands. It is cold down here. It is always cold. I have checked.',
-      'I have proved that in every sufficiently deep burrow there is a tunnel which is true but cannot be dug. The Boring Department took it personally.',
-      'I have read the Burrough charter very carefully. There is a flaw in Article Four. Please, do not mention it at my hearing.',
-      'In certain solutions to the equations, a mole may tunnel into her own past. I have not tried it. I would only discover that I had been late.',
-      'The Institute has no students and no classes. We think. The Labs send down their hardest questions, and we send back better ones. It is a very good arrangement for the questions.',
-      'Every day I walk the lane, and back. Somebody I admired very much used to walk it with me. Now I walk it for both of us. It is a short lane. It is enough.',
+    talker(() => m.position, '뫼델 교수', 210, [
+      '뫼델이오. 심층 연구소 교수. 악수를 못 하는 걸 용서하시오. 여긴 추워서. 항상 추워. 확인했소.',
+      '충분히 깊은 모든 버로에는 참이지만 팔 수 없는 터널이 있음을 증명했소. 보어링 부에서 개인적으로 받아들였지.',
+      '버로 칙허를 아주 꼼꼼히 읽었소. 4조에 결함이 있소. 제발, 내 청문회에서 언급하지 마시오.',
+      '방정식의 어떤 해에선, 두더지가 자기 과거로 터널을 팔 수 있소. 시도해 보지 않았소. 내가 늦었다는 사실만 발견할 테니.',
+      '연구소엔 학생도 수업도 없소. 우리 생각엔. 연구소(랩스)가 가장 어려운 질문을 내려보내면, 우린 더 좋은 질문을 돌려보내오. 질문들에게 아주 좋은 약속이오.',
+      '매일 그 길을 걸었다 돌아오오. 내가 아주 존경하던 누군가가 함께 걷곤 했소. 이제 두 사람 몫을 걷소. 짧은 길이오. 충분하오.',
     ], 2.6);
   }
   // Professor Emerita Rosalind: a naked mole rat, tea at four, always four
@@ -1307,12 +1307,12 @@ export function createBurrough(player, { molehill = null } = {}) {
       r.rotation.y = Math.sin(t * 0.21 + ph) * 0.35 - 0.15;
       r.userData.parts.body.rotation.z = Math.sin(t * 0.5) * 0.04;
     });
-    talker(() => r.position, 'Professor Emerita Rosalind', 380, [
-      'Rosalind. Emerita. I have been emerita so long they have run out of cake.',
-      'We naked mole rats don’t really get old, dear. We just get more senior. I’ve been senior since the Institute was a hole in the ground. It is still a hole in the ground. A very distinguished one.',
-      'Mödel is the finest mind in the Burrough. He also checks my tea before I drink it. Both of those things are love.',
-      'Tea is at four. It is always four. Nobody down here has seen the sun, so we picked a nice time and kept it.',
-      'The blackboard? I wrote “see me.” He came to see me. We had tea. That’s how you check a proof.',
+    talker(() => r.position, '로잘린드 명예교수', 380, [
+      '로잘린드. 명예교수. 너무 오래 명예교수라 케이크가 동났어.',
+      '우리 벌거숭이두더지쥐는 늙지 않아, 얘야. 그냥 더 고참이 될 뿐. 연구소가 땅 구멍이던 때부터 고참이었어. 지금도 땅 구멍이야. 아주 저명한.',
+      '뫼델은 버로 최고의 두뇌야. 내 차도 마시기 전에 확인해주지. 둘 다 사랑이야.',
+      '차는 4시. 항상 4시야. 여긴 아무도 해를 본 적 없어서, 좋은 시간을 골라 지키기로 했어.',
+      '칠판? 내가 “나 좀 봐”라고 썼어. 그가 보러 왔지. 우린 차를 마셨어. 증명은 그렇게 검증하는 거야.',
     ], 2.2);
   }
 
@@ -1325,7 +1325,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     // the canopy, out to the curb, with the name on its front
     const canopy = box(1.6, 0.12, 3.0, 0x2e4a3a); // (narrow enough to clear the ground-floor portholes)
     put(canopy, APT.x, APT.z + 1.5, 2.75);
-    const valance = sign('THE LOAMSWORTH ARMS', 1.6, 0.3, '#2e4a3a', '#e8d49a');
+    const valance = sign('롬스워스 암스', 1.6, 0.3, '#2e4a3a', '#e8d49a');
     valance.position.set(O.x + APT.x, at(APT.x, APT.z) + 2.55, O.z + APT.z + 3.02);
     group.add(valance);
     for (const sx of [-0.74, 0.74]) {
@@ -1386,16 +1386,16 @@ export function createBurrough(player, { molehill = null } = {}) {
     });
     let k = 0;
     const lines = [
-      'Hello down there! You’re not from the Burrough. You’re holding your head up. Nobody down here holds their head up.',
-      'Second floor, no elevator, no view, rent-controlled since the Great Squall. I’m never leaving.',
-      'The laundry takes about nine years to dry down here. It’s not about drying. It’s about hanging it out.',
-      'That Lowell — nice boy. Legs. Nobody asks. Well, I ask. He says “no comment.” Every time. Very polite about it.',
-      'Have you met the new one in 2B? Sorrel. Plays records. Makes bread that’s alive. Lovely. Bit much.',
+      '안녕, 아래! 버로 사람이 아니네. 고개를 들고 있어. 여긴 아무도 고개를 안 들어.',
+      '2층, 엘리베이터 없음, 전망 없음, 대폭풍 이후 임대료 동결. 절대 안 나가.',
+      '빨래가 마르는 데 한 9년 걸려, 여긴. 마르는 게 중요한 게 아냐. 널어놓는 게 중요한 거지.',
+      '그 로웰 — 좋은 청년. 다리. 아무도 안 물어봐. 뭐, 나는 물어봐. “노코멘트”래. 매번. 아주 정중하게.',
+      '2B 새 입주자 만났어? 소렐. 레코드 틀고. 살아있는 빵을 만들어. 사랑스러워. 좀 과해.',
     ];
     register({
       pos: new THREE.Vector3(O.x + mx, 0, O.z + APT.z + 1.4), r: 1.8, zone: 'burrough',
-      label: 'call up to Mrs. Loamsworth',
-      use: () => ui.say(lines[k++ % lines.length], { speaker: 'Mrs. Loamsworth', voice: 330 }),
+      label: '롬스워스 부인 불러보기',
+      use: () => ui.say(lines[k++ % lines.length], { speaker: '롬스워스 부인', voice: 330 }),
     });
     // Beaumont: the doorman. burgundy coat, gold braid, top hat, white
     // gloves. extremely classy. he knows it; he's gracious about it.
@@ -1421,27 +1421,27 @@ export function createBurrough(player, { molehill = null } = {}) {
     onHead(bm, topHat(), 0.34);
     stand(bm, APT.x + 1.6, APT.z + 1.6, 0.25);
     lively(bm, { look: 0.35, speed: 0.25 });
-    talker(() => bm.position, 'Beaumont', 250, [
-      'Good evening. Welcome to the Loamsworth Arms. Do mind the carpet. It is older than both of us, and it knows it.',
-      'Mrs. Loamsworth? Second floor. She already knows you’re here. She knew before I did.',
-      'Apartment 2B has a new tenant. Very artistic. Burns candles that smell like wet dirt. The whole building smells like wet dirt. It always has. Sorrel says theirs is different.',
-      'Do go in. The lobby is open to visitors. The elevator is out of order. It has been out of order since the Squall. It’s a very nice elevator to look at.',
+    talker(() => bm.position, '보몬트', 250, [
+      '좋은 저녁이오. 롬스워스 암스에 오신 걸 환영하오. 카펫 조심하시오. 우리 둘보다 나이가 많고, 본인도 알고 있소.',
+      '롬스워스 부인? 2층이오. 이미 당신이 온 걸 아시오. 나보다 먼저 아셨소.',
+      '2B에 새 입주자가 왔소. 아주 예술적이오. 젖은 흙 냄새 양초를 태우지. 건물 전체가 젖은 흙 냄새요. 늘 그랬소. 소렐은 자기 건 다르다고 하오.',
+      '들어가시오. 로비는 방문객에게 열려 있소. 엘리베이터는 고장이오. 대폭풍 이후로 고장이오. 보기에는 아주 좋은 엘리베이터요.',
     ]);
-    doorway({ x: APT.x, z: APT.z + 1.0 }, 'burrough_arms', 'go into the Loamsworth Arms',
-      () => ui.toast('Beaumont holds the door. “Right this way.”', '🎩'));
+    doorway({ x: APT.x, z: APT.z + 1.0 }, 'burrough_arms', '롬스워스 암스 들어가기',
+      () => ui.toast('보몬트가 문을 잡아줘요. “이쪽이오.”', '🎩'));
   }
   // the Daily Dirt
-  const dirtDoor = frontage({ x: 7.5, z: -10.2, w: 7.5, h: 5.6, color: 0x5a4a3e, trim: 0xf3efe2, name: 'THE DAILY DIRT', sub: '“All the News That’s Fit to Dig”', signBg: '#f3efe2', signFg: '#2e2a26', rows: 2, cols: 3 });
-  doorway(dirtDoor, 'burrough_dirt', 'go into the Daily Dirt');
+  const dirtDoor = frontage({ x: 7.5, z: -10.2, w: 7.5, h: 5.6, color: 0x5a4a3e, trim: 0xf3efe2, name: '데일리 더트', sub: '“파기에 적합한 모든 뉴스”', signBg: '#f3efe2', signFg: '#2e2a26', rows: 2, cols: 3 });
+  doorway(dirtDoor, 'burrough_dirt', '데일리 더트 들어가기');
   // the front pages, one a day
   const FRONT_PAGES = [
-    ['HOT WORM CART “CONTAINS NO WORMS,” VENDOR SAYS', 'Ethics correspondent “not satisfied.” Continued on page 2, page 3, page 4, and page 5.'],
-    ['WORM ETHICS: DAY 41', 'Our correspondent files 9,000 words. The vendor files one: “churro.”'],
-    ['BORING LINE RUNS ON TIME', 'Management “stunned.” Union “not surprised.” Motorman “would like to be left alone.”'],
-    ['INSTITUTE PROFESSOR PROVES SOMETHING', 'Nobody sure what. Professor “satisfied.” Also inside: bell heard again on the heavy tide; residents “not surprised,” “a nice sound.”'],
-    ['MOLEDECAIS STILL UPSTAIRS', 'Third Baron running. Burrough “fine about it, honestly.” Doorman keeps door.'],
-    ['FORECASTER CALLS FOR SUN; SURFACE ADVISED TO BRING UMBRELLA', 'Marjorie: “Thirty-one years. Never once been right. Plan accordingly.”'],
-    ['LEGS: WHOSE?', 'An investigation. Our correspondent declined to be interviewed for it. Our correspondent wrote it.'],
+    ['핫 웜 카트 “벌레 무첨가,” 판매자 주장', '윤리 담당 기자 “납득 불가.” 2면, 3면, 4면, 5면에 계속.'],
+    ['웜 윤리: 41일차', '우리 기자 9,000단어 송고. 판매자는 한 단어 송고: “츄러스.”'],
+    ['보어링 선 제시간 운행', '경영진 “충격.” 노조 “놀랍지 않다.” 운전수 “내버려 두길 바람.”'],
+    ['연구소 교수, 무언가 증명', '뭔지는 아무도 모름. 교수 “만족.” 지면 안쪽: 큰 조수에 또 종소리 들려; 주민들 “놀랍지 않다,” “좋은 소리.”'],
+    ['몰드카이 가 여전히 위층', '3대 남작 집권 중. 버로 “솔직히 괜찮음.” 도어맨 문 지켜.'],
+    ['예보관 맑음 예보; 지상에는 우산 지참 권고', '마조리: “31년. 한 번도 맞은 적 없음. 그에 맞게 계획하시오.”'],
+    ['다리: 누구 것?', '탐사 보도. 우리 기자는 인터뷰를 거절함. 우리 기자가 씀.'],
   ];
   const dayIdx = () => Math.floor(Date.now() / 86400000);
   {
@@ -1461,17 +1461,17 @@ export function createBurrough(player, { molehill = null } = {}) {
       stack.position.set(-0.55 + k * 0.55, 1.08, 0.15);
       g.add(stack);
     }
-    const s = sign('THE DAILY DIRT · 2🔘', 1.8, 0.3, '#f3efe2', '#2e2a26');
+    const s = sign('데일리 더트 · 2🔘', 1.8, 0.3, '#f3efe2', '#2e2a26');
     s.position.set(0, 2.05, 0.46);
     g.add(stand2, roof, s);
     put(g, 13.2, -7.2);
     blockBox(12.2, -7.8, 14.2, -6.6);
     register({
       pos: new THREE.Vector3(O.x + 13.2, 0, O.z - 6.0), r: 1.6, zone: 'burrough',
-      label: 'read today’s Daily Dirt',
+      label: '오늘의 데일리 더트 읽기',
       use: () => {
         const [head, deck] = FRONT_PAGES[dayIdx() % FRONT_PAGES.length];
-        ui.say(['THE DAILY DIRT — “All the News That’s Fit to Dig”', head, deck]);
+        ui.say(['데일리 더트 — “파기에 적합한 모든 뉴스”', head, deck]);
       },
     });
   }
@@ -1489,12 +1489,12 @@ export function createBurrough(player, { molehill = null } = {}) {
     pad.rotation.x = -0.4;
     lw.add(pad);
     walker(lw, [[10.6, -6.2], [3.2, -6.2], [10.6, -6.2], [9, -5.2]], 1.3, { rest: 3, rate: 14 });
-    talker(() => lw.position, 'Lowell', 470, [
-      'Lowell. The Daily Dirt, ethics desk. The ethics desk is me. The desk is also me. I type lying down.',
-      '“Hot worms.” HOT. WORMS. I’m not accusing anybody. I’m asking questions. Every day. Of the same hamster.',
-      'Nibs says they’re churros. I’ve eaten one. For journalism. It was a very good churro. That’s what worries me.',
-      'The legs? No comment. I’m the one asking the questions here.',
-      'Six. Fine. It’s six. Still no comment.',
+    talker(() => lw.position, '로웰', 470, [
+      '로웰이야. 데일리 더트 윤리 데스크. 윤리 데스크는 나야. 책상도 나야. 누워서 타자 쳐.',
+      '“핫 웜.” 핫. 웜. 누굴 고발하는 건 아냐. 질문하는 거야. 매일. 같은 햄스터에게.',
+      '닙스는 츄러스래. 하나 먹어봤어. 저널리즘을 위해. 아주 맛있는 츄러스였어. 그게 걱정되는 거야.',
+      '다리? 노코멘트. 여기서 질문하는 쪽은 나야.',
+      '여섯. 좋아. 여섯이야. 그래도 노코멘트.',
     ]);
   }
   // Nibs and the hot worm cart (contains no worms)
@@ -1525,7 +1525,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       churro.position.set(-0.35 + k * 0.12, 1.27, 0.1);
       g.add(churro);
     }
-    const s = sign('HOT WORMS 8🔘\n(contains no worms)', 1.5, 0.5, '#f3e6c8', '#b8433a');
+    const s = sign('핫 웜 8🔘\n(벌레 무첨가)', 1.5, 0.5, '#f3e6c8', '#b8433a');
     s.position.set(0, 0.85, 0.46);
     g.add(s);
     put(g, 0.5, -6.4);
@@ -1535,23 +1535,23 @@ export function createBurrough(player, { molehill = null } = {}) {
     stand(nibs, 2.0, -6.7, -0.4);
     lively(nibs, { look: 0.7, speed: 0.6, bob: 0.04, hop: 0.12 }); // calling out to the street
     const lines = [
-      'Hot worms! Hot worms here! Contains NO worms! Never has! It says so on the cart in two places!',
-      'It’s a churro. Fried dough, cinnamon, the long wiggly shape. My grandmother called them hot worms and my grandmother was a hamster of vision.',
-      'Lowell comes by every morning with the notebook. I give him a hot worm. He writes it down. He eats it. We have a system.',
+      '핫 웜! 핫 웜이요! 벌레 무첨가! 원래 그래! 카트에 두 군데나 써 있어!',
+      '츄러스야. 튀긴 반죽, 시나몬, 길쭉하고 꿈틀한 모양. 우리 할머니가 핫 웜이라 불렀고 우리 할머니는 비전의 햄스터셨어.',
+      '로웰이 매일 아침 노트 들고 와. 핫 웜 하나 주지. 적어. 먹어. 우리에겐 시스템이 있어.',
     ];
     let k = 0;
     register({
       getPos: () => nibs.position, r: 2.2, zone: 'burrough',
-      label: 'talk to Nibs',
+      label: '닙스와 대화하기',
       use: async () => {
         const choice = await ui.ask(lines[k++ % lines.length], [
-          { label: '🥖 One hot worm, please', value: 'buy', hint: '8🔘', disabled: S.state.buttons < 8 },
-          { label: 'Just looking', value: null },
-        ], { speaker: 'Nibs', voice: 620 });
+          { label: '🥖 핫 웜 하나 주세요', value: 'buy', hint: '8🔘', disabled: S.state.buttons < 8 },
+          { label: '그냥 구경 중', value: null },
+        ], { speaker: '닙스', voice: 620 });
         if (choice !== 'buy' || !S.spend(8)) return;
         kaching();
         ui.updateHUD();
-        ui.toast('A hot worm: warm, cinnamony, and — you check — completely wormless.', '🥖');
+        ui.toast('핫 웜: 따뜻하고, 시나몬 향이고, 그리고 — 확인해 보니 — 완전히 벌레 없음.', '🥖');
       },
     });
   }
@@ -1600,26 +1600,26 @@ export function createBurrough(player, { molehill = null } = {}) {
       coins.forEach((c, i) => { c.visible = i < tips; });
     });
     const lines = [
-      'Evening. It’s always evening down here. That’s why the music’s good.',
-      'The hat takes buttons. The hat also takes requests. I don’t. But the hat does.',
-      'Streetcar comes by every few minutes. Ding ding. I play in the key of the trolley bell. The other bell’s none of my business.',
+      '저녁이야. 여긴 항상 저녁이야. 그래서 음악이 좋은 거야.',
+      '모자는 버튼을 받아. 모자는 신청곡도 받아. 난 안 받아. 근데 모자는 받아.',
+      '전차가 몇 분마다 지나가. 딩딩. 난 전차 종 조성으로 연주해. 다른 종은 내 알 바 아냐.',
     ];
     let k = 0;
     register({
       getPos: () => th.position, r: 2.6, zone: 'burrough',
-      label: 'listen to Thelonious Mole',
+      label: '텔로니어스 몰 연주 듣기',
       use: async () => {
         const choice = await ui.ask(lines[k++ % lines.length], [
-          { label: '🔘 Drop a button in the hat', value: 'tip', hint: '5🔘', disabled: S.state.buttons < 5 },
-          { label: 'Just listen', value: null },
-        ], { speaker: 'Thelonious Mole', voice: 200 });
+          { label: '🔘 모자에 버튼 넣기', value: 'tip', hint: '5🔘', disabled: S.state.buttons < 5 },
+          { label: '그냥 듣기', value: null },
+        ], { speaker: '텔로니어스 몰', voice: 200 });
         if (choice !== 'tip' || !S.spend(5)) return;
         S.state.flags.burroughTips = (S.state.flags.burroughTips || 0) + 1;
         S.save();
         jingle();
         ui.updateHUD();
         playSong('mind_the_gap', true);
-        ui.say('Thank you kindly. This one’s called “Mind the Gap.”', { speaker: 'Thelonious Mole', voice: 200 });
+        ui.say('고마워. 이 곡은 “틈새 주의”야.', { speaker: '텔로니어스 몰', voice: 200 });
       },
     });
   }
@@ -1629,7 +1629,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     const crate = box(1.1, 0.5, 0.8, 0x9a7a50);
     put(crate, -6.5, 3.2, 0.25);
     block(-6.5, 3.2, 0.7);
-    const s = sign('SURFACE FORECAST', 1.1, 0.24, '#f3e6c8', '#3a2a1c');
+    const s = sign('지상 일기예보', 1.1, 0.24, '#f3e6c8', '#3a2a1c');
     s.position.set(O.x - 6.5, 0.26, O.z + 3.61);
     group.add(s);
     const mj = buildAnimal('groundhog', { body: 0x8a6440, head: 0x8a6440 });
@@ -1658,27 +1658,27 @@ export function createBurrough(player, { molehill = null } = {}) {
       cr.userData.parts.head.rotation.y = shake;
       cr.userData.parts.body.rotation.z = Math.sin(t * 0.7 + phs[i]) * 0.04;
     }));
-    talker(() => crowd[0].position, 'a regular', 260, [
-      'She said sun yesterday. It rained up top. I brought an umbrella anyway. That’s how you use Marjorie.',
-      'Thirty-one years I’ve been coming. Never once been right. You can’t get reliability like that anywhere else.',
+    talker(() => crowd[0].position, '단골', 260, [
+      '어제 맑다고 했어. 위엔 비 왔지. 난 어쨌든 우산 가져왔어. 마조리는 그렇게 쓰는 거야.',
+      '31년째 다녀. 한 번도 맞은 적 없어. 그런 신뢰성은 어디에도 없어.',
     ], 1.8);
     const FORECAST = {
-      clear: 'Rain up on the surface today. Heavy. Take a coat, an umbrella, and a second umbrella for the first umbrella.',
-      rain: 'Sunshine up top today! Not a cloud! Leave the umbrella, you won’t need it. I’d stake my reputation on it.',
-      snow: 'Warm on the surface today. Beach weather. Sandals. I can feel it in my whiskers.',
-      fog: 'Crystal clear up top today. You’ll see for miles. Miles!',
+      clear: '오늘 지상은 비. 폭우. 코트, 우산, 그리고 첫 번째 우산을 위한 두 번째 우산을 가져가시오.',
+      rain: '오늘 위는 화창! 구름 한 점 없음! 우산은 두고 가시오, 필요 없을 거요. 내 명성을 걸지.',
+      snow: '오늘 지상은 따뜻. 해변 날씨. 샌들. 내 수염으로 느껴져.',
+      fog: '오늘 위는 아주 맑음. 수 마일이 보일 거요. 수 마일!',
     };
     let k = 0;
     register({
       getPos: () => mj.position, r: 2.4, zone: 'burrough',
-      label: 'hear the surface forecast',
+      label: '지상 일기예보 듣기',
       use: () => {
         const say = [
           FORECAST[currentWeather()] || FORECAST.clear,
-          'Thirty-one years. Never once been right. You know what that makes me? Consistent. You can plan around me.',
-          'I see my shadow every morning. There’s a lamp right there. It means six more weeks of whatever’s up there.',
+          '31년. 한 번도 맞은 적 없지. 그게 날 뭐로 만드는 줄 아시오? 일관성. 날 기준으로 계획할 수 있소.',
+          '매일 아침 내 그림자를 보오. 바로 저기 램프가 있거든. 저 위가 뭐든 6주 연장이라는 뜻이오.',
         ][k++ % 3];
-        ui.say(say, { speaker: 'Marjorie', voice: 300 });
+        ui.say(say, { speaker: '마조리', voice: 300 });
       },
     });
   }
@@ -1707,7 +1707,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     }
     wheel.position.y = 2.0;
     g.add(wheel);
-    const s = sign('BURROUGH ELECTRIC CO.\n“every lamp in Midtown”', 1.8, 0.55, '#2e2a26', '#f2cf5b');
+    const s = sign('버로 전기\n“미드타운의 모든 램프”', 1.8, 0.55, '#2e2a26', '#f2cf5b');
     s.position.set(0, 0.55, 0.62);
     g.add(s);
     put(g, 16.2, -8.4);
@@ -1726,10 +1726,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       const flick = 0.95 + Math.sin(t * 2.6 * 7) * 0.08;
       for (const b of lampBulbs) b.material.emissiveIntensity = 1.1 * flick;
     });
-    talker(() => holder.position, 'Spoke', 700, [
-      'Burrough Electric! Every lamp in Midtown! Just me! I don’t get tired! I’ve never been tired! I’ve tried!',
-      'If the lamps flicker, that’s me waving.',
-      'Management keeps offering me a second hamster. I say what for. Then I think about it for a lap. Then another lap.',
+    talker(() => holder.position, '스포크', 700, [
+      '버로 전기! 미드타운의 모든 램프! 나 혼자! 안 지쳐! 지쳐본 적 없어! 노력해봤어!',
+      '램프가 깜빡이면, 그건 내가 손 흔드는 거야.',
+      '경영진이 자꾸 햄스터 한 마리 더 주겠대. 왜 필요하냐고 하지. 그리고 한 바퀴 돌며 생각해. 그리고 또 한 바퀴.',
     ], 2.8);
   }
   lamp(-16.2, -7.6);
@@ -1739,7 +1739,7 @@ export function createBurrough(player, { molehill = null } = {}) {
   lamp(8, 4.8);
 
   // ================================================================ UPTOWN ----
-  const ritzDoor = frontage({ x: 55.5, z: -9.2, w: 9, h: 6.6, color: 0x6b4a3a, trim: 0xe8dcc0, name: 'THE MOLEDECAI', sub: 'est. before the Squall', signBg: '#2e3a2a', signFg: '#e8d49a', rows: 3, cols: 4, doorColor: 0x2e3a2a });
+  const ritzDoor = frontage({ x: 55.5, z: -9.2, w: 9, h: 6.6, color: 0x6b4a3a, trim: 0xe8dcc0, name: '몰드카이 호텔', sub: '대폭풍 이전 창업', signBg: '#2e3a2a', signFg: '#e8d49a', rows: 3, cols: 4, doorColor: 0x2e3a2a });
   {
     // the stoop: three steps up to the door, with railings
     for (let s = 0; s < 3; s++) {
@@ -1755,8 +1755,8 @@ export function createBurrough(player, { molehill = null } = {}) {
       put(newel, 55.5 + sx, -7.8, 0.45);
     }
     blockBox(54.2, -9.2, 56.8, -7.6);
-    doorway({ x: 55.5, z: -7.0 }, 'burrough_ritz', 'go up to the fourth floor',
-      () => ui.toast('Fitzgerald bows you through. “Mrs. Vanderburrow is expecting no one. She will be delighted.”', '🎩'));
+    doorway({ x: 55.5, z: -7.0 }, 'burrough_ritz', '4층으로 올라가기',
+      () => ui.toast('피츠제럴드가 허리 숙여 안내해요. “밴더버로 부인은 아무도 기다리지 않으십니다. 기뻐하실 겁니다.”', '🎩'));
     ritzDoor.z = -6.6;
     // brass lamps either side of the door
     for (const sx of [-1.8, 1.8]) {
@@ -1777,13 +1777,13 @@ export function createBurrough(player, { molehill = null } = {}) {
     onHead(fitz, flatCap(0x2e3a2a), 0.34);
     stand(fitz, 57.6, -7.7, 0.2);
     lively(fitz, { look: 0.8, speed: 0.2 }); // up the street, down the street
-    talker(() => fitz.position, 'Fitzgerald', 240, [
-      'Good evening. You’re not on the list. Nobody is on the list. I keep it anyway. It is a very good list.',
-      'The Moledecai. Finest address in the Burrough. The family went upstairs three Barons ago. I have kept the door since.',
-      'The grandfather made his fortune up there, billing by the hour. Down here we hear the bell on the heavy tides, you know. Through the rock. Nobody up there ever asked us.',
-      'The Baron sends a card every winter. It says “Keep the door.” So I keep the door.',
-      'The pups visit, sometimes, through the cellar. They run up and down the stoop eleven times and go home. It is the highlight of my year.',
-      'You may go up, of course. The fourth floor. Mrs. Vanderburrow. She is not expecting you. She is never expecting anyone, and she is always delighted.',
+    talker(() => fitz.position, '피츠제럴드', 240, [
+      '좋은 저녁이오. 명단에 없으시오. 아무도 명단에 없소. 그래도 관리하오. 아주 좋은 명단이오.',
+      '몰드카이 호텔. 버로 최고의 주소. 가족은 세 남작 전에 위로 올라갔소. 나는 그때부터 문을 지키오.',
+      '할아버지는 저 위에서 시간당 청구로 재산을 모으셨소. 여기 아래에선 큰 조수 때 종소리가 들리오, 아시오? 암반을 통해. 저 위 누구도 우리에게 묻지 않았소.',
+      '남작이 매년 겨울 카드를 보내오. “문을 지키시오.”라고. 그래서 문을 지키오.',
+      '새끼들이 가끔 지하실 통해 놀러 오오. 현관을 열한 번 오르내리고 집에 가오. 내 한 해의 하이라이트요.',
+      '올라가셔도 되오, 물론. 4층. 밴더버로 부인. 당신을 기다리지 않으시오. 누구도 기다리신 적 없고, 항상 기뻐하시오.',
     ]);
   }
   // Central Mulch: three mushrooms, a moss lawn, a bench
@@ -1807,7 +1807,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     }
     put(bench, 44.5, -6.8);
     blockBox(43.5, -7.2, 45.5, -6.5);
-    signPost(41.0, -6.0, 'CENTRAL MULCH\nplease stay on the moss', 1.6, 0.55, '#2e3a2a', '#e8d49a');
+    signPost(41.0, -6.0, '센트럴 멀치\n이끼 위로만 다니세요', 1.6, 0.55, '#2e3a2a', '#e8d49a');
     // on the bench: a retired groundhog, feeding the beetles
     const old = buildAnimal('groundhog', { body: 0x9a8a78, head: 0x9a8a78, belly: 0xd8ccbc });
     old.scale.setScalar(0.9);
@@ -1833,10 +1833,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       old.userData.parts.head.rotation.x = c < 2 ? Math.sin((c / 2) * Math.PI) * 0.45 : 0;
       old.rotation.y = Math.sin(t * 0.25) * 0.3;
     });
-    talker(() => old.position, 'Mr. Hollis', 200, [
-      'The beetles know me. Forty years on this bench. They don’t know my name. They know the crumbs.',
-      'Uptown used to be the Moledecais and nobody else. Now it’s the Moledecais’ building, and everybody else. Better this way.',
-      'I was a forecaster once. Before Marjorie. I was right every time. Nobody came to hear me. You want to be loved, be wrong with confidence.',
+    talker(() => old.position, '홀리스 씨', 200, [
+      '딱정벌레들이 날 알아. 이 벤치에서 40년. 내 이름은 몰라. 부스러기를 알지.',
+      '업타운은 예전엔 몰드카이 가뿐이었어. 지금은 몰드카이 건물과, 그 외 모두. 이게 더 나아.',
+      '나도 예보관이었어. 마조리 전에. 매번 맞았지. 들으러 오는 사람은 없었어. 사랑받고 싶으면, 자신 있게 틀려.',
     ], 2.4);
   }
   lamp(48, -4.8);
@@ -1889,7 +1889,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     });
     register({
       pos: new THREE.Vector3(R.x, 0, R.z + R.d / 2 - 0.4), r: 1.6, zone: rm.zone, priority: 2,
-      label: 'step back out to the street',
+      label: '거리로 다시 나가기',
       use: () => zones.go('burrough', { ...W(outside.x, outside.z + 0.4), rotY: 0 }),
     });
     // a doormat, so you can find the way out
@@ -2011,11 +2011,11 @@ export function createBurrough(player, { molehill = null } = {}) {
 
   // ---------------------------------------------- inside Local 1 ----
   {
-    const rm = room('local1', { floor: 0x7a6048, wall: 0x9a7a58, trim: 0xf2cf5b, name: '⛏️ Boring Dept. Local 1' });
+    const rm = room('local1', { floor: 0x7a6048, wall: 0x9a7a58, trim: 0xf2cf5b, name: '⛏️ 보어링 부 1지부' });
     const F = furnish(rm);
     const { P, R } = rm;
     F.rug(0, 1.2, 5, 3, 0x6a4a3a);
-    F.wallSign(0, 3.6, 'BORING DEPT. · LOCAL 1', 5, 0.6, '#2e2a26', '#f2cf5b');
+    F.wallSign(0, 3.6, '보어링 부 · 1지부', 5, 0.6, '#2e2a26', '#f2cf5b');
     // the front desk: Doris, the forms, the candy dish, a TAKE A NUMBER
     // machine with no numbers in it
     F.desk(-3.2, -0.6, 2.6, 1.0, 0x8a5a3a);
@@ -2037,7 +2037,7 @@ export function createBurrough(player, { molehill = null } = {}) {
     nb.position.y = 0.2;
     numbers.add(nb);
     P(numbers, -4.3, -0.3, 0.85);
-    F.wallSign(-3.2, 2.4, 'PLEASE TAKE A NUMBER\n(we are out of numbers)', 2.2, 0.6, '#f3efe2', '#b8433a');
+    F.wallSign(-3.2, 2.4, '번호표를 뽑으세요\n(번호표 다 떨어짐)', 2.2, 0.6, '#f3efe2', '#b8433a');
     const doris = F.critter('mole', { body: 0x6a5a50 }, -3.2, -1.7, 0);
     doris.scale.setScalar(0.9);
     onHead(doris, spectacles(0x8a3a5a, 0.085), 0.08, 0.4);
@@ -2055,32 +2055,32 @@ export function createBurrough(player, { molehill = null } = {}) {
     doris.userData.noFidget = true;
     let dk = 0;
     const DORIS = [
-      'Local 1. Can I help you. Please say no.',
-      'Take a number. We don’t have numbers. Take a candy instead. It’s the same wait.',
-      'Eleven years of paperwork for one tunnel. I did ten of them. Bertha did the other one, and she’s still talking about it.',
-      'If you’re here about the fifteen minutes, it’s fifteen minutes. If you’re here about Wendell, I don’t know where Wendell is. Nobody knows where Wendell is. Wendell is on a beach.',
-      'Form 27-B is the form for requesting Form 27-A. Form 27-A is the form for requesting to speak to me. I’m going to need both.',
+      '1지부. 도와드릴까요. 아니라고 해 주세요.',
+      '번호표 뽑으세요. 번호표 없어요. 대신 사탕 드세요. 대기는 똑같아요.',
+      '터널 하나에 서류 11년. 10년은 내가 했어요. 나머지 1년은 버사가 했고, 아직도 그 얘길 해요.',
+      '15분 때문에 오셨다면, 15분이에요. 웬델 때문에 오셨다면, 웬델이 어디 있는지 몰라요. 아무도 몰라요. 웬델은 해변에 있어요.',
+      '27-B 양식은 27-A 양식을 요청하는 양식이에요. 27-A 양식은 저와 면담을 요청하는 양식이고요. 둘 다 필요해요.',
     ];
     register({
-      getPos: () => doris.position, r: 2.2, zone: rm.zone, label: 'talk to Doris',
-      use: () => ui.say(DORIS[dk++ % DORIS.length], { speaker: 'Doris', voice: 290 }),
+      getPos: () => doris.position, r: 2.2, zone: rm.zone, label: '도리스와 대화하기',
+      use: () => ui.say(DORIS[dk++ % DORIS.length], { speaker: '도리스', voice: 290 }),
     });
     let ck = 0;
     register({
-      pos: worldPos(rm, -2.9, 0.6), r: 1.4, zone: rm.zone, priority: 2, label: 'take a hard candy',
+      pos: worldPos(rm, -2.9, 0.6), r: 1.4, zone: rm.zone, priority: 2, label: '딱딱한 사탕 하나 가져가기',
       use: () => {
-        const flavor = ['butterscotch', 'cherry', 'lime', 'something pink', 'root beer'][ck % 5];
+        const flavor = ['버터스카치', '체리', '라임', '분홍색 무언가', '루트비어'][ck % 5];
         ui.say([
-          'Take one. Take two. Take the dish. Just don’t ask me for a form.',
-          'Fine. Take one.',
-          'They’re from the Squall. They’re fine. Hard candy is forever.',
-        ][ck++ % 3], { speaker: 'Doris', voice: 290 });
-        ui.toast(`A hard candy: ${flavor}, older than the tunnel, still perfect.`, '🍬');
+          '하나 드세요. 두 개 드세요. 접시째 드세요. 양식만 달라고 하지 마세요.',
+          '좋아요. 하나 드세요.',
+          '대폭풍 때 거예요. 괜찮아요. 딱딱한 사탕은 영원해요.',
+        ][ck++ % 3], { speaker: '도리스', voice: 290 });
+        ui.toast(`딱딱한 사탕: ${flavor}, 터널보다 오래됐지만 여전히 완벽해요.`, '🍬');
       },
     });
     // the union corner: a bulletin board, a photo, the water cooler
-    F.wallSign(-6.4, 2.2, 'LOCAL 1 BULLETIN\n• 15 min. breaks: WON\n• Wendell: on break\n• bake sale: Tues.', 2.2, 1.5, '#c8a878', '#2e2a26', { weight: 600, align: 'left' });
-    F.wallSign(-3.6, 3.4, 'THE NIGHT WE DUG IT\n(photo: very dark)', 1.3, 0.9, '#1a1410', '#e8dcc0', { border: '#8a6a44', weight: 600 });
+    F.wallSign(-6.4, 2.2, '1지부 게시판\n• 15분 휴식: 쟁취\n• 웬델: 휴식 중\n• 바자회: 화요일', 2.2, 1.5, '#c8a878', '#2e2a26', { weight: 600, align: 'left' });
+    F.wallSign(-3.6, 3.4, '우리가 판 그날 밤\n(사진: 매우 어두움)', 1.3, 0.9, '#1a1410', '#e8dcc0', { border: '#8a6a44', weight: 600 });
     {
       const cooler = new THREE.Group();
       const baseC = box(0.5, 1.0, 0.5, 0xe8e8e0);
@@ -2117,7 +2117,7 @@ export function createBurrough(player, { molehill = null } = {}) {
         cable.rotation.x = Math.PI / 2;
         P(cable, 5.8 + k * 0.1, -3.2, 0.03);
       }
-      F.wallSign(4.6, 2.6, 'I.T.\nhave you tried filling it in\nand digging it again?', 2.4, 0.9, '#2e2a26', '#5aff8a', { weight: 600 });
+      F.wallSign(4.6, 2.6, '전산실\n메워 보고\n다시 파 봤어?', 2.4, 0.9, '#2e2a26', '#5aff8a', { weight: 600 });
       const ping = F.critter('hamster', { body: 0xb8906a }, 4.4, -2.5, Math.PI);
       const hs = headphones();
       hs.scale.setScalar(0.8);
@@ -2130,11 +2130,11 @@ export function createBurrough(player, { molehill = null } = {}) {
           : turnToward(ping.rotation.y, Math.PI, dt, 3);
       });
       ping.userData.noFidget = true;
-      talker(() => ping.position, 'Ping', 660, [
-        'IT. Have you tried turning the tunnel off and on again?',
-        'The whole Boring Line runs on this one terminal. Don’t touch it. I don’t touch it. We just watch it.',
-        'Ada up at the Labs sent us a memory she wove by paw. Beautiful work. We’re scared of it. It’s in a drawer. It hums.',
-        'Everything’s fine. The lights are blinking. Blinking is fine. It’s when they stop blinking.',
+      talker(() => ping.position, '핑', 660, [
+        '전산이에요. 터널을 껐다 켜 보셨어요?',
+        '보어링 선 전체가 이 단말기 하나로 돌아가요. 만지지 마. 나도 안 만져. 그냥 지켜봐.',
+        '연구소의 에이다가 발로 짠 메모리를 보내줬어요. 아름다운 작품. 무서워. 서랍에 넣어뒀어. 웅웅거려.',
+        '다 괜찮아. 불이 깜빡여. 깜빡이는 건 괜찮아. 깜빡임이 멈출 때가 문제야.',
       ], 2.2, rm.zone);
     }
     // the engineers at the chalkboard, planning the west
@@ -2144,7 +2144,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       slate.position.y = 2.0;
       const frame = box(4.4, 2.2, 0.06, 0x8a6a44);
       frame.position.set(0, 2.0, -0.05);
-      const chalk = sign('PLAN A: dig →\nPLAN B: dig ←\nPLAN C: dig ↓ (see Bertha)\n     W E S T   ═══════════ ? ', 4.0, 1.8, '#2e3a32', '#e8efe8', { weight: 500, align: 'left' });
+      const chalk = sign('A안: 파기 →\nB안: 파기 ←\nC안: 파기 ↓ (버사에게 문의)\n     서   쪽   ═══════════ ? ', 4.0, 1.8, '#2e3a32', '#e8efe8', { weight: 500, align: 'left' });
       chalk.position.set(0, 2.0, 0.06);
       board.add(slate, frame, chalk);
       P(board, 0.6, -4.7);
@@ -2164,13 +2164,13 @@ export function createBurrough(player, { molehill = null } = {}) {
         think.rotation.y = Math.PI + (think === plumb ? 0.3 : -0.2);
       });
       gauge.userData.noFidget = plumb.userData.noFidget = true;
-      talker(() => gauge.position, 'Gauge', 260, [
-        'Gauge. Engineering. We’re planning the extension. West. Then more west. It’s mostly a question of west.',
-        'We measure twice and dig once. Then we dig again, because the first one was great.',
+      talker(() => gauge.position, '게이지', 260, [
+        '게이지. 엔지니어링. 연장을 계획 중이야. 서쪽. 그리고 더 서쪽. 대부분 서쪽의 문제야.',
+        '두 번 재고 한 번 파. 그리고 한 번 더 파, 첫 번째가 아주 잘 팠거든.',
       ], 1.8, rm.zone);
-      talker(() => plumb.position, 'Plumb', 300, [
-        'Plumb. Also engineering. The Professor says the tunnel can’t be proved to end. Good. Job security.',
-        'Plan C is Bertha’s. We don’t talk about Plan C. Plan C is just “down.”',
+      talker(() => plumb.position, '플럼', 300, [
+        '플럼. 이쪽도 엔지니어링. 교수는 터널이 끝남을 증명할 수 없대. 좋아. 고용 안정.',
+        'C안은 버사 거야. C안은 말 안 해. C안은 그냥 “아래로.”',
       ], 1.8, rm.zone);
     }
     // filing cabinets, full of the eleven years
@@ -2185,11 +2185,11 @@ export function createBurrough(player, { molehill = null } = {}) {
 
   // ---------------------------------------------- inside Mould Hall ----
   {
-    const rm = room('mould', { floor: 0x6a3a2a, wall: 0xe8dcc8, trim: 0xf3efe2, name: '🎓 Mould Hall' });
+    const rm = room('mould', { floor: 0x6a3a2a, wall: 0xe8dcc8, trim: 0xf3efe2, name: '🎓 몰드 홀' });
     const F = furnish(rm);
     const { P } = rm;
     F.rug(0, 0, 8, 5, 0x3a4a5a);
-    F.wallSign(0, 3.9, 'THE INSTITUTE FOR DEEP STUDY', 5, 0.45, '#e8dcc8', '#6a2a20', { weight: 700 });
+    F.wallSign(0, 3.9, '심층 연구소', 5, 0.45, '#e8dcc8', '#6a2a20', { weight: 700 });
     // the fireplace, with a fire that doesn't need the sky
     {
       const g = new THREE.Group();
@@ -2208,7 +2208,7 @@ export function createBurrough(player, { molehill = null } = {}) {
         return f;
       });
       rm.updates.push((dt, t) => flames.forEach((f, i) => { f.scale.y = 1 + Math.sin(t * (7 + i * 2) + i) * 0.2; }));
-      const portrait = sign('A. MOLE\nfounder\n“dug here,\nthought here”', 1.1, 1.3, '#4a3a2a', '#e8d49a', { border: '#c9a24a', weight: 600 });
+      const portrait = sign('A. 몰\n창립자\n“여기서 팠고,\n여기서 생각했다”', 1.1, 1.3, '#4a3a2a', '#e8d49a', { border: '#c9a24a', weight: 600 });
       P(portrait, 0, -4.84, 3.0);
     }
     F.shelf(-4.8, -4.6, 3.6, 3.2, 4);
@@ -2232,14 +2232,14 @@ export function createBurrough(player, { molehill = null } = {}) {
       // Pell: breathing, deeply, under the book
       pell.userData.parts.body.scale.y = 1.05 * (1 + Math.sin(t * 1.1) * 0.06);
     });
-    talker(() => fen.position, 'Dr. Fennimore', 560, [
-      'Shh. I’m thinking. I’ve been thinking since Tuesday. I’ll let you know.',
-      'I am thinking about whether I am thinking. So far: yes. Early days.',
-      'Pell? Pell is also thinking. Pell thinks with his eyes closed and a book on his face. It’s a method.',
+    talker(() => fen.position, '페니모어 박사', 560, [
+      '쉿. 생각 중이야. 화요일부터 생각 중이야. 알려줄게.',
+      '내가 생각하고 있는지에 대해 생각하고 있어. 지금까지: 응. 초기 단계야.',
+      '펠? 펠도 생각 중이야. 펠은 눈 감고 얼굴에 책을 올리고 생각해. 그것도 방법이야.',
     ], 2.0, rm.zone);
     register({
-      getPos: () => pell.position, r: 2.0, zone: rm.zone, label: 'look in on Dr. Pell',
-      use: () => ui.say('Zzz. …the proof is… in the… zzz.', { speaker: 'Dr. Pell', voice: 180 }),
+      getPos: () => pell.position, r: 2.0, zone: rm.zone, label: '펠 박사 들여다보기',
+      use: () => ui.say('쿨. …증명은… …에… 쿨.', { speaker: '펠 박사', voice: 180 }),
     });
     // the reading table, with green-shaded lamps and the open books
     F.desk(0, 1.4, 3.6, 1.2, 0x5a3a2a);
@@ -2251,7 +2251,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       const page = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.03, 0.4), mat(0xf7f5f0));
       P(page, sx * 0.4, 1.5, 0.87);
     }
-    F.wallSign(-4.8, 3.65, 'SILENCE\n(thinking in progress)', 1.4, 0.6, '#e8dcc8', '#6a2a20', { border: '#6a2a20' });
+    F.wallSign(-4.8, 3.65, '정숙\n(생각 진행 중)', 1.4, 0.6, '#e8dcc8', '#6a2a20', { border: '#6a2a20' });
     // the tea urn, always hot, always four
     {
       const urn = new THREE.Group();
@@ -2263,8 +2263,8 @@ export function createBurrough(player, { molehill = null } = {}) {
       P(urn, 6.6, -1.4);
       F.solidBox(6.6, -1.4, 1.2, 0.6);
       register({
-        pos: worldPos(rm, 6.0, -0.4), r: 1.3, zone: rm.zone, label: 'pour a cup of tea',
-        use: () => ui.toast('Tea from the Institute urn. It is exactly four o’clock in the cup.', '🫖'),
+        pos: worldPos(rm, 6.0, -0.4), r: 1.3, zone: rm.zone, label: '차 한 잔 따르기',
+        use: () => ui.toast('연구소 주전자의 차. 컵 안은 정확히 4시예요.', '🫖'),
       });
     }
     // the visitors' book
@@ -2275,10 +2275,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       F.solidDisc(-6.4, 1.8, 0.35);
       let vk = 0;
       register({
-        pos: worldPos(rm, -6.4, 2.8), r: 1.3, zone: rm.zone, label: 'read the visitors’ book',
+        pos: worldPos(rm, -6.4, 2.8), r: 1.3, zone: rm.zone, label: '방명록 읽기',
         use: () => ui.say([
-          ['The visitors’ book. Recent entries:', '“Notbell Labs — brought our hardest question. Left with a harder one. 10/10. —S.”', '“nice fire —a commuter”'],
-          ['“Came to think. Thought. Recommend. —Dr. Hazel”', '“Is the tea always four? —a visitor” and underneath, in a very old hand: “Yes. —R.”'],
+          ['방명록. 최근 기록:', '“낫벨 연구소 — 가장 어려운 질문을 가져왔다. 더 어려운 걸 들고 떠남. 10/10. —S.”', '“모닥불 좋음 —통근자”'],
+          ['“생각하러 옴. 생각함. 추천. —헤이즐 박사”', '“차는 항상 4시인가요? —방문객” 그리고 아래에, 아주 오래된 필적으로: “응. —R.”'],
         ][vk++ % 2]),
       });
     }
@@ -2289,7 +2289,7 @@ export function createBurrough(player, { molehill = null } = {}) {
   // left: the lobby. middle: the hall, apartment doors, the famous elevator.
   // right, through a door in the partition: 2B, where Sorrel lives.
   {
-    const rm = room('arms', { floor: 0x5a3a2a, wall: 0xc8b89a, trim: 0xd8c8a8, name: '🏢 The Loamsworth Arms' });
+    const rm = room('arms', { floor: 0x5a3a2a, wall: 0xc8b89a, trim: 0xd8c8a8, name: '🏢 롬스워스 암스' });
     const F = furnish(rm);
     const { P, R } = rm;
     // the lobby floor, black and white tiles
@@ -2298,7 +2298,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       t.castShadow = false;
       P(t, -10.6 + 0.45 + i * 0.9, -R.d / 2 + 0.55 + j * 1.1, 0.01);
     }
-    F.wallSign(-7, 3.8, 'THE LOAMSWORTH ARMS · est. before the Squall', 5, 0.4, '#2e4a3a', '#e8d49a');
+    F.wallSign(-7, 3.8, '롬스워스 암스 · 대폭풍 이전 창업', 5, 0.4, '#2e4a3a', '#e8d49a');
     // brass mailboxes
     {
       const mb = new THREE.Group();
@@ -2327,13 +2327,13 @@ export function createBurrough(player, { molehill = null } = {}) {
       dial.position.set(0, 2.55, 0.06);
       doors.add(dial);
       P(doors, -5.7, -4.9);
-      F.wallSign(-5.7, 0.9, 'OUT OF ORDER\n(since the Squall)', 0.9, 0.4, '#f3efe2', '#b8433a');
+      F.wallSign(-5.7, 0.9, '고장\n(대폭풍 이후)', 0.9, 0.4, '#f3efe2', '#b8433a');
       let ek = 0;
       register({
-        pos: worldPos(rm, -5.7, -3.6), r: 1.3, zone: rm.zone, label: 'press the elevator button',
+        pos: worldPos(rm, -5.7, -3.6), r: 1.3, zone: rm.zone, label: '엘리베이터 버튼 누르기',
         use: () => ui.say([
-          'Ding. Nothing happens. The little arrow over the door points, very elegantly, at nothing.',
-          'Ding. Somewhere far above, something mechanical sighs. The doors stay closed with enormous dignity.',
+          '띵. 아무 일도 없어요. 문 위 작은 화살표가 아주 우아하게 아무것도 가리키지 않아요.',
+          '띵. 멀리 위에서 기계적인 무언가가 한숨 쉬어요. 문은 엄청난 위엄으로 닫혀 있어요.',
         ][ek++ % 2]),
       });
     }
@@ -2382,7 +2382,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       // the exposed dirt, in strata, framed like it's art (it is, to Sorrel)
       const STR = [0x6b4a32, 0x8a6a4a, 0x5e4230, 0x9a7a58];
       for (let k = 0; k < 6; k++) P(box(7.4, 0.6, 0.06, STR[k % 4]), AX, -4.93, 0.4 + k * 0.62);
-      const neon = sign('loam sweet loam', 2.0, 0.4, '#1a1014', '#ff8ac8', { weight: 600 });
+      const neon = sign('롬 스위트 롬', 2.0, 0.4, '#1a1014', '#ff8ac8', { weight: 600 });
       neon.material.color.set(0xffffff);
       P(neon, AX, -4.85, 3.2);
       // edison bulbs on long cords
@@ -2408,10 +2408,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       P(label, AX + 2.5, -3.9, 0.845);
       rm.updates.push((dt) => { vinyl.rotation.y += dt * 3.5; label.rotation.y += dt * 3.5; });
       register({
-        pos: worldPos(rm, AX + 2.6, -2.8), r: 1.3, zone: rm.zone, label: 'put on a record',
+        pos: worldPos(rm, AX + 2.6, -2.8), r: 1.3, zone: rm.zone, label: '레코드 틀기',
         use: () => {
           playSong(['mind_the_gap', 'foggy_lullaby', 'button_bossa'][Math.floor(Math.random() * 3)], true);
-          ui.toast('Crackle. Hiss. Music. “It sounds warmer,” says Sorrel, from across the room, without looking up.', '🎶');
+          ui.toast('지직. 씨익. 음악. “더 따뜻하게 들리잖아,” 방 건너편에서 소렐이 고개 들지 않고 말해요.', '🎶');
         },
       });
       // the bike, hung on the wall like a painting
@@ -2449,7 +2449,7 @@ export function createBurrough(player, { molehill = null } = {}) {
         F.solidBox(AX - 1.2, -4.3, 2.4, 0.7);
         const gerald = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.32, 10), new THREE.MeshStandardMaterial({ color: 0xf0e8d0, transparent: true, opacity: 0.8, roughness: 0.2 }));
         P(gerald, AX - 2.0, -4.3, 1.06);
-        const tag = sign('GERALD', 0.25, 0.1, '#f3efe2', '#2e2a26');
+        const tag = sign('제럴드', 0.25, 0.1, '#f3efe2', '#2e2a26');
         P(tag, AX - 2.0, -4.14, 1.06);
         for (let k = 0; k < 2; k++) {
           const jar = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.36, 10), new THREE.MeshStandardMaterial({ color: 0xd89a4a, transparent: true, opacity: 0.7, roughness: 0.2 }));
@@ -2460,10 +2460,10 @@ export function createBurrough(player, { molehill = null } = {}) {
         P(pour, AX - 0.4, -4.3, 1.12);
         let gk = 0;
         register({
-          pos: worldPos(rm, AX - 1.8, -3.2), r: 1.2, zone: rm.zone, label: 'say hello to Gerald',
+          pos: worldPos(rm, AX - 1.8, -3.2), r: 1.2, zone: rm.zone, label: '제럴드에게 인사하기',
           use: () => ui.say([
-            'A jar of sourdough starter labeled GERALD. It is bubbling, contentedly. It is, somehow, looking at you.',
-            'Gerald burps, softly. On the counter, a note in careful handwriting: “fed 9am, fed 9pm, told him he’s doing great.”',
+            '제럴드라고 붙은 사워도우 스타터 병. 만족스럽게 부글거려요. 어쩐지 당신을 보고 있어요.',
+            '제럴드가 살짝 트림해요. 조리대 위 정갈한 글씨의 쪽지: “오전 9시 먹임, 오후 9시 먹임, 잘하고 있다고 말해줌.”',
           ][gk++ % 2]),
         });
       }
@@ -2491,13 +2491,13 @@ export function createBurrough(player, { molehill = null } = {}) {
       scarf.position.set(0, 0.95, 0.25);
       sorrel.add(scarf);
       lively(sorrel, { list: rm.updates, look: 0.6, speed: 0.4, bob: 0.03 }); // nodding along to the record
-      talker(() => sorrel.position, 'Sorrel', 520, [
-        'Oh, hey. Shoes on is fine. The floor’s dirt. The floor’s always been dirt. It’s original.',
-        'I was into the Burrough before it was underground.',
-        'That’s Gerald. My starter. He’s nine. He’s doing really well. He’s doing better than me, honestly, and I’m proud of him.',
-        'Everything sounds better on vinyl. The records are also dirt. Everything’s dirt. It’s a whole aesthetic.',
-        'Thelonious? I saw him before he was on that corner. He was on a different corner. It was a smaller corner. It was better.',
-        'The candle? “Wet Dirt.” I know. The whole building smells like wet dirt. Mine is different. Mine is intentional.',
+      talker(() => sorrel.position, '소렐', 520, [
+        '오, 안녕. 신발 신어도 돼. 바닥이 흙이야. 바닥은 원래 흙이었어. 오리지널이야.',
+        '나는 버로가 지하로 가기 전부터 버로에 빠져 있었어.',
+        '저건 제럴드. 내 스타터. 아홉 살. 아주 잘 지내. 솔직히 나보다 잘 지내고, 자랑스러워.',
+        '모든 건 바이닐로 들으면 더 좋아. 레코드도 흙이야. 모든 게 흙이야. 하나의 미학이지.',
+        '텔로니어스? 그가 저 모퉁이에 서기 전에 봤어. 다른 모퉁이였어. 더 작은 모퉁이. 더 좋았어.',
+        '양초? “젖은 흙.” 알아. 건물 전체가 젖은 흙 냄새지. 내 건 달라. 내 건 의도적이야.',
       ], 2.2, rm.zone);
       // a candle, intentional
       const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.16, 8), mat(0x8a6a4a));
@@ -2511,30 +2511,30 @@ export function createBurrough(player, { molehill = null } = {}) {
 
   // ------------------------------------------- inside the Daily Dirt ----
   {
-    const rm = room('dirt', { floor: 0x6a5a4a, wall: 0xd8d0c0, trim: 0xf3efe2, name: '🗞️ The Daily Dirt' });
+    const rm = room('dirt', { floor: 0x6a5a4a, wall: 0xd8d0c0, trim: 0xf3efe2, name: '🗞️ 데일리 더트' });
     const F = furnish(rm);
     const { P, R } = rm;
-    F.wallSign(-2, 3.8, 'THE DAILY DIRT · “All the News That’s Fit to Dig”', 6.5, 0.45, '#f3efe2', '#2e2a26');
-    F.wallSign(-6.6, 2.4, 'TODAY:\nHOT WORMS (still)\nLINE: on time\nBELL: heard (nice)', 2.0, 1.4, '#2e3a32', '#e8efe8', { weight: 500, align: 'left' });
+    F.wallSign(-2, 3.8, '데일리 더트 · “파기에 적합한 모든 뉴스”', 6.5, 0.45, '#f3efe2', '#2e2a26');
+    F.wallSign(-6.6, 2.4, '오늘:\n핫 웜 (여전히)\n전차: 제시간\n종: 들림 (좋음)', 2.0, 1.4, '#2e3a32', '#e8efe8', { weight: 500, align: 'left' });
     // the newsroom: desks, typewriters, reporters typing like the Squall is
     // coming back
     const reporters = [];
     const DESKS = [
-      { x: -5.4, z: -1.2, kind: 'mole', body: 0x5e5048, hat: () => visor(), name: 'the obituaries desk', lines: [
-        'Obituaries. Nobody’s died since the Squall. I write about retirements. Very moving. There wasn’t a dry eye at the Local 1 potluck.',
-        'Next week: a very long piece about a mole who stopped digging. He’s fine. He’s gardening. It’s devastating.',
+      { x: -5.4, z: -1.2, kind: 'mole', body: 0x5e5048, hat: () => visor(), name: '부고 데스크', lines: [
+        '부고. 대폭풍 이후 아무도 안 죽었어. 은퇴 얘길 써. 아주 감동적이야. 1지부 포트럭에서 안 운 사람이 없었어.',
+        '다음 주: 파기를 그만둔 두더지에 대한 아주 긴 기사. 걔는 잘 지내. 정원 가꿔. 가슴 아파.',
       ] },
-      { x: -2.4, z: -1.2, kind: 'hamster', body: 0xd8a068, hat: () => flatCap(0x4a5a6a), name: 'the sports desk', lines: [
-        'Sports. The only sport is whether the Boring Line is on time. I cover it with the intensity it deserves.',
-        'Big game tonight. The Line versus the clock. I’ve got a feeling about the Line.',
+      { x: -2.4, z: -1.2, kind: 'hamster', body: 0xd8a068, hat: () => flatCap(0x4a5a6a), name: '스포츠 데스크', lines: [
+        '스포츠. 유일한 종목은 보어링 선이 제시간에 오는가야. 그에 걸맞은 열기로 취재해.',
+        '오늘 밤 빅매치. 전차 대 시계. 전차에 느낌이 와.',
       ] },
-      { x: -5.4, z: 1.4, kind: 'groundhog', body: 0x8a6a4a, hat: () => beret(0x3a3a4a), name: 'the crossword desk', lines: [
-        'Crosswords. Seven down: “a hole, but for a mole,” six letters. BURROW. It’s always burrow. I’ve done nine thousand of these. It’s always burrow.',
-        'I tried to put the word “sky” in once. Letters came in. Very upset letters. Nobody’s seen one.',
+      { x: -5.4, z: 1.4, kind: 'groundhog', body: 0x8a6a4a, hat: () => beret(0x3a3a4a), name: '크로스워드 데스크', lines: [
+        '크로스워드. 세로 7번: “구멍, 단 두더지용,” 여섯 글자. BURROW. 항상 burrow야. 9천 개째 풀었어. 항상 burrow야.',
+        '한 번은 “하늘”이란 단어를 넣어봤어. 항의 편지가 왔어. 아주 화난 편지들. 본 사람이 없거든.',
       ] },
-      { x: -2.4, z: 1.4, kind: 'mole', body: 0x6a5a50, hat: () => fedora(0x5a4a3a), name: 'the culture desk', lines: [
-        'Culture. This week: is the Little Desk Session the most intimate music venue in the Burrough? Yes. It’s a desk.',
-        'I reviewed Thelonious Mole once. Five stars. He read it and said “okay.” Best day of my career.',
+      { x: -2.4, z: 1.4, kind: 'mole', body: 0x6a5a50, hat: () => fedora(0x5a4a3a), name: '문화 데스크', lines: [
+        '문화. 이번 주: 리틀 데스크 세션은 버로에서 가장 아늑한 공연장인가? 응. 책상이거든.',
+        '텔로니어스 몰을 한 번 평론했어. 별 다섯. 그가 읽고 “오케이”라고 했어. 내 경력 최고의 날.',
       ] },
     ];
     for (const d of DESKS) {
@@ -2579,10 +2579,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       }
       P(g, -8.6, -4.4);
       F.solidBox(-8.6, -4.4, 1.6, 0.7);
-      F.wallSign(-8.6, 2.0, 'COFFEE IS A\nFREE PRESS ISSUE', 1.4, 0.6, '#f3efe2', '#b8433a', { weight: 700 });
+      F.wallSign(-8.6, 2.0, '커피는\n언론 자유 문제다', 1.4, 0.6, '#f3efe2', '#b8433a', { weight: 700 });
       register({
-        pos: worldPos(rm, -8.6, -3.3), r: 1.3, zone: rm.zone, label: 'pour a newsroom coffee',
-        use: () => ui.toast('Newsroom coffee: hot, black, and tasting faintly of deadline.', '☕'),
+        pos: worldPos(rm, -8.6, -3.3), r: 1.3, zone: rm.zone, label: '편집국 커피 따르기',
+        use: () => ui.toast('편집국 커피: 뜨겁고, 검고, 마감 맛이 은은해요.', '☕'),
       });
     }
     // the editor's glass office, back right-of-center
@@ -2593,7 +2593,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       const side = new THREE.Mesh(new THREE.BoxGeometry(0.06, 2.6, 2.9), glass);
       P(side, -0.1, -3.95, 1.3);
       P(box(3.4, 0.08, 0.1, 0x3a3430), 1.6, -2.5, 2.62);
-      const plaque = sign('EDITOR', 0.8, 0.22, '#f3efe2', '#2e2a26');
+      const plaque = sign('편집장', 0.8, 0.22, '#f3efe2', '#2e2a26');
       P(plaque, 1.6, -2.45, 2.2);
       rm.blockers.push({ x: R.x + 1.6, z: R.z - 3.8, w: 3.5, d: 2.8 });
       F.desk(1.6, -3.55, 2.0, 0.9, 0x5a3a2a);
@@ -2608,12 +2608,12 @@ export function createBurrough(player, { molehill = null } = {}) {
       mudge.userData.noFidget = true;
       let ek = 0;
       register({
-        pos: worldPos(rm, 1.6, -1.6), r: 1.8, zone: rm.zone, label: 'knock on the editor’s glass',
+        pos: worldPos(rm, 1.6, -1.6), r: 1.8, zone: rm.zone, label: '편집장 유리 노크하기',
         use: () => ui.say([
-          'LOWELL! Where’s my— oh. You’re not Lowell. Nobody is Lowell except Lowell. If you see Lowell, tell him nine thousand words is a book.',
-          'Mudge. Editor. Forty years. I have run the hot worm story every day for a year and I will run it tomorrow, because it SELLS.',
-          'We print what’s true, what’s kind, and what fits. In that order. The hot worm story is all three. That’s why it’s the hot worm story.',
-        ][ek++ % 3], { speaker: 'Mudge', voice: 190 }),
+          '로웰! 내 기사— 어. 로웰이 아니네. 로웰 말곤 아무도 로웰이 아니지. 로웰 보면 전해, 9천 단어는 책이라고.',
+          '머지. 편집장. 40년. 핫 웜 기사를 1년 내내 매일 실었고 내일도 실을 거야, 팔리니까.',
+          '우리는 진실한 것, 다정한 것, 그리고 들어맞는 걸 싣는다. 그 순서로. 핫 웜 기사는 셋 다야. 그래서 핫 웜 기사인 거야.',
+        ][ek++ % 3], { speaker: '머지', voice: 190 }),
       });
     }
     // TUNNEL VISION: the podcast, in a padded corner, ON AIR
@@ -2625,9 +2625,9 @@ export function createBurrough(player, { molehill = null } = {}) {
       rm.blockers.push({ x: R.x + PXc - 1.8, z: R.z - 3.6, w: 0.2, d: 2.6 });
       const onAir = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.3), glow(0xff3a3a, 0.4));
       P(onAir, PXc, -4.82, 2.5);
-      const onAirTxt = sign('ON AIR', 0.9, 0.3, '#ff3a3a', '#fff3f3');
+      const onAirTxt = sign('생방송', 0.9, 0.3, '#ff3a3a', '#fff3f3');
       P(onAirTxt, PXc, -4.8, 2.5);
-      const titleT = sign('TUNNEL VISION\na podcast about the spaces between spaces', 2.6, 0.5, '#2a2a3a', '#f2cf5b');
+      const titleT = sign('터널 비전\n공간과 공간 사이의 공간에 대한 팟캐스트', 2.6, 0.5, '#2a2a3a', '#f2cf5b');
       P(titleT, PXc, -4.8, 3.2);
       // the mic on its boom arm, and the host
       const boom = box(0.04, 0.04, 0.9, 0x2a2a2a);
@@ -2650,14 +2650,14 @@ export function createBurrough(player, { molehill = null } = {}) {
       });
       let pk = 0;
       register({
-        getPos: () => dex.position, r: 2.0, zone: rm.zone, label: 'listen in on Tunnel Vision',
+        getPos: () => dex.position, r: 2.0, zone: rm.zone, label: '터널 비전 엿듣기',
         use: () => ui.say([
-          'Welcome back to Tunnel Vision, the podcast about the spaces between spaces. Today: is a hole a thing, or the absence of a thing? My guest is a hole. It’s been a tough interview.',
-          'Tunnel Vision is brought to you by the hot worm cart. Contains no worms. Use code DIG for nothing. There are no codes. There have never been codes.',
-          'I want to sit with that for a second. …… Okay. That was a long second. Let’s cut that. Don’t cut that.',
-          'Last week a listener wrote in: “what’s above the Burrough?” Great question. We’re doing a nine-part series. Part one is just me looking up.',
-          'Ooh — a guest in the studio. Hi. You’re on the podcast now. Say something about dirt. …Perfect. That’s the episode.',
-        ][pk++ % 5], { speaker: 'Dex', voice: 300 }),
+          '터널 비전, 공간과 공간 사이의 공간에 대한 팟캐스트에 다시 오신 걸 환영합니다. 오늘: 구멍은 사물인가, 사물의 부재인가? 게스트는 구멍입니다. 힘든 인터뷰였어요.',
+          '터널 비전은 핫 웜 카트와 함께합니다. 벌레 무첨가. 코드 DIG를 입력하면 아무것도 없습니다. 코드는 없습니다. 있던 적도 없습니다.',
+          '잠깐 곱씹어 보죠. …… 네. 긴 1초였네요. 편집하죠. 편집하지 마죠.',
+          '지난주 한 청취자가 보내왔습니다: “버로 위엔 뭐가 있나요?” 좋은 질문. 9부작 시리즈를 준비 중입니다. 1부는 그냥 제가 위를 쳐다봅니다.',
+          '오 — 스튜디오에 게스트. 안녕하세요. 지금 방송 중이에요. 흙에 대해 뭐라고 해 보세요. …완벽해요. 오늘 회차 끝.',
+        ][pk++ % 5], { speaker: '덱스', voice: 300 }),
       });
     }
     // the LITTLE DESK SESSIONS: a desk, bookshelves behind, a trio squeezed in
@@ -2665,7 +2665,7 @@ export function createBurrough(player, { molehill = null } = {}) {
       const LX = 5.2, LZ = 2.2;
       F.shelf(LX, LZ - 1.5, 3.4, 2.2, 3);
       F.desk(LX, LZ - 0.5, 2.6, 0.8, 0x8a6a44);
-      const tag = sign('LITTLE DESK SESSIONS', 1.8, 0.3, '#b8433a', '#f3efe2');
+      const tag = sign('리틀 데스크 세션', 1.8, 0.3, '#b8433a', '#f3efe2');
       P(tag, LX, LZ - 1.27, 2.4); // on top of the shelves, over the band's heads
       // the band: upright bass (a mole), ukulele (a hamster), brushes (a groundhog)
       const bassist = F.critter('mole', { body: 0x4e4540 }, LX - 1.0, LZ + 0.3, Math.PI * 0.95, 0, true);
@@ -2703,16 +2703,16 @@ export function createBurrough(player, { molehill = null } = {}) {
       });
       let sk = 0;
       register({
-        pos: worldPos(rm, LX, LZ + 1.9), r: 1.6, zone: rm.zone, label: 'listen to a Little Desk Session',
+        pos: worldPos(rm, LX, LZ + 1.9), r: 1.6, zone: rm.zone, label: '리틀 데스크 세션 듣기',
         use: () => {
           playing = 14;
           const song = ['foggy_lullaby', 'button_bossa', 'tidepool_stomp'][sk % 3];
           playSong(song, true);
           ui.say([
-            'Hi, we’re the Loam Rangers. This one’s very quiet. It’s about a hole. Thanks for having us at the desk.',
-            'This next one we wrote on the Boring Line, between Loam Street and Uptown. It’s ninety seconds long. So is the ride.',
-            'Okay, last one. It’s a stomp. Please don’t stomp. The desk is load-bearing.',
-          ][sk++ % 3], { speaker: 'the Loam Rangers', voice: 480 });
+            '안녕하세요, 롬 레인저스예요. 이 곡은 아주 조용해요. 구멍에 대한 거예요. 책상에 불러줘서 고마워요.',
+            '다음 곡은 보어링 선에서, 롬 스트리트와 업타운 사이에서 썼어요. 90초짜리예요. 그 구간도 그래요.',
+            '자, 마지막 곡. 스톰프예요. 발 구르진 말아 주세요. 책상이 하중을 지탱 중이거든요.',
+          ][sk++ % 3], { speaker: '롬 레인저스', voice: 480 });
         },
       });
     }
@@ -2732,7 +2732,7 @@ export function createBurrough(player, { molehill = null } = {}) {
   // Mrs. Vanderburrow's. marble, a chandelier, a grand piano, a painting of
   // the sky (artist's impression), vintage dew, and Pomme, a pill bug.
   {
-    const rm = room('ritz', { floor: 0xe8e0d0, wall: 0x2e4a3a, trim: 0xc9a24a, name: '🎩 The Moledecai · 4th Floor', tall: 4.8 });
+    const rm = room('ritz', { floor: 0xe8e0d0, wall: 0x2e4a3a, trim: 0xc9a24a, name: '🎩 몰드카이 호텔 · 4층', tall: 4.8 });
     const F = furnish(rm);
     const { P, R } = rm;
     for (let i = 0; i < 9; i++) for (let j = 0; j < 5; j++) {
@@ -2787,10 +2787,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       P(bench, -5.2, -1.4, 0.25);
       F.solidBox(-5.2, -1.4, 0.9, 0.4);
       register({
-        pos: worldPos(rm, -5.2, -0.6), r: 1.3, zone: rm.zone, label: 'play the grand piano',
+        pos: worldPos(rm, -5.2, -0.6), r: 1.3, zone: rm.zone, label: '그랜드 피아노 연주하기',
         use: () => {
           playSong('button_bossa', true);
-          ui.say('Oh, bravo! Bravo! Nobody has played that since the Baron’s grandfather, and he only knew the one song, and it was that one.', { speaker: 'Mrs. Vanderburrow', voice: 360 });
+          ui.say('오, 브라보! 브라보! 남작의 할아버지 이후로 그 곡을 친 사람이 없었어요. 그분도 그 한 곡만 아셨죠, 바로 그 곡.', { speaker: '밴더버로 부인', voice: 360 });
         },
       });
     }
@@ -2811,15 +2811,15 @@ export function createBurrough(player, { molehill = null } = {}) {
       P(frame, 1.6, -4.92, 2.5);
       const art = new THREE.Mesh(new THREE.PlaneGeometry(2.5, 1.6), new THREE.MeshBasicMaterial({ map: tex }));
       P(art, 1.6, -4.86, 2.5);
-      const tag = sign('“SKY” (artist’s impression)', 1.4, 0.18, '#c9a24a', '#2e2a1c');
+      const tag = sign('“하늘” (화가의 상상)', 1.4, 0.18, '#c9a24a', '#2e2a1c');
       P(tag, 1.6, -4.86, 1.35);
       let sk = 0;
       register({
-        pos: worldPos(rm, 1.6, -3.6), r: 1.5, zone: rm.zone, label: 'admire the painting',
+        pos: worldPos(rm, 1.6, -3.6), r: 1.5, zone: rm.zone, label: '그림 감상하기',
         use: () => ui.say([
-          'That’s the sky, darling. Artist’s impression. I paid a fortune. I’m told it’s very accurate. I’m told it’s blue.',
-          'The round yellow one is “the sun.” The artist says it’s much too bright to look at. I said then how did you paint it. He left town.',
-        ][sk++ % 2], { speaker: 'Mrs. Vanderburrow', voice: 360 }),
+          '저게 하늘이에요, 달링. 화가의 상상. 거금을 줬어요. 아주 정확하대요. 파랗대요.',
+          '동그란 노란 게 “해”예요. 화가 말로는 너무 밝아서 볼 수 없대요. 그럼 어떻게 그렸냐고 했죠. 그는 떠났어요.',
+        ][sk++ % 2], { speaker: '밴더버로 부인', voice: 360 }),
       });
     }
     // the champagne tower (vintage dew), a gilded mirror, a palm
@@ -2841,10 +2841,10 @@ export function createBurrough(player, { molehill = null } = {}) {
       P(g, 4.6, -3.8);
       F.solidBox(4.6, -3.8, 1.2, 0.8);
       register({
-        pos: worldPos(rm, 4.6, -2.8), r: 1.3, zone: rm.zone, label: 'take a glass of vintage dew',
+        pos: worldPos(rm, 4.6, -2.8), r: 1.3, zone: rm.zone, label: '빈티지 이슬 한 잔 받기',
         use: () => {
-          ui.say('Vintage dew. The Squall year. It’s been through a lot, like me. Sip, don’t gulp — it’s older than the elevator.', { speaker: 'Mrs. Vanderburrow', voice: 360 });
-          ui.toast('Vintage dew: cool, faintly mossy, and very, very old.', '🥂');
+          ui.say('빈티지 이슬. 대폭풍 해 거예요. 많은 걸 겪었죠, 나처럼. 벌컥 말고 홀짝 — 엘리베이터보다 오래됐어요.', { speaker: '밴더버로 부인', voice: 360 });
+          ui.toast('빈티지 이슬: 시원하고, 은은히 이끼 향이고, 아주, 아주 오래됐어요.', '🥂');
         },
       });
       const mirror = new THREE.Mesh(new THREE.CircleGeometry(0.8, 14), new THREE.MeshStandardMaterial({ color: 0xcfe0e8, roughness: 0.05, metalness: 0.6 }));
@@ -2903,17 +2903,17 @@ export function createBurrough(player, { molehill = null } = {}) {
         pomme.rotation.x = rolled > 0 ? Math.PI / 2 : Math.sin(t * 0.8) * 0.05;
         pomme.position.x = R.x + 2.4 + (rolled > 0 ? 0 : Math.sin(t * 0.4) * 0.08);
       });
-      talker(() => vb.position, 'Mrs. Vanderburrow', 360, [
-        'Darling! A visitor! Fitzgerald let you up? Fitzgerald lets nobody up. You must be somebody.',
-        'The Moledecais had the whole building once. Now I have the fourth floor, which is the only floor that matters.',
-        'I knew the Baron’s grandfather. Charming. Billed by the hour. He billed me for a dance once. I paid it. It was worth it.',
-        'Up top, they tell me, you can see forever. Down here you can see the chandelier. I know which I’d rather dust.',
+      talker(() => vb.position, '밴더버로 부인', 360, [
+        '달링! 손님! 피츠제럴드가 올려보냈어요? 그 사람은 아무도 안 올려보내는데. 당신은 누군가신가 봐요.',
+        '몰드카이 가가 한때는 건물 전체를 가졌죠. 이제 나에겐 4층이 있어요, 유일하게 중요한 층.',
+        '남작의 할아버지를 알았어요. 매력적이었죠. 시간당 청구. 한 번은 춤 한 곡을 청구하셨어요. 냈어요. 그럴 가치가 있었으니까.',
+        '위에서는, 듣자니, 영원까지 보인대요. 아래에선 샹들리에가 보이죠. 어느 쪽을 닦고 싶은지는 알아요.',
       ], 2.2, rm.zone);
       register({
-        pos: worldPos(rm, 2.4, 3.2), r: 1.2, zone: rm.zone, label: 'say hello to Pomme',
+        pos: worldPos(rm, 2.4, 3.2), r: 1.2, zone: rm.zone, label: '폼에게 인사하기',
         use: () => {
           rolled = 4;
-          ui.say('Pomme, say hello. Oh — he’s rolled up. He does that when he’s pleased. Or frightened. Or it’s Tuesday. He’s very pleased, darling. It’s Tuesday somewhere.', { speaker: 'Mrs. Vanderburrow', voice: 360 });
+          ui.say('폼, 인사해. 오 — 말렸네. 기쁘면 그래요. 아니면 겁나면. 아니면 화요일이면. 아주 기쁜 거예요, 달링. 어딘가는 화요일이니까.', { speaker: '밴더버로 부인', voice: 360 });
         },
       });
     }
@@ -3034,4 +3034,4 @@ export function createBurrough(player, { molehill = null } = {}) {
     } else if (roomUpdates[z]) for (const u of roomUpdates[z]) u(dt, t, playerPos);
   }
   return { group, update };
-}
+    }
