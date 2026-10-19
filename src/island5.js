@@ -45,22 +45,22 @@ const IN_MANOR = { x: 300, z: 1380 };
 export const CELLAR = { x: 300, z: 1540 }; // the wine cellar (the Burrough keeps a door in its back wall)
 
 const MOLEDECAI_CHAT = [
-  'Moledecai. Of the Grove Isle Moledecais. There are no other Moledecais. We are very exclusive.',
-  'Old money, dear visitor, is simply old patience with compound interest.',
-  'The orchards? Planted by my mother, who said fruit trees are the only investment that apologizes for nothing.',
-  'My grandchildren are around here somewhere. You will hear them before you see them. You may never see them.',
+  '몰드카이. 그로브 섬의 몰드카이 가입니다. 다른 몰드카이는 없습니다. 저희는 아주 배타적이거든요.',
+  '오랜 부란, 사랑하는 방문객이여, 오랜 인내에 복리가 붙은 것일 뿐입니다.',
+  '과수원이요? 어머니가 심으셨죠. 과수는 아무것에도 사과하지 않는 유일한 투자라 하셨습니다.',
+  '손주들이 어딘가에 있습니다. 보기 전에 소리를 먼저 들으실 겁니다. 영영 못 보실 수도 있고요.',
 ];
 
 const PEMBERTON_LINES = [
-  'Pemberton, sir-or-madam. Butler to the house. The tea is hot, the silver is counted, and the children are, regrettably, fast.',
-  'One does not chase the young masters. One positions oneself where they will eventually be.',
-  'A penguin in service, yes. The commute from the colony was substantial. The pension is excellent.',
+  '펨버턴입니다, 나리-내지-마님. 저택 집사입니다. 차는 뜨겁고, 은식기는 세어 두었으며, 아이들은, 유감스럽게도, 빠릅니다.',
+  '어린 도련님들을 쫓아다니는 게 아닙니다. 결국 있게 될 자리에 미리 자리하는 것이지요.',
+  '펭귄이 집사 일을 하냐고요, 네. 서식지에서 통근이 상당했습니다. 연금은 훌륭하고요.',
 ];
 
 const TILLY_LINES = [
-  'Oh! Mind the dust — well. There’s no dust. But mind where it would be!',
-  'Three little moles, one of me, and the Baron says “let them play.” He’s right, but don’t tell him during working hours.',
-  'I polish the portraits daily. The third Baron winks, I’m sure of it. Nobody believes a maid. The WINK is THERE.',
+  '오! 먼지 조심하세요 — 뭐. 먼지가 없긴 해요. 하지만 있었을 자리는 조심하세요!',
+  '작은 두더지 셋에 저 하나. 남작님은 “놀게 두라”고 하세요. 맞는 말이지만 근무 시간에는 전하지 마세요.',
+  '초상화는 매일 닦아요. 3대 남작이 윙크해요, 확실해요. 하녀 말은 아무도 안 믿지만. 윙크가 거기 있다고요.',
 ];
 
 export function createIsland5(player) {
@@ -125,10 +125,10 @@ export function createIsland5(player) {
 
   addIslandInfo({
     key: 'grove',
-    mystery: '“Old money out southeast. Orchards, hot water, a baron. They say the train goes there now, which the train confirms.” —heard at the dock',
-    name: 'Grove Isle', x: ISLAND5.x, z: ISLAND5.z, r: 34, icon: '🍊',
-    blurb: 'Orchards, old money, and hot water. The Moledecai mansion, orange groves, geysered springs you can soak in, and the calmest lounge in the archipelago: capybaras, crocodiles, attendant birds. The Grove Line steams here straight from Notbell.',
-    folk: 'Baron Moledecai · Pemberton · Tilly · three small fast grandchildren · the capybaras · the crocodiles · their birds',
+    mystery: '“남동쪽에 오래된 부. 과수원, 온천수, 남작. 이제 기차가 거기 간다는데, 기차가 확인해 줬지.” —부두에서 들음',
+    name: '그로브 섬', x: ISLAND5.x, z: ISLAND5.z, r: 34, icon: '🍊',
+    blurb: '과수원, 오래된 부, 그리고 온천수. 몰드카이 저택, 오렌지 숲, 몸을 담글 수 있는 간헐천, 그리고 군도에서 가장 차분한 라운지: 카피바라, 악어, 시중드는 새들. 그로브 선이 낫벨에서 곧장 증기를 뿜으며 온다.',
+    folk: '몰드카이 남작 · 펨버턴 · 틸리 · 작고 빠른 손주 셋 · 카피바라들 · 악어들 · 그들의 새들',
   });
 
   // ------------------------------------------------------- the orchards ----
@@ -163,13 +163,13 @@ export function createIsland5(player) {
       register({
         pos: new THREE.Vector3(tx, 0, tz), r: 2.2,
         enabled: () => ot.oranges[0].visible,
-        label: 'pick oranges',
+        label: '오렌지 따기',
         use: () => {
           ot.oranges.forEach((f) => { f.visible = false; });
           ot.regrow = rand(360, 620);
           S.addItem('orange', 3);
           jingle();
-          ui.toast('You picked 3 <b>Oranges</b>! <i>Capybara-approved.</i>', '🍊');
+          ui.toast('<b>오렌지</b> 3개를 땄어요! <i>카피바라 인증.</i>', '🍊');
           ui.updateHUD();
         },
       });
@@ -309,10 +309,10 @@ export function createIsland5(player) {
         getPos: () => pup.position,
         r: 2.6,
         zone: () => (data.mode === 'inside' ? 'manor' : 'island'),
-        label: 'play with the mole pup',
+        label: '두더지 꼬마와 놀기',
         use: () => {
           for (const q of pups) if (q.mode !== 'inside') q.chase = 9;
-          ui.toast('The pups change allegiance instantly. You are the parade now.', '😆');
+          ui.toast('꼬마들이 즉시 충성을 바꿨어요. 이제 당신이 행렬이에요.', '😆');
           tone(rand(950, 1250), { dur: 0.07, type: 'triangle', vol: 0.035 });
           tone(rand(1050, 1350), { time: 0.1, dur: 0.07, type: 'triangle', vol: 0.035 });
         },
@@ -508,8 +508,8 @@ export function createIsland5(player) {
     }
     register({
       pos: new THREE.Vector3(B.x, 0, B.z - 5.5), r: 3.2, zone: 'manor',
-      label: 'study the family portraits',
-      use: () => ui.say('Three generations of Moledecai noses. The third Baron appears to be winking. The longer you look, the more certain you are. Tilly was right.'),
+      label: '가족 초상화 감상하기',
+      use: () => ui.say('몰드카이 코 3대分. 3대 남작이 윙크하는 것 같아요. 보면 볼수록 확신이 들어요. 틸리 말이 맞았어요.'),
     });
     // long table
     const table = box(6, 0.2, 1.6, 0x6b4a2e);
@@ -603,52 +603,52 @@ export function createIsland5(player) {
 
     register({
       pos: new THREE.Vector3(M.x, 0, M.z + 1.9), r: 2.6,
-      label: 'ring at Moledecai Manor',
+      label: '몰드카이 저택 벨 울리기',
       use: async () => {
         await zones.go('manor');
         if (!S.hasFlag('metManor')) {
-          ui.say('Pemberton opens the door before you finish knocking. “The Baron is receiving. The Baron is always receiving. It is his principal hobby.”');
+          ui.say('노크를 끝내기도 전에 펨버턴이 문을 열어요. “남작님은 접견 중이십니다. 남작님은 항상 접견 중이십니다. 주된 취미이지요.”');
         }
       },
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 6.8), r: 1.8, zone: 'manor',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: M.x, z: M.z + 3.2, rotY: 0 }),
     });
 
     let mIdx = 0, pIdx = 0, tIdx = 0;
     register({
       getPos: () => moledecai.position, r: 3, zone: 'manor',
-      label: 'talk to Baron Moledecai',
+      label: '몰드카이 남작과 대화하기',
       use: async () => {
         if (!S.hasFlag('metManor')) {
           S.setFlag('metManor');
           await ui.say([
-            'An elderly mole in a wine-dark ascot turns from the fire, monocle catching the light.',
-            '“A visitor! From the bell island, no less. Sit. Or stand. The chairs are ancestral and frankly overrated.”',
-            '“Moledecai. The fortune is old, the nose is older. You will want the story eventually. Everyone does.”',
-          ], { speaker: 'Baron Moledecai', voice: 280 });
+            '와인빛 아스콧을 두른 노년의 두더지가 벽난로에서 돌아서요. 단안경이 빛을 받아요.',
+            '“손님인가! 하필 종의 섬에서라니. 앉게. 아니 서게. 의자들은 가업이고 솔직히 과대평가됐네.”',
+            '“몰드카이일세. 재산은 오래됐고, 코는 더 오래됐지. 결국 이야기를 듣고 싶어질 걸세. 다들 그러니까.”',
+          ], { speaker: '몰드카이 남작', voice: 280 });
           return;
         }
         const opts = [
-          { label: 'Chat', value: 'chat' },
-          { label: 'Ask about the fortune', value: 'fortune' },
-          { label: 'Leave', value: null },
+          { label: '수다 떨기', value: 'chat' },
+          { label: '재산에 대해 묻기', value: 'fortune' },
+          { label: '나가기', value: null },
         ];
         if (S.countItem('lantern_koi') > 0 && !S.hasFlag('koiSold')) {
-          opts.splice(2, 0, { label: '🏮 Offer the Lantern Koi', value: 'koi', hint: '800🔘' });
+          opts.splice(2, 0, { label: '🏮 랜턴 잉어 건네기', value: 'koi', hint: '800🔘' });
         }
-        const choice = await ui.ask('Yes, yes. What is it, what is it.', opts,
-          { speaker: 'Baron Moledecai', voice: 280 });
+        const choice = await ui.ask('그래, 그래. 무슨 일인가, 무슨 일인가.', opts,
+          { speaker: '몰드카이 남작', voice: 280 });
         if (choice === 'chat') {
-          ui.say(MOLEDECAI_CHAT[mIdx++ % MOLEDECAI_CHAT.length], { speaker: 'Baron Moledecai', voice: 280 });
+          ui.say(MOLEDECAI_CHAT[mIdx++ % MOLEDECAI_CHAT.length], { speaker: '몰드카이 남작', voice: 280 });
         } else if (choice === 'fortune') {
           ui.say([
-            'He polishes the monocle, which needs no polishing.',
-            '“My grandfather was a salvage diver. THE salvage diver. When the lighthouse bell went down, Old Tansy hired him to bring it back. He dove for forty summers.”',
-            '“He never found it. He billed by the hour. We are, as a family, profoundly grateful that the sea keeps its secrets.”',
-          ], { speaker: 'Baron Moledecai', voice: 280 });
+            '그가 단안경을 닦아요. 닦을 필요 없는 단안경을요.',
+            '“조부는 인양 잠수부였네. 바로 그 인양 잠수부. 등대의 종이 가라앉았을 때 늙은 탠지가 건져 오라고 고용했지. 마흔 여름을 잠수했네.”',
+            '“결국 못 찾았지. 시간당 청구였네. 우리 가문은 바다가 비밀을 지켜 준 것에 깊이 감사하고 있네.”',
+          ], { speaker: '몰드카이 남작', voice: 280 });
         } else if (choice === 'koi') {
           S.removeItem('lantern_koi', 1);
           S.earn(800);
@@ -656,22 +656,22 @@ export function createIsland5(player) {
           kaching();
           ui.updateHUD();
           ui.say([
-            '“The glowing koi. For the east-wing pond. My mother kept one; the pond has been dark thirty years.”',
-            'He pays without haggling, which from a Moledecai is a love letter.',
-            '“The pond will be lit again. Do not tell the grandchildren. Let them find it.”',
-          ], { speaker: 'Baron Moledecai', voice: 280 });
+            '“빛나는 잉어. 동쪽 별채 연못을 위한 걸세. 어머니가 한 마리 키우셨는데, 연못은 30년째 어두웠네.”',
+            '값을 깎지 않고 지불해요. 몰드카이가 그런다는 건 러브레터나 다름없어요.',
+            '“연못에 다시 불이 켜지겠네. 손주들에게는 말하지 말게. 직접 찾게 두게.”',
+          ], { speaker: '몰드카이 남작', voice: 280 });
         }
       },
     });
     register({
       getPos: () => pemberton.position, r: 2.6, zone: 'manor',
-      label: 'talk to Pemberton',
-      use: () => ui.say(PEMBERTON_LINES[pIdx++ % PEMBERTON_LINES.length], { speaker: 'Pemberton', voice: 380 }),
+      label: '펨버턴과 대화하기',
+      use: () => ui.say(PEMBERTON_LINES[pIdx++ % PEMBERTON_LINES.length], { speaker: '펨버턴', voice: 380 }),
     });
     register({
       getPos: () => tilly.position, r: 2.6, zone: 'manor',
-      label: 'talk to Tilly',
-      use: () => ui.say(TILLY_LINES[tIdx++ % TILLY_LINES.length], { speaker: 'Tilly', voice: 660 }),
+      label: '틸리와 대화하기',
+      use: () => ui.say(TILLY_LINES[tIdx++ % TILLY_LINES.length], { speaker: '틸리', voice: 660 }),
     });
 
     // ---------------- the grand staircase, and what it leads to ----------
@@ -693,7 +693,7 @@ export function createIsland5(player) {
     }
     register({
       pos: new THREE.Vector3(B.x + 8.6, 0, B.z - 1.3), r: 1.9, zone: 'manor',
-      label: 'climb the grand staircase',
+      label: '대계단 오르기',
       use: () => zones.go('manor_up'),
     });
     // the cellar hatch, by the fireplace where the floor stays warm
@@ -705,7 +705,7 @@ export function createIsland5(player) {
     group.add(hatch, ring);
     register({
       pos: new THREE.Vector3(B.x - 7.5, 0, B.z + 3.5), r: 1.8, zone: 'manor',
-      label: 'descend to the wine cellar',
+      label: '와인 저장고로 내려가기',
       use: () => zones.go('cellar'),
     });
     const manorRoom = collectInteriorRoot(group, manorStart);
@@ -830,8 +830,8 @@ export function createIsland5(player) {
     group.add(scope);
     register({
       pos: new THREE.Vector3(U.x + 5, 0, U.z - 3), r: 1.8, zone: 'manor_up',
-      label: 'look through the telescope',
-      use: () => ui.say('It is aimed at the volcano, who is asleep. A note taped to the tube: “SHE SMOKED AT 3 A.M., TUESDAY. NOBODY BELIEVES ME. —M.”'),
+      label: '망원경 들여다보기',
+      use: () => ui.say('자고 있는 화산을 향해 있어요. 경통에 붙은 쪽지: “화요일 새벽 3시에 연기를 뿜었다. 아무도 안 믿는다. —M.”'),
     });
     // THE crooked portrait, and what it hides
     const portCv = document.createElement('canvas');
@@ -919,7 +919,7 @@ export function createIsland5(player) {
     group.add(safeBox, dial);
     register({
       pos: new THREE.Vector3(U.x - 1.5, 0, U.z - 3.9), r: 2.0, zone: 'manor_up',
-      label: () => (S.hasFlag('foundSafe') ? 'open the family safe' : 'straighten the crooked portrait'),
+      label: () => (S.hasFlag('foundSafe') ? '가족 금고 열기' : '삐뚤어진 초상화 바로잡기'),
       use: async () => {
         if (!S.hasFlag('foundSafe')) {
           S.setFlag('foundSafe');
@@ -928,8 +928,8 @@ export function createIsland5(player) {
           safeBox.visible = true;
           dial.visible = true;
           await ui.say([
-            'You straighten the portrait. It swings aside entirely, with the ease of a portrait that gets straightened a lot.',
-            'Behind it: a wall safe, dial gleaming. A small card reads: “COMBINATION: IT WAS NEVER LOCKED. NOBODY CHECKS.”',
+            '초상화를 바로잡았더니 아주 옆으로 돌아가요. 자주 바로잡히는 초상화다운 솜씨로요.',
+            '그 뒤: 벽 금고, 반짝이는 다이얼. 작은 카드: “비밀번호: 잠긴 적 없음. 아무도 확인 안 함.”',
           ]);
           return;
         }
@@ -941,19 +941,19 @@ export function createIsland5(player) {
           kaching();
           ui.updateHUD();
           await ui.say([
-            'The handle turns. Inside: buttons. Drifts of them, generations deep — and, framed in gold, a single yellowed paper.',
-            '“INVOICE №1. One (1) summer of diving. Bell: not located. PAID IN FULL.” The founding document.',
-            'A note atop the buttons: “FINDER’S TITHE: HELP YOURSELF TO A HANDFUL. SNOOPING SHOULD PAY HONESTLY. —M.”',
+            '손잡이가 돌아가요. 안에는 버튼. 대대로 쌓인 버튼 더미 — 그리고 금색 액자에 든 누렇게 바랜 종이 한 장.',
+            '“청구서 1호. 잠수 한 (1) 여름분. 종: 위치 확인 불가. 전액 지불 완료.” 창업 문서예요.',
+            '버튼 위의 쪽지: “발견자의 십일조: 한 줌 가져가시오. 엿보기는 정직하게 보상받아야 하오. —M.”',
           ]);
-          ui.toast('You got <b>Invoice №1</b>, and a handful of buttons: <b>+300</b>!', '🧾');
+          ui.toast('<b>청구서 1호</b>와 버튼 한 줌을 얻었어요: <b>+300</b>!', '🧾');
           return;
         }
-        ui.say('The safe stands open. The buttons settle, contentedly. The invoice gleams. The dynasty continues.');
+        ui.say('금고가 열려 있어요. 버튼들이 만족스럽게 가라앉아요. 청구서가 반짝여요. 왕조는 계속돼요.');
       },
     });
     register({
       pos: new THREE.Vector3(U.x, 0, U.z + 4.2), r: 1.8, zone: 'manor_up',
-      label: 'descend the staircase',
+      label: '계단 내려가기',
       use: () => zones.go('manor', { x: B.x + 7.6, z: B.z - 4.4, rotY: Math.PI }),
     });
     const upstairsRoom = collectInteriorRoot(group, upstairsStart);
@@ -1013,22 +1013,22 @@ export function createIsland5(player) {
     group.add(parmC);
     register({
       pos: new THREE.Vector3(C2.x + 3.5, 0, C2.z - 3), r: 2.6, zone: 'cellar',
-      label: 'consult the cellar ledger',
+      label: '저장고 장부 살펴보기',
       use: () => ui.say([
-        'A ledger in five generations of handwriting. Highlights:',
-        '“SQUALL YEAR RED — bottled the autumn the bell went down. Tastes of resolve. DO NOT OPEN until it comes back up.”',
-        '“MOONBEAM ’34 — glows faintly. We do not discuss the Moonbeam.”',
-        '“TUESDAY WHITE — fine. It’s fine. It’s a Tuesday in a bottle.”',
+        '5대분 필적의 장부예요. 하이라이트:',
+        '“스콜의 해 레드 — 종이 가라앉은 그 가을에 병입. 결의의 맛. 종이 다시 올라올 때까지 열지 말 것.”',
+        '“문빔 ’34 — 희미하게 빛남. 문빔에 대해서는 논하지 않는다.”',
+        '“화요일 화이트 — 괜찮음. 괜찮아요. 병에 든 화요일이에요.”',
       ]),
     });
     register({
       pos: new THREE.Vector3(C2.x + 4.7, 0, C2.z - 3), r: 2.2, zone: 'cellar',
-      label: 'lift the glowing bottle to the light', priority: 0,
-      use: () => ui.say('The Moonbeam ’34. It is, unmistakably, glowing. You put it back exactly where it was and resolve, like five generations before you, not to discuss it.'),
+      label: '빛나는 병을 불빛에 들어 보기', priority: 0,
+      use: () => ui.say('문빔 ’34. 틀림없이, 빛나고 있어요. 있던 자리에 정확히 도로 놓고, 5대 전들처럼, 논하지 않기로 결심해요.'),
     });
     register({
       pos: new THREE.Vector3(C2.x, 0, C2.z + 3.6), r: 1.8, zone: 'cellar',
-      label: 'climb back up to the hall',
+      label: '홀로 다시 올라가기',
       use: () => zones.go('manor', { x: B.x - 7.5, z: B.z + 2.4, rotY: 0 }),
     });
     const cellarRoom = collectInteriorRoot(group, cellarStart);
@@ -1100,7 +1100,7 @@ export function createIsland5(player) {
 
     register({
       pos: new THREE.Vector3(px, 0, pz), r: r + 1.4,
-      label: 'soak in the hot spring',
+      label: '온천에 몸 담그기',
       use: async () => {
         await ui.fadeSwap(() => {
           // wade in; the water comes up to wherever worries live
@@ -1110,11 +1110,11 @@ export function createIsland5(player) {
         });
         S.drinkCoffee(90);
         ui.say(pick([
-          'You lower yourself in. The heat finds each individual muscle and forgives it personally.',
-          'Steam, mineral hush, the far-off sigh of a geyser. Your thoughts arrive, look around, and leave without making demands.',
-          'A capybara across the pool opens one eye in acknowledgment, then closes it. You have been received.',
+          '몸을 담갔어요. 열기가 근육 하나하나를 찾아내어 개별적으로 용서해 줘요.',
+          '증기, 미네랄의 고요, 멀리 간헐천의 한숨. 생각들이 왔다가, 둘러보고, 아무 요구 없이 떠나요.',
+          '건너편 카피바라가 인사 삼아 한쪽 눈을 떴다가 감아요. 접견이 끝났어요.',
         ]));
-        ui.toast('Limber and glowy. <i>Faster for 90s!</i>', '♨️');
+        ui.toast('유연하고 반짝거려요. <i>90초간 빨라져요!</i>', '♨️');
       },
     });
   }
@@ -1150,19 +1150,19 @@ export function createIsland5(player) {
 
   register({
     pos: new THREE.Vector3(capyA.position.x, 0, capyA.position.z), r: 2.4,
-    label: 'greet the soakers',
+    label: '탕 속 손님들에게 인사하기',
     use: () => ui.say(pick([
-      '(Neither capybara opens its eyes. Warmth, they have found, is a full-time position, and they are career professionals.)',
-      'One capybara exhales, very slowly. It is either a greeting or an entire philosophy. Possibly both.',
-      '“Mm,” says the nearer capybara, without moving anything else. High praise, from management.',
+      '(카피바라 둘 다 눈을 뜨지 않아요. 따뜻함은 풀타임 직업이라는 걸 깨달았고, 둘은 경력직 전문가예요.)',
+      '카피바라 하나가 아주 천천히 숨을 내쉬어요. 인사이거나 하나의 온전한 철학이에요. 아마 둘 다요.',
+      '“음,” 가까운 쪽 카피바라가 다른 건 아무것도 움직이지 않고 말해요. 경영진 치고 최고의 찬사예요.',
     ])),
   });
   register({
     pos: new THREE.Vector3(crocSoaker.position.x, 0, crocSoaker.position.z), r: 2.4,
-    label: 'nod to the crocodile',
+    label: '악어에게 고갯짓하기',
     use: () => ui.say(pick([
-      '(You nod. The crocodile nods back — exactly once, conserving everything else for later.)',
-      'The crocodile watches the steam the way some folks watch television. Nothing is on. That’s the good part.',
+      '(고갯짓했어요. 악어가 답례해요 — 정확히 한 번, 나머지는 나중을 위해 아껴요.)',
+      '악어가 증기를 바라봐요, 어떤 이들이 TV를 보듯이. 아무것도 안 해요. 그게 좋은 점이에요.',
     ])),
   });
 
@@ -1223,7 +1223,7 @@ export function createIsland5(player) {
     register({
       pos: new THREE.Vector3(tx, 0, tz), r: 2.3,
       enabled: () => ot.oranges[0].visible,
-      label: 'pick oranges',
+      label: '오렌지 따기',
       use: () => {
         ot.oranges.forEach((f) => { f.visible = false; });
         ot.regrow = rand(360, 620);
@@ -1253,8 +1253,8 @@ export function createIsland5(player) {
   }
   register({
     pos: new THREE.Vector3(SP.x - 4.5, 0, SP.z + 4.5), r: 2.2,
-    label: 'rest on a springs bench', priority: 0,
-    use: () => ui.say('You sit, steam-warm and orange-scented. A capybara pads past and nods, one professional to another.'),
+    label: '온천 벤치에서 쉬기', priority: 0,
+    use: () => ui.say('앉았어요, 증기로 따뜻하고 오렌지 향기가 나요. 카피바라가 지나가며 고갯짓해요, 전문가 대 전문가로.'),
   });
 
   // geysers, on a proud schedule
@@ -1330,7 +1330,7 @@ export function createIsland5(player) {
       register({
         pos: new THREE.Vector3(tx, 0, tz), r: 2.3,
         enabled: () => ot.oranges[0].visible,
-        label: peachy ? 'pick peaches' : 'pick oranges',
+        label: peachy ? '복숭아 따기' : '오렌지 따기',
         use: () => {
           ot.oranges.forEach((f) => { f.visible = false; });
           ot.regrow = rand(360, 620);
@@ -1392,4 +1392,4 @@ function wireBob(npc, updates, speed = 1) {
       }
     }
   });
-}
+      }
