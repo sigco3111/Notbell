@@ -233,7 +233,7 @@ export function createFishing(player) {
       S.addItem('bottle_note');
       S.save();
       jingle();
-      ui.toast('A bottle! There’s a letter inside.', '🍾');
+      ui.toast('병이다! 안에 편지가 들어 있어요.', '🍾');
       await ui.say([`You fish up a barnacled bottle. Inside: “${note.title}.”`, note.text]);
       return;
     }
@@ -254,8 +254,8 @@ export function createFishing(player) {
       r: 99,
       priority: 0, // anything else nearby (a villager, a door) wins
       enabled: () => S.state.tools.rod && (state !== 'idle' || !!waterAhead()),
-      label: () => (state === 'idle' ? 'cast your line'
-        : state === 'bite' ? 'reel it in!' : 'wait for it…'),
+      label: () => (state === 'idle' ? '낚싯줄 던지기'
+        : state === 'bite' ? '낚아채기!' : '기다리기…'),
       use: () => {
         if (state === 'idle') {
           const spot = waterAhead();
@@ -296,8 +296,8 @@ export function createFishing(player) {
           if (hooked) scareShadow(hooked);
           reset();
           ui.toast(state === 'nibbling'
-            ? 'That was a NIBBLE. The shadow saunters off, unimpressed.'
-            : 'You reeled in too soon. The water keeps its secrets.', '🌊');
+            ? '방금 건 찌만 흔든 거예요. 그림자는 감동 없이 유유히 떠나요.'
+            : '너무 일찍 걷어 올렸어요. 물은 비밀을 지켜요.', '🌊');
         }
       },
     });
@@ -386,7 +386,7 @@ export function createFishing(player) {
           bite();
         } else {
           reset();
-          ui.toast('Not even a nibble. Watch the water for shadows, and cast at one.', '🌊');
+          ui.toast('입질조차 없어요. 물에서 그림자를 보고, 그쪽으로 던져 보세요.', '🌊');
         }
       }
     } else if (state === 'approach') {
@@ -396,7 +396,7 @@ export function createFishing(player) {
         // it lost interest on the way over. shadows are like that.
         if (hooked) scareShadow(hooked);
         reset();
-        ui.toast('The shadow circled once and moved along. Picky.', '🐟');
+        ui.toast('그림자가 한 바퀴 돌더니 떠났어요. 까다롭네요.', '🐟');
       }
     } else if (state === 'nibbling') {
       timer -= dt;
