@@ -62,10 +62,10 @@ function textPanel(lines, w, h, bg, fg, fontPx) {
 const IN = { x: 300, z: 1220 };
 
 const TANK_LINES = [
-  'A printed card: “NOT FOR SALE.” Below it, handwritten: “STOP ASKING. —management.” Below that, smaller: “(the lobsters)”',
-  'Inside: a tiny couch, a tiny lamp, a tiny rug, and a tiny framed print of “The Great Wave.” One lobster is reading. The other appears to be doing a crossword.',
-  'You detect a family resemblance to Barnaby. You decide, wisely, to mention this to neither party.',
-  'A staff member walks past, sees you looking, and simply shakes their head — not at you. At the situation. At all of it.',
+  '인쇄된 카드: “매물 아님.” 그 아래 손글씨: “그만 물어보시오. —경영진.” 그 아래 더 작게: “(바닷가재들)”',
+  '안에는 작은 소파, 작은 램프, 작은 러그, 그리고 작은 액자에 든 〈큰 파도〉. 바닷가재 한 마리는 독서 중. 다른 한 마리는 십자말풀이를 하는 듯해요.',
+  '바나비와 가족 resemblance가 느껴져요. 현명하게도, 어느 쪽에도 언급하지 않기로 해요.',
+  '직원이 지나가다 쳐다보는 걸 보고 그냥 고개를 저어요 — 당신에게가 아니라. 상황에. 이 모든 것에.',
 ];
 
 // ============================================================ the TV wall ----
@@ -217,8 +217,8 @@ function makeScreenTex(key, step) {
     c.font = '800 20px ui-rounded, "Segoe UI", system-ui, sans-serif';
     c.fillText('1.5ᵇ', 251, 62);
     c.font = '800 13px ui-rounded, "Segoe UI", system-ui, sans-serif';
-    c.fillText('PAY 2  GET HALF BACK', 82, 137);
-    label('HOT DOG');
+    c.fillText('2개 내고 반 개 환급', 82, 137);
+    label('핫도그');
   };
 
   if (key === 'bars') {
@@ -229,7 +229,7 @@ function makeScreenTex(key, step) {
     c.fillRect(0, 130, W, 70);
     c.fillStyle = 'rgba(255,255,255,0.18)';
     c.fillRect(0, (step * 37) % 130, W, 10); // the roll bar, rolling
-    label('PLEASE STAND BY', 150);
+    label('잠시만 기다려 주세요', 150);
   } else if (key === 'hoot') {
     c.fillStyle = '#221a35';
     c.fillRect(0, 0, W, H);
@@ -281,7 +281,7 @@ function makeScreenTex(key, step) {
     c.stroke();
     dot(222, 128, 5, '#16140f');
     c.fillRect(220, 130, 4, 20);
-    label('LATE NIGHT');
+    label('레이트 나이트');
   } else if (key === 'science') {
     c.fillStyle = '#123a39';
     c.fillRect(0, 0, W, H);
@@ -319,7 +319,7 @@ function makeScreenTex(key, step) {
     c.fillStyle = '#f2913c';
     c.fillRect(216, 126, 64, 12);
     for (let i = 0; i < 6; i++) dot(42 + i * 35, 154 + Math.sin(i + phase) * 4, 4, '#9fdcf7');
-    label('NOTBELL SCI');
+    label('낫벨 과학');
   } else if (key === 'sea') {
     c.fillStyle = '#e8dcc8';
     c.fillRect(0, 0, W, H);
@@ -353,7 +353,7 @@ function makeScreenTex(key, step) {
     c.moveTo(286, 38);
     c.quadraticCurveTo(300, 64, 282, 78);
     c.stroke();
-    label('THE SEA');
+    label('바다');
   } else if (key === 'weather_clear') {
     c.fillStyle = '#9fdcf7';
     c.fillRect(0, 0, W, H);
@@ -375,7 +375,7 @@ function makeScreenTex(key, step) {
       c.fill();
     }
     scooch(234, 130, 'clear');
-    label('WEATHER: CLEAR', 144);
+    label('날씨: 맑음', 144);
   } else if (key === 'weather_rain') {
     c.fillStyle = '#bcd8ec';
     c.fillRect(0, 0, W, H);
@@ -400,7 +400,7 @@ function makeScreenTex(key, step) {
     c.lineTo(90, 134);
     c.stroke();
     scooch(236, 130, 'rain');
-    label('WEATHER: RAIN', 144);
+    label('날씨: 비', 144);
   } else if (key === 'weather_snow') {
     c.fillStyle = '#cfe8f2';
     c.fillRect(0, 0, W, H);
@@ -426,7 +426,7 @@ function makeScreenTex(key, step) {
     c.lineTo(88, 132);
     c.fill();
     scooch(238, 130, 'snow');
-    label('WEATHER: SNOW', 144);
+    label('날씨: 눈', 144);
   } else if (key === 'weather_fog') {
     c.fillStyle = '#aebdc2';
     c.fillRect(0, 0, W, H);
@@ -454,7 +454,7 @@ function makeScreenTex(key, step) {
     c.quadraticCurveTo(112, 84, 73, 82);
     c.fill();
     scooch(238, 132, 'fog');
-    label('WEATHER: FOG', 144);
+    label('날씨: 안개', 144);
   } else if (key === 'ad_hotdog') {
     drawHotdog();
   } else if (key === 'ad_lantern') {
@@ -508,8 +508,8 @@ function makeScreenTex(key, step) {
     c.stroke();
     c.fillStyle = '#fffaf0';
     c.font = '900 25px ui-rounded, "Segoe UI", system-ui, sans-serif';
-    c.fillText('NOT DECAF', 38, 47);
-    label('LANTERN ROOM', 162);
+    c.fillText('디카페인 아님', 38, 47);
+    label('랜턴 룸', 162);
   } else if (key === 'ad_scuba') {
     c.fillStyle = '#7ec3e8';
     c.fillRect(0, 0, W, H);
@@ -545,11 +545,11 @@ function makeScreenTex(key, step) {
     c.stroke();
     c.fillStyle = '#fffaf0';
     c.font = '900 28px ui-rounded, "Segoe UI", system-ui, sans-serif';
-    c.fillText('SWIM', 34, 49);
+    c.fillText('헤엄쳐요', 34, 49);
     c.font = '900 21px ui-rounded, "Segoe UI", system-ui, sans-serif'; // (it ran off the edge at 28)
-    c.fillText('WHERE FISH', 168, 49);
+    c.fillText('물고기가', 168, 49);
     c.font = '900 20px ui-rounded, "Segoe UI", system-ui, sans-serif';
-    c.fillText('GOSSIP', 203, 73);
+    c.fillText('수다 떠는 곳', 203, 73);
     c.fillStyle = '#3d3126';
     c.beginPath();
     c.moveTo(72, 86);
@@ -563,7 +563,7 @@ function makeScreenTex(key, step) {
     c.lineTo(244, 142);
     c.lineTo(250, 132);
     c.fill();
-    label('PIP SUIT');
+    label('핍 슈트');
   } else if (key === 'ad_parm') {
     c.fillStyle = '#fff0a8';
     c.fillRect(0, 0, W, H);
@@ -602,8 +602,8 @@ function makeScreenTex(key, step) {
     c.font = '900 24px ui-rounded, "Segoe UI", system-ui, sans-serif';
     c.fillText('WHEEL', 44, 86 + (frame ? 1 : 0));
     c.font = '800 13px ui-rounded, "Segoe UI", system-ui, sans-serif';
-    c.fillText('IT IS A WHEEL', 188, 153);
-    label('PARM WHEEL', 142);
+    c.fillText('바퀴입니다', 188, 153);
+    label('파름 휠', 142);
   }
   scan();
   const tex = new THREE.CanvasTexture(cv);
@@ -612,66 +612,66 @@ function makeScreenTex(key, step) {
 }
 
 // ---- channel content ----
-const HOOT = 'Late Night with Hoot McLaughlin', HOOT_V = 500;
+const HOOT = '훗 맥래플린의 레이트 나이트', HOOT_V = 500;
 const HOOT_BITS = [
-  [{ speaker: HOOT, voice: HOOT_V, text: 'Good evening. Or morning. The clock and I have an understanding: it doesn’t tell me, and I don’t ask.' },
-   { speaker: HOOT, voice: HOOT_V, text: 'Our top story: nothing happened today, beautifully, on every island. More on that never.' }],
-  [{ speaker: HOOT, voice: HOOT_V, text: 'My guest tonight has played the Lantern Room every evening for — how long now?' },
-   { speaker: 'Chip', voice: 760, text: 'Since before the candle. I don’t keep time. I keep tempo. Different thing.' },
-   { speaker: HOOT, voice: HOOT_V, text: 'And the secret to a good set?' },
-   { speaker: 'Chip', voice: 760, text: 'Play till the room forgets it’s a room. Then play one more.' }],
-  [{ speaker: HOOT, voice: HOOT_V, text: 'I tried to book the volcano. She no-commented for four hundred years. You have to respect the discipline.' }],
-  [{ speaker: HOOT, voice: HOOT_V, text: 'Tonight’s guest cancelled. Tonight’s guest is the sea — a wonderful listener and a TERRIBLE guest. Took the whole couch. Then took the couch BACK.' }],
-  [{ speaker: HOOT, voice: HOOT_V, text: 'That’s our show. We’re always right back. There is, structurally, nowhere else to be. Goodnight, Notbell.' }],
+  [{ speaker: HOOT, voice: HOOT_V, text: '좋은 저녁이에요. 아니면 아침. 시계와 저는 합의가 있어요: 시계는 말하지 않고, 나는 묻지 않기로.' },
+   { speaker: HOOT, voice: HOOT_V, text: '오늘의 톱 뉴스: 아무 일도 없었습니다, 아름답게, 모든 섬에서. 후속 보도는 영원히 없습니다.' }],
+  [{ speaker: HOOT, voice: HOOT_V, text: '오늘의 게스트는 랜턴 룸에서 매일 저녁 연주해 왔죠 — 얼마나 됐죠?' },
+   { speaker: 'Chip', voice: 760, text: '촛불 이전부터요. 저는 시간을 안 세요. 템포를 세죠. 다른 겁니다.' },
+   { speaker: HOOT, voice: HOOT_V, text: '좋은 공연의 비결은요?' },
+   { speaker: 'Chip', voice: 760, text: '방이 방인 걸 잊을 때까지 연주하는 겁니다. 그리고 한 곡 더.' }],
+  [{ speaker: HOOT, voice: HOOT_V, text: '화산을 섭외해 보려 했습니다. 400년째 노코멘트더군요. 그 절제력은 존중해야 합니다.' }],
+  [{ speaker: HOOT, voice: HOOT_V, text: '오늘 게스트가 취소됐습니다. 오늘 게스트는 바다입니다 — 훌륭한 청취자이자 최악의 게스트. 소파를 통째로 차지했습니다. 그리고 소파를 가져갔습니다.' }],
+  [{ speaker: HOOT, voice: HOOT_V, text: '오늘 방송은 여기까지. 우린 항상 바로 돌아옵니다. 구조적으로, 갈 곳이 없거든요. 굿나이트, 낫벨.' }],
 ];
-const HOOT_NIGHT = [{ speaker: HOOT, voice: HOOT_V, text: 'You’re watching at this hour. So am I. We are not so different — you, and the owl on the screen.' }];
+const HOOT_NIGHT = [{ speaker: HOOT, voice: HOOT_V, text: '이 시간에 보고 계시군요. 저도요. 우린 그리 다르지 않아요 — 당신과, 화면 속 올빼미.' }];
 
-const SCOOCH = 'Weather with Scooch', SCOOCH_V = 360;
+const SCOOCH = '스쿠치의 날씨', SCOOCH_V = 360;
 function scoochWeather() {
   const line = {
-    clear: 'Today: clear. Sunny. Cloudless. *Devastating.* For tomorrow I am forecasting rain. I am always forecasting rain. One day I will be right and it will be the finest day of my life.',
-    rain: 'RAIN. It is RAINING. I prepared remarks; I have lost them to joy. Back to you — back to ME — I am simply going to stand in it.',
-    snow: 'Snow today: that is rain that tried its absolute best, and I am PROUD of it. Catch one on your tongue. It counts. Let me have this.',
-    fog: 'Fog. The sky is thinking. Visibility low, mystery high — and there is rain in there somewhere, I can feel it. I am, admittedly, always a little damp.',
-  }[currentWeather()] || 'Conditions: unclear. Like my heart. Which wants rain.';
+    clear: '오늘: 맑음. 화창. 구름 없음. *처참합니다.* 내일은 비를 예보합니다. 저는 항상 비를 예보해요. 언젠가 맞는 날이 제 인생 최고의 날이 될 거예요.',
+    rain: '비. 비가 옵니다. 준비한 멘트가 있었는데 기쁨으로 잃었어요. 스튜디오로 — 저에게로 — 그냥 비를 맞고 서 있겠습니다.',
+    snow: '오늘은 눈: 최선을 다한 비예요, 저는 자랑스럽습니다. 혀로 한 송이 받아 보세요. 인정됩니다. 이것만은 양보해 주세요.',
+    fog: '안개. 하늘이 생각 중이에요. 가시거리는 낮고, 미스터리는 높고 — 그 안 어딘가에 비가 있어요, 느껴져요. 인정하건대 저는 항상 조금 축축해요.',
+  }[currentWeather()] || '기상 상황: 불명. 제 마음처럼. 비를 원하는.';
   return [{ speaker: SCOOCH, voice: SCOOCH_V, text: line }];
 }
 
-const NEWT = 'Notbell Science with Newt Bellows', NEWT_V = 580;
+const NEWT = '뉴트 벨로스의 낫벨 과학', NEWT_V = 580;
 const SCIENCE_FACTS = [
-  'Here’s one that gets me EVERY time: pumice — the stone that forms when lava cools mid-air — is so full of bubbles it FLOATS. A rock! The only one on Earth that floats!',
-  'When a volcano erupts, ash smashing together builds up static — like shuffling across a carpet, but sky-sized — and you get real LIGHTNING, right inside the eruption!',
-  'The tallest volcano in the solar system isn’t here — it’s Olympus Mons, on Mars: three Everests tall, but so gently sloped you might not notice you were climbing it!',
-  'That orange glow of lava isn’t a colour it “has” — it’s its TEMPERATURE made visible! Same physics as a lightbulb. About 1,200 degrees looks exactly like THAT.',
-  'Plot twist: coral is an ANIMAL — each polyp a tiny cousin of the jellyfish, a millimetre or two across. BILLIONS of them build a reef you can see from orbit!',
-  'Shine ultraviolet light on a reef at night and it glows like a neon city — corals drink in light and beam it back as greens and oranges and reds. It doubles as sunscreen!',
-  'Every manta ray has a unique pattern of spots on its belly — like a fingerprint, for life! Scientists photograph them and keep a whole database of named rays.',
-  'Sharks have NO bones — not one! The skeleton is all cartilage, like your nose and ears: lighter and bendier. That’s how a reef shark turns on a dime.',
-  'A shark can feel the faint electric crackle of a heartbeat through jelly-filled pores in its snout — down to a BILLIONTH of a volt. It finds fish buried in sand, eyes shut!',
-  'A firefly’s glow is “cold light”: nearly ALL the energy becomes light, almost none lost as heat. A lightbulb wastes ninety percent as heat. The firefly is simply better at it!',
-  'Dragonflies catch up to 95% of what they chase — the best aerial hunters we’ve measured! They don’t aim where the prey is; they intercept where it’s GOING.',
-  'Some cicadas wait underground exactly 13 or 17 years before emerging — both PRIME numbers! A prime cycle almost never lines up with a predator’s. Sneaky little mathematicians.',
-  'The astronauts who walked the Moon said the dust smelled like gunpowder — and we still can’t fully say why. The Moon kept a little secret in its pockets!',
-  'Bootprints on the Moon? Still there — no wind, no rain — and they’ll last MILLIONS of years. You could leave a footprint that outlasts the pyramids many times over.',
-  'At the Moon’s average distance, you could line up all seven other planets in the gap between here and there — and they would just barely fit. Space is roomy!',
-  'The Moon drifts away from us about 3.8 cm a year — the speed your fingernails grow. We know because astronauts left mirrors up there and we bounce lasers off them!',
+  '매번 소름 돋는 사실: 부석 — 용암이 공중에서 식어 생기는 돌 — 은 거품이 가득해서 떠요. 바위가요! 지구에서 유일하게 뜨는 바위!',
+  '화산이 폭발할 때 재가 부딪히며 정전기가 쌓여요 — 카펫에서 발을 질질 끄는 것과 같은 원리인데 하늘 크기로 — 그러면 진짜 번개가, 폭발 속에서!',
+  '태양계에서 가장 높은 화산은 여기가 아니에요 — 화성의 올림푸스 몬스: 에베레스트 3개 높이지만 경사가 완만해서 오르는지도 모를 수 있어요!',
+  '용암의 주황빛은 “가진” 색이 아니에요 — 온도가 눈에 보이는 거예요! 전구와 같은 물리예요. 약 1,200도가 정확히 저렇게 보여요.',
+  '반전: 산호는 동물이에요 — 폴립 하나하나가 해파리의 작은 사촌, 1~2밀리미터. 수십억 마리가 궤도에서 보이는 암초를 만들어요!',
+  '밤에 산호초에 자외선을 비추면 네온 도시처럼 빛나요 — 산호가 빛을 빨아들여 초록, 주황, 빨강으로 돌려줘요. 자외선 차단제 역할도 해요!',
+  '모든 만타가오리는 배에 고유한 점무늬가 있어요 — 평생 지문처럼요! 과학자들은 사진을 찍어 이름 붙인 가오리 데이터베이스를 관리해요.',
+  '상어는 뼈가 없어요 — 하나도요! 골격이 전부 연골이에요, 코와 귀처럼: 가볍고 잘 휘어요. 그래서 암초 상어가 재빠르게 돌 수 있어요.',
+  '상어는 주둥이의 젤리 찬 구멍으로 심장박동의 희미한 전기 파장을 느껴요 — 10억 분의 1볼트까지요. 모래에 파묻힌 물고기도 눈감고 찾아요!',
+  '반딧불이의 빛은 “냉광”: 에너지의 거의 전부가 빛이 되고 열로는 거의 안 새요. 전구는 90%를 열로 낭비해요. 반딧불이가 그냥 더 잘하는 거예요!',
+  '잠자리는 쫓는 것의 최대 95%를 잡아요 — 측정된 최고의 공중 사냥꾼! 먹잇감이 있는 곳이 아니라 가고 있는 곳을 가로채요.',
+  '어떤 매미는 정확히 13년 또는 17년을 지하에서 기다려요 — 둘 다 소수! 소수 주기는 포식자 주기와 거의 안 겹쳐요. 교활한 작은 수학자들.',
+  '달을 걸었던 우주비행사들은 먼지가 화약 냄새라고 했어요 — 이유는 아직 완전히 몰라요. 달이 주머니에 작은 비밀을 숨겨 둔 거예요!',
+  '달의 부츠 자국? 아직 그대로 — 바람도 비도 없어서 — 수백만 년은 갈 거예요. 피라미드보다 몇 배는 오래가는 발자국을 남길 수 있어요.',
+  '달의 평균 거리 사이엔 나머지 일곱 행성을 줄 세울 수 있어요 — 아슬아슬하게 딱 맞아요. 우주는 널찍해요!',
+  '달은 매년 약 3.8cm씩 멀어져요 — 손톱 자라는 속도예요. 우주비행사가 남긴 거울에 레이저를 쏴서 알아냈어요!',
 ];
 
 const SEA_BITS = [
-  'The screen shows the sea, doing what the sea does: arriving, leaving, arriving. The sound is just… the sea. Your shoulders drop an inch.',
-  'Wave. Wave. Gull. Wave. (This programming is unsponsored. The sea declined to monetize.)',
-  'All the screens show the same gentle sea — except one, which is a window. Nobody can tell which, including the staff, including the window.',
+  '화면엔 바다가 나와요, 바다가 하는 일을 하며: 밀려오고, 빠지고, 밀려오고. 소리는 그냥… 바다. 어깨가 1인치 내려가요.',
+  '파도. 파도. 갈매기. 파도. (이 프로그램은 무협찬입니다. 바다가 수익화를 거절했어요.)',
+  '모든 화면이 같은 잔잔한 바다를 보여 줘요 — 하나만 빼고, 그건 창문이에요. 직원도, 창문도, 아무도 구분 못 해요.',
 ];
 
 const TV_ADS = [
   { key: 'ad_hotdog',
-    text: 'BULKO: the one-and-a-half-button hot dog. Pay two, get half a button back. We don’t understand it. You don’t understand it. DO NOT WORRY ABOUT IT.' },
+    text: '불코: 1.5버튼 핫도그. 2개 내고 반 개 돌려받으세요. 우리도 모릅니다. 당신도 모릅니다. 걱정하지 마세요.' },
   { key: 'ad_lantern',
-    text: 'The Lantern Room — Lantern Roast, NOT decaf, and Chip plays till the candle’s out. Tell Luna the TV sent you. (Luna will be confused.)' },
+    text: '랜턴 룸 — 랜턴 로스트, 디카페인 아님, 그리고 칩이 촛불 꺼질 때까지 연주합니다. 루나에게 TV가 보냈다고 하세요. (루나는 혼란스러워할 겁니다.)' },
   { key: 'ad_scuba',
-    text: 'Wet feet? Cold feet? Pip’s got the scuba suit: unsellable, like a true friend. Go on — swim where the fish gossip.' },
+    text: '젖은 발? 시린 발? 핍에게 스쿠버 슈트가 있습니다: 진짜 친구처럼 팔 수 없는 물건. 가서 — 물고기들이 수다 떠는 곳에서 헤엄쳐 보세요.' },
   { key: 'ad_parm',
-    text: 'BULKO Members: the parm wheel. It is a WHEEL. Of PARM. Roll one home today. (Barnaby pays extra for cousins of the parm. Don’t ask.)' },
+    text: '불코 멤버 여러분: 파름 휠. 바퀴입니다. 파름의. 오늘 하나 굴려 가세요. (바나비는 파름의 사촌에게 추가금을 냅니다. 묻지 마세요.)' },
 ];
 
 // A slow ambient stroll for folks who work one spot: over to one side of
@@ -733,7 +733,7 @@ export function createBulko(player) {
     backDoors.position.set(2, 1.5, -5.05);
     ext.add(backDoors);
     const backSign = new THREE.Mesh(new THREE.PlaneGeometry(7.4, 1.35),
-      textPanel([['BULKO  ·  STAFF ENTRANCE', 64, 38]], 640, 128, '#c2452c', '#fffaf0'));
+      textPanel([['불코  ·  직원 출입구', 64, 38]], 640, 128, '#c2452c', '#fffaf0'));
     backSign.position.set(0, 5.2, -5.11);
     backSign.rotation.y = Math.PI;
     ext.add(backSign);
@@ -743,12 +743,12 @@ export function createBulko(player) {
     zones.addBlockerBox(wx, wz, 20, 10, 0, 0.05); // the warehouse, exactly
     register({
       pos: new THREE.Vector3(wx + 2, 0, wz - 5.8), r: 2.8,
-      label: 'enter BULKO (staff entrance)',
+      label: '불코 들어가기 (직원 출입구)',
       use: async () => {
         await zones.go('bulko');
         if (!S.hasFlag('staffDoor')) {
           S.setFlag('staffDoor');
-          ui.say('A handwritten note on the staff door: "EVERYONE USES THIS ONE. THE FRONT IS FOR THE CARS."');
+          ui.say('직원용 문의 손글씨 쪽지: "다들 이 문을 씀. 정문은 차들의 것."');
         }
       },
     });
@@ -792,11 +792,11 @@ export function createBulko(player) {
   }
   register({
     pos: new THREE.Vector3(C.x - 3, 0, lotZ + 3), r: 3,
-    label: 'wonder about the cars',
+    label: '차들에 대해 궁금해하기',
     use: () => ui.say([
-      'There are no roads on this island. There are no roads on ANY island. There have never been roads.',
-      'The cars are here anyway, parked neatly, a little warm, as if recently driven.',
-      'A small sign at the lot’s edge reads: “DO NOT WORRY ABOUT IT.”',
+      '이 섬엔 도로가 없어요. 어떤 섬에도 도로가 없어요. 도로는 한 번도 없었어요.',
+      '차들은 어쨌든 여기 있어요, 가지런히 주차되어, 살짝 따뜻하게, 방금 운전한 듯이.',
+      '주차장 가장자리 작은 표지: “걱정하지 마세요.”',
     ]),
   });
   // a stray shopping cart, wheels akimbo
@@ -895,8 +895,8 @@ export function createBulko(player) {
     const panel = new THREE.Mesh(new THREE.PlaneGeometry(7, 3),
       textPanel([
         ['BULKO', 56, 72],
-        ['HOT DOG + FIZZ: STILL 1.5ᵇ', 122, 30],
-        ['FERRY DAILY · THE LOBSTERS ARE NOT FOR SALE', 160, 22],
+        ['핫도그 + 탄산: 여전히 1.5버튼', 122, 30],
+        ['매일 페리 · 바닷가재는 매물 아님', 160, 22],
       ], 512, 192, '#c2452c', '#fffaf0'));
     panel.position.set(0, 4.0, 0.13);
     bill.add(panel);
@@ -910,10 +910,10 @@ export function createBulko(player) {
     zones.addBlocker(6, bz - 1.5, 1.2);
     register({
       pos: new THREE.Vector3(6, 0, bz - 0.2), r: 2.6,
-      label: 'read the billboard',
+      label: '광고판 읽기',
       use: () => ui.say([
-        '“BULKO. HOT DOG + FIZZ: STILL 1.5 BUTTONS. FERRY DAILY.”',
-        'In the corner, small: “Ad space sold by P. Magpie & Associates. P. Magpie & Associates is one magpie.”',
+        '“불코. 핫도그 + 탄산: 여전히 1.5버튼. 매일 페리.”',
+        '구석에 작게: “광고판 판매: P. 까치 및 동업자들. P. 까치 및 동업자들은 까치 한 마리입니다.”',
       ]),
     });
   }
@@ -969,14 +969,14 @@ export function createBulko(player) {
 
     register({
       pos: new THREE.Vector3(B.x, 0, B.z - 4.6), r: 5, zone: 'bulko',
-      label: 'browse the bulk shelves',
+      label: '대용량 선반 구경하기',
       use: () => ui.say(pick([
-        'A five-gallon, shelf-stable bucket of macaroni and cheese. The lid reads “FAMILY SIZE.” It does not specify how large a family, nor whether they are meant to eat it or live in it. You respect the ambiguity.',
-        'One hundred and forty-four rolls of paper towel, shrink-wrapped into a single cube the size of a refrigerator. You could not lift it. You doubt anyone could. It may be load-bearing.',
-        'A jar of pickles requiring both arms and a plan. Forty-eight of them. The brine alone could refloat a small boat. You think, briefly, of Captain Brine. You decide not to mention it to him.',
-        'A flat of sixty cans of beans. Only beans. The label is a photograph of the beans. Somewhere, a person is overjoyed by this. You hope, sincerely, to meet them.',
-        'A two-kilogram tub labeled “ASSORTED OPTIMISM (GUMMY).” Best before: a date not yet invented. Net weight: more than you have ever personally felt.',
-        'The shelves climb up into the fog. Whatever sits on the very top has been there since before the bell went down, and it is fine. It is all fine. It is BULKO.',
+        '5갤런 상온보관 마카로니 앤 치즈 통. 뚜껑엔 “패밀리 사이즈.” 가족이 얼마나 큰지, 먹는 건지 거주하는 건지 명시되지 않았어요. 모호함을 존중해요.',
+        '키친타월 144롤, 냉장고 크기의 단일 큐브로 수축 포장. 들 수 없어요. 아무도 못 들 것 같아요. 하중을 받치고 있을지도요.',
+        '두 팔과 계획이 필요한 피클 병. 48개. 소금물만으로 작은 배를 다시 띄울 수 있어요. 잠시 브라인 선장이 떠올라요. 그에게는 말하지 않기로 해요.',
+        '콩 통조림 60캔 한 판. 콩만. 라벨은 콩 사진. 어딘가에 이것에 환희하는 사람이 있어요. 진심으로 만나 보고 싶어요.',
+        '“혼합 낙관주의 (젤리)”라 적힌 2킬로그램 통. 유통기한: 아직 발명되지 않은 날짜. 내용량: 당신이 직접 느껴 본 것 이상.',
+        '선반이 안개 속까지 올라가요. 맨 꼭대기에 있는 것은 종이 가라앉기 전부터 거기 있었고, 괜찮아요. 다 괜찮아요. 불코니까요.',
       ])),
     });
 
@@ -989,18 +989,18 @@ export function createBulko(player) {
     }
     register({
       pos: new THREE.Vector3(B.x - 8, 0, B.z + 4.9), r: 2.6, zone: 'bulko',
-      label: 'consider the parmesan wheels',
+      label: '파르미지아노 휠 생각해 보기',
       use: async () => {
-        const choice = await ui.ask('Wheels of parmesan, stacked to shoulder height. Each one is the size of a well-fed dog.', [
-          { label: '🧀 Buy a wheel', value: 'buy', hint: '300🔘', disabled: S.state.buttons < 300 },
-          { label: 'Respect them from here', value: null },
+        const choice = await ui.ask('파르미지아노 휠들, 어깨 높이까지 쌓였어요. 하나하나가 잘먹은 개만 해요.', [
+          { label: '🧀 휠 하나 사기', value: 'buy', hint: '300🔘', disabled: S.state.buttons < 300 },
+          { label: '여기서 존경하기', value: null },
         ]);
         if (choice === 'buy') {
           S.spend(300);
           S.addItem('parm_wheel');
           kaching();
           ui.updateHUD();
-          ui.toast('You bought a <b>Bulk Parmesan Wheel</b>. <i>It does not fit in your pockets. You now simply have it.</i>', '🧀');
+          ui.toast('<b>대용량 파르미지아노 휠</b>을 샀어요. <i>주머니에 안 들어가요. 이제 그냥 갖고 있는 거예요.</i>', '🧀');
         }
       },
     });
@@ -1066,18 +1066,18 @@ export function createBulko(player) {
         }
       });
       const sign = new THREE.Mesh(new THREE.PlaneGeometry(6.4, 1.0),
-        textPanel([['❄  THE MILK COOLER  ❄', 64, 40]], 768, 128, '#2f5a6e', '#eaf6fb'));
+        textPanel([['❄  우유 냉장고  ❄', 64, 40]], 768, 128, '#2f5a6e', '#eaf6fb'));
       sign.position.set(dx + 0.35, 4.5, dz);
       sign.rotation.y = Math.PI / 2; // faces east, into the store
       group.add(sign);
       register({
         pos: new THREE.Vector3(dx + 2.5, 0, dz), r: 3, zone: 'bulko',
-        label: 'enter the milk cooler',
+        label: '우유 냉장고 들어가기',
         use: async () => {
           await zones.go('milkroom');
           if (!S.hasFlag('sawMilkroom')) {
             S.setFlag('sawMilkroom');
-            ui.say('The strip curtains part with a cold sigh. Beyond: a dairy hall the size of a small weather system, and three cows who have clearly been talking about you.');
+            ui.say('띠 커튼이 차가운 한숨과 함께 갈라져요. 그 너머: 작은 기상계만 한 유제품 홀, 그리고 분명 당신 얘기를 하던 소 세 마리.');
           }
         },
       });
@@ -1105,7 +1105,7 @@ export function createBulko(player) {
       chill.position.set(MC.x, 2.5, MC.z);
       group.add(chill);
       const bigSign = new THREE.Mesh(new THREE.PlaneGeometry(7, 0.9),
-        textPanel([['❄  COLD FRESH MOO JUICE  ❄', 50, 44]], 768, 100, '#2f5a6e', '#eaf6fb'));
+        textPanel([['❄  차갑고 신선한 음메 주스  ❄', 50, 44]], 768, 100, '#2f5a6e', '#eaf6fb'));
       bigSign.position.set(MC.x, 5.0, MC.z - 7.78); // up over the shelf headers
       group.add(bigSign);
       // the cold wall (north): real steel shelving now, in sections — milk,
@@ -1146,7 +1146,7 @@ export function createBulko(player) {
         group.add(h);
       };
       // milk: cartons with a colored label band and a proper ridge cap
-      header('MILK', -7.6);
+      header('우유', -7.6);
       onShelves(-9.5, -5.7, (x, y) => {
         const k = Math.floor((x * 7 + y * 3) % 4 + 4) % 4;
         const carton = box(0.5, 0.62, 0.5, 0xfbf7ef);
@@ -1158,7 +1158,7 @@ export function createBulko(player) {
         group.add(carton, band, top);
       });
       // eggs: gray cardboard cartons, lids up, the eggs peeking out
-      header('EGGS', -3.8);
+      header('달걀', -3.8);
       const eggMat = mat(0xf6efe0, 0.6), brownEgg = mat(0xd9a878, 0.6);
       onShelves(-5.7, -1.9, (x, y) => {
         const tray = box(0.62, 0.18, 0.34, 0xb8b0a0);
@@ -1176,7 +1176,7 @@ export function createBulko(player) {
         group.add(lid);
       });
       // yogurt: little cups with foil lids in every flavor
-      header('YOGURT', 0);
+      header('요거트', 0);
       const flav = [0xf2a0a8, 0xf2cf5b, 0x9ac4e8, 0xb8e0a0, 0xfbf7ef];
       onShelves(-1.9, 1.9, (x, y) => {
         for (const dx of [-0.17, 0.17]) {
@@ -1188,7 +1188,7 @@ export function createBulko(player) {
         }
       });
       // butter: wrapped bricks, stacked like gold
-      header('BUTTER', 3.8);
+      header('버터', 3.8);
       onShelves(1.9, 5.7, (x, y) => {
         for (const st of [0, 1]) {
           const brick = box(0.5, 0.16, 0.26, st ? 0xf3e6a8 : 0xfbf1c8);
@@ -1197,7 +1197,7 @@ export function createBulko(player) {
         }
       });
       // cheese: waxed wheels, and a wedge or two showing its holes
-      header('CHEESE', 7.6);
+      header('치즈', 7.6);
       onShelves(5.7, 9.5, (x, y) => {
         if (Math.round(x * 4 + y) % 3) {
           const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.26, 0.26, 0.22, 10), mat(Math.round(x * 3) % 2 ? 0xd84f4f : 0xe8c547, 0.5));
@@ -1272,7 +1272,7 @@ export function createBulko(player) {
             label: `${ITEMS[d.id].emoji} ${ITEMS[d.id].name}`, value: d.id, hint: `${d.price}🔘`,
             disabled: S.state.buttons < d.price,
           })),
-          { label: 'Stay cool', value: null },
+          { label: '시원하게 있기', value: null },
         ]);
         const d = DAIRY.find((x) => x.id === picked);
         if (!d) return;
@@ -1280,22 +1280,22 @@ export function createBulko(player) {
         S.addItem(d.id);
         kaching();
         ui.updateHUD();
-        ui.toast(`You bought <b>${ITEMS[d.id].name}</b>. The cold clings to it like it wants to come along.`, ITEMS[d.id].emoji);
+        ui.toast(`<b>${ITEMS[d.id].name}</b>을(를) 샀어요. 냉기가 따라오고 싶다는 듯 달라붙어요.`, ITEMS[d.id].emoji);
       };
       register({
         pos: new THREE.Vector3(MC.x - 5, 0, MC.z - 2), r: 2.8, zone: 'milkroom',
-        label: 'browse the milk jugs',
-        use: () => buyFrom('jugs', 'Gallon jugs in ranks, capped by flavor. The case hums its one cold note.'),
+        label: '우유 주전자 구경하기',
+        use: () => buyFrom('jugs', '갤런 주전자들이 맛별로 뚜껑을 쓰고 대열로 서 있어요. 케이스가 차가운 한 음을 콧노래로 불러요.'),
       });
       register({
         pos: new THREE.Vector3(MC.x + 5, 0, MC.z - 2), r: 2.8, zone: 'milkroom',
-        label: 'browse the eggs and yogurt',
-        use: () => buyFrom('eggs', 'Egg flats, and yogurt by the four-pack. One egg is brown. It knows.'),
+        label: '달걀과 요거트 구경하기',
+        use: () => buyFrom('eggs', '달걀판과 4개입 요거트. 달걀 하나가 갈색이에요. 본인도 알아요.'),
       });
       register({
         pos: new THREE.Vector3(MC.x, 0, MC.z - 5.8), r: 3.2, zone: 'milkroom',
-        label: 'browse the cold wall',
-        use: () => buyFrom('wall', 'Milk, eggs, yogurt, butter, cheese — shelves of it, up into the cold.'),
+        label: '냉장 벽 구경하기',
+        use: () => buyFrom('wall', '우유, 달걀, 요거트, 버터, 치즈 — 선반 가득, 냉기 속까지.'),
       });
 
       // the cows, spread across the hall
@@ -1343,53 +1343,53 @@ export function createBulko(player) {
 
       const COW_LINES = {
         Cocoa: [
-          '“Some say chocolate milk is a dessert. I say it is a hug you can pour.”',
-          '“I keep it cold. The cold keeps it honest.”',
-          '“Barley says oat is the future. I say the past tasted better. We don’t argue. We’re cows.”',
+          '“초코 우유가 디저트라는 이들도 있죠. 저는 부을 수 있는 포옹이라고 해요.”',
+          '“차갑게 유지해요. 냉기가 정직하게 지켜 줘요.”',
+          '“보리는 오트가 미래래요. 저는 과거가 더 맛있었다고 해요. 논쟁하진 않아요. 우린 소니까요.”',
         ],
         Sundae: [
-          '“Pink is a great deal of pressure. I carry it well, I think.”',
-          '“Everyone wants strawberry in summer. In winter I finally get to think.”',
-          '“Cocoa is rich, Barley is complicated. I’m only sweet. Someone has to be.”',
+          '“분홍은 상당한 압박이에요. 잘 소화하고 있다고 생각해요.”',
+          '“여름엔 다들 딸기를 찾아요. 겨울엔 드디어 생각할 수 있어요.”',
+          '“코코아는 진하고, 보리는 복잡해요. 저는 그냥 달콤해요. 누군가는 그래야죠.”',
         ],
         Barley: [
-          '“The beret came with the personality. Or the personality with the beret. The order is unclear and, frankly, beneath us.”',
-          '“Oat: for those who find regular cold a touch mainstream.”',
-          '“I don’t produce it, exactly. I curate it.”',
+          '“베레모가 성격과 함께 왔어요. 아니면 성격이 베레모와 함께. 순서는 불명확하고, 솔직히 우리 격에 안 맞는 질문이에요.”',
+          '“오트: 평범한 냉기가 살짝 주류라고 느끼는 분들을 위해.”',
+          '“정확히는 생산하지 않아요. 큐레이션해요.”',
         ],
       };
       const COW_MEET = {
-        Cocoa: ['A big brown cow regards you with enormous, gentle calm.',
-          '“Chocolate milk isn’t a flavor. It’s a feeling. The feeling is being eight, and it being summer, and nothing being due.”'],
-        Sundae: ['A pink cow blinks at you, slow and dreamy.',
-          '“I’m strawberry. I don’t make the rules. I barely make the strawberry.”'],
-        Barley: ['A cream-colored cow in a small beret considers you over the top of it.',
-          '“Mine’s oat. It’s not milk — it’s a beverage. There is a difference. I won’t explain it.”',
-          '“I was plant-based before the tank had lobsters.”'],
+        Cocoa: ['커다란 갈색 소가 크고 온화한 평온으로 당신을 봐요.',
+          '“초코 우유는 맛이 아니에요. 감정이에요. 여덟 살이고, 여름이고, 마감이 없는 그 감정.”'],
+        Sundae: ['분홍 소가 느리고 몽롱하게 눈을 깜빡여요.',
+          '“저는 딸기예요. 규칙은 제가 안 만들어요. 딸기도 겨우 만들어요.”'],
+        Barley: ['작은 베레모를 쓴 크림색 소가 모자 너머로 당신을 살펴요.',
+          '“제 건 오트예요. 우유가 아니라 — 음료예요. 차이가 있어요. 설명은 안 할래요.”',
+          '“저는 수조에 바닷가재가 들어오기 전부터 식물성이었어요.”'],
       };
       const cowReg = (cow, name, voice) => register({
-        getPos: () => cow.position, r: 2.6, zone: 'milkroom', label: `talk to ${name}`,
+        getPos: () => cow.position, r: 2.6, zone: 'milkroom', label: `${name}와(과) 대화하기`,
         use: () => {
           const flag = `met${name}`;
           if (!S.hasFlag(flag)) { S.setFlag(flag); ui.say(COW_MEET[name], { speaker: name, voice }); return; }
           ui.say(pick(COW_LINES[name]), { speaker: name, voice });
         },
       });
-      cowReg(cocoa, 'Cocoa', 250);
-      cowReg(sundae, 'Sundae', 300);
-      cowReg(barley, 'Barley', 270);
+      cowReg(cocoa, '코코아', 250);
+      cowReg(sundae, '선데', 300);
+      cowReg(barley, '보리', 270);
 
       register({
         pos: new THREE.Vector3(MC.x, 0, MC.z - 5.5), r: 2.4, zone: 'milkroom',
-        label: 'browse the milk wall',
+        label: '우유 벽 구경하기',
         use: () => ui.say(pick([
-          'Cartons to the ceiling, gable-topped, beaded with cold. Top to bottom: chocolate, strawberry, oat, and one labeled simply “?”.',
-          'A small sign: “TAKE A CARTON. LEAVE A CARTON. THE COOLER ABIDES.” You take nothing. The cooler abides regardless.',
+          '천장까지 카톤, 박공 모양 뚜껑, 냉기 방울이 맺혔어요. 위에서 아래로: 초코, 딸기, 오트, 그리고 그냥 “?”라 적힌 하나.',
+          '작은 표지: “카톤 하나 가져가세요. 카톤 하나 두고 가세요. 냉장고는 영원합니다.” 아무것도 안 가져가요. 냉장고는 어쨌든 영원해요.',
         ])),
       });
       register({
         pos: new THREE.Vector3(MC.x, 0, MC.z + 7), r: 2.4, zone: 'milkroom',
-        label: 'step back into BULKO',
+        label: '불코로 돌아가기',
         use: () => zones.go('bulko', { x: B.x - 14, z: B.z + 3, rotY: -Math.PI / 2 }),
       });
       milkroomRoot = collectInteriorRoot(group, milkroomStart);
@@ -1478,7 +1478,7 @@ export function createBulko(player) {
       hoot: () => { const pool = isNight() ? [...HOOT_BITS, HOOT_NIGHT] : HOOT_BITS; ui.say(pool[tvIdx.hoot++ % pool.length]); },
       science: () => ui.say([{ speaker: NEWT, voice: NEWT_V, text: SCIENCE_FACTS[tvIdx.science++ % SCIENCE_FACTS.length] }]),
       sea: () => ui.say(SEA_BITS[tvIdx.sea++ % SEA_BITS.length]),
-      bars: () => ui.say('Color bars and a steady tone. PLEASE STAND BY. You stand by. It is, honestly, one of the more restful programs on.'),
+      bars: () => ui.say('컬러 바와 일정한 톤. 잠시만 기다려 주세요. 기다려요. 솔직히 요즘 방송 중 가장 편안한 프로그램이에요.'),
     };
     const playTv = (key) => {
       if (TV_AD_KEYS.includes(key)) return ui.say(tvAds[key]);
@@ -1488,7 +1488,7 @@ export function createBulko(player) {
     register({
       getPos: () => tvHit.set(Math.max(B.x - 1.6, Math.min(B.x + 6.4, player.group.position.x)), 0, B.z + 2.3),
       r: 2.6, zone: 'bulko',
-      label: 'watch the TVs',
+      label: 'TV 보기',
       use: () => { playTv(pick(tvScreens).key); },
     });
 
@@ -1512,10 +1512,10 @@ export function createBulko(player) {
     }
     register({
       pos: new THREE.Vector3(B.x + 2.4, 0, B.z + 4), r: 3, zone: 'bulko',
-      label: 'try a display couch',
+      label: '전시 소파에 앉아 보기',
       use: async () => {
         await ui.fadeSwap(() => {});
-        ui.say('You sit on display couch #2. It is somehow both firm and soft. A tag dares you to imagine it in your cottage. You imagine it. The tag knew you would.');
+        ui.say('전시 소파 2번에 앉았어요. 어쩐지 단단하면서 푹신해요. 태그가 당신의 오두막에 두는 상상을 하라고 도발해요. 상상해요. 태그는 알고 있었어요.');
       },
     });
 
@@ -1530,7 +1530,7 @@ export function createBulko(player) {
       menuPost.castShadow = true;
       group.add(menuPost);
     }
-    const menuMat = textPanel([['HOT DOG + FIZZ  ·  1.5ᵇ', 80, 42]], 512, 160, '#2a2a2a', '#fffaf0');
+    const menuMat = textPanel([['핫도그 + 탄산  ·  1.5버튼', 80, 42]], 512, 160, '#2a2a2a', '#fffaf0');
     const menuBoard = new THREE.Mesh(new THREE.PlaneGeometry(4.0, 1.5), menuMat);
     menuBoard.position.set(B.x + 12, 3.6, B.z + 5.95);
     group.add(menuBoard);
@@ -1600,17 +1600,17 @@ export function createBulko(player) {
     // the frog IS the hot dog stand — order from him (the half-button is his doing)
     register({
       getPos: () => frog.position, r: 3.6, zone: 'bulko',
-      label: 'order from Mortimer',
+      label: '모티머에게 주문하기',
       use: async () => {
         if (!S.hasFlag('metFrog')) {
           S.setFlag('metFrog');
           await ui.say([
-            'A large green-and-yellow frog in a small paper hat regards you with the calm of one who has flipped a great many hot dogs and judged none of them.',
-            '“Mortimer,” he says, by way of introduction. “Hot dog?” He is, somehow, already making one. He does not blink. The roller turns; the fizz fizzes; all is well.',
-          ], { speaker: 'Mortimer', voice: 320 });
+            '작은 종이모자를 쓴 크고 초록-노란 개구리가, 수많은 핫도그를 뒤집었으나 단 하나도 평가하지 않은 자의 평온으로 당신을 봐요.',
+            '“모티머,” 그가 인사 대신 말해요. “핫도그?” 어느새 이미 하나 만들고 있어요. 눈을 깜빡이지 않아요. 롤러는 돌고; 탄산은 부글거리고; 모든 게 좋아요.',
+          ], { speaker: '모티머', voice: 320 });
         }
         if (S.state.buttons < 2) {
-          ui.say('Mortimer looks genuinely sorry. You are two buttons short, and he is far too dignified to spot you the difference. The hot dog rotates on, patient as the tide.', { speaker: 'Mortimer', voice: 320 });
+          ui.say('모티머가 진심으로 미안해해요. 버튼 두 개가 모자라고, 그는 차이를 빌려주기엔 지나치게 위엄 있어요. 핫도그는 조수처럼 참을성 있게 돌아가요.', { speaker: '모티머', voice: 320 });
           return;
         }
         S.spend(2);
@@ -1623,16 +1623,16 @@ export function createBulko(player) {
           S.addItem('half_button');
           jingle();
           await ui.say([
-            'It costs exactly one and a half buttons. You pay two. Mortimer returns, in change, half a button — handed over with the gravity of a man passing along a deed.',
-            'It is legal tender nowhere. You will treasure it forever. He knew you would.',
-          ], { speaker: 'Mortimer', voice: 320 });
-          ui.toast('You got <b>Half a Button</b>! And a hot dog. <i>Warm and quick for 60s!</i>', '🌭');
+            '가격은 정확히 1.5버튼. 당신은 두 개를 내요. 모티머가 거스름으로 반 개를 돌려줘요 — 등기를 넘기는 사람의 중후함으로 건네요.',
+            '어디서도 통용되지 않아요. 영원히 소중히 할 거예요. 그는 알고 있었어요.',
+          ], { speaker: '모티머', voice: 320 });
+          ui.toast('<b>반쪽 버튼</b>을 받았어요! 그리고 핫도그. <i>60초간 따뜻하고 빨라져요!</i>', '🌭');
         } else {
-          ui.toast('Hot dog, fizz, half a button back. Mortimer nods once. The system is eternal. <i>Warm and quick for 60s!</i>', '🌭');
+          ui.toast('핫도그, 탄산, 반쪽 버튼 환급. 모티머가 한 번 고갯짓해요. 시스템은 영원해요. <i>60초간 따뜻하고 빨라져요!</i>', '🌭');
         }
         if (!S.hasFlag('hotdogLore')) {
           S.setFlag('hotdogLore');
-          await ui.say('A plaque by the till, which Mortimer polished this morning: “THIS PRICE HAS NOT CHANGED SINCE THE SEA HAD A BELL. IT NEVER WILL.” You feel, briefly, like crying at a food court.', { speaker: 'Mortimer', voice: 320 });
+          await ui.say('계산대 옆 명판, 모티머가 오늘 아침 닦은: “이 가격은 바다에 종이 있던 때부터 변하지 않았다. 앞으로도 그럴 것이다.” 잠시, 푸드코트에서 울컥해요.', { speaker: '모티머', voice: 320 });
         }
       },
     });
@@ -1716,7 +1716,7 @@ export function createBulko(player) {
     let tankIdx = 0;
     register({
       pos: new THREE.Vector3(B.x - 5, 0, B.z - 3), r: 2.8, zone: 'bulko',
-      label: 'inspect the lobster tank',
+      label: '바닷가재 수조 살펴보기',
       use: () => ui.say(TANK_LINES[tankIdx++ % TANK_LINES.length]),
     });
 
@@ -1742,22 +1742,22 @@ export function createBulko(player) {
     });
     register({
       getPos: () => gus.position, r: 3, zone: 'bulko',
-      label: 'talk to Gus',
+      label: '거스와 대화하기',
       use: () => {
         if (!S.hasFlag('metGus')) {
           S.setFlag('metGus');
           ui.say([
-            'An enormous old tortoise in an orange vest looks at you over imaginary glasses.',
-            '“Card?” You have no card. He considers this for a geological moment.',
-            '“…You can use the lobsters’ guest pass. They never use it.” He waves you through with tremendous dignity.',
-          ], { speaker: 'Gus', voice: 260 });
+            '주황 조끼를 입은 거대한 늙은 거북이 상상 속 안경 너머로 당신을 봐요.',
+            '“카드?” 카드가 없어요. 그가 지질학적 시간 동안 이를 고려해요.',
+            '“…바닷가재들 게스트 패스를 쓰세요. 얘네는 절대 안 쓰니까.” 엄청난 위엄으로 통과시켜 줘요.',
+          ], { speaker: '거스', voice: 260 });
           return;
         }
         ui.say(pick([
-          '“Card? …Right. Guest pass. Go on through.”',
-          '“The samples today are: the concept of abundance. One per customer.”',
-          '“Forty years on this door. Seen three things I can’t explain. The cars are two of them.”',
-        ]), { speaker: 'Gus', voice: 260 });
+          '“카드? …맞다. 게스트 패스. 들어가세요.”',
+          '“오늘의 시식 코너는: 풍요의 개념입니다. 고객당 하나.”',
+          '“이 문에서 40년. 설명 못할 걸 세 가지 봤죠. 차들이 그중 둘.”',
+        ]), { speaker: '거스', voice: 260 });
       },
     });
 
@@ -1790,21 +1790,21 @@ export function createBulko(player) {
     });
     register({
       pos: new THREE.Vector3(wx - 3, 0, wz + 5.6), r: 2.8,
-      label: 'enter BULKO',
+      label: '불코 들어가기',
       use: async () => {
         await zones.go('bulko');
         if (!S.hasFlag('sawBulko')) {
           S.setFlag('sawBulko');
-          ui.say('The doors part. The ceiling is a rumor. Somewhere, forklifts sing to one another. Welcome to BULKO.');
+          ui.say('문이 열려요. 천장은 소문이에요. 어딘가에서 지게차들이 서로 노래해요. 불코에 오신 걸 환영해요.');
         }
       },
     });
     register({
       pos: new THREE.Vector3(B.x - 2, 0, B.z + 9.9), r: 1.8, zone: 'bulko',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: async () => {
         await zones.leaveTo({ x: wx - 3, z: wz + 7.4, rotY: 0 });
-        ui.toast('Gus marks your receipt with a tiny sun. No receipt? He marks the air. Tradition is tradition.', '✅');
+        ui.toast('거스가 영수증에 작은 태양을 찍어요. 영수증이 없다고? 공기에 찍어요. 전통은 전통이에요.', '✅');
       },
     });
   }
