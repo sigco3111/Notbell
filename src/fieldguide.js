@@ -14,43 +14,43 @@ const MAP = { x0: -130, x1: 200, z0: -165, z1: 145, scale: 2 }; // (Farther runs
 const ISLAND_INFO = [
   {
     key: 'notbell',
-    name: 'Notbell Isle', x: 0, z: 0, r: 40, icon: '🍃',
-    blurb: 'Home. The island that lost its bell and kept the name. Village plaza, the Lantern Room, the museum, your cottage, the tide pools, the dock — and the cave where the old light sleeps.',
-    folk: 'Pip · Luna · Fern · Chip · Clover · Biscuit · Howell · Puddle · the Admiral · Captain Brine · Murmur (sometimes)',
+    name: '낫벨 섬', x: 0, z: 0, r: 40, icon: '🍃',
+    blurb: '고향. 종을 잃고 이름을 남긴 섬. 마을 광장, 랜턴 룸, 박물관, 당신의 오두막, 조수 웅덩이, 부두 — 그리고 옛 빛이 잠든 동굴.',
+    folk: '핍 · 루나 · 펀 · 칩 · 클로버 · 비스킷 · 하웰 · 퍼들 · 제독 · 브라인 선장 · 머머 (가끔)',
   },
   {
     key: 'far',
-    name: 'The Far Isle', x: ISLAND2.x, z: ISLAND2.z, r: 30, icon: '⛪',
-    blurb: 'The quiet side of the strait — footbridge or train. Barnaby’s grocery, the public garden, the Old Singer’s bones, and the Listening House, whose belfry is empty on purpose.',
-    folk: 'Barnaby · Brother Alder · Saffron · Bramble · Marigold · Ember',
+    name: '파 아일', x: ISLAND2.x, z: ISLAND2.z, r: 30, icon: '⛪',
+    blurb: '해협 건너 조용한 편 — 인도교나 기차로. 바나비의 식료품점, 공동 정원, 옛 노래꾼의 뼈, 그리고 일부러 종루를 비워 둔 듣는 집.',
+    folk: '바나비 · 알더 수사 · 새프런 · 브램블 · 매리골드 · 엠버',
     mystery: '“Other side of the strait? Quieter. Greener. Their church doesn’t ring, and they like it that way.” —overheard at the café',
   },
   {
     key: 'north',
-    name: 'The North Isle', x: ISLAND3.x, z: ISLAND3.z, r: 26, icon: '📚',
-    blurb: 'Moss with tenure. Cross the natural arch to the Quiet Stacks, the clinic (everyone is fine), the Buttonwagon and its stew cart, and the MouseBoat at her mooring.',
-    folk: 'Vesper · Dr. Gill · Butterpat · Tusk · Crumb · one very poisonous frog',
+    name: '북쪽 섬', x: ISLAND3.x, z: ISLAND3.z, r: 26, icon: '📚',
+    blurb: '종신 재직한 이끼. 자연 아치를 지나면 고요한 서고, 진료소(모두 건강해요), 버튼왜건과 스튜 수레, 그리고 정박한 마우스보트.',
+    folk: '베스퍼 · 길 박사 · 버터팻 · 터스크 · 크럼 · 아주 독한 개구리 한 마리',
     mystery: '“North of here it’s moss all the way down. If you find a library, no you didn’t — but bring me back something shiny.” —Pip, unhelpfully',
   },
   {
     key: 'texas',
-    name: 'TEXAS', x: TEXAS.x, z: TEXAS.z, r: 12, icon: '🤠',
-    blurb: 'TEXAS. No further explanation is offered, or required. Population: one fire ant, one slingshot, one tin can, one strand of his ma’s lights.',
-    folk: 'Pecos',
+    name: '텍사스', x: TEXAS.x, z: TEXAS.z, r: 12, icon: '🤠',
+    blurb: '텍사스. 추가 설명은 제공되지 않으며, 필요하지도 않습니다. 인구: 불개미 하나, 새총 하나, 깡통 하나, 엄마의 전구 줄 하나.',
+    folk: '페코스',
     mystery: 'A very small island. When asked about it, Captain Brine just exhales for a long time.',
   },
   {
     key: 'volcano',
-    name: 'The Volcano', x: VOLCANO.x, z: VOLCANO.z, r: 25, icon: '🌋',
-    blurb: 'She made every island in this sea, then retired. Smokes when she’s comfortable. Black-sand beach, honor bar, basking rock. Reachable by rowboat or Brine’s ferry.',
-    folk: 'Cinder, and the warmest rocks in the archipelago',
+    name: '화산', x: VOLCANO.x, z: VOLCANO.z, r: 25, icon: '🌋',
+    blurb: '이 바다의 모든 섬을 만든 뒤 은퇴하셨어요. 편안하면 연기를 뿜어요. 검은 모래 해변, 양심 바, 일광욕 바위. 노 젓는 배나 브라인의 여객선으로.',
+    folk: '신더, 그리고 군도에서 가장 따뜻한 바위들',
     mystery: '“The smoking mountain? She MADE all of this. Go pay your respects. Ten buttons, I’ll take you myself.” —Captain Brine',
   },
   {
     key: 'bulko',
-    name: 'BULKO', x: ISLAND4.x, z: ISLAND4.z, r: 26, icon: '🛒',
-    blurb: 'The southern warehouse isle. Bulk parmesan, a wall of TVs, the eternal 1.5ᵇ hot dog, and a fully furnished lobster tank that is NOT for sale. Do not worry about the cars.',
-    folk: 'Gus · the lobsters (management)',
+    name: '불코', x: ISLAND4.x, z: ISLAND4.z, r: 26, icon: '🛒',
+    blurb: '남쪽 창고 섬. 대용량 파마산, TV 벽, 영원한 1.5단추 핫도그, 그리고 팔지 않는 풀옵션 랍스터 수조. 차들은 걱정할 필요 없어요.',
+    folk: '거스 · 랍스터들 (경영진)',
     mystery: 'On clear days something enormous and gray sits on the southern horizon. It appears to be… organized.',
   },
 ];
@@ -140,7 +140,7 @@ export function markVisited(player, zone) {
       state.visited[isle.key] = true;
       save();
       chartDrawn = false; // the ink is wet; redraw next time
-      ui.toast(`Charted: <b>${isle.icon} ${isle.name}</b>. Old Tansy’s chart fills in a little.`, '🗺️');
+      ui.toast(`지도에 추가: <b>${isle.icon} ${isle.name}</b>. 늙은 탠지의 해도가 조금 채워졌어요.`, '🗺️');
     }
   }
 }
@@ -285,7 +285,7 @@ function renderMap(player) {
     <div>Every island the volcano raised, back when she worked. You live on Notbell Isle, the big one in the middle.</div>
     <div class="folk">Click an island for the gossip.</div>
     <div class="legend"><span>🔴 you</span><span>❓ not yet visited</span></div>
-    <div class="fg-hint">P or Esc to close</div>`;
+    <div class="fg-hint">P 또는 Esc로 닫기</div>`;
   mapModal.appendChild(info);
 
   const ctx = mapCanvas.getContext('2d');
@@ -310,33 +310,33 @@ function renderMap(player) {
   function showIsle(isle) {
     if (!charted(isle)) {
       info.innerHTML = `<h3>❓ ???</h3>
-        <div>${isle.mystery || 'The chart shows a smudge here. The smudge is confident.'}</div>
-        <div class="folk"><b>Around here:</b> nobody you’ve met. Yet.</div>
-        <div class="fg-hint">set foot ashore to ink it in</div>`;
+        <div>${isle.mystery || '해도의 이 부분은 얼룩뿐이에요. 얼룩이 확신에 차 있어요.'}</div>
+        <div class="folk"><b>이 근처:</b> 아직 만난 사람이 없어요.</div>
+        <div class="fg-hint">직접 상륙하면 해도에 기록돼요</div>`;
       return;
     }
     info.innerHTML = `<h3>${isle.icon} ${isle.name}</h3>
       <div>${isle.blurb}</div>
-      <div class="folk"><b>Around here:</b> ${isle.folk}</div>
-      <div class="fg-hint">P or Esc to close</div>`;
+      <div class="folk"><b>이 근처:</b> ${isle.folk}</div>
+      <div class="fg-hint">P 또는 Esc로 닫기</div>`;
   }
 }
 
 // ------------------------------------------------------- the critterpedia ----
 
 const SECTIONS = [
-  ['fish', '🎣 Fish'],
-  ['bug', '🦋 Bugs'],
-  ['fossil', '🦴 Fossils'],
-  ['pool', '🦀 Tide Pool'],
-  ['meteor', '☄️ From the Sky'],
-  ['art', '🖼️ Art Collection'],
+  ['fish', '🎣 물고기'],
+  ['bug', '🦋 곤충'],
+  ['fossil', '🦴 화석'],
+  ['pool', '🦀 조수 웅덩이'],
+  ['meteor', '☄️ 하늘에서 온 것'],
+  ['art', '🖼️ 미술 소장품'],
 ];
 
 function renderPedia() {
-  let html = '<button class="closex" aria-label="close">✕</button>' +
-    '<h3>📖 Old Tansy’s Almanac</h3>' +
-    '<div class="sub">The keeper catalogued everything she pulled from the sea and sky. The almanac continues, in a second handwriting. Yours.</div>';
+  let html = '<button class="closex" aria-label="닫기">✕</button>' +
+    '<h3>📖 늙은 탠지의 도감</h3>' +
+    '<div class="sub">등대지기가 바다와 하늘에서 건진 모든 걸 기록했어요. 도감은 두 번째 필적으로 계속 이어져요. 당신의 글씨로요.</div>';
   for (const [kind, title] of SECTIONS) {
     const entries = Object.entries(ITEMS).filter(([, it]) => it.kind === kind);
     const seenCount = entries.filter(([id]) => state.seen[id]).length;
@@ -352,7 +352,7 @@ function renderPedia() {
     }
     html += '</div>';
   }
-  html += '<div class="fg-hint">🏛️ = donated to the museum · C or Esc to close</div>';
+  html += '<div class="fg-hint">🏛️ = 박물관 기증 · C 또는 Esc로 닫기</div>';
   pedia.innerHTML = html;
   pedia.querySelector('.closex').addEventListener('click', closeAll);
 }
