@@ -49,97 +49,97 @@ const STACKS3 = [
   // — salt water —
   [
     {
-      title: '“Moby-Dick,” by Herman Melville.',
-      note: 'Salt-swollen, and read well past the library’s rules.',
-      passage: 'Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.',
+      title: '《모비 딕》, 허먼 멜빌 지음.',
+      note: '바닷물에 불었고, 도서관 규정을 훌쩍 넘겨 읽혔다.',
+      passage: '나를 이스마엘이라 불러라. 몇 년 전인지 정확히는 상관없이, 지갑에 돈도 거의 없고 육지에서 딱히 흥미로운 일도 없던 나는 조금 항해하며 세상의 물기 어린 부분을 보기로 했다.',
       voice: 430,
     },
     {
-      title: '“The Sea Also Listens,” by a Friend of the Listeners.',
-      passage: 'First lesson: the sea does not answer. Second lesson: that is not the same as not listening. We ring no bell here — we keep the quiet a bell would leave behind.',
+      title: '《바다도 듣고 있다》, 듣는 이들의 벗 지음.',
+      passage: '첫 번째 가르침: 바다는 대답하지 않는다. 두 번째 가르침: 그것이 듣지 않는다는 뜻은 아니다. 우리는 여기서 종을 울리지 않는다 — 종이 남겼을 고요를 지킬 뿐이다.',
       voice: 470,
     },
     {
-      title: '“Moonlit Night,” by Du Fu.',
-      note: 'Translated by Florence Ayscough & Amy Lowell, 1921.',
+      title: '〈월야(月夜)〉, 두보(杜甫) 지음.',
+      note: '플로런스 아이스코, 에이미 로웰 영역, 1921.',
       passage: [
-        'To-night—the moon at Fu Chou. / In the centre of the Women’s Apartments / There is only one to look at it. / I am far away, but I love my little son, my daughter. / They cannot understand and think of Ch’ang An.',
-        'The sweet-smelling mist makes the cloud head-dress damp, / The jade arm must be chilly / In this clear, glorious shining. / When shall I lean on the lonely screen? / When shall we both be shone upon, and the scars of tears be dry?',
+        '오늘밤 부주의 달 / 규방 한가운데서 / 홀로 그것을 바라보네 / 나는 멀리 있지만 어린 아들과 딸을 사랑하네 / 아이들은 장안을 생각할 줄 모르네.',
+        '향기로운 안개가 구름 머리장식을 적시고 / 옥 같은 팔이 서늘하겠네 / 이 맑고 눈부신 달빛 속에서 / 언제 외로운 병풍에 기대볼까 / 언제 함께 달빛을 받아 눈물 자국이 마를까?',
       ],
       voice: 520,
     },
     {
-      title: '“Boats I Have Whistled At,” by Capt. E. Brine.',
-      note: 'Signed, smudged, and faintly damp.',
-      passage: 'A boat will go where you point it and sulk the whole way, or go where it pleases and let you call that seamanship. I have whistled at four hundred boats. Two whistled back. I do not discuss the second one.',
+      title: '《내가 휘파람 분 배들》, E. 브라인 선장 지음.',
+      note: '서명이 번져 있고, 은은히 축축하다.',
+      passage: '배는 가리키는 곳으로 가되 가는 내내 토라져 있거나, 제멋대로 가고 그걸 선술이라 부르게 해 준다. 나는 배 400척에 휘파람을 불었다. 두 척이 답했다. 두 번째 배에 대해서는 말하지 않는다.',
       voice: 360,
     },
   ],
   // — quiet rooms —
   [
     {
-      title: '“Jane Eyre,” by Charlotte Brontë.',
-      note: 'A faded ribbon marks a page very near the end.',
-      passage: 'Reader, I married him. A quiet wedding we had: he and I, the parson and clerk, were alone present.',
+      title: '《제인 에어》, 샬럿 브론테 지음.',
+      note: '바랜 리본이 끝에서 아주 가까운 페이지를 표시해 두었다.',
+      passage: '독자 여러분, 저는 그와 결혼했습니다. 조용한 결혼식이었지요. 그와 저, 목사님과 사무원만 자리했습니다.',
       voice: 560,
     },
     {
-      title: '“Spring Quiet,” by Christina Rossetti.',
-      passage: 'Here the sun shineth / Most shadily; / Here is heard an echo / Of the far sea, / Though far off it be.',
+      title: '〈봄의 고요〉, 크리스티나 로제티 지음.',
+      passage: '여기 해는 / 가장 그늘지게 비치고 / 여기 들리는 메아리는 / 먼 바다의 것, / 아무리 멀어도.',
       voice: 600,
     },
     {
-      title: '“Moss: A Love Story (Unabridged, 9 vols.).”',
-      passage: 'Volume Six. He had not moved. Neither had she. Between them the patient green crept one heroic inch across the stone — and the narrator assures us, with feeling, that this is the most that has ever happened to anyone.',
+      title: '《이끼: 한 사랑 이야기 (무삭제판, 전 9권)》',
+      passage: '제6권. 그는 움직이지 않았다. 그녀도 그러했다. 두 사람 사이에서 참을성 있는 초록이 돌 위로 영웅적인 1인치를 기어갔다 — 그리고 화자는 감정을 담아 장담한다, 이것이 누구에게든 일어난 일 중 최고라고.',
       voice: 580,
     },
   ],
   // — the sky, and other large ideas —
   [
     {
-      title: '“War and Peace,” by Leo Tolstoy.',
-      note: 'Heavier than the shelf it came from.',
-      passage: 'It seemed to Pierre that this comet fully responded to what was passing in his own softened and uplifted soul, now blossoming into a new life.',
+      title: '《전쟁과 평화》, 레프 톨스토이 지음.',
+      note: '놓여 있던 선반보다 무겁다.',
+      passage: '피에르에게는 이 혜성이 자신의 부드러워지고 고양된 영혼 속에서 지나가고 있는 것, 이제 새 삶으로 꽃피고 있는 것에 온전히 화답하는 것처럼 보였다.',
       voice: 500,
     },
     {
-      title: '“Hope is the thing with feathers,” by Emily Dickinson.',
+      title: '〈희망은 깃털 달린 것〉, 에밀리 디킨슨 지음.',
       passage: [
-        'Hope is the thing with feathers / That perches in the soul, / And sings the tune without the words, / And never stops at all,',
-        'And sweetest in the gale is heard; / And sore must be the storm / That could abash the little bird / That kept so many warm.',
+        '희망은 깃털 달린 것 / 영혼에 내려앉아 / 가사 없는 노래를 부르고 / 결코 멈추지 않는다,',
+        '질풍 속에서 가장 달콤하게 들린다 / 그리고 얼마나 거센 폭풍이어야 / 그토록 많은 이를 따뜻하게 지킨 / 작은 새를 부끄럽게 할 수 있을까.',
       ],
       voice: 640,
     },
     {
-      title: '“Practical Ghostkeeping.”',
-      note: 'Someone has written “thank you” in the margin, in very cold ink.',
-      passage: 'Chapter One: You Cannot Tidy A Ghost, But You May Leave Things Findable. Chapter Two: A Polished Hook Is A Kindness. Chapter Three: If The Brass Is Already Shining, Do Not Ask Who.',
+      title: '《실용 유령 돌보기》',
+      note: '누군가 아주 차가운 잉크로 여백에 “고마워요”라고 써 두었다.',
+      passage: '1장: 유령을 정돈할 수는 없지만 물건을 찾기 쉽게 둘 수는 있다. 2장: 잘 닦인 갈고리는 하나의 배려. 3장: 놋쇠가 이미 반짝이고 있다면 누가 했는지 묻지 말 것.',
       voice: 420,
     },
   ],
   // — the island’s own —
   [
     {
-      title: '“Les Misérables,” by Victor Hugo.',
-      note: 'Translated by Isabel F. Hapgood, 1887.',
-      passage: '“The beautiful is as useful as the useful.” He added after a pause, “More so, perhaps.”',
+      title: '《레 미제라블》, 빅토르 위고 지음.',
+      note: '이사벨 F. 해프굿 영역, 1887.',
+      passage: '“아름다운 것은 유용한 것만큼 유용하다.” 잠시 뜸을 들인 뒤 덧붙였다, “어쩌면 더 그러하다.”',
       voice: 480,
     },
     {
-      title: '“I Am a Cat,” by Natsume Sōseki.',
-      note: 'Translated by Kan-ichi Andō, 1906.',
-      passage: 'I am a cat; but as yet I have no name. Where I was born is entirely unknown to me. But this still dimly lives in my memory. I was mewing in a gloomy damp place, where I got the first sight of a creature called man.',
+      title: '《나는 고양이로소이다》, 나쓰메 소세키 지음.',
+      note: '안토 간이치 영역, 1906.',
+      passage: '나는 고양이다. 아직 이름은 없다. 어디서 태어났는지도 전혀 모른다. 다만 어둑하고 축축한 곳에서 야옹거리고 있었고, 거기서 인간이라는 동물을 처음 보았다는 것만 어렴풋이 기억한다.',
       voice: 600,
     },
     {
-      title: '“Edible Mushrooms of the North Isle,” heavily annotated.',
-      passage: 'Entry 9, the speckled cap: the author recommends it sautéed. The margin replies, in a firmer hand: “NO.” Entry 10: “ALSO NO.” Entry 11, at last: “fine. but only this one. and only Fern knows why.”',
+      title: '《북쪽 섬의 식용 버섯》, 빼곡한 주석 달림.',
+      passage: '9번, 얼룩덜룩갓: 저자는 버터 볶음을 권한다. 여백이 더 굳은 필체로 답한다: “안 돼.” 10번: “이것도 안 돼.” 마침내 11번: “좋아. 하지만 이것만. 이유는 펀만 알아.”',
       voice: 520,
     },
     {
-      title: '“The Lightkeeper’s Logbook, Years 1–34,” by Old Tansy.',
-      note: 'The final page is missing.',
-      passage: 'Year 22, a fog with no manners. Rang the bell from dusk until the boats were all counted home. A good bell does half a lighthouse’s work, and never once asks for the credit. — T.',
+      title: '《등대지기의 일지, 1–34년 차》, 늙은 탠지 지음.',
+      note: '마지막 페이지가 없다.',
+      passage: '22년 차, 예의 없는 안개. 배들이 전부 무사 귀항으로 확인될 때까지 해질녘부터 종을 울렸다. 좋은 종은 등대의 일 절반을 하면서도 단 한 번도 공을 요구하지 않는다. — T.',
       voice: 540,
     },
   ],
@@ -147,22 +147,22 @@ const STACKS3 = [
 const ALL_BOOKS3 = STACKS3.flat(); // Vesper lends from the whole library
 
 const VESPER_LORE = [
-  'Records? Mm. I keep the island’s memory in paper, the way Fern keeps it in stone and the cave keeps it in light.',
-  'Tansy’s logbook ends mid-sentence, you know. The last page is missing. I expect it’s wherever the bell is. Filed under “sea.”',
-  'The moss on the arch is older than the library. I consider it the senior librarian. We don’t argue.',
+  '기록이요? 음. 나는 섬의 기억을 종이에 간직해요. 펀이 돌에 간직하고 동굴이 빛에 간직하는 것처럼요.',
+  '탠지의 일지는 문장 중간에 끝나요, 아시다시피. 마지막 페이지가 없거든요. 아마 종이 있는 곳 어디쯤에 있겠죠. “바다” 항목에 분류되어 있을 거예요.',
+  '아치 위 이끼가 도서관보다 나이가 많아요. 나는 그걸 수석 사서로 여겨요. 서로 다투지 않아요.',
 ];
 
 const GILL_CHAT = [
-  'Nobody on these islands has been sick in living memory. I stay for the view, and on principle.',
-  'I lost an arm once. Grew it back. I don’t recommend it as a hobby, but it’s a tremendous party fact.',
-  'Brush your teeth, sleep with the window cracked, and tell someone your favorite cloud daily. Doctor’s orders.',
+  '기억 속에서 이 섬들에서 아픈 사람은 아무도 없었어요. 나는 경치 때문에, 그리고 원칙상 남아 있어요.',
+  '팔을 한 번 잃은 적 있어요. 다시 자랐지만요. 취미로는 권하지 않지만, 파티에서는 엄청난 사실이에요.',
+  '양치하고, 창문을 조금 열고 자고, 매일 누군가에게 가장 좋아하는 구름을 말하세요. 의사의 처방이에요.',
 ];
 
 const FROG_LINES = [
-  'It is doing a push-up. It knows it looks good.',
-  'Its colors say “danger.” Its face says “invite me to things.”',
-  'It blinks one eye, then the other. Showing off, frankly.',
-  'You should absolutely not pick it up, and it has made peace with the loneliness of beauty.',
+  '팔굽혀펴기를 하고 있어요. 잘 보인다는 걸 알고 있어요.',
+  '색은 “위험”이라고 말해요. 얼굴은 “모임에 불러 줘”라고 말해요.',
+  '한쪽 눈을 깜빡이고 다른 쪽을 깜빡여요. 솔직히 자랑하는 거예요.',
+  '절대 집어 올리면 안 돼요. 그리고 얘는 아름다움의 외로움과 화해했어요.',
 ];
 
 export function createIsland3() {
@@ -496,7 +496,7 @@ export function createIsland3() {
       }
       register({
         pos: new THREE.Vector3(B.x + sx, 0, B.z - 4.6), r: 2.2, zone: 'library',
-        label: 'read a book',
+        label: '책 읽기',
         use: async () => {
           const book = pick(STACKS3[i]);
           const body = Array.isArray(book.passage) ? book.passage : [book.passage];
@@ -566,41 +566,41 @@ export function createIsland3() {
     });
     register({
       pos: new THREE.Vector3(libSpot.x, 0, libSpot.z + 3.6), r: 2.6,
-      label: 'enter the Quiet Stacks',
+      label: '조용한 서고에 들어가기',
       use: () => zones.go('library'),
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 5.2), r: 1.6, zone: 'library',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: libSpot.x, z: libSpot.z + 4.6, rotY: 0 }),
     });
 
     let loreIdx = 0;
     register({
       getPos: () => vesper.position, r: 3, zone: 'library',
-      label: 'talk to Vesper',
+      label: '베스퍼와 대화하기',
       use: async () => {
         if (!S.hasFlag('metVesper')) {
           S.setFlag('metVesper');
           await ui.say([
-            'A bat hangs upside down from the desk lamp, reading. She rights herself with great dignity.',
-            '“Vesper. Librarian. Whisper if you can, mumble if you must. Welcome to the Quiet Stacks.”',
-          ], { speaker: 'Vesper', voice: 540 });
+            '박쥐 한 마리가 책상 램프에 거꾸로 매달려 책을 읽고 있어요. 아주 위엄 있게 몸을 바로 해요.',
+            '“베스퍼예요. 사서죠. 할 수 있으면 속삭이고, 어쩔 수 없으면 중얼거려요. 조용한 서고에 온 걸 환영해요.”',
+          ], { speaker: '베스퍼', voice: 540 });
           return;
         }
-        const choice = await ui.ask('Mm?', [
-          { label: '📖 Borrow a book', value: 'borrow' },
-          { label: 'Ask about the records', value: 'lore' },
-          { label: 'Leave', value: null },
-        ], { speaker: 'Vesper', voice: 540 });
+        const choice = await ui.ask('음?', [
+          { label: '📖 책 빌리기', value: 'borrow' },
+          { label: '기록에 대해 묻기', value: 'lore' },
+          { label: '나가기', value: null },
+        ], { speaker: '베스퍼', voice: 540 });
         if (choice === 'borrow') {
           const book = pick(ALL_BOOKS3);
           jingle();
-          ui.toast(`You borrow ${book.title} Due date: whenever.`, '📖');
-          await ui.say('Spine uncracked, corners unfolded, returned before the moss notices. The usual terms.',
-            { speaker: 'Vesper', voice: 540 });
+          ui.toast(`${book.title} 빌렸어요. 반납 기한: 아무때나.`, '📖');
+          await ui.say('책등 펴지 않기, 귀 접지 않기, 이끼가 눈치채기 전에 반납하기. 늘 하던 조건이에요.',
+            { speaker: '베스퍼', voice: 540 });
         } else if (choice === 'lore') {
-          await ui.say(VESPER_LORE[loreIdx++ % VESPER_LORE.length], { speaker: 'Vesper', voice: 540 });
+          await ui.say(VESPER_LORE[loreIdx++ % VESPER_LORE.length], { speaker: '베스퍼', voice: 540 });
         }
       },
     });
@@ -701,10 +701,10 @@ export function createIsland3() {
     }
     register({
       pos: new THREE.Vector3(B.x + 5.35, 0, B.z + 3.0), r: 1.8, zone: 'clinic',
-      label: 'flip through a magazine',
+      label: '잡지 넘겨보기',
       use: () => ui.say([
-        'OYSTERS — “the periodical for the discerning bivalve.” This issue is eight years old. The cover lines: “Pearls: Are You Storing Yours Wrong?” and “Tide-Pool Minimalism — Live With Just One Rock.”',
-        'Inside: the quiz “Which Hermit Crab Are You?” (you are, every time, the one looking for a bigger shell) and a glossy spread on a clam who summers on the volcano. A subscription card flutters out. It expired six years ago.',
+        'OYSTERS — “안목 있는 이매패류를 위한 정기 간행물.” 이 호는 8년 묵었어요. 표지 기사: “진주: 당신은 잘못 보관 중?”과 “조수 웅덩이 미니멀리즘 — 바위 하나만으로 살기.”',
+        '속지: 퀴즈 “당신은 어떤 소라게?” (당신은 매번, 더 큰 껍데기를 찾는 쪽) 그리고 화산에서 여름을 나는 조개의 화보. 정기구독 카드가 팔랑 떨어져요. 6년 전에 만료됐어요.',
       ]),
     });
     // eye chart: descending paw prints
@@ -761,45 +761,45 @@ export function createIsland3() {
     });
     register({
       pos: new THREE.Vector3(clinSpot.x, 0, clinSpot.z + 3.2), r: 2.6,
-      label: 'enter the clinic',
+      label: '진료소에 들어가기',
       use: () => zones.go('clinic'),
     });
     register({
       pos: new THREE.Vector3(B.x, 0, B.z + 3.8), r: 1.6, zone: 'clinic',
-      label: 'step outside',
+      label: '밖으로 나가기',
       use: () => zones.leaveTo({ x: clinSpot.x, z: clinSpot.z + 4.2, rotY: 0 }),
     });
 
     let chatIdx = 0;
     register({
       getPos: () => gill.position, r: 3, zone: 'clinic',
-      label: 'talk to Dr. Gill',
+      label: '길 박사와 대화하기',
       use: async () => {
         if (!S.hasFlag('metGill')) {
           S.setFlag('metGill');
           await ui.say([
-            'A pink axolotl in a tiny white coat looks up, gill-fronds bobbing like festive antennae.',
-            '“Dr. Gill. Nobody here gets sick, so mostly I do check-ups, hand out lollipops, and admire everyone’s excellent health. Hop up whenever.”',
-          ], { speaker: 'Dr. Gill', voice: 500 });
+            '작은 흰 가운을 입은 분홍 우파루파가 올려다봐요. 아가미 가지가 축제 안테나처럼 흔들려요.',
+            '“길 박사예요. 여긴 아무도 안 아파서, 주로 건강검진 하고 막대사탕 나눠 주고 모두의 훌륭한 건강을 감탄해요. 언제든 올라오세요.”',
+          ], { speaker: '길 박사', voice: 500 });
           return;
         }
-        const choice = await ui.ask('What brings you in? (Nothing. It’s always nothing. Wonderful.)', [
-          { label: '🩺 Get a check-up', value: 'checkup' },
-          { label: 'Chat', value: 'chat' },
-          { label: 'Leave', value: null },
-        ], { speaker: 'Dr. Gill', voice: 500 });
+        const choice = await ui.ask('무슨 일로 오셨나요? (아무 일도 아니겠죠. 늘 아무 일도 아니에요. 훌륭해요.)', [
+          { label: '🩺 건강검진 받기', value: 'checkup' },
+          { label: '수다 떨기', value: 'chat' },
+          { label: '나가기', value: null },
+        ], { speaker: '길 박사', voice: 500 });
         if (choice === 'checkup') {
           await ui.say([
-            '“Eyes on the chart… read me the bottom row.” (It is six microscopic paw prints.) “Close enough.”',
-            '“Breathe in… and out. Lovely. Heart’s keeping excellent time — slightly syncopated, very fashionable.”',
-            '“Reflexes—” (a tiny hammer appears from somewhere) “—superb. You flinched with real artistry.”',
-            '“Diagnosis: in perfect health, possibly thriving. Keep doing whatever this is. Lollipop?”',
-          ], { speaker: 'Dr. Gill', voice: 500 });
+            '“시력표 보시고… 맨 아랫줄 읽어 보세요.” (현미경급 발바닥 도장 여섯 개예요.) “충분히 가까워요.”',
+            '“숨 들이쉬고… 내쉬고. 아주 좋아요. 심장이 훌륭한 박자를 유지해요 — 살짝 당김음, 아주 유행이에요.”',
+            '“반사 신경—” (어디선가 작은 망치가 나타나요) “—굉장해요. 움찔하는 데 진짜 예술성이 있어요.”',
+            '“진단: 완벽한 건강, 아마 번영 중. 지금 하는 거 계속하세요. 막대사탕 드릴까요?”',
+          ], { speaker: '길 박사', voice: 500 });
           jingle();
-          ui.toast('Clean bill of health, plus a lollipop. <i>It’s the good flavor.</i>', '🍭');
+          ui.toast('건강 진단서, 막대사탕 덤. <i>맛있는 맛이에요.</i>', '🍭');
           S.setFlag('hadCheckup');
         } else if (choice === 'chat') {
-          await ui.say(GILL_CHAT[chatIdx++ % GILL_CHAT.length], { speaker: 'Dr. Gill', voice: 500 });
+          await ui.say(GILL_CHAT[chatIdx++ % GILL_CHAT.length], { speaker: '길 박사', voice: 500 });
         }
       },
     });
@@ -841,11 +841,11 @@ export function createIsland3() {
 
     register({
       pos: new THREE.Vector3(bx + 2.5, 0, bz + 1.5), r: 2.6,
-      label: 'inspect the Buttonwagon',
+      label: '버튼왜건 살펴보기',
       use: () => ui.say([
-        'An enormous mother-of-pearl button, mounted on a cart. A small plaque:',
-        '“THE BUTTONWAGON. PIP’S MARKETING INITIATIVE, YEAR OF THE AMBITIOUS SPRING. IT DROVE ONCE. THE ISLAND HAS AGREED NEVER AGAIN.”',
-        'Someone — almost certainly Pip — still waxes it. It is immaculate.',
+        '수레에 얹힌 거대한 자개 버튼이에요. 작은 명판:',
+        '“버튼왜건. 핍의 마케팅 계획, 야심찬 봄의 해. 한 번 달렸다. 섬은 다시는 안 하기로 합의했다.”',
+        '누군가 — 거의 확실히 핍 — 가 아직 왁스를 칠해요. 흠잡을 데가 없어요.',
       ]),
     });
   }
@@ -880,9 +880,9 @@ export function createIsland3() {
       const c = cv.getContext('2d');
       c.fillStyle = '#f3e7c4'; c.fillRect(0, 0, 256, 128);
       c.fillStyle = '#b8322a'; c.textAlign = 'center';
-      c.font = 'bold 30px sans-serif'; c.fillText('PLEASE', 128, 38);
-      c.font = 'bold 34px sans-serif'; c.fillText('DO NOT LICK', 128, 78);
-      c.font = 'bold 26px sans-serif'; c.fillText('THE FROG', 128, 112);
+      c.font = 'bold 30px sans-serif'; c.fillText('부디', 128, 38);
+      c.font = 'bold 34px sans-serif'; c.fillText('핥지 말아요', 128, 78);
+      c.font = 'bold 26px sans-serif'; c.fillText('개구리를', 128, 112);
       const tex = new THREE.CanvasTexture(cv);
       tex.colorSpace = THREE.SRGBColorSpace;
       const sx = fx0 + 1.9, sz = fz0 + 0.9, sy = terrainHeight(sx, sz);
@@ -933,7 +933,7 @@ export function createIsland3() {
     let frogIdx = 0;
     register({
       getPos: () => frog.position, r: 2.4,
-      label: 'admire the very poisonous frog (do not touch)',
+      label: '아주 독한 개구리 감상하기 (만지지 말 것)',
       use: () => ui.say(FROG_LINES[frogIdx++ % FROG_LINES.length]),
     });
   }
@@ -1064,13 +1064,13 @@ export function createIsland3() {
 
     register({
       pos: new THREE.Vector3(cx + 1.4, 0, cz + 1.4), r: 2.4,
-      label: 'visit the stew cart',
+      label: '스튜 가판대 방문하기',
       use: async () => {
         const choice = await ui.ask(
-          'A painted banner: “BUTTONWAGON PRESENTS: BUTTON MUSHROOM STEW. (THE BUTTONWAGON DOES NOT COOK. THE BUTTONWAGON BELIEVES.)”', [
-            { label: '🍲 Button mushroom stew', value: 'stew', hint: '25🔘', disabled: S.state.buttons < 25 },
-            { label: 'Ask about the sponsorship', value: 'sponsor' },
-            { label: 'Leave', value: null },
+          '그려진 현수막: “버튼왜건 제공: 버튼버섯 스튜. (버튼왜건은 요리하지 않는다. 버튼왜건은 믿는다.)”', [
+            { label: '🍲 버튼버섯 스튜', value: 'stew', hint: '25🔘', disabled: S.state.buttons < 25 },
+            { label: '후원에 대해 묻기', value: 'sponsor' },
+            { label: '나가기', value: null },
           ]);
         if (choice === 'stew') {
           S.spend(25);
@@ -1078,9 +1078,9 @@ export function createIsland3() {
           kaching();
           sip();
           ui.updateHUD();
-          ui.toast('Earthy, buttery, suspiciously perfect. <i>Warm and quick for 30s!</i>', '🍲');
+          ui.toast('흙내 나고, 버터 향 나고, 수상할 만큼 완벽해요. <i>30초간 따뜻하고 빨라져요!</i>', '🍲');
         } else if (choice === 'sponsor') {
-          ui.say('The fine print: “THE BUTTONWAGON ASKED FOR NOTHING IN RETURN. THE BUTTONWAGON ONLY WANTED TO BE PART OF SOMETHING AGAIN.” …Oh. Oh no. Now you’re emotional at a stew cart.');
+          ui.say('작은 글씨: “버튼왜건은 아무 보답도 바라지 않았다. 버튼왜건은 다시 무언가의 일부가 되고 싶었을 뿐이다.” …아. 아, 안 돼. 스튜 가판대 앞에서 울컥했어요.');
         }
       },
     });
@@ -1095,8 +1095,8 @@ export function createIsland3() {
   group.add(sign, signPost);
   register({
     pos: new THREE.Vector3(T.x - 1, 0, T.z + 3.5), r: 2,
-    label: 'read the mossy sign',
-    use: () => ui.say('“THE NORTH ISLE. QUIET, PLEASE — MOSS AT WORK. (The moss thanks you. The moss notices everything.)”'),
+    label: '이끼 낀 표지판 읽기',
+    use: () => ui.say('“북쪽 섬. 조용히 부탁 — 이끼 작업 중. (이끼가 감사해해요. 이끼는 모든 걸 알아채요.)”'),
   });
 
   function update(dt, t, playerPos) {
