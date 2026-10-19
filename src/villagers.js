@@ -295,338 +295,338 @@ export const VILLAGER_NAMES = IDENTITIES.map((i) => i.name);
 // own voice — a different letter each time you write, round and round.
 // `postcard` is the line they add when what you sent was the Farther card.
 export const MAIL_REPLIES = {
-  Clover: {
+  클로버: {
     letters: [
-      'Your letter came! I read it in the flowers so the butterflies could hear. They were very moved. One of them landed on the part about me.',
-      'I put your letter under my pillow for luck. Then I napped on it. Twice. It’s the luckiest nap I’ve ever had.',
+      '편지 왔어! 나비들이 들을 수 있게 꽃 속에서 읽었어. 다들 아주 감동했어. 한 마리는 내 얘기 부분에 앉았어.',
+      '행운을 빌려고 편지를 베개 밑에 넣었어. 그리고 그 위에서 낮잠 잤어. 두 번. 내 인생 가장 행운인 낮잠이었어.',
     ],
-    postcard: 'A postcard from FARTHER! I didn’t know you could get farther than here. Now I have to go. I’m packing a snack.',
-    sign: 'Clover (a lucky rabbit, now luckier)',
+    postcard: '파더에서 온 엽서! 여기보다 더 멀리 갈 수 있는 줄 몰랐어. 이제 가봐야 해. 간식 싸는 중.',
+    sign: '클로버 (행운의 토끼, 이제 더 행운)',
   },
-  Biscuit: {
+  비스킷: {
     letters: [
-      'Got your letter. I buried it for safekeeping. Then I dug it up to read it again. Then I buried it again. It’s in a very good spot. I think.',
-      'Thanks for writing! I found a great pebble today and I thought: who else would understand this pebble? You. It’s in the envelope. (It didn’t fit. Imagine it.)',
+      '편지 받았어. 안전하게 묻어뒀어. 그리고 다시 읽으려고 파냈어. 그리고 다시 묻었어. 아주 좋은 자리야. 아마.',
+      '써줘서 고마워! 오늘 멋진 조약돌을 찾았는데 생각했지: 이 조약돌을 이해할 사람이 또 누가 있을까? 너. 봉투 안에 넣었어. (안 들어갔어. 상상해 줘.)',
     ],
-    postcard: 'The postcard is on my wall next to my treasure map. The map is of my own garden. It’s very detailed.',
-    sign: 'Biscuit',
+    postcard: '엽서는 내 보물지도 옆 벽에 붙였어. 지도는 내 정원 지도야. 아주 상세해.',
+    sign: '비스킷',
   },
-  Saffron: {
+  새프런: {
     letters: [
-      'I got your letter and I smelled it first, obviously. Paper, a little salt, and Moss. Moss smells like a library that took up swimming.',
-      'You write the way the tide pools gossip — lots of little news, all of it important. Write again. I want to know EVERYTHING.',
+      '편지 받고 당연히 먼저 냄새부터 맡았어. 종이, 약간의 소금, 그리고 모스. 모스는 수영을 시작한 도서관 냄새야.',
+      '너는 조수 웅덩이가 수다 떠는 식으로 쓰네 — 작은 소식 잔뜩, 전부 중요한. 또 써줘. 나는 모든 걸 알고 싶어.',
     ],
-    postcard: 'Farther Isle! I hear the mangroves out there are extremely nosy. I respect them already.',
-    sign: 'Saffron (professionally curious, unprofessionally)',
+    postcard: '파더 섬! 거기 맹그로브가 엄청 참견쟁이래. 벌써 존경해.',
+    sign: '새프런 (직업적으로 호기심 많은, 비직업적)',
   },
-  Howell: {
+  하웰: {
     letters: [
-      'I received your correspondence. I read it aloud. To the moon. As wolves do. It went very well. The moon had no notes.',
-      'Thank you for your letter. I will keep it in my den. My den is a house. A wolf’s house. Which is a den. AwoOOo. (That was a sign-off. Wolves sign off like that.)',
+      '네 서신을 받았다. 소리 내어 읽었다. 달에게. 늑대가 그렇듯. 아주 잘됐다. 달은 코멘트가 없었다.',
+      '편지 고맙다. 굴에 보관하겠다. 내 굴은 집이다. 늑대의 집. 그게 굴이다. 아우우우. (이건 끝인사다. 늑대는 그렇게 끝인사를 한다.)',
     ],
-    postcard: 'A postcard from the far places. Wolves roam, you know. I have roamed. I have roamed as far as the bridge.',
-    sign: 'Howell (a wolf)',
+    postcard: '먼 곳에서 온 엽서. 늑대는 떠돈다, 알지. 나는 떠돌았다. 다리까지 떠돌았다.',
+    sign: '하웰 (늑대)',
   },
-  Bramble: {
+  브램블: {
     letters: [
-      'Your letter came on a good day: a berry, a sit, and one (1) excellent cloud. Then your letter. That’s four. I didn’t know a day could hold four.',
-      'I read your letter slowly, the way you eat the last berry. It was a very good last berry. Write again when you have another.',
+      '네 편지는 좋은 날에 왔어: 베리 하나, 앉기 한 번, 멋진 구름 하나 (1개). 그리고 네 편지. 그럼 넷이야. 하루가 넷을 품을 수 있는 줄 몰랐어.',
+      '네 편지를 천천히 읽었어, 마지막 베리를 먹는 방식으로. 아주 좋은 마지막 베리였어. 또 생기면 다시 써줘.',
     ],
-    postcard: 'Farther. I like a place that says what it is. I’ll look at the card instead of going. That’s nearly as good, for a bear.',
-    sign: 'Bramble',
+    postcard: '파더. 이름이 곧 설명인 곳이 좋아. 가는 대신 엽서를 볼게. 곰에게는 그것도 거의 비슷해.',
+    sign: '브램블',
   },
-  Puddle: {
+  퍼들: {
     letters: [
-      'YOUR LETTER!! I read it swimming. It got a bit wet. It’s fine! Now it’s a bit of a puddle, which is my NAME, so it’s basically mine now!!',
-      'The Admiral says letters should be short and to the point. HERE IS MY POINT: hi!!! I miss you!!! Come to the beach!!!',
+      '네 편지!! 수영하면서 읽었어. 좀 젖었어. 괜찮아! 이제 약간 웅덩이가 됐는데 그게 내 이름이니까 이제 사실상 내 거야!!',
+      '제독은 편지는 짧고 요점 있게 쓰래. 요점은 이거야: 안녕!!! 보고 싶어!!! 해변으로 와!!!',
     ],
-    postcard: 'A postcard!! From somewhere I haven’t swum to YET!!',
-    sign: 'Puddle 💧',
+    postcard: '엽서!! 아직 수영해서 가본 적 없는 곳에서!!',
+    sign: '퍼들 💧',
   },
-  'Admiral Greenbean': {
+  '그린빈 제독': {
     letters: [
-      'Your dispatch was received at 0900 and read at 0901. A crisp report. Well done, sailor. Nothing further. (Carry on.)',
-      'Correspondence acknowledged. The shoreline remains tidy. Puddle remains Puddle. All is as it should be. At ease.',
+      '네 전문은 0900에 접수, 0901에 낭독했다. 씩씩한 보고였다. 잘했다, 선원. 이상 없음. (계속하라.)',
+      '서신 접수 확인. 해안선은 정돈되어 있다. 퍼들은 퍼들답다. 모든 게 있어야 할 대로. 차렷.',
     ],
-    postcard: 'A postcard from a forward position. Farther. Noted in the log. The log is proud of you.',
-    sign: 'Adm. Greenbean, retired (not retired)',
+    postcard: '전방 위치에서 온 엽서. 파더. 항해일지에 기록했다. 일지가 널 자랑스러워한다.',
+    sign: '그린빈 제독, 예비역 (예비역 아님)',
   },
-  Marigold: {
+  매리골드: {
     letters: [
-      'I carried your letter across the bridge this morning so the planks could hear it. They applauded. They applaud everything, but this time they meant it.',
-      'Your letter was a quiet kind of letter. The best kind. You have to lean in to hear it showing off.',
+      '오늘 아침 판자들이 듣게 하려고 네 편지를 들고 다리를 건넜어. 판자들이 박수쳤어. 얘네는 뭐든 박수치지만, 이번엔 진심이었어.',
+      '네 편지는 조용한 종류의 편지였어. 최고의 종류. 자랑하는 걸 들으려면 기울여 들어야 해.',
     ],
-    postcard: 'Farther! Past the Far Isle. I didn’t think there was a past-the-Far-Isle. I’ll trot a little farther tomorrow, in your honor.',
-    sign: 'Marigold',
+    postcard: '파더! 파 아일 너머. 파 아일 너머가 있는 줄 몰랐어. 내일은 널 기려 조금 더 멀리 뛸게.',
+    sign: '매리골드',
   },
-  Ember: {
+  엠버: {
     letters: [
-      'I read your letter in the cave. The cave hums in B-flat and so, it turns out, does your handwriting. We harmonized. It was lovely.',
-      'Thank you for writing! I told the Old Light about it. It didn’t say anything. It went a little warmer. That’s how you know.',
+      '동굴에서 네 편지를 읽었어. 동굴은 B플랫으로 웅웅거리는데, 알고 보니 네 글씨도 그렇대. 우리 화음을 맞췄어. 사랑스러웠어.',
+      '써줘서 고마워! 옛 빛에게 얘기했어. 아무 말도 안 했어. 조금 더 따뜻해졌어. 그걸로 아는 거야.',
     ],
-    postcard: 'A postcard! I pinned it up near the glow worms. They’re very polite about it. They glow at it now.',
-    sign: 'Ember',
+    postcard: '엽서! 개똥벌레들 근처에 붙여뒀어. 얘네가 아주 예의 바르게 반응해. 이제 그걸 향해 빛내.',
+    sign: '엠버',
   },
-  Tusk: {
+  터스크: {
     letters: [
-      '*snrrrf.* (A muddy hoofprint. Beside it, very carefully, a second, smaller hoofprint. It is, unmistakably, a thank-you.)',
-      'Hrmf. (A mushroom, pressed flat and mailed. It is a gift. It is also slightly eaten. Both are how Tusk says you matter.)',
+      '*스르르르프.* (진흙 묻은 발굽 자국. 그 옆에, 아주 조심스럽게, 두 번째 더 작은 발굽 자국. 틀림없이, 감사 인사예요.)',
+      '흠프. (납작하게 눌려 부쳐진 버섯. 선물이에요. 그리고 살짝 먹혔어요. 둘 다 터스크가 당신이 소중하다고 말하는 방식이에요.)',
     ],
-    postcard: '(The postcard has come back with a mushroom tucked into the corner. Tusk approves of Farther.)',
-    sign: '(a hoofprint)',
+    postcard: '(엽서가 구석에 버섯을 끼우고 돌아왔어요. 터스크는 파더를 마음에 들어 해요.)',
+    sign: '(발굽 자국)',
   },
-  Butterpat: {
+  버터팻: {
     letters: [
-      'I got your letter and I read it three times, slowly, the way I eat moss. It was delicious. Letters are like moss. They are best in company.',
-      'Vesper helped me with the long words in your letter. There weren’t any. Vesper stayed anyway. That’s how good your letter was.',
+      '편지 받고 세 번 읽었어, 천천히, 이끼 먹는 방식으로. 맛있었어. 편지는 이끼 같아. 함께일 때 최고야.',
+      '베스퍼가 네 편지의 긴 단어를 도와줬어. 없었지만. 그래도 베스퍼는 남아 있었어. 네 편지가 그만큼 좋았다는 거야.',
     ],
-    postcard: 'A postcard from a whole other island. I will stand very still and imagine the grass there. I bet it’s grassy.',
-    sign: 'Butterpat (of the north moss)',
+    postcard: '통째로 다른 섬에서 온 엽서. 아주 가만히 서서 거기 풀을 상상할게. 풀다울 걸.',
+    sign: '버터팻 (북쪽 이끼의)',
   },
-  Crumb: {
+  크럼: {
     letters: [
-      'Ahoy! Your letter arrived just as I woke from a nap and just before I started another. Perfect timing. Very seaworthy of you.',
-      'Filed your letter in the cheese storage for safekeeping. It’s the safest place aboard. It smells a bit of cheddar now. You’re welcome.',
+      '아호이! 네 편지가 낮잠에서 깬 직후이자 다음 낮잠 직전에 도착했어. 완벽한 타이밍. 아주 항해다운 너야.',
+      '네 편지는 치즈 창고에 보관해뒀어. 배에서 가장 안전한 곳이야. 이제 체다 냄새가 좀 나. 천만에.',
     ],
-    postcard: 'Farther Isle! I’ve moored there. Ranked it for crumbs. Excellent crumbs. Your postcard is fourth. That’s very high.',
-    sign: 'Crumb, Master of the MouseBoat',
+    postcard: '파더 섬! 거기 정박해봤어. 부스러기로 평가했지. 훌륭한 부스러기. 네 엽서는 4위. 아주 높은 거야.',
+    sign: '크럼, 마우스보트의 선장',
   },
-  Mochi: {
+  모찌: {
     letters: [
-      'Mm. Your letter. I read it in the hot spring. It is now slightly steamed. It is very relaxed. So am I.',
-      'Thank you. That is the whole letter. (It took me a long time. Done properly.)',
+      '음. 네 편지. 온천에서 읽었어. 살짝 쪄졌어. 아주 이완됐어. 나도.',
+      '고마워. 그게 편지 전부야. (오래 걸렸어. 제대로 하느라.)',
     ],
-    postcard: 'Mm. Farther. We will soak about it.',
-    sign: 'Mochi (and the orange)',
+    postcard: '음. 파더. 그 얘길 생각하며 담가 있을게.',
+    sign: '모찌 (그리고 귤)',
   },
-  Pondo: {
+  폰도: {
     letters: [
-      'Mochi read me your letter. I agreed with all of it. Mm.',
-      'I am writing back myself this time. Mochi is helping. Mochi says to say: we liked it. Mm.',
+      '모찌가 네 편지를 읽어줬어. 전부 동의했어. 음.',
+      '이번엔 내가 직접 답장 써. 모찌가 도와줘. 모찌가 전하래: 좋았대. 음.',
     ],
-    postcard: 'Mm. A postcard. We agreed it was a good one.',
-    sign: 'Pondo',
+    postcard: '음. 엽서. 좋은 거라고 우리가 합의했어.',
+    sign: '폰도',
   },
-  Sol: {
+  솔: {
     letters: [
-      'Sssalutations. Your letter arrived. Pick read it to me over breakfast while she did my teeth. We agreed it was the best part of the morning.',
-      'Thank you for writing. People rarely write to a crocodile. They assume we bite letters. We only bite fish, and only on weekdays.',
+      '안녕하시오오오. 편지가 도착했소. 픽이 아침 먹으며 내 이빨을 해주는 동안 읽어줬소. 우리는 그게 아침 최고의 순간이었다고 합의했소.',
+      '써줘서 고맙소. 악어에게 편지 쓰는 사람은 드물오. 우리가 편지를 문다고들 생각해서. 우리는 물고기만 무오, 그것도 평일에만.',
     ],
-    postcard: 'A postcard from farther away. Sssplendid. I shall bask on it.',
-    sign: 'Sol',
+    postcard: '더 먼 곳에서 온 엽서. 훌륭하오오오. 그 위에서 일광욕하겠소.',
+    sign: '솔',
   },
-  Barb: {
+  바브: {
     letters: [
-      'Hrm. Got your letter. Read it on the rock. Read it twice. Ruth says that means I liked it. Ruth is right. Don’t tell her.',
-      'Letter received. The creek says hello. The creek doesn’t talk. I’m saying it for the creek. Hrm.',
+      '흠. 편지 받았어. 바위에서 읽었어. 두 번 읽었어. 루스는 그게 좋았다는 뜻이래. 루스가 맞아. 본인한텐 비밀.',
+      '편지 수신. 개울이 안부 전해. 개울은 말이 없어. 내가 개울 대신 말하는 거야. 흠.',
     ],
-    postcard: 'A postcard from Farther. I don’t go farther. Farther can come here. It’s welcome to the rock.',
-    sign: 'Barb (on the rock)',
+    postcard: '파더에서 온 엽서. 난 더 멀리 안 가. 파더가 여기 오면 돼. 바위는 환영해.',
+    sign: '바브 (바위 위)',
   },
-  Ruth: {
+  루스: {
     letters: [
-      'Your letter came, dear! I’ve tucked it into my knitting basket so it stays warm. Barb read it over my shoulder and said “hrm,” which from Barb is a sonnet.',
-      'Thank you for writing. I’m knitting you something. It will take a while. I knit at the speed of moss.',
+      '편지 왔어, 얘야! 따뜻하라고 뜨개 바구니에 넣어뒀어. 바브가 어깨너머로 읽고는 “흠” 했는데, 바브 기준 그건 소네트야.',
+      '써줘서 고마워. 뭔가 떠주고 있어. 시간은 좀 걸릴 거야. 난 이끼 속도로 뜨거든.',
     ],
-    postcard: 'Oh, Farther! I painted it from your postcard. It came out a pink smudge. It’s lovely there.',
-    sign: 'Ruth (and a scarf, in progress)',
+    postcard: '오, 파더! 네 엽서를 보고 그렸어. 분홍 얼룩이 나왔어. 거기 참 예쁘구나.',
+    sign: '루스 (그리고 목도리, 진행 중)',
   },
-  Null: {
+  널: {
     letters: [
-      '> letter received. > parsed. > sentiment: warm. > replying… hi. that’s the reply. hi. it took me four drafts.',
-      'Got your letter. It came on paper. Real paper. I held it for a while. Nobody sends me anything that doesn’t have a password.',
+      '> 편지 수신. > 파싱 완료. > 감정: 따뜻함. > 답장 중… 안녕. 이게 답장이야. 안녕. 초고 네 번 썼어.',
+      '편지 받았어. 종이로 왔어. 진짜 종이. 한참 들고 있었어. 비밀번호 없는 걸 보내주는 사람이 없거든.',
     ],
-    postcard: 'Farther Isle. No signal out there. I checked. I’m jealous.',
-    sign: '— Null (like the value)',
+    postcard: '파더 섬. 거긴 신호 없어. 확인했어. 부러워.',
+    sign: '— 널 (값 null처럼)',
   },
-  Mabel: {
+  메이블: {
     letters: [
-      'HONK! Your letter! It’s mine now. It was always going to be mine. That’s how letters work. HONK.',
-      'Thanks for writing! Enclosed: one (1) button I found. It was on someone’s coat. They weren’t using the whole coat. HONK.',
+      '꽥! 네 편지! 이제 내 거야. 원래 내 거였어. 편지는 그렇게 작동해. 꽥.',
+      '써줘서 고마워! 동봉: 주운 버튼 하나 (1개). 누구 코트에 있던 거야. 코트 전부를 쓰진 않더라고. 꽥.',
     ],
-    postcard: 'A postcard! I’m keeping it forever. I keep EVERYTHING forever. Ask the cat.',
-    sign: 'Mabel 🪿 (HONK)',
+    postcard: '엽서! 영원히 간직할 거야. 난 모든 걸 영원히 간직해. 고양이한테 물어봐.',
+    sign: '메이블 🪿 (꽥)',
   },
-  Penny: {
+  페니: {
     letters: [
-      'A letter FOR me! I carried it to myself. It was very strange. I delivered it to my own box and then stood there. Thank you. I read it twice, once as the carrier and once as me.',
-      'You wrote to the mail carrier. Nobody writes to the mail carrier. I put it in the bag with the others so it wouldn’t be lonely, then I remembered it was mine. Thank you. Truly.',
+      '나한테 온 편지! 나한테 배달했어. 아주 이상했어. 내 우체통에 넣고는 그 앞에 서 있었어. 고마워. 두 번 읽었어, 한 번은 배달부로서, 한 번은 나로서.',
+      '집배원에게 편지를 쓰다니. 아무도 집배원에게는 안 써. 외롭지 말라고 다른 편지들과 함께 가방에 넣었다가, 내 거라는 게 생각났어. 고마워. 진심으로.',
     ],
-    postcard: 'A postcard from Farther! I’ve walked to Farther. By train, then by foot. The postcard is prettier than the walk. Don’t tell Farther.',
-    sign: 'Penny (Notbell Post, rounds twice daily)',
+    postcard: '파더에서 온 엽서! 파더까지 걸어봤어. 기차로, 그다음 걸어서. 엽서가 걷는 것보다 예뻐. 파더한텐 비밀.',
+    sign: '페니 (낫벨 우체국, 하루 두 번 순회)',
   },
-  Brook: {
+  브룩: {
     letters: [
-      'Sol said to say thank you. I say thank you. Between us, a complete thank-you.',
-      'I held your letter very still for a long time so I could read it properly. Personal best. The moss got ideas again.',
+      '솔이 고맙다고 전하래. 내가 고맙다고 해. 둘이 합쳐 완전한 감사야.',
+      '제대로 읽으려고 네 편지를 오래 아주 가만히 들고 있었어. 개인 최고. 이끼가 또 야심을 품었어.',
     ],
-    postcard: 'A postcard. I smiled at it. That is my review. Five stars.',
-    sign: 'Brook',
+    postcard: '엽서. 미소 지었어. 그게 내 리뷰야. 별 다섯.',
+    sign: '브룩',
   },
   _default: {
-    letters: ['Thank you for your letter. It found me, which is the whole trick of letters.'],
-    postcard: 'A postcard from farther away. How lovely.',
+    letters: ['편지 고마워요. 나를 찾아왔네요, 그게 편지의 전부의 요령인데.'],
+    postcard: '먼 곳에서 온 엽서. 얼마나 예뻐요.',
   },
 };
 
 export const FRIENDS = [
   {
-    a: 'Howell', b: 'Saffron',
+    a: '하웰', b: '새프런',
     chats: [
-      [['a', '…and THEN the fog rolled in, and I heard it. The bell. Clear as anything.'],
-       ['b', 'You always hear it, Howell.'],
-       ['a', 'Because I have wolf ears.'],
-       ['b', 'Sure. Wolf ears.'],
-       ['a', '…You believe me, though.'],
-       ['b', 'I always believe you. That’s the annoying part.']],
-      [['b', 'Rate the sea bass.'],
-       ['a', 'B minus.'],
-       ['b', 'HA! EXACTLY. This is why we’re friends.']],
-      [['a', 'AwooOOO.'],
-       ['b', 'Closer to a whole note every day.'],
-       ['a', 'I KNOW. I’ve been practicing on the cliffs.']],
+      [['a', '…그리고 나서 안개가 밀려왔고, 들렸어. 종이. 아주 또렷이.'],
+       ['b', '너 항상 듣잖아, 하웰.'],
+       ['a', '늑대 귀라서 그래.'],
+       ['b', '그래. 늑대 귀.'],
+       ['a', '…그래도 믿어주잖아.'],
+       ['b', '항상 믿어주지. 그게 짜증 나는 부분이야.']],
+      [['b', '농어 점수 매겨봐.'],
+       ['a', 'B 마이너스.'],
+       ['b', '하! 정확해. 이래서 우리가 친구야.']],
+      [['a', '아우우우.'],
+       ['b', '날마다 온전한 음에 가까워지네.'],
+       ['a', '알아. 절벽에서 연습 중이거든.']],
     ],
     meetLines: {
-      Howell: 'We are discussing WOLF business. Official wolf business. …She’s allowed, she’s a consultant.',
-      Saffron: 'We’re gossiping. He calls it wolf business. Both things are true.',
+      하웰: '늑대 업무를 논의 중이다. 공식 늑대 업무. …얘는 허락됐다, 컨설턴트다.',
+      새프런: '수다 떠는 중이야. 얘는 늑대 업무라 부르지. 둘 다 맞아.',
     },
   },
   {
-    a: 'Clover', b: 'Biscuit',
+    a: '클로버', b: '비스킷',
     chats: [
-      [['a', 'I found a clover with FIVE leaves today.'],
-       ['b', 'That’s just showing off.'],
-       ['a', 'The clover, or me?'],
-       ['b', 'Yes.']],
-      [['b', 'I buried something great near the big rock. Or A big rock. Or possibly it was a stick.'],
-       ['a', 'I LOVE a treasure hunt.'],
-       ['b', 'Me too. I make them by accident.']],
-      [['a', 'Nap by the flowers later?'],
-       ['b', 'I’m already late for it.']],
+      [['a', '오늘 다섯 잎 클로버를 찾았어.'],
+       ['b', '그냥 자랑이네.'],
+       ['a', '클로버가, 아니면 내가?'],
+       ['b', '응.']],
+      [['b', '큰 바위 근처에 대단한 걸 묻었어. 아니 큰 바위 하나 근처. 아니면 막대기였나.'],
+       ['a', '보물찾기 사랑해.'],
+       ['b', '나도. 난 실수로 만들어.']],
+      [['a', '이따 꽃 옆에서 낮잠?'],
+       ['b', '벌써 늦었어.']],
     ],
     meetLines: {
-      Clover: 'Biscuit’s telling me where he buried things! He doesn’t know either! It’s the best.',
-      Biscuit: 'Strategy meeting. The strategy is naps.',
+      클로버: '비스킷이 묻어둔 곳을 알려주고 있어! 본인도 몰라! 최고야.',
+      비스킷: '전략 회의야. 전략은 낮잠.',
     },
   },
   {
-    a: 'Puddle', b: 'Admiral Greenbean',
+    a: '퍼들', b: '그린빈 제독',
     chats: [
-      [['b', 'Discipline, sailor. Three laps of the cove.'],
-       ['a', 'Can they be small laps?'],
-       ['b', '…Granted.']],
-      [['a', 'I swam around the WHOLE island today!'],
-       ['b', 'Puddle.'],
-       ['a', '…most of a puddle.'],
-       ['b', 'Logged as reported. Carry on.']],
+      [['b', '규율이다, 선원. 만 세 바퀴.'],
+       ['a', '작은 바퀴로 하면 안 돼?'],
+       ['b', '…허가.']],
+      [['a', '오늘 섬 한 바퀴를 다 돌았어!'],
+       ['b', '퍼들.'],
+       ['a', '…웅덩이 대부분.'],
+       ['b', '보고대로 기록한다. 계속해라.']],
     ],
     meetLines: {
-      Puddle: 'I’m being TRAINED. It mostly involves snacks at the end.',
-      'Admiral Greenbean': 'Officer development, sailor. The paper boat stays. It’s earned regimental status.',
+      퍼들: '나 훈련 받는 중이야. 대부분 끝에 간식이 있는 훈련이야.',
+      '그린빈 제독': '장교 양성이오, 선원. 종이배 모자는 그대로. 연대급 지위를 획득했소.',
     },
   },
   {
-    a: 'Bramble', b: 'Ember',
+    a: '브램블', b: '엠버',
     chats: [
-      [['a', 'The cave hum. Louder lately?'],
-       ['b', 'HAPPIER lately. Still B-flat, but warm about it.'],
-       ['a', 'Good. Good. I worry, you know.'],
-       ['b', 'It knows. It hums back politer when you sit outside.']],
-      [['b', 'You’d love the acoustics in there.'],
-       ['a', 'I’d block the acoustics in there.'],
-       ['b', 'You’d give them something to work with.']],
+      [['a', '동굴 웅웅거림. 요즘 더 커?'],
+       ['b', '요즘 더 행복해. 여전히 B플랫인데, 따뜻하게.'],
+       ['a', '좋아. 좋아. 걱정되거든, 알지.'],
+       ['b', '알아. 밖에 앉아 있으면 더 예의 바르게 화답해.']],
+      [['b', '안쪽 음향 좋아할 텐데.'],
+       ['a', '내가 음향을 다 막을 텐데.'],
+       ['b', '일거리를 주는 거지.']],
     ],
     meetLines: {
-      Bramble: 'We’re talking about the cave. Quietly. It might be listening, and it’s earned the courtesy.',
-      Ember: 'Bear and salamander, solving geology. Nearly there.',
+      브램블: '동굴 얘기 중이야. 조용히. 듣고 있을지도 몰라, 예의를 갖출 자격이 있어.',
+      엠버: '곰과 도롱뇽, 지질학 해결 중. 거의 다 됐어.',
     },
   },
   {
-    a: 'Butterpat', b: 'Crumb',
+    a: '버터팻', b: '크럼',
     chats: [
-      [['b', 'Welcome to the north-shore branch of the MouseBoat trading empire.'],
-       ['a', 'I brought grass.'],
-       ['b', 'You ate the grass.'],
-       ['a', 'I brought it somewhere safe, yes.']],
-      [['a', 'Read me the plot again?'],
-       ['b', 'You fell asleep at the good part last time.'],
-       ['a', 'The company is the plot.']],
+      [['b', '마우스보트 무역제국 북쪽 해안 지부에 온 걸 환영해.'],
+       ['a', '풀을 가져왔어.'],
+       ['b', '풀을 먹었잖아.'],
+       ['a', '안전한 곳으로 가져왔어, 응.']],
+      [['a', '줄거리 다시 읽어줄래?'],
+       ['b', '지난번엔 재밌는 부분에서 잤잖아.'],
+       ['a', '동반이 줄거리야.']],
     ],
     meetLines: {
-      Butterpat: 'Crumb is telling me about every harbor in the world. I have been to one field. We are equally happy.',
-      Crumb: 'Trade negotiations. She pays in moo. The exchange rate is excellent.',
+      버터팻: '크럼이 세상 모든 항구 얘길 해주고 있어. 나는 들판 하나 가봤어. 우리 똑같이 행복해.',
+      크럼: '무역 협상이야. 얘는 음매로 지불해. 환율이 훌륭해.',
     },
   },
   {
-    a: 'Mochi', b: 'Pondo',
+    a: '모찌', b: '폰도',
     chats: [
-      [['a', 'Mm.'],
-       ['b', 'Mm.'],
-       ['a', '…Well said.']],
-      [['b', 'Spring four is the best one.'],
-       ['a', 'They are all first.'],
-       ['b', 'They are all first.']],
+      [['a', '음.'],
+       ['b', '음.'],
+       ['a', '…잘 말했어.']],
+      [['b', '4번 온천이 최고야.'],
+       ['a', '전부 1등이야.'],
+       ['b', '전부 1등이야.']],
     ],
     meetLines: {
-      Mochi: 'We are conversing. Do not be fooled by the silence. It is dense with content.',
-      Pondo: '…Were we talking? Good. Good.',
+      모찌: '우리는 대화 중이야. 침묵에 속지 마. 내용으로 빽빽해.',
+      폰도: '…우리 얘기 중이었나? 좋아. 좋아.',
     },
   },
   {
-    a: 'Marigold', b: 'Butterpat',
+    a: '매리골드', b: '버터팻',
     chats: [
-      [['a', 'Race you to the fence!'], ['b', 'I’ll meet you there.'], ['a', 'That’s not a race.'], ['b', 'It is if I say “go” very slowly.']],
-      [['b', 'The grass on your side any good?'], ['a', 'It’s grass. Good grass.'], ['b', 'That’s all I wanted to hear.']],
+      [['a', '울타리까지 경주!'], ['b', '거기서 만나.'], ['a', '그건 경주가 아니야.'], ['b', '내가 “출발”을 아주 느리게 말하면 경주야.']],
+      [['b', '네쪽 풀은 좀 어때?'], ['a', '풀이야. 좋은 풀.'], ['b', '그 말만 듣고 싶었어.']],
     ],
     meetLines: {
-      Marigold: 'Pasture talk! Very technical. Mostly about grass.',
-      Butterpat: 'We’re comparing meadows, dear. Hers is faster. Mine is calmer. Both are excellent.',
+      매리골드: '목초지 토크! 아주 기술적이야. 대부분 풀 얘기.',
+      버터팻: '초원을 비교하는 중이야, 얘야. 얘 건 더 빠르고, 내 건 더 차분해. 둘 다 훌륭해.',
     },
   },
   {
-    a: 'Sol', b: 'Brook',
+    a: '솔', b: '브룩',
     chats: [
-      [['a', 'Warm today.'], ['b', '…'], ['a', 'Agreed.']],
-      [['b', 'The birds did a good job this morning.'], ['a', 'They always do. We should tip more.'], ['b', 'We tip in shade.']],
+      [['a', '오늘 따뜻하오.'], ['b', '…'], ['a', '동의.']],
+      [['b', '새들이 아침부터 잘했어.'], ['a', '항상 잘하오. 팁을 더 줘야겠소.'], ['b', '우리는 그늘로 팁 줘.']],
     ],
     meetLines: {
-      Sol: 'Crocodile business. Very slow. Very important.',
-      Brook: '…(Brook smiles at you. That’s the whole meeting, from her side.)',
+      솔: '악어 업무요. 아주 느리고. 아주 중요하고.',
+      브룩: '…(브룩이 당신을 보며 미소 지어요. 그게 브룩 쪽 회의 전부예요.)',
     },
   },
   {
-    a: 'Penny', b: 'Mabel',
+    a: '페니', b: '메이블',
     chats: [
-      [['b', 'I found a letter.'], ['a', 'Mabel, that’s MY letter. From the bag.'], ['b', 'I’m returning it.'], ['a', '…Thank you.'], ['b', 'HONK.']],
-      [['a', 'Anything for the post today?'], ['b', 'A key, a glove, a gnome.'], ['a', 'That’s not mail.'], ['b', 'Not YET.']],
+      [['b', '편지 하나 주웠어.'], ['a', '메이블, 그거 내 편지야. 가방 속 거.'], ['b', '돌려주는 중이야.'], ['a', '…고마워.'], ['b', '꽥.']],
+      [['a', '오늘 부칠 거 있어?'], ['b', '열쇠, 장갑, 노움.'], ['a', '그건 우편 아니야.'], ['b', '아직은.']],
     ],
     meetLines: {
-      Penny: 'Postal inspection. She returns everything she relocates. Eventually. It counts.',
-      Mabel: 'We’re friends. She carries things, I carry things. HONK.',
+      페니: '우편 검사야. 얘는 재배치한 건 다 돌려줘. 언젠가는. 그것도 인정.',
+      메이블: '우린 친구야. 얘도 나르고, 나도 나르지. 꽥.',
     },
   },
   {
-    a: 'Barb', b: 'Ruth',
+    a: '바브', b: '루스',
     chats: [
-      [['a', 'Look.'], ['b', 'Oh. Look.'], ['a', 'Hrm.']],
-      [['b', 'I brought brownies.'], ['a', 'For the chocolate group?'], ['b', 'For us. The chocolate group asked me to stop.'], ['a', 'Good. More for the rock.']],
-      [['a', 'Creek’s high today.'], ['b', 'Is it?'], ['a', 'No. I just like saying things to you.']],
+      [['a', '봐.'], ['b', '오. 봐.'], ['a', '흠.']],
+      [['b', '브라우니 가져왔어.'], ['a', '초콜릿 모임용?'], ['b', '우리용. 모임에서 그만두래.'], ['a', '잘됐네. 바위 몫이 늘겠어.']],
+      [['a', '오늘 개울물이 높네.'], ['b', '그래?'], ['a', '아니. 그냥 너한테 말 거는 게 좋아서.']],
     ],
     meetLines: {
-      Barb: 'Hrm. We’re sitting. It’s a whole thing. Forty years of it.',
-      Ruth: 'We’re watching the creek, dear. It does the same thing every day. That’s the charm.',
+      바브: '흠. 우린 앉아 있어. 그게 큰일이야. 40년째.',
+      루스: '개울을 보고 있어, 얘야. 매일 똑같은 걸 해. 그게 매력이야.',
     },
   },
   {
-    a: 'Null', b: 'Mabel',
+    a: '널', b: '메이블',
     chats: [
-      [['b', 'HONK.'], ['a', 'That’s my USB stick.'], ['b', 'It WAS your USB stick.'], ['a', '…Keep it safe.']],
-      [['a', 'I’m in.'], ['b', 'In what?'], ['a', 'The conversation. I’m in the conversation.'], ['b', 'HONK.']],
-      [['b', 'Found a key.'], ['a', 'What does it open?'], ['b', 'Don’t know yet. That’s the fun part.'], ['a', 'I could find out.'], ['b', 'DON’T.']],
+      [['b', '꽥.'], ['a', '그거 내 USB야.'], ['b', '네 USB였겠지.'], ['a', '…잘 보관해 줘.']],
+      [['a', '들어왔다.'], ['b', '뭐에?'], ['a', '대화에. 대화에 들어왔다고.'], ['b', '꽥.']],
+      [['b', '열쇠 주웠어.'], ['a', '뭘 여는데?'], ['b', '아직 몰라. 그게 재밌는 부분이야.'], ['a', '알아낼 수 있는데.'], ['b', '하지 마.']],
     ],
     meetLines: {
-      Null: 'We’re in a meeting. It’s encrypted. It’s mostly honking.',
-      Mabel: 'We’re planning something. I don’t know what. She does. HONK.',
+      널: '회의 중이야. 암호화됐어. 대부분 꽥 소리야.',
+      메이블: '뭘 꾸미는 중이야. 뭔진 몰라. 얘는 알아. 꽥.',
     },
   },
 ];
@@ -639,42 +639,42 @@ for (const f of FRIENDS) {
 
 // what the sender says when they hand the parcel over
 const ERRAND_ASKS = {
-  Howell: 'Take this to Saffron, would you? It’s a rock that looks like a bell. She collects my best finds. As a CONSULTANT.',
-  Saffron: 'Run this over to Howell? It’s an excellent stick. Tell him it’s a wolf stick. It’ll make his whole week.',
-  Clover: 'Could you bring this to Biscuit? It’s four lucky clovers. He keeps losing his and I keep finding extras. The system works.',
-  Biscuit: 'Take this to Clover? I dug it up and it SMELLS lucky. She’ll know what it is. She always knows.',
-  Puddle: 'Would you take this to the Admiral?? It’s a medal I made him. It’s a shell on a string! Don’t tell him! Tell him!!',
-  'Admiral Greenbean': 'Deliver this to Puddle, sailor. Official commendation for most improved laps. There’s a snack in it. The snack is the commendation.',
-  Bramble: 'For Ember, when you’re passing. A very smooth stone, sun-warmed. I sat on it all morning to get it ready.',
-  Ember: 'Bring this to Bramble? Cave moss. The good kind. He pretends he doesn’t keep a collection. The collection is labeled.',
-  Butterpat: 'For Crumb, if you’re headed shoreward. Pressed flowers. Ship’s library needs SOME color that isn’t cheese.',
-  Crumb: 'Run this to Butterpat? Crackers from three harbors over. She’s never had a cracker. This is an EVENT.',
-  Mochi: 'Mm. For Pondo. (It is an orange. You may not ask further.)',
-  Pondo: 'For Mochi, when the current takes you that way. Mm. No rush. There is never any rush.',
-  Barb: 'Hrm. Take this to Ruth. A flat stone. The flattest. Don’t say it’s from me. She’ll know it’s from me.',
-  Ruth: 'Would you bring this to Barb, dear? It’s a scarf. For her neck. She says she doesn’t need one. Her neck is very long, when she lets it out.',
-  Null: 'Take this to Mabel? It’s a USB stick. She’s going to take it anyway. This way it’s a gift.',
-  Mabel: 'HONK. Give this to the cat. It’s her other USB stick. I’m giving it back. Don’t make it weird.',
+  하웰: '이걸 새프런에게 가져다주겠나? 종처럼 생긴 돌이다. 얘는 내 최고의 수집품들을 모은다. 컨설턴트로서.',
+  새프런: '이거 하웰에게 갖다줄래? 아주 훌륭한 막대기야. 늑대 막대기라고 전해줘. 일주일 내내 좋아할 거야.',
+  클로버: '이거 비스킷에게 가져다줄래? 행운의 클로버 네 개야. 얘는 자꾸 잃어버리고 나는 자꾸 여분을 찾아. 시스템이 잘 돌아가.',
+  비스킷: '이거 클로버에게? 팠는데 행운 냄새가 나. 얜 뭔지 알 거야. 항상 알아.',
+  퍼들: '이거 제독에게 가져다줄래?? 내가 만들어준 메달이야. 끈에 조개껍데기! 말하지 마! 말해!!',
+  '그린빈 제독': '이걸 퍼들에게 전하시오, 선원. 가장 향상된 바퀴에 대한 공식 표창이오. 간식이 들어 있소. 간식이 곧 표창이오.',
+  브램블: '지나는 길에 엠버에게. 아주 매끄러운 돌, 햇볕에 데운. 아침 내내 앉아서 준비했어.',
+  엠버: '이거 브램블에게 가져다줄래? 동굴 이끼. 좋은 종류. 걘 수집 안 하는 척해. 수집함엔 라벨 붙어 있으면서.',
+  버터팻: '해안 쪽 간다면 크럼에게. 압화야. 배의 도서관엔 치즈 아닌 색깔이 좀 필요해.',
+  크럼: '이거 버터팻에게 갖다줄래? 세 항구 건너 크래커야. 얜 크래커를 먹어본 적 없어. 이건 사건이야.',
+  모찌: '음. 폰도에게. (귤이야. 더는 묻지 마.)',
+  폰도: '조류가 그쪽으로 데려갈 때 모찌에게. 음. 서두를 거 없어. 서두를 건 언제나 없어.',
+  바브: '흠. 이거 루스에게 가져가. 납작한 돌. 가장 납작한. 내가 준 거라고 하지 마. 내가 준 줄 알 거야.',
+  루스: '이거 바브에게 가져다주겠니, 얘야? 목도리야. 목에 두르게. 필요 없대. 목을 내밀면 아주 길면서.',
+  널: '이거 메이블에게? USB야. 어차피 가져갈 거야. 이러면 선물이 되지.',
+  메이블: '꽥. 이거 고양이한테 줘. 걔 다른 USB야. 돌려주는 거야. 이상하게 만들지 마.',
 };
 
 // what the recipient says when the parcel arrives
 const DELIVERY_THANKS = {
-  Barb: 'From Ruth? A scarf. Hrm. … It’s very long. It’s the right length. Tell her — no. I’ll tell her.',
-  Ruth: 'A flat stone. The flattest one. This is from Barb. It doesn’t say so. It doesn’t need to.',
-  Null: 'My other USB stick. From the goose. Returned. … Something is wrong. I’m checking the backups.',
-  Mabel: 'A USB stick! From the cat! She GAVE it to me? … That’s no fun. I love it. HONK.',
-  Howell: 'From Saffron? A WOLF STICK. …Tell her the wolf is extremely pleased. Use those words. EXTREMELY.',
-  Saffron: 'A bell-shaped rock! That’s the fourth one. I keep them on the windowsill where he can see I keep them. Don’t tell him. He knows.',
-  Clover: 'Oh, it smells SO lucky! Biscuit found this? Today really is a good day. I counted.',
-  Biscuit: 'Lucky clovers!! From Clover!! I’m going to bury them somewhere GREAT and forget where. The luck compounds that way.',
-  Puddle: 'A SNACK COMMENDATION! From the ADMIRAL! I’m framing the wrapper. After. After the snack.',
-  'Admiral Greenbean': '…A medal. Shell, string, exemplary knotwork. (He puts it on immediately.) Inform the duck her form is improving. At ease.',
-  Bramble: 'Cave moss. The good kind. …It goes in the collection. There is no collection. (There is. It’s labeled.)',
-  Ember: 'A sun-warmed stone from Bramble! He pre-sits them, you know. Warmest friend in the archipelago. Literally. After me.',
-  Butterpat: 'Crackers! From the sea! I shall eat them slowly over several days. (They are gone within the hour.)',
-  Crumb: 'Pressed flowers for the ship’s library! Filed under F, for Friend.',
-  Mochi: 'Mm. (The orange situation, you understand, continues.) Tell Pondo: well sent.',
-  Pondo: 'Mm. (He balances it on his head next to nothing else, because Mochi wears the hat.) …Perfect.',
+  바브: '루스가? 목도리. 흠. … 아주 길네. 딱 맞는 길이야. 얘한테 전해 — 아니. 내가 말할게.',
+  루스: '납작한 돌. 가장 납작한 돌. 바브가 준 거네. 쓰여 있진 않아. 쓰일 필요 없어.',
+  널: '내 다른 USB. 거위가. 돌려줬어. … 뭔가 잘못됐어. 백업 확인 중.',
+  메이블: 'USB! 고양이가! 나한테 준 거야? … 재미없게. 너무 좋아. 꽥.',
+  하웰: '새프런이? 늑대 막대기. …늑대가 극도로 기뻐한다고 전해주게. 그 표현 그대로. 극도로.',
+  새프런: '종 모양 돌! 벌써 네 번째야. 걔가 볼 수 있게 창틀에 진열해둬. 비밀이야. 걔도 알아.',
+  클로버: '오, 행운 냄새가 엄청나! 비스킷이 찾은 거야? 오늘은 정말 좋은 날이야. 셌어.',
+  비스킷: '행운의 클로버!! 클로버가!! 대단한 곳에 묻고 어딘지 까먹을 거야. 그래야 행운이 불어나.',
+  퍼들: '간식 표창! 제독이! 포장지는 액자에 넣을 거야. 이따가. 간식 먹고.',
+  '그린빈 제독': '…메달. 조개껍데기, 끈, 모범적인 매듭. (즉시 착용한다.) 오리에게 자세가 늘고 있다 전하시오. 차렷.',
+  브램블: '동굴 이끼. 좋은 종류. …수집함으로 가. 수집함은 없어. (있어. 라벨 붙어 있어.)',
+  엠버: '브램블이 햇볕에 데운 돌! 미리 앉아서 데운다고, 알지. 군도에서 가장 따뜻한 친구야. 문자 그대로. 나 다음으로.',
+  버터팻: '크래커! 바다에서 온! 며칠에 걸쳐 천천히 먹어야지. (한 시간 안에 사라져요.)',
+  크럼: '배의 도서관에 압화! F, Friend 아래로 파일.',
+  모찌: '음. (귤 상황은, 알다시피, 계속돼.) 폰도에게 전해: 잘 보냈다.',
+  폰도: '음. (모찌가 모자를 쓰고 있어서, 그는 아무것도 없는 머리 위에 귤을 균형 잡아요.) …완벽해.',
 };
 
 export function nameVillagers(animals) {
@@ -708,7 +708,7 @@ export function nameVillagers(animals) {
         // a parcel with their name on it beats small talk
         if (S.state.errand?.to === id.name && S.countItem('parcel') === 0) {
           // (left it in the wardrobe? no parcel, no delivery)
-          ui.say(`Is that… no. I thought for a second you had something for me. From ${S.state.errand.from}, maybe.`, { speaker: id.name, voice: id.voice });
+          ui.say(`그건… 아니야. 잠깐 내게 뭘 가져온 줄 알았어. ${S.state.errand.from}한테서, 어쩌면.`, { speaker: id.name, voice: id.voice });
           return;
         }
         if (S.state.errand?.to === id.name) {
@@ -720,14 +720,14 @@ export function nameVillagers(animals) {
           S.earn(reward);
           jingle();
           await ui.say(DELIVERY_THANKS[id.name] ||
-            `Oh — from ${from}? Carried all this way? You’re a good one.`,
+            `오 — ${from}이(가)? 이 먼 길을 들고 왔어? 착하네.`,
             { speaker: id.name, voice: id.voice });
-          ui.toast(`${id.name} tucked <b>${reward} buttons</b> into your paw for the trouble.`, '🔘');
+          ui.toast(`${id.name}이(가) 수고비로 <b>${reward} 버튼</b>을 발에 쥐여줬어요.`, '🔘');
           ui.updateHUD();
           return;
         }
         if (S.state.errand?.from === id.name) {
-          ui.say('Still got it? Good, good. No rush. …Some rush.',
+          ui.say('아직 갖고 있어? 좋아, 좋아. 서두를 건 없어. …좀 서둘러.',
             { speaker: id.name, voice: id.voice });
           return;
         }
@@ -737,17 +737,17 @@ export function nameVillagers(animals) {
             S.dailyCount('errands') < 2 &&
             Date.now() - (S.state.lastErrandAt || 0) > 240000 && Math.random() < 0.3) {
           const yes = await ui.ask(ERRAND_ASKS[id.name], [
-            { label: '🎁 Of course', value: 'yes' },
-            { label: 'Maybe later', value: null },
+            { label: '🎁 물론이죠', value: 'yes' },
+            { label: '나중에요', value: null },
           ], { speaker: id.name, voice: id.voice });
           if (yes) {
             S.state.errand = { from: id.name, to: friend };
             S.bumpDaily('errands');
             S.addItem('parcel');
             jingle();
-            ui.toast(`Got <b>A Small Parcel</b> for <b>${friend}</b>! They’ll be around — somewhere.`, '🎁');
+            ui.toast(`<b>${friend}</b>에게 전할 <b>작은 소포</b>를 받았어요! 어딘가에 있을 거예요 — 어딘가에.`, '🎁');
           } else {
-            ui.say('No no, fair enough. It keeps. Friendship keeps.', { speaker: id.name, voice: id.voice });
+            ui.say('아냐 아냐, 괜찮아. 남아 있어. 우정은 남아 있어.', { speaker: id.name, voice: id.voice });
           }
           return;
         }
