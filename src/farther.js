@@ -937,7 +937,7 @@ export function createFarther() {
       kaching();
       ui.updateHUD();
       ui.toast(`<b>${ITEMS[g.id].name}</b>을(를) 샀어요. 사이프러스가 버튼을 파우치에 파일해요.`, ITEMS[g.id].emoji);
-      await ui.say(SAYS[g.id], { speaker: 'Cypress', voice: VOICE.cypress });
+      await ui.say(SAYS[g.id], { speaker: '사이프러스', voice: VOICE.cypress });
       return buyAisle(aisle);
     }
     async function shopMenu() {
@@ -947,7 +947,7 @@ export function createFarther() {
         { label: '그냥 구경 중', value: null },
       ], { speaker: '사이프러스', voice: VOICE.cypress });
       if (c === 'chat') {
-        await ui.say(pick(CYPRESS_CHAT), { speaker: 'Cypress', voice: VOICE.cypress });
+        await ui.say(pick(CYPRESS_CHAT), { speaker: '사이프러스', voice: VOICE.cypress });
         return shopMenu();
       }
       if (c) return buyAisle(c);
@@ -1582,7 +1582,7 @@ export function createFarther() {
       '신청곡? 받아. 같은 노래를 연주하지만, 받긴 해.' ] },
     { name: '핌', kind: 'penguin', colors: {}, spot: 'tent', prop: 'pack', voice: 520, lines: [
       '모든 날씨에 대비해서 쌌어. 맑네. 맑음에도 준비됐어. 모든 게 준비됐고, 모든 게 무거워.',
-      'Is there a dress code for camping? I brought three. I’m wearing all of them.' ] },
+      '캠핑에 드레스 코드가 있어? 세 벌 가져왔어. 전부 입고 있어.' ] },
     { name: '리디', kind: 'frog', colors: { body: 0x7ab04a, belly: 0xf1ecc4, feet: 0xe8c547 }, spot: 'summit', prop: 'pack', voice: 700, lines: [
       '기본 무게: 4온스. 그게 나야. 내가 그 4온스야.',
       '올라왔구나! 등록부에 서명해. 연필 써. 연필도 경험의 일부야.' ] },
@@ -1978,4 +1978,4 @@ function signBoard(text, w = 3.4, h = 0.8) {
     new THREE.MeshStandardMaterial({ map: tex, flatShading: true, roughness: 0.9 }));
   board.castShadow = board.receiveShadow = true;
   return board;
-                                     }
+    }
