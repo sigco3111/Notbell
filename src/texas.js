@@ -23,11 +23,11 @@ function box(w, h, d, color) {
 }
 
 const PECOS_LINES = [
-  'WHAT. …Well? You gonna stand there or say howdy? Around here we say howdy.',
-  'This here’s TEXAS. Population: ME. Census complete. GIT— …no. No, stay a minute. Wind’s been my only visitor all week, and the wind don’t say howdy.',
-  'Them lights ain’t Christmas lights, they’re TEXAS lights. Burn all year. …Pretty, though, ain’t they. My ma strung the first strand. I just kept goin’.',
-  'You ROWED all the way out here? To see ME? …That so. (A very long pause.) That’s real fine. ANYWAY. WHAT ELSE.',
-  'The big islands got their bells and their ghosts and their fancy mossy bridges. Texas has got a can, a slingshot, and STANDARDS.',
+  '뭐야. …왜? 거기 서 있을 거야, 하우디라고 할 거야? 여기선 하우디라고 해.',
+  '여긴 텍사스야. 인구: 나. 인구조사 끝. 꺼져— …아니. 아니, 잠깐 있어 봐. 이번 주 손님은 바람뿐이었는데, 바람은 하우디도 안 하거든.',
+  '저 불들은 크리스마스 불이 아니야, 텍사스 불이야. 일 년 내내 켜져 있어. …그래도 예쁘지, 안 그래. 첫 줄은 우리 엄마가 달았어. 난 그냥 계속 이어갔을 뿐이야.',
+  '여기까지 노 저어 온 거야? 나 보러? …그렇구나. (아주 긴 침묵.) 그거 참 좋네. 어쨌든. 또 뭐 없나.',
+  '큰 섬들은 종이니 유령이니 이끼 낀 근사한 다리니 있지. 텍사스엔 깡통, 새총, 그리고 기준이 있어.',
 ];
 
 export function createTexas() {
@@ -256,13 +256,13 @@ export function createTexas() {
       if (!S.hasFlag('metPecos')) {
         S.setFlag('metPecos');
         ui.say([
-          'A fire ant the size of a teakettle rounds on you, eyebrows first.',
-          '“WHO GOES— a visitor? A VISITOR. …Pecos. This is Texas. Wipe your feet. There’s no mat. Wipe ’em anyway, on PRINCIPLE.”',
-        ], { speaker: 'Pecos', voice: 950 });
+          '주전자만 한 불개미가 눈썹부터 앞세우며 당신에게 돌아서요.',
+          '“누구냐— 손님? 손님이라고. …페코스야. 여긴 텍사스야. 발 닦아. 매트는 없어. 그래도 닦아, 원칙이란 게 있으니까.”',
+        ], { speaker: '페코스', voice: 950 });
         return;
       }
       let idx = Math.floor(Math.random() * PECOS_LINES.length);
-      ui.say(PECOS_LINES[idx], { speaker: 'Pecos', voice: 950 });
+      ui.say(PECOS_LINES[idx], { speaker: '페코스', voice: 950 });
     },
   });
 
