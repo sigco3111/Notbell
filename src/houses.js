@@ -84,8 +84,8 @@ function isHomeNow(name) {
   if (!SCHEDULE[name]) return false;
   if (currentWeather() !== 'clear') {
     // rain sends everyone in — except the wolf (drama) and the salamander (joy)
-    if (name === 'Ember') return false;
-    if (name !== 'Howell') return true;
+    if (name === '엠버') return false;
+    if (name !== '하웰') return true;
   }
   const [s, e] = SCHEDULE[name];
   const h = hourNow();
@@ -361,7 +361,7 @@ function buildVillagerInterior(group, B, name, style) {
   group.add(rug);
 
   // ...and a home that could only be theirs
-  if (name === 'Clover') {
+  if (name === '클로버') {
     const pastels = [0xffd9e8, 0xd9e8ff, 0xfff3c9, 0xe2ffd9, 0xf3d9ff];
     for (let i = 0; i < 7; i++) {
       const cushion = new THREE.Mesh(new THREE.IcosahedronGeometry(rand(0.3, 0.45), 1), mat(pastels[i % 5], 0.95));
@@ -374,7 +374,7 @@ function buildVillagerInterior(group, B, name, style) {
     const teaLeg = box(0.15, 0.4, 0.15, 0xd9c08f);
     teaLeg.position.set(B.x - 1.5, 0.2, B.z - 3.2);
     group.add(teaTable, teaLeg);
-  } else if (name === 'Biscuit') {
+  } else if (name === '비스킷') {
     for (let i = 0; i < 5; i++) {
       const patch = new THREE.Mesh(new THREE.CircleGeometry(rand(0.3, 0.55), 7), mat(0x77603f));
       patch.rotation.x = -Math.PI / 2;
@@ -396,7 +396,7 @@ function buildVillagerInterior(group, B, name, style) {
       tr.position.set(B.x - 2.2 + i * 0.7, 1.68, B.z - 4.0);
       group.add(tr);
     });
-  } else if (name === 'Saffron') {
+  } else if (name === '새프런') {
     for (let i = 0; i < 5; i++) {
       const bunch = new THREE.Group();
       for (let k = 0; k < 3; k++) {
@@ -427,7 +427,7 @@ function buildVillagerInterior(group, B, name, style) {
       bottle.position.set(B.x + 3 + (i % 2) * 0.5, 1.4 + Math.floor(i / 2) * 0.5, B.z - 4.0);
       group.add(bottle);
     }
-  } else if (name === 'Howell') {
+  } else if (name === '하웰') {
     // the moon poster: dark frame, pale moon, total sincerity
     const posterFrame = box(2.0, 2.4, 0.12, 0x1d2738);
     posterFrame.position.set(B.x - 1.5, 1.7, B.z - 4.4);
@@ -446,7 +446,7 @@ function buildVillagerInterior(group, B, name, style) {
     book.position.set(B.x + 3.4, 1.06, B.z + 1.8);
     book.rotation.z = 0.08;
     group.add(bookStand, book);
-  } else if (name === 'Marigold') {
+  } else if (name === '매리골드') {
     // ribbon wall + hay corner
     for (let i = 0; i < 5; i++) {
       const ribbon = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.06, 8),
@@ -468,7 +468,7 @@ function buildVillagerInterior(group, B, name, style) {
     shoe.position.set(B.x, 2.6, B.z - 4.32);
     shoe.rotation.z = Math.PI * 0.85; // ends up — luck stays in
     group.add(shoe);
-  } else if (name === 'Ember') {
+  } else if (name === '엠버') {
     // a ring of numbered warm stones around a little hearth
     for (let i = 0; i < 9; i++) {
       const a2 = (i / 9) * Math.PI * 2;
@@ -485,7 +485,7 @@ function buildVillagerInterior(group, B, name, style) {
     embers.rotation.x = -Math.PI / 2;
     embers.position.set(B.x + 1, 0.26, B.z - 1);
     group.add(embers);
-  } else if (name === 'Barb') {
+  } else if (name === '바브') {
     // a flat rock indoors, for rainy days, and the jars of creek water
     const rock = new THREE.Mesh(new THREE.IcosahedronGeometry(0.8, 0), mat(0x7a7468, 0.95));
     rock.scale.set(1.3, 0.35, 1.0);
@@ -514,7 +514,7 @@ function buildVillagerInterior(group, B, name, style) {
     rback.position.set(B.x + 1.2, 0.85, B.z - 2.0);
     group.add(rocker, rback);
     HOME_SOLIDS[name] = [{ x: B.x + 2.6, z: B.z - 2.8, r: 0.9 }, { x: B.x + 1.2, z: B.z - 1.7, w: 1.0, d: 1.0 }];
-  } else if (name === 'Null') {
+  } else if (name === '널') {
     // the desk, six screens of green text, cables, and one that's just the creek
     const desk = box(3.4, 0.9, 1.0, 0x2a2a30);
     desk.position.set(B.x + 1.2, 0.45, B.z - 3.6);
@@ -536,7 +536,7 @@ function buildVillagerInterior(group, B, name, style) {
       cable.rotation.y = 0.2 * (i - 1.5);
       group.add(cable);
     }
-  } else if (name === 'Mabel') {
+  } else if (name === '메이블') {
     // the collection, shelved: gloves, gnomes, a doorknob with no door
     const shelf = box(3.0, 2.2, 0.5, 0x8a5a3a);
     shelf.position.set(B.x + 2.0, 1.1, B.z - 4.1);
@@ -559,7 +559,7 @@ function buildVillagerInterior(group, B, name, style) {
     gnome.add(gb, gh, gc);
     gnome.position.set(B.x - 1.2, 0, B.z - 2.4);
     group.add(gnome);
-  } else if (name === 'Butterpat') {
+  } else if (name === '버터팻') {
     // the churn, the pails, and a portrait of a truly excellent field
     const churn = new THREE.Group();
     const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.42, 0.9, 9), mat(0x8a5a3a));
@@ -583,7 +583,7 @@ function buildVillagerInterior(group, B, name, style) {
       new THREE.MeshBasicMaterial({ color: 0x6ec45a }));
     fieldArt.position.set(B.x + 1, 2.1, B.z - 4.29);
     group.add(fieldArt);
-  } else if (name === 'Bramble') {
+  } else if (name === '브램블') {
     const chair = new THREE.Group();
     const seat = box(1.6, 0.5, 1.5, 0x8a5a3a);
     seat.position.y = 0.45;
@@ -1033,7 +1033,7 @@ export function createHouses(animals, obstacles = []) {
   for (const a of animals) {
     const name = a.identity?.name;
 
-    if (name === 'Crumb') {
+    if (name === '크럼') {
       // Crumb's house floats: nights are spent on the MouseBoat's deck
       if (!MOUSEBOAT) continue;
       const vh = {
@@ -1050,7 +1050,7 @@ export function createHouses(animals, obstacles = []) {
         label: '크럼에게 소리쳐 부르기',
         use: () => {
           const lines = HOME_LINES.크럼;
-          ui.say(lines[crumbIdx++ % lines.length], { speaker: 'Crumb', voice: a.identity.voice });
+          ui.say(lines[crumbIdx++ % lines.length], { speaker: '크럼', voice: a.identity.voice });
         },
       });
       register({
@@ -1187,10 +1187,10 @@ export function createHouses(animals, obstacles = []) {
 
   // 루스 lives at Barb's: same door, same room, her own spot by the yarn
   {
-    const barb = households.find((vh) => vh.name === 'Barb');
-    const ruthA = animals.find((a) => a.identity?.name === 'Ruth');
+    const barb = households.find((vh) => vh.name === '바브');
+    const ruthA = animals.find((a) => a.identity?.name === '루스');
     if (barb && ruthA) {
-      const vh = { a: ruthA, name: 'Ruth', zoneId: barb.zoneId, seat: { x: barb.seat.x - 2.2, z: barb.seat.z + 1.4 }, doorOut: barb.doorOut, home: false };
+      const vh = { a: ruthA, name: '루스', zoneId: barb.zoneId, seat: { x: barb.seat.x - 2.2, z: barb.seat.z + 1.4 }, doorOut: barb.doorOut, home: false };
       households.push(vh);
       let ri = 0;
       register({
@@ -1198,15 +1198,15 @@ export function createHouses(animals, obstacles = []) {
         enabled: () => vh.home,
         label: '루스와 대화하기',
         use: async () => {
-          if (await birthdayTalk('Ruth', ruthA.identity.voice)) return;
-          ui.say(HOME_LINES.루스[ri++ % HOME_LINES.루스.length], { speaker: 'Ruth', voice: ruthA.identity.voice });
+          if (await birthdayTalk('루스', ruthA.identity.voice)) return;
+          ui.say(HOME_LINES.루스[ri++ % HOME_LINES.루스.length], { speaker: '루스', voice: ruthA.identity.voice });
         },
       });
     }
   }
 
   // 엠버 keeps a second address: the cave, at her appointed hours
-  const ember = households.find((vh) => vh.name === 'Ember');
+  const ember = households.find((vh) => vh.name === '엠버');
   if (ember) {
     ember.caveSeat = { x: -295.5, z: -4 };
     let caveIdx = 0;
@@ -1216,7 +1216,7 @@ export function createHouses(animals, obstacles = []) {
       label: '엠버와 대화하기',
       use: () => {
         const lines = HOME_LINES.엠버;
-        ui.say(lines[caveIdx++ % lines.length], { speaker: 'Ember', voice: ember.a.identity.voice });
+        ui.say(lines[caveIdx++ % lines.length], { speaker: '엠버', voice: ember.a.identity.voice });
       },
     });
   }
@@ -1282,7 +1282,7 @@ export function createHouses(animals, obstacles = []) {
     for (const vh of households) {
       let mode;
       if (vh.forced !== undefined) mode = vh.forced ? 'house' : 'out';
-      else if (vh.name === 'Ember' && emberCaveTime()) mode = 'cave';
+      else if (vh.name === '엠버' && emberCaveTime()) mode = 'cave';
       else mode = isHomeNow(vh.name) ? 'house' : 'out';
       if (!force && mode === vh.mode) continue;
       const was = vh.mode;
@@ -1401,4 +1401,4 @@ export function createHouses(animals, obstacles = []) {
   if (mailboxes.바브) mailboxes.루스 = mailboxes.바브;
   if (MOUSEBOAT) mailboxes.크럼 = { x: MOUSEBOAT.knock.x, z: MOUSEBOAT.knock.z };
   return { group, update, forceHome, mailboxes, myMailbox: { x: myBox.position.x, z: myBox.position.z } };
-                }
+  }
