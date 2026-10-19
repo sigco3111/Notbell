@@ -163,33 +163,33 @@ function nextLine(key, lines) {
 }
 
 const SPIKE = [
-  'Welcome to Bog Ink. Tattoos, and rock and roll. Mostly rock and roll. The tattoos are how I pay for the rock and roll.',
-  'Rock and roll never dies. It just gets a real good tattoo and moves to a bog.',
-  'I did Barb’s. “RUTH,” in a heart, on the shell. Took four hours. She didn’t flinch once. She did cry. Different thing.',
-  'The mohawk? Grows like that. I just point it.',
-  'People ask if it hurts. Everything hurts. That’s how you know it’s real. Also, it doesn’t hurt much. I’m very gentle. Don’t tell anybody.',
+  '보그 잉크에 온 걸 환영해. 타투, 그리고 로큰롤. 대부분 로큰롤. 타투는 로큰롤비를 버는 수단이야.',
+  '로큰롤은 죽지 않아. 그냥 멋진 타투를 새기고 늪으로 이사할 뿐이지.',
+  '바브 것도 내가 했어. “루스,” 하트 안에, 등딱지에. 네 시간 걸렸어. 한 번도 안 움찔했지. 울긴 울었어. 그건 다른 거야.',
+  '모히칸? 그냥 이렇게 자라. 난 방향만 잡아줘.',
+  '아프냐고들 물어. 모든 게 아파. 그래야 진짜인 줄 알지. 그리고, 별로 안 아파. 나 아주 부드러워. 아무한테도 말하지 마.',
 ];
 const SLOANE = [
-  'Welcome… to… Low… Tide. … Take your time. I’m going to.',
-  'Every record in here is on sale. The sale started in the spring. Of which year… is a good question.',
-  'The listening booth is free. Put on anything. I’ll hear it from here. I hear everything. Slowly.',
-  'Vinyl sounds warmer. So do I. We’re both… taking the scenic route.',
+  '어서… 오세요… 로우… 타이드에. … 천천히… 하세요. 나도 그럴 거니까.',
+  '여기 모든 레코드는 세일 중이야. 세일은 봄에 시작됐어. 몇 년도 봄이냐고… 좋은 질문이야.',
+  '청음 부스는 무료야. 아무거나 틀어. 여기서 들을게. 난 다 들어. 천천히.',
+  '바이닐이 더 따뜻하게 들려. 나도 그래. 우리 둘 다… 둘러가는 길을 택했거든.',
 ];
 const LILY = [
-  'AND a one, AND a two — oh! A new face! Grab a spot! Anywhere! Barb stands in the back and doesn’t do the arms. That’s valid!',
-  'Zumba is joy with a beat. Also cardio. Mostly joy. The cardio sneaks in.',
-  'The goose is banned from the front row. She knows why. We ALL know why.',
+  '하나, 그리고 둘 — 오! 새 얼굴! 자리 잡아! 어디든! 바브는 뒤에 서서 팔 동작은 안 해. 그것도 인정!',
+  '줌바는 비트를 탄 기쁨이야. 유산소이기도 하고. 대부분 기쁨. 유산소는 살짝 끼어들 뿐.',
+  '거위는 맨 앞줄 출입 금지야. 본인도 이유를 알아. 우리 모두 알지.',
 ];
 const DABBLE = [
-  'Watercolor is just water, with opinions. Let it go where it wants. Then say you meant it.',
-  'Ruth paints the bog every week. It comes out a pink smudge. It is the most accurate painting in the room.',
-  'There are no mistakes in watercolor. There are only happy puddles.',
+  '수채화는 그냥 물이야, 의견이 있는 물. 가고 싶은 대로 가게 둬. 그리고 원래 그럴 의도였다고 해.',
+  '루스는 매주 늪을 그려. 결과는 분홍 얼룩. 이 방에서 가장 정확한 그림이야.',
+  '수채화에 실수란 없어. 오직 행복한 물웅덩이만 있을 뿐.',
 ];
 const CHOC = [
-  [['Coco', 'Welcome back, everyone. Who’d like to share?'], ['a mouse', 'Hi. I’m Pim. It’s been three days since my last truffle.'], ['everyone', 'Hi, Pim.'], ['Coco', 'Thank you, Pim. Three days is three days.']],
-  [['a bear', 'I walked past the fudge place today.'], ['Coco', 'And?'], ['a bear', 'I walked past it three times.'], ['Coco', 'That’s still past, Hubert. That counts.']],
-  [['a hamster', 'I found a chocolate coin in my cheek. I don’t know how long it had been there.'], ['Coco', 'We don’t judge the cheek.'], ['everyone', 'We don’t judge the cheek.']],
-  [['Coco', 'Ruth brought brownies again.'], ['a mouse', 'For who?'], ['Coco', '…For support.'], ['a bear', 'I feel very supported.']],
+  [['코코', '다시 온 걸 환영해요, 여러분. 누가 나눠 볼까요?'], ['생쥐', '안녕하세요. 전 핌이에요. 마지막 트러플 이후 사흘 됐어요.'], ['모두', '안녕, 핌.'], ['코코', '고마워요, 핌. 사흘은 사흘이죠.']],
+  [['곰', '오늘 퍼지 가게 앞을 지나쳤어요.'], ['코코', '그래서요?'], ['곰', '세 번 지나쳤어요.'], ['코코', '그래도 지나친 거예요, 휴버트. 인정돼요.']],
+  [['햄스터', '볼주머니에서 초콜릿 동전을 발견했어요. 얼마나 있었는지 몰라요.'], ['코코', '우린 볼주머니를 판단하지 않아요.'], ['모두', '우린 볼주머니를 판단하지 않아요.']],
+  [['코코', '루스가 또 브라우니를 가져왔어요.'], ['생쥐', '누구를 위해요?'], ['코코', '…지지를 위해요.'], ['곰', '아주 큰 지지를 느껴요.']],
 ];
 
 export function createCran(player) {
@@ -223,10 +223,10 @@ export function createCran(player) {
 
   addIslandInfo({
     key: 'cran',
-    name: 'Isle of Cran', x: C.x, z: C.z, r: 30, icon: '🍒',
-    blurb: 'A cranberry bog over a footbridge from Grove Isle. A creek, the turtles who sit by it, Spanish moss, a gazebo in a ring of flower pots, Bog Ink, Low Tide Records, and the Community Center (zumba, watercolor, Chocoholics Anonymous).',
-    folk: 'Barb (snapping turtle) · Ruth (box turtle) · Null (a black cat; a hacker) · Mabel (a goose) · Spike · Sloane · Coach Lily · Miss Dabble · Coco',
-    mystery: '“East of the orchards there’s a red island. Red in the water, I mean — the whole bay goes red in the autumn and then some fool goose honks at you.” —Captain Brine',
+    name: '크랜 섬', x: C.x, z: C.z, r: 30, icon: '🍒',
+    blurb: '그로브 섬에서 육교를 건너면 나오는 크랜베리 늪. 개울, 그 곁에 앉는 거북들, 스페인 이끼, 화분 원형 속 정자, 보그 잉크, 로우 타이드 레코드, 그리고 커뮤니티 센터(줌바, 수채화, 초콜릿 중독자 모임).',
+    folk: '바브(늑대거북) · 루스(상자거북) · 널(검은 고양이; 해커) · 메이블(거위) · 스파이크 · 슬론 · 릴리 코치 · 대블 선생님 · 코코',
+    mystery: '“과수원 동쪽에 빨간 섬이 있어. 물이 빨갛다는 뜻이야 — 가을이면 만 전체가 빨개지고 그러면 어떤 바보 거위가 울어대지.” —브라인 선장',
   });
 
   // ============================================== the Grove footbridge ----
@@ -277,7 +277,7 @@ export function createCran(player) {
     });
     // the welcome sign at the Cran end
     const sp = { x: B.x - CS.ux * 1.2 + Math.cos(ry) * 1.8, z: B.z - CS.uz * 1.2 - Math.sin(ry) * 1.8 };
-    const sg = sign(['ISLE OF CRAN', 'pop. 4 · the turtles count twice'], { w: 2.4, h: 0.8, bg: '#8c3a3f', fg: '#f3ead6' });
+    const sg = sign(['크랜 섬', '인구 4 · 거북은 두 번 셈'], { w: 2.4, h: 0.8, bg: '#8c3a3f', fg: '#f3ead6' });
     sg.position.set(sp.x, terrainHeight(sp.x, sp.z) + 1.5, sp.z);
     sg.rotation.y = ry + Math.PI;
     group.add(sg);
@@ -368,10 +368,10 @@ export function createCran(player) {
     put(rock, 1.2, 3.0, 0.05);
     register({
       pos: new THREE.Vector3(W(1.2, 3).x, 0, W(1.2, 3).z), r: 1.8,
-      label: 'sit on the good rock',
+      label: '좋은 바위에 앉기',
       use: () => ui.say([
-        'You sit on the good rock. It is flat, and warm, and exactly the size of one turtle, or two turtles who don’t mind.',
-        'The creek goes by. A cranberry goes by on it, then another. You are, for a moment, extremely in no hurry.',
+        '좋은 바위에 앉아요. 평평하고, 따뜻하고, 거북 한 마리, 혹은 괜찮다면 두 마리 크기예요.',
+        '개울이 흘러가요. 크랜베리가 하나 떠내려가고, 또 하나. 잠깐 동안, 당신은 극도로 서두를 게 없어요.',
       ]),
     });
   }
@@ -443,22 +443,22 @@ export function createCran(player) {
     skiff.position.set(skp.x, WATER_Y + 0.22, skp.z);
     skiff.rotation.y = 0.3;
     group.add(skiff);
-    const hs = sign(['HARVEST IN PROGRESS', 'please do not swim in the product'], { w: 2.4, h: 0.7, bg: '#f3ead6', fg: '#8c3a3f' });
+    const hs = sign(['수확 중', '상품 안에서 수영 금지'], { w: 2.4, h: 0.7, bg: '#f3ead6', fg: '#8c3a3f' });
     put(hs, fb.u0 - 1.0, fb.v1 + 0.4, 1.2, 0);
     put(cyl(0.06, 0.06, 1.2, 5, 0x6e5a44), fb.u0 - 1.0, fb.v1 + 0.4, 0.3);
     solidBox(fb.u0 - 1.0, fb.v1 + 0.4, 2.4, 0.3);
     register({
       pos: new THREE.Vector3(W(fb.u0 - 1, fb.v1 + 1).x, 0, W(fb.u0 - 1, fb.v1 + 1).z), r: 1.8,
-      label: 'look at the flooded bog',
+      label: '물에 잠긴 늪 보기',
       use: () => ui.say([
-        'The bed has been flooded to the brim and every berry has let go of its vine and come up to the top: a whole square of red, floating, packed edge to edge, bobbing very slightly all together.',
-        'Cranberries float because each one has four little pockets of air inside. Barb says that’s the whole secret. She says it about a lot of things.',
+        '밭이 가득 물에 잠겼고 모든 열매가 덩굴에서 손을 놓고 위로 올라왔어요: 온통 빨간 사각형, 떠 있고, 빽빽이, 다 함께 아주 살짝 흔들려요.',
+        '크랜베리가 뜨는 건 안에 작은 공기 주머니 네 개가 있어서예요. 바브는 그게 전부의 비결이래요. 많은 것들에 대해 그렇게 말해요.',
       ]),
     });
     register({
       pos: new THREE.Vector3(W(12, -12).x, 0, W(12, -12).z), r: 2.4, priority: 0,
-      label: 'walk through the cranberries',
-      use: () => ui.say('The vines are low and springy and wet underfoot, and the berries tick against your ankles as you go. It smells like rain and something sharp and sweet. You try not to step on any. You step on several. They forgive you.'),
+      label: '크랜베리 사이 걷기',
+      use: () => ui.say('덩굴이 낮고 탄력 있고 발밑에서 축축해요. 열매가 발목을 톡톡 건드려요. 비와 새콤달콤한 무언가 냄새. 밟지 않으려 해요. 몇 개 밟아요. 얘네는 용서해줘요.'),
     });
   }
 
@@ -573,11 +573,11 @@ export function createCran(player) {
     }
     register({
       pos: new THREE.Vector3(p.x, 0, p.z), r: 1.6,
-      label: 'stand in the gazebo',
+      label: '정자에 서 보기',
       use: () => ui.say(nextLine('gazebo', [
-        'You stand in the middle of the gazebo. It is exactly as nice as a gazebo is supposed to be, which is very. The flower pots look back at you from every side.',
-        'Up in the cupola, where a lesser gazebo would hang a bell: nothing. Just the little white roof, and the sky through the slats. Nobody on Cran has ever thought that was a question.',
-        'Somebody has left a watercolor on the railing to dry. It’s the bog. It’s a pink smudge. It is extremely accurate.',
+        '정자 한가운데에 서 있어요. 정자가 있어야 할 만큼 정확히 좋아요, 아주. 화분들이 사방에서 당신을 바라봐요.',
+        '작은 지붕 위, 하찮은 정자라면 종을 매달았을 자리: 아무것도 없어요. 그냥 작은 하얀 지붕과 틈 사이 하늘. 크랜의 누구도 그게 질문거리라 생각한 적 없어요.',
+        '누군가 난간에 수채화를 말리려 두었어요. 늪 그림이에요. 분홍 얼룩. 지독하게 정확해요.',
       ])),
     });
   }
@@ -640,11 +640,11 @@ export function createCran(player) {
     }
     register({
       pos: new THREE.Vector3(W(GAZ.u, GAZ.v + 4.6).x, 0, W(GAZ.u, GAZ.v + 4.6).z), r: 2.0,
-      label: 'admire the flower pots',
+      label: '화분 감상하기',
       use: () => ui.say(nextLine('pots', [
-        'Terracotta pots in tiers, big ones at the back, little ones in front, pinks next to whites next to purples, one trailing thing spilling over every third pot like it’s been told a joke. Somebody arranges these every morning. You can tell. It’s love, in rows.',
-        'A tiny card tucked into the biggest pot: “TUESDAY GROUP — PLEASE DO NOT REARRANGE. (MABEL.)”',
-        'You notice one pot has been turned very slightly, so its best side faces the gazebo. Everything here has a best side, and everything here is facing it.',
+        '테라코타 화분이 단을 이뤄, 큰 것은 뒤에, 작은 것은 앞에, 분홍 옆에 하양 옆에 보라, 덩굴 하나가 세 번째 화분마다 농담이라도 들은 듯 흘러내려요. 누군가 매일 아침 이걸 정리해요. 알 수 있어요. 줄지어 놓인 사랑이에요.',
+        '가장 큰 화분에 끼워진 작은 카드: “화요일 모임 — 재배치 금지. (메이블.)”',
+        '화분 하나가 아주 살짝 돌려져서 가장 예쁜 면이 정자를 향해 있어요. 여기 모든 건 가장 예쁜 면이 있고, 전부 그 면을 향하고 있어요.',
       ])),
     });
   }
@@ -708,7 +708,7 @@ export function createCran(player) {
     });
     register({
       pos: new THREE.Vector3(seatAt.x - 0.9, 0, seatAt.z), r: 1.6,
-      label: 'sit on the bench and look at the sea',
+      label: '벤치에 앉아 바다 보기',
       enabled: () => !seated,
       use: async () => {
         await ui.fadeSwap(() => {
@@ -718,12 +718,12 @@ export function createCran(player) {
           player.group.rotation.y = BENCH.ry;
         });
         await ui.say(nextLine('sea', [
-          'You sit. The moss moves a little over your head. The sea goes out and out, grey-blue and then blue and then no color at all, where it meets the sky and they agree to stop arguing.',
-          'You sit. A cranberry comes down the creek behind you and out into the bay and away. You watch it go until you can’t. It seemed to know where it was going.',
-          'You sit. Far off, something glints on the water — a wave, or a gull, or just the light. You don’t get up to find out. You let it be a glint.',
-          'You sit. Nobody needs anything from you. The oak doesn’t. The sea doesn’t. It’s very restful, being needed by nothing, for a while.',
+          '앉아요. 이끼가 머리 위에서 살짝 움직여요. 바다는 멀리 멀리, 회청색에서 파랑으로, 그다음 무색으로, 하늘과 만나 둘이 싸움을 멈추기로 합의하는 곳까지.',
+          '앉아요. 크랜베리 하나가 뒤쪽 개울을 내려와 만으로, 저 멀리로. 보이지 않을 때까지 바라봐요. 어디로 가는지 아는 것 같았어요.',
+          '앉아요. 멀리 물 위에서 뭔가 반짝여요 — 파도인지, 갈매기인지, 그냥 빛인지. 확인하러 일어나지 않아요. 그냥 반짝임으로 둬요.',
+          '앉아요. 아무도 당신에게 아무것도 필요로 하지 않아요. 참나무도. 바다도. 잠시 아무에게도 필요하지 않다는 건, 아주 편안해요.',
         ]));
-        ui.toast('Sitting. (Walk to get up.)', '🌊');
+        ui.toast('앉아 있어요. (걸으면 일어나요.)', '🌊');
       },
     });
     outdoor.push(() => { if (seated && zones.current() !== 'island') { seated = false; player.riding = false; } });
@@ -762,7 +762,7 @@ export function createCran(player) {
       blockers, spawn: { x: B.x, z: B.z + d / 2 - 0.7, rotY: Math.PI }, lighting,
     });
     addZonePlace(id, name);
-    register({ pos: new THREE.Vector3(B.x, 0, B.z + d / 2 - 0.25), r: 1.5, zone: id, label: 'step outside', use: () => zones.leaveTo(EXIT[id]) });
+    register({ pos: new THREE.Vector3(B.x, 0, B.z + d / 2 - 0.25), r: 1.5, zone: id, label: '밖으로 나가기', use: () => zones.leaveTo(EXIT[id]) });
     for (const it of things) register({ ...it, zone: id });
   }
   // (folk who notice you, and folk who wander a room: see oasis.js — same
@@ -788,7 +788,7 @@ export function createCran(player) {
     const V = { speaker: who, voice };
     const c = await ui.ask(prompt, [
       ...goods.map((g, k) => ({ label: `${ITEMS[g.id].emoji} ${ITEMS[g.id].name}`, value: String(k), hint: `${g.price}🔘`, disabled: S.state.buttons < g.price })),
-      { label: 'Just looking', value: null },
+      { label: '그냥 구경 중', value: null },
     ], V);
     if (c === null || c === undefined) return false;
     const g = goods[Number(c)];
@@ -847,7 +847,7 @@ export function createCran(player) {
       fl.position.set(0.6 + k * 0.38, 0.45 + (k % 2) * 0.2, INK.d / 2 + 0.06);
       b.g.add(fl);
     }
-    const sg = sign(['BOG INK', 'tattoos · rock & roll · no appointment'], { w: 3.6, h: 0.9, bg: '#1e1e24', fg: '#ff4fb0', border: '#ffc23a' });
+    const sg = sign(['보그 잉크', '타투 · 로큰롤 · 예약 불필요'], { w: 3.6, h: 0.9, bg: '#1e1e24', fg: '#ff4fb0', border: '#ffc23a' });
     sg.position.set(0, 2.3, INK.d / 2 + 0.1); // (below the roof cap)
     b.g.add(sg);
     const guitar = new THREE.Group();
@@ -858,14 +858,14 @@ export function createCran(player) {
     guitar.position.set(0, 3.6, 0);
     guitar.rotation.z = 0.5;
     b.g.add(guitar);
-    doorway('cran_ink', ...b.door, INK.ry, 'go into Bog Ink');
+    doorway('cran_ink', ...b.door, INK.ry, '보그 잉크 들어가기');
     const B = IN.cran_ink;
-    room('cran_ink', '🎸 Bog Ink', B, {
+    room('cran_ink', '🎸 보그 잉크', B, {
       w: 12, d: 9, floor: 0x4a3a52, wall: 0x2e2440,
       lighting: { ...LIGHT, hemiSky: 0xffe0f2, hemiGround: 0x6a4a6a, hemiIntensity: 2.4 },
       build: (B, bl, things) => {
         const X = (l) => B.x + l, Z = (l) => B.z + l;
-        const flash = sign(['FLASH', 'a cranberry · MOM (anchor) · a turtle, “SLOW & STEADY & METAL” · a lighthouse'], { w: 7, h: 1.4, d: 0.05, bg: '#f3ead6', fg: '#1e1e24' });
+        const flash = sign(['플래시', '크랜베리 · MOM(닻) · 거북, “SLOW & STEADY & METAL” · 등대'], { w: 7, h: 1.4, d: 0.05, bg: '#f3ead6', fg: '#1e1e24' });
         flash.position.set(X(0), 2.4, Z(-4.3));
         group.add(flash);
         // the chair, the lamp, the station
@@ -904,29 +904,29 @@ export function createCran(player) {
         }
         attend(spike, 'cran_ink');
         const designs = [
-          { id: 'tattoo_cranberry', price: 20, say: 'A cranberry. Small. On the shoulder. Classic Cran. You’ll float now. Metaphorically. Maybe literally. Test it at the bog.' },
-          { id: 'tattoo_mom', price: 25, say: 'An anchor. “MOM.” Timeless. Doesn’t matter whose mom. All moms. Rock and roll.' },
-          { id: 'tattoo_turtle', price: 30, say: '“SLOW & STEADY & METAL.” My favorite. Barb has the same one. She won’t admit it. It’s under the moss.' },
-          { id: 'tattoo_lighthouse', price: 30, say: 'A lighthouse. With the light on. People always want the light on. I get it.' },
+          { id: 'tattoo_cranberry', price: 20, say: '크랜베리. 작게. 어깨에. 크랜의 클래식. 이제 뜰 거야. 비유적으로. 어쩌면 문자 그대로. 늪에서 시험해 봐.' },
+          { id: 'tattoo_mom', price: 25, say: '닻. “MOM.” 시대를 초월해. 누구 엄마든 상관없어. 모든 엄마. 로큰롤.' },
+          { id: 'tattoo_turtle', price: 30, say: '“SLOW & STEADY & METAL.” 내 최애. 바브도 같은 거 있어. 인정은 안 해. 이끼 밑에 있거든.' },
+          { id: 'tattoo_lighthouse', price: 30, say: '등대. 불 켠 채로. 사람들은 꼭 불 켜길 원해. 이해해.' },
         ].map((g) => ({ ...g, before: async () => {
           await ui.fadeSwap(() => {});
           for (let k = 0; k < 10; k++) tone(180 + (k % 3) * 20, { time: k * 0.09, dur: 0.07, type: 'square', vol: 0.012 });
         } }));
-        things.push({ getPos: () => spike.position, r: 2.4, label: 'talk to Spike',
+        things.push({ getPos: () => spike.position, r: 2.4, label: '스파이크와 대화하기',
           use: async () => {
             const c = await ui.ask(nextLine('spike', SPIKE), [
-              { label: '🖋️ Get a tattoo', value: 'ink' },
-              { label: '🎸 Play the jukebox', value: 'juke' },
-              { label: 'Just looking (respectfully)', value: null },
-            ], { speaker: 'Spike', voice: VOICE.spike });
-            if (c === 'ink') await till('Spike', VOICE.spike, 'Pick one off the flash. I’ll make it sing.', designs);
+              { label: '🖋️ 타투 받기', value: 'ink' },
+              { label: '🎸 주크박스 틀기', value: 'juke' },
+              { label: '그냥 구경 중 (공손하게)', value: null },
+            ], { speaker: '스파이크', voice: VOICE.spike });
+            if (c === 'ink') await till('스파이크', VOICE.spike, '플래시에서 하나 골라. 노래하게 만들어 줄게.', designs);
             if (c === 'juke') {
               playRiff();
-              await ui.say('The jukebox lights up and plays the only song it has, which is also the only song it needs: loud, three chords, and a drum fill at the end that Spike air-drums along to, eyes closed.');
+              await ui.say('주크박스에 불이 켜지며 가진 유일한 노래를 틀어요, 그리고 그게 필요한 유일한 노래예요: 시끄럽고, 코드 세 개, 마지막 드럼 필인에 스파이크가 눈을 감고 에어드럼을 따라 해요.');
             }
           } });
-        things.push({ pos: new THREE.Vector3(X(0), 0, Z(-3.2)), r: 1.6, label: 'read the flash',
-          use: () => ui.say('A cranberry. An anchor with “MOM” on it. A turtle over the words SLOW & STEADY & METAL. A lighthouse, light on. And in the corner, crossed out in marker: “NO BELLS — they never come out right. —S.”') });
+        things.push({ pos: new THREE.Vector3(X(0), 0, Z(-3.2)), r: 1.6, label: '플래시 구경하기',
+          use: () => ui.say('크랜베리. “MOM”이 적힌 닻. SLOW & STEADY & METAL 글자 위 거북. 불 켠 등대. 그리고 구석에 마커로 줄 그은: “종은 사절 — 절대 제대로 안 나옴. —S.”') });
       },
     });
   }
@@ -945,7 +945,7 @@ export function createCran(player) {
   // --------------------------------------------------- Low Tide Records ----
   {
     const b = building(REC, { wall: 0x2e3e5c, roof: 0x8c3a3f, trim: 0xf2cf5b });
-    const sg = sign(['LOW TIDE RECORDS', 'vinyl · slowly'], { w: 3.8, h: 0.8, bg: '#2e3e5c', fg: '#f3ead6', border: '#f2cf5b' });
+    const sg = sign(['로우 타이드 레코드', '바이닐 · 천천히'], { w: 3.8, h: 0.8, bg: '#2e3e5c', fg: '#f3ead6', border: '#f2cf5b' });
     sg.position.set(0, 2.3, REC.d / 2 + 0.1);
     b.g.add(sg);
     const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.06, 16), mat(0x111114, 0.3));
@@ -957,9 +957,9 @@ export function createCran(player) {
     disc.userData.dynamic = label.userData.dynamic = true; // (the record turns)
     b.g.add(disc, label);
     outdoor.push((dt) => { disc.rotation.y += dt * 0.6; label.rotation.y = disc.rotation.y; });
-    doorway('cran_records', ...b.door, REC.ry, 'go into Low Tide Records');
+    doorway('cran_records', ...b.door, REC.ry, '로우 타이드 레코드 들어가기');
     const B = IN.cran_records;
-    room('cran_records', '💿 Low Tide Records', B, {
+    room('cran_records', '💿 로우 타이드 레코드', B, {
       w: 14, d: 10, floor: 0x8a6a48, wall: 0x3a4a6a,
       build: (B, bl, things) => {
         const X = (l) => B.x + l, Z = (l) => B.z + l;
@@ -998,28 +998,28 @@ export function createCran(player) {
         const sloane = folk('sloth', { body: 0x9a8a6a, head: 0xb8a888 }, X(-3.1), 0, Z(-3.5), 0.5, { fidget: false }); // (at the end of the counter, where you can see him)
         attend(sloane, 'cran_records', 5);
         const goods = [
-          { id: 'record_slowjams', price: 15, say: 'Slow Jams… for Snapping Turtles. … Good choice. … Side B… is… longer.' },
-          { id: 'record_honk', price: 12, say: 'HONK… by Mabel. … Bootleg. … She recorded it… in here. … Without asking. … It’s… actually very good.' },
-          { id: 'record_lofi', price: 15, say: 'Lo-fi Beats… to Hack the Labs To. … Null’s. … She says… it’s just… a coincidence.' },
+          { id: 'record_slowjams', price: 15, say: '슬로 잼… 늑대거북을 위하여. … 좋은 선택. … B면이… 더… 길어.' },
+          { id: 'record_honk', price: 12, say: 'HONK… 메이블 작. … 부틀렉. … 여기서… 녹음했어. … 허락 없이. … 사실… 아주 좋아.' },
+          { id: 'record_lofi', price: 15, say: '로파이 비트… 연구소 해킹할 때 듣기 좋은. … 널 거야. … 본인 말로는… 그냥… 우연이래.' },
         ];
-        things.push({ getPos: () => sloane.position, r: 2.4, label: 'talk to Sloane',
+        things.push({ getPos: () => sloane.position, r: 2.4, label: '슬론과 대화하기',
           use: async () => {
-            await ui.say(nextLine('sloane', SLOANE), { speaker: 'Sloane', voice: VOICE.sloane });
-            await till('Sloane', VOICE.sloane, 'Found… something?', goods);
+            await ui.say(nextLine('sloane', SLOANE), { speaker: '슬론', voice: VOICE.sloane });
+            await till('슬론', VOICE.sloane, '뭔가… 찾았어?', goods);
           } });
-        things.push({ pos: new THREE.Vector3(X(0), 0, Z(0.3)), r: 1.4, priority: 0, label: 'dig through the crates',
+        things.push({ pos: new THREE.Vector3(X(0), 0, Z(0.3)), r: 1.4, priority: 0, label: '레코드 상자 뒤지기',
           use: () => ui.say(nextLine('crates', [
-            '“Moss Grows On You” — The Dikes. The cover is just moss. The back cover is also moss. The liner notes say “see front.”',
-            '“Songs for When the Creek Is High” — Ruth & the Needles. It is knitting sounds. It is four stars.',
-            '“Live at the Gazebo (Tuesday)” — Various. Somebody is clearly arranging flower pots in the background of every track.',
-            '“Chocolate: A Recovery” — the Chocoholics Anonymous Choir. Track 7 is just a long pause where a truffle should be.',
-            '“The Low Tide Sessions, Vol. 1 (of 1)” — Sloane. Side A is a single note. It takes the whole side. It is gorgeous.',
+            '“이끼는 너에게서 자라” — 더 다이크스. 표지는 그냥 이끼. 뒷표지도 이끼. 해설지에는 “앞면 참조.”',
+            '“개울물이 높을 때 듣는 노래” — 루스 & 더 니들스. 뜨개질 소리야. 별 네 개.',
+            '“라이브 앳 더 정자 (화요일)” — 여러 아티스트. 모든 트랙 배경에서 누군가 분명히 화분을 정리하고 있어.',
+            '“초콜릿: 회복” — 초콜릿 중독자 모임 합창단. 7번 트랙은 트러플이 있어야 할 자리의 긴 침묵뿐.',
+            '“로우 타이드 세션, 1집 (전 1집)” — 슬론. A면은 음 하나. 한 면 전부를 써. 황홀해.',
           ])) });
-        things.push({ pos: new THREE.Vector3(X(5), 0, Z(-1.8)), r: 1.6, label: 'use the listening booth',
+        things.push({ pos: new THREE.Vector3(X(5), 0, Z(-1.8)), r: 1.6, label: '청음 부스 이용하기',
           use: async () => {
             const song = ['button_bossa', 'foggy_lullaby', 'tidepool_stomp', 'mind_the_gap'][Math.floor(Math.random() * 4)];
             playSong(song, true);
-            await ui.say('You step into the booth, put the headphones on, and drop the needle on whatever’s on the platter. It crackles, and then it’s playing, just for you, in a small blue room in a bog.');
+            await ui.say('부스에 들어가 헤드폰을 쓰고, 턴테이블에 올라 있는 걸 아무거나 바늘을 올려요. 지직거리고, 그다음 재생돼요, 오직 당신만을 위해, 늪 속 작은 파란 방에서.');
           } });
       },
     });
@@ -1028,23 +1028,23 @@ export function createCran(player) {
   // ------------------------------------------- the Community Center ----
   {
     const b = building(CC, { wall: 0x9ab08a, roof: 0x3d5a34, trim: 0xf3ead6 });
-    const sg = sign(['CRAN COMMUNITY CENTER', 'zumba · watercolor · chocoholics anonymous'], { w: 6.2, h: 0.75, bg: '#f3ead6', fg: '#3d5a34', border: '#8c3a3f' });
+    const sg = sign(['크랜 커뮤니티 센터', '줌바 · 수채화 · 초콜릿 중독자 모임'], { w: 6.2, h: 0.75, bg: '#f3ead6', fg: '#3d5a34', border: '#8c3a3f' });
     sg.position.set(0.8, 2.35, CC.d / 2 + 0.1); // (under the eaves)
     b.g.add(sg);
-    const board = sign(['THIS WEEK', 'MON zumba (goose: back row)', 'THU watercolor (bring a smudge)', 'SAT C.A. (brownies NOT allowed, Ruth)'], { w: 1.6, h: 1.4, bg: '#fffaf0', fg: '#3a3026' });
+    const board = sign(['이번 주', '월 줌바 (거위: 뒷줄)', '목 수채화 (얼룩 지참)', '토 초.중.모 (브라우니 금지, 루스)'], { w: 1.6, h: 1.4, bg: '#fffaf0', fg: '#3a3026' });
     const [bu, bv] = local(CC.u, CC.v, CC.ry, CC.w / 4 + 1.2, CC.d / 2 + 0.9);
     put(board, bu, bv, 1.1, CC.ry);
     put(box(0.1, 0.6, 0.1, 0x6e5a44), bu, bv, 0.3, CC.ry);
     solidBox(bu, bv, 1.6, 0.3, CC.ry);
-    doorway('cran_cc', ...b.door, CC.ry, 'go into the Community Center');
+    doorway('cran_cc', ...b.door, CC.ry, '커뮤니티 센터 들어가기');
     const B = IN.cran_cc;
-    room('cran_cc', '🏫 Cran Community Center', B, {
+    room('cran_cc', '🏫 크랜 커뮤니티 센터', B, {
       w: 22, d: 12, floor: 0xc9a77a, wall: 0xe8e0cc,
       build: (B, bl, things) => {
         const X = (l) => B.x + l, Z = (l) => B.z + l;
         // three corners of one big room: zumba (west), watercolor (middle),
         // Chocoholics Anonymous (east) — each with its own sign
-        for (const [lx, t, c] of [[-7, 'ZUMBA', '#e8573f'], [0, 'WATERCOLOR', '#3a7dd8'], [7, 'CHOCOHOLICS ANONYMOUS', '#6e3a2a']]) {
+        for (const [lx, t, c] of [[-7, '줌바', '#e8573f'], [0, '수채화', '#3a7dd8'], [7, '초콜릿 중독자 모임', '#6e3a2a']]) {
           const s = sign(t, { w: 5.5, h: 0.6, d: 0.05, bg: '#fffaf0', fg: c });
           s.position.set(X(lx), 3.0, Z(-5.85));
           group.add(s);
@@ -1075,13 +1075,13 @@ export function createCran(player) {
             animateGait(d, t, 0.6, 8);
           });
         });
-        things.push({ getPos: () => lily.position, r: 2.6, label: 'join the zumba class',
+        things.push({ getPos: () => lily.position, r: 2.6, label: '줌바 수업 참여하기',
           use: async () => {
-            await ui.say(nextLine('lily', LILY), { speaker: 'Coach Lily', voice: VOICE.lily });
+            await ui.say(nextLine('lily', LILY), { speaker: '릴리 코치', voice: VOICE.lily });
             await ui.fadeSwap(() => {});
             for (let k = 0; k < 16; k++) tone([523, 659, 784, 659][k % 4], { time: k * 0.18, dur: 0.12, type: 'triangle', vol: 0.03 });
             S.drinkCoffee(45);
-            ui.toast('Forty-five minutes of joy with a beat. You feel zippy.', '💃');
+            ui.toast('비트를 탄 45분의 기쁨. 몸이 날아다녀요.', '💃');
           } });
         // --- watercolor: easels, painters, Miss Dabble
         for (const [lx, lz] of [[-1.8, -1.6], [0.2, -2.2], [2.2, -1.6]]) {
@@ -1105,19 +1105,19 @@ export function createCran(player) {
         attend(dabble, 'cran_cc', 4);
         const painter = folk('heron', { body: 0x9fb3c8 }, X(-1.8), 0, Z(-0.6), Math.PI, {});
         void painter;
-        things.push({ getPos: () => dabble.position, r: 2.4, label: 'paint a watercolor',
+        things.push({ getPos: () => dabble.position, r: 2.4, label: '수채화 그리기',
           use: async () => {
-            await ui.say(nextLine('dabble', DABBLE), { speaker: 'Miss Dabble', voice: VOICE.dabble });
+            await ui.say(nextLine('dabble', DABBLE), { speaker: '대블 선생님', voice: VOICE.dabble });
             await ui.fadeSwap(() => {});
             const day = S.todayKey();
             if (S.state.flags[`watercolor_${day}`]) {
-              await ui.say('You paint the bog again. It comes out a pink smudge, just like this morning’s. You are, it seems, developing a style. You leave it on the rack to dry for someone who needs a smudge.');
+              await ui.say('또 늪을 그려요. 오늘 아침처럼 분홍 얼룩이 나와요. 화풍이 잡히고 있나 봐요. 얼룩이 필요한 누군가를 위해 건조대에 말려 두고 와요.');
               return;
             }
             S.setFlag(`watercolor_${day}`);
             S.addItem('watercolor_bog');
-            await ui.say('You paint the bog. You try very hard. It comes out a pink smudge. Miss Dabble looks at it for a long time and says, “Yes. That’s it exactly.”');
-            ui.toast('You made <b>A Watercolor of the Bog</b>. It’s a pink smudge. It’s perfect.', '🎨');
+            await ui.say('늪을 그려요. 아주 열심히요. 분홍 얼룩이 나와요. 대블 선생님이 한참 보고는 말해요, “그래. 바로 그거야.”');
+            ui.toast('<b>늪의 수채화</b>를 만들었어요. 분홍 얼룩이에요. 완벽해요.', '🎨');
           } });
         // --- Chocoholics Anonymous: a circle of chairs, Coco facilitating,
         // a plate of brownies on a side table (Ruth), which nobody looks at
@@ -1152,23 +1152,23 @@ export function createCran(player) {
           group.add(br);
         }
         bl.push({ x: X(10), z: Z(-4.6), w: 1.0, d: 0.6 });
-        things.push({ pos: new THREE.Vector3(X(cx), 0, Z(cz + cr + 1.2)), r: 2.0, label: 'sit in on Chocoholics Anonymous',
+        things.push({ pos: new THREE.Vector3(X(cx), 0, Z(cz + cr + 1.2)), r: 2.0, label: '초콜릿 중독자 모임 참석하기',
           use: async () => {
             const set = nextLine('choc', CHOC);
-            await ui.say(set.map(([sp, text]) => ({ speaker: sp, voice: sp === 'Coco' ? VOICE.coco : sp === 'everyone' ? 380 : 450, text })));
-            const c = await ui.ask('Coco turns to you, kindly. “Would you like to share?”', [
-              { label: '🙋 “Hi. It’s been … a while.”', value: 'share' },
-              { label: 'Just listening today', value: null },
-            ], { speaker: 'Coco', voice: VOICE.coco });
+            await ui.say(set.map(([sp, text]) => ({ speaker: sp, voice: sp === '코코' ? VOICE.coco : sp === '모두' ? 380 : 450, text })));
+            const c = await ui.ask('코코가 다정하게 당신을 봐요. “나눠 보실래요?”', [
+              { label: '🙋 “안녕하세요. … 꽤 됐어요.”', value: 'share' },
+              { label: '오늘은 듣기만', value: null },
+            ], { speaker: '코코', voice: VOICE.coco });
             if (c === 'share') {
               await ui.say([
-                { speaker: 'everyone', voice: 380, text: `Hi, ${S.state.name || 'friend'}.` },
-                { speaker: 'Coco', voice: VOICE.coco, text: 'Thank you for sharing. A while is a while. We’re proud of you. Please don’t look at the brownies.' },
+                { speaker: '모두', voice: 380, text: `안녕, ${S.state.name || '친구'}.` },
+                { speaker: '코코', voice: VOICE.coco, text: '나눠 줘서 고마워요. 꽤 된 건 꽤 된 거예요. 자랑스러워해요. 브라우니는 쳐다보지 말아 주세요.' },
               ]);
             }
           } });
-        things.push({ pos: new THREE.Vector3(X(10), 0, Z(-3.6)), r: 1.2, label: 'take a brownie',
-          use: () => ui.say('You reach for a brownie. Every head in the circle turns, very slowly, toward you. You put the brownie back. The heads turn back. Somebody whispers, “Ruth.”') });
+        things.push({ pos: new THREE.Vector3(X(10), 0, Z(-3.6)), r: 1.2, label: '브라우니 집기',
+          use: () => ui.say('브라우니에 손을 뻗어요. 원 안의 모든 고개가 아주 천천히 당신을 향해요. 브라우니를 도로 놓아요. 고개들이 돌아가요. 누군가 속삭여요, “루스.”') });
       },
     });
   }
