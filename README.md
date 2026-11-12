@@ -13,6 +13,10 @@
 
 원작 영문 README는 [README.en.md](README.en.md)에 그대로 보존되어 있습니다.
 
+## 📸 실제 실행 화면
+
+![Notbell Archipelago 실제 플레이 화면](7-Notbell.jpg)
+
 ## 실행하기
 
 ```sh
